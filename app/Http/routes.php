@@ -38,6 +38,11 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+
+route::get('panel','Pacientes\PacientesController@panel');
+
+route::get('dashboards','DashboardController@index');
+
     
 });
 
