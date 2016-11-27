@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: clinica
+        psr4_prefix: clinica
+        src_path: app
