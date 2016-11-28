@@ -27,7 +27,7 @@ class PacientesController extends Controller
      */
     public function create()
     {
-        $paciente = \clinica\Models\Paciente\Clinica::lists('Id_Clinica','Nombre_Clinica')->prepend('Seleccioname la Clinica');
+        $paciente = \clinica\Models\Paciente\Clinica::lists('Nombre_Clinica')->prepend('Seleccioname la Clinica');
         return view('Pacientes.create')->with('paciente',$paciente);
     }
 
