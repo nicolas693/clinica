@@ -1,3 +1,22 @@
+@extends('layouts.master')
+@section('tittle','Lista de Alumnos')
+  <ol class="breadcrumb">
+    <li>Lista de alumnos</li>
+    <li class="active">Escritorio</li>
+  </ol>
+
+  <div class="page-header">
+    <h1>Estadistica <small>visitas activas</small></h1>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <img src="img/estadistica.png" alt="" />
+    </div>
+  </div>
+  
+
+@endsection
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

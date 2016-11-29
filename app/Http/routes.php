@@ -29,11 +29,11 @@
 Route::group(['middleware' => ['web']], function () {
     //
 
-   
+
 Route::get('/', function () {
     return view('welcome');
 });
-    
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
@@ -42,8 +42,11 @@ Route::get('/home', 'HomeController@index');
 route::get('panel','Pacientes\PacientesController@panel');
 
 route::get('dashboards','DashboardController@index');
+route::get('product','DashboardController@index');
 
-    
+route::get('alumno','Alumnos\AlumnosController@alumno');
+route::get('access','Alumnos\AlumnosController@access');
+route::get('reports','Alumnos\AlumnosController@reports');
+
+
 });
-
-
