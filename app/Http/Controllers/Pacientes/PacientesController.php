@@ -9,6 +9,7 @@ use clinica\Http\Controllers\Controller;
 
 class PacientesController extends Controller
 {
+<<<<<<< HEAD
     public function panel(){
     	return view ('Pacientes/panel');
     }
@@ -19,5 +20,85 @@ class PacientesController extends Controller
 
     public function report(){
     	return view ('Pacientes/report');
+=======
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $paciente=\clinica\Models\Paciente\Paciente::all();
+        return view ('Pacientes/index')->with('paciente',$paciente);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $paciente = \clinica\Models\Paciente\Clinica::lists('Nombre_Clinica')->prepend('Seleccioname la Clinica');
+        return view('Pacientes.create')->with('paciente',$paciente);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        \clinica\Models\Paciente\Paciente::create($request->all());
+
+        return redirect()->route('Paciente.index');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+>>>>>>> refs/remotes/origin/master
     }
 }
