@@ -29,25 +29,21 @@
 Route::group(['middleware' => ['web']], function () {
     //
 
-<<<<<<< HEAD
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-=======
-   
+
 Route::get('/', function () {
     return view('welcome');
 });
-    
->>>>>>> refs/remotes/origin/master
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
 
-<<<<<<< HEAD
 route::get('panel','Pacientes\PacientesController@panel');
 
 route::get('dashboards','DashboardController@index');
@@ -59,14 +55,8 @@ route::get('reports','Alumnos\AlumnosController@reports');
 
 
 });
-=======
+
 //route::get('Paciente','Pacientes\PacientesController@index');
 route::resource('Paciente','Pacientes\PacientesController');
 
 route::get('dashboards','DashboardController@index');
-
-    
-});
-
-
->>>>>>> refs/remotes/origin/master
