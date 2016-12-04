@@ -1,5 +1,5 @@
 @extends('layouts.master')
-<<<<<<< HEAD
+
 @section('tittle','Lista de Alumnos')
   <ol class="breadcrumb">
     <li>Lista de alumnos</li>
@@ -98,7 +98,7 @@
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
-=======
+
 
 @section('title','Panel de Control')
 
@@ -123,4 +123,4 @@
 
 
 @endsection
->>>>>>> refs/remotes/origin/master
+

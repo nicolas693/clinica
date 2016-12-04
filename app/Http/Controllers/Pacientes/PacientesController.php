@@ -9,7 +9,6 @@ use clinica\Http\Controllers\Controller;
 
 class PacientesController extends Controller
 {
-<<<<<<< HEAD
     public function panel(){
     	return view ('Pacientes/panel');
     }
@@ -20,12 +19,12 @@ class PacientesController extends Controller
 
     public function report(){
     	return view ('Pacientes/report');
-=======
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    }
     public function index()
     {
         $paciente=\clinica\Models\Paciente\Paciente::all();
@@ -99,6 +98,5 @@ class PacientesController extends Controller
     public function destroy($id)
     {
         //
->>>>>>> refs/remotes/origin/master
     }
 }

@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<<<<<<< HEAD
+
 <html>
   <head>
   <meta charset="utf-8">
@@ -61,7 +61,7 @@
         </div><!-- /.container-fluid -->
       </nav>
   </body>
-=======
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -118,5 +118,5 @@
 
     </div> <!-- /container -->
     </body>
->>>>>>> refs/remotes/origin/master
+
 </html>

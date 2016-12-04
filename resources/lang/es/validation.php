@@ -16,19 +16,19 @@ return [
     'accepted'             => ':attribute debe ser aceptado.',
     'active_url'           => ':attribute no es una URL válida.',
     'after'                => ':attribute debe ser una fecha posterior a :date.',
-<<<<<<< HEAD
+
     'after_or_equal'       => 'The :attribute must be a date after or equal to :date.',
-=======
->>>>>>> refs/remotes/origin/master
+
+
     'alpha'                => ':attribute sólo debe contener letras.',
     'alpha_dash'           => ':attribute sólo debe contener letras, números y guiones.',
     'alpha_num'            => ':attribute sólo debe contener letras y números.',
     'array'                => ':attribute debe ser un conjunto.',
     'before'               => ':attribute debe ser una fecha anterior a :date.',
-<<<<<<< HEAD
+
     'before_or_equal'      => 'The :attribute must be a date before or equal to :date.',
-=======
->>>>>>> refs/remotes/origin/master
+
+
     'between'              => [
         'numeric' => ':attribute tiene que estar entre :min - :max.',
         'file'    => ':attribute debe pesar entre :min - :max kilobytes.',
