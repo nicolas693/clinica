@@ -4,7 +4,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-    <title>Developers::@yield('tittle')::</title>
+    <title>Clinica @yield('tittle')</title>
   </head>
   <body>
       <nav class="navbar navbar-default">

@@ -9,20 +9,20 @@ class Paciente extends Model
     //
 
     protected $table= 'Paciente';
-    protected $primarykey= 'rut';
+    protected $primaryKey= 'rut';
 
 
     protected $fillable=[
-    	'rut','clinica_id','Nombres','Paterno','Materno','Fecha_Ingreso','Genero','Fecha_Naciemiento','Telefono_Casa','Telefono_Movil','Telefono_Oficina', 
-      'Calle','Numero_Calle','Pais','Region','Comuna','Nacionalidad','Cobertura_Medica'
+    	'rut','Nombre','Paterno','Materno','Fecha_Ingreso','Genero','Fecha_Naciemiento','Telefono_Casa','Telefono_Movil','Telefono_Oficina', 'Calle','Numero_Calle','Pais','Region','Comuna','Nacionalidad','Cobertura_Medica','id_Clinica'
+
     ];
     public $timestamps=false;
 
-    public function Clinica_1 (){
+    public function Clinica (){
     	return $this->belongsto(Clinica::class);
     }
 
-    public function Ficha_1 (){
+    public function Ficha (){
         return $this->hasmany(Ficha::class);
 
     }

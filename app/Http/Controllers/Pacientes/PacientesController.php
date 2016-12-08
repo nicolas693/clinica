@@ -6,19 +6,21 @@ use Illuminate\Http\Request;
 
 use clinica\Http\Requests;
 use clinica\Http\Controllers\Controller;
+use clinica\Models\Paciente\Paciente;
+use clinica\Models\Paciente\Clinica;
 
 class PacientesController extends Controller
 {
     public function panel(){
-    	return view ('Pacientes/panel');
+        return view ('Pacientes/panel');
     }
 
     public function acces(){
-    	return view ('Pacientes/acces');
+        return view ('Pacientes/acces');
     }
 
     public function report(){
-    	return view ('Pacientes/report');
+        return view ('Pacientes/report');
     /**
      * Display a listing of the resource.
      *
@@ -27,7 +29,7 @@ class PacientesController extends Controller
     }
     public function index()
     {
-        $paciente=\clinica\Models\Paciente\Paciente::all();
+        $paciente=Paciente::all();
         return view ('Pacientes/index')->with('paciente',$paciente);
     }
 
@@ -38,7 +40,7 @@ class PacientesController extends Controller
      */
     public function create()
     {
-        $paciente = \clinica\Models\Paciente\Clinica::lists('Nombre_Clinica')->prepend('Seleccioname la Clinica');
+        $paciente = Clinica::lists('Nombre_Clinica')->prepend('Seleccioname la Clinica');
         return view('Pacientes.create')->with('paciente',$paciente);
     }
 
@@ -50,7 +52,7 @@ class PacientesController extends Controller
      */
     public function store(Request $request)
     {
-        \clinica\Models\Paciente\Paciente::create($request->all());
+        Paciente::create($request->all());
 
         return redirect()->route('Paciente.index');
     }
@@ -72,9 +74,26 @@ class PacientesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    /*
+
+    public function edit(Paciente $pa)
+    {
+       $clinica = Clinica::lists('Nombre_Clinica')->prepend('Seleccioname la Clinica');
+      
+        return view('Pacientes.edit',compact('pa'))->with('clinica',$clinica);
+
+         
+    }
+
+    */
+
+
     public function edit($id)
     {
-        //
+       $clinica = Clinica::lists('Nombre_Clinica')->prepend('Seleccioname la Clinica');
+       $pa= Paciente::find($id);
+       return view('Pacientes.edit', array('pa'=>$pa,'clinica'=>$clinica));
+         
     }
 
     /**
@@ -86,7 +105,11 @@ class PacientesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pa= Paciente::find($id);
+        $input=$request->all();
+        $pa->fill($input)->save();
+
+        return redirect()->route('Paciente.index');
     }
 
     /**

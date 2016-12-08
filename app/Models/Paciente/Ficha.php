@@ -8,18 +8,17 @@ class Ficha extends Model
 {
 
     protected $table= 'Ficha';
-    protected $primarykey= 'id';
+    protected $primaryKey= 'id_Ficha';
 
     public $timestamps=false;
 
     protected $fillable=[
-    	'id','paciente_id'
+    	'id_Ficha','id_Paciente'
     ];
 
     public function Paciente (){
 
-    	return $this->hasmany(Paciente::class);
-
+    	
     	return $this->belongsto(Paciente::class);
 
     }

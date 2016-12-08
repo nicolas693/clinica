@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Asignatura extends Model
 {
     protected $table='asignatura';
-    protected $primarykey='id';
+    protected $primaryKey='id';
     protected $fillable =['id','nombre'];
 
       public function docente_1(){

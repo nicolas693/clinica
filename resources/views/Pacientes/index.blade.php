@@ -6,7 +6,7 @@
 
    <!-- Main component for a primary marketing message or call to action -->
    <div class="page-header">
-     <h1>Clientes <small>Actualizados hasta hoy</small></h1>
+     <h1>Pacientes <small></small></h1>
    </div>
 
    <div class="row">
@@ -41,7 +41,8 @@
                		<td>{{$pa->Paterno}}</td>
                		<td>{{$pa->Materno}}</td>
 
-                  <td><a href="#">[Editar]</a><a href="#">[Eliminar]</a></td>
+
+                  <td><a href="{{route('Paciente.edit',$pa->rut)}}">[Editar]</a><a href="#">[Eliminar]</a></td>
                	</tr>
 
                	@endforeach

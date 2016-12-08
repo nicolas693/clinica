@@ -9,11 +9,11 @@ class Clinica extends Model
     //
 
     protected $table= 'Clinica';
-    protected $primarykey= 'id';
+    protected $primaryKey= 'id_Clinica';
     public $timestamps=false;
 
     protected $fillable=[
-    	'id','Nombre_Clinica','Direccion_Clinica','Telefono_Clinica'];
+    	'id_Clinica','Nombre_Clinica','Direccion_Clinica','Telefono_Clinica'];
 
     public function Paciente (){
     	return $this->hasmany(Paciente::class);
