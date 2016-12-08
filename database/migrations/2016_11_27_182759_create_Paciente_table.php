@@ -31,12 +31,12 @@ class CreatePacienteTable extends Migration
             $table->String('Comuna')->length(15);
             $table->String('Nacionalidad')->length(15);
             $table->String('Cobertura_Medica')->length(15);
-            $table->integer('id_Clinica')->unsigned();
-            
-           
-         
-            $table->foreign('id_Clinica')->references('id_Clinica')->on('Clinica');
-            
+            $table->integer('clinica_id')->unsigned();
+
+
+
+            $table->foreign('clinica_id')->references('id')->on('Clinica');
+
         });
     }
 

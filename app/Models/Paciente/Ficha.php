@@ -8,12 +8,12 @@ class Ficha extends Model
 {
 
     protected $table= 'Ficha';
-    protected $primarykey= 'id_Ficha';
+    protected $primarykey= 'id';
 
     public $timestamps=false;
 
     protected $fillable=[
-    	'id_Ficha','id_Paciente'
+    	'id','paciente_id'
     ];
 
     public function Paciente (){

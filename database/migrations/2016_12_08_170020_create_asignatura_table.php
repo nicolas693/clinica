@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFichaTable extends Migration
+class CreateAsignaturaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,16 +12,11 @@ class CreateFichaTable extends Migration
      */
     public function up()
     {
-         Schema::create('Ficha', function (Blueprint $table) {
-            $table->increments('id_Ficha');
-            $table->timestamps();
-            
-            
-            
-
-
-           
-        });
+      Schema::create('asignatura', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('nombre');
+        $table->timestamps();
+    });
     }
 
     /**
