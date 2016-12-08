@@ -65,7 +65,8 @@ class PacientesController extends Controller
      */
     public function show($id)
     {
-        //
+        $pa= Paciente::find($id);
+        return view('Pacientes.show')->with('pa',$pa);
     }
 
     /**
@@ -120,6 +121,10 @@ class PacientesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pa= Paciente::find($id);
+        
+        $pa->delete();
+
+        return redirect()->route('Paciente.index');
     }
 }

@@ -42,7 +42,9 @@
                		<td>{{$pa->Materno}}</td>
 
 
-                  <td><a href="{{route('Paciente.edit',$pa->rut)}}">[Editar]</a><a href="#">[Eliminar]</a></td>
+                  <td><a href="{{route('Paciente.edit',$pa->rut)}}">[Editar]</a>
+                      <a href="{{route('Paciente.show',$pa->rut)}}">[Eliminar]</a>
+                  </td>
                	</tr>
 
                	@endforeach
