@@ -58,5 +58,6 @@ route::get('reports','Alumnos\AlumnosController@reports');
 
 //route::get('Paciente','Pacientes\PacientesController@index');
 route::resource('Paciente','Pacientes\PacientesController');
+route::resource('docente','Docente\DocenteController');
 
 route::get('dashboards','DashboardController@index');
