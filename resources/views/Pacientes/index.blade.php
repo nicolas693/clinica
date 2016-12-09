@@ -1,11 +1,13 @@
 @extends('layouts.master')
 
+
+
 @section('title','Lista de Pacientes')
 
 @section('content')
 
    <!-- Main component for a primary marketing message or call to action -->
-   <div class="page-header">
+   <div class="page-header" background-color: #cccccc>
      <h1>Pacientes <small></small></h1>
    </div>
 
@@ -16,7 +18,7 @@
           <div class="panel-heading">
              Lista
              <p class="navbar-text navbar-right" style=" margin-top: 1px;">
-                <button type="button" id='nuevo'  name='nuevo' class="btn btn-warning navbar-btn" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;">Nuevo</button>
+                <button type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;">Nuevo</button>
               </p>
            </div>
           <div class="panel-body">
@@ -42,8 +44,8 @@
                		<td>{{$pa->Materno}}</td>
 
 
-                  <td><a href="{{route('Paciente.edit',$pa->rut)}}">[Editar]</a>
-                      <a href="{{route('Paciente.show',$pa->rut)}}">[Eliminar]</a>
+                  <td><a <button type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>
+                      <a <button type="button" id= 'Eliminar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-danger" style ="margin-left: 20px">Eliminar</button></a>
                   </td>
                	</tr>
 
@@ -67,6 +69,21 @@
      $("#nuevo").click(function(event)
       {
       document.location.href = "{{ route('Paciente.create')}}";
+       });
+   </script>
+
+   <script>
+     $("#Editar").click(function(event)
+      {
+      document.location.href = "{{route('Paciente.edit',$pa->rut)}}";
+       });
+
+   </script>
+
+   <script>
+     $("#Eliminar").click(function(event)
+      {
+      document.location.href = "{{route('Paciente.show',$pa->rut)}}";
        });
 
    </script>

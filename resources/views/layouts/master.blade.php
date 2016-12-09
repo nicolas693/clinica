@@ -6,7 +6,7 @@
   <meta charset="utf-8">
     <title>Clinica @yield('tittle')</title>
   </head>
-  <body>
+  <body style="background-color: none;" >
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
