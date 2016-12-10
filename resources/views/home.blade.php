@@ -8,7 +8,7 @@
                 <div class="panel-heading">Bienvenido</div>
 
                 <div class="panel-body">
-                    Sesion Iniciada!
+                    Sesion Iniciada2!
                 </div>
             </div>
         </div>

@@ -35,7 +35,7 @@ class CreatePacienteTable extends Migration
 
 
 
-            $table->foreign('clinica_id')->references('id')->on('Clinica');
+            $table->foreign('clinica_id')->references('id_Clinica')->on('Clinica');
 
         });
     }

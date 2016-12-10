@@ -8,6 +8,7 @@ use clinica\Http\Requests;
 use clinica\Http\Controllers\Controller;
 use clinica\Models\Paciente\Paciente;
 use clinica\Models\Paciente\Clinica;
+use Carbon\Carbon;
 
 class PacientesController extends Controller
 {
@@ -30,7 +31,7 @@ class PacientesController extends Controller
     public function index()
     {
         $paciente=Paciente::all();
-        return view ('Pacientes/index')->with('paciente',$paciente);
+        return view('Pacientes/index')->with('paciente',$paciente);
     }
 
     /**
@@ -40,8 +41,9 @@ class PacientesController extends Controller
      */
     public function create()
     {
+        $date = Carbon::now();
         $paciente = Clinica::lists('Nombre_Clinica')->prepend('Seleccioname la Clinica');
-        return view('Pacientes.create')->with('paciente',$paciente);
+        return view('Pacientes.create')->with('paciente',$paciente)->with('date',$date);
     }
 
     /**
@@ -80,10 +82,10 @@ class PacientesController extends Controller
     public function edit(Paciente $pa)
     {
        $clinica = Clinica::lists('Nombre_Clinica')->prepend('Seleccioname la Clinica');
-      
+
         return view('Pacientes.edit',compact('pa'))->with('clinica',$clinica);
 
-         
+
     }
 
     */
@@ -94,7 +96,7 @@ class PacientesController extends Controller
        $clinica = Clinica::lists('Nombre_Clinica')->prepend('Seleccioname la Clinica');
        $pa= Paciente::find($id);
        return view('Pacientes.edit', array('pa'=>$pa,'clinica'=>$clinica));
-         
+
     }
 
     /**
@@ -122,7 +124,7 @@ class PacientesController extends Controller
     public function destroy($id)
     {
         $pa= Paciente::find($id);
-        
+
         $pa->delete();
 
         return redirect()->route('Paciente.index');

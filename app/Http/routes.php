@@ -46,7 +46,7 @@ Route::get('/home', 'HomeController@index');
 
 
 route::get('dashboards','DashboardController@index');
-route::get('product','DashboardController@index');
+
 
 route::get('alumno','Alumnos\AlumnosController@alumno');
 route::get('access','Alumnos\AlumnosController@access');
@@ -55,8 +55,16 @@ route::get('reports','Alumnos\AlumnosController@reports');
 route::resource('Paciente','Pacientes\PacientesController');
 route::resource('docente','Docente\DocenteController');
 
-route::get('dashboards','DashboardController@index');
+Route::get('/test/datepicker', function () {
+    return view('datepicker');
+});
+
+Route::post('/test/save', ['as' => 'save-date',
+                           'uses' => 'DateController@showDate',
+                            function () {
+                                return '';
+                            }]);
+
 });
 
 //route::get('Paciente','Pacientes\PacientesController@index');
-

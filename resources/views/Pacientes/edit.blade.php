@@ -5,11 +5,11 @@
 @section('content')
 
 <ol class="breadcrumb">
-     <li><a href="{{url('dashboard')}}">Escritorio</a></li>
+
      <li><a href="{{url('Paciente')}}"> Pacientes</a></li>
      <li class="active">Editar paciente</li>
    </ol>
- 
+
 
    <div class="page-header">
      <h1>Editar datos paciente </h1>
@@ -31,7 +31,7 @@
                   {!!form::label('RUT')!!}
                   {!!form::text('rut',null,['id'=>'rut','class'=>'form-control'])!!}
              </div>
-            
+
               <div class="col-sm-4">
                   {!!form::label('Nombre')!!}
                   {!!form::text('Nombre',null,['id'=>'Nombre','class'=>'form-control'])!!}
@@ -63,6 +63,19 @@
                   {!!form::text('Fecha_Nacimiento',null,['id'=>'Fecha_Nacimiento','class'=>'form-control'])!!}
              </div>
 
+             <div class="col-sm-12">
+                 {!!form::label('Año')!!}
+                 {!!form::text('Fecha_Nacimiento',null,['id'=>'Fecha_Nacimiento','class'=>'form-control'])!!}
+            </div>
+            <div class="col-sm-12">
+                {!!form::label('Mes')!!}
+                {!!form::text('Fecha_Nacimiento',null,['id'=>'Fecha_Nacimiento','class'=>'form-control'])!!}
+           </div>
+           <div class="col-sm-12">
+               {!!form::label('Dia')!!}
+               {!!form::text('Fecha_Nacimiento',null,['id'=>'Fecha_Nacimiento','class'=>'form-control'])!!}
+          </div>
+
 
               <div class="col-sm-4">
                   {!!form::label('Telefono Fijo')!!}
@@ -80,7 +93,7 @@
                   {!!form::label('Telefono Oficina')!!}
                   {!!form::text('Telefono_Oficina',null,['id'=>'Telefono_Oficina','class'=>'form-control'])!!}
              </div>
-            
+
               <div class="col-sm-6">
                   {!!form::label('Calle')!!}
                   {!!form::text('Calle',null,['id'=>'Calle','class'=>'form-control'])!!}
@@ -112,24 +125,24 @@
              </div>
 
 
-            
+
 
               <div class="col-sm-12">
                   {!!form::label('Cobertura Medica')!!}
                   {!!form::text('Cobertura_Medica',null,['id'=>'Cobertura_Medica','class'=>'form-control'])!!}
              </div>
-   
+
 
              <div class="col-sm-5">
-                
+
                 {!!form::label('Clinica')!!}
 
                 {!! Form::select('id_Clinica',$clinica,null,['id'=>'id_Clinica','class'=>'form-control']) !!}
 
-               
+
 
              </div>
-                 {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}             
+                 {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
               {!!Form::close()!!}
            </div>
         </div>

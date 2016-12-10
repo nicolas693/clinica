@@ -13,7 +13,7 @@ class CreateClinicaTable extends Migration
     public function up()
     {
         Schema::create('Clinica', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_Clinica');
 
             $table->String('Nombre_Clinica')->length(20);
             $table->String('Direccion_Clinica')->length(20);

@@ -7,8 +7,8 @@
 @section('content')
 
    <!-- Main component for a primary marketing message or call to action -->
-   <div class="page-header" background-color: #cccccc>
-     <h1>Pacientes <small></small></h1>
+   <div class="page-header" >
+     <h1>Pacientes<small></small></h1>
    </div>
 
    <div class="row">
@@ -34,7 +34,7 @@
                   <th>Accion</th>
                </thead>
                <tbody>
-               	
+
                	@foreach($paciente as $pa)
 
                	<tr>
@@ -44,15 +44,15 @@
                		<td>{{$pa->Materno}}</td>
 
 
-                  <td><a <button type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>
-                      <a <button type="button" id= 'Eliminar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-danger" style ="margin-left: 20px">Eliminar</button></a>
+                  <td><a <button  href={{route('Paciente.edit',$pa->rut)}} type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>
+                      <a <button href={{route('Paciente.show',$pa->rut)}} type="button" id= 'Eliminar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-danger" style ="margin-left: 20px">Eliminar</button></a>
                   </td>
                	</tr>
 
                	@endforeach
 
                </tbody>
-               
+
 
 
              </table>
@@ -65,28 +65,9 @@
      </div>
    </div>
 
-   <script>
-     $("#nuevo").click(function(event)
-      {
-      document.location.href = "{{ route('Paciente.create')}}";
-       });
-   </script>
+   <script>$("#nuevo").click(function(event){document.location.href = "{{route('Paciente.create')}}";});</script>
 
-   <script>
-     $("#Editar").click(function(event)
-      {
-      document.location.href = "{{route('Paciente.edit',$pa->rut)}}";
-       });
-
-   </script>
-
-   <script>
-     $("#Eliminar").click(function(event)
-      {
-      document.location.href = "{{route('Paciente.show',$pa->rut)}}";
-       });
-
-   </script>
+   
 
 
 @endsection
