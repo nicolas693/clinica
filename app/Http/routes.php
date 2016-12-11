@@ -53,6 +53,7 @@ route::get('access','Alumnos\AlumnosController@access');
 route::get('reports','Alumnos\AlumnosController@reports');
 
 route::resource('Paciente','Pacientes\PacientesController');
+route::resource('Clinica','Clinicas\ClinicasController');
 route::resource('docente','Docente\DocenteController');
 
 Route::get('/test/datepicker', function () {

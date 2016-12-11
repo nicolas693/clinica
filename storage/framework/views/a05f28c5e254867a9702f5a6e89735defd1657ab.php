@@ -104,9 +104,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Escritorio</a></li>
+            <li class="active"><a href="/">Inicio</a></li>
             <li><a href="<?php echo e(route('Paciente.index')); ?>">Pacientes</a></li>
-            <li><a href="clinicas">Clinicas</a></li>
+            <li><a href="<?php echo e(route('Clinica.index')); ?>">Clinicas</a></li>
           </ul>
 
         </div><!--/.nav-collapse -->

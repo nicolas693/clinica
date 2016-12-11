@@ -20,17 +20,14 @@
 
         <div class="panel panel-default">
           <div class="panel-heading">
-             Editar paciente
+             Rut Paciente : <?= $pa->rut ?>
            </div>
           <div class="panel-body">
 
                {!!Form::model($pa,['route'=>['Paciente.update',$pa->rut],'method'=>'PUT'])!!}
 
 
-               <div class="col-sm-12">
-                  {!!form::label('RUT')!!}
-                  {!!form::text('rut',null,['id'=>'rut','class'=>'form-control'])!!}
-             </div>
+
 
               <div class="col-sm-4">
                   {!!form::label('Nombre')!!}

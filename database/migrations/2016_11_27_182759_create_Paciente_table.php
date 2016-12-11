@@ -15,12 +15,12 @@ class CreatePacienteTable extends Migration
         Schema::create('Paciente', function (Blueprint $table) {
             $table->Increments('rut');
 
-            $table->string('Nombre')->length(15);
-            $table->string('Paterno')->length(15);
-            $table->string('Materno')->length(15);
-            $table->Date('Fecha_Ingreso');
-            $table->string('Genero')->length(1);
-            $table->Date('Fecha_Nacimiento');
+            $table->String('Nombre')->length(15);
+            $table->String('Paterno')->length(15);
+            $table->String('Materno')->length(15);
+            $table->String('Fecha_Ingreso')->length(10);
+            $table->String('Genero')->length(1);
+            $table->String('Fecha_Nacimiento')->length(10);
             $table->Integer('Telefono_Casa');
             $table->Integer('Telefono_Movil');
             $table->Integer('Telefono_Oficina');

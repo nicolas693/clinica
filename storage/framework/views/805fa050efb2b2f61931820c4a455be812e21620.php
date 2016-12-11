@@ -1,7 +1,7 @@
 <?php $__env->startSection('title','Paciente Nuevo'); ?>
 
 <?php $__env->startSection('content'); ?>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+
 <ol class="breadcrumb">
 
      <li><a href="<?php echo e(url('Paciente')); ?>"> Pacientes</a></li>
@@ -75,7 +75,6 @@
               <div class="col-sm-12">
                   <?php echo form::label('Fecha Nacimiento'); ?>
 
-                  <?php echo Form::text('date', '', array('id' => 'datepicker','class' => 'form-control')); ?>
 
 
              </div>
@@ -182,11 +181,6 @@
      </div>
    </div>
 
-   <script>
-$(function() {
-$( "#datepicker" ).datepicker();
-});
-</script>
 
 
 

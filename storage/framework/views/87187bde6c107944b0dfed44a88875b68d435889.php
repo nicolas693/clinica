@@ -18,7 +18,7 @@
 
         <div class="panel panel-default">
           <div class="panel-heading">
-             Editar paciente
+             Rut Paciente : <?= $pa->rut ?>
            </div>
           <div class="panel-body">
 
@@ -26,12 +26,7 @@
 
 
 
-               <div class="col-sm-12">
-                  <?php echo form::label('RUT'); ?>
 
-                  <?php echo form::text('rut',null,['id'=>'rut','class'=>'form-control']); ?>
-
-             </div>
 
               <div class="col-sm-4">
                   <?php echo form::label('Nombre'); ?>
