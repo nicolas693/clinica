@@ -47,14 +47,12 @@ Route::get('/home', 'HomeController@index');
 
 route::get('dashboards','DashboardController@index');
 
-
-route::get('alumno','Alumnos\AlumnosController@alumno');
-route::get('access','Alumnos\AlumnosController@access');
-route::get('reports','Alumnos\AlumnosController@reports');
-
 route::resource('Paciente','Pacientes\PacientesController');
 route::resource('Clinica','Clinicas\ClinicasController');
-route::resource('docente','Docente\DocenteController');
+route::resource('Docente','Docente\DocenteController');
+route::resource('Alumno','Alumnos\AlumnosController');
+
+
 
 Route::get('/test/datepicker', function () {
     return view('datepicker');

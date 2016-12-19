@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use clinica\Http\Requests;
 use clinica\Http\Controllers\Controller;
+use clinica\Models\Alumnos\Alumnos;
+use clinica\Models\Docente\Docente;
+use Carbon\Carbon;
 
 class DocenteController extends Controller
 {
@@ -17,6 +20,10 @@ class DocenteController extends Controller
     public function index()
     {
         //
+        return view('Docente/index');
+
+
+
     }
 
     /**
@@ -27,6 +34,9 @@ class DocenteController extends Controller
     public function create()
     {
         //
+        return view('Docente/create');
+
+
     }
 
     /**
@@ -38,6 +48,7 @@ class DocenteController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**

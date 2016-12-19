@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Docente extends Model
 {
-    protected $table= 'Docente';
-    protected $primaryKey= 'id';
-    public $timestamps=false;
+    protected $table = 'Docente';
+    protected $primaryKey = 'id';
+    public $timestamps = false;
 
-    protected $fillable=[
+    protected $fillable = [
       'id','asignatura_id','Nombre_Docente','Telefono_Docente'];
 
         public function asignatura_1(){

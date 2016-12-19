@@ -1,6 +1,4 @@
-@extends('layouts.master')
-
-@section('title','Lista de Alumnos')
+<?php $__env->startSection('title','Lista de Alumnos'); ?>
   <ol class="breadcrumb">
     <li>Lista de alumnos</li>
     <li class="active">Escritorio</li>
@@ -16,7 +14,7 @@
   </div>
 
 
-@endsection
+<?php $__env->stopSection(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -100,9 +98,9 @@
 </html>
 
 
-@section('title','Panel de Control')
+<?php $__env->startSection('title','Panel de Control'); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 
    <ol class="breadcrumb">
      <li>Panel de Control</li>
@@ -122,4 +120,6 @@
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

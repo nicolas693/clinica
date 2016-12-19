@@ -4,7 +4,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-    <title>Clinica @yield('tittle')</title>
+    <title>Clinica <?php echo $__env->yieldContent('tittle'); ?></title>
   </head>
   <body style="background-color: none;" >
       <nav class="navbar navbar-default">
@@ -68,16 +68,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Clinca::@yield('title')::</title>
+    <title>Clinca::<?php echo $__env->yieldContent('title'); ?>::</title>
 
     <!-- Bootstrap -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    {!!Html::style('css/bootstrap.min.css')!!}
-    {!!Html::style('css/navbar-fixed-top.css')!!}
-    {!!Html::script('js/bootstrap.min.js')!!}
+    <?php echo Html::style('css/bootstrap.min.css'); ?>
+
+    <?php echo Html::style('css/navbar-fixed-top.css'); ?>
+
+    <?php echo Html::script('js/bootstrap.min.js'); ?>
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -102,8 +105,8 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="/">Inicio</a></li>
-            <li><a href="{{route('Paciente.index')}}">Pacientes</a></li>
-            <li><a href="{{route('Clinica.index')}}">Clinicas</a></li>
+            <li><a href="<?php echo e(route('Paciente.index')); ?>">Pacientes</a></li>
+            <li><a href="<?php echo e(route('Clinica.index')); ?>">Clinicas</a></li>
 
           </ul>
 
@@ -114,7 +117,7 @@
 
 
     <div class="container">
-      @yield('content')
+      <?php echo $__env->yieldContent('content'); ?>
 
 
     </div> <!-- /container -->
