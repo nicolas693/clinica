@@ -107,6 +107,7 @@
             <li class="active"><a href="/">Inicio</a></li>
             <li><a href="<?php echo e(route('Paciente.index')); ?>">Pacientes</a></li>
             <li><a href="<?php echo e(route('Clinica.index')); ?>">Clinicas</a></li>
+
           </ul>
 
         </div><!--/.nav-collapse -->

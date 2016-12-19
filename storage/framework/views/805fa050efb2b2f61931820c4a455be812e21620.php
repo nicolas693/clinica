@@ -57,7 +57,7 @@
               <div class="col-sm-12">
                   <?php echo form::label('Fecha Ingreso'); ?>
 
-                  <?php echo form::text('Fecha_Ingreso',$date,['id'=>'Fecha_Ingreso','class'=>'form-control']); ?>
+                  <?php echo form::text('Fecha_Ingreso',null,['id'=>'Fecha_Ingreso','class'=>'form-control']); ?>
 
              </div>
 
@@ -66,22 +66,15 @@
 
                   <?php echo form::text('Genero',null,['id'=>'Genero','class'=>'form-control']); ?>
 
-
-
-
              </div>
-
 
               <div class="col-sm-12">
                   <?php echo form::label('Fecha Nacimiento'); ?>
 
+                  <?php echo form::text('Fecha_Nacimiento',null,['id'=>'Fecha_Nacimiento','class'=>'form-control']); ?>
 
 
              </div>
-
-
-
-
 
               <div class="col-sm-4">
                   <?php echo form::label('Telefono Fijo'); ?>

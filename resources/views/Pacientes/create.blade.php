@@ -49,27 +49,19 @@
 
               <div class="col-sm-12">
                   {!!form::label('Fecha Ingreso')!!}
-                  {!!form::text('Fecha_Ingreso',$date,['id'=>'Fecha_Ingreso','class'=>'form-control'])!!}
+                  {!!form::text('Fecha_Ingreso',null,['id'=>'Fecha_Ingreso','class'=>'form-control'])!!}
              </div>
 
              <div class="col-sm-12">
                   {!!form::label('Genero')!!}
                   {!!form::text('Genero',null,['id'=>'Genero','class'=>'form-control'])!!}
-
-
-
              </div>
-
 
               <div class="col-sm-12">
                   {!!form::label('Fecha Nacimiento')!!}
-
+                  {!!form::text('Fecha_Nacimiento',null,['id'=>'Fecha_Nacimiento','class'=>'form-control'])!!}
 
              </div>
-
-
-
-
 
               <div class="col-sm-4">
                   {!!form::label('Telefono Fijo')!!}

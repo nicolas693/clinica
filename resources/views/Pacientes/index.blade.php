@@ -29,6 +29,7 @@
                   <th>Nombre</th>
                   <th>Apellido Paterno</th>
                   <th>Apellido Materno</th>
+                  <th>Clinica</th>
 
 
                   <th>Accion</th>
@@ -41,7 +42,8 @@
                		<td>{{$pa->rut}}</td>
                		<td>{{$pa->Nombre}}</td>
                		<td>{{$pa->Paterno}}</td>
-               		<td>{{$pa->Materno}}</td>
+                  <td>{{$pa->Materno}}</td>
+               		<td>{{$pa->clinica_id}}</td>
 
 
                   <td><a <button  href={{route('Paciente.edit',$pa->rut)}} type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>
@@ -67,7 +69,7 @@
 
    <script>$("#nuevo").click(function(event){document.location.href = "{{route('Paciente.create')}}";});</script>
 
-   
+
 
 
 @endsection

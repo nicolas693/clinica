@@ -25,6 +25,7 @@
                   <th>Nombre</th>
                   <th>Apellido Paterno</th>
                   <th>Apellido Materno</th>
+                  <th>Clinica</th>
 
 
                   <th>Accion</th>
@@ -37,7 +38,8 @@
                		<td><?php echo e($pa->rut); ?></td>
                		<td><?php echo e($pa->Nombre); ?></td>
                		<td><?php echo e($pa->Paterno); ?></td>
-               		<td><?php echo e($pa->Materno); ?></td>
+                  <td><?php echo e($pa->Materno); ?></td>
+               		<td><?php echo e($pa->clinica_id); ?></td>
 
 
                   <td><a <button  href=<?php echo e(route('Paciente.edit',$pa->rut)); ?> type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>
@@ -63,7 +65,7 @@
 
    <script>$("#nuevo").click(function(event){document.location.href = "<?php echo e(route('Paciente.create')); ?>";});</script>
 
-   
+
 
 
 <?php $__env->stopSection(); ?>
