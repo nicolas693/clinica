@@ -24,7 +24,7 @@ class CreatePacienteTable extends Migration
             $table->Integer('Telefono_Casa');
             $table->Integer('Telefono_Movil');
             $table->Integer('Telefono_Oficina');
-            $table->String('Calle')->length(15);
+            $table->String('Calle')->length(25);
             $table->Integer('Numero_Calle');
             $table->String('Pais')->length(15);
             $table->String('Region')->length(15);

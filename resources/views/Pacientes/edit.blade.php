@@ -4,6 +4,8 @@
 
 @section('content')
 
+@include('partials.messages')
+
 <ol class="breadcrumb">
 
      <li><a href="{{url('Paciente')}}"> Pacientes</a></li>
@@ -20,11 +22,17 @@
 
         <div class="panel panel-default">
           <div class="panel-heading">
-             Rut Paciente : <?= $pa->rut ?>
+
            </div>
           <div class="panel-body">
 
                {!!Form::model($pa,['route'=>['Paciente.update',$pa->rut],'method'=>'PUT'])!!}
+
+
+               <div class="col-sm-12">
+                   {!!form::label('Rut')!!}
+                   {!!form::text('rut',null,['id'=>'rut','class'=>'form-control'])!!}
+              </div>
 
 
 
@@ -60,18 +68,7 @@
                   {!!form::text('Fecha_Nacimiento',null,['id'=>'Fecha_Nacimiento','class'=>'form-control'])!!}
              </div>
 
-             <div class="col-sm-12">
-                 {!!form::label('Año')!!}
-                 {!!form::text('Fecha_Nacimiento',null,['id'=>'Fecha_Nacimiento','class'=>'form-control'])!!}
-            </div>
-            <div class="col-sm-12">
-                {!!form::label('Mes')!!}
-                {!!form::text('Fecha_Nacimiento',null,['id'=>'Fecha_Nacimiento','class'=>'form-control'])!!}
-           </div>
-           <div class="col-sm-12">
-               {!!form::label('Dia')!!}
-               {!!form::text('Fecha_Nacimiento',null,['id'=>'Fecha_Nacimiento','class'=>'form-control'])!!}
-          </div>
+
 
 
               <div class="col-sm-4">

@@ -9,7 +9,8 @@ use clinica\Http\Controllers\Controller;
 use clinica\Models\Paciente\Paciente;
 use clinica\Models\Paciente\Clinica;
 use Carbon\Carbon;
-
+use clinica\http\Requests\Paciente\PacienteCreateRequest;
+use clinica\http\Requests\Paciente\PacienteUpdateRequest;
 class PacientesController extends Controller
 {
     public function panel(){
@@ -52,7 +53,7 @@ class PacientesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PacienteCreateRequest $request)
     {
         Paciente::create($request->all());
 
@@ -106,7 +107,7 @@ class PacientesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PacienteUpdateRequest $request, $id)
     {
         $pa= Paciente::find($id);
         $input=$request->all();
