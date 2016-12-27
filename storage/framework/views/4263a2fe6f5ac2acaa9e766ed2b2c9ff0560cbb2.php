@@ -48,6 +48,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="<?php echo e(route('Paciente.index')); ?>">Pacientes</a></li>
+                    <li><a href="<?php echo e(route('Clinica.index')); ?>">Clinicas</a></li>
                     <li><a href="<?php echo e(route('Alumno.index')); ?>">Alumnos</a></li>
                     <li><a href="<?php echo e(route('Docente.index')); ?>">Docentes</a></li>
                 </ul>
@@ -74,11 +75,47 @@
         </div>
     </nav>
 
-    <?php echo $__env->yieldContent('content'); ?>
 
-    <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <?php /* <script src="<?php echo e(elixir('js/app.js')); ?>"></script> */ ?>
 </body>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Clinca::<?php echo $__env->yieldContent('title'); ?>::</title>
+
+    <!-- Bootstrap -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <?php echo Html::style('css/bootstrap.min.css'); ?>
+
+    <?php echo Html::style('css/navbar-fixed-top.css'); ?>
+
+    <?php echo Html::script('js/bootstrap.min.js'); ?>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+
+
+
+    <div class="container">
+      <?php echo $__env->yieldContent('content'); ?>
+
+
+    </div> <!-- /container -->
+    </body>
+
+</html>
 </html>

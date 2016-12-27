@@ -24,45 +24,45 @@
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
+
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::group(['middleware' => ['web']], function () {
     //
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+          Route::auth();
 
-Route::auth();
-
-Route::get('/home', 'HomeController@index');
+          Route::get('/home', 'HomeController@index');
 
 
 
-route::get('dashboards','DashboardController@index');
+          route::get('dashboards','DashboardController@index');
 
-route::resource('Paciente','Pacientes\PacientesController');
-route::resource('Clinica','Clinicas\ClinicasController');
-route::resource('Docente','Docente\DocenteController');
-route::resource('Alumno','Alumnos\AlumnosController');
+          route::resource('Paciente','Pacientes\PacientesController');
+          route::resource('Clinica','Clinicas\ClinicasController');
+          route::resource('Docente','Docente\DocenteController');
+          route::resource('Alumno','Alumnos\AlumnosController');
 
 
 
-Route::get('/test/datepicker', function () {
-    return view('datepicker');
-});
+          Route::get('/test/datepicker', function () {
+              return view('datepicker');
+          });
 
-Route::post('/test/save', ['as' => 'save-date',
-                           'uses' => 'DateController@showDate',
-                            function () {
-                                return '';
-                            }]);
+          Route::post('/test/save', ['as' => 'save-date',
+                                     'uses' => 'DateController@showDate',
+                                      function () {
+                                          return '';
+                                      }]);
 
 });
 

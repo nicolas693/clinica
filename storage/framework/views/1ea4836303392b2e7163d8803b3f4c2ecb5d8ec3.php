@@ -1,8 +1,6 @@
-@extends('layouts.app')
+<?php $__env->startSection('title','Lista de Alumnos'); ?>
 
-@section('title','Lista de Alumnos')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
    <!-- Main component for a primary marketing message or call to action -->
    <div class="page-header" >
@@ -38,4 +36,6 @@
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

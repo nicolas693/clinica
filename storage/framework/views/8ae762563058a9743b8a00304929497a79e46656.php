@@ -1,10 +1,9 @@
-@extends('layouts.app')
-@section('title','Inscribir Alumno')
-@section('content')
+<?php $__env->startSection('title','Inscribir Alumno'); ?>
+<?php $__env->startSection('content'); ?>
 
   <ol class="breadcrumb">
 
-       <li><a href="{{url('Docente')}}"> Docente</a></li>
+       <li><a href="<?php echo e(url('Docente')); ?>"> Docente</a></li>
      </ol>
   <div class="page-header" >
     <h1>Docente<small></small></h1>
@@ -32,8 +31,10 @@
 <script>
   $("#inscribir").click(function(event)
   {
-      document.location.href = "{{route('Alumno.create')}}";
+      document.location.href = "<?php echo e(route('Alumno.create')); ?>";
   });
   </script>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

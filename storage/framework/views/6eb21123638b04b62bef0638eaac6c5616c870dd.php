@@ -14,7 +14,8 @@
           <div class="panel-heading">
              Clinicas
              <p class="navbar-text navbar-right" style=" margin-top: 1px;">
-                <button type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;">Nuevo</button>
+               <a <button href=<?php echo e(route('Clinica.create')); ?> type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Nuevo</button></a>
+              <!--  <button type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;">Nuevo</button>-->
               </p>
            </div>
           <div class="panel-body">
@@ -61,11 +62,11 @@
      </div>
    </div>
 
-   <script>$("#nuevo").click(function(event){document.location.href = "<?php echo e(route('Clinica.create')); ?>";});</script>
+   <!--<script>$("#nuevo").click(function(event){document.location.href = "<?php echo e(route('Clinica.create')); ?>";});</script>-->
 
 
 
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
