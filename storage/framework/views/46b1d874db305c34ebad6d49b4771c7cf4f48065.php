@@ -2,12 +2,10 @@
 
 <?php $__env->startSection('content'); ?>
 
-<?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-
 <ol class="breadcrumb">
 
      <li><a href="<?php echo e(url('Paciente')); ?>"> Pacientes</a></li>
-     <li class="active">Ingresar Nueva Clinica</li>
+     <li class="active">Editar Clinicas Clinica</li>
    </ol>
 
 
@@ -20,43 +18,38 @@
 
         <div class="panel panel-default">
           <div class="panel-heading">
-             Nueva Clinica
+             Codigo Clinica : <?= $cli->id_Clinica ?>
            </div>
           <div class="panel-body">
 
-               <?php echo Form::open(['route'=>'Clinica.store','method'=>'POST']); ?>
+               <?php echo Form::model($cli,['route'=>['Clinica.update',$cli->id_Clinica],'method'=>'PUT']); ?>
 
 
 
-               <div class="col-sm-12">
-                  <?php echo form::label('Codigo'); ?>
 
-                  <?php echo form::text('id_Clinica',null,['id'=>'rut','class'=>'form-control']); ?>
-
-             </div>
 
               <div class="col-sm-4">
                   <?php echo form::label('Nombre'); ?>
 
-                  <?php echo form::text('Nombre_Clinica',null,['id'=>'Nombre','class'=>'form-control']); ?>
+                  <?php echo form::text('Nombre_Clinica',null,['id'=>'Nombre_Clinica','class'=>'form-control']); ?>
 
              </div>
 
              <div class="col-sm-4">
                   <?php echo form::label('Direccion'); ?>
 
-                  <?php echo form::text('Direccion_Clinica',null,['id'=>'Paterno','class'=>'form-control']); ?>
+                  <?php echo form::text('Direccion_Clinica',null,['id'=>'Direccion_Clinica','class'=>'form-control']); ?>
 
              </div>
 
              <div class="col-sm-4">
                   <?php echo form::label('Telefono'); ?>
 
-                  <?php echo form::text('Telefono_Clinica',null,['id'=>'Materno','class'=>'form-control']); ?>
+                  <?php echo form::text('Telefono_Clinica',null,['id'=>'Telefono_Clinica','class'=>'form-control']); ?>
 
              </div>
 
-                 <?php echo form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;']); ?>
+                 <?php echo form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 30px;']); ?>
 
               <?php echo Form::close(); ?>
 

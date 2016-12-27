@@ -8,6 +8,8 @@ use clinica\Http\Requests;
 use clinica\Http\Controllers\Controller;
 use clinica\Models\Paciente\Paciente;
 use clinica\Models\Paciente\Clinica;
+use clinica\http\Requests\Clinica\ClinicaCreateRequest;
+use clinica\http\Requests\Clinica\ClinicaUpdateRequest;
 
 class ClinicasController extends Controller
 {
@@ -16,6 +18,12 @@ class ClinicasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct(){
+         $this->middleware('auth');
+
+     }
+
     public function index()
     {
         $clinica=Clinica::all();
@@ -39,7 +47,7 @@ class ClinicasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ClinicaCreateRequest $request)
     {
       Clinica::create($request->all());
       return redirect()->route('Clinica.index');
@@ -79,7 +87,7 @@ class ClinicasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ClinicaUpdateRequest $request, $id)
     {
       $cli= Clinica::find($id);
       $input=$request->all();

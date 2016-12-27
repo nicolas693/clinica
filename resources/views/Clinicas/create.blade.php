@@ -4,6 +4,8 @@
 
 @section('content')
 
+@include('partials.messages')
+
 <ol class="breadcrumb">
 
      <li><a href="{{url('Paciente')}}"> Pacientes</a></li>
