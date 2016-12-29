@@ -26,6 +26,7 @@
        </div>
     </div>
   </div>
+  
 <script>
   $("#nuevo").click(function(event)
   {

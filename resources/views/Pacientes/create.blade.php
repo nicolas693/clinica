@@ -1,9 +1,6 @@
 @extends('layouts.app')
-
 @section('title','Paciente Nuevo')
-
 @section('content')
-
 @include('partials.messages')
 
 <ol class="breadcrumb">

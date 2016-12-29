@@ -31,9 +31,9 @@ class PacienteCreateRequest extends Request
             'Fecha_Ingreso' =>'required|regex:/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/',
             'Genero' =>'required|regex:/^[MF]$/',
             'Fecha_Nacimiento' =>'required|regex:/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/',
-            'Telefono_Casa' =>'min:7|max:9',
-            'Telefono_Movil' =>'min:7|max:9',
-            'Telefono_Oficina' =>'min:7|max:9',
+            'Telefono_Casa' =>'min:7|max:9|regex:/[0-9]/',
+            'Telefono_Movil' =>'min:7|max:9|regex:/[0-9]/',
+            'Telefono_Oficina' =>'min:7|max:9|regex:/[0-9]/',
             'Calle' =>'required|max:25|regex:/^[a-zA-Z\s]*$/',
             'Numero_Calle' =>'required|max:25',
             'Pais' =>'max:15|regex:/^[a-zA-Z]+$/u',
@@ -41,10 +41,14 @@ class PacienteCreateRequest extends Request
             'Comuna' =>'max:15|regex:/^[a-zA-Z]+$/u',
             'Nacionalidad' =>'required|max:15|regex:/^[a-zA-Z]+$/u',
             'Cobertura_Medica' =>'required|max:15|regex:/^[a-zA-Z]+$/u',
-
-
-
+            'Clinica' => 'required|not_in:0',
 
         ];
+    }
+
+    public function messages{
+      return [
+        'Clinica.not_in'=>'El campo Clinica es obligatorio'
+      ];
     }
 }

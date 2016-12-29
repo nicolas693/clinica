@@ -157,6 +157,7 @@ return [
         clinica\Providers\EventServiceProvider::class,
         clinica\Providers\RouteServiceProvider::class,
 
+
     ],
 
     /*

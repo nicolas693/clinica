@@ -61,7 +61,6 @@ class PacientesController extends Controller
     public function store(PacienteCreateRequest $request)
     {
         Paciente::create($request->all());
-
         return redirect()->route('Paciente.index');
     }
 

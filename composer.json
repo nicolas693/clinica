@@ -11,7 +11,8 @@
         "nesbot/carbon": "^1.21",
         "components/jquery": "^3.1",
         "frameworks/jquery": "^2.1",
-        "twbs/bootstrap": "^3.3"
+        "twbs/bootstrap": "^3.3",
+        "freshwork/chilean-bundle": "2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
