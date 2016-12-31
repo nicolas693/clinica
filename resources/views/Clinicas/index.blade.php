@@ -26,13 +26,13 @@
 
              <table class="table table-bordered">
                <thead>
-                  <th>Codigo</th>
+                  <th>Código</th>
                   <th>Nombre</th>
-                  <th>Direccion</th>
+                  <th>Dirección</th>
                   <th>Telefono</th>
 
 
-                  <th>Accion</th>
+                  <th>Acción</th>
                </thead>
                <tbody>
 

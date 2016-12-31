@@ -15,7 +15,7 @@
 
        <div class="panel panel-default">
          <div class="panel-heading">
-            Menu
+            Menú
             <button type="button" id='inscribir'  name='inscribir' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 5px 20px;margin-left: 40px">Inscribir Alumno</button>
             <button type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 5px 20px;margin-left: 40px">Evaluar Alumno</button>
             <p class="navbar-text navbar-right" style=" margin-top: 1px;">

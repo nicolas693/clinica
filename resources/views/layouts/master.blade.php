@@ -103,7 +103,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="/">Inicio</a></li>
             <li><a href="{{route('Paciente.index')}}">Pacientes</a></li>
-            <li><a href="{{route('Clinica.index')}}">Clinicas</a></li>
+            <li><a href="{{route('Clinica.index')}}">Clínicas</a></li>
 
           </ul>
 

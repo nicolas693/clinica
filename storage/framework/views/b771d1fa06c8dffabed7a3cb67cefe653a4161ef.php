@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Clinica</title>
+    <title>Clínica</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
@@ -40,7 +40,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
-                    Clinica
+                    Clínica
                 </a>
             </div>
 
@@ -57,7 +57,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     <?php if(Auth::guest()): ?>
-                        <li><a href="<?php echo e(url('/login')); ?>">Iniciar sesion</a></li>
+                        <li><a href="<?php echo e(url('/login')); ?>">Iniciar sesión</a></li>
                         <li><a href="<?php echo e(url('/register')); ?>">Registrar</a></li>
                     <?php else: ?>
                         <li class="dropdown">
@@ -66,7 +66,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="<?php echo e(url('/logout')); ?>"><i class="fa fa-btn fa-sign-out"></i>Cerrar Sesion</a></li>
+                                <li><a href="<?php echo e(url('/logout')); ?>"><i class="fa fa-btn fa-sign-out"></i>Cerrar Sesión</a></li>
                             </ul>
                         </li>
                     <?php endif; ?>
@@ -106,7 +106,7 @@
     <![endif]-->
   </head>
   <body>
-    
+
 
 
 
