@@ -47,13 +47,14 @@ Route::group(['middleware' => ['web']], function () {
 
           route::get('dashboards','DashboardController@index');
 
-          route::resource('Paciente','Pacientes\PacientesController');
+
           route::resource('Clinica','Clinicas\ClinicasController');
 
             route::get('Docente/mostrar','Docentes\DocentesController@mostrar');
           route::resource('Docente','Docentes\DocentesController');
-
+route::resource('Paciente','Pacientes\PacientesController');
           route::resource('Alumno','Alumnos\AlumnosController');
+          route::resource('Admin','Admin\AdminController');
 
 
 
@@ -68,5 +69,12 @@ Route::group(['middleware' => ['web']], function () {
                                       }]);
 
 });
+
+//Route::group(['middleware' => 'Alumno'], function () {
+    //
+          //route::resource('Paciente','Pacientes\PacientesController');
+
+//});
+
 
 //route::get('Paciente','Pacientes\PacientesController@index');

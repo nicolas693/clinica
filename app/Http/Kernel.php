@@ -15,7 +15,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
-        
+
 
     ];
 
@@ -51,5 +51,8 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \clinica\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+
+        'Admin'=> \clinica\Http\Middleware\AdminMiddleware::class,
+        'Alumno'=> \clinica\Http\Middleware\AlumnoMiddleware::class,
     ];
 }

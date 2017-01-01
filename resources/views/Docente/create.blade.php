@@ -1,10 +1,10 @@
 @extends('layouts.app')
-@section('title','Inscribir Alumno')
+@section('title','Inscribir Docente')
 @section('content')
 
   <ol class="breadcrumb">
        <li><a href="{{url('Docente')}}"> Docente</a></li>
-       <li class="active">Inscribir Nuevo Alumno</li>
+       <li class="active">Inscribir Nuevo Docente</li>
      </ol>
   <div class="page-header" >
     <h1>Docente<small></small></h1>
@@ -16,21 +16,54 @@
        <div class="panel panel-default">
          <div class="panel-heading">
             Inscribir Alumno
-            <p class="navbar-text navbar-right" style=" margin-top: 1px;">
 
-          </div><button type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 3px 20px;margin-left: 600px">Inscribir</button>
-        </p>
          <div class="panel-body">
+           {!!Form::open(['route'=>'Docente.store','method'=>'POST'])!!}
+
+
+           <div class="col-sm-12">
+              {!!form::label('Rut Docente')!!}
+              {!!form::text('id',null,['id'=>'id','class'=>'form-control'])!!}
 
          </div>
+         <div class="col-sm-4">
+             {!!form::label('Nombre')!!}
+             {!!form::text('Nombre_Docente',null,['id'=>'Nombre_Alumno','class'=>'form-control'])!!}
+        </div>
+
+
+        <div class="col-sm-4">
+             {!!form::label('Teléfono')!!}
+             {!!form::text('Telefono_Docente',null,['id'=>'Telefono_Alumno','class'=>'form-control'])!!}
+        </div>
+
+        <div class="col-sm-5">
+           {!!form::label('Asignatura')!!}
+           {!! Form::select('asignatura_id',$asignatura,null,['id'=>'asignatura_id','class'=>'form-control']) !!}
+        </div>
+
+
+
+      </div>
+          {!!form::submit('Inscribir Alumno',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
+       {!!Form::close()!!}
+    </div>
+
+
+
+         </div>
+
+
+
        </div>
     </div>
   </div>
-  
+</div>
+
 <script>
   $("#nuevo").click(function(event)
   {
-      document.location.href = "{{route('Docente.create')}}";
+      document.location.href = "{{route('Admin.index')}}";
   });
   //Te devuelve a la pagina de docentes donde inscribes alumnos para seguir inscribiendo(aun no terminado)
   </script>

@@ -8,7 +8,8 @@ use clinica\Http\Requests;
 use clinica\Http\Controllers\Controller;
 use clinica\Models\Alumnos\Alumnos;
 use clinica\Models\Docente\Docente;
-use Carbon\Carbon;
+use clinica\Models\Asignatura\Asignatura;
+
 
 class DocentesController extends Controller
 {
@@ -33,8 +34,8 @@ class DocentesController extends Controller
      */
     public function create()
     {
-        //
-        return view('Docente/create');
+        $asignatura =Asignatura::lists('nombre','id');
+        return view('Docente.create')->with('asignatura',$asignatura);
 
 
     }
@@ -47,7 +48,8 @@ class DocentesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      Docente::create($request->all());
+      return redirect()->route('Admin.index');
 
     }
 

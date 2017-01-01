@@ -24,8 +24,6 @@
                   <th>Apellido</th>
                   <th>Asignatura</th>
                   <th>Clinica</th>
-
-
                   <th>Accion</th>
                </thead>
                <tbody>

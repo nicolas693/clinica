@@ -51,6 +51,7 @@
                     <li><a href="{{route('Clinica.index')}}">Clinicas</a></li>
                     <li><a href="{{route('Alumno.index')}}">Alumnos</a></li>
                     <li><a href="{{route('Docente.index')}}">Docentes</a></li>
+                    <li><a href="{{route('Admin.index')}}">Admin</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -66,6 +67,8 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                               <li><a><i class="glyphicon glyphicon-user"></i></i> Mi Perfil</a></li>
+
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Cerrar Sesión</a></li>
                             </ul>
                         </li>

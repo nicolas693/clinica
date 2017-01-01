@@ -51,6 +51,7 @@
                     <li><a href="<?php echo e(route('Clinica.index')); ?>">Clinicas</a></li>
                     <li><a href="<?php echo e(route('Alumno.index')); ?>">Alumnos</a></li>
                     <li><a href="<?php echo e(route('Docente.index')); ?>">Docentes</a></li>
+                    <li><a href="<?php echo e(route('Admin.index')); ?>">Admin</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -66,6 +67,8 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                               <li><a><i class="glyphicon glyphicon-user"></i></i> Mi Perfil</a></li>
+
                                 <li><a href="<?php echo e(url('/logout')); ?>"><i class="fa fa-btn fa-sign-out"></i>Cerrar Sesión</a></li>
                             </ul>
                         </li>

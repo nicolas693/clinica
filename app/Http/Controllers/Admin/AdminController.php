@@ -1,16 +1,14 @@
 <?php
 
-namespace clinica\Http\Controllers\Docentes;
+namespace clinica\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use clinica\Http\Requests;
 use clinica\Http\Controllers\Controller;
-use clinica\Models\Alumnos\Alumnos;
 use clinica\Models\Docente\Docente;
-use Carbon\Carbon;
 
-class DocentesController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,11 +17,7 @@ class DocentesController extends Controller
      */
     public function index()
     {
-        //
-        return view('Docente/index');
-
-
-
+        return view('Admin/index');
     }
 
     /**
@@ -34,9 +28,6 @@ class DocentesController extends Controller
     public function create()
     {
         //
-        return view('Docente/create');
-
-
     }
 
     /**
@@ -48,7 +39,6 @@ class DocentesController extends Controller
     public function store(Request $request)
     {
         //
-
     }
 
     /**
@@ -94,11 +84,5 @@ class DocentesController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function mostrar()
-    {
-      $alumno=Alumnos::all();
-      return view('Docente.mostrar')->with('alumno',$alumno);
     }
 }
