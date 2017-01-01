@@ -49,7 +49,10 @@ Route::group(['middleware' => ['web']], function () {
 
           route::resource('Paciente','Pacientes\PacientesController');
           route::resource('Clinica','Clinicas\ClinicasController');
-          route::resource('Docente','Docente\DocenteController');
+
+            route::get('Docente/mostrar','Docentes\DocentesController@mostrar');
+          route::resource('Docente','Docentes\DocentesController');
+
           route::resource('Alumno','Alumnos\AlumnosController');
 
 

@@ -1,27 +1,28 @@
 <?php
 
-namespace clinica\Http\Controllers\Alumnos;
+namespace clinica\Http\Controllers\Docentes;
 
 use Illuminate\Http\Request;
 
 use clinica\Http\Requests;
 use clinica\Http\Controllers\Controller;
 use clinica\Models\Alumnos\Alumnos;
-use clinica\Models\Paciente\Clinica;
-use clinica\Models\Asignatura\Asignatura;
+use clinica\Models\Docente\Docente;
+use Carbon\Carbon;
 
-
-class AlumnosController extends Controller
+class DocentesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
-        return view('Alumnos/index');
+        //
+        return view('Docente/index');
+
+
 
     }
 
@@ -32,9 +33,9 @@ class AlumnosController extends Controller
      */
     public function create()
     {
-        $asignatura =Asignatura::lists('nombre','id');
-        $clinica = Clinica::lists('Nombre_Clinica','id_Clinica');
-          return view('Alumnos.create')->with('clinica',$clinica)->with('asignatura',$asignatura);
+        //
+        return view('Docente/create');
+
 
     }
 
@@ -46,8 +47,8 @@ class AlumnosController extends Controller
      */
     public function store(Request $request)
     {
-      Alumnos::create($request->all());
-      return redirect()->route('Docente.index');
+        //
+
     }
 
     /**
@@ -59,8 +60,6 @@ class AlumnosController extends Controller
     public function show($id)
     {
         //
-
-
     }
 
     /**
@@ -95,5 +94,11 @@ class AlumnosController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function mostrar()
+    {
+      $alumno=Alumnos::all();
+      return view('Docente/mostrar')->with('alumno',$alumno);
     }
 }

@@ -68,14 +68,10 @@ class PacienteCreateRequest extends Request
             'Comuna' =>'max:15|regex:/^[a-zA-Z]+$/u',
             'Nacionalidad' =>'required|max:15|regex:/^[a-zA-Z]+$/u',
             'Cobertura_Medica' =>'required|max:15|regex:/^[a-zA-Z]+$/u',
-            'Clinica' => 'required|not_in:0',
+            
 
         ];
     }
 
-    public function messages{
-      return [
-        'Clinica.not_in'=>'El campo Clinica es obligatorio'
-      ];
-    }
+
 }

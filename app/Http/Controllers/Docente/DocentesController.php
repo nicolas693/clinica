@@ -1,6 +1,6 @@
 <?php
 
-namespace clinica\Http\Controllers\Docente;
+namespace clinica\Http\Controllers\Docentes;
 
 use Illuminate\Http\Request;
 
@@ -10,7 +10,7 @@ use clinica\Models\Alumnos\Alumnos;
 use clinica\Models\Docente\Docente;
 use Carbon\Carbon;
 
-class DocenteController extends Controller
+class DocentesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -94,5 +94,11 @@ class DocenteController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function mostrar()
+    {
+      $alumno=Alumnos::all();
+      return view('Docente.mostrar')->with('alumno',$alumno);
     }
 }

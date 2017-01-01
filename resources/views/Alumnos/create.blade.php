@@ -16,44 +16,50 @@
        <div class="panel panel-default">
          <div class="panel-heading">
             Inscribir Alumno
-            <p class="navbar-text navbar-right" style=" margin-top: 1px;">
 
-          </div><button type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 3px 20px;margin-left: 600px">Inscribir</button>
-        </p>
          <div class="panel-body">
 
-           {!!Form::open(['route'=>'Alumnos.store','method'=>'POST'])!!}
+           {!!Form::open(['route'=>'Alumno.store','method'=>'POST'])!!}
 
 
            <div class="col-sm-12">
               {!!form::label('Rut Alumno')!!}
-              {!!form::text('Rut Alumno',null,['id'=>'rut_alumno','class'=>'form-control'])!!}
+              {!!form::text('rut_alumno',null,['id'=>'rut_alumno','class'=>'form-control'])!!}
 
          </div>
          <div class="col-sm-4">
              {!!form::label('Nombre')!!}
-             {!!form::text('Nombre',null,['id'=>'Nombre_Alumno','class'=>'form-control'])!!}
+             {!!form::text('Nombre_Alumno',null,['id'=>'Nombre_Alumno','class'=>'form-control'])!!}
         </div>
         <div class="col-sm-4">
              {!!form::label('Apellido ')!!}
-             {!!form::text('Apellido Paterno',null,['id'=>'Apellido_Alumno','class'=>'form-control'])!!}
-        </div>
-        <div class="col-sm-4">
-             {!!form::label('Teléfono')!!}
-             {!!form::text('Teléfono',null,['id'=>'Telefono_Alumno','class'=>'form-control'])!!}
+             {!!form::text('Apellido_Alumno',null,['id'=>'Apellido_Alumno','class'=>'form-control'])!!}
         </div>
 
+        <div class="col-sm-4">
+             {!!form::label('Teléfono')!!}
+             {!!form::text('Telefono_Alumno',null,['id'=>'Telefono_Alumno','class'=>'form-control'])!!}
+        </div>
+
+        <div class="col-sm-5">
+           {!!form::label('Asignatura')!!}
+           {!! Form::select('asignatura_id',$asignatura,null,['id'=>'asignatura_id','class'=>'form-control']) !!}
+        </div>
+
+        <div class="col-sm-5">
+           {!!form::label('Clinica')!!}
+           {!! Form::select('id_Clinica',$clinica,null,['id'=>'id_Clinica','class'=>'form-control']) !!}
+        </div>
+
+      </div>
+          {!!form::submit('Inscribir Alumno',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
+       {!!Form::close()!!}
+    </div>
 
          </div>
        </div>
     </div>
   </div>
 
-<script>
-  $("#nuevo").click(function(event)
-  {
-      document.location.href = "{{route('Docente.create')}}";
-  });
-  </script>
 
 @endsection
