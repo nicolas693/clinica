@@ -9,6 +9,8 @@ use clinica\Http\Controllers\Controller;
 use clinica\Models\Alumnos\Alumnos;
 use clinica\Models\Paciente\Clinica;
 use clinica\Models\Asignatura\Asignatura;
+use clinica\Models\Paciente\Paciente;
+
 
 
 class AlumnosController extends Controller
@@ -21,7 +23,8 @@ class AlumnosController extends Controller
 
     public function index()
     {
-        return view('Alumnos/index');
+      $clinica=Clinica::all();
+      return view('Alumnos/index')->with('clinica',$clinica);
 
     }
 
@@ -95,5 +98,12 @@ class AlumnosController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function mostrar($id)
+    {
+      $paciente=Paciente::all();
+      return view('Alumnos.mostrar')->with('paciente',$paciente)->with('id',$id);
+
     }
 }

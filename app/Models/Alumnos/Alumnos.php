@@ -12,7 +12,7 @@ class Alumnos extends Model
     public    $timestamps = false;
 
     protected $fillable   = [
-        'id_alumno','rut_alumno','asignatura_id','Nombre_Alumno','Apellido_Alumno','Telefono_Alumno','id_Clinica'
+        'rut_alumno','asignatura_id','Nombre_Alumno','Apellido_Alumno','Telefono_Alumno','id_Clinica'
     ];
 
     public function Clinica()
@@ -22,5 +22,9 @@ class Alumnos extends Model
     public function asignatura_1()
     {
         return $this->hasmany(Asignatura::class);
+    }
+
+    public function Paciente (){
+    	return $this->hasmany(Paciente::class);
     }
 }

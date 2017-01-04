@@ -16,7 +16,7 @@ class AlumnoMiddleware
      public function handle($request, Closure $next)
      {
        $user=Auth::user();
-       if(Auth::attempt() && $user->idrol == 3){
+       if(Auth::check() && $user->idrol == 3){
          return $next($request);
        }
        return "insuficientes permisos" ;

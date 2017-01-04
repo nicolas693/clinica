@@ -126,6 +126,11 @@
                   {!!form::text('Cobertura_Medica',null,['id'=>'Cobertura_Medica','class'=>'form-control'])!!}
              </div>
 
+             <div class="col-sm-12">
+                 {!!form::label('Alumno ')!!}
+                 {!!form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control'])!!}
+            </div>
+
 
              <div class="col-sm-5">
 

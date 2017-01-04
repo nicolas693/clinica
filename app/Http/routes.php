@@ -52,7 +52,12 @@ Route::group(['middleware' => ['web']], function () {
 
             route::get('Docente/mostrar','Docentes\DocentesController@mostrar');
           route::resource('Docente','Docentes\DocentesController');
-route::resource('Paciente','Pacientes\PacientesController');
+
+
+          route::resource('Paciente','Pacientes\PacientesController');
+
+
+            route::get('Alumno/mostrar/{id}','Alumnos\AlumnosController@mostrar');
           route::resource('Alumno','Alumnos\AlumnosController');
           route::resource('Admin','Admin\AdminController');
 
@@ -70,11 +75,6 @@ route::resource('Paciente','Pacientes\PacientesController');
 
 });
 
-//Route::group(['middleware' => 'Alumno'], function () {
-    //
-          //route::resource('Paciente','Pacientes\PacientesController');
-
-//});
 
 
 //route::get('Paciente','Pacientes\PacientesController@index');

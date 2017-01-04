@@ -8,14 +8,15 @@ use clinica\Http\Requests;
 use clinica\Http\Controllers\Controller;
 use clinica\Models\Paciente\Paciente;
 use clinica\Models\Paciente\Clinica;
+use clinica\Models\Alumnos\Alumnos;
 use Carbon\Carbon;
 use clinica\http\Requests\Paciente\PacienteCreateRequest;
 use clinica\http\Requests\Paciente\PacienteUpdateRequest;
 class PacientesController extends Controller
 {
 
-  //  public function __construct(){
-      //  $this->middleware('auth');
+    //public function __construct(){
+    //  $this->middleware('auth');
 
   //  }
     public function panel(){
@@ -49,6 +50,7 @@ class PacientesController extends Controller
     {
         $date = Carbon::now();
         $paciente = Clinica::lists('Nombre_Clinica','id_Clinica');
+        //$alumno = Alumnos::lists('Nombre_Alumno','rut_alumno');
         return view('Pacientes.create')->with('paciente',$paciente);
     }
 

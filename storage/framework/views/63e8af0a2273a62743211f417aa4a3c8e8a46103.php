@@ -151,6 +151,13 @@
 
              </div>
 
+             <div class="col-sm-12">
+                 <?php echo form::label('Alumno '); ?>
+
+                 <?php echo form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control']); ?>
+
+            </div>
+
 
              <div class="col-sm-5">
 
