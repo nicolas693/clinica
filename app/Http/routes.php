@@ -29,9 +29,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::group(['middleware' => ['web']], function () {
     //
@@ -59,21 +57,16 @@ Route::group(['middleware' => ['web']], function () {
 
             route::get('Alumno/mostrar/{id}','Alumnos\AlumnosController@mostrar');
           route::resource('Alumno','Alumnos\AlumnosController');
+          route::resource('User','User\UserController');
           route::resource('Admin','Admin\AdminController');
 
 
 
-          Route::get('/test/datepicker', function () {
-              return view('datepicker');
-          });
 
-          Route::post('/test/save', ['as' => 'save-date',
-                                     'uses' => 'DateController@showDate',
-                                      function () {
-                                          return '';
-                                      }]);
 
 });
+
+
 
 
 
