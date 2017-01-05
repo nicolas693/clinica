@@ -60,6 +60,7 @@ Route::group(['middleware' => ['web']], function () {
             route::get('Alumno/mostrar/{id}','Alumnos\AlumnosController@mostrar');
           route::resource('Alumno','Alumnos\AlumnosController');
           route::resource('Admin','Admin\AdminController');
+          route::resource('Ficha','Ficha\FichaController');
 
 
 

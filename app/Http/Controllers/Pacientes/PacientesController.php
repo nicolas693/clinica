@@ -49,8 +49,7 @@ class PacientesController extends Controller
     public function create()
     {
         $date = Carbon::now();
-        $paciente = Clinica::lists('Nombre_Clinica','id_Clinica');
-        //$alumno = Alumnos::lists('Nombre_Alumno','rut_alumno');
+        $paciente = Clinica::lists('Nombre_Clinica','id_Clinica','rut_alumno');
         return view('Pacientes.create')->with('paciente',$paciente);
     }
 

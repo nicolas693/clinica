@@ -35,19 +35,25 @@
 
                	<?php foreach($paciente as $pa): ?>
 
-               	<tr>
-               		<td><?php echo e($pa->rut); ?></td>
-               		<td><?php echo e($pa->Nombre); ?></td>
-               		<td><?php echo e($pa->Paterno); ?></td>
-                  <td><?php echo e($pa->Materno); ?></td>
-               		<td><?php echo e($pa->clinica_id); ?></td>
+               	  <?php if($pa->clinica_id == $id ): ?>
+                  <tr>
+                    <td><?php echo e($pa->rut); ?></td>
+                    <td><?php echo e($pa->Nombre); ?></td>
+                    <td><?php echo e($pa->Paterno); ?></td>
+                    <td><?php echo e($pa->Materno); ?></td>
+                    <td><?php echo e($pa->clinica_id); ?></td>
 
 
-                  <td><a <button href=<?php echo e(route('Paciente.edit',$pa->rut)); ?> type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>
-                      <a <button href=<?php echo e(route('Paciente.show',$pa->rut)); ?> type="button" id= 'Eliminar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-danger" style ="margin-left: 20px">Eliminar</button></a>
-                      <a <button href=<?php echo e(route('Paciente.show',$pa->rut)); ?> type="button" id= 'Ver_Ficha' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-danger" style ="margin-left: 200px; margin-top: 1px ">Ver Ficha</button></a>
-                  </td>
-               	</tr>
+                    <td>
+                        <div class="btn-group btn-group-justified">
+                              <a href="#" class="btn btn-primary">Ver ficha</a>
+                             <a href=<?php echo e(route('Paciente.edit',$pa->rut)); ?> class="btn btn-primary btn-success" style=""background-color:green;">Editar</a>
+
+                             <a href=<?php echo e(route('Paciente.show',$pa->rut)); ?> class="btn btn-primary btn-danger">Dar de alta</a>
+                        </div>
+                    </td>
+                  </tr>
+                  <?php endif; ?>
 
                	<?php endforeach; ?>
 

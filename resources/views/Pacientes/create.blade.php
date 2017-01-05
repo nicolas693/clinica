@@ -119,7 +119,7 @@
 
              <div class="col-sm-12">
                  {!!form::label('Alumno ')!!}
-                 {!!form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control'])!!}
+                 {!!form::text('alumno_id',null,['id'=>'rut_alumno','class'=>'form-control'])!!}
             </div>
 
 

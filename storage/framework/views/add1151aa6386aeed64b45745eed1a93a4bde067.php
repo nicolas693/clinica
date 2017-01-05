@@ -1,7 +1,5 @@
 <?php $__env->startSection('title','Paciente Nuevo'); ?>
-
 <?php $__env->startSection('content'); ?>
-
 <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <ol class="breadcrumb">
@@ -152,6 +150,13 @@
                   <?php echo form::text('Cobertura_Medica',null,['id'=>'Cobertura_Medica','class'=>'form-control']); ?>
 
              </div>
+
+             <div class="col-sm-12">
+                 <?php echo form::label('Alumno '); ?>
+
+                 <?php echo form::text('alumno_id',null,['id'=>'rut_alumno','class'=>'form-control']); ?>
+
+            </div>
 
 
              <div class="col-sm-5">

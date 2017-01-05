@@ -13,12 +13,12 @@ class Ficha extends Model
     public $timestamps=false;
 
     protected $fillable=[
-    	'id_Ficha','id_Paciente'
+    	'id_Ficha','id_Paciente','id_Alumno'
     ];
 
     public function Paciente (){
 
-    	
+
     	return $this->belongsto(Paciente::class);
 
     }
