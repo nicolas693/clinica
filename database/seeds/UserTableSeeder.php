@@ -16,7 +16,7 @@ class UserTableSeeder extends Seeder
         'id'=>1,
         'name'=>'Admin',
         'email'=>'Admin@admin.com',
-        'password'=>bcrypt('admin123'),
+        'password'=>Hash::make('admin123'),
         'idrol'=>1,
       ]);
       $User->save();
@@ -25,7 +25,7 @@ class UserTableSeeder extends Seeder
         'id'=>2,
         'name'=>'Docente',
         'email'=>'docente@docente.com',
-        'password'=>bcrypt('docente123'),
+        'password'=>Hash::make('docente123'),
         'idrol'=>2,
       ]);
       $User->save();
@@ -34,7 +34,7 @@ class UserTableSeeder extends Seeder
         'id'=>3,
         'name'=>'Alumno',
         'email'=>'alumno@alumno.com',
-        'password'=>bcrypt('alumno123'),
+        'password'=>Hash::make('alumno123'),
         'idrol'=>3,
       ]);
       $User->save();
@@ -43,7 +43,7 @@ class UserTableSeeder extends Seeder
         'id'=>4,
         'name'=>'Invitado',
         'email'=>'invitado@invitado.com',
-        'password'=>bcrypt('invitado123'),
+        'password'=>Hash::make('invitado123'),
         'idrol'=>4,
       ]);
       $User->save();

@@ -15,10 +15,10 @@ use clinica\http\Requests\Paciente\PacienteUpdateRequest;
 class PacientesController extends Controller
 {
 
-    //public function __construct(){
+  //  public function __construct(){
     //  $this->middleware('auth');
 
-  //  }
+   //}
     public function panel(){
         return view ('Pacientes/panel');
     }
