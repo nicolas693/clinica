@@ -59,7 +59,7 @@ Route::group(['middleware' => ['auth','Docente']], function(){
 Route::group(['middleware' => ['auth','Alumno']], function(){
 route::get('Alumno/mostrar/{id}','Alumnos\AlumnosController@mostrar');
  route::get('/Alumno','Alumnos\AlumnosController@index');
- route::resource('Alumno','Alumnos\AlumnosController');
+ route::get('/Ficha/shoe','Ficha\FichaController@show');
  route::resource('Paciente','Pacientes\PacientesController');
 });
 

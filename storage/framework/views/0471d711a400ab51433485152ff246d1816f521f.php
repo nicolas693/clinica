@@ -1,16 +1,18 @@
-<?php $__env->startSection('title','Paciente Nuevo'); ?>
+<?php $__env->startSection('title','Editar Paciente'); ?>
+
 <?php $__env->startSection('content'); ?>
+
 <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <ol class="breadcrumb">
 
      <li><a href="<?php echo e(url('Paciente')); ?>"> Pacientes</a></li>
-     <li class="active">Ingresar Nuevo Paciente</li>
+     <li class="active">Editar paciente</li>
    </ol>
 
 
    <div class="page-header">
-     <h1>Paciente Nuevo </h1>
+     <h1>Editar datos paciente </h1>
    </div>
 
    <div class="row">
@@ -18,20 +20,23 @@
 
         <div class="panel panel-default">
           <div class="panel-heading">
-             Nuevo Cliente
+
            </div>
           <div class="panel-body">
 
-               <?php echo Form::open(['route'=>'Paciente.store','method'=>'POST']); ?>
+               <?php echo Form::model($pa,['route'=>['Paciente.update',$pa->rut],'method'=>'PUT']); ?>
 
 
 
                <div class="col-sm-12">
-                  <?php echo form::label('RUT'); ?>
+                   <?php echo form::label('Rut'); ?>
 
-                  <?php echo form::text('rut',null,['id'=>'rut','class'=>'form-control']); ?>
+                   <?php echo form::text('rut',null,['id'=>'rut','class'=>'form-control']); ?>
 
-             </div>
+              </div>
+
+
+
 
               <div class="col-sm-4">
                   <?php echo form::label('Nombre'); ?>
@@ -61,20 +66,23 @@
 
              </div>
 
-             <div class="col-sm-5">
+             <div class="col-sm-12">
                   <?php echo form::label('Genero'); ?>
 
-                  <?php echo Form::text('Genero',null,['id'=>'Genero','class'=>'form-control']); ?>
+                  <?php echo form::text('Genero',null,['id'=>'Genero','class'=>'form-control']); ?>
 
              </div>
+
 
               <div class="col-sm-12">
                   <?php echo form::label('Fecha Nacimiento'); ?>
 
                   <?php echo form::text('Fecha_Nacimiento',null,['id'=>'Fecha_Nacimiento','class'=>'form-control']); ?>
 
-
              </div>
+
+
+
 
               <div class="col-sm-4">
                   <?php echo form::label('Telefono Fijo'); ?>
@@ -121,7 +129,7 @@
              </div>
 
               <div class="col-sm-4">
-                  <?php echo form::label('Región'); ?>
+                  <?php echo form::label('Region'); ?>
 
                   <?php echo form::text('Region',null,['id'=>'Region','class'=>'form-control']); ?>
 
@@ -154,7 +162,7 @@
              <div class="col-sm-12">
                  <?php echo form::label('Alumno '); ?>
 
-                 <?php echo form::text('alumno_id',null,['id'=>'rut_alumno','class'=>'form-control']); ?>
+                 <?php echo form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control']); ?>
 
             </div>
 
@@ -164,7 +172,7 @@
                 <?php echo form::label('Clinica'); ?>
 
 
-                <?php echo Form::select('clinica_id',$paciente,null,['id'=>'id_Clinica','class'=>'form-control']); ?>
+                <?php echo Form::select('id_Clinica',$clinica,null,['id'=>'id_Clinica','class'=>'form-control']); ?>
 
 
 
@@ -180,9 +188,6 @@
 
      </div>
    </div>
-
-
-
 
 
 

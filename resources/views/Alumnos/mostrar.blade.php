@@ -33,7 +33,7 @@
                   <th>Clinica</th>
 
 
-                  <th>Accion</th>
+                  <th>Acción</th>
                </thead>
                <tbody>
 
@@ -49,11 +49,23 @@
 
 
                     <td>
-                        <div class="btn-group btn-group-justified">
+                        <!--<div class="btn-group btn-group-justified">
                               <a href="#" class="btn btn-primary">Ver ficha</a>
-                             <a href={{route('Paciente.edit',$pa->rut)}} class="btn btn-primary btn-success" style=""background-color:green;">Editar</a>
+                             <a href={{route('Paciente.edit',$pa->rut)}} class="btn btn-primary btn-success" style="background-color:green;">Editar</a>
 
                              <a href={{route('Paciente.show',$pa->rut)}} class="btn btn-primary btn-danger">Dar de alta</a>
+                        </div>-->
+
+                        <div class="btn-group">
+                           <button type="button" class="btn btn-default glyphicon glyphicon-th-list"></button>
+                           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                             <span class="caret"></span>
+                           </button>
+                           <ul class="dropdown-menu" role="menu">
+                             <li><a href="#">Ver Ficha</a></li>
+                             <li><a href="#">Editar</a></li>
+                             <li><a href="#">Dar de Baja</a></li>
+                           </ul>
                         </div>
                     </td>
                   </tr>

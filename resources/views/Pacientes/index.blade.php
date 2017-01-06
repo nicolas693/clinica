@@ -49,7 +49,7 @@
 
                   <td><a <button href={{route('Paciente.edit',$pa->rut)}} type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>
                       <a <button href={{route('Paciente.show',$pa->rut)}} type="button" id= 'Eliminar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-danger" style ="margin-left: 20px">Eliminar</button></a>
-                      <a <button href={{route('Ficha.show',$pa->rut)}} type="button" id= 'Ver_Ficha' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-danger" style ="margin-left: 200px; margin-top: 1px ">Ver Ficha</button></a>
+                      <!--<a <button href={{route('Ficha.show',$pa->rut)}} type="button" id= 'Ver_Ficha' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-danger" style ="margin-left: 200px; margin-top: 1px ">Ver Ficha</button></a>-->
                   </td>
                	</tr>
 

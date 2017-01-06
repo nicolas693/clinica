@@ -51,9 +51,9 @@
                   {!!form::text('Fecha_Ingreso',null,['id'=>'Fecha_Ingreso','class'=>'form-control'])!!}
              </div>
 
-             <div class="col-sm-12">
+             <div class="col-sm-5">
                   {!!form::label('Genero')!!}
-                  {!!form::text('Genero',null,['id'=>'Genero','class'=>'form-control'])!!}
+                  {!! Form::text('Genero',null,['id'=>'Genero','class'=>'form-control']) !!}
              </div>
 
               <div class="col-sm-12">
@@ -95,7 +95,7 @@
              </div>
 
               <div class="col-sm-4">
-                  {!!form::label('Region')!!}
+                  {!!form::label('Región')!!}
                   {!!form::text('Region',null,['id'=>'Region','class'=>'form-control'])!!}
              </div>
 

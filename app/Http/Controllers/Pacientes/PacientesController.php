@@ -61,8 +61,14 @@ class PacientesController extends Controller
      */
     public function store(PacienteCreateRequest $request)
     {
+      //['alumno_id']= 1;
+      //$request['clinica_id']= 1;
+
+
+        //dd($request->all());
         Paciente::create($request->all());
-        return redirect()->route('Paciente.index');
+        $id=$request->clinica_id;
+        return redirect('/Alumno/mostrar/'.$id);
     }
 
     /**
