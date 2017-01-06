@@ -154,7 +154,7 @@
              <div class="col-sm-12">
                  <?php echo form::label('Alumno '); ?>
 
-                 <?php echo form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control']); ?>
+                 <?php echo form::text('alumno_id',null,['id'=>'rut_alumno','class'=>'form-control']); ?>
 
             </div>
 

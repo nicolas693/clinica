@@ -1,5 +1,4 @@
 <?php $__env->startSection('title','Lista de Pacientes'); ?>
-
 <?php $__env->startSection('content'); ?>
 
    <!-- Main component for a primary marketing message or call to action -->
@@ -13,7 +12,7 @@
         <div class="panel panel-default " >
           <div class="panel-heading">
              Lista
-            
+
            </div>
           <div class="panel-body " >
 

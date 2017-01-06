@@ -21,7 +21,7 @@ class DocentesController extends Controller
     public function index()
     {
         //
-        return view('Docente/index');
+        return view('Docente.index');
 
 
 

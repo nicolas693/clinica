@@ -47,12 +47,12 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
+                  <li><a href="{{ url('/Admin') }}">Admin</a></li>
+                  <li><a href="{{ url('/Docente') }}">Docente</a></li>
+                  <li><a href="{{ url('/Alumno') }}">Alumno</a></li>
 
-                  <li><a href="{{route('Paciente.index')}}">Pacientes</a></li>
-                    <li><a href="{{route('Clinica.index')}}">Clinicas</a></li>
-                    <li><a href="{{route('Alumno.index')}}">Alumnos</a></li>
-                    <li><a href="{{route('Docente.index')}}">Docentes</a></li>
-                    <li><a href="{{route('Admin.index')}}">Admin</a></li>
+
+
 
                 </ul>
 

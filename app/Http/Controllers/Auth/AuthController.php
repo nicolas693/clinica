@@ -8,6 +8,7 @@ use clinica\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use clinica\roluser;
+use Auth;
 
 class AuthController extends Controller
 {
@@ -29,6 +30,8 @@ class AuthController extends Controller
      *
      * @var string
      */
+
+
     protected $redirectTo = '/home';
 
     /**
@@ -77,6 +80,26 @@ class AuthController extends Controller
             'idrol' => $permi,
 
         ]);
+    }
+
+    protected function authenticated($request, $user)
+    {
+        if($user->idrol === 1) {
+            return redirect()->intended('/Admin');
+        }
+
+        if($user->idrol === 2) {
+            return redirect()->intended('/Docente');
+        }
+
+        if($user->idrol === 3) {
+            return redirect()->intended('/Alumno');
+        }
+
+        if($user->idrol === 4) {
+            return redirect()->intended('/Home');
+        }
+
     }
 
 

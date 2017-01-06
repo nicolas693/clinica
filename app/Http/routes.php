@@ -28,44 +28,42 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::auth();
 
-
-
-Route::group(['middleware' => ['web']], function () {
-    //
-
-
-
-
-          Route::auth();
-
-          Route::get('/home', 'HomeController@index');
-
-
-
-          route::get('dashboards','DashboardController@index');
-
-
-          route::resource('Clinica','Clinicas\ClinicasController');
-
-            route::get('Docente/mostrar','Docentes\DocentesController@mostrar');
-          route::resource('Docente','Docentes\DocentesController');
-
-
-          route::resource('Paciente','Pacientes\PacientesController');
-
-
-            route::get('Alumno/mostrar/{id}','Alumnos\AlumnosController@mostrar');
-          route::resource('Alumno','Alumnos\AlumnosController');
-          route::resource('User','User\UserController');
-          route::resource('Admin','Admin\AdminController');
-          route::resource('Ficha','Ficha\FichaController');
+Route::get('/home', 'HomeController@index');
+Route::resource('User','User\UserController');
 
 
 
 
+
+Route::group(['middleware' => ['auth','Admin']], function(){
+
+
+  route::get('/Admin','Admin\AdminController@index');
+  route::resource('Admin','Admin\AdminController');
+  route::get('/Docente/create','Docentes\DocentesController@create');
+   route::resource('Docente','Docentes\DocentesController');
 
 });
+
+Route::group(['middleware' => ['auth','Docente']], function(){
+
+   route::get('/Docente','Docentes\DocentesController@index');
+   route::resource('Docente','Docentes\DocentesController');
+
+   route::resource('Alumno','Alumnos\AlumnosController');
+});
+
+
+Route::group(['middleware' => ['auth','Alumno']], function(){
+route::get('Alumno/mostrar/{id}','Alumnos\AlumnosController@mostrar');
+ route::get('/Alumno','Alumnos\AlumnosController@index');
+ route::resource('Alumno','Alumnos\AlumnosController');
+ route::resource('Paciente','Pacientes\PacientesController');
+});
+
+
 
 
 

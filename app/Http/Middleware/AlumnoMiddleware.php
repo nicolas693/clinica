@@ -16,15 +16,11 @@ class AlumnoMiddleware
      public function handle($request, Closure $next)
      {
 
-
-       if(Auth::attempt()){
-
-         $user=Auth::user();
-         if(Auth::check() && $user->idrol == 3){
-           return $next($request);
-         }
-         return "insuficientes permisos" ;
-
+       if(Auth::user()->idrol==3){
+         return $next($request);
+       }
+       else{
+         return abort(403);
        }
      }
 }

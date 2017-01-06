@@ -5,7 +5,7 @@ namespace clinica\Http\Middleware;
 use Closure;
 use Auth;
 
-class DocenteMiddleware
+class Admin
 {
     /**
      * Handle an incoming request.
@@ -16,12 +16,13 @@ class DocenteMiddleware
      */
     public function handle($request, Closure $next)
     {
-      if(Auth::user()->idrol==2){
-        return $next($request);
-      }
-      else{
-        return abort(403);
-      }
+        $usuario=Auth::user();
+        if($usuario->idrol==1){
+          return $next($request);
+
+        }else{
+          return view("No tienes permisos suficientes");
+        }
 
     }
 }

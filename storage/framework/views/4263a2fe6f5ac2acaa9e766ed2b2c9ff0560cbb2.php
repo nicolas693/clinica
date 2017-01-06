@@ -47,12 +47,12 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
+                  <li><a href="<?php echo e(url('/Admin')); ?>">Admin</a></li>
+                  <li><a href="<?php echo e(url('/Docente')); ?>">Docente</a></li>
+                  <li><a href="<?php echo e(url('/Alumno')); ?>">Alumno</a></li>
 
-                  <li><a href="<?php echo e(route('Paciente.index')); ?>">Pacientes</a></li>
-                    <li><a href="<?php echo e(route('Clinica.index')); ?>">Clinicas</a></li>
-                    <li><a href="<?php echo e(route('Alumno.index')); ?>">Alumnos</a></li>
-                    <li><a href="<?php echo e(route('Docente.index')); ?>">Docentes</a></li>
-                    <li><a href="<?php echo e(route('Admin.index')); ?>">Admin</a></li>
+
+
 
                 </ul>
 

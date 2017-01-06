@@ -23,6 +23,7 @@ class AlumnosController extends Controller
 
     public function index()
     {
+
       $clinica=Clinica::all();
       return view('Alumnos/index')->with('clinica',$clinica);
 

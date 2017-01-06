@@ -26,7 +26,7 @@
 <script>
   $("#inscribir").click(function(event)
   {
-      document.location.href = "<?php echo e(route('Docente.create')); ?>";
+      document.location.href = "<?php echo e(url('Docente/create')); ?>";
   });
   </script>
 

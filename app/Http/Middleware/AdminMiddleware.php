@@ -15,11 +15,12 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $usuario=Auth::user();
-        if($usuario->idrol!=1){
-          return "Insuficientes Permisos"
-
+        if(Auth::user()->idrol==1){
+          return $next($request);
         }
-        return $next($request);
+        else{
+          return abort(403);
+        }
+
     }
 }

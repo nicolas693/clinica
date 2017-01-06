@@ -27,7 +27,7 @@
 <script>
   $("#inscribir").click(function(event)
   {
-      document.location.href = "{{route('Docente.create')}}";
+      document.location.href = "{{ url('Docente/create') }}";
   });
   </script>
 
