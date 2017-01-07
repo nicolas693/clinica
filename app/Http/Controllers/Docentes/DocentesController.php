@@ -49,7 +49,7 @@ class DocentesController extends Controller
     public function store(Request $request)
     {
       Docente::create($request->all());
-      return redirect()->route('Admin.index');
+      return redirect('/Admin');
 
     }
 

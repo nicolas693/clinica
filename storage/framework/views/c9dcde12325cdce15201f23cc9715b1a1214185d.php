@@ -1,10 +1,6 @@
-@extends('layouts.app')
+<?php $__env->startSection('title','Alumnos'); ?>
 
-
-
-@section('title','Alumnos')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
    <!-- Main component for a primary marketing message or call to action -->
    <div class="page-header "  >
@@ -32,21 +28,21 @@
                </thead>
                <tbody>
 
-               	@foreach($alumno as $al)
+               	<?php foreach($alumno as $al): ?>
 
                	<tr>
-               		<td>{{$al->rut_alumno}}</td>
-               		<td>{{$al->Nombre_Alumno}}</td>
-               		<td>{{$al->Apellido_Alumno}}</td>
-                  <td>{{$al->asignatura_id}}</td>
-                  <td>{{$al->id_Clinica}}</td>
+               		<td><?php echo e($al->rut_alumno); ?></td>
+               		<td><?php echo e($al->Nombre_Alumno); ?></td>
+               		<td><?php echo e($al->Apellido_Alumno); ?></td>
+                  <td><?php echo e($al->asignatura_id); ?></td>
+                  <td><?php echo e($al->id_Clinica); ?></td>
 
                   <td>
                     <a <button href="#" type="button" id= 'Evaluar' name='Evaluar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Evaluar</button></a>
                   </td>
                	</tr>
 
-               	@endforeach
+               	<?php endforeach; ?>
 
                </tbody>
 
@@ -67,4 +63,6 @@
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

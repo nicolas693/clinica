@@ -41,16 +41,16 @@ Route::group(['middleware' => ['auth','Admin']], function(){
 
 
   route::get('/Admin','Admin\AdminController@index');
-  route::resource('Admin','Admin\AdminController');
   route::get('/Docente/create','Docentes\DocentesController@create');
-  route::resource('Docente','Docentes\DocentesController');
+  route::resource('Docente','Docentes\DocentesController',['only' => 'store']);
+
 
 });
 
 Route::group(['middleware' => ['auth','Docente']], function(){
    route::get('/Docente','Docentes\DocentesController@index');
-   route::resource('Docente','Docentes\DocentesController');
-   route::resource('Alumno','Alumnos\AlumnosController');
+   route::get('Docente/mostrar','Docentes\DocentesController@mostrar');
+    route::resource('Alumno','Alumnos\AlumnosController',['only' => ['store','create']]);
 });
 
 
@@ -58,9 +58,8 @@ Route::group(['middleware' => ['auth','Alumno']], function(){
 route::get('Alumno/mostrar/{id}','Alumnos\AlumnosController@mostrar');
  route::get('Alumno','Alumnos\AlumnosController@index');
  route::get('/Ficha/shoe','Ficha\FichaController@show');
- route::resource('Alumno','Alumnos\AlumnosController');
- route::resource('Ficha','Ficha\FichaController');
- route::resource('Paciente','Pacientes\PacientesController');
+route::resource('Paciente','Pacientes\PacientesController',['only' => ['store','create']]);
+
 });
 
 

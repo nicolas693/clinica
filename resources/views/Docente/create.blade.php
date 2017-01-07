@@ -60,12 +60,6 @@
   </div>
 </div>
 
-<script>
-  $("#nuevo").click(function(event)
-  {
-      document.location.href = "{{route('Admin.index')}}";
-  });
-  //Te devuelve a la pagina de docentes donde inscribes alumnos para seguir inscribiendo(aun no terminado)
-  </script>
+
 
 @endsection

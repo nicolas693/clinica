@@ -51,7 +51,7 @@ class AlumnosController extends Controller
     public function store(Request $request)
     {
       Alumnos::create($request->all());
-      return redirect()->route('Docente.index');
+      return redirect('/Docente');
     }
 
     /**

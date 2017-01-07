@@ -13,7 +13,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+    <?php /* <link href="<?php echo e(elixir('css/app.css')); ?>" rel="stylesheet"> */ ?>
 
     <style>
         body {
@@ -39,7 +39,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
                     Clínica
                 </a>
             </div>
@@ -56,41 +56,41 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Iniciar sesión</a></li>
-                        <li><a href="{{ url('/register') }}">Registrar</a></li>
-                    @else
+                    <?php if(Auth::guest()): ?>
+                        <li><a href="<?php echo e(url('/login')); ?>">Iniciar sesión</a></li>
+                        <li><a href="<?php echo e(url('/register')); ?>">Registrar</a></li>
+                    <?php else: ?>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                              @if(Auth::user()->idrol==1)
-                                <li><a href="{{ url('/Admin') }}"><i class=" 	glyphicon glyphicon-th-large"></i></i> Mi Panel</a></li>
-                                <li><a href={{route('User.index')}}><i class="glyphicon glyphicon-user"></i></i> Mi Perfil</a></li>
+                              <?php if(Auth::user()->idrol==1): ?>
+                                <li><a href="<?php echo e(url('/Admin')); ?>"><i class=" 	glyphicon glyphicon-th-large"></i></i> Mi Panel</a></li>
+                                <li><a href=<?php echo e(route('User.index')); ?>><i class="glyphicon glyphicon-user"></i></i> Mi Perfil</a></li>
 
-                              @endif
+                              <?php endif; ?>
 
-                              @if(Auth::user()->idrol==2)
-                                <li><a href="{{ url('/Docente') }}"><i class=" 	glyphicon glyphicon-th-large"></i></i> Mi Panel</a></li>
-                                <li><a href={{route('User.index')}}><i class="glyphicon glyphicon-user"></i></i> Mi Perfil</a></li>
-
-
-
-                              @endif
-
-                              @if(Auth::user()->idrol==3)
-                                <li><a href="{{ url('/Alumno') }}"><i class=" glyphicon glyphicon-th-large"></i></i> Mi Panel</a></li>
-                                <li><a href={{route('User.index')}}><i class="glyphicon glyphicon-user"></i></i> Mi Perfil</a></li>
-
-                              @endif
+                              <?php if(Auth::user()->idrol==2): ?>
+                                <li><a href="<?php echo e(url('/Docente')); ?>"><i class=" 	glyphicon glyphicon-th-large"></i></i> Mi Panel</a></li>
+                                <li><a href=<?php echo e(route('User.index')); ?>><i class="glyphicon glyphicon-user"></i></i> Mi Perfil</a></li>
 
 
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Cerrar Sesión</a></li>
+
+                              <?php endif; ?>
+
+                              <?php if(Auth::user()->idrol==3): ?>
+                                <li><a href="<?php echo e(url('/Alumno')); ?>"><i class=" glyphicon glyphicon-th-large"></i></i> Mi Panel</a></li>
+                                <li><a href=<?php echo e(route('User.index')); ?>><i class="glyphicon glyphicon-user"></i></i> Mi Perfil</a></li>
+
+                              <?php endif; ?>
+
+
+                                <li><a href="<?php echo e(url('/logout')); ?>"><i class="fa fa-btn fa-sign-out"></i>Cerrar Sesión</a></li>
                             </ul>
                         </li>
-                    @endif
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
@@ -105,16 +105,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Clinca::@yield('title')::</title>
+    <title>Clinca::<?php echo $__env->yieldContent('title'); ?>::</title>
 
     <!-- Bootstrap -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    {!!Html::style('css/bootstrap.min.css')!!}
-    {!!Html::style('css/navbar-fixed-top.css')!!}
-    {!!Html::script('js/bootstrap.min.js')!!}
+    <?php echo Html::style('css/bootstrap.min.css'); ?>
+
+    <?php echo Html::style('css/navbar-fixed-top.css'); ?>
+
+    <?php echo Html::script('js/bootstrap.min.js'); ?>
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -129,7 +132,7 @@
 
 
     <div class="container">
-      @yield('content')
+      <?php echo $__env->yieldContent('content'); ?>
 
 
     </div> <!-- /container -->

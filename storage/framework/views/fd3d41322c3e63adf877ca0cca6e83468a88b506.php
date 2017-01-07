@@ -1,7 +1,6 @@
-
-  @extends('layouts.app')
-  @section('title','Sin permisos')
-  @section('content')
+  
+  <?php $__env->startSection('title','Sin permisos'); ?>
+  <?php $__env->startSection('content'); ?>
 
 
 
@@ -19,10 +18,10 @@
                      <div class="panel-body ">
 
                        <div class="text-center">
-                           <img src="{{asset('/images/acceso-restringido.png')}}" />
+                           <img src="<?php echo e(asset('/images/acceso-restringido.png')); ?>" />
                        </div>
                        <div class="text-center">
-                           <a href="{{ URL::previous() }}" class="btn btn-primary"><span class="glyphicon glyphicon-repeat"></span>   Volver</a>
+                           <a href="<?php echo e(URL::previous()); ?>" class="btn btn-primary"><span class="glyphicon glyphicon-repeat"></span>   Volver</a>
                        </div>
                      </div>
              </div>
@@ -31,4 +30,6 @@
 
 
 
-  @endsection
+  <?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
