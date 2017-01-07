@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
      protected $table='users';
-     protected $primaryKey='id'; 
+     protected $primaryKey='id';
 
     protected $fillable = [
         'name', 'email', 'password','idrol',
@@ -31,8 +31,17 @@ class User extends Authenticatable
 
     public function roluser (){
 
-
       return $this->belongsto(roluser::class);
 
+    }
+
+    public function Alumnos ()
+    {
+    	return $this->hasone(Alumnos::class);
+    }
+
+    public function Docente ()
+    {
+    	return $this->hasone(Docente::class);
     }
 }
