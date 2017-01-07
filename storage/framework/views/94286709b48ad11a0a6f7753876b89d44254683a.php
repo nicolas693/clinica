@@ -1,10 +1,6 @@
-@extends('layouts.app')
+<?php $__env->startSection('title','Lista de Pacientes'); ?>
 
-
-
-@section('title','Lista de Pacientes')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
    <!-- Main component for a primary marketing message or call to action -->
    <div class="page-header "  >
@@ -18,7 +14,7 @@
           <div class="panel-heading">
              Lista
              <p class="navbar-text navbar-right" style=" margin-top: 1px;">
-               <a <button href={{route('Paciente.create')}} type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Nuevo</button></a>
+               <a <button href=<?php echo e(route('Paciente.create')); ?> type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Nuevo</button></a>
                 <!--<button type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;">Nuevo</button>-->
               </p>
            </div>
@@ -37,23 +33,23 @@
                </thead>
                <tbody>
 
-               	@foreach($paciente as $pa)
+               	<?php foreach($paciente as $pa): ?>
 
-               	  @if ($pa->clinica_id == $id )
+               	  <?php if($pa->clinica_id == $id ): ?>
                   <tr>
-                    <td>{{$pa->rut}}</td>
-                    <td>{{$pa->Nombre}}</td>
-                    <td>{{$pa->Paterno}}</td>
-                    <td>{{$pa->Materno}}</td>
-                    <td>{{$pa->clinica_id}}</td>
+                    <td><?php echo e($pa->rut); ?></td>
+                    <td><?php echo e($pa->Nombre); ?></td>
+                    <td><?php echo e($pa->Paterno); ?></td>
+                    <td><?php echo e($pa->Materno); ?></td>
+                    <td><?php echo e($pa->clinica_id); ?></td>
 
 
                     <td>
                         <!--<div class="btn-group btn-group-justified">
                               <a href="#" class="btn btn-primary">Ver ficha</a>
-                             <a href={{route('Paciente.edit',$pa->rut)}} class="btn btn-primary btn-success" style="background-color:green;">Editar</a>
+                             <a href=<?php echo e(route('Paciente.edit',$pa->rut)); ?> class="btn btn-primary btn-success" style="background-color:green;">Editar</a>
 
-                             <a href={{route('Paciente.show',$pa->rut)}} class="btn btn-primary btn-danger">Dar de alta</a>
+                             <a href=<?php echo e(route('Paciente.show',$pa->rut)); ?> class="btn btn-primary btn-danger">Dar de alta</a>
                         </div>-->
 
                         <div class="btn-group">
@@ -62,16 +58,16 @@
                              <span class="caret"></span>
                            </button>
                            <ul class="dropdown-menu" role="menu">
-                             <li><a href="{{route('Ficha.index')}}">Ver Ficha</a></li>
-                             <li><a href={{route('Paciente.edit',$pa->rut)}}>Editar</a></li>
-                             <li><a href={{route('Paciente.show',$pa->rut)}}>Dar de Baja</a></li>
+                             <li><a href="<?php echo e(route('Ficha.index')); ?>">Ver Ficha</a></li>
+                             <li><a href=<?php echo e(route('Paciente.edit',$pa->rut)); ?>>Editar</a></li>
+                             <li><a href=<?php echo e(route('Paciente.show',$pa->rut)); ?>>Dar de Baja</a></li>
                            </ul>
                         </div>
                     </td>
                   </tr>
-                  @endif
+                  <?php endif; ?>
 
-               	@endforeach
+               	<?php endforeach; ?>
 
                </tbody>
 
@@ -87,9 +83,11 @@
      </div>
    </div>
 
-   <!--<script>$("#nuevo").click(function(event){document.location.href = "{route('Paciente.create')}}";});</script>-->
+   <!--<script>$("#nuevo").click(function(event){document.location.href = "<?php echo e(route('Paciente.create')); ?>";});</script>-->
 
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

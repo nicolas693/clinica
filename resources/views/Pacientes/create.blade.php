@@ -109,9 +109,6 @@
                   {!!form::text('Nacionalidad',null,['id'=>'Nacionalidad','class'=>'form-control'])!!}
              </div>
 
-
-
-
               <div class="col-sm-12">
                   {!!form::label('Cobertura Medica')!!}
                   {!!form::text('Cobertura_Medica',null,['id'=>'Cobertura_Medica','class'=>'form-control'])!!}

@@ -1,12 +1,10 @@
-@extends('layouts.app')
+<?php $__env->startSection('title','Editar Paciente'); ?>
 
-@section('title','Editar Paciente')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <ol class="breadcrumb">
-     <li><a href="{{url('dashboard')}}">Escritorio</a></li>
-     <li><a href="{{url('Paciente')}}"> Pacientes</a></li>
+     <li><a href="<?php echo e(url('dashboard')); ?>">Escritorio</a></li>
+     <li><a href="<?php echo e(url('Paciente')); ?>"> Pacientes</a></li>
      <li class="active">Editar paciente</li>
    </ol>
 
@@ -24,27 +22,34 @@
            </div>
           <div class="panel-body">
 
-              {!!Form::open(['route'=>['Paciente.destroy',$pa->rut],'method'=>'DELETE'])!!}
+              <?php echo Form::open(['route'=>['Paciente.destroy',$pa->rut],'method'=>'DELETE']); ?>
+
 
              <div class="form-group">
                <label for="exampleInputPassword1"> ¿DESEA ELIMINAR ESTE PACIENTE ? :</label>
              </div>
              <div class="form-group">
-              {!!form::label('Rut : ')!!}
-               {!!$pa->rut !!}
+              <?php echo form::label('Rut : '); ?>
+
+               <?php echo $pa->rut; ?>
+
              </div>
 
               <div class="form-group">
-              {!!form::label('Nombre : ')!!}
-               {!!$pa->Nombre !!} {!!$pa->Paterno !!} {!!$pa->Materno !!}
+              <?php echo form::label('Nombre : '); ?>
+
+               <?php echo $pa->Nombre; ?> <?php echo $pa->Paterno; ?> <?php echo $pa->Materno; ?>
+
              </div>
 
 
-                 {!!form::submit('Eliminar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Eliminar</span>','class'=>'btn btn-danger btn-sm m-t-10'])!!}
+                 <?php echo form::submit('Eliminar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Eliminar</span>','class'=>'btn btn-danger btn-sm m-t-10']); ?>
+
 
                 <button type="button" id= 'cancelar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" >Cancelar</button>
 
-{!!Form::close()!!}
+<?php echo Form::close(); ?>
+
 
            </div>
         </div>
@@ -56,10 +61,12 @@
 <script>
                     $("#cancelar").click(function(event)
                     {
-                    document.location.href = "{{ route('Alumno.index')}}";
+                    document.location.href = "<?php echo e(route('Alumno.index')); ?>";
                     //{rout ('Paciente.index')}
                     });
 
                     </script>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

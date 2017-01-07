@@ -1,10 +1,11 @@
 <?php
 
-namespace clinica\Http\Controllers;
+namespace clinica\Http\Controllers\Ficha;
 
 use Illuminate\Http\Request;
 
 use clinica\Http\Requests;
+use clinica\Http\Controllers\Controller;
 
 class FichaController extends Controller
 {
@@ -47,7 +48,7 @@ class FichaController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
     /**

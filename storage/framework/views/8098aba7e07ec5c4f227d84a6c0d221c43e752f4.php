@@ -1,7 +1,5 @@
-@extends('layouts.app')
-
-@section('title','Ficha del Paciente')
-@section('content')
+<?php $__env->startSection('title','Ficha del Paciente'); ?>
+<?php $__env->startSection('content'); ?>
 
   <div class="page-header "  >
     <h1>Ficha del Paciente<small></small></h1>
@@ -17,4 +15,6 @@
              </p>
           </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
