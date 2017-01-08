@@ -58,7 +58,9 @@ Route::group(['middleware' => ['auth','Alumno']], function(){
 route::get('Alumno/mostrar/{id}','Alumnos\AlumnosController@mostrar');
  route::get('Alumno','Alumnos\AlumnosController@index');
  route::get('/Ficha/shoe','Ficha\FichaController@show');
-route::resource('Paciente','Pacientes\PacientesController',['only' => ['store','create']]);
+Route::get('Paciente/alta/{id}', 'Pacientes\PacientesController@alta');
+route::resource('Paciente','Pacientes\PacientesController',['only' => ['store','create','edit','show','update']]);
+route::resource('Ficha','Ficha\FichaController@index');
 
 });
 

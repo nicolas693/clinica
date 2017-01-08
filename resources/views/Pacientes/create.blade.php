@@ -3,11 +3,6 @@
 @section('content')
 @include('partials.messages')
 
-<ol class="breadcrumb">
-
-     <li><a href="{{url('Paciente')}}"> Pacientes</a></li>
-     <li class="active">Ingresar Nuevo Paciente</li>
-   </ol>
 
 
    <div class="page-header">
@@ -19,7 +14,14 @@
 
         <div class="panel panel-default">
           <div class="panel-heading">
-             Nuevo Cliente
+             Nuevo Paciente
+
+             <p class="navbar-text navbar-right" style=" margin-top: 1px;">
+               <a <button href={{URL::previous()}} type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
+
+
+              </p>
+
            </div>
           <div class="panel-body">
 
@@ -114,10 +116,7 @@
                   {!!form::text('Cobertura_Medica',null,['id'=>'Cobertura_Medica','class'=>'form-control'])!!}
              </div>
 
-             <div class="col-sm-12">
-                 {!!form::label('Alumno ')!!}
-                 {!!form::text('alumno_id',null,['id'=>'rut_alumno','class'=>'form-control'])!!}
-            </div>
+
 
 
              <div class="col-sm-5">
@@ -129,9 +128,11 @@
 
 
              </div>
+
                  {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
               {!!Form::close()!!}
            </div>
+
         </div>
 
 

@@ -6,11 +6,7 @@
 
 @include('partials.messages')
 
-<ol class="breadcrumb">
 
-     <li><a href="{{url('Paciente')}}"> Pacientes</a></li>
-     <li class="active">Editar paciente</li>
-   </ol>
 
 
    <div class="page-header">
@@ -22,6 +18,12 @@
 
         <div class="panel panel-default">
           <div class="panel-heading">
+            Editar Datos Paciente
+            <p class="navbar-text navbar-right" style=" margin-top: 1px;">
+              <a <button href={{URL::previous()}} type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
+
+
+             </p>
 
            </div>
           <div class="panel-body">
@@ -136,7 +138,7 @@
 
                 {!!form::label('Clinica')!!}
 
-                {!! Form::select('id_Clinica',$clinica,null,['id'=>'id_Clinica','class'=>'form-control']) !!}
+                {!! Form::select('clinica_id',$clinica,null,['id'=>'clinica_id','class'=>'form-control']) !!}
 
 
 

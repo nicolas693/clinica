@@ -2,11 +2,6 @@
 <?php $__env->startSection('content'); ?>
 <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
-<ol class="breadcrumb">
-
-     <li><a href="<?php echo e(url('Paciente')); ?>"> Pacientes</a></li>
-     <li class="active">Ingresar Nuevo Paciente</li>
-   </ol>
 
 
    <div class="page-header">
@@ -19,6 +14,13 @@
         <div class="panel panel-default">
           <div class="panel-heading">
              Nuevo Cliente
+
+             <p class="navbar-text navbar-right" style=" margin-top: 1px;">
+               <a <button href=<?php echo e(URL::previous()); ?> type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
+
+
+              </p>
+
            </div>
           <div class="panel-body">
 
@@ -148,12 +150,7 @@
 
              </div>
 
-             <div class="col-sm-12">
-                 <?php echo form::label('Alumno '); ?>
 
-                 <?php echo form::text('alumno_id',null,['id'=>'rut_alumno','class'=>'form-control']); ?>
-
-            </div>
 
 
              <div class="col-sm-5">
@@ -167,11 +164,13 @@
 
 
              </div>
+
                  <?php echo form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;']); ?>
 
               <?php echo Form::close(); ?>
 
            </div>
+
         </div>
 
 

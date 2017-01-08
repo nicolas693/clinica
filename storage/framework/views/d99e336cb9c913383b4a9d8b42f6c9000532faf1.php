@@ -15,6 +15,7 @@
              Lista
              <p class="navbar-text navbar-right" style=" margin-top: 1px;">
                <a <button href=<?php echo e(route('Paciente.create')); ?> type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Nuevo</button></a>
+
                 <!--<button type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;">Nuevo</button>-->
               </p>
            </div>
@@ -60,7 +61,7 @@
                            <ul class="dropdown-menu" role="menu">
                              <li><a href="<?php echo e(route('Ficha.index')); ?>">Ver Ficha</a></li>
                              <li><a href=<?php echo e(route('Paciente.edit',$pa->rut)); ?>>Editar</a></li>
-                             <li><a href=<?php echo e(route('Paciente.show',$pa->rut)); ?>>Dar de Baja</a></li>
+                             <li><a href=<?php echo e(route('Paciente.show',$pa->rut)); ?>>Alta Medica</a></li>
                            </ul>
                         </div>
                     </td>
@@ -74,6 +75,10 @@
 
 
              </table>
+
+             <div >
+                <a <button href=<?php echo e(url('/Alumno')); ?> type="button"  class="btn btn-primary"   >Volver</button></a>
+              </div>
 
 
           </div>

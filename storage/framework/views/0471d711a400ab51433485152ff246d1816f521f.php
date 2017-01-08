@@ -4,11 +4,7 @@
 
 <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
-<ol class="breadcrumb">
 
-     <li><a href="<?php echo e(url('Paciente')); ?>"> Pacientes</a></li>
-     <li class="active">Editar paciente</li>
-   </ol>
 
 
    <div class="page-header">
@@ -20,6 +16,12 @@
 
         <div class="panel panel-default">
           <div class="panel-heading">
+            Editar Datos Paciente
+            <p class="navbar-text navbar-right" style=" margin-top: 1px;">
+              <a <button href=<?php echo e(URL::previous()); ?> type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
+
+
+             </p>
 
            </div>
           <div class="panel-body">
@@ -172,7 +174,7 @@
                 <?php echo form::label('Clinica'); ?>
 
 
-                <?php echo Form::select('id_Clinica',$clinica,null,['id'=>'id_Clinica','class'=>'form-control']); ?>
+                <?php echo Form::select('clinica_id',$clinica,null,['id'=>'clinica_id','class'=>'form-control']); ?>
 
 
 

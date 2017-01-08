@@ -9,6 +9,7 @@ use clinica\Http\Controllers\Controller;
 use clinica\Models\Paciente\Paciente;
 use clinica\Models\Paciente\Clinica;
 use clinica\Models\Alumnos\Alumnos;
+use Auth;
 use Carbon\Carbon;
 use clinica\http\Requests\Paciente\PacienteCreateRequest;
 use clinica\http\Requests\Paciente\PacienteUpdateRequest;
@@ -61,11 +62,18 @@ class PacientesController extends Controller
      */
     public function store(PacienteCreateRequest $request)
     {
-      //['alumno_id']= 1;
-      //$request['clinica_id']= 1;
+
+      $alumnos=Alumnos::all();
+      foreach ($alumnos as $alu) {
+        if($alu->user_id == Auth::user()->id){
+          $request['alumno_id']=$alu->rut_alumno;
+        }
+      }
+      $request['alta']=true;
 
 
-        //dd($request->all());
+
+
         Paciente::create($request->all());
         $id=$request->clinica_id;
         return redirect('/Alumno/mostrar/'.$id);
@@ -120,12 +128,16 @@ class PacientesController extends Controller
      */
     public function update(PacienteUpdateRequest $request, $id)
     {
+
         $pa= Paciente::find($id);
         $input=$request->all();
         $pa->fill($input)->save();
+        $val=$pa->clinica_id;
+        
 
-        return redirect()->route('Paciente.index');
+        return redirect('/Alumno/mostrar/'.$val);
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -140,5 +152,14 @@ class PacientesController extends Controller
         $pa->delete();
 
         return redirect()->route('Paciente.index');
+    }
+
+    public function alta($id)
+    {
+        Paciente::where('rut', $id)->update(array('alta' => 0));
+        $pa=Paciente::find($id);
+        $pa=$pa->clinica_id;
+
+        return redirect('/Alumno/mostrar/'.$pa);
     }
 }

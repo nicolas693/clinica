@@ -4,15 +4,11 @@
 
 @section('content')
 
-<ol class="breadcrumb">
-     <li><a href="{{url('dashboard')}}">Escritorio</a></li>
-     <li><a href="{{url('Paciente')}}"> Pacientes</a></li>
-     <li class="active">Editar paciente</li>
-   </ol>
+
 
 
    <div class="page-header">
-     <h1>Editar datos paciente </h1>
+     <h1>Alta Medica </h1>
    </div>
 
    <div class="row">
@@ -20,14 +16,14 @@
 
         <div class="panel panel-default">
           <div class="panel-heading">
-             Editar paciente
+             Datos
            </div>
           <div class="panel-body">
 
-              {!!Form::open(['route'=>['Paciente.destroy',$pa->rut],'method'=>'DELETE'])!!}
+              {!!Form::open()!!}
 
              <div class="form-group">
-               <label for="exampleInputPassword1"> ¿DESEA ELIMINAR ESTE PACIENTE ? :</label>
+               <label for="exampleInputPassword1"> ¿Desea dar de alta al paciente  ? :</label>
              </div>
              <div class="form-group">
               {!!form::label('Rut : ')!!}
@@ -39,10 +35,18 @@
                {!!$pa->Nombre !!} {!!$pa->Paterno !!} {!!$pa->Materno !!}
              </div>
 
+             <div class="form-group">
+             {!!form::label('Alta : ')!!}
+              {!!$pa->alta !!} 
+            </div>
 
-                 {!!form::submit('Eliminar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Eliminar</span>','class'=>'btn btn-danger btn-sm m-t-10'])!!}
 
-                <button type="button" id= 'cancelar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" >Cancelar</button>
+
+
+
+
+                <button type="button" id= 'cancelar' name='cancelar' class="btn btn-primary" >Volver</button>
+                <button type="button" id= 'alta' name='alta' class="btn btn-warning" >Dar de Alta</button>
 
 {!!Form::close()!!}
 
@@ -54,12 +58,22 @@
    </div>
 
 <script>
-                    $("#cancelar").click(function(event)
-                    {
-                    document.location.href = "{{ route('Alumno.index')}}";
-                    //{rout ('Paciente.index')}
-                    });
 
-                    </script>
+    $("#cancelar").click(function(event)
+        {
+        document.location.href = "{{  URL::previous()}}";
+        });
+
+</script>
+
+
+<script>
+
+    $("#alta").click(function(event)
+        {
+        document.location.href = "{{url('/Paciente/alta/'.$pa->rut)}}";
+        });
+
+</script>
 
 @endsection

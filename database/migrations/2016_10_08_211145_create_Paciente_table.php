@@ -33,6 +33,7 @@ class CreatePacienteTable extends Migration
             $table->String('Cobertura_Medica')->length(15);
             $table->integer('clinica_id')->unsigned();
             $table->integer('alumno_id')->unsigned();
+            $table->boolean('alta');
 
 
 
