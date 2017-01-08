@@ -12,12 +12,18 @@ class Alumnos extends Model
     public    $timestamps = false;
 
     protected $fillable   = [
-        'rut_alumno','asignatura_id','Nombre_Alumno','Apellido_Alumno','Telefono_Alumno','id_Clinica'
+        'rut_alumno','asignatura_id','Nombre_Alumno','Apellido_Alumno','Telefono_Alumno','id_Clinica','user_id'
     ];
 
     public function Clinica()
     {
         return $this->belongsto(Clinica::class);
+    }
+
+    public function users (){
+
+      return $this->belongsto(users::class);
+
     }
     public function asignatura_1()
     {

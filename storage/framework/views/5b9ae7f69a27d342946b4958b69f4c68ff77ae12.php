@@ -6,19 +6,24 @@
 
 
 
-     </div>
+
      <div class="container">
          <div class="row">
              <div class="col-md-10 col-md-offset-1">
                  <div class="panel panel-default">
-                     <div class="panel-heading">
-                        No tiene permisos para ingresar a esta ruta
-                     </div>
 
-                     <div class="panel-body">
-                         <a href="<?php echo e(URL::previous()); ?>" class="btn btn-primary btn-success" style="background-color:green;">Volver</a>
+                        <h1 align="center">No tiene permisos para ingresar a esta ruta</h1>
+
+
+                     <div class="panel-body ">
+
+                       <div class="text-center">
+                           <img src="<?php echo e(asset('/images/acceso-restringido.png')); ?>" />
+                       </div>
+                       <div class="text-center">
+                           <a href="<?php echo e(URL::previous()); ?>" class="btn btn-primary"><span class="glyphicon glyphicon-repeat"></span>   Volver</a>
+                       </div>
                      </div>
-                 </div>
              </div>
          </div>
      </div>
