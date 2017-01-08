@@ -55,17 +55,14 @@ Route::group(['middleware' => ['auth','Docente']], function(){
 
 
 Route::group(['middleware' => ['auth','Alumno']], function(){
-route::get('Alumno/mostrar/{id}','Alumnos\AlumnosController@mostrar');
- route::get('Alumno','Alumnos\AlumnosController@index');
+  route::get('Alumno/mostrar/{id}','Alumnos\AlumnosController@mostrar');
+  route::get('Alumno','Alumnos\AlumnosController@index');
 
 
-Route::get('Paciente/alta/{id}', 'Pacientes\PacientesController@alta');
-route::resource('Paciente','Pacientes\PacientesController',['only' => ['store','create','edit','show','update']]);
-route::resource('Ficha','Ficha\FichaController@index');
-
-
-
- 
+  Route::get('Paciente/alta/{id}', 'Pacientes\PacientesController@alta');
+  route::resource('Paciente','Pacientes\PacientesController',['only' => ['store','create','edit','show','update']]);
+  route::resource('Ficha','Ficha\FichaController@index');
+  route::resource('Tratamiento','Tratamiento\TratamientoController');
 
 
 });

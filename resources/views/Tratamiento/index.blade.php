@@ -28,6 +28,10 @@
               </thead>
               </table>
 
+              <div >
+                 <a <button href={{URL::previous()}} type="button"  class="btn btn-primary"   >Volver</button></a>
+               </div>
+
            </div>
 
 

@@ -13,13 +13,18 @@ class Ficha extends Model
     public $timestamps=false;
 
     protected $fillable=[
-    	'id_Ficha','id_Paciente','id_Alumno','alergias'
+    	'id_Ficha','id_Paciente','id_Alumno','alergia'
     ];
 
     public function Paciente (){
-
-
     	return $this->belongsto(Paciente::class);
+    }
 
+    public function Alumno (){
+    	return $this->belongsto(Alumnos::class);
+    }
+
+    public function Tratamiento (){
+    	return $this->hasmany(Tratamiento::class);
     }
 }

@@ -33,4 +33,8 @@ class Alumnos extends Model
     public function Paciente (){
     	return $this->hasmany(Paciente::class);
     }
+
+    public function Ficha(){
+      return $this->hasmany(Ficha::class);
+    }
 }
