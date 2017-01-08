@@ -10,10 +10,17 @@
 
        <div class="panel panel-default " >
          <div class="panel-heading">
-            Lista
+            Datos personales
             <p class="navbar-text navbar-right" style=" margin-top: 1px;">
+              <a <button href="#" type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-warning" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Ver plan de Tratamiento</button></a>
              </p>
           </div>
+
+          <div class="panel-body">
+
+
+           </div>
+
 
 <?php $__env->stopSection(); ?>
 

@@ -47,9 +47,9 @@
                     <td>
                         <!--<div class="btn-group btn-group-justified">
                               <a href="#" class="btn btn-primary">Ver ficha</a>
-                             <a href=<?php echo e(route('Paciente.edit',$pa->rut)); ?> class="btn btn-primary btn-success" style="background-color:green;">Editar</a>
+                             <a href={route('Paciente.edit',$pa->rut)}} class="btn btn-primary btn-success" style="background-color:green;">Editar</a>
 
-                             <a href=<?php echo e(route('Paciente.show',$pa->rut)); ?> class="btn btn-primary btn-danger">Dar de alta</a>
+                             <a href={route('Paciente.show',$pa->rut)}} class="btn btn-primary btn-danger">Dar de alta</a>
                         </div>-->
 
                         <div class="btn-group">
@@ -83,7 +83,7 @@
      </div>
    </div>
 
-   <!--<script>$("#nuevo").click(function(event){document.location.href = "<?php echo e(route('Paciente.create')); ?>";});</script>-->
+   <!--<script>$("#nuevo").click(function(event){document.location.href = "{route('Paciente.create')}}";});</script>-->
 
 
 

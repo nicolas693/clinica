@@ -47,9 +47,6 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                  <li><a href="<?php echo e(url('/Admin')); ?>">Admin</a></li>
-                  <li><a href="<?php echo e(url('/Docente')); ?>">Docente</a></li>
-                  <li><a href="<?php echo e(url('/Alumno')); ?>">Alumno</a></li>
 
 
 
@@ -69,7 +66,26 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                               <li><a href=<?php echo e(route('User.index')); ?>><i class="glyphicon glyphicon-user"></i></i> Mi Perfil</a></li>
+                              <?php if(Auth::user()->idrol==1): ?>
+                                <li><a href="<?php echo e(url('/Admin')); ?>"><i class=" 	glyphicon glyphicon-th-large"></i></i> Mi Panel</a></li>
+                                <li><a href=<?php echo e(route('User.index')); ?>><i class="glyphicon glyphicon-user"></i></i> Mi Perfil</a></li>
+
+                              <?php endif; ?>
+
+                              <?php if(Auth::user()->idrol==2): ?>
+                                <li><a href="<?php echo e(url('/Docente')); ?>"><i class=" 	glyphicon glyphicon-th-large"></i></i> Mi Panel</a></li>
+                                <li><a href=<?php echo e(route('User.index')); ?>><i class="glyphicon glyphicon-user"></i></i> Mi Perfil</a></li>
+
+
+
+                              <?php endif; ?>
+
+                              <?php if(Auth::user()->idrol==3): ?>
+                                <li><a href="<?php echo e(url('/Alumno')); ?>"><i class=" glyphicon glyphicon-th-large"></i></i> Mi Panel</a></li>
+                                <li><a href=<?php echo e(route('User.index')); ?>><i class="glyphicon glyphicon-user"></i></i> Mi Perfil</a></li>
+
+                              <?php endif; ?>
+
 
                                 <li><a href="<?php echo e(url('/logout')); ?>"><i class="fa fa-btn fa-sign-out"></i>Cerrar Sesión</a></li>
                             </ul>

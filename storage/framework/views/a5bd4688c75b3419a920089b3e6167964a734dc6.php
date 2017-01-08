@@ -56,7 +56,7 @@
      </div>
    </div>
 
-   <!--<script>$("#nuevo").click(function(event){document.location.href = "<?php echo e(route('Paciente.create')); ?>";});</script>-->
+   
 
 
 

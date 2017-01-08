@@ -13,7 +13,7 @@ class Ficha extends Model
     public $timestamps=false;
 
     protected $fillable=[
-    	'id_Ficha','id_Paciente','id_Alumno'
+    	'id_Ficha','id_Paciente','id_Alumno','alergias'
     ];
 
     public function Paciente (){
