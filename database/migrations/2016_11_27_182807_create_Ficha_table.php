@@ -13,12 +13,13 @@ class CreateFichaTable extends Migration
     public function up()
     {
         Schema::create('Ficha', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_Ficha');
+
             $table->integer('paciente_id')->unsigned();
+            $table->integer('alumno_id')->unsigned();
 
             $table->foreign('paciente_id')->references('rut')->on('Paciente');
-
-
+            $table->foreign('alumno_id')->references('rut_alumno')->on('Alumno');
 
 
         });

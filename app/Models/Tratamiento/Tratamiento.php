@@ -12,4 +12,8 @@ class Tratamiento extends Model
 
   protected $fillable=[
     'id_Paciente','id_Ficha','nombre','fecha','diente'];
+
+    public function Tratamiento (){
+      return $this->belongsto(Ficha::class);
+    }
 }

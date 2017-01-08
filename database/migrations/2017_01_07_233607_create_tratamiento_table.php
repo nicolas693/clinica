@@ -12,7 +12,7 @@ class CreateTratamientoTable extends Migration
      */
     public function up()
     {
-      Schema::create('Ficha', function (Blueprint $table) {
+      Schema::create('Tratamiento', function (Blueprint $table) {
           $table->increments('id_Tratamiento');
           $table->String('nombre');
           $table->String('fecha');
@@ -20,7 +20,7 @@ class CreateTratamientoTable extends Migration
           $table->integer('ficha_id')->unsigned();
 
           $table->foreign('paciente_id')->references('rut')->on('Paciente');
-          $table->foreign('ficha_id')->references('id')->on('Ficha');
+          $table->foreign('ficha_id')->references('id_Ficha')->on('Ficha');
 
 
 

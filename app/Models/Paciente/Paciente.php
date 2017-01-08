@@ -30,6 +30,5 @@ class Paciente extends Model
 
     public function Ficha (){
         return $this->hasmany(Ficha::class);
-
     }
 }
