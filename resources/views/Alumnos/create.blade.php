@@ -51,6 +51,12 @@
            {!! Form::select('id_Clinica',$clinica,null,['id'=>'id_Clinica','class'=>'form-control']) !!}
         </div>
 
+        <div class="col-sm-6">
+           {!!form::label('Codigo Usuario')!!}
+           {!!form::text('user_id',null,['id'=>'user_id','class'=>'form-control'])!!}
+
+         </div>
+
       </div>
           {!!form::submit('Inscribir Alumno',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
        {!!Form::close()!!}

@@ -8,6 +8,7 @@ use clinica\Http\Requests;
 use clinica\Http\Controllers\Controller;
 use clinica\User;
 use clinica\roluser;
+use clinica\Models\Alumnos\Alumnos;
 use Auth;
 
 class UserController extends Controller
@@ -19,9 +20,17 @@ class UserController extends Controller
      */
     public function index()
     {
+
         $user=Auth::user();
+        $alumnos=Alumnos::all();
+        foreach ($alumnos as $alu) {
+          if($alu->user_id == $user->id){
+            $alum=$alu;
+          }
+        }
+
         $rol=roluser::all();
-        return view('User.index')->with('user',$user)->with('rol',$rol);
+        return view('User.index')->with('user',$user)->with('rol',$rol)->with('alum',$alum);
     }
 
     /**

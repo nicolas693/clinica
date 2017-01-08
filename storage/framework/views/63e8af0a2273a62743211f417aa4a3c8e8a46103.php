@@ -141,9 +141,6 @@
 
              </div>
 
-
-
-
               <div class="col-sm-12">
                   <?php echo form::label('Cobertura Medica'); ?>
 

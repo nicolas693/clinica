@@ -6,13 +6,13 @@
 
 
    <div class="page-header">
-     <h1>ALGO PONDRE ACA </h1>
+     <h1>aaaaaaaaaAAAAAAAAAAAAAAAaaaaAAaaaA!!! </h1>
    </div>
 
    <div class="row">
      <div class="col-md-8">
 
-        <div class="panel panel-default">
+        <div class="panel panel-primary">
           <div class="panel-heading">
              Datos Usuario
            </div>
@@ -23,14 +23,10 @@
                 <?php  $nombre=$ro->Nombre  ?>
                 <?php endif; ?>
             <?php endforeach; ?>
-
               <?php echo Form::open(); ?>
 
-
-
-
              <div class="form-group">
-              <?php echo form::label('Codigo : '); ?>
+              <?php echo form::label('Codigo de Usuario : '); ?>
 
                <?php echo $user->id; ?>
 
@@ -50,11 +46,39 @@
 
             </div>
 
-
-
-
            </div>
         </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+             Mis datos
+           </div>
+          <div class="panel-body">
+              <?php echo Form::open(); ?>
+
+              <div class="form-group">
+               <?php echo form::label('Rut : '); ?>
+
+                <?php echo $alum->rut_alumno; ?>
+
+              </div>
+             <div class="form-group">
+              <?php echo form::label('Nombre : '); ?>
+
+               <?php echo $alum->Nombre_Alumno; ?> <?php echo $alum->Apellido_Alumno; ?>
+
+             </div>
+              <div class="form-group">
+              <?php echo form::label('Telefono : '); ?>
+
+               <?php echo $alum->Telefono_Alumno; ?>
+
+             </div>
+             <a <button href="#" type="button" id= 'Editar' name='Editar' class="btn btn-success" style ="margin-bottom: 20px"  >Editar Datos</button></a>
+           </div>
+
+        </div>
+
 
 
      </div>

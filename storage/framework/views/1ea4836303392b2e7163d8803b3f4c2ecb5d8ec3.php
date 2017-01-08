@@ -35,7 +35,7 @@
 
 
 
-                  <td><a <button href=<?php echo e(url('/Alumno/mostrar',$cli->id_Clinica)); ?> type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >ver pacientes</button></a>
+                  <td><a <button href=<?php echo e(url('/Alumno/mostrar',$cli->id_Clinica)); ?> type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Ver pacientes</button></a>
 
                   </td>
                	</tr>
@@ -56,7 +56,7 @@
      </div>
    </div>
 
-   <!--<script>$("#nuevo").click(function(event){document.location.href = "<?php echo e(route('Paciente.create')); ?>";});</script>-->
+   
 
 
 

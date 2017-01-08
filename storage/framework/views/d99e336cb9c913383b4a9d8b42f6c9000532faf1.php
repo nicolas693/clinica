@@ -58,9 +58,9 @@
                              <span class="caret"></span>
                            </button>
                            <ul class="dropdown-menu" role="menu">
-                             <li><a href="#">Ver Ficha</a></li>
-                             <li><a href="#">Editar</a></li>
-                             <li><a href="#">Dar de Baja</a></li>
+                             <li><a href="<?php echo e(route('Ficha.index')); ?>">Ver Ficha</a></li>
+                             <li><a href=<?php echo e(route('Paciente.edit',$pa->rut)); ?>>Editar</a></li>
+                             <li><a href=<?php echo e(route('Paciente.show',$pa->rut)); ?>>Dar de Baja</a></li>
                            </ul>
                         </div>
                     </td>
@@ -83,7 +83,7 @@
      </div>
    </div>
 
-   <!--<script>$("#nuevo").click(function(event){document.location.href = "<?php echo e(route('Paciente.create')); ?>";});</script>-->
+   <!--<script>$("#nuevo").click(function(event){document.location.href = "{route('Paciente.create')}}";});</script>-->
 
 
 

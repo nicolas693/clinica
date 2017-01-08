@@ -63,6 +63,14 @@
 
         </div>
 
+        <div class="col-sm-6">
+           <?php echo form::label('Codigo Usuario'); ?>
+
+           <?php echo form::text('user_id',null,['id'=>'user_id','class'=>'form-control']); ?>
+
+
+         </div>
+
       </div>
           <?php echo form::submit('Inscribir Alumno',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;']); ?>
 
