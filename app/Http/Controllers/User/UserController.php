@@ -8,6 +8,8 @@ use clinica\Http\Requests;
 use clinica\Http\Controllers\Controller;
 use clinica\User;
 use clinica\roluser;
+
+use clinica\Models\Docente\Docente;
 use clinica\Models\Alumnos\Alumnos;
 use Auth;
 
@@ -20,17 +22,48 @@ class UserController extends Controller
      */
     public function index()
     {
-
+        $info=0;
         $user=Auth::user();
-        $alumnos=Alumnos::all();
-        foreach ($alumnos as $alu) {
-          if($alu->user_id == $user->id){
-            $alum=$alu;
+        if($user->idrol==2)
+        {
+
+          $datos=Docente::all();
+
+          foreach ($datos as $dato)
+          {
+
+            if($dato->user_id == $user->id)
+            {
+              $info=$dato;
+
+            }
+          }
+
+        }
+        if($user->idrol==3)
+        {
+          $datos=Alumnos::all();
+          foreach ($datos as $dato)
+          {
+            if($dato->user_id == $user->id)
+            {
+              $info=$dato;
+            }
           }
         }
 
-        $rol=roluser::all();
-        return view('User.index')->with('user',$user)->with('rol',$rol)->with('alum',$alum);
+        if($user->idrol==1){
+          $rol=roluser::all();
+          return view('User.index')->with('user',$user)->with('rol',$rol);
+
+        }
+        else{
+          $rol=roluser::all();
+          return view('User.index')->with('user',$user)->with('rol',$rol)->with('info',$info);
+
+        }
+
+
     }
 
     /**

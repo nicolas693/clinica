@@ -44,32 +44,59 @@
            </div>
         </div>
 
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-             Mis datos
-           </div>
+
+          @if($user->idrol==3)
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+               Mis datos
+             </div>
           <div class="panel-body">
               {!!Form::open()!!}
               <div class="form-group">
                {!!form::label('Rut : ')!!}
-                {!!$alum->rut_alumno !!}
+                {!!$info->rut_alumno !!}
               </div>
              <div class="form-group">
               {!!form::label('Nombre : ')!!}
-               {!!$alum->Nombre_Alumno !!} {!!$alum->Apellido_Alumno !!}
+               {!!$info->Nombre_Alumno !!} {!!$info->Apellido_Alumno !!}
              </div>
               <div class="form-group">
               {!!form::label('Telefono : ')!!}
-               {!!$alum->Telefono_Alumno !!}
+               {!!$info->Telefono_Alumno !!}
              </div>
              <a <button href="#" type="button" id= 'Editar' name='Editar' class="btn btn-success" style ="margin-bottom: 20px"  >Editar Datos</button></a>
            </div>
+         </div>
+          @endif
+
+          @if($user->idrol==2)
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+               Mis datos
+             </div>
+          <div class="panel-body">
+              {!!Form::open()!!}
+              <div class="form-group">
+               {!!form::label('Rut : ')!!}
+                {!!$info->id !!}
+              </div>
+             <div class="form-group">
+              {!!form::label('Nombre : ')!!}
+               {!!$info->Nombre_Docente !!}
+              <div class="form-group">
+              {!!form::label('Telefono : ')!!}
+               {!!$info->Telefono_Docente !!}
+             </div>
+             <a <button href="#" type="button" id= 'Editar' name='Editar' class="btn btn-success" style ="margin-bottom: 20px"  >Editar Datos</button></a>
+           </div>
+         </div>
+          @endif
 
         </div>
 
 
 
-     </div>
+
    </div>
 
 
