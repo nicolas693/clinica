@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <?php echo Html::style('css/micss.css'); ?>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Clínica</title>
+    <title>Clinca</title>
+
+    <!-- Bootstrap -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <?php echo Html::style('css/bootstrap.min.css'); ?>
+
+    <?php echo Html::style('css/navbar-fixed-top.css'); ?>
+
+    <?php echo Html::script('js/bootstrap.min.js'); ?>
+
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
@@ -99,44 +113,29 @@
 
 </body>
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Clinca::<?php echo $__env->yieldContent('title'); ?>::</title>
-
-    <!-- Bootstrap -->
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <?php echo Html::style('css/bootstrap.min.css'); ?>
-
-    <?php echo Html::style('css/navbar-fixed-top.css'); ?>
-
-    <?php echo Html::script('js/bootstrap.min.js'); ?>
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
   <body>
-
-
-
-
-    <div class="container">
-      <?php echo $__env->yieldContent('content'); ?>
-
-
-    </div> <!-- /container -->
-    </body>
+        <div class="container">
+          <?php echo $__env->yieldContent('content'); ?>
+        </div> <!-- /container -->
+  </body>
 
 </html>
+
+<!--Footer-->
+<footer>
+     <div class="container">
+       <div class="row leg-room">
+    <div class="col-md-12 text-center">
+        <h1 class="text-uppercase" style =" color: #6590A1;">Clinica</h1>
+        <p class="monospaced" style =" color: #6590A1;">
+            &copy;Clinica Inc.
+            <span class="text-uppercase">All Rights Reserved</span></p>
+    </div>
+</div><!-- end row -->
+     </div>
+   </footer>
+
+
+<!--/.Footer-->
+
 </html>
