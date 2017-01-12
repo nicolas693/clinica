@@ -32,22 +32,22 @@ class PacienteUpdateRequest extends Request
     {
         return [
           'rut' => 'required|cl_rut'.$this->route->getparameter('paciente'),
-          'Nombre' => ['required','min:3','max:15','alpha'],
-          'Paterno' => ['required','max:15','alpha'],
-          'Materno' => ['required','max:15','alpha'],
+          'Nombre' => ['required','min:3','max:15','regex:/^[\pL\s\-]+$/u'],
+          'Paterno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
+          'Materno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
           'Fecha_Ingreso' =>'required|regex:/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/',
           'Genero' =>'required|regex:/^[MF]$/',
           'Fecha_Nacimiento' =>'required|regex:/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/',
-          'Telefono_Casa' => ['required','min:7','max:9','integer'],
-          'Telefono_Movil' =>['required','min:7','max:9','integer'],
-          'Telefono_Oficina' => ['required','min:7','max:9','integer'],
-          'Calle' =>['required','max:25','alpha_num'],
-          'Numero_Calle' =>['required','max:25','integer'],
-          'Pais' =>['required','max:15','alpha'],
-          'Region' =>['required','max:15','alpha'],
-          'Comuna' =>['required','max:15','alpha'],
-          'Nacionalidad' => ['required','max:15','alpha'],
-          'Cobertura_Medica' =>['required','max:15','alpha'],
+          'Telefono_Casa' =>'min:7|max:9|regex:/[0-9]/',
+          'Telefono_Movil' =>'min:7|max:9|regex:/[0-9]/',
+          'Telefono_Oficina' =>'min:7|max:9|regex:/[0-9]/',
+          'Calle' =>'required|max:25|regex:/^[\pL\s\0-9\-]+$/u',
+          'Numero_Calle' =>'min:4|max:5|regex:/[0-9]/',
+          'Pais' =>['required','max:15','regex:/^[\pL\s\-]+$/u'],
+          'Region' =>['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'], //Esta regla regex admite Ñ, mayusculas, minusculas y saltos de linea
+          'Comuna' => ['required','max:25','regex:/^[\pL\s\-]+$/u'],
+          'Nacionalidad' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
+          'Cobertura_Medica' =>['required','min:6','max:15','regex:/^[\pL\s\-]+$/u'],
         ];
     }
 

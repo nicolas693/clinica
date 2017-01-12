@@ -25,10 +25,10 @@ class DocenteCreateRequest extends Request
     {
         return [
             'rut_alumno' => ['required','cl_rut'],
-            'Nombre_Alumno' => ['required','min:3','max:12','alpha'],
-            'Apellido_Alumno' => ['required','min:4','max:15','alpha'],
-            'Telefono_Alumno' => ['required','min:7','max:9','integer'],
-            'user_id' => ['required','max:7','integer'],
+            'Nombre_Alumno' => ['required','min:3','max:12','regex:/^[\pL\s\-]+$/u'],
+            'Apellido_Alumno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
+            'Telefono_Alumno' => ['required','min:7','max:9','regex:/[0-9]/'],
+            'user_id' => ['required','max:7','regex:/[0-9]/'],
         ];
     }
 
@@ -36,7 +36,6 @@ class DocenteCreateRequest extends Request
     {
       return [
         'rut_alumno.cl_rut' => 'Formato de Rut no valido',
-        'Nombre_Alumno.alpha' => 'El nombre del Alumno solo debe contener letras',
         'user_id.required' => 'El campo código usuario es obligatorio'
       ];
     }

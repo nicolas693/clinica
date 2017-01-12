@@ -25,9 +25,9 @@ class ClinicaCreateRequest extends Request
     {
         return [
             'id_Clinica' => ['required','unique:Clinica,id_Clinica'],
-            'Nombre_Clinica' => ['required','max:15','alpha'],
-            'Direccion_Clinica' => ['required','max','alpha_num'],
-            'Telefono_Clinica' => ['required','min:7','max:9','integer'],
+            'Nombre_Clinica' => ['required','max:15','regex:/^[\pL\s\-]+$/u'],
+            'Direccion_Clinica' => ['required','max','regex:/^[\pL\s\0-9\-]+$/u'],
+            'Telefono_Clinica' => ['required','min:7','max:9','regex:/[0-9]/'],
         ];
     }
 }
