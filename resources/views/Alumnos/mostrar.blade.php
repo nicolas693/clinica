@@ -62,7 +62,7 @@
                              <span class="caret"></span>
                            </button>
                            <ul class="dropdown-menu" role="menu">
-                             <li><a href={{ url('/Ficha/index', $pac->id_Paciente) }}>Ver Ficha</a></li>
+                             <li><a href={{ url('/Ficha/index', $pa->id_Paciente) }}>Ver Ficha</a></li>
                              <li><a href={{route('Paciente.edit',$pa->rut)}}>Editar</a></li>
                              <li><a href={{route('Paciente.show',$pa->rut)}}>Dar de Baja</a></li>
                            </ul>

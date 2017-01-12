@@ -31,9 +31,9 @@ class ClinicaUpdateRequest extends Request
     {
         return [
           'id_Clinica' => 'required'.$this->route->getparameter('Clinica'),
-          'Nombre_Clinica' => 'required|max:15|regex:/^[a-zA-Z\s]*$/',
-          'Direccion_Clinica' => 'required|max:25|regex:/^[a-zA-Z\s]*$/',
-          'Telefono_Clinica' => 'required|min:7|max:9',
+          'Nombre_Clinica' => ['required','max:15','alpha'],
+          'Direccion_Clinica' => ['required','max','alpha_num'],
+          'Telefono_Clinica' => ['required','min:7','max:9','integer'],
         ];
     }
 }

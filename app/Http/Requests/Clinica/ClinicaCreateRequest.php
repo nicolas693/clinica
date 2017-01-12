@@ -24,10 +24,10 @@ class ClinicaCreateRequest extends Request
     public function rules()
     {
         return [
-            'id_Clinica' => 'required|unique:Clinica,id_Clinica',
-            'Nombre_Clinica' => 'required|max:15|regex:/^[a-zA-Z\s]*$/',
-            'Direccion_Clinica' => 'required|max:25|regex:/^[a-zA-Z\s]*$/',
-            'Telefono_Clinica' => 'required|min:7|max:9',
+            'id_Clinica' => ['required','unique:Clinica,id_Clinica'],
+            'Nombre_Clinica' => ['required','max:15','alpha'],
+            'Direccion_Clinica' => ['required','max','alpha_num'],
+            'Telefono_Clinica' => ['required','min:7','max:9','integer'],
         ];
     }
 }

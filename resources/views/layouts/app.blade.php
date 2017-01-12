@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Clinca</title>
+    <title>Clínica</title>
 
     <!-- Bootstrap -->
 
@@ -118,7 +118,7 @@
 </html>
 
 <!--Footer-->
-<footer>
+<!--  <footer>
      <div class="container">
        <div class="row leg-room">
     <div class="col-md-12 text-center">
@@ -127,10 +127,10 @@
             &copy;Clinica Inc.
             <span class="text-uppercase">All Rights Reserved</span></p>
     </div>
-</div><!-- end row -->
+</div>
      </div>
    </footer>
-
+-->
 
 <!--/.Footer-->
 

@@ -62,16 +62,14 @@ class PacientesController extends Controller
      */
     public function store(PacienteCreateRequest $request)
     {
-
+      $id_1=Auth::id();
       $alumnos=Alumnos::all();
       foreach ($alumnos as $alu) {
-        if($alu->user_id == Auth::user()->id){
-          $request['alumno_id']=$alu->rut_alumno;
+        if($alu->user_id == $id_1){
+          $request['rut_alumno']=$alu->rut_alumno;
         }
       }
       $request['alta']=true;
-
-
 
 
         Paciente::create($request->all());
@@ -133,7 +131,7 @@ class PacientesController extends Controller
         $input=$request->all();
         $pa->fill($input)->save();
         $val=$pa->clinica_id;
-        
+
 
         return redirect('/Alumno/mostrar/'.$val);
     }

@@ -10,7 +10,7 @@ use clinica\Models\Alumnos\Alumnos;
 use clinica\Models\Paciente\Clinica;
 use clinica\Models\Asignatura\Asignatura;
 use clinica\Models\Paciente\Paciente;
-
+use clinica\http\Requests\Docente\DocenteCreateRequest;
 
 
 class AlumnosController extends Controller
@@ -38,7 +38,7 @@ class AlumnosController extends Controller
     {
         $asignatura =Asignatura::lists('nombre','id');
         $clinica = Clinica::lists('Nombre_Clinica','id_Clinica');
-          return view('Alumnos.create')->with('clinica',$clinica)->with('asignatura',$asignatura);
+        return view('Alumnos.create')->with('clinica',$clinica)->with('asignatura',$asignatura);
 
     }
 
@@ -48,7 +48,7 @@ class AlumnosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DocenteCreateRequest $request)
     {
       Alumnos::create($request->all());
       return redirect('/Docente');
@@ -105,6 +105,5 @@ class AlumnosController extends Controller
     {
       $paciente=Paciente::all();
       return view('Alumnos.mostrar')->with('paciente',$paciente)->with('id',$id);
-
     }
 }

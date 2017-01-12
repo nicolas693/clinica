@@ -22,9 +22,6 @@ class DocentesController extends Controller
     {
         //
         return view('Docente.index');
-
-
-
     }
 
     /**

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1f68495cd17b3fef36f67c366915a677",
-    "content-hash": "2fc6141b6301bfefbfcfe6105297ee69",
+    "hash": "adbb76cf68508cf41272b8fb111ac80e",
+    "content-hash": "27f451f7395ef9391c9fca6806717003",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -226,16 +226,16 @@
         },
         {
             "name": "freshwork/chilean-bundle",
-            "version": "2.0",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/freshworkstudio/ChileanBundle.git",
-                "reference": "70693c4899b9ea7246189d86469ffb4b4c46030c"
+                "reference": "a6aff65d559f102a87b48ed6b3d1d4f535db5c83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/freshworkstudio/ChileanBundle/zipball/70693c4899b9ea7246189d86469ffb4b4c46030c",
-                "reference": "70693c4899b9ea7246189d86469ffb4b4c46030c",
+                "url": "https://api.github.com/repos/freshworkstudio/ChileanBundle/zipball/a6aff65d559f102a87b48ed6b3d1d4f535db5c83",
+                "reference": "a6aff65d559f102a87b48ed6b3d1d4f535db5c83",
                 "shasum": ""
             },
             "require": {
@@ -270,7 +270,7 @@
                 "tools",
                 "validation"
             ],
-            "time": "2016-04-14 08:30:33"
+            "time": "2016-04-16 18:38:39"
         },
         {
             "name": "jakub-onderka/php-console-color",
