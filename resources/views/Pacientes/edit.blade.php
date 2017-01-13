@@ -37,8 +37,6 @@
               </div>
 
 
-
-
               <div class="col-sm-4">
                   {!!form::label('Nombre')!!}
                   {!!form::text('Nombre',null,['id'=>'Nombre','class'=>'form-control'])!!}

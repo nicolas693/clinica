@@ -14,19 +14,19 @@ class AsignaturaTableSeeder extends Seeder
     {
       $asi=new Asignatura([
         'id'=>1,
-        'nombre'=>'asignatura1',
+        'nombre'=>'Drogadicción y Alcoholismo 1',
       ]);
       $asi->save();
 
       $asi=new Asignatura([
         'id'=>2,
-        'nombre'=>'asignatura2',
+        'nombre'=>'Creación de Explosivos',
       ]);
       $asi->save();
 
       $asi=new Asignatura([
         'id'=>3,
-        'nombre'=>'asignatura3',
+        'nombre'=>'Técnicas para la Resaca',
       ]);
       $asi->save();
     }

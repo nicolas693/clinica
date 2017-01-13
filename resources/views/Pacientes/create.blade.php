@@ -124,11 +124,9 @@
                 {!! Form::select('clinica_id',$paciente,null,['id'=>'id_Clinica','class'=>'form-control']) !!}
 
              </div>
-
-                 {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
-              {!!Form::close()!!}
+             {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
+          {!!Form::close()!!}
            </div>
-
         </div>
 
 

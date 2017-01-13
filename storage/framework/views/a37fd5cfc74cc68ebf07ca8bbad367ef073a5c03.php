@@ -1,11 +1,14 @@
-<?php $__env->startSection('title','Paciente Nuevo'); ?>
+<?php $__env->startSection('title','Editar Paciente'); ?>
+
 <?php $__env->startSection('content'); ?>
+
 <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
 
+
    <div class="page-header">
-     <h1>Paciente Nuevo </h1>
+     <h1>Editar datos paciente </h1>
    </div>
 
    <div class="row">
@@ -13,25 +16,27 @@
 
         <div class="panel panel-default">
           <div class="panel-heading">
-             Nuevo Paciente
+            Editar Datos Paciente
+            <p class="navbar-text navbar-right" style=" margin-top: 1px;">
+              <a <button href=<?php echo e(URL::previous()); ?> type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
 
-             <p class="navbar-text navbar-right" style=" margin-top: 1px;">
-               <a <button href=<?php echo e(URL::previous()); ?> type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
-              </p>
+
+             </p>
 
            </div>
           <div class="panel-body">
 
-               <?php echo Form::open(['route'=>'Paciente.store','method'=>'POST']); ?>
+               <?php echo Form::model($pa,['route'=>['Paciente.update',$pa->rut],'method'=>'PUT']); ?>
 
 
 
                <div class="col-sm-12">
-                  <?php echo form::label('RUT'); ?>
+                   <?php echo form::label('Rut'); ?>
 
-                  <?php echo form::text('rut',null,['id'=>'rut','class'=>'form-control']); ?>
+                   <?php echo form::text('rut',null,['id'=>'rut','class'=>'form-control']); ?>
 
-             </div>
+              </div>
+
 
               <div class="col-sm-4">
                   <?php echo form::label('Nombre'); ?>
@@ -61,11 +66,10 @@
 
              </div>
 
-             <div class="col-sm-5">
-                  <?php echo form::label('Sexo'); ?>
+             <div class="col-sm-12">
+               <?php echo form::label('Sexo'); ?>
 
-                  <?php echo Form::select('Genero',$genero,null,['id'=>'Genero','class'=>'form-control']); ?>
-
+               <?php echo Form::select('Genero',$genero,null,['id'=>'Genero','class'=>'form-control']); ?>
 
              </div>
 
@@ -74,8 +78,10 @@
 
                   <?php echo form::text('Fecha_Nacimiento',null,['id'=>'Fecha_Nacimiento','class'=>'form-control']); ?>
 
-
              </div>
+
+
+
 
               <div class="col-sm-4">
                   <?php echo form::label('Telefono Fijo'); ?>
@@ -122,7 +128,7 @@
              </div>
 
               <div class="col-sm-4">
-                  <?php echo form::label('Región'); ?>
+                  <?php echo form::label('Region'); ?>
 
                   <?php echo form::text('Region',null,['id'=>'Region','class'=>'form-control']); ?>
 
@@ -142,6 +148,9 @@
 
              </div>
 
+
+
+
               <div class="col-sm-12">
                   <?php echo form::label('Cobertura Medica'); ?>
 
@@ -149,20 +158,28 @@
 
              </div>
 
+             <div class="col-sm-12">
+                 <?php echo form::label('Alumno '); ?>
 
+                 <?php echo form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control']); ?>
+
+            </div>
 
 
              <div class="col-sm-5">
 
                 <?php echo form::label('Clinica'); ?>
 
-                <?php echo Form::select('clinica_id',$paciente,null,['id'=>'id_Clinica','class'=>'form-control']); ?>
+
+                <?php echo Form::select('clinica_id',$clinica,null,['id'=>'clinica_id','class'=>'form-control']); ?>
+
+
 
 
              </div>
-             <?php echo form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;']); ?>
+                 <?php echo form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;']); ?>
 
-          <?php echo Form::close(); ?>
+              <?php echo Form::close(); ?>
 
            </div>
         </div>
@@ -170,9 +187,6 @@
 
      </div>
    </div>
-
-
-
 
 
 

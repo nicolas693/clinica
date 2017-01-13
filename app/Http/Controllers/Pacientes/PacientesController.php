@@ -80,7 +80,7 @@ class PacientesController extends Controller
        }
 
        $request['alta']=true;
-       $request['rut']=substr($request->rut,0,-3);
+       $request['rut']=substr($request->rut,0,-2);
 
 
 
@@ -124,8 +124,9 @@ class PacientesController extends Controller
 
     public function edit($id)
     {
+
        $genero = ['Hombre','Mujer'];
-       $clinica = Clinica::lists('Nombre_Clinica')->prepend('Seleccioname la Clinica');
+       $clinica = Clinica::lists('Nombre_Clinica')->prepend('Seleccione la Clinica');
        $pa= Paciente::find($id);
        return view('Pacientes.edit', array('pa'=>$pa,'clinica'=>$clinica))->with('genero',$genero);
 
@@ -145,7 +146,11 @@ class PacientesController extends Controller
         $input=$request->all();
         $pa->fill($input)->save();
         $val=$pa->clinica_id;
-
+        if($request->Genero==0){
+          $request['Genero']="Hombre";
+        }else{
+          $request['Genero']="Mujer";
+        }
 
         return redirect('/Alumno/mostrar/'.$val);
     }

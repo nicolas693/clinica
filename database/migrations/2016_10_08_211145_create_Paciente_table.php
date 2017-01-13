@@ -19,7 +19,7 @@ class CreatePacienteTable extends Migration
             $table->String('Paterno')->length(15);
             $table->String('Materno')->length(15);
             $table->String('Fecha_Ingreso')->length(10);
-            $table->String('Genero')->length(1);
+            $table->String('Genero')->length(6);
             $table->String('Fecha_Nacimiento')->length(10);
             $table->Integer('Telefono_Casa');
             $table->Integer('Telefono_Movil');

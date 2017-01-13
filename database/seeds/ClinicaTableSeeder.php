@@ -14,7 +14,7 @@ class ClinicaTableSeeder extends Seeder
     {
       $cli=new Clinica([
         'id_Clinica'=>1,
-        'Nombre_Clinica'=>'Clinica uno',
+        'Nombre_Clinica'=>'La Casa de la Tortura',
         'Direccion_Clinica'=>'direccion cualquiera',
         'Telefono_Clinica'=>1234567,
       ]);
@@ -22,7 +22,7 @@ class ClinicaTableSeeder extends Seeder
 
       $cli=new Clinica([
         'id_Clinica'=>2,
-        'Nombre_Clinica'=>'Clinica dos',
+        'Nombre_Clinica'=>'Clinica Cuma',
         'Direccion_Clinica'=>'direccion cualquiera',
         'Telefono_Clinica'=>1234567,
       ]);
@@ -30,7 +30,7 @@ class ClinicaTableSeeder extends Seeder
 
       $cli=new Clinica([
         'id_Clinica'=>3,
-        'Nombre_Clinica'=>'Clinica tres',
+        'Nombre_Clinica'=>'Donde Don Chapatin',
         'Direccion_Clinica'=>'direccion cualquiera',
         'Telefono_Clinica'=>1234567,
       ]);
