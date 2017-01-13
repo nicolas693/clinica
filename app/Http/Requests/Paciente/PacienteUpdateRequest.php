@@ -36,7 +36,6 @@ class PacienteUpdateRequest extends Request
           'Paterno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
           'Materno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
           'Fecha_Ingreso' =>'required|regex:/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/',
-          'Genero' =>'required|regex:/^[MF]$/',
           'Fecha_Nacimiento' =>'required|regex:/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/',
           'Telefono_Casa' =>'min:7|max:9|regex:/[0-9]/',
           'Telefono_Movil' =>'min:7|max:9|regex:/[0-9]/',

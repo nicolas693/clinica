@@ -52,8 +52,9 @@
              </div>
 
              <div class="col-sm-5">
-                  {!!form::label('Genero')!!}
-                  {!! Form::text('Genero',null,['id'=>'Genero','class'=>'form-control']) !!}
+                  {!!form::label('Sexo')!!}
+                  {!! Form::select('Genero',$genero,null,['id'=>'Genero','class'=>'form-control']) !!}
+
              </div>
 
               <div class="col-sm-12">
@@ -120,10 +121,7 @@
              <div class="col-sm-5">
 
                 {!!form::label('Clinica')!!}
-
                 {!! Form::select('clinica_id',$paciente,null,['id'=>'id_Clinica','class'=>'form-control']) !!}
-
-
 
              </div>
 

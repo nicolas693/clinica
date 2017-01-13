@@ -27,7 +27,7 @@ class TratamientoController extends Controller
      */
     public function create()
     {
-        //
+        return view ('Tratamiento/create');
     }
 
     /**
@@ -38,7 +38,7 @@ class TratamientoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Tratamiento::create($request->all());
     }
 
     /**

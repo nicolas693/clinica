@@ -60,10 +60,9 @@
              </div>
 
              <div class="col-sm-12">
-                  {!!form::label('Genero')!!}
-                  {!!form::text('Genero',null,['id'=>'Genero','class'=>'form-control'])!!}
+               {!!form::label('Sexo')!!}
+               {!! Form::select('Genero',$genero,null,['id'=>'Genero','class'=>'form-control']) !!}
              </div>
-
 
               <div class="col-sm-12">
                   {!!form::label('Fecha Nacimiento')!!}

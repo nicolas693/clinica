@@ -49,9 +49,10 @@ class PacientesController extends Controller
      */
     public function create()
     {
+        $genero = ['Hombre','Mujer'];
         $date = Carbon::now();
         $paciente = Clinica::lists('Nombre_Clinica','id_Clinica','rut_alumno');
-        return view('Pacientes.create')->with('paciente',$paciente);
+        return view('Pacientes.create')->with('paciente',$paciente)->with('genero',$genero);
     }
 
     /**
@@ -60,22 +61,28 @@ class PacientesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PacienteCreateRequest $request)
-    {
-      $id_1=Auth::id();
-      $alumnos=Alumnos::all();
-      foreach ($alumnos as $alu) {
-        if($alu->user_id == $id_1){
-          $request['rut_alumno']=$alu->rut_alumno;
-        }
-      }
-      $request['alta']=true;
+     public function store(PacienteCreateRequest $request)
+     {
+
+       $id_1=Auth::id();
+       $alumnos=Alumnos::all();
+       foreach ($alumnos as $alu) {
+         if($alu->user_id == $id_1){
+
+           $request['alumno_id']=$alu->rut_alumno;
+         }
+       }
+
+       $request['alta']=true;
+       $request['rut']=substr($request->rut,0,-3);
 
 
-        Paciente::create($request->all());
-        $id=$request->clinica_id;
-        return redirect('/Alumno/mostrar/'.$id);
-    }
+        dd($request->all());
+         Paciente::create($request->all());
+
+         $id=$request->clinica_id;
+         return redirect('/Alumno/mostrar/'.$id);
+     }
 
     /**
      * Display the specified resource.
@@ -111,9 +118,10 @@ class PacientesController extends Controller
 
     public function edit($id)
     {
+       $genero = ['Hombre','Mujer'];
        $clinica = Clinica::lists('Nombre_Clinica')->prepend('Seleccioname la Clinica');
        $pa= Paciente::find($id);
-       return view('Pacientes.edit', array('pa'=>$pa,'clinica'=>$clinica));
+       return view('Pacientes.edit', array('pa'=>$pa,'clinica'=>$clinica))->with('genero',$genero);
 
     }
 

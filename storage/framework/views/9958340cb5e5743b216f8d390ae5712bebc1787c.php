@@ -1,7 +1,5 @@
-@extends('layouts.app')
-
-@section('title','Planificación de Tratamiento')
-@section('content')
+<?php $__env->startSection('title','Planificación de Tratamiento'); ?>
+<?php $__env->startSection('content'); ?>
 
   <div class="page-header "  >
     <h1>Planificación de Tratamiento<small></small></h1>
@@ -18,12 +16,12 @@
              </p>
           </div>
           <div class="panel-body">
-            {!!Form::open(['route'=>'Tratamiento.store','method'=>'POST'])!!}
-
-            {{!!Form::close}}
+            
           </div>
         </div>
       </div>
     </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

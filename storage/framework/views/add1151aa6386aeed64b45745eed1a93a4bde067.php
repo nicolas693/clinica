@@ -62,9 +62,10 @@
              </div>
 
              <div class="col-sm-5">
-                  <?php echo form::label('Genero'); ?>
+                  <?php echo form::label('Sexo'); ?>
 
-                  <?php echo Form::text('Genero',null,['id'=>'Genero','class'=>'form-control']); ?>
+                  <?php echo Form::select('Genero',$genero,null,['id'=>'Genero','class'=>'form-control']); ?>
+
 
              </div>
 
@@ -155,10 +156,7 @@
 
                 <?php echo form::label('Clinica'); ?>
 
-
                 <?php echo Form::select('clinica_id',$paciente,null,['id'=>'id_Clinica','class'=>'form-control']); ?>
-
-
 
 
              </div>
