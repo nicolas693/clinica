@@ -47,8 +47,8 @@ class PacienteCreateRequest extends Request
     public function messages()
     {
       return [
-        'paciente_rut.cl_rut' => 'Formato de Rut no valido',
-        'paciente_rut.regex' => 'El rut no debe contener espacios',
+        'rut.cl_rut' => 'Formato de Rut no valido',
+        'rut.regex' => 'El rut no debe contener espacios',
       ];
     }
 

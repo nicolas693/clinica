@@ -37,9 +37,8 @@ class PacienteUpdateRequest extends Request
           'Materno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
           'Fecha_Ingreso' =>'required|regex:/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/',
           'Fecha_Nacimiento' =>'required|regex:/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/',
-          'Telefono_Casa' =>'min:7|max:9|regex:/[0-9]/',
-          'Telefono_Movil' =>'min:7|max:9|regex:/[0-9]/',
-          //'Telefono_Oficina' =>'min:7|max:9|regex:/[0-9]/',
+          'Telefono_Casa' =>'min:8|max:9|regex:/[0-9]/',
+          'Telefono_Movil' =>'min:8|max:9|regex:/[0-9]/',
           'Calle' =>'required|max:25|regex:/^[\pL\s\0-9\-]+$/u',
           'Numero_Calle' =>'min:4|max:5|regex:/[0-9]/',
           'Pais' =>['required','max:15','regex:/^[\pL\s\-]+$/u'],
@@ -53,8 +52,8 @@ class PacienteUpdateRequest extends Request
     public function messages()
     {
       return [
-        'alumno.required' => 'Rut requerido',
-        'alumno_id.cl_rut' => 'Formato de Rut no valido',
+        'rut.cl_rut' => 'Formato de Rut no valido',
+        'rut.regex' => 'El rut no debe contener espacios',
       ];
     }
 
