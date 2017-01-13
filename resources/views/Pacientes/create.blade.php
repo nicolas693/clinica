@@ -64,20 +64,14 @@
              </div>
 
               <div class="col-sm-4">
-                  {!!form::label('Telefono Fijo')!!}
+                  {!!form::label('Teléfono Fijo')!!}
                   {!!form::text('Telefono_Casa',null,['id'=>'Telefono_Casa','class'=>'form-control'])!!}
              </div>
 
 
               <div class="col-sm-4">
-                  {!!form::label('Telefono Movil')!!}
+                  {!!form::label('Teléfono Movil')!!}
                   {!!form::text('Telefono_Movil',null,['id'=>'Telefono_Movil','class'=>'form-control'])!!}
-             </div>
-
-
-              <div class="col-sm-4">
-                  {!!form::label('Telefono Oficina')!!}
-                  {!!form::text('Telefono_Oficina',null,['id'=>'Telefono_Oficina','class'=>'form-control'])!!}
              </div>
 
               <div class="col-sm-6">
@@ -86,7 +80,7 @@
              </div>
 
              <div class="col-sm-6">
-                  {!!form::label('Numero Calle')!!}
+                  {!!form::label('Número Casa')!!}
                   {!!form::text('Numero_Calle',null,['id'=>'Numero_Calle','class'=>'form-control'])!!}
              </div>
 
@@ -111,7 +105,7 @@
              </div>
 
               <div class="col-sm-12">
-                  {!!form::label('Cobertura Medica')!!}
+                  {!!form::label('Cobertura Médica')!!}
                   {!!form::text('Cobertura_Medica',null,['id'=>'Cobertura_Medica','class'=>'form-control'])!!}
              </div>
 

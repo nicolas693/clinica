@@ -98,14 +98,6 @@
 
              </div>
 
-
-              <div class="col-sm-4">
-                  <?php echo form::label('Telefono Oficina'); ?>
-
-                  <?php echo form::text('Telefono_Oficina',null,['id'=>'Telefono_Oficina','class'=>'form-control']); ?>
-
-             </div>
-
               <div class="col-sm-6">
                   <?php echo form::label('Calle'); ?>
 
@@ -114,7 +106,7 @@
              </div>
 
              <div class="col-sm-6">
-                  <?php echo form::label('Numero Calle'); ?>
+                  <?php echo form::label('Número Casa'); ?>
 
                   <?php echo form::text('Numero_Calle',null,['id'=>'Numero_Calle','class'=>'form-control']); ?>
 

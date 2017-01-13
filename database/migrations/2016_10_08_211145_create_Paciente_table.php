@@ -13,7 +13,7 @@ class CreatePacienteTable extends Migration
     public function up()
     {
         Schema::create('Paciente', function (Blueprint $table) {
-            $table->Increments('rut');
+            $table->String('rut');
 
             $table->String('Nombre')->length(15);
             $table->String('Paterno')->length(15);
@@ -23,7 +23,6 @@ class CreatePacienteTable extends Migration
             $table->String('Fecha_Nacimiento')->length(10);
             $table->Integer('Telefono_Casa');
             $table->Integer('Telefono_Movil');
-            $table->Integer('Telefono_Oficina');
             $table->String('Calle')->length(25);
             $table->Integer('Numero_Calle');
             $table->String('Pais')->length(15);
@@ -31,6 +30,8 @@ class CreatePacienteTable extends Migration
             $table->String('Comuna')->length(15);
             $table->String('Nacionalidad')->length(15);
             $table->String('Cobertura_Medica')->length(15);
+            
+            $table->primary('rut');
             $table->integer('clinica_id')->unsigned();
             $table->integer('alumno_id')->unsigned();
             $table->boolean('alta');

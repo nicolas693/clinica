@@ -78,7 +78,7 @@
              </div>
 
               <div class="col-sm-4">
-                  <?php echo form::label('Telefono Fijo'); ?>
+                  <?php echo form::label('Teléfono Fijo'); ?>
 
                   <?php echo form::text('Telefono_Casa',null,['id'=>'Telefono_Casa','class'=>'form-control']); ?>
 
@@ -86,17 +86,9 @@
 
 
               <div class="col-sm-4">
-                  <?php echo form::label('Telefono Movil'); ?>
+                  <?php echo form::label('Teléfono Movil'); ?>
 
                   <?php echo form::text('Telefono_Movil',null,['id'=>'Telefono_Movil','class'=>'form-control']); ?>
-
-             </div>
-
-
-              <div class="col-sm-4">
-                  <?php echo form::label('Telefono Oficina'); ?>
-
-                  <?php echo form::text('Telefono_Oficina',null,['id'=>'Telefono_Oficina','class'=>'form-control']); ?>
 
              </div>
 
@@ -108,7 +100,7 @@
              </div>
 
              <div class="col-sm-6">
-                  <?php echo form::label('Numero Calle'); ?>
+                  <?php echo form::label('Número Casa'); ?>
 
                   <?php echo form::text('Numero_Calle',null,['id'=>'Numero_Calle','class'=>'form-control']); ?>
 
@@ -143,7 +135,7 @@
              </div>
 
               <div class="col-sm-12">
-                  <?php echo form::label('Cobertura Medica'); ?>
+                  <?php echo form::label('Cobertura Médica'); ?>
 
                   <?php echo form::text('Cobertura_Medica',null,['id'=>'Cobertura_Medica','class'=>'form-control']); ?>
 

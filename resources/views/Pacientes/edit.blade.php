@@ -81,19 +81,13 @@
                   {!!form::text('Telefono_Movil',null,['id'=>'Telefono_Movil','class'=>'form-control'])!!}
              </div>
 
-
-              <div class="col-sm-4">
-                  {!!form::label('Telefono Oficina')!!}
-                  {!!form::text('Telefono_Oficina',null,['id'=>'Telefono_Oficina','class'=>'form-control'])!!}
-             </div>
-
               <div class="col-sm-6">
                   {!!form::label('Calle')!!}
                   {!!form::text('Calle',null,['id'=>'Calle','class'=>'form-control'])!!}
              </div>
 
              <div class="col-sm-6">
-                  {!!form::label('Numero Calle')!!}
+                  {!!form::label('Número Casa')!!}
                   {!!form::text('Numero_Calle',null,['id'=>'Numero_Calle','class'=>'form-control'])!!}
              </div>
 

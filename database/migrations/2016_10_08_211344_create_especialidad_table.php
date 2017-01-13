@@ -18,7 +18,7 @@ class CreateEspecialidadTable extends Migration
 
        $table->integer('asignatura_id')->unsigned();
        $table->foreign('asignatura_id')->references('id')->on('asignatura');
-       $table->integer('paciente_id')->unsigned();
+       $table->String('paciente_id');
        $table->foreign('paciente_id')->references('rut')->on('Paciente');
     });
 }

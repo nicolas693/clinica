@@ -80,7 +80,7 @@ class PacientesController extends Controller
        }
 
        $request['alta']=true;
-       $request['rut']=substr($request->rut,0,-2);
+       //$request['rut']=substr($request->rut,0,-2);
 
 
 

@@ -16,7 +16,7 @@ class CreateTratamientoTable extends Migration
           $table->increments('id_Tratamiento');
           $table->String('nombre');
           $table->String('fecha');
-          $table->integer('paciente_id')->unsigned();
+          $table->String('paciente_id');
           $table->integer('ficha_id')->unsigned();
 
           $table->foreign('paciente_id')->references('rut')->on('Paciente');

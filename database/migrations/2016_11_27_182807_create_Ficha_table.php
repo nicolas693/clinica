@@ -15,7 +15,7 @@ class CreateFichaTable extends Migration
         Schema::create('Ficha', function (Blueprint $table) {
             $table->increments('id_Ficha');
 
-            $table->integer('paciente_id')->unsigned();
+            $table->String('paciente_id');
             $table->integer('alumno_id')->unsigned();
 
             $table->foreign('paciente_id')->references('rut')->on('Paciente');
