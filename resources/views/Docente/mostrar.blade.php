@@ -35,7 +35,7 @@
                	@foreach($alumno as $al)
 
                	<tr>
-               		<td>{{$al->rut_alumno}}</td>
+               		<td>{{$al->alumno_id}}</td>
                		<td>{{$al->Nombre_Alumno}}</td>
                		<td>{{$al->Apellido_Alumno}}</td>
                   <td>{{$al->asignatura_id}}</td>

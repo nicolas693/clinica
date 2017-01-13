@@ -24,7 +24,7 @@ class DocenteCreateRequest extends Request
     public function rules()
     {
         return [
-            'rut_alumno' => ['required','cl_rut'],
+            'alumno_id' => ['required','cl_rut'],
             'Nombre_Alumno' => ['required','min:3','max:12','regex:/^[\pL\s\-]+$/u'],
             'Apellido_Alumno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
             'Telefono_Alumno' => ['required','min:7','max:9','regex:/[0-9]/'],
@@ -35,7 +35,7 @@ class DocenteCreateRequest extends Request
     public function messages()
     {
       return [
-        'rut_alumno.cl_rut' => 'Formato de Rut no valido',
+        'alumno_id.cl_rut' => 'Formato de Rut no valido',
         'user_id.required' => 'El campo código usuario es obligatorio'
       ];
     }

@@ -61,7 +61,7 @@
               <div class="form-group">
                <?php echo form::label('Rut : '); ?>
 
-                <?php echo $info->rut_alumno; ?>
+                <?php echo $info->alumno_id; ?>
 
               </div>
              <div class="form-group">

@@ -19,7 +19,7 @@ class CreateFichaTable extends Migration
             $table->integer('alumno_id')->unsigned();
 
             $table->foreign('paciente_id')->references('rut')->on('Paciente');
-            $table->foreign('alumno_id')->references('rut_alumno')->on('Alumno');
+            $table->foreign('alumno_id')->references('alumno_id')->on('Alumno');
 
 
         });

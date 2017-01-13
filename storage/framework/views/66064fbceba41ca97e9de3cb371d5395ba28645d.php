@@ -31,7 +31,7 @@
                	<?php foreach($alumno as $al): ?>
 
                	<tr>
-               		<td><?php echo e($al->rut_alumno); ?></td>
+               		<td><?php echo e($al->alumno_id); ?></td>
                		<td><?php echo e($al->Nombre_Alumno); ?></td>
                		<td><?php echo e($al->Apellido_Alumno); ?></td>
                   <td><?php echo e($al->asignatura_id); ?></td>

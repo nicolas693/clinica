@@ -25,7 +25,7 @@
 
            <div class="col-sm-12">
               {!!form::label('Rut Alumno')!!}
-              {!!form::text('rut_alumno',null,['id'=>'rut_alumno','class'=>'form-control'])!!}
+              {!!form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control'])!!}
 
          </div>
          <div class="col-sm-4">

@@ -69,12 +69,11 @@
              </div>
 
              <div class="col-sm-12">
-                  <?php echo form::label('Genero'); ?>
+               <?php echo form::label('Sexo'); ?>
 
-                  <?php echo form::text('Genero',null,['id'=>'Genero','class'=>'form-control']); ?>
+               <?php echo Form::select('Genero',$genero,null,['id'=>'Genero','class'=>'form-control']); ?>
 
              </div>
-
 
               <div class="col-sm-12">
                   <?php echo form::label('Fecha Nacimiento'); ?>

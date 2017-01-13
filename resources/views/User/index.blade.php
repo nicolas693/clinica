@@ -54,7 +54,7 @@
               {!!Form::open()!!}
               <div class="form-group">
                {!!form::label('Rut : ')!!}
-                {!!$info->rut_alumno !!}
+                {!!$info->alumno_id !!}
               </div>
              <div class="form-group">
               {!!form::label('Nombre : ')!!}

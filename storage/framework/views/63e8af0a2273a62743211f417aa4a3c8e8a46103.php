@@ -17,8 +17,6 @@
 
              <p class="navbar-text navbar-right" style=" margin-top: 1px;">
                <a <button href=<?php echo e(URL::previous()); ?> type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
-
-
               </p>
 
            </div>
@@ -64,9 +62,10 @@
              </div>
 
              <div class="col-sm-5">
-                  <?php echo form::label('Genero'); ?>
+                  <?php echo form::label('Sexo'); ?>
 
-                  <?php echo Form::text('Genero',null,['id'=>'Genero','class'=>'form-control']); ?>
+                  <?php echo Form::select('Genero',$genero,null,['id'=>'Genero','class'=>'form-control']); ?>
+
 
              </div>
 
@@ -157,10 +156,7 @@
 
                 <?php echo form::label('Clinica'); ?>
 
-
                 <?php echo Form::select('clinica_id',$paciente,null,['id'=>'id_Clinica','class'=>'form-control']); ?>
-
-
 
 
              </div>

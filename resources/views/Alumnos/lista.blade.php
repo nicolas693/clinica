@@ -37,7 +37,7 @@
                <tbody>
                  @foreach ($Alumno as $Alumno)
                    <tr>
-                     <td>{{$Alumno->rut_alumno}}</td>
+                     <td>{{$Alumno->alumno_id}}</td>
                      <td>{{$Alumno->Nombre_Alumno}}</td>
                      <td>{{$Alumno->Apellido_Alumno}}}</td>
                      <td>{{$Alumno->Telefono_Alumno}}</td>

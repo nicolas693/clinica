@@ -8,11 +8,11 @@ class Alumnos extends Model
 {
     //
     protected $table      = 'Alumno';
-    protected $primarykey = 'rut_alumno';
+    protected $primarykey = 'alumno_id';
     public    $timestamps = false;
 
     protected $fillable   = [
-        'rut_alumno','asignatura_id','Nombre_Alumno','Apellido_Alumno','Telefono_Alumno','id_Clinica','user_id'
+        'alumno_id','asignatura_id','Nombre_Alumno','Apellido_Alumno','Telefono_Alumno','id_Clinica','user_id'
     ];
 
     public function Clinica()

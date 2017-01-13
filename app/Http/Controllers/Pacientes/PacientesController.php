@@ -51,7 +51,7 @@ class PacientesController extends Controller
     {
         $genero = ['Hombre','Mujer'];
         $date = Carbon::now();
-        $paciente = Clinica::lists('Nombre_Clinica','id_Clinica','rut_alumno');
+        $paciente = Clinica::lists('Nombre_Clinica','id_Clinica','alumno_id');
         return view('Pacientes.create')->with('paciente',$paciente)->with('genero',$genero);
     }
 
@@ -69,15 +69,21 @@ class PacientesController extends Controller
        foreach ($alumnos as $alu) {
          if($alu->user_id == $id_1){
 
-           $request['alumno_id']=$alu->rut_alumno;
+           $request['alumno_id']=$alu->alumno_id;
          }
+       }
+
+       if($request->Genero==0){
+         $request['Genero']="Hombre";
+       }else{
+         $request['Genero']="Mujer";
        }
 
        $request['alta']=true;
        $request['rut']=substr($request->rut,0,-3);
 
 
-        dd($request->all());
+
          Paciente::create($request->all());
 
          $id=$request->clinica_id;

@@ -48,7 +48,7 @@ class PacienteCreateRequest extends Request
     public function messages()
     {
       return [
-        'rut_alumno.cl_rut' => 'Formato de Rut no valido',
+        'alumno_id.cl_rut' => 'Formato de Rut no valido',
       ];
     }
 

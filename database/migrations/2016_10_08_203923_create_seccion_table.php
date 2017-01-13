@@ -25,7 +25,7 @@ class CreateSeccionTable extends Migration
             $table->foreign('Docente_id')->references('id')->on('docente');
 
             $table->integer('Alumno_rut')->unsigned();
-            $table->foreign('Alumno_rut')->references('rut_alumno')->on('Alumno');
+            $table->foreign('Alumno_rut')->references('alumno_id')->on('Alumno');
 
         });
     }
