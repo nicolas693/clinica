@@ -11,8 +11,8 @@ use clinica\Models\Paciente\Clinica;
 use clinica\Models\Alumnos\Alumnos;
 use Auth;
 use Carbon\Carbon;
-use clinica\http\Requests\Paciente\PacienteCreateRequest;
-use clinica\http\Requests\Paciente\PacienteUpdateRequest;
+use clinica\Http\Requests\Paciente\PacienteCreateRequest;
+use clinica\Http\Requests\Paciente\PacienteUpdateRequest;
 class PacientesController extends Controller
 {
 
@@ -51,8 +51,10 @@ class PacientesController extends Controller
     {
         $genero = ['Hombre','Mujer'];
         $date = Carbon::now();
+        $date=$date->subDay()->format('d/m/y');
         $paciente = Clinica::lists('Nombre_Clinica','id_Clinica','alumno_id');
-        return view('Pacientes.create')->with('paciente',$paciente)->with('genero',$genero);
+
+        return view('Pacientes.create')->with('paciente',$paciente)->with('genero',$genero)->with('date',$date);
     }
 
     /**
@@ -78,6 +80,7 @@ class PacientesController extends Controller
        }else{
          $request['Genero']="Mujer";
        }
+       $request['rut'] = str_replace(' ', '', $request['rut']);
 
        $request['alta']=true;
        //$request['rut']=substr($request->rut,0,-2);
@@ -142,15 +145,26 @@ class PacientesController extends Controller
     public function update(PacienteUpdateRequest $request, $id)
     {
 
+      $id_1=Auth::id();
+      $alumnos=Alumnos::all();
+      foreach ($alumnos as $alu) {
+        if($alu->user_id == $id_1){
+
+          $request['alumno_id']=$alu->alumno_id;
+        }
+      }
+      $request['rut'] = str_replace(' ', '', $request['rut']);
+      if($request->Genero==0){
+        $request['Genero']="Hombre";
+      }else{
+        $request['Genero']="Mujer";
+      }
+
         $pa= Paciente::find($id);
         $input=$request->all();
         $pa->fill($input)->save();
         $val=$pa->clinica_id;
-        if($request->Genero==0){
-          $request['Genero']="Hombre";
-        }else{
-          $request['Genero']="Mujer";
-        }
+
 
         return redirect('/Alumno/mostrar/'.$val);
     }

@@ -25,7 +25,7 @@ class PacienteCreateRequest extends Request
     {
         return [
 
-            'rut' => ['required','cl_rut','regex:[^\s-]'],
+            'rut' => ['required','cl_rut'],
             'Nombre' => ['required','min:3','max:15','regex:/^[\pL\s\-]+$/u'],
             'Paterno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
             'Materno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],

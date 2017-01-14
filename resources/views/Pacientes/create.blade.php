@@ -79,7 +79,7 @@
              <div class="col-sm-6">
                <div class="input-group">
                  <label for="date">Fecha Nacimiento</label>
-                   <input type="text" class="form-control datepicker" name="Fecha_Nacimiento">
+                   <input type="text" class="form-control datepicker2" name="Fecha_Nacimiento">
 
                </div>
              </div>
@@ -162,11 +162,24 @@
    </div>
 
    <script>
+
        $('.datepicker').datepicker({
            format: "dd/mm/yyyy",
            language: "es",
-           startDate: '01/01/1900',
-           endDate:   '15/1/2017',
+           startDate: '-100y',
+           endDate:   '0d',
+           autoclose: true
+
+       });
+   </script>
+
+   <script>
+
+       $('.datepicker2').datepicker({
+           format: "dd/mm/yyyy",
+           language: "es",
+           startDate: '-1w',
+           endDate:   '+1w',
            autoclose: true
 
        });

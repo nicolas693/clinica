@@ -6,6 +6,28 @@
 
 @include('partials.messages')
 
+<head>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- Jquery -->
+
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Datepicker Files -->
+    <link rel="stylesheet" href="{{asset('datePicker/css/bootstrap-datepicker3.css')}}">
+    <link rel="stylesheet" href="{{asset('datePicker/css/bootstrap-standalone.css')}}">
+    <script src="{{asset('datePicker/js/bootstrap-datepicker.js')}}"></script>
+    <!-- Languaje -->
+    <script src="{{asset('datePicker/locales/bootstrap-datepicker.es.min.js')}}"></script>
+
+</head>
+
 
 
 
@@ -52,20 +74,31 @@
                   {!!form::text('Materno',null,['id'=>'Materno','class'=>'form-control'])!!}
              </div>
 
-              <div class="col-sm-12">
-                  {!!form::label('Fecha Ingreso')!!}
-                  {!!form::text('Fecha_Ingreso',null,['id'=>'Fecha_Ingreso','class'=>'form-control'])!!}
+
+             <div class="col-sm-6">
+               <div class="input-group">
+                 <label for="date">Fecha Ingreso</label>
+                   <input type="text" value="<?php echo htmlspecialchars($pa->Fecha_Ingreso); ?>" class="form-control datepicker" name="Fecha_Ingreso">
+
+               </div>
              </div>
+
+             <div class="col-sm-6">
+               <div class="input-group">
+                 <label for="date">Fecha Nacimiento</label>
+                   <input type="text" value="<?php echo htmlspecialchars($pa->Fecha_Nacimiento); ?>" class="form-control datepicker" name="Fecha_Nacimiento">
+
+               </div>
+             </div>
+
+
 
              <div class="col-sm-12">
                {!!form::label('Sexo')!!}
                {!! Form::select('Genero',$genero,null,['id'=>'Genero','class'=>'form-control']) !!}
              </div>
 
-              <div class="col-sm-12">
-                  {!!form::label('Fecha Nacimiento')!!}
-                  {!!form::text('Fecha_Nacimiento',null,['id'=>'Fecha_Nacimiento','class'=>'form-control'])!!}
-             </div>
+
 
 
 
@@ -119,10 +152,7 @@
                   {!!form::text('Cobertura_Medica',null,['id'=>'Cobertura_Medica','class'=>'form-control'])!!}
              </div>
 
-             <div class="col-sm-12">
-                 {!!form::label('Alumno ')!!}
-                 {!!form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control'])!!}
-            </div>
+
 
 
              <div class="col-sm-5">
@@ -142,6 +172,18 @@
 
      </div>
    </div>
+
+   <script>
+
+       $('.datepicker').datepicker({
+           format: "dd/mm/yyyy",
+           language: "es",
+           startDate: '-100y',
+           endDate:   '0d',
+           autoclose: true
+
+       });
+   </script>
 
 
 
