@@ -1,16 +1,18 @@
 <?php $__env->startSection('title','Lista de Pacientes'); ?>
-
 <?php $__env->startSection('content'); ?>
+<head>
+  <?php echo Html::style('css/micss.css'); ?>
 
+</head>
    <!-- Main component for a primary marketing message or call to action -->
    <div class="page-header "  >
      <h1>Pacientes<small></small></h1>
    </div>
 
-   <div class="row">
+   <div class="row divCenter">
      <div class="col-md-8">
 
-        <div class="panel panel-default " >
+        <div class="panel panel-default  " >
           <div class="panel-heading">
              Lista
              <p class="navbar-text navbar-right" style=" margin-top: 1px;">
@@ -31,7 +33,7 @@
 
                   <th>Acción</th>
                </thead>
-               <tbody>
+
 
                	<?php foreach($paciente as $pa): ?>
 
@@ -69,7 +71,7 @@
 
                	<?php endforeach; ?>
 
-               </tbody>
+
 
 
 

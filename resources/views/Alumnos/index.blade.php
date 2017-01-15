@@ -1,21 +1,23 @@
 @extends('layouts.app')
 @section('title','Lista de Pacientes')
 @section('content')
-
+<head>
+  {!!Html::style('css/micss.css')!!}
+</head>
    <!-- Main component for a primary marketing message or call to action -->
    <div class="page-header "  >
      <h1>Pacientes<small></small></h1>
    </div>
 
    <div class="row">
-     <div class="col-md-8">
+     <div class="col-md-8 divCenter">
 
         <div class="panel panel-default " >
           <div class="panel-heading">
              Lista
 
            </div>
-          <div class="panel-body " >
+          <div class="panel-body divCenter " >
 
              <table class="table table-bordered">
                <thead>
@@ -36,7 +38,7 @@
 
 
 
-                  <td><a <button href={{ url('/Alumno/mostrar',$cli->id_Clinica) }} type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Ver pacientes</button></a>
+                  <td><a <button href={{ route('Alumno.mostrar',$cli->id_Clinica) }} type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Ver pacientes</button></a>
 
                   </td>
                	</tr>
@@ -57,7 +59,7 @@
      </div>
    </div>
 
-   
+
 
 
 

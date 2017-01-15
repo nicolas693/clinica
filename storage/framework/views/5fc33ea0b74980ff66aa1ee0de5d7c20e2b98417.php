@@ -1,5 +1,6 @@
 <?php $__env->startSection('title','Inscribir Alumno'); ?>
 <?php $__env->startSection('content'); ?>
+<?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
   <ol class="breadcrumb">
        <li><a href="<?php echo e(url('Docente')); ?>"> Docente</a></li>
@@ -57,14 +58,14 @@
         </div>
 
         <div class="col-sm-5">
-           <?php echo form::label('Clinica'); ?>
+           <?php echo form::label('Clínica'); ?>
 
            <?php echo Form::select('id_Clinica',$clinica,null,['id'=>'id_Clinica','class'=>'form-control']); ?>
 
         </div>
 
         <div class="col-sm-6">
-           <?php echo form::label('Codigo Usuario'); ?>
+           <?php echo form::label('Código Usuario'); ?>
 
            <?php echo form::text('user_id',null,['id'=>'user_id','class'=>'form-control']); ?>
 

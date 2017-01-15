@@ -16,6 +16,8 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <?php echo Html::style('css/bootstrap.min.css'); ?>
 
+    <?php echo Html::style('css/micss.css'); ?>
+
     <?php echo Html::style('css/navbar-fixed-top.css'); ?>
 
     <?php echo Html::script('js/bootstrap.min.js'); ?>
@@ -40,7 +42,7 @@
     </style>
 </head>
 <body id="app-layout" class="bg-default" >
-    <nav class="navbar navbar-inverse navbar-static-top ">
+    <nav class="navbar navbar-inverse navF navbar-static-top ">
         <div class="container">
             <div class="navbar-header">
 
@@ -113,8 +115,8 @@
 
 </body>
 
-  <body>
-        <div class="container">
+  <body style="background-color: #69A0CA; "   >
+        <div class="container fondoC">
           <?php echo $__env->yieldContent('content'); ?>
         </div> <!-- /container -->
   </body>

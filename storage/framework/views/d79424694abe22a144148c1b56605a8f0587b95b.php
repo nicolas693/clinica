@@ -2,14 +2,17 @@
 
 <?php $__env->startSection('content'); ?>
 
+<head>
+  <?php echo Html::style('css/micss.css'); ?>
 
+</head>
 
 
    <div class="page-header">
      <h1>aaaaaaaaaAAAAAAAAAAAAAAAaaaaAAaaaA!!! </h1>
    </div>
 
-   <div class="row">
+   <div class="row divCenter">
      <div class="col-md-8">
 
         <div class="panel panel-primary">
