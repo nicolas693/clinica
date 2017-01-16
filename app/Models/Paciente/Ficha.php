@@ -7,14 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 class Ficha extends Model
 {
 
-    protected $table= 'Ficha';
-    protected $primaryKey= 'id_Ficha';
+    protected $table = 'Ficha';
+    protected $primaryKey = 'id_Ficha';
 
-    public $timestamps=false;
+    public $timestamps = false;
 
-    protected $fillable=[
-    	'id_Ficha','id_Paciente','id_Alumno','alergia'
+    protected $fillable = [
+    	'id_Ficha','Nombre','Paterno','Materno','rut','Motivo_Consulta','Antecedentes_Medicos','Farmacos_Uso','Habitos',
+        'Datos_Consulta_Anterior','Antecedentes_Traumatismo','Tratamiento_Ortodoncia'
     ];
+    //Antecedentes_Medicos:Enfermedades Cardiovasculares, Gastrointestinales, Respiratorias, Neurologicas, Infectocontagiosas
+    //Continuacion..., Discrasias sanguineas,Diabetes, Alergias, Embaraso, otro.
+    //Habitos: Drogas, Alcohol,Cigarros, etc.
+    //Datos_Consulta_Anterior: Fecha de consulta anterior y Motivo_Consulta anterior.
+    //Antecedentes_Traumatismo Dentoalveolar.
+    //Tratamiento_Ortodoncia: No, En Tratamiento~Fecha de inicio o Si~Tiempo de tratamiento.
 
     public function Paciente (){
     	return $this->belongsto(Paciente::class);
@@ -26,5 +33,9 @@ class Ficha extends Model
 
     public function Tratamiento (){
     	return $this->hasmany(Tratamiento::class);
+    }
+
+    public function Clinica(){
+        return $this->belongsto(Clinica::class);
     }
 }

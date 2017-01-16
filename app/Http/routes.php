@@ -47,21 +47,22 @@ Route::group(['middleware' => ['auth','Admin']], function(){
 
 });
 
-Route::group(['middleware' => ['auth','Docente']], function(){
+   route::group(['middleware' => ['auth','Docente']], function(){
    route::get('/Docente','Docentes\DocentesController@index');
    route::get('Docente/mostrar','Docentes\DocentesController@mostrar');
-    route::resource('Alumno','Alumnos\AlumnosController',['only' => ['store','create']]);
+   route::resource('Alumno','Alumnos\AlumnosController',['only' => ['store','create']]);
 });
 
 
-Route::group(['middleware' => ['auth','Alumno']], function(){
+  route::group(['middleware' => ['auth','Alumno']], function(){
   route::get('Alumno/mostrar/{id}','Alumnos\AlumnosController@mostrar');
   route::get('Alumno','Alumnos\AlumnosController@index');
 
-
-  Route::get('Paciente/alta/{id}', 'Pacientes\PacientesController@alta');
+  route::get('Paciente/alta/{id}', 'Pacientes\PacientesController@alta');
   route::resource('Paciente','Pacientes\PacientesController',['only' => ['store','create','edit','show','update']]);
-  route::resource('Ficha','Ficha\FichaController@index');
+  route::get('Ficha','Ficha\FichaController@index');
+  route::get('Ficha/nueva','Ficha\FichaController@nueva');
+  //route::resource('Ficha','Ficha\FichaController',['only' => ['store','create','edit','show','update']]);
   route::resource('Tratamiento','Tratamiento\TratamientoController');
 
 
