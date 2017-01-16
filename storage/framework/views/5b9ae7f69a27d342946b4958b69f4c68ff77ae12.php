@@ -1,7 +1,6 @@
-
-  @extends('layouts.app')
-  @section('title','Sin permisos')
-  @section('content')
+  
+  <?php $__env->startSection('title','Sin permisos'); ?>
+  <?php $__env->startSection('content'); ?>
 
 
 
@@ -11,7 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    {!!Html::style('css/micss.css')!!}
+    <?php echo Html::style('css/micss.css'); ?>
+
   </head>
 
 
@@ -23,7 +23,7 @@
                      <div class="panel-body ">
 
                        <div class="text-center">
-                           <img src="{{asset('/images/acceso-restringido.png')}}" />
+                           <img src="<?php echo e(asset('/images/acceso-restringido.png')); ?>" />
                            <!--
                            <p>text 1 <input type="radio" name="radio1" id="r1" value="Show">
                              text 2 <input type="radio" name="radio1" id="r2" value="Nothing">
@@ -44,11 +44,11 @@
                        </div>
 
 
-                        <meta http-equiv="refresh" content="3;url={{ URL::previous() }}" />
+                        <meta http-equiv="refresh" content="3;url=<?php echo e(URL::previous()); ?>" />
 
 
                        <!--<div class="text-center">
-                           <a href="{{ URL::previous() }}" class="btn btn-primary"><span class="glyphicon glyphicon-repeat"></span>   Volver</a>
+                           <a href="<?php echo e(URL::previous()); ?>" class="btn btn-primary"><span class="glyphicon glyphicon-repeat"></span>   Volver</a>
                        </div>-->
                      </div>
              </div>
@@ -72,4 +72,6 @@
 
 
 
-  @endsection
+  <?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

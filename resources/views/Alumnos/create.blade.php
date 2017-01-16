@@ -2,16 +2,19 @@
 @section('title','Inscribir Alumno')
 @section('content')
 @include('partials.messages')
-
-  <ol class="breadcrumb">
+<head>
+{!!Html::style('css/micss.css')!!}
+</head>
+  <ol class="breadcrumb fondoC1 ">
        <li><a href="{{url('Docente')}}"> Docente</a></li>
        <li class="active">Inscribir Nuevo Alumno</li>
      </ol>
-  <div class="page-header" >
-    <h1>Docente<small></small></h1>
-  </div>
 
-  <div class="row">
+
+  <div class="row fondoC centro">
+    <div class="page-header" >
+      <h1>Docente<small></small></h1>
+    </div>
     <div class="col-md-8">
 
        <div class="panel panel-default">
@@ -66,7 +69,7 @@
          </div>
        </div>
     </div>
-  </div>
+
 
 
 @endsection

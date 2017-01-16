@@ -1,12 +1,20 @@
 <?php $__env->startSection('title','Inscribir Alumno'); ?>
 <?php $__env->startSection('content'); ?>
 
+<head>
+<?php echo Html::style('css/micss.css'); ?>
 
-  <div class="page-header" >
-    <h1>Docente<small></small></h1>
-  </div>
+</head>
 
-  <div class="row">
+<ol class="breadcrumb fondoC1 ">
+     <li><a href="<?php echo e(url('Docente')); ?>"> Docente</a></li>
+     <li class="active">Panel de Docente</li>
+   </ol>
+
+  <div class="row fondoC centro">
+    <div class="page-header" >
+      <h1>Docente<small></small></h1>
+    </div>
     <div class="col-md-8">
 
        <div class="panel panel-default">
@@ -38,6 +46,9 @@
         document.location.href = "<?php echo e(url('/Docente/mostrar')); ?>";
     });
     </script>
+
+
+
 
 
 <?php $__env->stopSection(); ?>

@@ -6,11 +6,17 @@
 
 </head>
 
-  <div class="page-header" >
-    <h1>Administrador<small></small></h1>
-  </div>
 
-  <div class="row divCenter" style="margin:0 auto;">
+<ol class="breadcrumb fondoC1 ">
+     <li><a href="<?php echo e(url('Admin')); ?>"> Administrador</a></li>
+     <li class="active">Panel Administrador</li>
+   </ol>
+
+
+  <div class="row fondoC centro">
+    <div class="page-header" >
+      <h1>Administrador<small></small></h1>
+    </div>
     <div class="col-md-8">
         <div class="panel panel-primary">
           <div class="panel-heading">Panel Administrador</div>

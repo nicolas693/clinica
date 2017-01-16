@@ -3,11 +3,19 @@
 @section('title','Ficha del Paciente')
 @section('content')
 
-  <div class="page-header "  >
-    <h1>Ficha del Paciente<small></small></h1>
-  </div>
+<head>
+    {!!Html::style('css/micss.css')!!}
+</head>
+<ol class="breadcrumb fondoC1 ">
+     <li><a href="{{url('Alumno')}}"> Alumno</a></li>
+     <li class="active">Ficha Paciente</li>
+   </ol>
 
-  <div class="row">
+
+  <div class="row fondoC centro">
+    <div class="page-header "  >
+      <h1>Ficha del Paciente<small></small></h1>
+    </div>
     <div class="col-md-8">
 
        <div class="panel panel-default " >

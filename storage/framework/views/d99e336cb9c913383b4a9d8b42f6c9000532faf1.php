@@ -5,11 +5,17 @@
 
 </head>
    <!-- Main component for a primary marketing message or call to action -->
-   <div class="page-header "  >
-     <h1>Pacientes<small></small></h1>
-   </div>
+   <ol class="breadcrumb fondoC1 ">
+        <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
+        <li class="active">Pacientes</li>
+      </ol>
+   <!-- Main component for a primary marketing message or call to action -->
 
-   <div class="row divCenter">
+
+   <div class="row fondoC centro">
+     <div class="page-header "  >
+       <h1>Pacientes<small></small></h1>
+     </div>
      <div class="col-md-8">
 
         <div class="panel panel-default  " >

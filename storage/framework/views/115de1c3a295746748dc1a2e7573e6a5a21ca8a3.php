@@ -5,13 +5,18 @@
   <?php echo Html::style('css/micss.css'); ?>
 
 </head>
+<ol class="breadcrumb fondoC1 ">
+     <li><a href="<?php echo e(url('Admin')); ?>"> Administrador</a></li>
+     <li class="active">Ingresar Docente</li>
+   </ol>
 
 
-  <div class="page-header  " >
-    <h1>   Docente<small></small></h1>
-  </div>
 
-  <div class="row divCenter">
+
+  <div class="row fondoC centro">
+    <div class="page-header  " >
+      <h1>   Docente<small></small></h1>
+    </div>
     <div class="col-md-8">
        <div class="panel panel-primary">
          <div class="panel-heading">

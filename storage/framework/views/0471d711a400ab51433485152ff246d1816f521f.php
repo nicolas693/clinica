@@ -23,17 +23,24 @@
     <script src="<?php echo e(asset('datePicker/js/bootstrap-datepicker.js')); ?>"></script>
     <!-- Languaje -->
     <script src="<?php echo e(asset('datePicker/locales/bootstrap-datepicker.es.min.js')); ?>"></script>
+    <?php echo Html::style('css/micss.css'); ?>
+
 
 </head>
 
 
+<ol class="breadcrumb fondoC1 ">
+     <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
+     <li class="active">Editar Paciente</li>
+   </ol>
 
 
-   <div class="page-header">
-     <h1>Editar datos paciente </h1>
-   </div>
 
-   <div class="row">
+
+   <div class="row fondoC centro">
+     <div class="page-header">
+       <h1>Editar datos paciente </h1>
+     </div>
      <div class="col-md-8">
 
         <div class="panel panel-default">

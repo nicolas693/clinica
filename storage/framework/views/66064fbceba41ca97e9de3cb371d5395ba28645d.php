@@ -1,13 +1,21 @@
 <?php $__env->startSection('title','Alumnos'); ?>
 
 <?php $__env->startSection('content'); ?>
+<head>
+<?php echo Html::style('css/micss.css'); ?>
 
+</head>
    <!-- Main component for a primary marketing message or call to action -->
-   <div class="page-header "  >
-     <h1>Alumnos<small></small></h1>
-   </div>
 
-   <div class="row">
+   <ol class="breadcrumb fondoC1 ">
+        <li><a href="<?php echo e(url('Docente')); ?>"> Docente</a></li>
+        <li class="active">Evaluar Alumno</li>
+      </ol>
+
+   <div class="row fondoC centro">
+     <div class="page-header "  >
+       <h1>Alumnos<small></small></h1>
+     </div>
      <div class="col-md-8">
 
         <div class="panel panel-default " >

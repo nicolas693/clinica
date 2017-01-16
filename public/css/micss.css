@@ -1,6 +1,7 @@
 .divCenter{
   margin-left: 10%;
 
+
 }​
 
 html {
@@ -24,13 +25,50 @@ footer {
 .fondoC{
 
 background-color: #F5F5F5;
-border: 2px solid;
+border: 1px solid ;
   border-radius: 8px;
-  margin: 0 auto;
-  opacity: 1;
-  position: relative;
-  top: 100px;
+ margin-left: 10%;
+ margin-right: 10%;
+ margin-top: 1%;
+
+ margin-bottom: 5%;
+
+}
+
+.fondoC1{
+
+background-color: #F5F5F5;
+border: 1px solid ;
+  border-radius: 8px;
+ margin-left: 10%;
+ margin-right: 10%;
+ margin-top: 5%;
+
+ margin-bottom: 1%;
+
+}
+
+.sesion{
+
+background-color: #F5F5F5;
+border: 1px solid ;
+  border-radius: 8px;
+ margin-left: 10%;
+ margin-right: 10%;
+ margin-top: 5%;
+
+ margin-bottom: 5%;
+
+}
 
 
+
+
+.centro{
+    padding-left: 5%;
+    padding-top: 1%;
+    padding-right: : 5%;
+    padding-bottom: :  5%; /* 1:1 Aspect Ratio */
+     position: relative; /* If you want text inside of it */
 
 }

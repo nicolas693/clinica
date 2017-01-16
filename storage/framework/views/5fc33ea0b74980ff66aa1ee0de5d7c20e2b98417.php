@@ -1,16 +1,20 @@
 <?php $__env->startSection('title','Inscribir Alumno'); ?>
 <?php $__env->startSection('content'); ?>
 <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<head>
+<?php echo Html::style('css/micss.css'); ?>
 
-  <ol class="breadcrumb">
+</head>
+  <ol class="breadcrumb fondoC1 ">
        <li><a href="<?php echo e(url('Docente')); ?>"> Docente</a></li>
        <li class="active">Inscribir Nuevo Alumno</li>
      </ol>
-  <div class="page-header" >
-    <h1>Docente<small></small></h1>
-  </div>
 
-  <div class="row">
+
+  <div class="row fondoC centro">
+    <div class="page-header" >
+      <h1>Docente<small></small></h1>
+    </div>
     <div class="col-md-8">
 
        <div class="panel panel-default">
@@ -82,7 +86,7 @@
          </div>
        </div>
     </div>
-  </div>
+
 
 
 <?php $__env->stopSection(); ?>

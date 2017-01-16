@@ -9,11 +9,12 @@
 </head>
 
 
-   <div class="page-header">
-     <h1>aaaaaaaaaAAAAAAAAAAAAAAAaaaaAAaaaA!!! </h1>
-   </div>
 
-   <div class="row divCenter">
+
+   <div class="row fondoC centro">
+     <div class="page-header">
+       <h1>aaaaaaaaaAAAAAAAAAAAAAAAaaaaAAaaaA!!! </h1>
+     </div>
      <div class="col-md-8">
 
         <div class="panel panel-primary">

@@ -110,10 +110,10 @@
 
 </body>
 
-  <body style="background-color: #69A0CA; "   >
-        <div class="container fondoC">
+  <body style="background-color: #E60FD7; "   >
+      <!--  <div class=" fondoC centro text" >-->
           @yield('content')
-        </div> <!-- /container -->
+      <!--  </div>  /container -->
   </body>
 
 </html>

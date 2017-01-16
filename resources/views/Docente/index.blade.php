@@ -2,12 +2,19 @@
 @section('title','Inscribir Alumno')
 @section('content')
 
+<head>
+{!!Html::style('css/micss.css')!!}
+</head>
 
-  <div class="page-header" >
-    <h1>Docente<small></small></h1>
-  </div>
+<ol class="breadcrumb fondoC1 ">
+     <li><a href="{{url('Docente')}}"> Docente</a></li>
+     <li class="active">Panel de Docente</li>
+   </ol>
 
-  <div class="row">
+  <div class="row fondoC centro">
+    <div class="page-header" >
+      <h1>Docente<small></small></h1>
+    </div>
     <div class="col-md-8">
 
        <div class="panel panel-default">
@@ -39,6 +46,9 @@
         document.location.href = "{{ url('/Docente/mostrar') }}";
     });
     </script>
+
+
+
 
 
 @endsection

@@ -3,15 +3,22 @@
 @section('title','Editar Paciente')
 
 @section('content')
+<head>
+    {!!Html::style('css/micss.css')!!}
+</head>
 
 
+<ol class="breadcrumb fondoC1 ">
+     <li><a href="{{url('Alumno')}}"> Alumno</a></li>
+     <li class="active">Alta Paciente</li>
+   </ol>
 
 
-   <div class="page-header">
-     <h1>Alta Medica </h1>
-   </div>
+   <div class="row fondoC centro">
 
-   <div class="row">
+     <div class="page-header">
+       <h1>Alta Medica </h1>
+     </div>
      <div class="col-md-8">
 
         <div class="panel panel-default">
@@ -37,7 +44,7 @@
 
              <div class="form-group">
              {!!form::label('Alta : ')!!}
-              {!!$pa->alta !!} 
+              {!!$pa->alta !!}
             </div>
 
 

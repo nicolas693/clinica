@@ -5,11 +5,16 @@
   {!!Html::style('css/micss.css')!!}
 </head>
    <!-- Main component for a primary marketing message or call to action -->
-   <div class="page-header "  >
-     <h1>Pacientes<small></small></h1>
-   </div>
+   <ol class="breadcrumb fondoC1 ">
+        <li><a href="{{url('Alumno')}}"> Alumno</a></li>
+        <li class="active">Panel Alumno</li>
+      </ol>
 
-   <div class="row">
+
+   <div class="row fondoC centro">
+     <div class="page-header "  >
+       <h1>Pacientes<small></small></h1>
+     </div>
      <div class="col-md-8 divCenter">
 
         <div class="panel panel-default " >

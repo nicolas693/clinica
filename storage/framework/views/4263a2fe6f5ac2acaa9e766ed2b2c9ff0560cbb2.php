@@ -115,10 +115,10 @@
 
 </body>
 
-  <body style="background-color: #69A0CA; "   >
-        <div class="container fondoC">
+  <body style="background-color: #E60FD7; "   >
+      <!--  <div class=" fondoC centro text" >-->
           <?php echo $__env->yieldContent('content'); ?>
-        </div> <!-- /container -->
+      <!--  </div>  /container -->
   </body>
 
 </html>
