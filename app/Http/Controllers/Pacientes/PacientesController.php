@@ -101,8 +101,8 @@ class PacientesController extends Controller
      */
     public function show($id)
     {
-        $pa= Paciente::find($id);
-        return view('Pacientes.show')->with('pa',$pa);
+        //$pa= Paciente::find($id);
+        //return view('Pacientes.show')->with('pa',$pa);
     }
 
     /**

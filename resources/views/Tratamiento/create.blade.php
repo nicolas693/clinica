@@ -18,8 +18,12 @@
              </p>
           </div>
           <div class="panel-body">
+<<<<<<< HEAD
             {!!Form::open(['route'=>'Tratamiento.store','method'=>'POST'])!!}
 
+=======
+            {!!Form::open(['route'=>'Paciente.store','method'=>'POST'])!!}
+>>>>>>> 8c939b17911f8056aa42f452cf2fa179f082bd8f
             {{!!Form::close}}
           </div>
         </div>

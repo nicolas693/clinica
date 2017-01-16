@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 use clinica\Http\Requests;
 use clinica\Http\Controllers\Controller;
+use clinica\Models\Paciente\Ficha;
+use clinica\Models\Paciente\Paciente;
+use Auth;
+use Carbon\Carbon;
+
 
 class FichaController extends Controller
 {
@@ -38,6 +43,8 @@ class FichaController extends Controller
     public function store(Request $request)
     {
         //
+
+
     }
 
     /**
@@ -48,7 +55,8 @@ class FichaController extends Controller
      */
     public function show($id)
     {
-        //
+      $fi = Ficha::find($id);
+      return view('Ficha.show')->with('ficha',$fi);
     }
 
     /**
@@ -83,5 +91,10 @@ class FichaController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function nueva()
+    {
+        //$paciente=Paciente::find($id);
+        return view('Ficha/nueva');//->with('paciente',$paciente);
     }
 }

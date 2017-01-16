@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -10,9 +9,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -23,56 +19,36 @@
 | kernel and includes session state, CSRF protection, and more.
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::auth();
-
 Route::get('/home', 'HomeController@index');
 Route::resource('User','User\UserController');
 
 
-
-
-
 Route::group(['middleware' => ['auth','Admin']], function(){
-
-
   route::get('/Admin','Admin\AdminController@index');
   route::get('/Docente/create','Docentes\DocentesController@create');
   route::resource('Docente','Docentes\DocentesController',['only' => 'store']);
-
-
 });
 
-Route::group(['middleware' => ['auth','Docente']], function(){
+
+   route::group(['middleware' => ['auth','Docente']], function(){
    route::get('/Docente','Docentes\DocentesController@index');
    route::get('Docente/mostrar','Docentes\DocentesController@mostrar');
-    route::resource('Alumno','Alumnos\AlumnosController',['only' => ['store','create']]);
+   route::resource('Alumno','Alumnos\AlumnosController',['only' => ['store','create']]);
 });
 
 
-Route::group(['middleware' => ['auth','Alumno']], function(){
-  route::get('Alumno/mostrar/{id}',[
-    'as' => 'Alumno.mostrar', 'uses' => 'Alumnos\AlumnosController@mostrar'
-]);
+  route::group(['middleware' => ['auth','Alumno']], function(){
+  route::get('Alumno/mostrar/{id}','Alumnos\AlumnosController@mostrar');
   route::get('Alumno','Alumnos\AlumnosController@index');
-
-
-  Route::get('Paciente/alta/{id}', 'Pacientes\PacientesController@alta');
+  route::get('Paciente/alta/{id}', 'Pacientes\PacientesController@alta');
   route::resource('Paciente','Pacientes\PacientesController',['only' => ['store','create','edit','show','update']]);
-  route::resource('Ficha','Ficha\FichaController@index');
+  route::get('Ficha','Ficha\FichaController@index');
+  route::get('Ficha/nueva','Ficha\FichaController@nueva');
+  //route::resource('Ficha','Ficha\FichaController',['only' => ['store','create','edit','show','update']]);
   route::resource('Tratamiento','Tratamiento\TratamientoController');
-
-
 });
-
-
-
-
-
-
-
 //route::get('Paciente','Pacientes\PacientesController@index');
