@@ -15,6 +15,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     {!!Html::style('css/bootstrap.min.css')!!}
     {!!Html::style('css/micss.css')!!}
+      {!!Html::style('css/minav.css')!!}
     {!!Html::style('css/navbar-fixed-top.css')!!}
     {!!Html::script('js/bootstrap.min.js')!!}
 
@@ -37,7 +38,7 @@
     </style>
 </head>
 <body id="app-layout" class="bg-default" >
-    <nav class="navbar navbar-inverse navF navbar-static-top ">
+    <nav class="navbar navbar-cust  ">
         <div class="container">
             <div class="navbar-header">
 
@@ -51,7 +52,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Clínica
+                    Inicio
                 </a>
             </div>
 
@@ -59,7 +60,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
 
-
+                  <li><a  href="{{ url('/') }}">Ver Mi Ficha</a></li>
 
 
                 </ul>
@@ -70,6 +71,8 @@
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Iniciar sesión</a></li>
                         <li><a href="{{ url('/register') }}">Registrar</a></li>
+
+
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -110,7 +113,7 @@
 
 </body>
 
-  <body style="background-color: #E60FD7; "   >
+  <body style="background-color:  #3498db ; "   >
       <!--  <div class=" fondoC centro text" >-->
           @yield('content')
       <!--  </div>  /container -->
