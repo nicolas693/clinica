@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   {!!Html::style('css/micss.css')!!}
     <meta charset="utf-8">

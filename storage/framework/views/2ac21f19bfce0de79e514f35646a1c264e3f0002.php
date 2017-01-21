@@ -58,8 +58,11 @@
         cursor: pointer;
         display: inline-block;
       }
+      .en_linea{
+        display: inline-block;
+      }
       .cajatexto{
-        width: 475px;
+        width: 580px;
         height: 100px;
       }
     </style>
@@ -84,7 +87,7 @@
            </div>
           <div class="panel-body">
 
-               <?php echo Form::open(['route'=>'Paciente.store','method'=>'POST']); ?>
+                <?php echo Form::open(['route'=>'Paciente.store','method'=>'POST']); ?>
 
 
                 <div class="col-sm-4">
@@ -92,46 +95,47 @@
 
                     <?php echo form::text('Nombre',null,['id'=>'Nombre','class'=>'form-control']); ?>
 
-               </div>
-               <div class="col-sm-4">
+                </div>
+                <div class="col-sm-4">
                     <?php echo form::label('Apellido Paterno'); ?>
 
                     <?php echo form::text('Paterno',null,['id'=>'Paterno','class'=>'form-control']); ?>
 
-               </div>
+                </div>
 
-               <div class="col-sm-4">
+                <div class="col-sm-4">
                     <?php echo form::label('Apellido Materno'); ?>
 
                     <?php echo form::text('Materno',null,['id'=>'Materno','class'=>'form-control']); ?>
 
-               </div>
-               <div class="col-sm-4">
+                </div>
+                <div class="col-sm-4">
                     <?php echo form::label('RUT'); ?>
 
                     <?php echo form::text('RUT',null,['id'=>'rut','class'=>'form-control']); ?>
 
-               </div>
-                <div class="col-sm-8">
+                </div>
+                <div class="col-sm-4">
                   <?php echo form::label('Fecha de Control'); ?>
 
                   <p style="font-size: 15px"><b><?php echo date("d/m/Y");?></b></p>
                 </div>
-                <div class="col-sm-12">
+                <div class="col-sm-8"><p></p></div>
+                <div class="col-sm-6 en_linea">
                   <?php echo form::label('Anamnesis'); ?>
 
                   <?php echo form::text('Anamnesis',null,['id'=>'Datos_Consulta_Anterior','class'=>'form-control cajatexto']); ?>
 
+                
+                  <?php echo form::label('Motivo_Consulta'); ?>
+
+                  <?php echo form::text('Motivo de Consulta',null,['id'=>'Motivo_Consulta','class'=>'form-control cajatexto']); ?>
+
                 </div>
-               <div class="col-sm-12">
-                    <?php echo form::label('Motivo_Consulta'); ?>
-
-                    <?php echo form::text('Motivo de Consulta',null,['id'=>'Motivo_Consulta','class'=>'form-control']); ?>
-
-               </div>
-               <div class="col-sm-12 form-group">
+                <div class="col-sm-12 form-group">
+                <p><b>Procedimientos</b></p>
                  <form action="../php/select-action.php" method="post">
-                      <select name="products">
+                      <select name="Procedimientos">
                         <option>Procedimientos a realizar</option>
                         <?php
                         $Procedimientos = array(
@@ -161,33 +165,65 @@
                           <?php
                         }
                         ?>
-                    <input class="btn btn-default" type="button" value="Agregar">
-                  </form>                   
-               </div>
-               <div class="col-sm-12">
+                        <div class="boton">
+                          <?php echo form::submit('Agregar',['name'=>'Agregar','id'=>'agregar','content'=>'<span>Agregar</span>','class'=>'btn btn-default btn-sm m-t-10']); ?>
+
+                          <?php echo Form::close(); ?>
+
+                        </div>
+                  </form>               
+                <div class="col-sm-12 form-group">
+                  <p><b>Insumos necesarios</b></p>
+                    <form action="../php/select-action.php" method="post">
+                      <select name="Insumos">
+                      <option>Insumos</option>
+                      <?php
+                      $Insumos = array(
+                        "Alginmax",
+                        "Alginkid",
+                        "Alginplus Tropical",
+                        "Servilletas Dentales",
+                        "Eyector de saliva",
+                        "Manga de esterilización",
+                        "Tórula de algodón");
+                      foreach ($Insumos as $in) 
+                      {
+                        ?>
+                        <option value="<?php echo strtolower($in);?>"><?php echo $in; ?></option>
+                        <?php
+                      }
+                      ?>
+                      <div class="boton">
+                          <?php echo form::submit('Agregar',['name'=>'Agregar','id'=>'agregar','content'=>'<span>Agregar</span>','class'=>'btn btn-default btn-sm m-t-10']); ?>
+
+                          <?php echo Form::close(); ?>
+
+                      </div>                  
+                
+                <div class="col-sm-12">
                     <?php echo form::label('Antecedentes Médicos //viene de vista anterior'); ?>
 
                     <?php echo form::text('Antecedentes Médicos',null,['id'=>'Antecedentes_Medicos','class'=>'form-control']); ?>
 
-               </div>
-               <div class="col-sm-12">
+                </div>
+                <div class="col-sm-12">
                     <?php echo form::label('Fármacos en uso//viene de vista anterior'); ?>
 
                     <?php echo form::text('Fármacos en uso',null,['id'=>'Farmacos_Uso','class'=>'form-control']); ?>
 
-               </div>
-               <div class="col-sm-12">
+                </div>
+                <div class="col-sm-12">
                     <?php echo form::label('Hábitos //viene de vista anterior'); ?>
 
                     <?php echo form::text('Hábitos',null,['id'=>'Habitos','class'=>'form-control']); ?>
 
-               </div>
-               <div class="col-sm-12">
+                </div>
+                <div class="col-sm-12">
                     <?php echo form::label('Antecedentes de traumatismos Dentoalveolar//vista anterior'); ?>
 
                     <?php echo form::text('Antecedentes traumatismos Dentoalveolar',null,['id'=>'Antecedentes de traumatismos Dentoalveolar','class'=>'form-control']); ?>
 
-               </div>              
+                </div>              
                 <div class="col-sm-12 boton"><br>
                   <?php echo form::submit('Volver',['name'=>'Siguiente','id'=>'volver','content'=>'<span>Volver</span>','class'=>'btn btn-primary btn-sm m-t-10']); ?>
 
@@ -196,8 +232,7 @@
 
                   <?php echo form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10']); ?>
 
-                  <?php echo Form::close(); ?>
-
+                  <?php echo Form::close(); ?>                  
                 </div>
            </div>
         </div>
@@ -215,6 +250,7 @@
                 $(".text2").show();
                   $(".text1").hide();
             });
+
         });
   </script>
   <script>

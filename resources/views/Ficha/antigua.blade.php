@@ -58,8 +58,11 @@
         cursor: pointer;
         display: inline-block;
       }
+      .en_linea{
+        display: inline-block;
+      }
       .cajatexto{
-        width: 475px;
+        width: 580px;
         height: 100px;
       }
     </style>
@@ -84,40 +87,41 @@
            </div>
           <div class="panel-body">
 
-               {!!Form::open(['route'=>'Paciente.store','method'=>'POST'])!!}
+                {!!Form::open(['route'=>'Paciente.store','method'=>'POST'])!!}
 
                 <div class="col-sm-4">
                     {!!form::label('Nombre')!!}
                     {!!form::text('Nombre',null,['id'=>'Nombre','class'=>'form-control'])!!}
-               </div>
-               <div class="col-sm-4">
+                </div>
+                <div class="col-sm-4">
                     {!!form::label('Apellido Paterno')!!}
                     {!!form::text('Paterno',null,['id'=>'Paterno','class'=>'form-control'])!!}
-               </div>
+                </div>
 
-               <div class="col-sm-4">
+                <div class="col-sm-4">
                     {!!form::label('Apellido Materno')!!}
                     {!!form::text('Materno',null,['id'=>'Materno','class'=>'form-control'])!!}
-               </div>
-               <div class="col-sm-4">
+                </div>
+                <div class="col-sm-4">
                     {!!form::label('RUT')!!}
                     {!!form::text('RUT',null,['id'=>'rut','class'=>'form-control'])!!}
-               </div>
-                <div class="col-sm-8">
+                </div>
+                <div class="col-sm-4">
                   {!!form::label('Fecha de Control')!!}
                   <p style="font-size: 15px"><b><?php echo date("d/m/Y");?></b></p>
                 </div>
-                <div class="col-sm-12">
+                <div class="col-sm-8"><p></p></div>
+                <div class="col-sm-6 en_linea">
                   {!!form::label('Anamnesis')!!}
                   {!!form::text('Anamnesis',null,['id'=>'Datos_Consulta_Anterior','class'=>'form-control cajatexto'])!!}
+                
+                  {!!form::label('Motivo_Consulta')!!}
+                  {!!form::text('Motivo de Consulta',null,['id'=>'Motivo_Consulta','class'=>'form-control cajatexto'])!!}
                 </div>
-               <div class="col-sm-12">
-                    {!!form::label('Motivo_Consulta')!!}
-                    {!!form::text('Motivo de Consulta',null,['id'=>'Motivo_Consulta','class'=>'form-control'])!!}
-               </div>
-               <div class="col-sm-12 form-group">
+                <div class="col-sm-12 form-group">
+                <p><b>Procedimientos</b></p>
                  <form action="../php/select-action.php" method="post">
-                      <select name="products">
+                      <select name="Procedimientos">
                         <option>Procedimientos a realizar</option>
                         <?php
                         $Procedimientos = array(
@@ -147,31 +151,59 @@
                           <?php
                         }
                         ?>
-                    <input class="btn btn-default" type="button" value="Agregar">
-                  </form>                   
-               </div>
-               <div class="col-sm-12">
+                        <div class="boton">
+                          {!!form::submit('Agregar',['name'=>'Agregar','id'=>'agregar','content'=>'<span>Agregar</span>','class'=>'btn btn-default btn-sm m-t-10'])!!}
+                          {!!Form::close()!!}
+                        </div>
+                  </form>               
+                <div class="col-sm-12 form-group">
+                  <p><b>Insumos necesarios</b></p>
+                    <form action="../php/select-action.php" method="post">
+                      <select name="Insumos">
+                      <option>Insumos</option>
+                      <?php
+                      $Insumos = array(
+                        "Alginmax",
+                        "Alginkid",
+                        "Alginplus Tropical",
+                        "Servilletas Dentales",
+                        "Eyector de saliva",
+                        "Manga de esterilización",
+                        "Tórula de algodón");
+                      foreach ($Insumos as $in) 
+                      {
+                        ?>
+                        <option value="<?php echo strtolower($in);?>"><?php echo $in; ?></option>
+                        <?php
+                      }
+                      ?>
+                      <div class="boton">
+                          {!!form::submit('Agregar',['name'=>'Agregar','id'=>'agregar','content'=>'<span>Agregar</span>'',class'=>'btn btn-default btn-sm m-t-10'])!!}
+                          {!!Form::close()!!}
+                      </div>                  
+                
+                <div class="col-sm-12">
                     {!!form::label('Antecedentes Médicos //viene de vista anterior')!!}
                     {!!form::text('Antecedentes Médicos',null,['id'=>'Antecedentes_Medicos','class'=>'form-control'])!!}
-               </div>
-               <div class="col-sm-12">
+                </div>
+                <div class="col-sm-12">
                     {!!form::label('Fármacos en uso//viene de vista anterior')!!}
                     {!!form::text('Fármacos en uso',null,['id'=>'Farmacos_Uso','class'=>'form-control'])!!}
-               </div>
-               <div class="col-sm-12">
+                </div>
+                <div class="col-sm-12">
                     {!!form::label('Hábitos //viene de vista anterior')!!}
                     {!!form::text('Hábitos',null,['id'=>'Habitos','class'=>'form-control'])!!}
-               </div>
-               <div class="col-sm-12">
+                </div>
+                <div class="col-sm-12">
                     {!!form::label('Antecedentes de traumatismos Dentoalveolar//vista anterior')!!}
                     {!!form::text('Antecedentes traumatismos Dentoalveolar',null,['id'=>'Antecedentes de traumatismos Dentoalveolar','class'=>'form-control'])!!}
-               </div>              
+                </div>              
                 <div class="col-sm-12 boton"><br>
                   {!!form::submit('Volver',['name'=>'Siguiente','id'=>'volver','content'=>'<span>Volver</span>','class'=>'btn btn-primary btn-sm m-t-10'])!!}
                   {!!Form::close()!!}
 
                   {!!form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10'])!!}
-                  {!!Form::close()!!}
+                  {!!Form::close()!!}                  
                 </div>
            </div>
         </div>
@@ -189,6 +221,7 @@
                 $(".text2").show();
                   $(".text1").hide();
             });
+
         });
   </script>
   <script>
