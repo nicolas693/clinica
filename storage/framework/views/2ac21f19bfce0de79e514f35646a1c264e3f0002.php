@@ -1,4 +1,4 @@
-<?php $__env->startSection('title','Ficha de Paciente Nuevo'); ?>
+<?php $__env->startSection('title','Ficha de Paciente'); ?>
 <?php $__env->startSection('content'); ?>
 <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
@@ -14,6 +14,20 @@
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+  <script type="text/javascript">
+    function SetDate()
+    {
+      var date = new Date();
+      var dia = date.getDia();
+      var mes = date.getMes() + 1;
+      var año = date.getAño();
+      if (mes < 10) mes = "0" + mes;
+      if (dia < 10) dia = "0" + dia;
+      var hoy = dia + "-" + mes + "-" + año;
+      document.getElementById('theDate').value = hoy;
+    }
+  
+  </script>
   <script>
    $.datepicker.regional['es'] = {
    closeText: 'Cerrar',
@@ -43,7 +57,10 @@
         margin-left: 300px;
         cursor: pointer;
         display: inline-block;
-        text-align: center;
+      }
+      .cajatexto{
+        width: 475px;
+        height: 100px;
       }
     </style>
   </body>
@@ -58,12 +75,12 @@
 
    <div class="row fondoC centro">
      <div class="page-header">
-       <h1>Ficha Paciente Nuevo </h1>
+       <h1>Ficha Paciente </h1>
      </div>
      <div class="col-md-8">
         <div class="panel panel-default">
           <div class="panel-heading"><b>
-             Ficha del Nuevo Paciente</b>
+             Ficha Paciente @ID_Ficha</b>
            </div>
           <div class="panel-body">
 
@@ -94,62 +111,93 @@
 
                     <?php echo form::text('RUT',null,['id'=>'rut','class'=>'form-control']); ?>
 
-               </div> 
-               <div class="col-sm-8">
-                    <?php echo form::label('Ficha Número'); ?>
+               </div>
+                <div class="col-sm-8">
+                  <?php echo form::label('Fecha de Control'); ?>
 
-                    <?php echo form::text('Ficha Número',null,['id'=>'id_Ficha','class'=>'form-control']); ?>
+                  <p style="font-size: 15px"><b><?php echo date("d/m/Y");?></b></p>
+                </div>
+                <div class="col-sm-12">
+                  <?php echo form::label('Anamnesis'); ?>
 
-               </div>               
+                  <?php echo form::text('Anamnesis',null,['id'=>'Datos_Consulta_Anterior','class'=>'form-control cajatexto']); ?>
+
+                </div>
                <div class="col-sm-12">
-                    <?php echo form::label('Antecedentes Médicos'); ?>
+                    <?php echo form::label('Motivo_Consulta'); ?>
+
+                    <?php echo form::text('Motivo de Consulta',null,['id'=>'Motivo_Consulta','class'=>'form-control']); ?>
+
+               </div>
+               <div class="col-sm-12 form-group">
+                 <form action="../php/select-action.php" method="post">
+                      <select name="products">
+                        <option>Procedimientos a realizar</option>
+                        <?php
+                        $Procedimientos = array(
+                          "Apicectomía",
+                          "Blanqueamiento dental",
+                          "Empaste",
+                          "Endodoncia",
+                          "Exodoncia",
+                          "Explorador Dental",
+                          "Gingivectomía",
+                          "Gingivoplastía",
+                          "Higiene Bucodental",
+                          "Implante Dental",
+                          "Limpieza Dental",
+                          "Ostectomía",
+                          "Remineralización dental",
+                          "Sitio/Estado",
+                          "Tartrectomía",
+                          "Técnica de elevación del colgajo",
+                          "Técnica de elevación del seno maxilar",
+                          "Técnica de regeneración ósea guiada",
+                          "Terapia de fluoruro");
+                        foreach ($Procedimientos as $pro) 
+                        {
+                          ?>
+                          <option value="<?php echo strtolower($pro);?>"><?php echo $pro; ?></option>
+                          <?php
+                        }
+                        ?>
+                    <input class="btn btn-default" type="button" value="Agregar">
+                  </form>                   
+               </div>
+               <div class="col-sm-12">
+                    <?php echo form::label('Antecedentes Médicos //viene de vista anterior'); ?>
 
                     <?php echo form::text('Antecedentes Médicos',null,['id'=>'Antecedentes_Medicos','class'=>'form-control']); ?>
 
                </div>
                <div class="col-sm-12">
-                    <?php echo form::label('Fármacos en uso'); ?>
+                    <?php echo form::label('Fármacos en uso//viene de vista anterior'); ?>
 
                     <?php echo form::text('Fármacos en uso',null,['id'=>'Farmacos_Uso','class'=>'form-control']); ?>
 
                </div>
                <div class="col-sm-12">
-                    <?php echo form::label('Hábitos'); ?>
+                    <?php echo form::label('Hábitos //viene de vista anterior'); ?>
 
                     <?php echo form::text('Hábitos',null,['id'=>'Habitos','class'=>'form-control']); ?>
 
                </div>
                <div class="col-sm-12">
-                    <?php echo form::label('Antecedentes de traumatismos Dentoalveolar'); ?>
+                    <?php echo form::label('Antecedentes de traumatismos Dentoalveolar//vista anterior'); ?>
 
                     <?php echo form::text('Antecedentes traumatismos Dentoalveolar',null,['id'=>'Antecedentes de traumatismos Dentoalveolar','class'=>'form-control']); ?>
 
-               </div>
-               <div class="col-sm-12 radio">
-                 <p><b>Tratamiento de Ortodoncia</b></p>
-                 <p class="col-sm-12"> <input type="radio" name="radio1" id="r1" value="Nothing">No ha recibido tratamiento de ortodoncia</p>
-                 <p class="col-sm-12"> <input type="radio" name="radio1" id="r2" value="Show">Si ha recibido tratamiento de ortodoncia</p>
-                 <div class="text2">
-                   <div class="input-group date" data-provide="datepicker">
-                     <label for="date"><b>Indique cuando lo recibió: &nbsp</b></label>
-                      <input type="text" id="fecha" name="Tratamiento_Ortodoncia">
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div class="col-sm-4 boton">
-                    <form>
-                      <?php echo form::submit('Volver',['name'=>'Siguiente','id'=>'volver','content'=>'<span>Volver</span>','class'=>'btn btn-primary btn-sm m-t-10']); ?>
+               </div>              
+                <div class="col-sm-12 boton"><br>
+                  <?php echo form::submit('Volver',['name'=>'Siguiente','id'=>'volver','content'=>'<span>Volver</span>','class'=>'btn btn-primary btn-sm m-t-10']); ?>
 
-                      <?php echo Form::close(); ?>
+                  <?php echo Form::close(); ?>
 
 
-                      <?php echo form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10']); ?>
+                  <?php echo form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10']); ?>
 
-                      <?php echo Form::close(); ?>
+                  <?php echo Form::close(); ?>
 
-                    </form>
-                  </div>
                 </div>
            </div>
         </div>

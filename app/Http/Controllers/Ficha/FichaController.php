@@ -97,4 +97,31 @@ class FichaController extends Controller
         //$paciente=Paciente::find($id);
         return view('Ficha/nueva');//->with('paciente',$paciente);
     }
+    public function antigua()
+    {
+        return view('Ficha/antigua');
+    }
+    public function Procedimientos($Procedimientos)
+    {
+        $Procedimientos = array(
+            "Apicectomía",
+            "Blanqueamiento dental",
+            "Empaste",
+            "Endodoncia",
+            "Exodoncia",
+            "Explorador Dental",
+            "Gingivectomía",
+            "Gingivoplastía",
+            "Higiene Bucodental",
+            "Implante Dental",
+            "Limpieza Dental",
+            "Ostectomía",
+            "Remineralización dental",
+            "Sitio/Estado",
+            "Tartrectomía",
+            "Técnica de elevación del colgajo",
+            "Técnica de elevación del seno maxilar",
+            "Técnica de regeneración ósea guiada",
+            "Terapia de fluoruro");
+    }
 }

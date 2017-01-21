@@ -54,6 +54,7 @@ Route::group(['middleware' => ['auth','Admin']], function(){
   route::resource('Paciente','Pacientes\PacientesController',['only' => ['store','create','edit','show','update']]);
   route::get('Ficha','Ficha\FichaController@index');
   route::get('Ficha/nueva','Ficha\FichaController@nueva');
+  route::get('Ficha/antigua','Ficha\FichaController@antigua');
   //route::resource('Ficha','Ficha\FichaController',['only' => ['store','create','edit','show','update']]);
   route::resource('Tratamiento','Tratamiento\TratamientoController');
 });
