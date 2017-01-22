@@ -47,14 +47,14 @@ class PacientesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
         $genero = ['Hombre','Mujer'];
         $date = Carbon::now();
         $date=$date->subDay()->format('d/m/y');
         $paciente = Clinica::lists('Nombre_Clinica','id_Clinica','alumno_id');
 
-        return view('Pacientes.create')->with('paciente',$paciente)->with('genero',$genero)->with('date',$date);
+        return view('Pacientes.create')->with('paciente',$paciente)->with('genero',$genero)->with('date',$date)->with('id',$id);
     }
 
     /**

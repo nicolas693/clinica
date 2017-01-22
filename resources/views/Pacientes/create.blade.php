@@ -153,8 +153,8 @@
 
              <div class="col-sm-5">
 
-                {!!form::label('Clinica')!!}
-                {!! Form::select('clinica_id',$paciente,null,['id'=>'id_Clinica','class'=>'form-control']) !!}
+
+                {!!form::text('clinica_id',$id,['id'=>'clinica_id','class'=>'form-control hidden'])!!}
 
              </div>
              {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
@@ -168,7 +168,7 @@
 
    <script>
 
-       $('.datepicker').datepicker({
+       $('.datepicker2').datepicker({
            format: "dd/mm/yyyy",
            language: "es",
            startDate: '-100y',
@@ -180,7 +180,7 @@
 
    <script>
 
-       $('.datepicker2').datepicker({
+       $('.datepicker').datepicker({
            format: "dd/mm/yyyy",
            language: "es",
            startDate: '-1w',

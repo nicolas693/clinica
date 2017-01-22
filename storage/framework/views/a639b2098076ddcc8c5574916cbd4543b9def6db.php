@@ -37,6 +37,16 @@
   $("#fecha").datepicker();
   });
   </script>
+  <body>
+    <style type="text/css">
+      .boton{
+        margin-left: 300px;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+      }
+    </style>
+  </body>
 </head>
 </html>
 
@@ -84,13 +94,13 @@
 
                     <?php echo form::text('RUT',null,['id'=>'rut','class'=>'form-control']); ?>
 
-               </div>
+               </div> 
                <div class="col-sm-8">
-                    <?php echo form::label('Motivo_Consulta'); ?>
+                    <?php echo form::label('Ficha Número'); ?>
 
-                    <?php echo form::text('Motivo de Consulta',null,['id'=>'Motivo_Consulta','class'=>'form-control']); ?>
+                    <?php echo form::text('Ficha Número',null,['id'=>'id_Ficha','class'=>'form-control']); ?>
 
-               </div>
+               </div>               
                <div class="col-sm-12">
                     <?php echo form::label('Antecedentes Médicos'); ?>
 
@@ -126,17 +136,20 @@
                     </div>
                   </div>
                 </div>
-
                 <div>
-                <?php echo form::submit('Volver',['name'=>'Siguiente','id'=>'volver','content'=>'<span>Volver</span>','class'=>'btn btn-primary btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;']); ?>
+                  <div class="col-sm-4 boton">
+                    <form>
+                      <?php echo form::submit('Volver',['name'=>'Siguiente','id'=>'volver','content'=>'<span>Volver</span>','class'=>'btn btn-primary btn-sm m-t-10']); ?>
 
-                <?php echo Form::close(); ?>
+                      <?php echo Form::close(); ?>
 
 
-                <?php echo form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;']); ?>
+                      <?php echo form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10']); ?>
 
-                <?php echo Form::close(); ?>
+                      <?php echo Form::close(); ?>
 
+                    </form>
+                  </div>
                 </div>
            </div>
         </div>

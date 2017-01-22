@@ -182,9 +182,8 @@
 
              <div class="col-sm-5">
 
-                <?php echo form::label('Clinica'); ?>
 
-                <?php echo Form::select('clinica_id',$paciente,null,['id'=>'id_Clinica','class'=>'form-control']); ?>
+                <?php echo form::text('clinica_id',$id,['id'=>'clinica_id','class'=>'form-control hidden']); ?>
 
 
              </div>
@@ -201,7 +200,7 @@
 
    <script>
 
-       $('.datepicker').datepicker({
+       $('.datepicker2').datepicker({
            format: "dd/mm/yyyy",
            language: "es",
            startDate: '-100y',
@@ -213,7 +212,7 @@
 
    <script>
 
-       $('.datepicker2').datepicker({
+       $('.datepicker').datepicker({
            format: "dd/mm/yyyy",
            language: "es",
            startDate: '-1w',
