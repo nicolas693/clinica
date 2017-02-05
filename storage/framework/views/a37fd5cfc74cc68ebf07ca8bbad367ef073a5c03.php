@@ -4,14 +4,43 @@
 
 <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
+<head>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- Jquery -->
+
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Datepicker Files -->
+    <link rel="stylesheet" href="<?php echo e(asset('datePicker/css/bootstrap-datepicker3.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('datePicker/css/bootstrap-standalone.css')); ?>">
+    <script src="<?php echo e(asset('datePicker/js/bootstrap-datepicker.js')); ?>"></script>
+    <!-- Languaje -->
+    <script src="<?php echo e(asset('datePicker/locales/bootstrap-datepicker.es.min.js')); ?>"></script>
+    <?php echo Html::style('css/micss.css'); ?>
+
+
+</head>
+
+
+<ol class="breadcrumb fondoC1 ">
+     <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
+     <li class="active">Editar Paciente</li>
+   </ol>
 
 
 
-   <div class="page-header">
-     <h1>Editar datos paciente </h1>
-   </div>
 
-   <div class="row">
+   <div class="row fondoC centro">
+     <div class="page-header">
+       <h1>Editar datos paciente </h1>
+     </div>
      <div class="col-md-8">
 
         <div class="panel panel-default">
@@ -59,12 +88,24 @@
 
              </div>
 
-              <div class="col-sm-12">
-                  <?php echo form::label('Fecha Ingreso'); ?>
 
-                  <?php echo form::text('Fecha_Ingreso',null,['id'=>'Fecha_Ingreso','class'=>'form-control']); ?>
+             <div class="col-sm-6">
+               <div class="input-group">
+                 <label for="date">Fecha Ingreso</label>
+                   <input type="text" value="<?php echo htmlspecialchars($pa->Fecha_Ingreso); ?>" class="form-control datepicker" name="Fecha_Ingreso">
 
+               </div>
              </div>
+
+             <div class="col-sm-6">
+               <div class="input-group">
+                 <label for="date">Fecha Nacimiento</label>
+                   <input type="text" value="<?php echo htmlspecialchars($pa->Fecha_Nacimiento); ?>" class="form-control datepicker" name="Fecha_Nacimiento">
+
+               </div>
+             </div>
+
+
 
              <div class="col-sm-12">
                <?php echo form::label('Sexo'); ?>
@@ -73,12 +114,7 @@
 
              </div>
 
-              <div class="col-sm-12">
-                  <?php echo form::label('Fecha Nacimiento'); ?>
 
-                  <?php echo form::text('Fecha_Nacimiento',null,['id'=>'Fecha_Nacimiento','class'=>'form-control']); ?>
-
-             </div>
 
 
 
@@ -150,12 +186,7 @@
 
              </div>
 
-             <div class="col-sm-12">
-                 <?php echo form::label('Alumno '); ?>
 
-                 <?php echo form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control']); ?>
-
-            </div>
 
 
              <div class="col-sm-5">
@@ -179,6 +210,18 @@
 
      </div>
    </div>
+
+   <script>
+
+       $('.datepicker').datepicker({
+           format: "dd/mm/yyyy",
+           language: "es",
+           startDate: '-100y',
+           endDate:   '0d',
+           autoclose: true
+
+       });
+   </script>
 
 
 

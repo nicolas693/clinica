@@ -14,7 +14,7 @@ class Ficha extends Model
 
     protected $fillable = [
     	'id_Ficha','Nombre','Paterno','Materno','rut','Motivo_Consulta','Antecedentes_Medicos','Farmacos_Uso','Habitos',
-        'Datos_Consulta_Anterior','Antecedentes_Traumatismo','Tratamiento_Ortodoncia'
+        'Datos_Consulta_Anterior','Antecedentes_Traumatismo','Tratamiento_Ortodoncia','paciente_id','alumno_id',
     ];
     //Antecedentes_Medicos:Enfermedades Cardiovasculares, Gastrointestinales, Respiratorias, Neurologicas, Infectocontagiosas
     //Continuacion..., Discrasias sanguineas,Diabetes, Alergias, Embaraso, otro.
@@ -22,6 +22,8 @@ class Ficha extends Model
     //Datos_Consulta_Anterior: Fecha de consulta anterior y Motivo_Consulta anterior.
     //Antecedentes_Traumatismo Dentoalveolar.
     //Tratamiento_Ortodoncia: No, En Tratamiento~Fecha de inicio o Si~Tiempo de tratamiento.
+
+    //EL RUT YA ESTA DISPONIBLE, PACIENTE_ID REFERENCIA A RUT EN LAS MIGRACIONES
 
     public function Paciente (){
     	return $this->belongsto(Paciente::class);

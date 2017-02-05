@@ -1,14 +1,14 @@
-@extends('layouts.app')
-@section('title','Ficha de Paciente Nuevo')
-@section('content')
-@include('partials.messages')
+<?php $__env->startSection('title','Ficha de Paciente Nuevo'); ?>
+<?php $__env->startSection('content'); ?>
+<?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <html lang="es">
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  {!!Html::style('css/micss.css')!!}
+  <?php echo Html::style('css/micss.css'); ?>
+
   <meta charset="utf-8" />
   <title>Fechas</title>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
@@ -51,7 +51,7 @@
 </html>
 
 <ol class="breadcrumb fondoC1 ">
-     <li><a href="{{url('Alumno')}}"> Alumno</a></li>
+     <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
      <li class="active">Pacientes</li>
    </ol>
 
@@ -65,49 +65,68 @@
           <div class="panel-heading"><b>
              Ficha del Nuevo Paciente</b>
              <p class="navbar-text navbar-right" style=" margin-top: 1px;">
-               <a <button href={{URL::previous()}} type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-primary" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
+               <a <button href=<?php echo e(URL::previous()); ?> type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-primary" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
               </p>
            </div>
           <div class="panel-body">
 
-               {!!Form::open(['route'=>'Paciente.store','method'=>'POST'])!!}
+               <?php echo Form::open(['route'=>'Paciente.store','method'=>'POST']); ?>
+
 
                 <div class="col-sm-4">
-                    {!!form::label('Nombre')!!}
-                    {!!form::text('Nombre',null,['id'=>'Nombre','class'=>'form-control'])!!}
+                    <?php echo form::label('Nombre'); ?>
+
+                    <?php echo form::text('Nombre',null,['id'=>'Nombre','class'=>'form-control']); ?>
+
                </div>
                <div class="col-sm-4">
-                    {!!form::label('Apellido Paterno')!!}
-                    {!!form::text('Paterno',null,['id'=>'Paterno','class'=>'form-control'])!!}
+                    <?php echo form::label('Apellido Paterno'); ?>
+
+                    <?php echo form::text('Paterno',null,['id'=>'Paterno','class'=>'form-control']); ?>
+
                </div>
 
                <div class="col-sm-4">
-                    {!!form::label('Apellido Materno')!!}
-                    {!!form::text('Materno',null,['id'=>'Materno','class'=>'form-control'])!!}
+                    <?php echo form::label('Apellido Materno'); ?>
+
+                    <?php echo form::text('Materno',null,['id'=>'Materno','class'=>'form-control']); ?>
+
                </div>
                <div class="col-sm-4">
-                    {!!form::label('RUT')!!}
-                    {!!form::text('RUT',null,['id'=>'rut','class'=>'form-control'])!!}
+                    <?php echo form::label('RUT'); ?>
+
+                    <?php echo form::text('RUT',null,['id'=>'rut','class'=>'form-control']); ?>
+
                </div>
                <div class="col-sm-8">
-                    {!!form::label('Ficha Número')!!}
-                    {!!form::text('Ficha Número',null,['id'=>'id_Ficha','class'=>'form-control'])!!}
+                    <?php echo form::label('Ficha Número'); ?>
+
+                    <?php echo form::text('Ficha Número',null,['id'=>'id_Ficha','class'=>'form-control']); ?>
+
                </div>
                <div class="col-sm-12">
-                    {!!form::label('Antecedentes Médicos')!!}
-                    {!!form::text('Antecedentes Médicos',null,['id'=>'Antecedentes_Medicos','class'=>'form-control'])!!}
+                    <?php echo form::label('Antecedentes Médicos'); ?>
+
+                    <?php echo form::text('Antecedentes Médicos',null,['id'=>'Antecedentes_Medicos','class'=>'form-control']); ?>
+
                </div>
                <div class="col-sm-12">
-                    {!!form::label('Fármacos en uso')!!}
-                    {!!form::text('Fármacos en uso',null,['id'=>'Farmacos_Uso','class'=>'form-control'])!!}
+                    <?php echo form::label('Fármacos en uso'); ?>
+
+                    <?php echo form::text('Fármacos en uso',null,['id'=>'Farmacos_Uso','class'=>'form-control']); ?>
+
                </div>
                <div class="col-sm-12">
-                    {!!form::label('Hábitos')!!}
-                    {!!form::text('Hábitos',null,['id'=>'Habitos','class'=>'form-control'])!!}
+                    <?php echo form::label('Hábitos'); ?>
+
+                    <?php echo form::text('Hábitos',null,['id'=>'Habitos','class'=>'form-control']); ?>
+
                </div>
                <div class="col-sm-12">
-                    {!!form::label('Antecedentes de traumatismos Dentoalveolar')!!}
-                    {!!form::text('Antecedentes traumatismos Dentoalveolar',null,['id'=>'Antecedentes de traumatismos Dentoalveolar','class'=>'form-control'])!!}
+                    <?php echo form::label('Antecedentes de traumatismos Dentoalveolar'); ?>
+
+                    <?php echo form::text('Antecedentes traumatismos Dentoalveolar',null,['id'=>'Antecedentes de traumatismos Dentoalveolar','class'=>'form-control']); ?>
+
                </div>
                <div class="col-sm-12 radio">
                  <p><b>Tratamiento de Ortodoncia</b></p>
@@ -121,8 +140,10 @@
                   </div>
                 </div>
                 <div class="col-sm-12">
-                      {!!form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10'])!!}
-                      {!!Form::close()!!}
+                      <?php echo form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10']); ?>
+
+                      <?php echo Form::close(); ?>
+
 
                 </div>
            </div>
@@ -155,4 +176,6 @@
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

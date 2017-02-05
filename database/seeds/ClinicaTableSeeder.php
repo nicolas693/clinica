@@ -13,25 +13,25 @@ class ClinicaTableSeeder extends Seeder
     public function run()
     {
       $cli=new Clinica([
-        'id_Clinica'=>1,
-        'Nombre_Clinica'=>'La Casa de la Tortura',
-        'Direccion_Clinica'=>'direccion cualquiera',
+        'id_Clinica'=>1421,
+        'Nombre_Clinica'=>'Clínica Las Lilas',
+        'Direccion_Clinica'=>'Avenida El Principito 1943',
         'Telefono_Clinica'=>1234567,
       ]);
       $cli->save();
 
       $cli=new Clinica([
-        'id_Clinica'=>2,
-        'Nombre_Clinica'=>'Clinica Cuma',
-        'Direccion_Clinica'=>'direccion cualquiera',
+        'id_Clinica'=>2834,
+        'Nombre_Clinica'=>'Clínica Los Tulipanes',
+        'Direccion_Clinica'=>'Avenida Oliver Twist 1838',
         'Telefono_Clinica'=>1234567,
       ]);
       $cli->save();
 
       $cli=new Clinica([
-        'id_Clinica'=>3,
-        'Nombre_Clinica'=>'Donde Don Chapatin',
-        'Direccion_Clinica'=>'direccion cualquiera',
+        'id_Clinica'=>1237,
+        'Nombre_Clinica'=>'Clínica Girasol',
+        'Direccion_Clinica'=>'Calle El Lobo Estepario 1927',
         'Telefono_Clinica'=>1234567,
       ]);
       $cli->save();

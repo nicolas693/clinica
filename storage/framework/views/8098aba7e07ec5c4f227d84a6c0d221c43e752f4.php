@@ -1,11 +1,20 @@
 <?php $__env->startSection('title','Ficha del Paciente'); ?>
 <?php $__env->startSection('content'); ?>
 
-  <div class="page-header "  >
-    <h1>Ficha del Paciente<small></small></h1>
-  </div>
+<head>
+    <?php echo Html::style('css/micss.css'); ?>
 
-  <div class="row">
+</head>
+<ol class="breadcrumb fondoC1 ">
+     <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
+     <li class="active">Ficha Paciente</li>
+   </ol>
+
+
+  <div class="row fondoC centro">
+    <div class="page-header "  >
+      <h1>Ficha del Paciente<small></small></h1>
+    </div>
     <div class="col-md-8">
 
        <div class="panel panel-default " >

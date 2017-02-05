@@ -16,7 +16,7 @@
      <div class="page-header "  >
        <h1>Pacientes<small></small></h1>
      </div>
-     <div class="col-md-8">
+     <div class="col-md-12">
 
         <div class="panel panel-default  " >
           <div class="panel-heading">
@@ -66,7 +66,7 @@
                              <span class="caret"></span>
                            </button>
                            <ul class="dropdown-menu" role="menu">
-                             <li><a href={{ url('/Ficha/nueva', $pa->id_Paciente) }}>Ver Ficha</a></li>
+                             <li><a href={{route('Ficha.index', $pa->rut) }}>Ver Ficha</a></li>
                              <li><a href={{route('Paciente.edit',$pa->rut)}}>Editar</a></li>
                              <li><a href={{route('Paciente.show',$pa->rut)}}>Dar de Baja</a></li>
                            </ul>

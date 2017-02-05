@@ -53,8 +53,8 @@
 
 
                <div class="col-sm-12">
-                  {!!form::label('RUT')!!}
-                  {!!form::text('rut',null,['id'=>'rut','class'=>'form-control'])!!}
+                  {!!form::label('Rut')!!}
+                  {!!form::text('rut',null,['id'=>'rut','class'=>'form-control','placeholder'=>'Ej: 12345789-0'])!!}
              </div>
 
               <div class="col-sm-4">
@@ -85,7 +85,6 @@
                <div class="input-group">
                  <label for="date">Fecha Nacimiento</label>
                    <input type="text" class="form-control datepicker2" name="Fecha_Nacimiento">
-
                </div>
              </div>
 
@@ -148,16 +147,10 @@
                   {!!form::text('Cobertura_Medica',null,['id'=>'Cobertura_Medica','class'=>'form-control'])!!}
              </div>
 
-
-
-
              <div class="col-sm-5">
-
-
                 {!!form::text('clinica_id',$id,['id'=>'clinica_id','class'=>'form-control hidden'])!!}
-
              </div>
-             {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
+             {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
           {!!Form::close()!!}
            </div>
         </div>

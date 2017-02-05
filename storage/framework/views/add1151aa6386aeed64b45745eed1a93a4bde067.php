@@ -21,15 +21,21 @@
     <script src="<?php echo e(asset('datePicker/js/bootstrap-datepicker.js')); ?>"></script>
     <!-- Languaje -->
     <script src="<?php echo e(asset('datePicker/locales/bootstrap-datepicker.es.min.js')); ?>"></script>
+    <?php echo Html::style('css/micss.css'); ?>
+
 
 </head>
 
+<ol class="breadcrumb fondoC1 ">
+     <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
+     <li class="active">Ingresar Paciente</li>
+   </ol>
 
-   <div class="page-header">
-     <h1>Paciente Nuevo </h1>
-   </div>
 
-   <div class="row">
+   <div class="row fondoC centro">
+     <div class="page-header">
+       <h1>Paciente Nuevo </h1>
+     </div>
      <div class="col-md-8">
 
         <div class="panel panel-default">
@@ -48,9 +54,9 @@
 
 
                <div class="col-sm-12">
-                  <?php echo form::label('RUT'); ?>
+                  <?php echo form::label('Rut'); ?>
 
-                  <?php echo form::text('rut',null,['id'=>'rut','class'=>'form-control']); ?>
+                  <?php echo form::text('rut',null,['id'=>'rut','class'=>'form-control','placeholder'=>'Ej: 12345789-0']); ?>
 
              </div>
 
@@ -87,8 +93,7 @@
              <div class="col-sm-6">
                <div class="input-group">
                  <label for="date">Fecha Nacimiento</label>
-                   <input type="text" class="form-control datepicker" name="Fecha_Nacimiento">
-
+                   <input type="text" class="form-control datepicker2" name="Fecha_Nacimiento">
                </div>
              </div>
 
@@ -171,18 +176,11 @@
 
              </div>
 
-
-
-
              <div class="col-sm-5">
-
-                <?php echo form::label('Clinica'); ?>
-
-                <?php echo Form::select('clinica_id',$paciente,null,['id'=>'id_Clinica','class'=>'form-control']); ?>
-
+                <?php echo form::text('clinica_id',$id,['id'=>'clinica_id','class'=>'form-control hidden']); ?>
 
              </div>
-             <?php echo form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;']); ?>
+             <?php echo form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;']); ?>
 
           <?php echo Form::close(); ?>
 
@@ -194,11 +192,24 @@
    </div>
 
    <script>
+
+       $('.datepicker2').datepicker({
+           format: "dd/mm/yyyy",
+           language: "es",
+           startDate: '-100y',
+           endDate:   '0d',
+           autoclose: true
+
+       });
+   </script>
+
+   <script>
+
        $('.datepicker').datepicker({
            format: "dd/mm/yyyy",
            language: "es",
-           startDate: '01/01/1900',
-           endDate:   '15/1/2017',
+           startDate: '-1w',
+           endDate:   '+1w',
            autoclose: true
 
        });

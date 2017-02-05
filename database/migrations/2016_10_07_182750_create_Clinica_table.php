@@ -15,8 +15,8 @@ class CreateClinicaTable extends Migration
         Schema::create('Clinica', function (Blueprint $table) {
             $table->increments('id_Clinica');
 
-            $table->String('Nombre_Clinica')->length(15);
-            $table->String('Direccion_Clinica')->length(25);
+            $table->String('Nombre_Clinica')->length(25);
+            $table->String('Direccion_Clinica')->length(30);
             $table->Integer('Telefono_Clinica');
 
 

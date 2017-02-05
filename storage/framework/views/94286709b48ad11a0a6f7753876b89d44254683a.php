@@ -1,20 +1,28 @@
 <?php $__env->startSection('title','Lista de Pacientes'); ?>
-
 <?php $__env->startSection('content'); ?>
+<head>
+  <?php echo Html::style('css/micss.css'); ?>
 
+</head>
    <!-- Main component for a primary marketing message or call to action -->
-   <div class="page-header "  >
-     <h1>Pacientes<small></small></h1>
-   </div>
+   <ol class="breadcrumb fondoC1 ">
+        <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
+        <li class="active">Pacientes</li>
+      </ol>
+   <!-- Main component for a primary marketing message or call to action -->
 
-   <div class="row">
-     <div class="col-md-8">
 
-        <div class="panel panel-default " >
+   <div class="row fondoC centro">
+     <div class="page-header "  >
+       <h1>Pacientes<small></small></h1>
+     </div>
+     <div class="col-md-12">
+
+        <div class="panel panel-default  " >
           <div class="panel-heading">
              Lista
              <p class="navbar-text navbar-right" style=" margin-top: 1px;">
-               <a <button href=<?php echo e(route('Paciente.create')); ?> type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Nuevo</button></a>
+               <a <button href=<?php echo e(route('Paciente.create',$id)); ?> type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Nuevo</button></a>
                 <!--<button type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;">Nuevo</button>-->
               </p>
            </div>
@@ -31,7 +39,7 @@
 
                   <th>Acción</th>
                </thead>
-               <tbody>
+
 
                	<?php foreach($paciente as $pa): ?>
 
@@ -58,7 +66,7 @@
                              <span class="caret"></span>
                            </button>
                            <ul class="dropdown-menu" role="menu">
-                             <li><a href=<?php echo e(url('/Ficha/index', $pa->id_Paciente)); ?>>Ver Ficha</a></li>
+                             <li><a href=<?php echo e(route('Ficha.index', $pa->rut)); ?>>Ver Ficha</a></li>
                              <li><a href=<?php echo e(route('Paciente.edit',$pa->rut)); ?>>Editar</a></li>
                              <li><a href=<?php echo e(route('Paciente.show',$pa->rut)); ?>>Dar de Baja</a></li>
                            </ul>
@@ -69,7 +77,7 @@
 
                	<?php endforeach; ?>
 
-               </tbody>
+
 
 
 

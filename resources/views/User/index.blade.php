@@ -13,7 +13,7 @@
 
    <div class="row fondoC centro">
      <div class="page-header">
-       <h1>aaaaaaaaaAAAAAAAAAAAAAAAaaaaAAaaaA!!! </h1>
+       <h1>Mi Perfil</h1>
      </div>
      <div class="col-md-8">
 

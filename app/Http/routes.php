@@ -56,7 +56,8 @@ Route::group(['middleware' => ['auth','Admin']], function(){
   Route::get('Paciente/alta/{id}', 'Pacientes\PacientesController@alta');
 
   route::resource('Paciente','Pacientes\PacientesController',['only' => ['store','edit','show','update']]);
-  route::get('Ficha','Ficha\FichaController@index');
+  //route::get('Ficha','Ficha\FichaController@index');
+  route::get('Ficha/index/{id}',['as'=> 'Ficha.index' , 'uses' => 'Ficha\FichaController@index']);
   route::get('Ficha/nueva','Ficha\FichaController@nueva');
   route::get('Ficha/antigua','Ficha\FichaController@antigua');
   //route::resource('Ficha','Ficha\FichaController',['only' => ['store','create','edit','show','update']]);
