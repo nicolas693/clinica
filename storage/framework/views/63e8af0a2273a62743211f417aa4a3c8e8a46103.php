@@ -54,9 +54,9 @@
 
 
                <div class="col-sm-12">
-                  <?php echo form::label('RUT'); ?>
+                  <?php echo form::label('Rut'); ?>
 
-                  <?php echo form::text('rut',null,['id'=>'rut','class'=>'form-control']); ?>
+                  <?php echo form::text('rut',null,['id'=>'rut','class'=>'form-control','placeholder'=>'Ej: 12345789-0']); ?>
 
              </div>
 
@@ -94,7 +94,6 @@
                <div class="input-group">
                  <label for="date">Fecha Nacimiento</label>
                    <input type="text" class="form-control datepicker2" name="Fecha_Nacimiento">
-
                </div>
              </div>
 
@@ -177,17 +176,11 @@
 
              </div>
 
-
-
-
              <div class="col-sm-5">
-
-
                 <?php echo form::text('clinica_id',$id,['id'=>'clinica_id','class'=>'form-control hidden']); ?>
 
-
              </div>
-             <?php echo form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;']); ?>
+             <?php echo form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;']); ?>
 
           <?php echo Form::close(); ?>
 

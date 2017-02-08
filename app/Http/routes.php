@@ -26,7 +26,9 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 Route::resource('User','User\UserController');
 
-
+Route::get('/odo', function () {
+    return view('odontograma');
+});
 Route::group(['middleware' => ['auth','Admin']], function(){
   route::get('/Admin','Admin\AdminController@index');
   route::get('/Docente/create','Docentes\DocentesController@create');

@@ -51,16 +51,22 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Inicio
+                <a class="navbar-brand" href="{{ url('/') }}" >
+                  <span class="glyphicon glyphicon-home" style="margin-right: 3px; font-size: 20px"></span>
+
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" style="margin-left: 8%;">
 
-                  <li><a  href="{{ url('/') }}">Ver Mi Ficha</a></li>
+                  <li>
+                    <a  href="{{ url('/') }}">
+                    <span class="glyphicon glyphicon-th-list" style="margin-right: 5px; font-size: 15px;"></span>
+                    Ver Mi Ficha
+                  </a>
+                </li>
 
 
                 </ul>
@@ -69,17 +75,14 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Iniciar sesión</a></li>
-                        <li><a href="{{ url('/register') }}">Registrar</a></li>
+
+                        <li><a href="{{ url('/login') }}"><i class="glyphicon glyphicon-log-in" style="margin-right: 5px;"></i>Iniciar sesión</a></li>
+                        <li><a href="{{ url('/register') }}"><i class="glyphicon glyphicon-credit-card" style="margin-right: 5px;"></i>Registrar</a></li>
 
 
                     @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
 
-                            <ul class="dropdown-menu" role="menu">
+
                               @if(Auth::user()->idrol==1)
                                 <li><a href="{{ url('/Admin') }}"><i class=" 	glyphicon glyphicon-th-large"></i></i> Mi Panel</a></li>
                                 <li><a href={{route('User.index')}}><i class="glyphicon glyphicon-user"></i></i> Mi Perfil</a></li>
@@ -102,8 +105,8 @@
 
 
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Cerrar Sesión</a></li>
-                            </ul>
-                        </li>
+
+
                     @endif
                 </ul>
             </div>
