@@ -32,4 +32,12 @@ class Paciente extends Model
     public function Ficha (){
         return $this->hasmany(Ficha::class);
     }
+
+    public function Problema (){
+        return $this->hasmany(Problema::class);
+    }
+
+    public function Odontograma (){
+        return $this->hasone(Odontograma::class);
+    }
 }

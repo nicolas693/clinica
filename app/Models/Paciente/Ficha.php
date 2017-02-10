@@ -40,4 +40,7 @@ class Ficha extends Model
     public function Clinica(){
         return $this->belongsto(Clinica::class);
     }
+    public function Odontograma(){
+        return $this->hasone(Odontograma::class);
+    }
 }

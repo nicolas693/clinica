@@ -18,7 +18,7 @@ class AlumnoTableSeeder extends Seeder
           'Nombre_Alumno'=>'Sylvanas',
           'Apellido_Alumno'=>'Windrunner',
           'Telefono_Alumno'=>'34627890',
-          'id_Clinica'=>'2',
+          'id_Clinica'=>'1421',
           'user_id'=>'6',
         ]);
         $alum->save();
