@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use clinica\Http\Requests;
 use clinica\Http\Controllers\Controller;
+use clinica\Models\Paciente\Paciente;
 
 class OdontogramaController extends Controller
 {
@@ -17,7 +18,9 @@ class OdontogramaController extends Controller
     public function index($id)
     {
 
-        return view('Odontograma.index')->with('id',$id);
+        $paciente=Paciente::where('rut','=',$id)->first();
+
+        return view('Odontograma.index')->with('id',$id)->with('paciente',$paciente);
     }
 
     /**
@@ -49,7 +52,8 @@ class OdontogramaController extends Controller
      */
     public function show($id,$id2)
     {
-        return view('Odontograma.show')->with('id',$id)->with('id2',$id2);
+        $paciente=Paciente::where('rut','=',$id)->first();
+        return view('Odontograma.show')->with('id',$id)->with('id2',$id2)->with('paciente',$paciente);
     }
 
     /**

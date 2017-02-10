@@ -21,7 +21,7 @@ class FichaController extends Controller
      */
     public function index($id)
     {
-        $paciente=Paciente::all();
+        $paciente=Paciente::where('rut','=',$id)->first();
         return view('Ficha/index')->with('paciente',$paciente)->with('id',$id);
     }
 

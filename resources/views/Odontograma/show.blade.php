@@ -19,6 +19,11 @@
 
 </head>
 
+<ol class="breadcrumb fondoC1 ">
+     <li><a href="{{url('Alumno')}}"> Alumno</a></li>
+     <li class="active">Odontograma de {{$paciente->Nombre}} {{$paciente->Paterno}}</li>
+   </ol>
+
 
 <div class="row fondoC centro">
 <div class="page-header " style="margin-right:15%;"  >
