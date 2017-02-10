@@ -22,8 +22,8 @@
 <div class="row fondoC centro">
     <div class="col-sm-12 "  >
       <h1>Odontograma<small></small></h1>
-      <input  type="image" src='images/18.png' name="18"  id="18" />
-      <input  type="image" src='images/17.png' name="17"  id="17" />
+      <input  type="image" src='images/18.png' name="18"  data-id="18" data-toggle="modal" data-target="#myModal" class="view-admin" />
+      <input  type="image" src='images/17.png' name="17"  data-id="17" data-toggle="modal" data-target="#myModal" class="view-admin" />
       <input  type="image" src='images/16.png' name="16"  id="16" />
       <input  type="image" src='images/15.png' name="15"  id="15" />
       <input  type="image" src='images/14.png' name="14"  id="14" />
@@ -47,7 +47,7 @@
 
     </div>
 
-    <div class="col-sm-12" style="margin-bottom:10%;" id="1" >
+    <div class="col-sm-12" style="margin-bottom:5%;" id="1" >
 
       <input  type="image" src='images/48.png' name="48"  id="48" />
       <input  type="image" src='images/47.png' name="47"  id="47" />
@@ -68,217 +68,67 @@
       <input  type="image" src='images/38.png' name="38"  id="38" />
 </div>
 
-<div class="menu col-sm-6 fondoO well" style="max-height: 300px;overflow: auto;">
 
-                <ul class="list-group" style"margin-top: 5%;">
-                    <li class="list-group-item">
-                        problema 1
-                        <div class="material-switch pull-right">
-                            <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                            <label for="someSwitchOptionDefault" class="label-default"></label>
-                        </div>
-                    </li>
 
-                    <li class="list-group-item">
-                        problema 2
-                        <div class="material-switch pull-right">
-                            <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                            <label for="someSwitchOptionDefault" class="label-default"></label>
-                        </div>
-                    </li>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog" style="margin-top: 8%;" >
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
 
-                    <li class="list-group-item">
-                        problema 3
-                        <div class="material-switch pull-right">
-                            <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                            <label for="someSwitchOptionDefault" class="label-default"></label>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        problema 4
-                        <div class="material-switch pull-right">
-                            <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                            <label for="someSwitchOptionDefault" class="label-default"></label>
-                        </div>
-                    </li>
+          <h4 >Pieza : <p style="display:inline;" id="showid"></p>  </h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                    <li class="list-group-item">
-                        problema 5
-                        <div class="material-switch pull-right">
-                            <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                            <label for="someSwitchOptionDefault" class="label-default"></label>
-                        </div>
-                    </li>
+        </div>
+        <div class="modal-body" style="max-height: 250px;overflow: auto;">
 
-                    <li class="list-group-item">
-                        problema 6
-                        <div class="material-switch pull-right">
-                            <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                            <label for="someSwitchOptionDefault" class="label-default"></label>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        problema 7
-                        <div class="material-switch pull-right">
-                            <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                            <label for="someSwitchOptionDefault" class="label-default"></label>
-                        </div>
-                    </li>
+          <ul class="list-group" style"margin-top: 5%;">
+              <li class="list-group-item">
+                  problema 1
+                  <div class="material-switch pull-right">
+                      <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
+                      <label for="someSwitchOptionDefault" class="label-default"></label>
+                  </div>
+              </li>
 
-                    <li class="list-group-item">
-                        problema 8
-                        <div class="material-switch pull-right">
-                            <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                            <label for="someSwitchOptionDefault" class="label-default"></label>
-                        </div>
-                    </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-dismiss="modal">cerrar</button>
+          <button type="button" name="nuevo" id="nuevo" class="btn btn-success" data-dismiss="modal">Guardar</button>
 
-                    <li class="list-group-item">
-                        problema 9
-                        <div class="material-switch pull-right">
-                            <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                            <label for="someSwitchOptionDefault" class="label-default"></label>
-                        </div>
-                    </li>
+        </div>
+      </div>
 
-                </ul>
+    </div>
   </div>
+
+
 
 </div>
 
- <script>
- $(document).ready(function() {
-     $('#18').click(function() {
-             $('.menu').slideToggle("fast");
-     });
+<script>
+var adminid;
+var p1="<?php echo e(route('Paciente.create',";
+var p2=")); ?>";
+$(document).on("click", ".view-admin", function() {
+    adminid = $(this).attr('data-id');
 
-     $('#17').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-     $('#16').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-     $('#15').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-     $('#14').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-     $('#13').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-     $('#12').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-     $('#11').click(function() {
-             $('.menu').slideToggle("fast");
-     });
+    $("#showid").text(adminid);
+    $('#myModal').modal('show');
+});
 
 
+$("#nuevo").click(function(event){
+  document.location.href = p1;
+});
 
-
-
-     $('#21').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-     $('#22').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-     $('#23').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-     $('#24').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-     $('#25').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-     $('#26').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-     $('#27').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-     $('#28').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-
-
-     $('#31').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-     $('#32').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-     $('#33').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-     $('#34').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-     $('#35').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-     $('#36').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-     $('#37').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-     $('#38').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-
-
-     $('#48').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-     $('#47').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-     $('#46').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-     $('#45').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-     $('#44').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-     $('#43').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-     $('#42').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-     $('#41').click(function() {
-             $('.menu').slideToggle("fast");
-     });
-
-
-
-
- });
 </script>
+
+
+
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

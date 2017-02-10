@@ -31,7 +31,7 @@
 
           <div class="panel-body">
 
-
+              <a <button  href={{route('Odontograma.index',$id) }} type="button"  class="btn btn-primary" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Ver Odontograma</button></a>
            </div>
            </div>
            </div>

@@ -26,8 +26,12 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 Route::resource('User','User\UserController');
 
+
+
+
+
 Route::get('/odo', function () {
-    return view('odontograma');
+    return view('Odontograma/index');
 });
 Route::group(['middleware' => ['auth','Admin']], function(){
   route::get('/Admin','Admin\AdminController@index');
@@ -44,22 +48,21 @@ Route::group(['middleware' => ['auth','Admin']], function(){
 
 
   route::group(['middleware' => ['auth','Alumno']], function(){
-    route::get('Alumno/mostrar/{id}',[
-      'as' => 'Alumno.mostrar', 'uses' => 'Alumnos\AlumnosController@mostrar'
-  ]);
+    route::get('Alumno/mostrar/{id}',['as' => 'Alumno.mostrar', 'uses' => 'Alumnos\AlumnosController@mostrar']);
 
   route::get('Alumno/mostrar/{id}/Paciente/create',[
     'as' => 'Paciente.create', 'uses' => 'Pacientes\PacientesController@create'
 ]);
 
-
+route::get('Ficha/{id}/Odontograma/{id2}',['as'=> 'Odontograma.show' , 'uses' => 'Odontograma\OdontogramaController@show']);
+route::get('Ficha/{id}/Odontograma',['as'=> 'Odontograma.index' , 'uses' => 'Odontograma\OdontogramaController@index']);
 
   route::get('Alumno','Alumnos\AlumnosController@index');
   Route::get('Paciente/alta/{id}', 'Pacientes\PacientesController@alta');
 
   route::resource('Paciente','Pacientes\PacientesController',['only' => ['store','edit','show','update']]);
   //route::get('Ficha','Ficha\FichaController@index');
-  route::get('Ficha/index/{id}',['as'=> 'Ficha.index' , 'uses' => 'Ficha\FichaController@index']);
+  route::get('Ficha/{id}',['as'=> 'Ficha.index' , 'uses' => 'Ficha\FichaController@index']);
   route::get('Ficha/nueva','Ficha\FichaController@nueva');
   route::get('Ficha/antigua','Ficha\FichaController@antigua');
   //route::resource('Ficha','Ficha\FichaController',['only' => ['store','create','edit','show','update']]);
