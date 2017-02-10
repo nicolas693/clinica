@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <?php echo Html::style('css/micss.css'); ?>
 
@@ -15,6 +15,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <?php echo Html::style('css/bootstrap.min.css'); ?>
+
+    <?php echo Html::style('css/micss.css'); ?>
+
+      <?php echo Html::style('css/minav.css'); ?>
 
     <?php echo Html::style('css/navbar-fixed-top.css'); ?>
 
@@ -40,7 +44,7 @@
     </style>
 </head>
 <body id="app-layout" class="bg-default" >
-    <nav class="navbar navbar-inverse navbar-static-top ">
+    <nav class="navbar navbar-cust  ">
         <div class="container">
             <div class="navbar-header">
 
@@ -53,16 +57,22 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
-                    Clínica
+                <a class="navbar-brand" href="<?php echo e(url('/')); ?>" >
+                  <span class="glyphicon glyphicon-home" style="margin-right: 3px; font-size: 20px"></span>
+
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" style="margin-left: 8%;">
 
-
+                  <li>
+                    <a  href="<?php echo e(url('/')); ?>">
+                    <span class="glyphicon glyphicon-th-list" style="margin-right: 5px; font-size: 15px;"></span>
+                    Ver Mi Ficha
+                  </a>
+                </li>
 
 
                 </ul>
@@ -71,15 +81,14 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     <?php if(Auth::guest()): ?>
-                        <li><a href="<?php echo e(url('/login')); ?>">Iniciar sesión</a></li>
-                        <li><a href="<?php echo e(url('/register')); ?>">Registrar</a></li>
-                    <?php else: ?>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
-                            </a>
 
-                            <ul class="dropdown-menu" role="menu">
+                        <li><a href="<?php echo e(url('/login')); ?>"><i class="glyphicon glyphicon-log-in" style="margin-right: 5px;"></i>Iniciar sesión</a></li>
+                        <li><a href="<?php echo e(url('/register')); ?>"><i class="glyphicon glyphicon-credit-card" style="margin-right: 5px;"></i>Registrar</a></li>
+
+
+                    <?php else: ?>
+
+
                               <?php if(Auth::user()->idrol==1): ?>
                                 <li><a href="<?php echo e(url('/Admin')); ?>"><i class=" 	glyphicon glyphicon-th-large"></i></i> Mi Panel</a></li>
                                 <li><a href=<?php echo e(route('User.index')); ?>><i class="glyphicon glyphicon-user"></i></i> Mi Perfil</a></li>
@@ -102,8 +111,8 @@
 
 
                                 <li><a href="<?php echo e(url('/logout')); ?>"><i class="fa fa-btn fa-sign-out"></i>Cerrar Sesión</a></li>
-                            </ul>
-                        </li>
+
+
                     <?php endif; ?>
                 </ul>
             </div>
@@ -113,10 +122,10 @@
 
 </body>
 
-  <body>
-        <div class="container">
+  <body style="background-color:  #3498db ; "   >
+      <!--  <div class=" fondoC centro text" >-->
           <?php echo $__env->yieldContent('content'); ?>
-        </div> <!-- /container -->
+      <!--  </div>  /container -->
   </body>
 
 </html>

@@ -1,15 +1,23 @@
 <?php $__env->startSection('title','Editar Paciente'); ?>
 
 <?php $__env->startSection('content'); ?>
+<head>
+    <?php echo Html::style('css/micss.css'); ?>
+
+</head>
 
 
+<ol class="breadcrumb fondoC1 ">
+     <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
+     <li class="active">Alta Paciente</li>
+   </ol>
 
 
-   <div class="page-header">
-     <h1>Alta Medica </h1>
-   </div>
+   <div class="row fondoC centro">
 
-   <div class="row">
+     <div class="page-header">
+       <h1>Alta Medica </h1>
+     </div>
      <div class="col-md-8">
 
         <div class="panel panel-default">
@@ -41,7 +49,8 @@
              <div class="form-group">
              <?php echo form::label('Alta : '); ?>
 
-              <?php echo $pa->alta; ?> 
+              <?php echo $pa->alta; ?>
+
             </div>
 
 

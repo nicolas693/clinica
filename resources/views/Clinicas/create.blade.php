@@ -30,7 +30,7 @@
 
 
                <div class="col-sm-12">
-                  {!!form::label('Codigo')!!}
+                  {!!form::label('Código')!!}
                   {!!form::text('id_Clinica',null,['id'=>'rut','class'=>'form-control'])!!}
              </div>
 
@@ -40,7 +40,7 @@
              </div>
 
              <div class="col-sm-4">
-                  {!!form::label('Direccion')!!}
+                  {!!form::label('Dirección')!!}
                   {!!form::text('Direccion_Clinica',null,['id'=>'Paterno','class'=>'form-control'])!!}
              </div>
 
