@@ -11,12 +11,21 @@ class Ficha extends Model
     protected $primaryKey = 'id_Ficha';
 
     public $timestamps = false;
+    protected $fillable = [
+        'Nombre','Paterno','Materno','Fecha_Nacimiento','Edad','Telefono','Ocupacion',/*Direccion*/'Calle','Numero_Calle','Email','Sexo','alumno_id','id','Fecha_Ingreso','Motivo_Consulta','Expectativas'/*Anamnesis General*/,
+        'Antecedentes_Medicos','Farmacos_Uso',/*Habitos*/
+        'Fuma','Alcohol','Drogas'/*Anamnesis Odontologica*/,'Fecha_Ultima_Consulta','Motivo_Ultima_Consulta','Antecedentes_Traumatismo','Fecha_Traumatismo','Tratamiento_Ortodoncia','Elem_Higiene','Anestesia','Alerta_Medica'
+    ];
+    //,'id'-->> id del docente.
+    /*
 
     protected $fillable = [
     	'id_Ficha','Nombre','Paterno','Materno','rut','Motivo_Consulta','Antecedentes_Medicos','Farmacos_Uso','Habitos',
         'Datos_Consulta_Anterior','Antecedentes_Traumatismo','Tratamiento_Ortodoncia'
     ];
+    */
     //Antecedentes_Medicos:Enfermedades Cardiovasculares, Gastrointestinales, Respiratorias, Neurologicas, Infectocontagiosas
+    //espectativas del tratamiento.
     //Continuacion..., Discrasias sanguineas,Diabetes, Alergias, Embaraso, otro.
     //Habitos: Drogas, Alcohol,Cigarros, etc.
     //Datos_Consulta_Anterior: Fecha de consulta anterior y Motivo_Consulta anterior.

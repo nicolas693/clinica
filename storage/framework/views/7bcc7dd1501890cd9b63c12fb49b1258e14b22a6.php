@@ -1,14 +1,14 @@
-@extends('layouts.app')
-@section('title','Ficha de Paciente')
-@section('content')
-@include('partials.messages')
+<?php $__env->startSection('title','Ficha de Paciente'); ?>
+<?php $__env->startSection('content'); ?>
+<?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <html lang="es">
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  {!!Html::style('css/micss.css')!!}
+  <?php echo Html::style('css/micss.css'); ?>
+
   <meta charset="utf-8" />
   <title>Fechas</title>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
@@ -26,7 +26,7 @@
       var hoy = dia + "-" + mes + "-" + año;
       document.getElementById('theDate').value = hoy;
     }
-  
+
   </script>
   <script>
    $.datepicker.regional['es'] = {
@@ -71,7 +71,7 @@
 </html>
 
 <ol class="breadcrumb fondoC1 ">
-     <li><a href="{{url('Alumno')}}"> Alumno</a></li>
+     <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
      <li class="active">Pacientes</li>
    </ol>
 
@@ -87,36 +87,50 @@
            </div>
           <div class="panel-body">
 
-                {!!Form::open(['route'=>'Paciente.store','method'=>'POST'])!!}
+                <?php echo Form::open(['route'=>'Paciente.store','method'=>'POST']); ?>
+
 
                 <div class="col-sm-4">
-                    {!!form::label('Nombre')!!}
-                    {!!form::text('Nombre',null,['id'=>'Nombre','class'=>'form-control'])!!}
+                    <?php echo form::label('Nombre'); ?>
+
+                    <?php echo form::text('Nombre',null,['id'=>'Nombre','class'=>'form-control']); ?>
+
                 </div>
                 <div class="col-sm-4">
-                    {!!form::label('Apellido Paterno')!!}
-                    {!!form::text('Paterno',null,['id'=>'Paterno','class'=>'form-control'])!!}
+                    <?php echo form::label('Apellido Paterno'); ?>
+
+                    <?php echo form::text('Paterno',null,['id'=>'Paterno','class'=>'form-control']); ?>
+
                 </div>
 
                 <div class="col-sm-4">
-                    {!!form::label('Apellido Materno')!!}
-                    {!!form::text('Materno',null,['id'=>'Materno','class'=>'form-control'])!!}
+                    <?php echo form::label('Apellido Materno'); ?>
+
+                    <?php echo form::text('Materno',null,['id'=>'Materno','class'=>'form-control']); ?>
+
                 </div>
                 <div class="col-sm-4">
-                    {!!form::label('RUT')!!}
-                    {!!form::text('RUT',null,['id'=>'rut','class'=>'form-control'])!!}
+                    <?php echo form::label('RUT'); ?>
+
+                    <?php echo form::text('RUT',null,['id'=>'rut','class'=>'form-control']); ?>
+
                 </div>
                 <div class="col-sm-4">
-                  {!!form::label('Fecha de Control')!!}
+                  <?php echo form::label('Fecha de Control'); ?>
+
                   <p style="font-size: 15px"><b><?php echo date("d/m/Y");?></b></p>
                 </div>
                 <div class="col-sm-8"><p></p></div>
                 <div class="col-sm-6 en_linea">
-                  {!!form::label('Anamnesis')!!}
-                  {!!form::text('Anamnesis',null,['id'=>'Datos_Consulta_Anterior','class'=>'form-control cajatexto'])!!}
-                
-                  {!!form::label('Motivo_Consulta')!!}
-                  {!!form::text('Motivo de Consulta',null,['id'=>'Motivo_Consulta','class'=>'form-control cajatexto'])!!}
+                  <?php echo form::label('Anamnesis'); ?>
+
+                  <?php echo form::text('Anamnesis',null,['id'=>'Datos_Consulta_Anterior','class'=>'form-control cajatexto']); ?>
+
+
+                  <?php echo form::label('Motivo_Consulta'); ?>
+
+                  <?php echo form::text('Motivo de Consulta',null,['id'=>'Motivo_Consulta','class'=>'form-control cajatexto']); ?>
+
                 </div>
                 <div class="col-sm-12 form-group">
                 <p><b>Procedimientos</b></p>
@@ -144,7 +158,7 @@
                           "Técnica de elevación del seno maxilar",
                           "Técnica de regeneración ósea guiada",
                           "Terapia de fluoruro");
-                        foreach ($Procedimientos as $pro) 
+                        foreach ($Procedimientos as $pro)
                         {
                           ?>
                           <option value="<?php echo strtolower($pro);?>"><?php echo $pro; ?></option>
@@ -152,10 +166,12 @@
                         }
                         ?>
                         <div class="boton">
-                          {!!form::submit('Agregar',['name'=>'Agregar','id'=>'agregar','content'=>'<span>Agregar</span>','class'=>'btn btn-default btn-sm m-t-10'])!!}
-                          {!!Form::close()!!}
+                          <?php echo form::submit('Agregar',['name'=>'Agregar','id'=>'agregar','content'=>'<span>Agregar</span>','class'=>'btn btn-default btn-sm m-t-10']); ?>
+
+                          <?php echo Form::close(); ?>
+
                         </div>
-                  </form>               
+                  </form>
                 <div class="col-sm-12 form-group">
                   <p><b>Insumos necesarios</b></p>
                     <form action="../php/select-action.php" method="post">
@@ -170,7 +186,7 @@
                         "Eyector de saliva",
                         "Manga de esterilización",
                         "Tórula de algodón");
-                      foreach ($Insumos as $in) 
+                      foreach ($Insumos as $in)
                       {
                         ?>
                         <option value="<?php echo strtolower($in);?>"><?php echo $in; ?></option>
@@ -178,32 +194,46 @@
                       }
                       ?>
                       <div class="boton">
-                          {!!form::submit('Agregar',['name'=>'Agregar','id'=>'agregar','content'=>'<span>Agregar</span>'',class'=>'btn btn-default btn-sm m-t-10'])!!}
-                          {!!Form::close()!!}
-                      </div>                  
-                
-                <div class="col-sm-12">
-                    {!!form::label('Antecedentes Médicos //viene de vista anterior')!!}
-                    {!!form::text('Antecedentes Médicos',null,['id'=>'Antecedentes_Medicos','class'=>'form-control'])!!}
-                </div>
-                <div class="col-sm-12">
-                    {!!form::label('Fármacos en uso//viene de vista anterior')!!}
-                    {!!form::text('Fármacos en uso',null,['id'=>'Farmacos_Uso','class'=>'form-control'])!!}
-                </div>
-                <div class="col-sm-12">
-                    {!!form::label('Hábitos //viene de vista anterior')!!}
-                    {!!form::text('Hábitos',null,['id'=>'Habitos','class'=>'form-control'])!!}
-                </div>
-                <div class="col-sm-12">
-                    {!!form::label('Antecedentes de traumatismos Dentoalveolar//vista anterior')!!}
-                    {!!form::text('Antecedentes traumatismos Dentoalveolar',null,['id'=>'Antecedentes de traumatismos Dentoalveolar','class'=>'form-control'])!!}
-                </div>              
-                <div class="col-sm-12 boton"><br>
-                  {!!form::submit('Volver',['name'=>'Siguiente','id'=>'volver','content'=>'<span>Volver</span>','class'=>'btn btn-primary btn-sm m-t-10'])!!}
-                  {!!Form::close()!!}
+                          <?php echo form::submit('Agregar',['name'=>'Agregar','id'=>'agregar','content'=>'<span>Agregar</span>','class'=>'btn btn-default btn-sm m-t-10']); ?>
 
-                  {!!form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10'])!!}
-                  {!!Form::close()!!}                  
+                          <?php echo Form::close(); ?>
+
+                      </div>
+
+                <div class="col-sm-12">
+                    <?php echo form::label('Antecedentes Médicos //viene de vista anterior'); ?>
+
+                    <?php echo form::text('Antecedentes Médicos',null,['id'=>'Antecedentes_Medicos','class'=>'form-control']); ?>
+
+                </div>
+                <div class="col-sm-12">
+                    <?php echo form::label('Fármacos en uso//viene de vista anterior'); ?>
+
+                    <?php echo form::text('Fármacos en uso',null,['id'=>'Farmacos_Uso','class'=>'form-control']); ?>
+
+                </div>
+                <div class="col-sm-12">
+                    <?php echo form::label('Hábitos //viene de vista anterior'); ?>
+
+                    <?php echo form::text('Hábitos',null,['id'=>'Habitos','class'=>'form-control']); ?>
+
+                </div>
+                <div class="col-sm-12">
+                    <?php echo form::label('Antecedentes de traumatismos Dentoalveolar//vista anterior'); ?>
+
+                    <?php echo form::text('Antecedentes traumatismos Dentoalveolar',null,['id'=>'Antecedentes de traumatismos Dentoalveolar','class'=>'form-control']); ?>
+
+                </div>
+                <div class="col-sm-12 boton"><br>
+                  <?php echo form::submit('Volver',['name'=>'Siguiente','id'=>'volver','content'=>'<span>Volver</span>','class'=>'btn btn-primary btn-sm m-t-10']); ?>
+
+                  <?php echo Form::close(); ?>
+
+
+                  <?php echo form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10']); ?>
+
+                  <?php echo Form::close(); ?>
+
                 </div>
            </div>
         </div>
@@ -236,4 +266,6 @@
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

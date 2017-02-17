@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 use clinica\Http\Requests;
 use clinica\Http\Controllers\Controller;
-use clinica\Models\Paciente\Ficha;
 use clinica\Models\Paciente\Paciente;
+use clinica\Models\Paciente\Clinica;
+use clinica\Models\Alumnos\Alumnos;
 use Auth;
 use Carbon\Carbon;
 
@@ -21,7 +22,8 @@ class FichaController extends Controller
      */
     public function index()
     {
-        return view('Ficha/index');
+        $ficha = Ficha::all();
+        return view('Ficha/index')->with('ficha',$ficha);
     }
 
     /**
@@ -29,9 +31,9 @@ class FichaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        
     }
 
     /**
@@ -97,9 +99,9 @@ class FichaController extends Controller
         //$paciente=Paciente::find($id);
         return view('Ficha/nueva');//->with('paciente',$paciente);
     }
-    public function antigua()
+    public function ficha()
     {
-        return view('Ficha/antigua');
+        return view('Ficha/ficha');
     }
     public function Procedimientos($Procedimientos)
     {

@@ -85,11 +85,11 @@
                <div class="col-sm-4">
                     {!!form::label('RUT')!!}
                     {!!form::text('RUT',null,['id'=>'rut','class'=>'form-control'])!!}
-               </div> 
+               </div>
                <div class="col-sm-8">
                     {!!form::label('Ficha Número')!!}
                     {!!form::text('Ficha Número',null,['id'=>'id_Ficha','class'=>'form-control'])!!}
-               </div>               
+               </div>
                <div class="col-sm-12">
                     {!!form::label('Antecedentes Médicos')!!}
                     {!!form::text('Antecedentes Médicos',null,['id'=>'Antecedentes_Medicos','class'=>'form-control'])!!}
@@ -120,9 +120,7 @@
                 <div>
                   <div class="col-sm-4 boton">
                     <form>
-                      {!!form::submit('Volver',['name'=>'Siguiente','id'=>'volver','content'=>'<span>Volver</span>','class'=>'btn btn-primary btn-sm m-t-10'])!!}
-                      {!!Form::close()!!}
-
+                      <a <button href={{URL::previous()}} type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-primary" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
                       {!!form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10'])!!}
                       {!!Form::close()!!}
                     </form>
