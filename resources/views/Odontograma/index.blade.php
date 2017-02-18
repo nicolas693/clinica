@@ -82,6 +82,10 @@
 
 </div>
 
+<div class="col-sm-12">
+  <a <button href={{URL::previous()}} type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-primary" style="margin-bottom: 10px; margin-top: 8px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
+</div>
+
 
 
   <!--

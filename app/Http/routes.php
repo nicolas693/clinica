@@ -40,6 +40,7 @@ Route::get('/', function () {
 });
 
 
+
   route::group(['middleware' => ['auth','Docente']], function(){
     route::get('/Docente','Docentes\DocentesController@index');
     route::get('Docente/mostrar','Docentes\DocentesController@mostrar');
@@ -58,11 +59,30 @@ Route::get('/', function () {
     route::get('Ficha/{id}',['as'=> 'Ficha.index' , 'uses' => 'Ficha\FichaController@index']);
     route::get('Ficha/{id}/nueva','Ficha\FichaController@nueva');
     route::get('Ficha/antigua','Ficha\FichaController@antigua');
+    route::get('Ficha/{id}/ficha',['as'=>'Ficha.ficha', 'uses' => 'Ficha\FichaController@ficha' ]);
 
     Route::get('Paciente/alta/{id}', 'Pacientes\PacientesController@alta');
     route::resource('Paciente','Pacientes\PacientesController',['only' => ['store','edit','show','update']]);
+
+    route::resource('Tratamiento','Tratamiento\TratamientoController');
   //route::get('Ficha','Ficha\FichaController@index');
   //route::resource('Ficha','Ficha\FichaController',['only' => ['store','create','edit','show','update']]);
-    route::resource('Tratamiento','Tratamiento\TratamientoController');
+
+/*
+  route::group(['middleware' => ['auth','Alumno']], function(){
+    route::get('Alumno/mostrar/{id}',[
+      'as' => 'Alumno.mostrar', 'uses' => 'Alumnos\AlumnosController@mostrar']);
+    route::get('Alumno/mostrar/{id}/Paciente/create',[
+      'as' => 'Paciente.create', 'uses' => 'Pacientes\PacientesController@create']);
+    route::get('Alumno','Alumnos\AlumnosController@index');
+    route::get('Paciente/alta/{id}', 'Pacientes\PacientesController@alta');
+    route::resource('Paciente','Pacientes\PacientesController',['only' => ['store','edit','show','update']]);
+
+    route::get('Ficha','Ficha\FichaController@index');
+    //route::get('Ficha/nueva','Ficha\FichaController@nueva');
+    route::get('Ficha/ficha','Ficha\FichaController@ficha');
+    */
+    //route::resource('Ficha','Ficha\FichaController',['only' => ['store','create','edit','show','update']]);
+
 });
 //route::get('Paciente','Pacientes\PacientesController@index');
