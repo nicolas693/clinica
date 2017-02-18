@@ -19,7 +19,6 @@ class OdontogramaController extends Controller
     {
 
         $paciente=Paciente::where('rut','=',$id)->first();
-
         return view('Odontograma.index')->with('id',$id)->with('paciente',$paciente);
     }
 

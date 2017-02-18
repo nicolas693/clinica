@@ -33,12 +33,12 @@
        <div class="panel panel-default">
          <div class="panel-heading"><b>Nueva planificación de Tratamiento</b>
             <p class="navbar-text navbar-right" style=" margin-top: 1px;">
-              <a <button href={{URL::}} type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-primary" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
+              <a <button href={{URL::previous()}} type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-primary" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
              </p>
           </div>
          <div class="panel-body">
 
-              {!!Form::open(['route'=>'Paciente.store','method'=>'POST'])!!}
+              {!!Form::open(['route'=>'Tratamiento.store','method'=>'POST'])!!}
 
                <div class="col-sm-4">
                  <div class="input-group">
@@ -67,10 +67,11 @@
                    {!!form::text('AccionR',null,['id'=>'AccionR','class'=>'form-control'])!!}
               </div>
 
-               <div class="col-sm-12">
-                 {!!form::submit('Guardar',['name'=>'Guardar','id'=>'guardar','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10'])!!}
-                 {!!Form::close()!!}
-               </div>
+              <div class="col-sm-12">
+                    {!!form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10', 'style'=>'margin-top: 26px; margin-left: 0px;'])!!}
+                    {!!Form::close()!!}
+              </div>
+
           </div>
        </div>
     </div>

@@ -1,11 +1,16 @@
 <?php $__env->startSection('title','Planificación de Tratamiento'); ?>
 <?php $__env->startSection('content'); ?>
 
+  <head>
+      <?php echo Html::style('css/micss.css'); ?>
+
+  </head>
+
+
+<div class="row fondoC centro">
   <div class="page-header "  >
     <h1>Planificación de Tratamiento<small></small></h1>
   </div>
-
-  <div class="row">
     <div class="col-md-8">
 
        <div class="panel panel-default " >
@@ -32,6 +37,9 @@
                </div>
 
            </div>
+         </div>
+       </div>
+     </div>
 
 
 <?php $__env->stopSection(); ?>

@@ -93,15 +93,19 @@ class FichaController extends Controller
     {
         //
     }
-    public function nueva()
+    public function nueva($id)
     {
         //$paciente=Paciente::find($id);
-        return view('Ficha/nueva');//->with('paciente',$paciente);
+        $paciente=Paciente::where('rut','=',$id)->first();
+        return view('Ficha/nueva')->with('paciente',$paciente)->with('id',$id);
+        //return view('Ficha/nueva');->with('paciente',$paciente);
     }
+
     public function antigua()
     {
         return view('Ficha/antigua');
     }
+    
     public function Procedimientos($Procedimientos)
     {
         $Procedimientos = array(

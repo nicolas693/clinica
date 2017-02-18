@@ -37,7 +37,7 @@
           </div>
          <div class="panel-body">
 
-              <?php echo Form::open(['route'=>'Paciente.store','method'=>'POST']); ?>
+              <?php echo Form::open(['route'=>'Tratamiento.store','method'=>'POST']); ?>
 
 
                <div class="col-sm-4">
@@ -75,12 +75,13 @@
 
               </div>
 
-               <div class="col-sm-12">
-                 <?php echo form::submit('Guardar',['name'=>'Guardar','id'=>'guardar','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10']); ?>
+              <div class="col-sm-12">
+                    <?php echo form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10', 'style'=>'margin-top: 26px; margin-left: 0px;']); ?>
 
-                 <?php echo Form::close(); ?>
+                    <?php echo Form::close(); ?>
 
-               </div>
+              </div>
+
           </div>
        </div>
     </div>
