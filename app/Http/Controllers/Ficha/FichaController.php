@@ -9,6 +9,7 @@ use clinica\Http\Controllers\Controller;
 use clinica\Models\Paciente\Paciente;
 use clinica\Models\Paciente\Clinica;
 use clinica\Models\Alumnos\Alumnos;
+use clinica\Http\Requests\Ficha\FichaCreateRequest;
 use Auth;
 use Carbon\Carbon;
 

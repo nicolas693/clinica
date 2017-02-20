@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use clinica\Http\Requests;
 use clinica\Http\Controllers\Controller;
+use clinica\Models\Paciente\Paciente;
+use clinica\Models\Paciente\Ficha;
+use clinica\Models\Tratamiento\Tratamiento;
+use clinica\Http\Requests\Tratamiento\TratamientoCreateRequest;
 
 class TratamientoController extends Controller
 {
@@ -14,10 +18,11 @@ class TratamientoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-      //$tratamiento=Tratamiento::all();
-      return view('Tratamiento/index');
+      $paciente=Paciente::where('rut','=',$id)->first();
+      $request['paciente_id']=$paciente->paciente_id;
+      return view('Tratamiento.index')->with('paciente',$paciente)->with('id',$id);
     }
 
     /**
@@ -25,9 +30,17 @@ class TratamientoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view ('Tratamiento/create');
+        $paciente=Paciente::where('rut','=',$id)->first();
+        return view ('Tratamiento.create')->with('paciente',$paciente)->with('id',$id);
+    }
+
+    public function nuevo($id){
+
+      $paciente=Paciente::where('rut','=',$id)->first();
+      return view ('Tratamiento.nuevo')->with('paciente',$paciente)->with('id',$id);
+      //return "Hello World!";
     }
 
     /**
@@ -36,10 +49,12 @@ class TratamientoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TratamientoCreateRequest $request)
     {
-         Tratamiento::create($request->all());
-         return redirect('/Tratamiento/index/'.$id);
+         $input = $request->only(['Diente', 'Costo', 'Profesor', 'AccionR', 'Fecha']);
+         $id= $request->paciente_id;
+         return view('Tratamiento.index')->with('id',$id);
+
     }
 
     /**

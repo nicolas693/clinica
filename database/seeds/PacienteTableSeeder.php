@@ -31,7 +31,7 @@ class PacienteTableSeeder extends Seeder
           'Cobertura_Medica'=>'Lannister Pro',
           'clinica_id'=>'1421',
           'alumno_id'=>'19405168',
-          'alta'=>'0',
+          'alta'=>'false',
 
         ]);
         $pac->save();

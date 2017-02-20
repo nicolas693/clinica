@@ -1,7 +1,8 @@
 @extends('layouts.app')
-
 @section('title','Planificación de Tratamiento')
+@include('partials.messages')
 @section('content')
+
 
   <head>
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
@@ -24,6 +25,13 @@
 
   </head>
 
+  <ol class="breadcrumb fondoC1 ">
+       <li><a href="{{url('Alumno')}}"> Alumno</a></li>
+       <li><a href="{{url('Ficha', $id)}}">Ficha</a></li>
+       <li><a href="{{url('Tratamiento', $id)}}">Ver Plan de Tratamiento</a></li>
+       <li class="active">Registro</li>
+     </ol>
+
 
   <div class="row fondoC centro">
     <div class="page-header">
@@ -33,7 +41,7 @@
        <div class="panel panel-default">
          <div class="panel-heading"><b>Nueva planificación de Tratamiento</b>
             <p class="navbar-text navbar-right" style=" margin-top: 1px;">
-              <a <button href={{URL::previous()}} type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-primary" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
+              <a <button href={{route('Tratamiento.index', $id)}} type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-primary" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
              </p>
           </div>
          <div class="panel-body">
@@ -58,8 +66,8 @@
               </div>
 
               <div class="col-sm-8">
-                   {!!form::label('Profesor a Cargo')!!}
-                   {!!form::text('Profesor',null,['id'=>'Profesor','class'=>'form-control'])!!}
+                   {!!form::label('Profesor guía')!!}
+                   {!!form::text('Profesor',null,['id'=>'nProfe','class'=>'form-control'])!!}
               </div>
 
               <div class="col-sm-12">
@@ -68,7 +76,7 @@
               </div>
 
               <div class="col-sm-12">
-                    {!!form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10', 'style'=>'margin-top: 26px; margin-left: 0px;'])!!}
+                    {!!form::submit('Guardar',['name'=>'Guardar','id'=>'guardar','content'=>'<span>Guardar</span>','class'=>'btn btn-success btn-sm m-t-10', 'style'=>'margin-top: 26px; margin-left: 0px;'])!!}
                     {!!Form::close()!!}
               </div>
 
