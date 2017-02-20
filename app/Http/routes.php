@@ -47,25 +47,28 @@ Route::group(['middleware' => ['auth','Admin']], function(){
 });
 
 
-  route::group(['middleware' => ['auth','Alumno']], function(){
-    route::get('Alumno/mostrar/{id}',['as' => 'Alumno.mostrar', 'uses' => 'Alumnos\AlumnosController@mostrar']);
+route::group(['middleware' => ['auth','Alumno']], function(){
+      route::get('Alumno/mostrar/{id}',['as' => 'Alumno.mostrar', 'uses' => 'Alumnos\AlumnosController@mostrar']);
 
-  route::get('Alumno/mostrar/{id}/Paciente/create',[
-    'as' => 'Paciente.create', 'uses' => 'Pacientes\PacientesController@create'
-]);
+      route::resource('Problema','Odontograma\ProblemaController');
 
-route::get('Ficha/{id}/Odontograma/{id2}',['as'=> 'Odontograma.show' , 'uses' => 'Odontograma\OdontogramaController@show']);
-route::get('Ficha/{id}/Odontograma',['as'=> 'Odontograma.index' , 'uses' => 'Odontograma\OdontogramaController@index']);
+      route::get('Alumno/mostrar/{id}/Paciente/create',[
+        'as' => 'Paciente.create', 'uses' => 'Pacientes\PacientesController@create'
+        ]);
+        
+      route::resource('Odontograma','Odontograma\OdontogramaController',['only' => 'store']);
+      route::get('Ficha/{id}/Odontograma/{id2}',['as'=> 'Odontograma.show' , 'uses' => 'Odontograma\OdontogramaController@show']);
+      route::get('Ficha/{id}/Odontograma',['as'=> 'Odontograma.index' , 'uses' => 'Odontograma\OdontogramaController@index']);
 
-  route::get('Alumno','Alumnos\AlumnosController@index');
-  Route::get('Paciente/alta/{id}', 'Pacientes\PacientesController@alta');
+      route::get('Alumno','Alumnos\AlumnosController@index');
+      Route::get('Paciente/alta/{id}', 'Pacientes\PacientesController@alta');
 
-  route::resource('Paciente','Pacientes\PacientesController',['only' => ['store','edit','show','update']]);
-  //route::get('Ficha','Ficha\FichaController@index');
-  route::get('Ficha/{id}',['as'=> 'Ficha.index' , 'uses' => 'Ficha\FichaController@index']);
-  route::get('Ficha/nueva','Ficha\FichaController@nueva');
-  route::get('Ficha/antigua','Ficha\FichaController@antigua');
-  //route::resource('Ficha','Ficha\FichaController',['only' => ['store','create','edit','show','update']]);
-  route::resource('Tratamiento','Tratamiento\TratamientoController');
+      route::resource('Paciente','Pacientes\PacientesController',['only' => ['store','edit','show','update']]);
+      //route::get('Ficha','Ficha\FichaController@index');
+      route::get('Ficha/{id}',['as'=> 'Ficha.index' , 'uses' => 'Ficha\FichaController@index']);
+      route::get('Ficha/nueva','Ficha\FichaController@nueva');
+      route::get('Ficha/antigua','Ficha\FichaController@antigua');
+      //route::resource('Ficha','Ficha\FichaController',['only' => ['store','create','edit','show','update']]);
+      route::resource('Tratamiento','Tratamiento\TratamientoController');
 });
 //route::get('Paciente','Pacientes\PacientesController@index');

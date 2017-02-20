@@ -34,6 +34,17 @@ border: 2px solid  #145a32  ;
  margin-bottom: 5%;
 
 }
+
+.boton{
+  margin-bottom: 5%;
+  margin-left: 1%;
+}
+
+.borde{
+  background-color: #FFFFFF;
+  border: 1px solid  #145a32  ;
+    border-radius: 1px;
+}
 .fondoO{
 
 background-color: #F5F5F5;

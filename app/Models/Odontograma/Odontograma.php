@@ -45,15 +45,20 @@ class Odontograma extends Model
       'pieza35',
       'pieza36',
       'pieza37',
-      'pieza38',
-      'id_Ficha'
+      'pieza38'
 
-      public function Ficha (){
-        return $this->belongsto(Ficha::class);
-      }
+
 
 
   ];
+
+  public function Ficha (){
+    return $this->belongsto(Ficha::class);
+  }
+
+  public function Problema (){
+    return $this->Hasmany(Problema::class);
+  }
 
 
 }

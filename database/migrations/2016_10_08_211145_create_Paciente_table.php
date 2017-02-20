@@ -30,16 +30,19 @@ class CreatePacienteTable extends Migration
             $table->String('Comuna')->length(15);
             $table->String('Nacionalidad')->length(15);
             $table->String('Cobertura_Medica')->length(15);
-            
+
             $table->primary('rut');
             $table->integer('clinica_id')->unsigned();
             $table->integer('alumno_id')->unsigned();
+            $table->integer('Odontograma_id')->unsigned()->nullable();
             $table->boolean('alta');
 
 
 
             $table->foreign('clinica_id')->references('id_Clinica')->on('Clinica');
             $table->foreign('alumno_id')->references('alumno_id')->on('Alumno');
+            $table->foreign('Odontograma_id')->references('Odontograma_id')->on('Odontograma');
+
 
         });
     }

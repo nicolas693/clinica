@@ -49,9 +49,6 @@
       <a href="/Ficha/<?php echo e($id); ?>/Odontograma/27"><img  src=<?php echo e(URL::asset("images/27.png")); ?>></a>
       <a href="/Ficha/<?php echo e($id); ?>/Odontograma/28"><img  src=<?php echo e(URL::asset("images/28.png")); ?>></a>
 
-
-
-
     </div>
 
     <div class="col-sm-12" style="margin-bottom:5%;" id="1" >
@@ -79,47 +76,31 @@
 
       <!--<input  type="image" src='images/31.png' name="31"  data-id="31" data-toggle="modal" data-target="#myModal" class="view-admin" />-->
 
-</div>
+    </div>
+
+    <div class="col-sm-12 borde" style="margin-top:4%; margin-bottom:4%; " >
 
 
 
-  <!--
-  <div class="modal fade" id="myModal" role="dialog" style="margin-top: 8%;" >
-    <div class="modal-dialog">
 
-      <div class="modal-content">
-        <div class="modal-header">
-
-          <h4 >Pieza : <p style="display:inline;" id="showid"></p>  </h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-        </div>
-        <div class="modal-body" style="max-height: 250px;overflow: auto;">
-
-          <ul class="list-group" style"margin-top: 5%;">
-              <li class="list-group-item">
-                  problema 1
-                  <div class="material-switch pull-right">
-                      <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                      <label for="someSwitchOptionDefault" class="label-default"></label>
-                  </div>
-              </li>
-
-          </ul>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-warning" data-dismiss="modal">cerrar</button>
-          <button type="button" name="nuevo" id="nuevo" class="btn btn-success" data-dismiss="modal">Guardar</button>
-
-        </div>
-      </div>
 
     </div>
-  </div>-->
+
+
+
 
 
 
 </div>
+
+
+
+
+
+
+
+
+
 
 <script>
     var adminid;

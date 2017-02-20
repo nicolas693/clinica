@@ -16,7 +16,7 @@
    </ol>
 
 
-  <div class="row fondoC centro">
+<div class="row fondoC centro">
     <div class="page-header "  >
       <h1>Ficha del Paciente<small></small></h1>
     </div>
@@ -25,7 +25,7 @@
        <div class="panel panel-default " >
          <div class="panel-heading">
             Datos personales
-            
+
               <div class="panel-body">
 
                   <?php echo Form::open(); ?>
@@ -50,17 +50,48 @@
 
                </div>
 
-              <a <button href=<?php echo e(URL::previous()); ?> type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-primary" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
-              <a <button href="#" type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-warning" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Ver plan de Tratamiento</button></a>
-              <a <button  href=<?php echo e(route('Odontograma.index',$id)); ?> type="button"  class="btn btn-primary" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Ver Odontograma</button></a>
 
-             </p>
+
+
+
+                  <?php if($paciente->Odontograma_id==NULL): ?>
+
+                  <?php echo Form::open(['route'=>'Odontograma.store','method'=>'POST']); ?>
+
+                      <?php echo form::text('Odontograma_id',$paciente->rut,['id'=>'Odontograma_id','class'=>'form-control hidden']); ?>
+
+
+                      <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">Crear Odontograma</button>
+
+                        <a <button type="button" href=<?php echo e(URL::previous()); ?> class="btn btn-warninf¿g">Volver</button></a>
+                      </div>
+
+
+                    <?php echo Form::close(); ?>
+
+
+                   <?php endif; ?>
+                   <?php if($paciente->Odontograma_id!=NULL): ?>
+                   <div class="btn-group">
+
+                     <a <button type="button" class="btn btn-success">Ver Plan de Tratamiento</button></a>
+                     <a <button type="button" href=<?php echo e(route('Odontograma.index',$id)); ?> class="btn btn-success">Ver Odontograma</button></a>
+                     <a <button type="button" href=<?php echo e(URL::previous()); ?> class="btn btn-warning">Volver</button> </a>
+                   </div>
+                    <?php endif; ?>
+
+
+
+
+
+
+
+
           </div>
-
-
-           </div>
-           </div>
-           </div>
+        </div>
+      </div>
+</div>
 
 
 

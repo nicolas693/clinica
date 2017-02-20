@@ -9,6 +9,7 @@ use clinica\Http\Controllers\Controller;
 use clinica\Models\Paciente\Paciente;
 use clinica\Models\Paciente\Clinica;
 use clinica\Models\Alumnos\Alumnos;
+use clinica\Models\Odontograma\Odontograma;
 use Auth;
 use Carbon\Carbon;
 use clinica\Http\Requests\Paciente\PacienteCreateRequest;
@@ -86,6 +87,14 @@ class PacientesController extends Controller
        //$request['rut']=substr($request->rut,0,-2);
 
 
+
+        //$rut1=substr($request->rut, 0, -2);
+
+        //$array=array("Odontograma_id"=>$rut1);
+
+        //Odontograma::create($array);
+        //$aa=Odontograma::orderBy('Odontograma_id', 'desc')->first();
+        //dd($aa->Odontograma_id);
 
          Paciente::create($request->all());
 

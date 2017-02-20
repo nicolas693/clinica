@@ -20,11 +20,11 @@ class CreateFichaTable extends Migration
 
             $table->String('paciente_id');
             $table->integer('alumno_id')->unsigned();
-            $table->integer('Odontograma_id')->unsigned();
+            
 
             $table->foreign('paciente_id')->references('rut')->on('Paciente');
             $table->foreign('alumno_id')->references('alumno_id')->on('Alumno');
-            $table->foreign('Odontograma_id')->references('Odontograma_id')->on('Odontograma');
+
 
 
         });
