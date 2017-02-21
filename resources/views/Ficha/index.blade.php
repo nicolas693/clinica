@@ -11,6 +11,11 @@
 
 
 
+
+
+
+
+
 <ol class="breadcrumb fondoC1 ">
      <li><a href="{{url('Alumno')}}"> Alumno</a></li>
      <li class="active">Ficha Paciente</li>
@@ -27,6 +32,7 @@
          <div class="panel-heading">
             Datos personales
 
+
               <div class="panel-body">
 
                   {!!Form::open()!!}
@@ -36,16 +42,14 @@
                      {!!$paciente->rut !!}
                  </div>
 
+
                   <div class="form-group">
                     {!!form::label('Nombre : ')!!}
                      {!!$paciente->Nombre !!} {!!$paciente->Paterno !!} {!!$paciente->Materno !!}
                  </div>
 
+
                  {!!Form::close()!!}
-
-               </div>
-
-
 
 
 
@@ -57,7 +61,7 @@
                       <div class="btn-group">
                         <button type="submit" class="btn btn-primary">Crear Odontograma</button>
 
-                        <a <button type="button" href={{URL::previous()}} class="btn btn-warninf¿g">Volver</button></a>
+                        <a <button type="button" href={{URL::previous()}} class="btn btn-warning">Volver</button></a>
                       </div>
 
 
@@ -84,6 +88,12 @@
         </div>
       </div>
 </div>
+
+           </div>
+        </div>
+      </div>
+  </div>
+
 
 
 

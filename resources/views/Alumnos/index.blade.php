@@ -19,8 +19,7 @@
 
         <div class="panel panel-default " >
           <div class="panel-heading">
-             Lista
-
+             Clínicas
            </div>
           <div class="panel-body divCenter " >
 
@@ -28,9 +27,6 @@
                <thead>
                  <th>id</th>
                   <th>Clinica</th>
-
-
-
                   <th>Accion</th>
                </thead>
                <tbody>

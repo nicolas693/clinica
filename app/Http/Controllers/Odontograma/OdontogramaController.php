@@ -23,7 +23,6 @@ class OdontogramaController extends Controller
     {
 
         $paciente=Paciente::where('rut','=',$id)->first();
-
         return view('Odontograma.index')->with('id',$id)->with('paciente',$paciente);
     }
 
@@ -58,7 +57,7 @@ class OdontogramaController extends Controller
       $a=Problema::orderBy('Problema_id', 'desc')->first();
       $pa=Paciente::where('rut',$rut)->firstOrFail();
       $request->Odontograma_id=$aa;
-      
+
 
       $indice=$a->Problema_id-32;
 
@@ -101,6 +100,7 @@ class OdontogramaController extends Controller
       Odontograma::create($request->all());
       $pa->Odontograma_id=$aa;
       $pa->save();
+      return redirect('/Ficha/'.$rut);
 
     }
 

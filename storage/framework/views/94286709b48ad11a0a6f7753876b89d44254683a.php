@@ -68,7 +68,7 @@
                            <ul class="dropdown-menu" role="menu">
                              <li><a href=<?php echo e(route('Ficha.index', $pa->rut)); ?>>Ver Ficha</a></li>
                              <li><a href=<?php echo e(route('Paciente.edit',$pa->rut)); ?>>Editar</a></li>
-                             <li><a href=<?php echo e(route('Paciente.show',$pa->rut)); ?>>Dar de Baja</a></li>
+                             <li><a href=<?php echo e(route('Paciente.show',$pa->rut)); ?>>Dar de Alta</a></li>
                            </ul>
                         </div>
                     </td>

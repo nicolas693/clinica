@@ -77,7 +77,16 @@
 
       <!--<input  type="image" src='images/31.png' name="31"  data-id="31" data-toggle="modal" data-target="#myModal" class="view-admin" />-->
 
+
     </div>
+
+</div>
+
+<div class="col-sm-12">
+  <a <button href={{URL::previous()}} type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-primary" style="margin-bottom: 10px; margin-top: 8px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
+</div>
+
+
 
     <div class="col-sm-12 borde" style="margin-top:4%; margin-bottom:4%; " >
 

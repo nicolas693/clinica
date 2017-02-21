@@ -38,7 +38,8 @@ class TratamientoController extends Controller
      */
     public function store(Request $request)
     {
-        Tratamiento::create($request->all());
+         Tratamiento::create($request->all());
+         return redirect('/Tratamiento/index/'.$id);
     }
 
     /**

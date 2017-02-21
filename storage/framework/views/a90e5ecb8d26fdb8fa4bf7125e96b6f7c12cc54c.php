@@ -4,50 +4,27 @@
 
 <html lang="es">
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <!-- Jquery -->
+
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!-- Datepicker Files -->
+  <link rel="stylesheet" href="<?php echo e(asset('datePicker/css/bootstrap-datepicker3.css')); ?>">
+  <link rel="stylesheet" href="<?php echo e(asset('datePicker/css/bootstrap-standalone.css')); ?>">
+  <script src="<?php echo e(asset('datePicker/js/bootstrap-datepicker.js')); ?>"></script>
+  <!-- Languaje -->
+  <script src="<?php echo e(asset('datePicker/locales/bootstrap-datepicker.es.min.js')); ?>"></script>
   <?php echo Html::style('css/micss.css'); ?>
 
-  <meta charset="utf-8" />
-  <title>Fechas</title>
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-  <script>
-   $.datepicker.regional['es'] = {
-   closeText: 'Cerrar',
-   prevText: '< Ant',
-   nextText: 'Sig >',
-   currentText: 'Hoy',
-   monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-   monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
-   dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-   dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
-   dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
-   weekHeader: 'Sm',
-   dateFormat: 'dd/mm/yy',
-   firstDay: 1,
-   isRTL: false,
-   showMonthAfterYear: false,
-   yearSuffix: ''
-   };
-   $.datepicker.setDefaults($.datepicker.regional['es']);
-  $(function () {
-  $("#fecha").datepicker();
-  });
-  </script>
-  <body>
-    <style type="text/css">
-      .boton{
-        margin-left: 300px;
-        cursor: pointer;
-        display: inline-block;
-        text-align: center;
-      }
-    </style>
-  </body>
 </head>
+
+
 </html>
 
 <ol class="breadcrumb fondoC1 ">
@@ -72,7 +49,7 @@
 
                <?php echo Form::open(['route'=>'Paciente.store','method'=>'POST']); ?>
 
-
+                <!--
                 <div class="col-sm-4">
                     <?php echo form::label('Nombre'); ?>
 
@@ -98,7 +75,15 @@
                     <?php echo form::text('RUT',null,['id'=>'rut','class'=>'form-control']); ?>
 
                </div>
-               <div class="col-sm-8">
+             -->
+             <div class="form-group">
+               <?php echo form::label('Nombre : '); ?>
+
+                <?php echo $paciente->Nombre; ?> <?php echo $paciente->Paterno; ?> <?php echo $paciente->Materno; ?>
+
+            </div>
+
+               <div class="col-sm-4">
                     <?php echo form::label('Ficha Número'); ?>
 
                     <?php echo form::text('Ficha Número',null,['id'=>'id_Ficha','class'=>'form-control']); ?>
@@ -133,9 +118,10 @@
                  <p class="col-sm-12"> <input type="radio" name="radio1" id="r1" value="Nothing">No ha recibido tratamiento de ortodoncia</p>
                  <p class="col-sm-12"> <input type="radio" name="radio1" id="r2" value="Show">Si ha recibido tratamiento de ortodoncia</p>
                  <div class="text2">
-                   <div class="input-group date" data-provide="datepicker">
-                     <label for="date"><b>Indique cuando lo recibió: &nbsp</b></label>
-                      <input type="text" id="fecha" name="Tratamiento_Ortodoncia">
+                   <div class="input-group">
+                     <label for="date"><b>Indique cuando lo recibió: </b></label>
+
+                      <input type="text" class="form-control datepicker" name="Fecha">
                     </div>
                   </div>
                 </div>
@@ -150,6 +136,7 @@
         </div>
      </div>
    </div>
+
   <script>
             $(document).ready(function () {
             $(".text1").hide();
@@ -164,14 +151,16 @@
             });
         });
   </script>
+
   <script>
-           $('.datepicker').datepicker({
-               format: "dd/mm/yyyy",
-               language: "es",
-               startDate: '-100y',
-               endDate:   '0d',
-               autoclose: true
-       });
+  $('.datepicker').datepicker({
+      format: "dd/mm/yyyy",
+      language: "es",
+      startDate: '-100y',
+      endDate:   '0d',
+      autoclose: true
+
+  });
    </script>
 
 

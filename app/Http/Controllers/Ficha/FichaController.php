@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 use clinica\Http\Requests;
 use clinica\Http\Controllers\Controller;
-use clinica\Models\Paciente\Ficha;
 use clinica\Models\Paciente\Paciente;
+use clinica\Models\Paciente\Clinica;
+use clinica\Models\Alumnos\Alumnos;
 use Auth;
 use Carbon\Carbon;
 
@@ -23,6 +24,8 @@ class FichaController extends Controller
     {
         $paciente=Paciente::where('rut','=',$id)->first();
         return view('Ficha/index')->with('paciente',$paciente)->with('id',$id);
+        /*$ficha = Ficha::all();
+        return view('Ficha/index')->with('ficha',$ficha);*/
     }
 
     /**
@@ -30,9 +33,9 @@ class FichaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+
     }
 
     /**
@@ -93,15 +96,22 @@ class FichaController extends Controller
     {
         //
     }
-    public function nueva()
+    public function nueva($id)
     {
         //$paciente=Paciente::find($id);
-        return view('Ficha/nueva');//->with('paciente',$paciente);
+        $paciente=Paciente::where('rut','=',$id)->first();
+        return view('Ficha/nueva')->with('paciente',$paciente)->with('id',$id);
+        //return view('Ficha/nueva');->with('paciente',$paciente);
     }
-    public function antigua()
-    {
-        return view('Ficha/antigua');
+
+
+
+
+    public function ficha ($id){
+        $paciente=Paciente::where('rut','=',$id)->first();
+        return view('Ficha.ficha')->with('paciente',$paciente);
     }
+
     public function Procedimientos($Procedimientos)
     {
         $Procedimientos = array(

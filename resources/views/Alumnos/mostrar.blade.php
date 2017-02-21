@@ -58,8 +58,10 @@
                                    <a href="#" class="btn btn-primary">Ver ficha</a>
                                   <a href={{route('Paciente.edit',$pa->rut)}} class="btn btn-primary btn-success" style="background-color:green;">Editar</a>
 
+<<<<<<< HEAD
                                   <a href={{route('Paciente.show',$pa->rut)}} class="btn btn-primary btn-danger">Dar de alta</a>
                              </div>-->
+
 
                              <div class="btn-group">
                                 <button type="button" class="btn btn-default glyphicon glyphicon-th-list"></button>
