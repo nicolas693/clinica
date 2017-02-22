@@ -29,58 +29,211 @@
     <div class="col-sm-12 "  >
       <h1>Odontograma<small></small></h1>
 
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza18']}}"><img  src={{ URL::asset("images/18.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza17']}}"><img  src={{ URL::asset("images/17.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza16']}}"><img  src={{ URL::asset("images/16.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza15']}}"><img  src={{ URL::asset("images/15.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza14']}}"><img  src={{ URL::asset("images/14.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza13']}}"><img  src={{ URL::asset("images/13.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza12']}}"><img  src={{ URL::asset("images/12.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza11']}}"><img  src={{ URL::asset("images/11.png")}}></a>
+      <div class="col-sm-3" >
+        <div class="col-sm-3">
+          <div class="panel-heading"> <b>18</b> </div>
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza18']}}"><img  src={{ URL::asset("images/18.png")}}></a>
+        </div>
+        <div class="col-sm-3">
+          <div class="panel-heading"> <b>17</b> </div>
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza17']}}"><img  src={{ URL::asset("images/17.png")}}></a>
+        </div>
+        <div class="col-sm-3">
+          <div class="panel-heading"> <b>16</b> </div>
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza16']}}"><img  src={{ URL::asset("images/16.png")}}></a>
+        </div>
+        <div class="col-sm-3">
+          <div class="panel-heading"> <b>15</b> </div>
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza15']}}"><img  src={{ URL::asset("images/15.png")}}></a>
+        </div>
+      </div>
+
+      <div class="col-sm-3" style="margin-left:-3%;">
+        <div class="col-sm-3">
+          <div class="panel-heading"> <b>14</b> </div>
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza14']}}"><img  src={{ URL::asset("images/14.png")}}></a>
+        </div>
+        <div class="col-sm-3">
+          <div class="panel-heading"> <b>13</b> </div>
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza13']}}"><img  src={{ URL::asset("images/13.png")}}></a>
+        </div>
+        <div class="col-sm-3">
+          <div class="panel-heading"> <b>12</b> </div>
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza12']}}"><img  src={{ URL::asset("images/12.png")}}></a>
+
+        </div>
+        <div class="col-sm-3">
+          <div class="panel-heading"> <b>11</b> </div>
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza11']}}"><img  src={{ URL::asset("images/11.png")}}></a>
+        </div>
+      </div>
+
+      <div class="col-sm-3" style="margin-left:-3%;">
+        <div class="col-sm-3">
+          <div class="panel-heading"> <b>21</b> </div>
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza21']}}"><img  src={{ URL::asset("images/21.png")}}></a>
+
+        </div>
+        <div class="col-sm-3">
+          <div class="panel-heading"> <b>22</b> </div>
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza22']}}"><img  src={{ URL::asset("images/22.png")}}></a>
+
+        </div>
+        <div class="col-sm-3">
+          <div class="panel-heading"> <b>23</b> </div>
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza23']}}"><img  src={{ URL::asset("images/23.png")}}></a>
+
+        </div>
+        <div class="col-sm-3">
+          <div class="panel-heading"> <b>24</b> </div>
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza24']}}"><img  src={{ URL::asset("images/24.png")}}></a>
+        </div>
+      </div>
+
+      <div class="col-sm-3" style="margin-left:-3%;">
+        <div class="col-sm-3">
+          <div class="panel-heading"> <b>25</b> </div>
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza25']}}"><img  src={{ URL::asset("images/25.png")}}></a>
+
+        </div>
+        <div class="col-sm-3">
+          <div class="panel-heading"> <b>26</b> </div>
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza26']}}"><img  src={{ URL::asset("images/26.png")}}></a>
+
+        </div>
+        <div class="col-sm-3">
+          <div class="panel-heading"> <b>27</b> </div>
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza27']}}"><img  src={{ URL::asset("images/27.png")}}></a>
+
+        </div>
+        <div class="col-sm-3">
+          <div class="panel-heading"> <b>28</b> </div>
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza28']}}"><img  src={{ URL::asset("images/28.png")}}></a>
+
+        </div>
+      </div>
 
 
 
 
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza21']}}"><img  src={{ URL::asset("images/21.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza22']}}"><img  src={{ URL::asset("images/22.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza23']}}"><img  src={{ URL::asset("images/23.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza24']}}"><img  src={{ URL::asset("images/24.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza25']}}"><img  src={{ URL::asset("images/25.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza26']}}"><img  src={{ URL::asset("images/26.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza27']}}"><img  src={{ URL::asset("images/27.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza28']}}"><img  src={{ URL::asset("images/28.png")}}></a>
+
+
+
+
+
 
     </div>
 
     <div class="col-sm-12" style="margin-bottom:5%;" id="1" >
 
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza48']}}"><img  src={{ URL::asset("images/48.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza47']}}"><img  src={{ URL::asset("images/47.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza46']}}"><img  src={{ URL::asset("images/46.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza45']}}"><img  src={{ URL::asset("images/45.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza44']}}"><img  src={{ URL::asset("images/44.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza43']}}"><img  src={{ URL::asset("images/43.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza42']}}"><img  src={{ URL::asset("images/42.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza41']}}"><img  src={{ URL::asset("images/41.png")}}></a>
+
+      <div class="col-sm-3" >
+        <div class="col-sm-3">
+
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza48']}}"><img  src={{ URL::asset("images/48.png")}}></a>
+          <div class="panel-footer" style="background-color: white; border:0px; margin-top: 25px;"> <b>48</b> </div>
+        </div>
+        <div class="col-sm-3">
+
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza47']}}"><img  src={{ URL::asset("images/47.png")}}></a>
+          <div class="panel-footer" style="background-color: white; border:0px; margin-top: 12px;"> <b>47</b> </div>
+        </div>
+        <div class="col-sm-3">
+
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza46']}}"><img  src={{ URL::asset("images/46.png")}}></a>
+          <div class="panel-footer" style="background-color: white; border:0px; margin-top: 8px;"> <b>46</b> </div>
+        </div>
+        <div class="col-sm-3">
+
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza45']}}"><img  src={{ URL::asset("images/45.png")}}></a>
+          <div class="panel-footer" style="background-color: white; border:0px; margin-top: 12px;"> <b>45</b> </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3" style="margin-left:-3%;">
+        <div class="col-sm-3">
+
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza44']}}"><img  src={{ URL::asset("images/44.png")}}></a>
+          <div class="panel-footer" style="background-color: white; border:0px; margin-top: 12px;"> <b>44</b> </div>
+        </div>
+        <div class="col-sm-3">
+
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza43']}}"><img  src={{ URL::asset("images/43.png")}}></a>
+          <div class="panel-footer" style="background-color: white; border:0px; margin-top: 8px;"> <b>43</b> </div>
+        </div>
+        <div class="col-sm-3">
+
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza42']}}"><img  src={{ URL::asset("images/42.png")}}></a>
+          <div class="panel-footer" style="background-color: white; border:0px; margin-top: 12px;"> <b>42</b> </div>
+
+        </div>
+        <div class="col-sm-3">
+
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza41']}}"><img  src={{ URL::asset("images/41.png")}}></a>
+          <div class="panel-footer" style="background-color: white; border:0px; margin-top: 20px;"> <b>41</b> </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3" style="margin-left:-3%;">
+        <div class="col-sm-3">
+
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza31']}}"><img  src={{ URL::asset("images/31.png")}}></a>
+          <div class="panel-footer" style="background-color: white; border:0px; margin-top: 15px;"> <b>31</b> </div>
+
+        </div>
+        <div class="col-sm-3">
+
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza32']}}"><img  src={{ URL::asset("images/32.png")}}></a>
+          <div class="panel-footer" style="background-color: white; border:0px; margin-top: 12px;"> <b>32</b> </div>
+
+        </div>
+        <div class="col-sm-3">
+
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza33']}}"><img  src={{ URL::asset("images/33.png")}}></a>
+          <div class="panel-footer" style="background-color: white; border:0px; margin-top: 10px;"> <b>33</b> </div>
+
+        </div>
+        <div class="col-sm-3">
+
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza34']}}"><img  src={{ URL::asset("images/34.png")}}></a>
+          <div class="panel-footer" style="background-color: white; border:0px; margin-top: 15px;"> <b>34</b> </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3" style="margin-left:-3%;">
+        <div class="col-sm-3">
+
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza35']}}"><img  src={{ URL::asset("images/35.png")}}></a>
+          <div class="panel-footer" style="background-color: white; border:0px; margin-top: 10px;"> <b>35</b> </div>
+
+        </div>
+        <div class="col-sm-3">
+
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza36']}}"><img  src={{ URL::asset("images/36.png")}}></a>
+          <div class="panel-footer" style="background-color: white; border:0px; margin-top: 15px;"> <b>36</b> </div>
+
+        </div>
+        <div class="col-sm-3">
+
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza37']}}"><img  src={{ URL::asset("images/37.png")}}></a>
+          <div class="panel-footer" style="background-color: white; border:0px; margin-top: 22px;"> <b>37</b> </div>
+
+        </div>
+        <div class="col-sm-3">
+
+          <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza38']}}"><img  src={{ URL::asset("images/38.png")}}></a>
+          <div class="panel-footer" style="background-color: white; border:0px; margin-top: 22px;" > <b>38</b> </div>
+        </div>
+      </div>
 
 
-
-
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza31']}}"><img  src={{ URL::asset("images/31.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza32']}}"><img  src={{ URL::asset("images/32.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza33']}}"><img  src={{ URL::asset("images/33.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza34']}}"><img  src={{ URL::asset("images/34.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza35']}}"><img  src={{ URL::asset("images/35.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza36']}}"><img  src={{ URL::asset("images/36.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza37']}}"><img  src={{ URL::asset("images/37.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto['pieza38']}}"><img  src={{ URL::asset("images/38.png")}}></a>
 
       <!--<input  type="image" src='images/31.png' name="31"  data-id="31" data-toggle="modal" data-target="#myModal" class="view-admin" />-->
 
 
     </div>
 
-    <div class="panel panel-default fondoCSF" style="overflow:hidden; height: 600px; "   >
+    <div class="panel panel-default fondoCSF" style="overflow:hidden; height: 600px; width:70%;margin-left:10%; "   >
 
       <div class="panel-heading">
         Piezas con problemas
@@ -108,16 +261,34 @@
                        <td>
                          <div class="panel panel-default " >
                            <div class="panel-heading">
-                              {{$key}}
+                             <?php
+                                 $nomp=$key;
+                                 $nomp = str_replace('pieza', '', $nomp);
+                              ?>
+                              <b>{{$nomp}}</b>
                             </div>
                             <div class="panel-body " >
+                              {!!Form::model($problemas,['route'=>['Problema.update',$problemas['Problema_id']],'method'=>'PUT'])!!}
                               @foreach($problemas as $key2 => $pro)
-                                @if($problemas[$key2]==1)
-                                  <div>
-                                    {{$key2}}
+                                @if($problemas[$key2]==1 and $key2!='Problema_id')
+                                  <div class="col-sm-6"style="margin-bottom:5px;">
+                                    <?php
+                                        $sinesp=$key2;
+                                        $sinesp = str_replace('_', ' ', $sinesp);
+
+                                     ?>
+                                     <b>{{$sinesp}}</b>
+                                     {{Form::hidden($key2,0)}}
+                                  </div>
+                                  <div class="col-sm-6"style="margin-bottom:5px;">
+
+                                          {!!form::submit('Quitar registro del problema',['name'=>'grabar','id'=>'grabar','content'=>'<span>Quitar registro del problema</span>','class'=>'btn btn-warning btn-xs'])!!}
+
                                   </div>
                                 @endif
                               @endforeach
+                              {!!Form::close()!!}
+
                             </div>
                          </div>
                        </td>

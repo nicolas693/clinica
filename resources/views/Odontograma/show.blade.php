@@ -40,46 +40,46 @@
 
             {{Form::label($probN[1])}}
             {{Form::hidden($probN[1],0)}}
-            {{Form::checkbox($probN[1],null,$prob->Problema_1) }}
+            {{Form::checkbox($probN[1],null,$prob->Lesion_de_caries_ICDAS_3_a_6) }}
           </div>
           <div class="col-sm-6">
             {{Form::label($probN[2])}}
             {{Form::hidden($probN[2],0)}}
-            {{Form::checkbox($probN[2],null,$prob->Problema_2) }}
+            {{Form::checkbox($probN[2],null,$prob->Lesion_de_caries_ICDAS_1_y_2) }}
           </div>
           <div class="col-sm-6">
             {{Form::label($probN[3])}}
             {{Form::hidden($probN[3],0)}}
-            {{Form::checkbox($probN[3],null,$prob->Problema_3) }}
+            {{Form::checkbox($probN[3],null,$prob->Ausente) }}
           </div>
           <div class="col-sm-6">
             {{Form::label($probN[4])}}
             {{Form::hidden($probN[4],0)}}
-            {{Form::checkbox($probN[4],null,$prob->Problema_4) }}
+            {{Form::checkbox($probN[4],null,$prob->Indicacion_exodoncia) }}
           </div>
 
           <div class="col-sm-6">
             {{Form::label($probN[5])}}
             {{Form::hidden($probN[5],0)}}
-            {{Form::checkbox($probN[5],null,$prob->Problema_5) }}
+            {{Form::checkbox($probN[5],null,$prob->Obturacion) }}
           </div>
           <div class="col-sm-6">
             {{Form::label($probN[6])}}
             {{Form::hidden($probN[6],0)}}
-            {{Form::checkbox($probN[6],null,$prob->Problema_6) }}
+            {{Form::checkbox($probN[6],null,$prob->Obturacion_con_caries) }}
           </div>
 
           <div class="col-sm-6">
             {{Form::label($probN[7])}}
             {{Form::hidden($probN[7],0)}}
-            {{Form::checkbox($probN[7],null,$prob->Problema_7) }}
+            {{Form::checkbox($probN[7],null,$prob->Obturacion_deficiente) }}
           </div>
 
           <div class="col-sm-6">
 
             {{Form::label($probN[8])}}
             {{Form::hidden($probN[8],0)}}
-            {{Form::checkbox($probN[8],null,$prob->Problema_8) }}
+            {{Form::checkbox($probN[8],null,$prob->Sellante) }}
           </div>
 
           <div class="col-sm-6">

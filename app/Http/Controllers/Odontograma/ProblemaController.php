@@ -79,23 +79,38 @@ class ProblemaController extends Controller
       $i=32;
       $ii=1;
 
-      foreach($input as $key => $mainrow){
-          if($input[$key]=="on"){
-            $input[$key]=1;
-          }
-      }
+      if(array_key_exists('Problema_id',$input)){
+        foreach($input as $key => $mainrow){
+            if($input[$key]=="on"){
+              $input[$key]=1;
+            }
+        }
 
-      while($i<$id){
-        $ii++;
-        $i=$i+32;
+        while($i<$id){
+          $ii++;
+          $i=$i+32;
+        }
+
+      }
+      else{
+
+
+              foreach($input as $key => $mainrow){
+                  if($input[$key]=="0"){
+                    $input[$key]="1";
+                  }
+
+              }
+              foreach($input as $key => $mainrow){
+                    if($key=="grabar"){
+                      $input[$keyt]="0";
+                    }
+                  $keyt=$key;
+              }
+
       }
 
       $paciente=Paciente::where('Odontograma_id','=',$ii)->first();
-
-
-
-
-
       $pro->fill($input)->save();
       return redirect('/Ficha/'.$paciente->rut.'/Odontograma');
 

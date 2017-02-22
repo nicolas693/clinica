@@ -11,14 +11,14 @@ class Problema extends Model
   public    $timestamps = false;
 
   protected $fillable   = [
-    'Problema_1',
-    'Problema_2',
-    'Problema_3',
-    'Problema_4',
-    'Problema_5',
-    'Problema_6',
-    'Problema_7',
-    'Problema_8',
+    'Lesion_de_caries_ICDAS_3_a_6',
+    'Lesion_de_caries_ICDAS_1_y_2',
+    'Ausente',
+    'Indicacion_exodoncia',
+    'Obturacion',
+    'Obturacion_con_caries',
+    'Obturacion_deficiente',
+    'Sellante',
     'Problema_9',
     'Problema_10',
     'Problema_11',

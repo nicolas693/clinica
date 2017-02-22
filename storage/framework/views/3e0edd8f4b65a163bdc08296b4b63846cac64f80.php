@@ -43,7 +43,7 @@
 
             <?php echo e(Form::hidden($probN[1],0)); ?>
 
-            <?php echo e(Form::checkbox($probN[1],null,$prob->Problema_1)); ?>
+            <?php echo e(Form::checkbox($probN[1],null,$prob->Lesion_de_caries_ICDAS_3_a_6)); ?>
 
           </div>
           <div class="col-sm-6">
@@ -51,7 +51,7 @@
 
             <?php echo e(Form::hidden($probN[2],0)); ?>
 
-            <?php echo e(Form::checkbox($probN[2],null,$prob->Problema_2)); ?>
+            <?php echo e(Form::checkbox($probN[2],null,$prob->Lesion_de_caries_ICDAS_1_y_2)); ?>
 
           </div>
           <div class="col-sm-6">
@@ -59,7 +59,7 @@
 
             <?php echo e(Form::hidden($probN[3],0)); ?>
 
-            <?php echo e(Form::checkbox($probN[3],null,$prob->Problema_3)); ?>
+            <?php echo e(Form::checkbox($probN[3],null,$prob->Ausente)); ?>
 
           </div>
           <div class="col-sm-6">
@@ -67,7 +67,7 @@
 
             <?php echo e(Form::hidden($probN[4],0)); ?>
 
-            <?php echo e(Form::checkbox($probN[4],null,$prob->Problema_4)); ?>
+            <?php echo e(Form::checkbox($probN[4],null,$prob->Indicacion_exodoncia)); ?>
 
           </div>
 
@@ -76,7 +76,7 @@
 
             <?php echo e(Form::hidden($probN[5],0)); ?>
 
-            <?php echo e(Form::checkbox($probN[5],null,$prob->Problema_5)); ?>
+            <?php echo e(Form::checkbox($probN[5],null,$prob->Obturacion)); ?>
 
           </div>
           <div class="col-sm-6">
@@ -84,7 +84,7 @@
 
             <?php echo e(Form::hidden($probN[6],0)); ?>
 
-            <?php echo e(Form::checkbox($probN[6],null,$prob->Problema_6)); ?>
+            <?php echo e(Form::checkbox($probN[6],null,$prob->Obturacion_con_caries)); ?>
 
           </div>
 
@@ -93,7 +93,7 @@
 
             <?php echo e(Form::hidden($probN[7],0)); ?>
 
-            <?php echo e(Form::checkbox($probN[7],null,$prob->Problema_7)); ?>
+            <?php echo e(Form::checkbox($probN[7],null,$prob->Obturacion_deficiente)); ?>
 
           </div>
 
@@ -103,7 +103,7 @@
 
             <?php echo e(Form::hidden($probN[8],0)); ?>
 
-            <?php echo e(Form::checkbox($probN[8],null,$prob->Problema_8)); ?>
+            <?php echo e(Form::checkbox($probN[8],null,$prob->Sellante)); ?>
 
           </div>
 

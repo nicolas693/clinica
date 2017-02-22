@@ -15,14 +15,14 @@ class CreateProblemaTable extends Migration
       Schema::create('Problema', function (Blueprint $table) {
           $table->increments('Problema_id');
 
-          $table->boolean('Problema_1')->default(false);
-          $table->boolean('Problema_2')->default(false);
-          $table->boolean('Problema_3')->default(false);
-          $table->boolean('Problema_4')->default(false);
-          $table->boolean('Problema_5')->default(false);
-          $table->boolean('Problema_6')->default(false);
-          $table->boolean('Problema_7')->default(false);
-          $table->boolean('Problema_8')->default(false);
+          $table->boolean('Lesion_de_caries_ICDAS_3_a_6')->default(false);
+          $table->boolean('Lesion_de_caries_ICDAS_1_y_2')->default(false);
+          $table->boolean('Ausente')->default(false);
+          $table->boolean('Indicacion_exodoncia')->default(false);
+          $table->boolean('Obturacion')->default(false);
+          $table->boolean('Obturacion_con_caries')->default(false);
+          $table->boolean('Obturacion_deficiente')->default(false);
+          $table->boolean('Sellante')->default(false);
           $table->boolean('Problema_9')->default(false);
           $table->boolean('Problema_10')->default(false);
           $table->boolean('Problema_11')->default(false);
