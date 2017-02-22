@@ -17,10 +17,10 @@ class CreateOdontogramaTable extends Migration
 
           $table->Integer('pieza18')->nullable()->unsigned();
           $table->Integer('pieza17')->nullable()->unsigned();
-          $table->Integer('pieza15')->nullable()->unsigned();
           $table->Integer('pieza16')->nullable()->unsigned();
-          $table->Integer('pieza13')->nullable()->unsigned();
+          $table->Integer('pieza15')->nullable()->unsigned();
           $table->Integer('pieza14')->nullable()->unsigned();
+          $table->Integer('pieza13')->nullable()->unsigned();
           $table->Integer('pieza12')->nullable()->unsigned();
           $table->Integer('pieza11')->nullable()->unsigned();
 

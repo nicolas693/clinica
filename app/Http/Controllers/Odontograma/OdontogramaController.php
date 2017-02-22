@@ -24,8 +24,20 @@ class OdontogramaController extends Controller
 
         $paciente=Paciente::where('rut','=',$id)->first();
         $odonto=Odontograma::where('Odontograma_id','=',$paciente->Odontograma_id)->first();
+        $ido=$odonto->Odontograma_id;
+        $indS=$ido*32;
+        $indI=$ido*32 -31 ;
 
-        return view('Odontograma.index')->with('id',$id)->with('paciente',$paciente)->with('odonto',$odonto);
+        $pr=Problema::where('Problema_id','<=',$indS)->where('Problema_id','>=',$indI)->get();
+        $odonto=$odonto['attributes'];
+
+
+
+
+
+
+
+        return view('Odontograma.index')->with('id',$id)->with('paciente',$paciente)->with('odonto',$odonto)->with('pr',$pr);
     }
 
     /**
@@ -117,11 +129,22 @@ class OdontogramaController extends Controller
         $paciente=Paciente::where('rut','=',$id)->first();
         $probN = Schema::getColumnListing('Problema');
         $prob=Problema::where('Problema_id','=',$id2)->first();
+        $odonto=Odontograma::where('Odontograma_id','=',$paciente->Odontograma_id)->first();
+        $odonto=$odonto['attributes'];
 
 
-      
+        foreach($odonto as $key => $odo){
+          if($odonto[$key]==$id2){
+            $num=$key;
+          }
+        }
+        $num=substr($num,5);
+        
 
-        return view('Odontograma.show')->with('id',$id)->with('id2',$id2)->with('paciente',$paciente)->with('probN',$probN)->with('prob',$prob);
+
+
+
+        return view('Odontograma.show')->with('id',$id)->with('id2',$id2)->with('paciente',$paciente)->with('probN',$probN)->with('prob',$prob)->with('num',$num);
     }
 
     /**

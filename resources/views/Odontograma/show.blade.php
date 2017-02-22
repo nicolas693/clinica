@@ -27,84 +27,93 @@
 
 <div class="row fondoC centro">
 <div class="page-header " style="margin-right:15%;"  >
-    <h1>Pieza {{$id2}} <small></small></h1>
+    <h1>Pieza {{$num}} <small></small></h1>
   </div>
-  <div  style="max-height: 250px;overflow: auto; margin-right:15%;margin-bottom:5%;">
+  <div  style="max-height: 250px; margin-right:15%;margin-bottom:5%;">
  {!!Form::open(['route'=>['Problema.update',$prob->Problema_id],'method'=>'PUT'])!!}
 
          <div>
 
            {{Form::hidden('Problema_id',$id2)}}
          </div>
-          <div>
+          <div class="col-sm-6">
 
             {{Form::label($probN[1])}}
             {{Form::hidden($probN[1],0)}}
             {{Form::checkbox($probN[1],null,$prob->Problema_1) }}
           </div>
-          <div>
+          <div class="col-sm-6">
             {{Form::label($probN[2])}}
             {{Form::hidden($probN[2],0)}}
             {{Form::checkbox($probN[2],null,$prob->Problema_2) }}
           </div>
-          <div>
+          <div class="col-sm-6">
             {{Form::label($probN[3])}}
             {{Form::hidden($probN[3],0)}}
             {{Form::checkbox($probN[3],null,$prob->Problema_3) }}
           </div>
-          <div>
+          <div class="col-sm-6">
             {{Form::label($probN[4])}}
             {{Form::hidden($probN[4],0)}}
             {{Form::checkbox($probN[4],null,$prob->Problema_4) }}
           </div>
 
-          <div>
+          <div class="col-sm-6">
             {{Form::label($probN[5])}}
             {{Form::hidden($probN[5],0)}}
             {{Form::checkbox($probN[5],null,$prob->Problema_5) }}
           </div>
-          <div>
+          <div class="col-sm-6">
             {{Form::label($probN[6])}}
             {{Form::hidden($probN[6],0)}}
             {{Form::checkbox($probN[6],null,$prob->Problema_6) }}
           </div>
-          <div>
+
+          <div class="col-sm-6">
             {{Form::label($probN[7])}}
             {{Form::hidden($probN[7],0)}}
-            {{Form::checkbox($probN[7],$prob->Problema_7) }}
+            {{Form::checkbox($probN[7],null,$prob->Problema_7) }}
           </div>
-          <div>
+
+          <div class="col-sm-6">
+
             {{Form::label($probN[8])}}
             {{Form::hidden($probN[8],0)}}
             {{Form::checkbox($probN[8],null,$prob->Problema_8) }}
           </div>
 
-          <div>
+          <div class="col-sm-6">
+
             {{Form::label($probN[9])}}
             {{Form::hidden($probN[9],0)}}
             {{Form::checkbox($probN[9],null,$prob->Problema_9) }}
           </div>
-          <div>
+          <div class="col-sm-6">
+
             {{Form::label($probN[10])}}
             {{Form::hidden($probN[10],0)}}
             {{Form::checkbox($probN[10],null,$prob->Problema_10) }}
           </div>
-          <div>
+          <div class="col-sm-6">
+
             {{Form::label($probN[11])}}
             {{Form::hidden($probN[11],0)}}
             {{Form::checkbox($probN[11],null,$prob->Problema_11) }}
           </div>
-          <div>
+          <div class="col-sm-6">
+
             {{Form::label($probN[12])}}
             {{Form::hidden($probN[12],0)}}
             {{Form::checkbox($probN[12],null,$prob->Problema_12) }}
           </div>
-          <div>
+          <div class="col-sm-6">
+
             {{Form::label($probN[13])}}
             {{Form::hidden($probN[13],0)}}
             {{Form::checkbox($probN[13],null,$prob->Problema_13) }}
           </div>
-          <div>
+          <div class="col-sm-6">
+
             {{Form::label($probN[14])}}
             {{Form::hidden($probN[14],0)}}
             {{Form::checkbox($probN[14],null,$prob->Problema_14) }}
@@ -115,11 +124,16 @@
 
 
 
-    {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
-    {!! Form::close() !!}
+
 
   </div>
+  <div class="col-sm-6" style="margin-top:3%; margin-bottom:3%;">
+  {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-10'])!!}
+</div>
+  {!! Form::close() !!}
+  <div class="col-sm-6" style="margin-top:3%; margin-bottom:3%;">
   <a <button href={{URL::previous()}} type="button"  class="btn  btn-warning" style=" margin-bottom:5%; margin-right:50%;"   >Volver</button></a>
+
 
 </div>
 
