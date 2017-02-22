@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Odontograma extends Model
 {
   protected $table      = 'Odontograma';
-  protected $primarykey = 'Odontograma_id';
+  protected $primaryKey = 'Odontograma_id';
   public    $timestamps = false;
 
   protected $fillable   = [

@@ -170,8 +170,11 @@ class PacientesController extends Controller
         $request['Genero']="Mujer";
       }
 
+
         $pa= Paciente::find($id);
+        
         $input=$request->all();
+        dd($input);
         $pa->fill($input)->save();
         $val=$pa->clinica_id;
 

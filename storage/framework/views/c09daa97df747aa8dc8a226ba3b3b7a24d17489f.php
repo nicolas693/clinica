@@ -57,6 +57,10 @@
 
 
 
+                
+              </div>
+
+
 
                   <?php if($paciente->Odontograma_id==NULL): ?>
 
@@ -79,8 +83,9 @@
                    <?php if($paciente->Odontograma_id!=NULL): ?>
                    <div class="btn-group">
 
-                     <a <button type="button" class="btn btn-success">Ver Plan de Tratamiento</button></a>
-                     <a <button type="button" href=<?php echo e(route('Odontograma.index',$id)); ?> class="btn btn-success">Ver Odontograma</button></a>
+                     <a <button type="button" href=<?php echo e(route('Tratamiento.index', $id)); ?> class="btn btn-warning">Ver Plan de Tratamiento</button></a>
+                     <a <button type="button" href=<?php echo e(route('Odontograma.index',$id)); ?> class="btn btn-info">Ver Odontograma</button></a>
+                      <a <button href=<?php echo e(route('Ficha.ficha',$id)); ?> type="button"  class="btn btn-success">Ingresar Ficha</button> </a>
                      <a <button type="button" href=<?php echo e(URL::previous()); ?> class="btn btn-warning">Volver</button> </a>
                    </div>
                     <?php endif; ?>

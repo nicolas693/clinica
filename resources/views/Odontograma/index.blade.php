@@ -29,51 +29,51 @@
     <div class="col-sm-12 "  >
       <h1>Odontograma<small></small></h1>
 
-      <a href="/Ficha/{{$id}}/Odontograma/18"><img  src={{ URL::asset("images/18.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/17"><img  src={{ URL::asset("images/17.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/16"><img  src={{ URL::asset("images/16.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/15"><img  src={{ URL::asset("images/15.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/14"><img  src={{ URL::asset("images/14.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/13"><img  src={{ URL::asset("images/13.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/12"><img  src={{ URL::asset("images/12.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/11"><img  src={{ URL::asset("images/11.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza18}}"><img  src={{ URL::asset("images/18.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza17}}"><img  src={{ URL::asset("images/17.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza16}}"><img  src={{ URL::asset("images/16.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza15}}"><img  src={{ URL::asset("images/15.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza14}}"><img  src={{ URL::asset("images/14.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza13}}"><img  src={{ URL::asset("images/13.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza12}}"><img  src={{ URL::asset("images/12.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza11}}"><img  src={{ URL::asset("images/11.png")}}></a>
 
 
 
 
-      <a href="/Ficha/{{$id}}/Odontograma/21"><img  src={{ URL::asset("images/21.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/22"><img  src={{ URL::asset("images/22.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/23"><img  src={{ URL::asset("images/23.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/24"><img  src={{ URL::asset("images/24.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/25"><img  src={{ URL::asset("images/25.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/26"><img  src={{ URL::asset("images/26.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/27"><img  src={{ URL::asset("images/27.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/28"><img  src={{ URL::asset("images/28.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza21}}"><img  src={{ URL::asset("images/21.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza22}}"><img  src={{ URL::asset("images/22.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza23}}"><img  src={{ URL::asset("images/23.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza24}}"><img  src={{ URL::asset("images/24.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza25}}"><img  src={{ URL::asset("images/25.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza26}}"><img  src={{ URL::asset("images/26.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza27}}"><img  src={{ URL::asset("images/27.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza28}}"><img  src={{ URL::asset("images/28.png")}}></a>
 
     </div>
 
     <div class="col-sm-12" style="margin-bottom:5%;" id="1" >
 
-      <a href="/Ficha/{{$id}}/Odontograma/48"><img  src={{ URL::asset("images/48.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/47"><img  src={{ URL::asset("images/47.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/46"><img  src={{ URL::asset("images/46.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/45"><img  src={{ URL::asset("images/45.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/44"><img  src={{ URL::asset("images/44.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/43"><img  src={{ URL::asset("images/43.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/42"><img  src={{ URL::asset("images/42.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/41"><img  src={{ URL::asset("images/41.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza48}}"><img  src={{ URL::asset("images/48.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza47}}"><img  src={{ URL::asset("images/47.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza46}}"><img  src={{ URL::asset("images/46.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza45}}"><img  src={{ URL::asset("images/45.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza44}}"><img  src={{ URL::asset("images/44.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza43}}"><img  src={{ URL::asset("images/43.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza42}}"><img  src={{ URL::asset("images/42.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza41}}"><img  src={{ URL::asset("images/41.png")}}></a>
 
 
 
 
-      <a href="/Ficha/{{$id}}/Odontograma/31"><img  src={{ URL::asset("images/31.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/32"><img  src={{ URL::asset("images/32.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/33"><img  src={{ URL::asset("images/33.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/34"><img  src={{ URL::asset("images/34.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/35"><img  src={{ URL::asset("images/35.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/36"><img  src={{ URL::asset("images/36.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/37"><img  src={{ URL::asset("images/37.png")}}></a>
-      <a href="/Ficha/{{$id}}/Odontograma/38"><img  src={{ URL::asset("images/38.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza31}}"><img  src={{ URL::asset("images/31.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza32}}"><img  src={{ URL::asset("images/32.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza33}}"><img  src={{ URL::asset("images/33.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza34}}"><img  src={{ URL::asset("images/34.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza35}}"><img  src={{ URL::asset("images/35.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza36}}"><img  src={{ URL::asset("images/36.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza37}}"><img  src={{ URL::asset("images/37.png")}}></a>
+      <a href="/Ficha/{{$id}}/Odontograma/{{$odonto->pieza38}}"><img  src={{ URL::asset("images/38.png")}}></a>
 
       <!--<input  type="image" src='images/31.png' name="31"  data-id="31" data-toggle="modal" data-target="#myModal" class="view-admin" />-->
 

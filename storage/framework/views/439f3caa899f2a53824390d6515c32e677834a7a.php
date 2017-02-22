@@ -1,14 +1,14 @@
-@extends('layouts.app')
-@section('title','Ficha de Paciente')
-@section('content')
-@include('partials.messages')
+<?php $__env->startSection('title','Ficha de Paciente'); ?>
+<?php $__env->startSection('content'); ?>
+<?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <html lang="es">
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  {!!Html::style('css/micss.css')!!}
+  <?php echo Html::style('css/micss.css'); ?>
+
   <meta charset="utf-8" />
   <title>Fechas</title>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
@@ -71,7 +71,7 @@
 </html>
 
 <ol class="breadcrumb fondoC1 ">
-     <li><a href="{{url('Alumno')}}"> Alumno</a></li>
+     <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
      <li class="active">Pacientes</li>
    </ol>
 
@@ -87,60 +87,84 @@
            </div>
           <div class="panel-body">
 
-                {!!Form::open(['route'=>'Paciente.store','method'=>'POST'])!!}
+                <?php echo Form::open(['route'=>'Paciente.store','method'=>'POST']); ?>
+
 
                 <div class="col-sm-6">
-                    {!!form::label('Nombre :')!!}
-                     {!!$paciente->Nombre !!} {!!$paciente->Paterno !!} {!!$paciente->Materno !!}
-                     {{Form::hidden('Nombre',$paciente->Nombre)}}
-                     {{Form::hidden('Paterno',$paciente->Paterno)}}
-                     {{Form::hidden('Materno',$paciente->Materno)}}
+                    <?php echo form::label('Nombre :'); ?>
+
+                     <?php echo $paciente->Nombre; ?> <?php echo $paciente->Paterno; ?> <?php echo $paciente->Materno; ?>
+
+                     <?php echo e(Form::hidden('Nombre',$paciente->Nombre)); ?>
+
+                     <?php echo e(Form::hidden('Paterno',$paciente->Paterno)); ?>
+
+                     <?php echo e(Form::hidden('Materno',$paciente->Materno)); ?>
+
                 </div>
 
                 <div class="col-sm-6">
-                    {!!form::label('Fecha de nacimiento : ')!!}
-                     {!!$paciente->Fecha_Nacimiento !!}
-                     {{Form::hidden('Fecha_Nacimiento',$paciente->Fecha_Nacimiento)}}
+                    <?php echo form::label('Fecha de nacimiento : '); ?>
+
+                     <?php echo $paciente->Fecha_Nacimiento; ?>
+
+                     <?php echo e(Form::hidden('Fecha_Nacimiento',$paciente->Fecha_Nacimiento)); ?>
+
                 </div>
 
                 <div class="col-sm-6">
-                  {!!form::label('Telefono : ')!!}
-                  {!!$paciente->Telefono_Movil !!}
-                  {{Form::hidden('Telefono_Movil',$paciente->Telefono_Movil)}}
+                  <?php echo form::label('Telefono : '); ?>
+
+                  <?php echo $paciente->Telefono_Movil; ?>
+
+                  <?php echo e(Form::hidden('Telefono_Movil',$paciente->Telefono_Movil)); ?>
+
                 </div>
 
                 <div class="col-sm-6">
-                  {!!form::label('Direccion : ')!!}
-                  {!!$paciente->Calle !!} {!!$paciente->Numero_Calle !!}
-                  {{Form::hidden('Calle',$paciente->Calle)}}
-                  {{Form::hidden('Numero_Calle',$paciente->Numero_Calle)}}
+                  <?php echo form::label('Direccion : '); ?>
+
+                  <?php echo $paciente->Calle; ?> <?php echo $paciente->Numero_Calle; ?>
+
+                  <?php echo e(Form::hidden('Calle',$paciente->Calle)); ?>
+
+                  <?php echo e(Form::hidden('Numero_Calle',$paciente->Numero_Calle)); ?>
+
 
                 </div>
 
 
                 <div class="col-sm-12">
-                  {!!form::label('Edad')!!}
+                  <?php echo form::label('Edad'); ?>
+
                   <p style="font-size: 15px"><b><?php echo "//calculo edad";?></b></p>
                 </div>
                 <div class="col-sm-4">
-                  {!!form::label('Fecha de Control')!!}
+                  <?php echo form::label('Fecha de Control'); ?>
+
                   <p style="font-size: 15px"><b><?php echo date("d/m/Y");?></b></p>
                 </div>
                 <div class="col-sm-12">
                 </div>
 
                 <div class="col-sm-8">
-                  {!!form::label('Ocupación')!!}
-                  {!!form::text('Ocupacion',null,['id'=>'Ocupacion','class'=>'form-control'])!!}
+                  <?php echo form::label('Ocupación'); ?>
+
+                  <?php echo form::text('Ocupacion',null,['id'=>'Ocupacion','class'=>'form-control']); ?>
+
                 </div>
 
                 <div class="col-sm-12">
-                  {!!form::label('Motivo_Consulta')!!}
-                  {!!form::text('Motivo_Consulta',null,['id'=>'Motivo_Consulta','class'=>'form-control'])!!}
+                  <?php echo form::label('Motivo_Consulta'); ?>
+
+                  <?php echo form::text('Motivo_Consulta',null,['id'=>'Motivo_Consulta','class'=>'form-control']); ?>
+
                 </div>
                 <div class="col-sm-12">
-                  {!!form::label('Expectativas')!!}
-                  {!!form::text('Expectativas',null,['id'=>'Expectativas','class'=>'form-control'])!!}
+                  <?php echo form::label('Expectativas'); ?>
+
+                  <?php echo form::text('Expectativas',null,['id'=>'Expectativas','class'=>'form-control']); ?>
+
                 </div>
               </div>
                    <div class="panel-heading"><b>
@@ -162,16 +186,22 @@
                         <p class="col-sm-4"> <input type="checkbox" name="chk1" id="c10">Otra</p>
                        </div>
                        <div class="col-sm-12">
-                           {!!form::label('Fármacos en uso')!!}
-                           {!!form::text('Fármacos en uso',null,['id'=>'Farmacos_Uso','class'=>'form-control'])!!}
+                           <?php echo form::label('Fármacos en uso'); ?>
+
+                           <?php echo form::text('Fármacos en uso',null,['id'=>'Farmacos_Uso','class'=>'form-control']); ?>
+
                        </div>
                        <div class="col-sm-8">
-                           {!!form::label('alumno_id //aun no se traerlo de la vista anterior')!!}
-                           {!!form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control'])!!}
+                           <?php echo form::label('alumno_id //aun no se traerlo de la vista anterior'); ?>
+
+                           <?php echo form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control']); ?>
+
                        </div>
                        <div class="col-sm-4">
-                           {!!form::label('id profesor tutor')!!}
-                           {!!form::text('id',null,['id'=>'id','class'=>'form-control'])!!}
+                           <?php echo form::label('id profesor tutor'); ?>
+
+                           <?php echo form::text('id',null,['id'=>'id','class'=>'form-control']); ?>
+
                        </div>
                        <div class="col-sm-12 checkbox">
                          <p><b>Hábitos</b></p>
@@ -192,8 +222,10 @@
                             </div>
                           </div>
                         <div class="col-sm-8">
-                          {!!form::label('Motivo_Ultima_Consulta')!!}
-                          {!!form::text('Motivo_Ultima_Consulta',null,['id'=>'Motivo_Ultima_Consulta','class'=>'form-control'])!!}
+                          <?php echo form::label('Motivo_Ultima_Consulta'); ?>
+
+                          <?php echo form::text('Motivo_Ultima_Consulta',null,['id'=>'Motivo_Ultima_Consulta','class'=>'form-control']); ?>
+
                         </div>
                         <div class="col-sm-8 radio">
                           <p><b>Antecedentes Traumatismo Dentoalveolar</b></p>
@@ -201,8 +233,10 @@
                           <p class="col-sm-8"> <input type="radio" name="radio1" id="r2" value="Show">Si ha recibido tratamiento de ortodoncia</p>
                           <div class="text2 black">
                             <div class="col-sm-4">
-                                {!!form::label('Diente')!!}
-                                {!!form::text('Diente',null,['Diente'=>'id','class'=>'form-control'])!!}
+                                <?php echo form::label('Diente'); ?>
+
+                                <?php echo form::text('Diente',null,['Diente'=>'id','class'=>'form-control']); ?>
+
                             </div>
                            </div>
                          </div>
@@ -225,8 +259,10 @@
                               <p class="col-sm-8"> <input type="radio" name="radio3" id="r6" value="Show">Si</p>
                               <div class="text3">
                                 <div class="col-sm-12">
-                                    {!!form::label('Especifique')!!}
-                                    {!!form::text('Detalle',null,['Detalle'=>'id','class'=>'form-control'])!!}
+                                    <?php echo form::label('Especifique'); ?>
+
+                                    <?php echo form::text('Detalle',null,['Detalle'=>'id','class'=>'form-control']); ?>
+
                                 </div>
                                </div>
                              </div>
@@ -265,8 +301,10 @@
                                 }
                                 ?>
                                 <div class="boton">
-                                  {!!form::submit('Agregar',['name'=>'Agregar','id'=>'agregar','content'=>'<span>Agregar</span>','class'=>'btn btn-default btn-sm m-t-10'])!!}
-                                  {!!Form::close()!!}
+                                  <?php echo form::submit('Agregar',['name'=>'Agregar','id'=>'agregar','content'=>'<span>Agregar</span>','class'=>'btn btn-default btn-sm m-t-10']); ?>
+
+                                  <?php echo Form::close(); ?>
+
                                 </div>
                           </form>
                   <div class="col-sm-12 form-group">
@@ -291,15 +329,21 @@
                         }
                         ?>
                         <div class="boton">
-                            {!!form::submit('Agregar',['name'=>'Agregar','id'=>'agregar','content'=>'<span>Agregar</span>','class'=>'btn btn-default btn-sm m-t-10'])!!}
-                            {!!Form::close()!!}
+                            <?php echo form::submit('Agregar',['name'=>'Agregar','id'=>'agregar','content'=>'<span>Agregar</span>','class'=>'btn btn-default btn-sm m-t-10']); ?>
+
+                            <?php echo Form::close(); ?>
+
                         </div>
                   <div class="col-sm-12 boton"><br>
-                    {!!form::submit('Volver',['name'=>'Siguiente','id'=>'volver','content'=>'<span>Volver</span>','class'=>'btn btn-primary btn-sm m-t-10'])!!}
-                    {!!Form::close()!!}
+                    <?php echo form::submit('Volver',['name'=>'Siguiente','id'=>'volver','content'=>'<span>Volver</span>','class'=>'btn btn-primary btn-sm m-t-10']); ?>
 
-                    {!!form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10'])!!}
-                    {!!Form::close()!!}
+                    <?php echo Form::close(); ?>
+
+
+                    <?php echo form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10']); ?>
+
+                    <?php echo Form::close(); ?>
+
                   </div>
            </div>
         </div>
@@ -369,4 +413,6 @@
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

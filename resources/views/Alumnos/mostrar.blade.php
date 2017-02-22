@@ -27,7 +27,7 @@
         </div>
 
 
-               <div class="panel-body" style="height:auto; max-height:350px; overflow:auto; "   >
+               <div class="panel-body"    >
 
                   <table class="table table-bordered "  >
                     <thead>

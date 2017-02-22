@@ -4,6 +4,7 @@ namespace clinica\Http\Controllers\Odontograma;
 
 use Illuminate\Http\Request;
 use clinica\Models\Odontograma\Problema;
+use clinica\Models\Paciente\Paciente;
 use clinica\Http\Requests;
 use clinica\Http\Controllers\Controller;
 
@@ -37,7 +38,8 @@ class ProblemaController extends Controller
      */
     public function store(Request $request)
     {
-          Problema::create($request->all());
+
+
     }
 
     /**
@@ -71,7 +73,33 @@ class ProblemaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+      $pro=Problema::find($id);
+      $input=$request->all();
+      $i=32;
+      $ii=1;
+
+      foreach($input as $key => $mainrow){
+          if($input[$key]=="on"){
+            $input[$key]=1;
+          }
+      }
+
+      while($i<$id){
+        $ii++;
+        $i=$i+32;
+      }
+
+      $paciente=Paciente::where('Odontograma_id','=',$ii)->first();
+
+
+
+
+
+      $pro->fill($input)->save();
+      return redirect('/Ficha/'.$paciente->rut.'/Odontograma');
+
+
     }
 
     /**

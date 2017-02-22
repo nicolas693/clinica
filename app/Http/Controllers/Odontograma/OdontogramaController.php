@@ -23,7 +23,9 @@ class OdontogramaController extends Controller
     {
 
         $paciente=Paciente::where('rut','=',$id)->first();
-        return view('Odontograma.index')->with('id',$id)->with('paciente',$paciente);
+        $odonto=Odontograma::where('Odontograma_id','=',$paciente->Odontograma_id)->first();
+
+        return view('Odontograma.index')->with('id',$id)->with('paciente',$paciente)->with('odonto',$odonto);
     }
 
     /**
@@ -113,10 +115,13 @@ class OdontogramaController extends Controller
     public function show($id,$id2)
     {
         $paciente=Paciente::where('rut','=',$id)->first();
-        $prob = Schema::getColumnListing('Problema');
-        unset($prob[0]);
+        $probN = Schema::getColumnListing('Problema');
+        $prob=Problema::where('Problema_id','=',$id2)->first();
 
-        return view('Odontograma.show')->with('id',$id)->with('id2',$id2)->with('paciente',$paciente)->with('prob',$prob);
+
+      
+
+        return view('Odontograma.show')->with('id',$id)->with('id2',$id2)->with('paciente',$paciente)->with('probN',$probN)->with('prob',$prob);
     }
 
     /**

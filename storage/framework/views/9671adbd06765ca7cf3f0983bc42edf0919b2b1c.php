@@ -28,51 +28,51 @@
     <div class="col-sm-12 "  >
       <h1>Odontograma<small></small></h1>
 
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/18"><img  src=<?php echo e(URL::asset("images/18.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/17"><img  src=<?php echo e(URL::asset("images/17.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/16"><img  src=<?php echo e(URL::asset("images/16.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/15"><img  src=<?php echo e(URL::asset("images/15.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/14"><img  src=<?php echo e(URL::asset("images/14.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/13"><img  src=<?php echo e(URL::asset("images/13.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/12"><img  src=<?php echo e(URL::asset("images/12.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/11"><img  src=<?php echo e(URL::asset("images/11.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza18); ?>"><img  src=<?php echo e(URL::asset("images/18.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza17); ?>"><img  src=<?php echo e(URL::asset("images/17.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza16); ?>"><img  src=<?php echo e(URL::asset("images/16.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza15); ?>"><img  src=<?php echo e(URL::asset("images/15.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza14); ?>"><img  src=<?php echo e(URL::asset("images/14.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza13); ?>"><img  src=<?php echo e(URL::asset("images/13.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza12); ?>"><img  src=<?php echo e(URL::asset("images/12.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza11); ?>"><img  src=<?php echo e(URL::asset("images/11.png")); ?>></a>
 
 
 
 
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/21"><img  src=<?php echo e(URL::asset("images/21.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/22"><img  src=<?php echo e(URL::asset("images/22.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/23"><img  src=<?php echo e(URL::asset("images/23.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/24"><img  src=<?php echo e(URL::asset("images/24.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/25"><img  src=<?php echo e(URL::asset("images/25.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/26"><img  src=<?php echo e(URL::asset("images/26.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/27"><img  src=<?php echo e(URL::asset("images/27.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/28"><img  src=<?php echo e(URL::asset("images/28.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza21); ?>"><img  src=<?php echo e(URL::asset("images/21.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza22); ?>"><img  src=<?php echo e(URL::asset("images/22.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza23); ?>"><img  src=<?php echo e(URL::asset("images/23.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza24); ?>"><img  src=<?php echo e(URL::asset("images/24.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza25); ?>"><img  src=<?php echo e(URL::asset("images/25.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza26); ?>"><img  src=<?php echo e(URL::asset("images/26.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza27); ?>"><img  src=<?php echo e(URL::asset("images/27.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza28); ?>"><img  src=<?php echo e(URL::asset("images/28.png")); ?>></a>
 
     </div>
 
     <div class="col-sm-12" style="margin-bottom:5%;" id="1" >
 
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/48"><img  src=<?php echo e(URL::asset("images/48.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/47"><img  src=<?php echo e(URL::asset("images/47.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/46"><img  src=<?php echo e(URL::asset("images/46.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/45"><img  src=<?php echo e(URL::asset("images/45.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/44"><img  src=<?php echo e(URL::asset("images/44.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/43"><img  src=<?php echo e(URL::asset("images/43.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/42"><img  src=<?php echo e(URL::asset("images/42.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/41"><img  src=<?php echo e(URL::asset("images/41.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza48); ?>"><img  src=<?php echo e(URL::asset("images/48.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza47); ?>"><img  src=<?php echo e(URL::asset("images/47.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza46); ?>"><img  src=<?php echo e(URL::asset("images/46.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza45); ?>"><img  src=<?php echo e(URL::asset("images/45.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza44); ?>"><img  src=<?php echo e(URL::asset("images/44.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza43); ?>"><img  src=<?php echo e(URL::asset("images/43.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza42); ?>"><img  src=<?php echo e(URL::asset("images/42.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza41); ?>"><img  src=<?php echo e(URL::asset("images/41.png")); ?>></a>
 
 
 
 
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/31"><img  src=<?php echo e(URL::asset("images/31.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/32"><img  src=<?php echo e(URL::asset("images/32.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/33"><img  src=<?php echo e(URL::asset("images/33.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/34"><img  src=<?php echo e(URL::asset("images/34.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/35"><img  src=<?php echo e(URL::asset("images/35.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/36"><img  src=<?php echo e(URL::asset("images/36.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/37"><img  src=<?php echo e(URL::asset("images/37.png")); ?>></a>
-      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/38"><img  src=<?php echo e(URL::asset("images/38.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza31); ?>"><img  src=<?php echo e(URL::asset("images/31.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza32); ?>"><img  src=<?php echo e(URL::asset("images/32.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza33); ?>"><img  src=<?php echo e(URL::asset("images/33.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza34); ?>"><img  src=<?php echo e(URL::asset("images/34.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza35); ?>"><img  src=<?php echo e(URL::asset("images/35.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza36); ?>"><img  src=<?php echo e(URL::asset("images/36.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza37); ?>"><img  src=<?php echo e(URL::asset("images/37.png")); ?>></a>
+      <a href="/Ficha/<?php echo e($id); ?>/Odontograma/<?php echo e($odonto->pieza38); ?>"><img  src=<?php echo e(URL::asset("images/38.png")); ?>></a>
 
       <!--<input  type="image" src='images/31.png' name="31"  data-id="31" data-toggle="modal" data-target="#myModal" class="view-admin" />-->
 
