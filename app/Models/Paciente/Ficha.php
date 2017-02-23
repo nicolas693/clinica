@@ -12,7 +12,7 @@ class Ficha extends Model
 
     public $timestamps = false;
     protected $fillable = [
-        /*'Nombre','Paterno','Materno','Fecha_Nacimiento', 'Telefono' */ 'Edad','Ocupacion',/*Direccion ,'Calle','Numero_Calle' 'Sexo'*/,'Email','alumno_id','id','Fecha_Ingreso','Motivo_Consulta','Expectativas'/*Anamnesis General*/,
+        /*'Nombre','Paterno','Materno','Fecha_Nacimiento', 'Telefono' */ 'Edad','Ocupacion',/*Direccion ,'Calle','Numero_Calle' 'Sexo'*/ 'Email','alumno_id','id','Fecha_Ingreso','Motivo_Consulta','Expectativas',/*Anamnesis General*/
         'Antecedentes_Medicos','Farmacos_Uso',/*Habitos*/
         'Fuma','Alcohol','Drogas'/*Anamnesis Odontologica*/,'Fecha_Ultima_Consulta','Motivo_Ultima_Consulta','Antecedentes_Traumatismo','Fecha_Traumatismo','Tratamiento_Ortodoncia','Elem_Higiene','Anestesia','Alerta_Medica'
     ];

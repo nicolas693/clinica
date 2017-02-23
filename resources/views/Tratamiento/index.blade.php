@@ -41,7 +41,6 @@
 
 
                @foreach($tratamiento as $tra)
-
                 @if ($tra->paciente_id == $id )
                   <tr>
                     <td>{{$tra->Fecha}}</td>

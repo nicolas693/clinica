@@ -61,12 +61,16 @@
               <div class="col-sm-4">
                    <?php echo form::label('Diente'); ?>
 
+                   <?php echo Form::hidden('paciente_id',$paciente->rut); ?>
+
                    <?php echo form::text('Diente',null,['id'=>'Diente','class'=>'form-control']); ?>
 
               </div>
 
               <div class="col-sm-4">
                    <?php echo form::label('Costo'); ?>
+
+                   <?php echo Form::hidden('ficha_id',$ficha->id_Ficha); ?>
 
                    <?php echo form::text('Costo',null,['id'=>'Costo','class'=>'form-control']); ?>
 

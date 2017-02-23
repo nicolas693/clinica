@@ -40,7 +40,6 @@
 
 
                <?php foreach($tratamiento as $tra): ?>
-
                 <?php if($tra->paciente_id == $id ): ?>
                   <tr>
                     <td><?php echo e($tra->Fecha); ?></td>

@@ -59,11 +59,13 @@
 
               <div class="col-sm-4">
                    {!!form::label('Diente')!!}
+                   {!!Form::hidden('paciente_id',$paciente->rut)!!}
                    {!!form::text('Diente',null,['id'=>'Diente','class'=>'form-control'])!!}
               </div>
 
               <div class="col-sm-4">
                    {!!form::label('Costo')!!}
+                   {!!Form::hidden('ficha_id',$ficha->id_Ficha)!!}
                    {!!form::text('Costo',null,['id'=>'Costo','class'=>'form-control'])!!}
               </div>
 
