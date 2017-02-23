@@ -26,7 +26,7 @@ class TratamientoCreateRequest extends Request
         return [
           'Diente' => ['required','max:2','regex:/[0-9]/'],
           'Costo' => ['required','min:4','max:7','regex:/[0-9]/'],
-          'Profesor' => ['required','min:4','max:20','regex:/^[\pL\s\-]+$/u'],
+          'nProfe' => ['required','min:4','max:20','regex:/^[\pL\s\-]+$/u'],
           'AccionR' => ['required','min:15','max:200','regex:/^[\pL\s\-]+$/u'],
         ];
     }

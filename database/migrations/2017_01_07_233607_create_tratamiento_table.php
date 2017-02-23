@@ -22,13 +22,14 @@ class CreateTratamientoTable extends Migration
           $table->String('paciente_id');
           $table->integer('ficha_id')->unsigned();
 
-          $table->foreign('paciente_id')->references('rut')->on('Paciente');
-          $table->foreign('ficha_id')->references('id_Ficha')->on('Ficha');
-
-
-
       });
-    }
+
+      Schema::table('Tratamiento', function($table) {
+         $table->foreign('paciente_id')->references('rut')->on('Paciente');
+         $table->foreign('ficha_id')->references('id_Ficha')->on('Ficha');
+   });
+   
+}
 
     /**
      * Reverse the migrations.

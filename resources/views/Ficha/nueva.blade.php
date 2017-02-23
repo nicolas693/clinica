@@ -48,26 +48,7 @@
           <div class="panel-body">
 
                {!!Form::open(['route'=>'Paciente.store','method'=>'POST'])!!}
-                <!--
-                <div class="col-sm-4">
-                    {!!form::label('Nombre')!!}
-                    {!!form::text('Nombre',null,['id'=>'Nombre','class'=>'form-control'])!!}
-               </div>
-               <div class="col-sm-4">
-                    {!!form::label('Apellido Paterno')!!}
-                    {!!form::text('Paterno',null,['id'=>'Paterno','class'=>'form-control'])!!}
-               </div>
 
-               <div class="col-sm-4">
-                    {!!form::label('Apellido Materno')!!}
-                    {!!form::text('Materno',null,['id'=>'Materno','class'=>'form-control'])!!}
-               </div>
-               <div class="col-sm-4">
-                    {!!form::label('RUT')!!}
-                    {!!form::text('RUT',null,['id'=>'rut','class'=>'form-control'])!!}
-               </div>
-
-             -->
              <div class="form-group">
                {!!form::label('Nombre : ')!!}
                 {!!$paciente->Nombre !!} {!!$paciente->Paterno !!} {!!$paciente->Materno !!}

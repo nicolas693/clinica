@@ -1,4 +1,4 @@
-<?php $__env->startSection('title','Planificación de Tratamiento'); ?>
+<?php $__env->startSection('title','Editar Tratamiento'); ?>
 <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php $__env->startSection('content'); ?>
 
@@ -27,9 +27,9 @@
 
   <ol class="breadcrumb fondoC1 ">
        <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
-       <li><a href="<?php echo e(url('Ficha', $id)); ?>">Ficha</a></li>
-       <li><a href="<?php echo e(url('Tratamiento', $id)); ?>">Ver Plan de Tratamiento</a></li>
-       <li class="active">Registro</li>
+       <!--<li><a href="{url('Ficha', $id)}}">Ficha</a></li>
+       <li><a href="{url('Tratamiento', $id)}}">Ver Plan de Tratamiento</a></li> -->
+       <li class="active">Editar</li>
      </ol>
 
 
@@ -39,15 +39,13 @@
     </div>
     <div class="col-md-8">
        <div class="panel panel-default">
-         <div class="panel-heading"><b>Nueva planificación de Tratamiento</b>
+         <div class="panel-heading"><b>Editar Tratamiento</b>
             <p class="navbar-text navbar-right" style=" margin-top: 1px;">
               <a <button href=<?php echo e(route('Tratamiento.index', $id)); ?> type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-primary" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
              </p>
           </div>
          <div class="panel-body">
-
-              <?php echo Form::open(['route'=>'Tratamiento.store','method'=>'POST']); ?>
-
+              <?php echo Form::model($trat,['route'=>['Tratamiento.update',$trat->id_Tratamiento],'method'=>'PUT'] ); ?>
 
 
 
@@ -82,7 +80,7 @@
               <div class="col-sm-12">
                    <?php echo form::label('Acción a Realizar'); ?>
 
-                   <?php echo form::text('AccionR',null,['id'=>'AccionR','class'=>'form-control']); ?>
+                   <?php echo form::textarea('AccionR',null,['id'=>'AccionR','class'=>'form-control']); ?>
 
               </div>
 

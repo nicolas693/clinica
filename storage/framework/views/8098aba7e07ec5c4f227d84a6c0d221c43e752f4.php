@@ -57,12 +57,7 @@
 
 
 
-                 <div class="sm-md-col 4">
-                 <a <button href=<?php echo e(URL::previous()); ?> type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-primary" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
-                 <a <button href=<?php echo e(route('Tratamiento.index', $id)); ?> type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-warning" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Ver plan de Tratamiento</button></a>
-                 <a <button href=<?php echo e(route('Odontograma.index',$id)); ?> type="button"  class="btn btn-info" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Ver Odontograma</button></a>
-                 <a <button href=<?php echo e(route('Ficha.ficha',$id)); ?> type="button"  class="btn btn-success" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 3px 20px;"  >Ingresar Ficha</button></a>
-                </div>
+                
               </div>
 
 

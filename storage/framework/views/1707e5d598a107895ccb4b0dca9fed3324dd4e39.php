@@ -26,73 +26,160 @@
 
 <div class="row fondoC centro">
 <div class="page-header " style="margin-right:15%;"  >
-    <h1>Pieza <?php echo e($id2); ?> <small></small></h1>
+    <h1>Pieza <?php echo e($num); ?> <small></small></h1>
   </div>
-  <div  style="max-height: 250px;overflow: auto; margin-right:15%;margin-bottom:5%;">
+  <div  style="max-height: 250px; margin-right:15%;margin-bottom:5%;">
+ <?php echo Form::open(['route'=>['Problema.update',$prob->Problema_id],'method'=>'PUT']); ?>
 
-    <ul class="list-group" style"margin-top: 5%;">
-        <li class="list-group-item">
-            problema 1
-            <div class="material-switch pull-right">
-                <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                <label for="someSwitchOptionDefault" class="label-default"></label>
-            </div>
-        </li>
-        <li class="list-group-item">
-            problema 2
-            <div class="material-switch pull-right">
-                <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                <label for="someSwitchOptionDefault" class="label-default"></label>
-            </div>
-        </li>
-        <li class="list-group-item">
-            problema 3
-            <div class="material-switch pull-right">
-                <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                <label for="someSwitchOptionDefault" class="label-default"></label>
-            </div>
-        </li>
-        <li class="list-group-item">
-            problema 4
-            <div class="material-switch pull-right">
-                <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                <label for="someSwitchOptionDefault" class="label-default"></label>
-            </div>
-        </li>
-        <li class="list-group-item">
-            problema 1
-            <div class="material-switch pull-right">
-                <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                <label for="someSwitchOptionDefault" class="label-default"></label>
-            </div>
-        </li>
-        <li class="list-group-item">
-            problema 2
-            <div class="material-switch pull-right">
-                <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                <label for="someSwitchOptionDefault" class="label-default"></label>
-            </div>
-        </li>
-        <li class="list-group-item">
-            problema 3
-            <div class="material-switch pull-right">
-                <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                <label for="someSwitchOptionDefault" class="label-default"></label>
-            </div>
-        </li>
-        <li class="list-group-item">
-            problema 4
-            <div class="material-switch pull-right">
-                <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                <label for="someSwitchOptionDefault" class="label-default"></label>
-            </div>
-        </li>
 
-    </ul>
+         <div>
+
+           <?php echo e(Form::hidden('Problema_id',$id2)); ?>
+
+         </div>
+          <div class="col-sm-6">
+
+            <?php echo e(Form::label($probN[1])); ?>
+
+            <?php echo e(Form::hidden($probN[1],0)); ?>
+
+            <?php echo e(Form::checkbox($probN[1],null,$prob->Lesion_de_caries_ICDAS_3_a_6)); ?>
+
+          </div>
+          <div class="col-sm-6">
+            <?php echo e(Form::label($probN[2])); ?>
+
+            <?php echo e(Form::hidden($probN[2],0)); ?>
+
+            <?php echo e(Form::checkbox($probN[2],null,$prob->Lesion_de_caries_ICDAS_1_y_2)); ?>
+
+          </div>
+          <div class="col-sm-6">
+            <?php echo e(Form::label($probN[3])); ?>
+
+            <?php echo e(Form::hidden($probN[3],0)); ?>
+
+            <?php echo e(Form::checkbox($probN[3],null,$prob->Ausente)); ?>
+
+          </div>
+          <div class="col-sm-6">
+            <?php echo e(Form::label($probN[4])); ?>
+
+            <?php echo e(Form::hidden($probN[4],0)); ?>
+
+            <?php echo e(Form::checkbox($probN[4],null,$prob->Indicacion_exodoncia)); ?>
+
+          </div>
+
+          <div class="col-sm-6">
+            <?php echo e(Form::label($probN[5])); ?>
+
+            <?php echo e(Form::hidden($probN[5],0)); ?>
+
+            <?php echo e(Form::checkbox($probN[5],null,$prob->Obturacion)); ?>
+
+          </div>
+          <div class="col-sm-6">
+            <?php echo e(Form::label($probN[6])); ?>
+
+            <?php echo e(Form::hidden($probN[6],0)); ?>
+
+            <?php echo e(Form::checkbox($probN[6],null,$prob->Obturacion_con_caries)); ?>
+
+          </div>
+
+          <div class="col-sm-6">
+            <?php echo e(Form::label($probN[7])); ?>
+
+            <?php echo e(Form::hidden($probN[7],0)); ?>
+
+            <?php echo e(Form::checkbox($probN[7],null,$prob->Obturacion_deficiente)); ?>
+
+          </div>
+
+          <div class="col-sm-6">
+
+            <?php echo e(Form::label($probN[8])); ?>
+
+            <?php echo e(Form::hidden($probN[8],0)); ?>
+
+            <?php echo e(Form::checkbox($probN[8],null,$prob->Sellante)); ?>
+
+          </div>
+
+          <div class="col-sm-6">
+
+            <?php echo e(Form::label($probN[9])); ?>
+
+            <?php echo e(Form::hidden($probN[9],0)); ?>
+
+            <?php echo e(Form::checkbox($probN[9],null,$prob->Problema_9)); ?>
+
+          </div>
+          <div class="col-sm-6">
+
+            <?php echo e(Form::label($probN[10])); ?>
+
+            <?php echo e(Form::hidden($probN[10],0)); ?>
+
+            <?php echo e(Form::checkbox($probN[10],null,$prob->Problema_10)); ?>
+
+          </div>
+          <div class="col-sm-6">
+
+            <?php echo e(Form::label($probN[11])); ?>
+
+            <?php echo e(Form::hidden($probN[11],0)); ?>
+
+            <?php echo e(Form::checkbox($probN[11],null,$prob->Problema_11)); ?>
+
+          </div>
+          <div class="col-sm-6">
+
+            <?php echo e(Form::label($probN[12])); ?>
+
+            <?php echo e(Form::hidden($probN[12],0)); ?>
+
+            <?php echo e(Form::checkbox($probN[12],null,$prob->Problema_12)); ?>
+
+          </div>
+          <div class="col-sm-6">
+
+            <?php echo e(Form::label($probN[13])); ?>
+
+            <?php echo e(Form::hidden($probN[13],0)); ?>
+
+            <?php echo e(Form::checkbox($probN[13],null,$prob->Problema_13)); ?>
+
+          </div>
+          <div class="col-sm-6">
+
+            <?php echo e(Form::label($probN[14])); ?>
+
+            <?php echo e(Form::hidden($probN[14],0)); ?>
+
+            <?php echo e(Form::checkbox($probN[14],null,$prob->Problema_14)); ?>
+
+          </div>
+
+
+
+
+
+
+
 
   </div>
+  <div class="col-sm-6" style="margin-top:3%; margin-bottom:3%;">
+  <?php echo form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-10']); ?>
+
+</div>
+  <?php echo Form::close(); ?>
+
+  <div class="col-sm-6" style="margin-top:3%; margin-bottom:3%;">
   <a <button href=<?php echo e(URL::previous()); ?> type="button"  class="btn  btn-warning" style=" margin-bottom:5%; margin-right:50%;"   >Volver</button></a>
-  <button type="button" class="btn btn-success" style=" margin-bottom:5%;">Guardar</button>
+
+
 </div>
 
 <?php $__env->stopSection(); ?>

@@ -48,6 +48,8 @@
 
               {!!Form::open(['route'=>'Tratamiento.store','method'=>'POST'])!!}
 
+
+
                <div class="col-sm-4">
                  <div class="input-group">
                    <label for="date">Fecha</label>
@@ -67,7 +69,7 @@
 
               <div class="col-sm-8">
                    {!!form::label('Profesor guía')!!}
-                   {!!form::text('Profesor',null,['id'=>'nProfe','class'=>'form-control'])!!}
+                   {!!form::text('nProfe',null,['id'=>'nProfe','class'=>'form-control'])!!}
               </div>
 
               <div class="col-sm-12">

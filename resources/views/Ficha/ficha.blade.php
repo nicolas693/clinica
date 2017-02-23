@@ -294,14 +294,21 @@
                             {!!form::submit('Agregar',['name'=>'Agregar','id'=>'agregar','content'=>'<span>Agregar</span>','class'=>'btn btn-default btn-sm m-t-10'])!!}
                             {!!Form::close()!!}
                         </div>
-                  <div class="col-sm-12 boton"><br>
-                    {!!form::submit('Volver',['name'=>'Siguiente','id'=>'volver','content'=>'<span>Volver</span>','class'=>'btn btn-primary btn-sm m-t-10'])!!}
-                    {!!Form::close()!!}
+                <!--  <div class="col-sm-12 boton"><br>
+                    {!form::submit('Volver',['name'=>'Siguiente','id'=>'volver','content'=>'<span>Volver</span>','class'=>'btn btn-primary btn-sm m-t-10'])!!}
+                    {!Form::close()!!}
 
-                    {!!form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10'])!!}
-                    {!!Form::close()!!}
-                  </div>
+                    {!form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10'])!!}
+                    {!Form::close()!!}
+                  </div> -->
            </div>
+
+           <div class="col-sm-12">
+             <a <button type="button" href={{route('Ficha.index',$id)}} class="btn btn-warning">Volver</button> </a>
+             {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
+             {!!Form::close()!!}
+           </div>
+
         </div>
      </div>
    </div>

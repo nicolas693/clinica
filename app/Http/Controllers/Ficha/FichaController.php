@@ -25,8 +25,6 @@ class FichaController extends Controller
     {
         $paciente=Paciente::where('rut','=',$id)->first();
         return view('Ficha/index')->with('paciente',$paciente)->with('id',$id);
-        /*$ficha = Ficha::all();
-        return view('Ficha/index')->with('ficha',$ficha);*/
     }
 
     /**
@@ -45,10 +43,8 @@ class FichaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FichaCreateRequest $request)
     {
-        //
-
 
     }
 
@@ -110,7 +106,7 @@ class FichaController extends Controller
 
     public function ficha ($id){
         $paciente=Paciente::where('rut','=',$id)->first();
-        return view('Ficha.ficha')->with('paciente',$paciente);
+        return view('Ficha.ficha')->with('paciente',$paciente)->with('id',$id);
     }
 
     public function Procedimientos($Procedimientos)
@@ -136,4 +132,7 @@ class FichaController extends Controller
             "Técnica de regeneración ósea guiada",
             "Terapia de fluoruro");
     }
+
+
+
 }

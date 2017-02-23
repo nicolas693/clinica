@@ -24,6 +24,7 @@
             Tratamiento
             <p class="navbar-text navbar-right" style=" margin-top: 1px;">
               <a <button href=<?php echo e(route ('Tratamiento.nuevo',$id)); ?> type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Ingresar Tratamiento</button></a>
+              <a <button href=<?php echo e(route ('Tratamiento.edit',$id)); ?> type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-warning" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Editar Tratamiento</button></a>
              </p>
           </div>
 
@@ -32,10 +33,25 @@
               <thead>
                  <th>Fecha</th>
                  <th>Acción a realizar</th>
-                 <th>Diente</th>
+                 <th>Pieza Dental</th>
                  <th>Profesor a cargo</th>
                  <th>Costo</th>
               </thead>
+
+
+               <?php foreach($tratamiento as $tra): ?>
+
+                <?php if($tra->paciente_id == $id ): ?>
+                  <tr>
+                    <td><?php echo e($tra->Fecha); ?></td>
+                    <td><?php echo e($tra->AccionR); ?></td>
+                    <td><?php echo e($tra->Diente); ?></td>
+                    <td><?php echo e($tra->nProfe); ?></td>
+                    <td><?php echo e($tra->Costo); ?></td>
+                  </tr>
+                <?php endif; ?>
+              <?php endforeach; ?>
+
               </table>
 
               <div >

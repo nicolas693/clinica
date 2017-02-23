@@ -90,31 +90,51 @@
                 <?php echo Form::open(['route'=>'Paciente.store','method'=>'POST']); ?>
 
 
-                <div class="col-sm-4">
-                    <?php echo form::label('Nombre'); ?>
+                <div class="col-sm-6">
+                    <?php echo form::label('Nombre :'); ?>
 
-                    <?php echo form::text('Nombre',null,['id'=>'Nombre','class'=>'form-control']); ?>
+                     <?php echo $paciente->Nombre; ?> <?php echo $paciente->Paterno; ?> <?php echo $paciente->Materno; ?>
 
-                </div>
-                <div class="col-sm-4">
-                    <?php echo form::label('Apellido Paterno'); ?>
+                     <?php echo e(Form::hidden('Nombre',$paciente->Nombre)); ?>
 
-                    <?php echo form::text('Paterno',null,['id'=>'Paterno','class'=>'form-control']); ?>
+                     <?php echo e(Form::hidden('Paterno',$paciente->Paterno)); ?>
 
-                </div>
-                <div class="col-sm-4">
-                    <?php echo form::label('Apellido Materno'); ?>
-
-                    <?php echo form::text('Materno',null,['id'=>'Materno','class'=>'form-control']); ?>
+                     <?php echo e(Form::hidden('Materno',$paciente->Materno)); ?>
 
                 </div>
-                <div class="col-sm-4">
-                  <div class="input-group">
-                    <label for="date"><b>Fecha de Nacimiento: &nbsp</b></label>
-                      <input type="text" class="form-control datepicker" id="fecha" name="Fecha_Nacimiento">
-                    </div>
-                  </div>
-                <div class="col-sm-4">
+
+                <div class="col-sm-6">
+                    <?php echo form::label('Fecha de nacimiento : '); ?>
+
+                     <?php echo $paciente->Fecha_Nacimiento; ?>
+
+                     <?php echo e(Form::hidden('Fecha_Nacimiento',$paciente->Fecha_Nacimiento)); ?>
+
+                </div>
+
+                <div class="col-sm-6">
+                  <?php echo form::label('Telefono : '); ?>
+
+                  <?php echo $paciente->Telefono_Movil; ?>
+
+                  <?php echo e(Form::hidden('Telefono_Movil',$paciente->Telefono_Movil)); ?>
+
+                </div>
+
+                <div class="col-sm-6">
+                  <?php echo form::label('Direccion : '); ?>
+
+                  <?php echo $paciente->Calle; ?> <?php echo $paciente->Numero_Calle; ?>
+
+                  <?php echo e(Form::hidden('Calle',$paciente->Calle)); ?>
+
+                  <?php echo e(Form::hidden('Numero_Calle',$paciente->Numero_Calle)); ?>
+
+
+                </div>
+
+
+                <div class="col-sm-12">
                   <?php echo form::label('Edad'); ?>
 
                   <p style="font-size: 15px"><b><?php echo "//calculo edad";?></b></p>
@@ -126,30 +146,14 @@
                 </div>
                 <div class="col-sm-12">
                 </div>
-                <div class="col-sm-4">
-                  <?php echo form::label('Telefono'); ?>
 
-                  <?php echo form::text('Telefono',null,['id'=>'Telefono','class'=>'form-control']); ?>
-
-                </div>
                 <div class="col-sm-8">
                   <?php echo form::label('Ocupación'); ?>
 
                   <?php echo form::text('Ocupacion',null,['id'=>'Ocupacion','class'=>'form-control']); ?>
 
                 </div>
-                <div class="col-sm-8">
-                  <?php echo form::label('Calle'); ?>
 
-                  <?php echo form::text('Calle',null,['id'=>'Calle','class'=>'form-control']); ?>
-
-                </div>
-                <div class="col-sm-4">
-                  <?php echo form::label('Numero_Calle'); ?>
-
-                  <?php echo form::text('Numero_Calle',null,['id'=>'Numero_Calle','class'=>'form-control']); ?>
-
-                </div>
                 <div class="col-sm-12">
                   <?php echo form::label('Motivo_Consulta'); ?>
 
@@ -330,18 +334,23 @@
                             <?php echo Form::close(); ?>
 
                         </div>
-                  <div class="col-sm-12 boton"><br>
-                    <?php echo form::submit('Volver',['name'=>'Siguiente','id'=>'volver','content'=>'<span>Volver</span>','class'=>'btn btn-primary btn-sm m-t-10']); ?>
+                <!--  <div class="col-sm-12 boton"><br>
+                    {!form::submit('Volver',['name'=>'Siguiente','id'=>'volver','content'=>'<span>Volver</span>','class'=>'btn btn-primary btn-sm m-t-10'])!!}
+                    {!Form::close()!!}
 
-                    <?php echo Form::close(); ?>
-
-
-                    <?php echo form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10']); ?>
-
-                    <?php echo Form::close(); ?>
-
-                  </div>
+                    {!form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10'])!!}
+                    {!Form::close()!!}
+                  </div> -->
            </div>
+
+           <div class="col-sm-12">
+             <a <button type="button" href=<?php echo e(route('Ficha.index',$id)); ?> class="btn btn-warning">Volver</button> </a>
+             <?php echo form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-12']); ?>
+
+             <?php echo Form::close(); ?>
+
+           </div>
+
         </div>
      </div>
    </div>

@@ -15,10 +15,6 @@
     public function rules()
     {
         return[
-          'Nombre' => ['required','min:3','max:15','regex:/^[\pL\s\-]+$/u'],
-          'Paterno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
-          'Materno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
-          'Edad' => 'required','min:1','max:3','regex:/[0-9]/',
           'Telefono' => 'min:8|max:11|regex:/[0-9]/',
           'Ocupacion' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
           'Calle' => 'required|max:25|regex:/^[\pL\s\0-9\-]+$/u',

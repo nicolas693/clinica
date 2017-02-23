@@ -21,8 +21,8 @@ class TratamientoController extends Controller
     public function index($id)
     {
       $paciente=Paciente::where('rut','=',$id)->first();
-      $request['paciente_id']=$paciente->paciente_id;
-      return view('Tratamiento.index')->with('paciente',$paciente)->with('id',$id);
+      $tratamiento=Tratamiento::lists('Diente','nProfe','Fecha','Costo','AccionR');
+      return view('Tratamiento.index')->with('paciente',$paciente)->with('id',$id)->with('tratamiento',$tratamiento);
     }
 
     /**
@@ -38,9 +38,8 @@ class TratamientoController extends Controller
 
     public function nuevo($id){
 
-      $paciente=Paciente::where('rut','=',$id)->first();
-      return view ('Tratamiento.nuevo')->with('paciente',$paciente)->with('id',$id);
-      //return "Hello World!";
+        $paciente=Paciente::where('rut','=',$id)->first();
+        return view ('Tratamiento.nuevo')->with('paciente',$paciente)->with('id',$id);
     }
 
     /**
@@ -51,9 +50,14 @@ class TratamientoController extends Controller
      */
     public function store(TratamientoCreateRequest $request)
     {
-         $input = $request->only(['Diente', 'Costo', 'Profesor', 'AccionR', 'Fecha']);
-         $id= $request->paciente_id;
-         return view('Tratamiento.index')->with('id',$id);
+         //Tratamiento::create($request->only('Diente', 'Costo', 'nProfe', 'AccionR', 'Fecha') );
+         //$paciente=Paciente::where('rut','=',$id)->first();
+         //$input = $request->only(['Diente','Costo','nProfe','AccionR','Fecha']);
+         //dd($request->all());
+         Tratamiento::create($request->All() );
+         //Tratamiento::create($request->All() );
+         //$input = $request->only(['Diente', 'Costo', 'Profesor', 'AccionR', 'Fecha']);
+         return view('Tratamiento.index');//->with('id',$id);
 
     }
 
@@ -76,7 +80,9 @@ class TratamientoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $trat=Tratamiento::find($id);
+        $paciente=Paciente::where('rut','=',$id)->first();
+        return view('Tratamiento.edit', array('trat'=>$trat, 'paciente'=>$paciente) )->with('id',$id);
     }
 
     /**
@@ -88,7 +94,9 @@ class TratamientoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->only('Diente','Costo','nProfe','AccionR','Fecha');
+        Tratamiento::create($input);
+        return redirect('Tratamiento/'.$id);
     }
 
     /**

@@ -49,8 +49,6 @@
             Editar Datos Paciente
             <p class="navbar-text navbar-right" style=" margin-top: 1px;">
               <a <button href={{URL::previous()}} type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
-
-
              </p>
 
            </div>
@@ -85,7 +83,6 @@
                <div class="input-group">
                  <label for="date">Fecha Ingreso</label>
                    <input type="text" value="<?php echo htmlspecialchars($pa->Fecha_Ingreso); ?>" class="form-control datepicker" name="Fecha_Ingreso">
-
                </div>
              </div>
 
@@ -97,26 +94,19 @@
                </div>
              </div>
 
-
-
              <div class="col-sm-12">
                {!!form::label('Sexo')!!}
                {!! Form::select('Genero',$genero,null,['id'=>'Genero','class'=>'form-control']) !!}
              </div>
 
 
-
-
-
-
               <div class="col-sm-4">
-                  {!!form::label('Telefono Fijo')!!}
+                  {!!form::label('Teléfono Fijo')!!}
                   {!!form::text('Telefono_Casa',null,['id'=>'Telefono_Casa','class'=>'form-control'])!!}
              </div>
 
-
               <div class="col-sm-4">
-                  {!!form::label('Telefono Movil')!!}
+                  {!!form::label('Teléfono Movil')!!}
                   {!!form::text('Telefono_Movil',null,['id'=>'Telefono_Movil','class'=>'form-control'])!!}
              </div>
 
@@ -136,7 +126,7 @@
              </div>
 
               <div class="col-sm-4">
-                  {!!form::label('Region')!!}
+                  {!!form::label('Región')!!}
                   {!!form::text('Region',null,['id'=>'Region','class'=>'form-control'])!!}
              </div>
 
@@ -150,27 +140,17 @@
                   {!!form::text('Nacionalidad',null,['id'=>'Nacionalidad','class'=>'form-control'])!!}
              </div>
 
-
-
-
               <div class="col-sm-12">
-                  {!!form::label('Cobertura Medica')!!}
+                  {!!form::label('Cobertura Médica')!!}
                   {!!form::text('Cobertura_Medica',null,['id'=>'Cobertura_Medica','class'=>'form-control'])!!}
              </div>
 
-
-
-
              <div class="col-sm-5">
-
-                {!!form::label('Clinica')!!}
-
+                {!!form::label('Clínica')!!}
                 {!! Form::select('clinica_id',$clinica,null,['id'=>'clinica_id','class'=>'form-control']) !!}
-
-
-
              </div>
-                 {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
+
+              {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
               {!!Form::close()!!}
            </div>
         </div>

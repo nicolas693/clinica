@@ -74,6 +74,8 @@ Route::get('/', function () {
 
     route::get('Tratamiento/{id}',['as'=> 'Tratamiento.index', 'uses'=> 'Tratamiento\TratamientoController@index']);
     route::get('Tratamiento/nuevo/{id}', [ 'as'=> 'Tratamiento.nuevo', 'uses'=> 'Tratamiento\TratamientoController@nuevo']);
+    //route::get('Tratamiento/edit/{id}', ['as'=>'Tratamiento.edit', 'uses'=>'Tratamiento\TratamientoController@edit' ]);
+    //route::Store('Tratamiento/nuevo/{id}', 'Tratamiento\TratamientoController@store');
     route::resource('Tratamiento','Tratamiento\TratamientoController',['only' => ['store','edit','show','update']]);
 
 
