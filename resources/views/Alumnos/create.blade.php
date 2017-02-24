@@ -45,6 +45,11 @@
              {!!form::text('Telefono_Alumno',null,['id'=>'Telefono_Alumno','class'=>'form-control'])!!}
         </div>
 
+        <div class="col-sm-4">
+             {!!form::label('Email')!!}
+             {!!form::text('email',null,['id'=>'Email','class'=>'form-control'])!!}
+        </div>
+
         <div class="col-sm-5">
            {!!form::label('Asignatura')!!}
            {!! Form::select('asignatura_id',$asignatura,null,['id'=>'asignatura_id','class'=>'form-control']) !!}
@@ -58,8 +63,9 @@
         <div class="col-sm-6">
            {!!form::label('Código Usuario')!!}
            {!!form::text('user_id',null,['id'=>'user_id','class'=>'form-control'])!!}
-
          </div>
+
+
 
       </div>
           {!!form::submit('Inscribir Alumno',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}

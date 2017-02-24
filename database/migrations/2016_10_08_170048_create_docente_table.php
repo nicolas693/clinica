@@ -12,10 +12,11 @@ class CreateDocenteTable extends Migration
      */
     public function up()
     {
-      Schema::create('docente', function (Blueprint $table) {
+      Schema::create('Docente', function (Blueprint $table) {
        $table->increments('id');
-       $table->string('Nombre_Docente');
-       $table->integer('Telefono_Docente');
+       $table->string('Nombre');
+       $table->integer('Telefono');
+       $table->String('Email');
        $table->timestamps();
 
        $table->integer('asignatura_id')->unsigned();

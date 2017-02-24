@@ -1,14 +1,14 @@
-@extends('layouts.app')
-@section('title','Administrador')
-@section('content')
+<?php $__env->startSection('title','Administrador'); ?>
+<?php $__env->startSection('content'); ?>
 
 <head>
-  {!!Html::style('css/micss.css')!!}
+  <?php echo Html::style('css/micss.css'); ?>
+
 </head>
 
 
 <ol class="breadcrumb fondoC1 ">
-     <li><a href="{{url('Admin')}}"> Administrador</a></li>
+     <li><a href="<?php echo e(url('Admin')); ?>"> Administrador</a></li>
      <li class="active">Panel Administrador</li>
    </ol>
 
@@ -32,18 +32,20 @@
 <script>
   $("#inscribir").click(function(event)
   {
-      document.location.href = "{{ url('Docente/create') }}";
+      document.location.href = "<?php echo e(url('Docente/create')); ?>";
   });
   </script>
 
   <script>
     $("#ver_docente").click(function(event)
     {
-        document.location.href = "{{ url('Admin/docente') }}";
+        document.location.href = "<?php echo e(url('Admin/docente')); ?>";
     });
   </script>
 
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

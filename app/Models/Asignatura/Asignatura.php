@@ -10,7 +10,7 @@ class Asignatura extends Model
     protected $primaryKey='id';
     protected $fillable =['id','nombre'];
 
-      public function docente_1(){
+      public function docente(){
           return $this->belongsTo(Docente::class) ;
       }
 }

@@ -11,7 +11,7 @@ class Docente extends Model
     public $timestamps = false;
 
     protected $fillable = [
-      'id','asignatura_id','Nombre_Docente','Telefono_Docente','user_id'];
+      'id','asignatura_id','Nombre','Email','Telefono','user_id'];
 
         public function asignatura_1()
         {

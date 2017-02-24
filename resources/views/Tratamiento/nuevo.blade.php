@@ -34,14 +34,14 @@
 
 
   <div class="row fondoC centro">
-    <div class="page-header">
+    <div class="page-header" style="margin-right:250px;">
       <h1>Planificación de Tratamiento </h1>
     </div>
     <div class="col-md-8">
-       <div class="panel panel-default">
+       <div class="panel panel-primary">
          <div class="panel-heading"><b>Nueva planificación de Tratamiento</b>
             <p class="navbar-text navbar-right" style=" margin-top: 1px;">
-              <a <button href={{route('Tratamiento.index', $id)}} type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-primary" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
+              <a <button href={{route('Tratamiento.index', $id)}} type="button" id='volver'  name='volver' class="btn  navbar-btn btn-warning" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
              </p>
           </div>
          <div class="panel-body">
@@ -80,8 +80,10 @@
               </div>
 
               <div class="col-sm-12">
+                    <div class="btn-group">
                     {!!form::submit('Guardar',['name'=>'Guardar','id'=>'guardar','content'=>'<span>Guardar</span>','class'=>'btn btn-success btn-sm m-t-10', 'style'=>'margin-top: 26px; margin-left: 0px;'])!!}
                     {!!Form::close()!!}
+                  </div>
               </div>
 
           </div>

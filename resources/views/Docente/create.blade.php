@@ -20,7 +20,7 @@
     <div class="col-md-8">
        <div class="panel panel-primary">
          <div class="panel-heading">
-            Inscribir Alumno
+            Inscribir Docente
           </div>
          <div class="panel-body">
            {!!Form::open(['route'=>'Docente.store','method'=>'POST'])!!}
@@ -35,16 +35,14 @@
              {!!form::text('Nombre_Docente',null,['id'=>'Nombre_Alumno','class'=>'form-control'])!!}
         </div>
 
-
         <div class="col-sm-6">
              {!!form::label('Teléfono')!!}
              {!!form::text('Telefono_Docente',null,['id'=>'Telefono_Alumno','class'=>'form-control'])!!}
         </div>
 
         <div class="col-sm-6">
-           {!!form::label('Codigo Usuario')!!}
+           {!!form::label('Código Usuario')!!}
            {!!form::text('user_id',null,['id'=>'user_id','class'=>'form-control'])!!}
-
          </div>
 
         <div class="col-sm-6">
@@ -52,23 +50,19 @@
            {!! Form::select('asignatura_id',$asignatura,null,['id'=>'asignatura_id','class'=>'form-control']) !!}
         </div>
 
+        <div class="col-sm-6">
+           {!!form::label('Email')!!}
+           {!! Form::text('email',null,['id'=>'Email','class'=>'form-control']) !!}
+        </div>
 
 
-
-
-
-          {!!form::submit('Inscribir Docente',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-primary btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
+       {!!form::submit('Guardar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-12','style'=>'margin-top: 26px; margin-left: 16px; margin-right:400px'])!!}
        {!!Form::close()!!}
-
-       </div>
-
-
 
 
          </div>
 
-
-
+        </div>
        </div>
     </div>
   </div>

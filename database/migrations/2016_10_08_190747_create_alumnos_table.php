@@ -20,6 +20,7 @@ class CreateAlumnosTable extends Migration
             $table->string('Nombre_Alumno')->length(15);
             $table->string('Apellido_Alumno')->length(15);
             $table->integer('Telefono_Alumno');
+            $table->String('Email');
 
             $table->integer('asignatura_id')->unsigned();
             $table->foreign('asignatura_id')->references('id')->on('asignatura');

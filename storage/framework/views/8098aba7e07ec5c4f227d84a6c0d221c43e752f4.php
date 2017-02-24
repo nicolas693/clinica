@@ -7,14 +7,6 @@
 </head>
 
 
-
-
-
-
-
-
-
-
 <ol class="breadcrumb fondoC1 ">
      <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
      <li class="active">Ficha Paciente</li>
@@ -22,16 +14,15 @@
 
 
 <div class="row fondoC centro">
-    <div class="page-header "  >
+    <div class="page-header" style="margin-right:350px;" >
       <h1>Ficha del Paciente<small></small></h1>
     </div>
     <div class="col-md-8">
 
-       <div class="panel panel-default " >
+       <div class="panel panel-primary " >
          <div class="panel-heading">
             Datos personales
-
-
+          </div>
               <div class="panel-body">
 
                   <?php echo Form::open(); ?>
@@ -44,7 +35,6 @@
 
                  </div>
 
-
                   <div class="form-group">
                     <?php echo form::label('Nombre : '); ?>
 
@@ -52,13 +42,8 @@
 
                  </div>
 
-
                  <?php echo Form::close(); ?>
 
-
-
-                
-              </div>
 
 
 
@@ -72,7 +57,7 @@
                       <div class="btn-group">
                         <button type="submit" class="btn btn-primary">Crear Odontograma</button>
 
-                        <a <button type="button" href=<?php echo e(URL::previous()); ?> class="btn btn-warning">Volver</button></a>
+                        <a <button type="button" href=<?php echo e(URL::previous()); ?> class="btn btn-primary">Volver</button></a>
                       </div>
 
 
@@ -85,30 +70,21 @@
 
                      <a <button type="button" href=<?php echo e(route('Tratamiento.index', $id)); ?> class="btn btn-warning">Ver Plan de Tratamiento</button></a>
                      <a <button type="button" href=<?php echo e(route('Odontograma.index',$id)); ?> class="btn btn-info">Ver Odontograma</button></a>
-                      <a <button href=<?php echo e(route('Ficha.ficha',$id)); ?> type="button"  class="btn btn-success">Ingresar Ficha</button> </a>
-                     <a <button type="button" href=<?php echo e(URL::previous()); ?> class="btn btn-warning">Volver</button> </a>
+                     <a <button href=<?php echo e(route('Ficha.ficha',$id)); ?> type="button"  class="btn btn-success">Ingresar Ficha</button> </a>
+                     <a <button type="button"  id='volver' class="btn btn-primary">Volver</button> </a>
                    </div>
                     <?php endif; ?>
-
-
-
-
-
-
-
-
+                  </div>
           </div>
         </div>
       </div>
-</div>
 
-           </div>
-        </div>
-      </div>
-  </div>
-
-
-
+      <script>
+        $("#volver").click(function(event)
+        {
+            document.location.href = "<?php echo e(route('Alumno.mostrar',$paciente->clinica_id)); ?>";
+        });
+        </script>
 
 <?php $__env->stopSection(); ?>
 

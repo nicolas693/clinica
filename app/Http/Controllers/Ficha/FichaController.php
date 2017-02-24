@@ -119,7 +119,6 @@ class FichaController extends Controller
         $fechaP=Carbon::parse($fechaP);
         $fechaP=$fechaP->diffInDays();
         $edad=(int)floor($fechaP/365);
-        
 
 
         return view('Ficha.ficha')->with('paciente',$paciente)->with('id',$id)->with('alumno',$alumno)->with('docente',$docente)->with('edad',$edad);

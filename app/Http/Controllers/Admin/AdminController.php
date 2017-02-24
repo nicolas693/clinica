@@ -16,7 +16,7 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
         return view('Admin/index');
     }
 
@@ -84,5 +84,10 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function docente(){
+      $docente=Docente::all();
+      return view('Admin.docente')->with('docente',$docente);
     }
 }

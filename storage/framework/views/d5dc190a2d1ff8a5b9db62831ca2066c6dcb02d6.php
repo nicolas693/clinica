@@ -18,7 +18,7 @@
 
         <div class="panel panel-primary">
           <div class="panel-heading">
-             Datos Usuario
+             Datos del Usuario
            </div>
           <div class="panel-body">
 
@@ -30,7 +30,7 @@
               <?php echo Form::open(); ?>
 
              <div class="form-group">
-              <?php echo form::label('Codigo de Usuario : '); ?>
+              <?php echo form::label('Código de Usuario : '); ?>
 
                <?php echo $user->id; ?>
 
@@ -68,18 +68,21 @@
                 <?php echo $info->alumno_id; ?>
 
               </div>
+
              <div class="form-group">
               <?php echo form::label('Nombre : '); ?>
 
                <?php echo $info->Nombre_Alumno; ?> <?php echo $info->Apellido_Alumno; ?>
 
              </div>
+
               <div class="form-group">
-              <?php echo form::label('Telefono : '); ?>
+              <?php echo form::label('Teléfono : '); ?>
 
                <?php echo $info->Telefono_Alumno; ?>
 
              </div>
+
              <a <button href="#" type="button" id= 'Editar' name='Editar' class="btn btn-success" style ="margin-bottom: 20px"  >Editar Datos</button></a>
            </div>
          </div>
@@ -99,13 +102,16 @@
                 <?php echo $info->id; ?>
 
               </div>
+
              <div class="form-group">
               <?php echo form::label('Nombre : '); ?>
 
                <?php echo $info->Nombre_Docente; ?>
 
+             </div>
+
               <div class="form-group">
-              <?php echo form::label('Telefono : '); ?>
+              <?php echo form::label('Teléfono : '); ?>
 
                <?php echo $info->Telefono_Docente; ?>
 

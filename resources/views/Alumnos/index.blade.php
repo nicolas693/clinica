@@ -12,22 +12,22 @@
 
 
    <div class="row fondoC centro">
-     <div class="page-header "  >
-       <h1>Pacientes<small></small></h1>
+     <div class="page-header" style=" margin-right:20%;"  >
+       <h1>Lista de Clínicas<small></small></h1>
      </div>
-     <div class="col-md-8 divCenter">
+     <div class="col-md-8 ">
 
-        <div class="panel panel-default " >
+        <div class="panel panel-primary " >
           <div class="panel-heading">
              Clínicas
            </div>
-          <div class="panel-body divCenter " >
+          <div class="panel-body" >
 
              <table class="table table-bordered">
                <thead>
                  <th>id</th>
                   <th>Clinica</th>
-                  <th>Accion</th>
+                  <th>Acción</th>
                </thead>
                <tbody>
 
@@ -36,8 +36,6 @@
                	<tr>
                   <td>{{$cli->id_Clinica}}</td>
                		<td>{{$cli->Nombre_Clinica}}</td>
-
-
 
                   <td><a <button href={{ route('Alumno.mostrar',$cli->id_Clinica) }} type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Ver pacientes</button></a>
 
@@ -54,6 +52,7 @@
 
 
           </div>
+          
         </div>
 
 

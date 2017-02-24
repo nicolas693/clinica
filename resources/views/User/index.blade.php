@@ -19,7 +19,7 @@
 
         <div class="panel panel-primary">
           <div class="panel-heading">
-             Datos Usuario
+             Datos del Usuario
            </div>
           <div class="panel-body">
 
@@ -30,7 +30,7 @@
             @endforeach
               {!!Form::open()!!}
              <div class="form-group">
-              {!!form::label('Codigo de Usuario : ')!!}
+              {!!form::label('Código de Usuario : ')!!}
                {!!$user->id !!}
              </div>
 
@@ -59,14 +59,17 @@
                {!!form::label('Rut : ')!!}
                 {!!$info->alumno_id !!}
               </div>
+
              <div class="form-group">
               {!!form::label('Nombre : ')!!}
                {!!$info->Nombre_Alumno !!} {!!$info->Apellido_Alumno !!}
              </div>
+
               <div class="form-group">
-              {!!form::label('Telefono : ')!!}
+              {!!form::label('Teléfono : ')!!}
                {!!$info->Telefono_Alumno !!}
              </div>
+
              <a <button href="#" type="button" id= 'Editar' name='Editar' class="btn btn-success" style ="margin-bottom: 20px"  >Editar Datos</button></a>
            </div>
          </div>
@@ -83,11 +86,14 @@
                {!!form::label('Rut : ')!!}
                 {!!$info->id !!}
               </div>
+
              <div class="form-group">
               {!!form::label('Nombre : ')!!}
                {!!$info->Nombre_Docente !!}
+             </div>
+
               <div class="form-group">
-              {!!form::label('Telefono : ')!!}
+              {!!form::label('Teléfono : ')!!}
                {!!$info->Telefono_Docente !!}
              </div>
              <a <button href="#" type="button" id= 'Editar' name='Editar' class="btn btn-success" style ="margin-bottom: 20px"  >Editar Datos</button></a>
@@ -96,9 +102,6 @@
           @endif
 
         </div>
-
-
-
 
    </div>
 

@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('title','Planificación de Tratamiento')
 @section('content')
 
@@ -11,7 +10,7 @@
        <li><a href="{{url('Alumno')}}"> Alumno</a></li>
        <li><a href="{{url('Ficha', $id)}}">Ficha</a></li>
        <li class="active">Plan de Tratamiento</li>
-     </ol>
+  </ol>
 
 
 <div class="row fondoC centro">
@@ -20,12 +19,11 @@
   </div>
     <div class="col-md-8">
 
-       <div class="panel panel-default " >
+       <div class="panel panel-primary " >
          <div class="panel-heading">
             Tratamiento
             <p class="navbar-text navbar-right" style=" margin-top: 1px;">
               <a <button href={{route ('Tratamiento.nuevo',$id)}} type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Ingresar Tratamiento</button></a>
-              <a <button href={{route ('Tratamiento.edit',$id)}} type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-warning" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Editar Tratamiento</button></a>
              </p>
           </div>
 

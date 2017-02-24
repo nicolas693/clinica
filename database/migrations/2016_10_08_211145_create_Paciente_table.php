@@ -30,6 +30,7 @@ class CreatePacienteTable extends Migration
             $table->String('Comuna')->length(15);
             $table->String('Nacionalidad')->length(15);
             $table->String('Cobertura_Medica')->length(15);
+            $table->String('Email');
 
             $table->primary('rut');
             $table->integer('clinica_id')->unsigned();

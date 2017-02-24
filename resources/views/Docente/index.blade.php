@@ -11,27 +11,21 @@
      <li class="active">Panel de Docente</li>
    </ol>
 
-  <div class="row fondoC centro">
-    <div class="page-header" >
-      <h1>Docente<small></small></h1>
-    </div>
-    <div class="col-md-8">
-
-       <div class="panel panel-default">
-         <div class="panel-heading">
-            Menú
-            <button type="button" id='inscribir'  name='inscribir' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 5px 20px;margin-left: 40px">Inscribir Alumno</button>
-            <button type="button" id='evaluar'  name='evaluar' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 5px 20px;margin-left: 40px">Evaluar Alumno</button>
-            <p class="navbar-text navbar-right" style=" margin-top: 1px;">
-
-            </p>
-            <div class="panel-body">
-
-
-            </div>
-          </div>
-    </div>
+<div class="row fondoC centro">
+  <div class="page-header" >
+    <h1>Docente<small></small></h1>
   </div>
+  <div class="col-md-8">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Menú</div>
+            <div class="panel-body">
+                <button type="button" id='inscribir'  name='inscribir' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 5px 20px;margin-left: 0px">Ingresar Alumno</button>
+                <button type="button" id='evaluar'  name='evaluar' class="btn  navbar-btn btn-warning" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 5px 20px;margin-left: 0px">Evaluar Alumno</button>
+            </div>
+      </div>
+</div>
+</div>
+
 
 <script>
   $("#inscribir").click(function(event)

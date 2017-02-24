@@ -20,6 +20,7 @@
 
 <ol class="breadcrumb fondoC1 ">
      <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
+     <li><a href="<?php echo e(url('Ficha',$id)); ?>"> Ficha</a></li>
      <li class="active">Odontograma de <?php echo e($paciente->Nombre); ?> <?php echo e($paciente->Paterno); ?> </li>
    </ol>
 

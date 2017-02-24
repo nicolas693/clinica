@@ -177,7 +177,7 @@
   <?php echo Form::close(); ?>
 
   <div class="col-sm-6" style="margin-top:3%; margin-bottom:3%;">
-  <a <button href=<?php echo e(URL::previous()); ?> type="button"  class="btn  btn-warning" style=" margin-bottom:5%; margin-right:50%;"   >Volver</button></a>
+  <a <button href=<?php echo e(URL::previous()); ?> type="button"  class="btn  btn-primary" style=" margin-bottom:5%; margin-right:50%;"   >Volver</button></a>
 
 
 </div>

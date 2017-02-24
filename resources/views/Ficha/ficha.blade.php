@@ -172,10 +172,9 @@
                        </div>
                        <div class="col-sm-6">
                            {!!form::label('Profesor tutor :   ')!!} {{$docente->id}}
-                           {{Form::hidden('id',$docente->id)}}
-
-
+                           {{Form::hidden('docente_id',$docente->id)}}
                        </div>
+
                        <div class="col-sm-12 checkbox">
                          <p><b>Hábitos</b></p>
                          <p class="col-sm-2"> <input type="checkbox" name="chk2" id="c11">Fuma</p>
@@ -297,13 +296,7 @@
                             {!!form::submit('Agregar',['name'=>'Agregar','id'=>'agregar','content'=>'<span>Agregar</span>','class'=>'btn btn-default btn-sm m-t-10'])!!}
                             {!!Form::close()!!}
                         </div>
-                <!--  <div class="col-sm-12 boton"><br>
-                    {!form::submit('Volver',['name'=>'Siguiente','id'=>'volver','content'=>'<span>Volver</span>','class'=>'btn btn-primary btn-sm m-t-10'])!!}
-                    {!Form::close()!!}
-
-                    {!form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10'])!!}
-                    {!Form::close()!!}
-                  </div> -->
+            
            </div>
 
            <div class="col-sm-12">

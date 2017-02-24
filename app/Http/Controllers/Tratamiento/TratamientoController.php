@@ -40,7 +40,6 @@ class TratamientoController extends Controller
 
         $paciente=Paciente::where('rut','=',$id)->first();
         $ficha=Ficha::where('paciente_id','=',$id)->first();
-        dd($id);
         return view ('Tratamiento.nuevo')->with('paciente',$paciente)->with('id',$id)->with('ficha',$ficha);
     }
 

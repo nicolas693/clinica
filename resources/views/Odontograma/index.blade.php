@@ -21,6 +21,7 @@
 
 <ol class="breadcrumb fondoC1 ">
      <li><a href="{{url('Alumno')}}"> Alumno</a></li>
+     <li><a href="{{url('Ficha',$id)}}"> Ficha</a></li>
      <li class="active">Odontograma de {{$paciente->Nombre}} {{$paciente->Paterno}} </li>
    </ol>
 
