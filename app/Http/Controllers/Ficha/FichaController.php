@@ -9,6 +9,9 @@ use clinica\Http\Controllers\Controller;
 use clinica\Models\Paciente\Paciente;
 use clinica\Models\Paciente\Clinica;
 use clinica\Models\Alumnos\Alumnos;
+use clinica\Models\Docente\Docente;
+use clinica\User;
+
 use clinica\Http\Requests\Ficha\FichaCreateRequest;
 use Auth;
 use Carbon\Carbon;
@@ -106,7 +109,20 @@ class FichaController extends Controller
 
     public function ficha ($id){
         $paciente=Paciente::where('rut','=',$id)->first();
-        return view('Ficha.ficha')->with('paciente',$paciente)->with('id',$id);
+        $user=Auth::user();
+        $alumno=Alumnos::where('user_id','=',$user->id)->first();
+        $docente=Docente::where('asignatura_id','=',$alumno->asignatura_id)->first();
+        $fechaA=date('d/m/Y');
+
+        $fechaP=$paciente->Fecha_Nacimiento;
+        $fechaP=Carbon::createFromFormat('d/m/Y', $fechaP);
+        $fechaP=Carbon::parse($fechaP);
+        $fechaP=$fechaP->diffInDays();
+        $edad=(int)floor($fechaP/365);
+        
+
+
+        return view('Ficha.ficha')->with('paciente',$paciente)->with('id',$id)->with('alumno',$alumno)->with('docente',$docente)->with('edad',$edad);
     }
 
     public function Procedimientos($Procedimientos)

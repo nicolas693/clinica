@@ -135,9 +135,9 @@
 
 
                 <div class="col-sm-12">
-                  <?php echo form::label('Edad'); ?>
+                  <?php echo form::label('Edad : '); ?> <?php echo e($edad); ?>
 
-                  <p style="font-size: 15px"><b><?php echo "//calculo edad";?></b></p>
+
                 </div>
                 <div class="col-sm-4">
                   <?php echo form::label('Fecha de Control'); ?>
@@ -185,22 +185,25 @@
                         <p class="col-sm-4"> <input type="checkbox" name="chk1" id="c9">Embarazo</p>
                         <p class="col-sm-4"> <input type="checkbox" name="chk1" id="c10">Otra</p>
                        </div>
-                       <div class="col-sm-12">
+                       <div class="col-sm-12" style="margin-bottom:20px;">
                            <?php echo form::label('Fármacos en uso'); ?>
 
                            <?php echo form::text('Fármacos en uso',null,['id'=>'Farmacos_Uso','class'=>'form-control']); ?>
 
                        </div>
-                       <div class="col-sm-8">
-                           <?php echo form::label('alumno_id //aun no se traerlo de la vista anterior'); ?>
+                       <div class="col-sm-6">
+                           <?php echo form::label('alumno_id : '); ?> <?php echo e($alumno->alumno_id); ?>
 
-                           <?php echo form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control']); ?>
+                           <?php echo e(Form::hidden('alumno_id',$alumno->alumno_id)); ?>
+
 
                        </div>
-                       <div class="col-sm-4">
-                           <?php echo form::label('id profesor tutor'); ?>
+                       <div class="col-sm-6">
+                           <?php echo form::label('Profesor tutor :   '); ?> <?php echo e($docente->id); ?>
 
-                           <?php echo form::text('id',null,['id'=>'id','class'=>'form-control']); ?>
+                           <?php echo e(Form::hidden('id',$docente->id)); ?>
+
+
 
                        </div>
                        <div class="col-sm-12 checkbox">
@@ -334,18 +337,23 @@
                             <?php echo Form::close(); ?>
 
                         </div>
-                  <div class="col-sm-12 boton"><br>
-                    <?php echo form::submit('Volver',['name'=>'Siguiente','id'=>'volver','content'=>'<span>Volver</span>','class'=>'btn btn-primary btn-sm m-t-10']); ?>
+                <!--  <div class="col-sm-12 boton"><br>
+                    {!form::submit('Volver',['name'=>'Siguiente','id'=>'volver','content'=>'<span>Volver</span>','class'=>'btn btn-primary btn-sm m-t-10'])!!}
+                    {!Form::close()!!}
 
-                    <?php echo Form::close(); ?>
-
-
-                    <?php echo form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10']); ?>
-
-                    <?php echo Form::close(); ?>
-
-                  </div>
+                    {!form::submit('Siguiente',['name'=>'Siguiente','id'=>'siguiente','content'=>'<span>Siguiente</span>','class'=>'btn btn-success btn-sm m-t-10'])!!}
+                    {!Form::close()!!}
+                  </div> -->
            </div>
+
+           <div class="col-sm-12">
+             <a <button type="button" href=<?php echo e(route('Ficha.index',$id)); ?> class="btn btn-warning">Volver</button> </a>
+             <?php echo form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;']); ?>
+
+             <?php echo Form::close(); ?>
+
+           </div>
+
         </div>
      </div>
    </div>

@@ -139,7 +139,8 @@ class PacientesController extends Controller
     {
 
        $genero = ['Hombre','Mujer'];
-       $clinica = Clinica::lists('Nombre_Clinica')->prepend('Seleccione la Clinica');
+       $clinica = Clinica::lists('Nombre_Clinica','id_Clinica');
+       
        $pa= Paciente::find($id);
        return view('Pacientes.edit', array('pa'=>$pa,'clinica'=>$clinica))->with('genero',$genero);
 
@@ -172,9 +173,9 @@ class PacientesController extends Controller
 
 
         $pa= Paciente::find($id);
-        
+
         $input=$request->all();
-        dd($input);
+
         $pa->fill($input)->save();
         $val=$pa->clinica_id;
 

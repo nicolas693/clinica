@@ -119,8 +119,8 @@
 
 
                 <div class="col-sm-12">
-                  {!!form::label('Edad')!!}
-                  <p style="font-size: 15px"><b><?php echo "//calculo edad";?></b></p>
+                  {!!form::label('Edad : ')!!} {{$edad}}
+
                 </div>
                 <div class="col-sm-4">
                   {!!form::label('Fecha de Control')!!}
@@ -161,17 +161,20 @@
                         <p class="col-sm-4"> <input type="checkbox" name="chk1" id="c9">Embarazo</p>
                         <p class="col-sm-4"> <input type="checkbox" name="chk1" id="c10">Otra</p>
                        </div>
-                       <div class="col-sm-12">
+                       <div class="col-sm-12" style="margin-bottom:20px;">
                            {!!form::label('Fármacos en uso')!!}
                            {!!form::text('Fármacos en uso',null,['id'=>'Farmacos_Uso','class'=>'form-control'])!!}
                        </div>
-                       <div class="col-sm-8">
-                           {!!form::label('alumno_id //aun no se traerlo de la vista anterior')!!}
-                           {!!form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control'])!!}
+                       <div class="col-sm-6">
+                           {!!form::label('alumno_id : ')!!} {{$alumno->alumno_id}}
+                           {{Form::hidden('alumno_id',$alumno->alumno_id)}}
+
                        </div>
-                       <div class="col-sm-4">
-                           {!!form::label('id profesor tutor')!!}
-                           {!!form::text('id',null,['id'=>'id','class'=>'form-control'])!!}
+                       <div class="col-sm-6">
+                           {!!form::label('Profesor tutor :   ')!!} {{$docente->id}}
+                           {{Form::hidden('id',$docente->id)}}
+
+
                        </div>
                        <div class="col-sm-12 checkbox">
                          <p><b>Hábitos</b></p>
