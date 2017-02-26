@@ -16,27 +16,48 @@
 
 <div class="row fondoC centro">
     <div class="page-header" style="margin-right:350px;" >
-      <h1>Ficha del Paciente<small></small></h1>
+      <h1>Antecedentes del Paciente<small></small></h1>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-10">
 
-       <div class="panel panel-primary " >
+       <div class="panel panel-primary centrarIT" >
          <div class="panel-heading">
-            Datos personales
+            Datos Paciente
           </div>
               <div class="panel-body">
 
                   {!!Form::open()!!}
+                  <div class="form-group col-sm-6">
+                    {!!form::label('Nombre : ')!!}
+                     {!!$paciente->Nombre !!} {!!$paciente->Paterno !!} {!!$paciente->Materno !!}
+                 </div>
 
-                 <div class="form-group">
+                 <div class="form-group col-sm-6">
                     {!!form::label('Rut : ')!!}
                      {!!$paciente->rut !!}
                  </div>
 
-                  <div class="form-group">
-                    {!!form::label('Nombre : ')!!}
-                     {!!$paciente->Nombre !!} {!!$paciente->Paterno !!} {!!$paciente->Materno !!}
+                 <div class="form-group col-sm-6">
+                    {!!form::label('Sexo : ')!!}
+                     {!!$paciente->Genero !!}
                  </div>
+
+                 <div class="form-group col-sm-6">
+                    {!!form::label('Telefono : ')!!}
+                     {!!$paciente->Telefono_Movil !!}
+                 </div>
+
+                 <div class="form-group col-sm-6">
+                    {!!form::label('Direccion : ')!!}
+                     {!!$paciente->Calle !!} {!!$paciente->Numero_calle !!}
+                 </div>
+
+                 <div class="form-group col-sm-6">
+                    {!!form::label('Cobertura Medica : ')!!}
+                     {!!$paciente->Cobertura_Medica !!}
+                 </div>
+
+
 
                  {!!Form::close()!!}
 

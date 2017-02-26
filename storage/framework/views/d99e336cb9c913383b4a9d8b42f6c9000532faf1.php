@@ -13,19 +13,13 @@
 
 
    <div class="row fondoC centro">
-     <div class="page-header " style=" margin-right:10%;"  >
-       <h1>Pacientes<small></small></h1>
-     </div>
-     <div class="col-md-12">
 
-        <div class="panel panel-default  " style=" margin-right:10%;" >
+     <div class="col-md-12 " style="margin-top:5%;">
+
+        <div class="panel panel-primary  " style=" margin-right:10%;" >
           <div class="panel-heading">
             Lista de Pacientes
-
-
-
         </div>
-
 
                <div class="panel-body"    >
 
@@ -35,9 +29,7 @@
                        <th>Nombre</th>
                        <th>Apellido Paterno</th>
                        <th>Apellido Materno</th>
-                       <th>Clinica</th>
-
-
+                       <th>Clínica</th>
                        <th>Acción</th>
                     </thead>
 
@@ -54,13 +46,6 @@
 
 
                          <td>
-                             <!--<div class="btn-group btn-group-justified">
-                                   <a href="#" class="btn btn-primary">Ver ficha</a>
-                                  <a href=<?php echo e(route('Paciente.edit',$pa->rut)); ?> class="btn btn-primary btn-success" style="background-color:green;">Editar</a>
-
-<<<<<<< HEAD
-                                  <a href=<?php echo e(route('Paciente.show',$pa->rut)); ?> class="btn btn-primary btn-danger">Dar de alta</a>
-                             </div>-->
 
 
                              <div class="btn-group">
@@ -69,7 +54,7 @@
                                   <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
-                                  <li><a href=<?php echo e(route('Ficha.index', $pa->rut)); ?>>Ver Ficha</a></li>
+                                  <li><a href=<?php echo e(route('Ficha.index', $pa->rut)); ?>>Antecedentes Clinicos</a></li>
                                   <li><a href=<?php echo e(route('Paciente.edit',$pa->rut)); ?>>Editar</a></li>
                                   <li><a href=<?php echo e(route('Paciente.show',$pa->rut)); ?>>Dar de Baja</a></li>
                                 </ul>
@@ -79,32 +64,18 @@
                        <?php endif; ?>
 
                      <?php endforeach; ?>
-
-
-
-
-
                   </table>
 
 
                </div>
            </div>
-
            <p class="navbar-text navbar-right" style=" margin-top: 1px;">
-
              <a <button href=<?php echo e(route('Paciente.create',$id)); ?> type="button" id='nuevo'  name='nuevo' class="btn btn-success" style=" margin-right: 40%;" >Ingresar nuevo paciente</button></a>
            </p>
 
         </div>
-
-
-
      </div>
    </div>
-
-   <!--<script>$("#nuevo").click(function(event){document.location.href = "{route('Paciente.create')}}";});</script>-->
-
-
 
 
 <?php $__env->stopSection(); ?>
