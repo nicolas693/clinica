@@ -15,9 +15,9 @@
      <div class="page-header" style=" margin-right:20%;"  >
        <h1>Lista de Clínicas<small></small></h1>
      </div>
-     <div class="col-md-8 ">
+     <div class="col-md-10 ">
 
-        <div class="panel panel-primary " >
+        <div class="panel panel-primary centrar" >
           <div class="panel-heading">
              Clínicas
            </div>
@@ -52,7 +52,7 @@
 
 
           </div>
-          
+
         </div>
 
 

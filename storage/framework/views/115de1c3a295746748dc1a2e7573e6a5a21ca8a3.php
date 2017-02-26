@@ -20,7 +20,7 @@
     <div class="col-md-8">
        <div class="panel panel-primary">
          <div class="panel-heading">
-            Inscribir Alumno
+            Inscribir Docente
           </div>
          <div class="panel-body">
            <?php echo Form::open(['route'=>'Docente.store','method'=>'POST']); ?>
@@ -40,7 +40,6 @@
 
         </div>
 
-
         <div class="col-sm-6">
              <?php echo form::label('Teléfono'); ?>
 
@@ -49,10 +48,9 @@
         </div>
 
         <div class="col-sm-6">
-           <?php echo form::label('Codigo Usuario'); ?>
+           <?php echo form::label('Código Usuario'); ?>
 
            <?php echo form::text('user_id',null,['id'=>'user_id','class'=>'form-control']); ?>
-
 
          </div>
 
@@ -63,25 +61,23 @@
 
         </div>
 
+        <div class="col-sm-6">
+           <?php echo form::label('Email'); ?>
+
+           <?php echo Form::text('email',null,['id'=>'Email','class'=>'form-control']); ?>
+
+        </div>
 
 
-
-
-
-          <?php echo form::submit('Inscribir Docente',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-primary btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;']); ?>
+       <?php echo form::submit('Guardar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-12','style'=>'margin-top: 26px; margin-left: 16px; margin-right:400px']); ?>
 
        <?php echo Form::close(); ?>
-
-
-       </div>
-
 
 
 
          </div>
 
-
-
+        </div>
        </div>
     </div>
   </div>

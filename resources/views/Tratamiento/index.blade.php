@@ -17,9 +17,9 @@
   <div class="page-header "  >
     <h1>Planificación de Tratamiento<small></small></h1>
   </div>
-    <div class="col-md-8">
+    <div class="col-md-10">
 
-       <div class="panel panel-primary " >
+       <div class="panel panel-primary centrarIT " >
          <div class="panel-heading">
             Tratamiento
             <p class="navbar-text navbar-right" style=" margin-top: 1px;">

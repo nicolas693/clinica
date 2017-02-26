@@ -19,19 +19,28 @@
     </div>
     <div class="col-md-8">
         <div class="panel panel-primary">
-          <div class="panel-heading">Panel Administrador</div>
+          <div class="panel-heading">Menú</div>
               <div class="panel-body">
-                  Menú
-                  <button type="button" id='inscribir'  name='inscribir' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 5px 20px;margin-left: 40px">Inscribir Docente</button>
+                  <button type="button" id='inscribir'  name='inscribir' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 5px 20px;margin-left: 0px">Inscribir Docente</button>
+                  <button type="button" id='ver_docente'  name='ver_docente' class="btn  navbar-btn btn-info" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 5px 20px;margin-left: 0px">Ver lista de Docentes</button>
+                  <button type="button" id='ver_asignatura'  name='ver_asignatura' class="btn  navbar-btn btn-info" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 5px 20px;margin-left: 0px">Ver lista de Asignaturas</button>
               </div>
         </div>
   </div>
+</div>
 
 <script>
   $("#inscribir").click(function(event)
   {
       document.location.href = "<?php echo e(url('Docente/create')); ?>";
   });
+  </script>
+
+  <script>
+    $("#ver_docente").click(function(event)
+    {
+        document.location.href = "<?php echo e(url('Admin/docente')); ?>";
+    });
   </script>
 
 
