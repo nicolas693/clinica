@@ -1,9 +1,6 @@
 @extends('layouts.app')
-
 @section('title','Paciente Nuevo')
-
 @section('content')
-
 @include('partials.messages')
 
 <ol class="breadcrumb">
@@ -45,7 +42,7 @@
              </div>
 
              <div class="col-sm-4">
-                  {!!form::label('Telefono')!!}
+                  {!!form::label('Teléfono')!!}
                   {!!form::text('Telefono_Clinica',null,['id'=>'Materno','class'=>'form-control'])!!}
              </div>
 

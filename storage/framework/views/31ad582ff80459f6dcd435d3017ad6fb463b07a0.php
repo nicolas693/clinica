@@ -25,25 +25,22 @@
               <thead>
                  <th>Rut</th>
                  <th>Nombre</th>
-                 <th>Email</th>
                  <th>Teléfono</th>
                  <th>Asignatura</th>
               </thead>
-              <!--
+
               <tbody>
-                foreach($docente as $doc)
+                <?php foreach($docente as $doc): ?>
 
                	<tr>
-               		<td>{$doc->id}}</td>
-               		<td>{$doc->Nombre}}</td>
-               		<td>{$doc->Email}}</td>
-                  <td>{$doc->Telefono}}</td>
-                  <td>{$doc->asignatura_id}}</td>
-
+               		<td><?php echo e($doc->id); ?></td>
+               		<td><?php echo e($doc->Nombre); ?></td>
+                  <td><?php echo e($doc->Telefono); ?></td>
+                  <td><?php echo e($doc->asignatura_id); ?></td>
                	</tr>
 
-               	endforeach
-              </tbody> -->
+              <?php endforeach; ?>
+              </tbody>
             </table>
 
           </div>

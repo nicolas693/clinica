@@ -17,8 +17,6 @@ class CreateRoluserTable extends Migration
           $table->string('Nombre');
           $table->timestamps();
 
-
-
       });
     }
 

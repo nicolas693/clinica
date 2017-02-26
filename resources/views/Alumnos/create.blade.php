@@ -45,10 +45,6 @@
              {!!form::text('Telefono_Alumno',null,['id'=>'Telefono_Alumno','class'=>'form-control'])!!}
         </div>
 
-        <div class="col-sm-4">
-             {!!form::label('Email')!!}
-             {!!form::text('email',null,['id'=>'Email','class'=>'form-control'])!!}
-        </div>
 
         <div class="col-sm-5">
            {!!form::label('Asignatura')!!}

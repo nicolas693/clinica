@@ -16,11 +16,11 @@ class CreateAlumnosTable extends Migration
 
         Schema::create('Alumno', function(Blueprint $table)
         {
-            $table->increments('alumno_id');
+            $table->String('alumno_id');
             $table->string('Nombre_Alumno')->length(15);
             $table->string('Apellido_Alumno')->length(15);
             $table->integer('Telefono_Alumno');
-            $table->String('Email');
+            $table->primary('alumno_id');
 
             $table->integer('asignatura_id')->unsigned();
             $table->foreign('asignatura_id')->references('id')->on('asignatura');

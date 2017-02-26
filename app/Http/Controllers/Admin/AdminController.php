@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use clinica\Http\Requests;
 use clinica\Http\Controllers\Controller;
 use clinica\Models\Docente\Docente;
+use clinica\Models\Asignatura\Asignatura;
 
 class AdminController extends Controller
 {
@@ -17,6 +18,7 @@ class AdminController extends Controller
      */
     public function index()
     {
+
         return view('Admin/index');
     }
 
@@ -88,6 +90,7 @@ class AdminController extends Controller
 
     public function docente(){
       $docente=Docente::all();
-      return view('Admin.docente')->with('docente',$docente);
+      //$asignatura=Asignatura::where('asignatura','=',$docente->asignatura_id)->first();
+      return view('Admin.docente')->with('docente',$docente);//->with('asignatura',$asignatura);
     }
 }

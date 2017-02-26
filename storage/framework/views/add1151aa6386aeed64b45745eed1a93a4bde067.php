@@ -124,12 +124,6 @@
 
              </div>
 
-             <div class="col-sm-6">
-                 <?php echo form::label('Email'); ?>
-
-                 <?php echo form::text('email',null,['id'=>'Email','class'=>'form-control']); ?>
-
-            </div>
 
               <div class="col-sm-6">
                   <?php echo form::label('Calle'); ?>

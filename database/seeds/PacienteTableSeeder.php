@@ -30,7 +30,7 @@ class PacienteTableSeeder extends Seeder
           'Nacionalidad'=>'Clan Lannister',
           'Cobertura_Medica'=>'Lannister Pro',
           'clinica_id'=>'1421',
-          'alumno_id'=>'19405168',
+          'alumno_id'=>'19405168-9',
           'alta'=>'false',
 
         ]);

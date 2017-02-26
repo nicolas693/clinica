@@ -25,18 +25,16 @@
               <thead>
                  <th>Rut</th>
                  <th>Nombre</th>
-                 <th>Email</th>
                  <th>Teléfono</th>
                  <th>Asignatura</th>
               </thead>
-              <
+
               <tbody>
                 @foreach($docente as $doc)
 
                	<tr>
                		<td>{{$doc->id}}</td>
                		<td>{{$doc->Nombre}}</td>
-               		<td>{{$doc->Email}}</td>
                   <td>{{$doc->Telefono}}</td>
                   <td>{{$doc->asignatura_id}}</td>
                	</tr>

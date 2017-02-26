@@ -13,4 +13,8 @@ class Asignatura extends Model
       public function docente(){
           return $this->belongsTo(Docente::class) ;
       }
+
+      public function alumno(){
+        return $this->belongsTo(Alumnos::class);
+      }
 }

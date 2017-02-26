@@ -60,7 +60,6 @@ class UserController extends Controller
         else{
           $rol=roluser::all();
           return view('User.index')->with('user',$user)->with('rol',$rol)->with('info',$info);
-
         }
 
 

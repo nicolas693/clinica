@@ -17,27 +17,31 @@ class CreateFichaTable extends Migration
             $table->String('Ocupacion');
             $table->String('Fecha_Ingreso');
             $table->String('Motivo_Consulta');
-            $table->String('Expectativas');
+            $table->String('Expectativas')->nullable();
             $table->String('Antecedentes_Medicos');
             $table->String('Farmacos_Uso');
-            $table->String('Habitos');
+            $table->String('Habitos')->nullable();
             $table->String('Fecha_Ultima_Consulta');
             $table->String('Motivo_Ultima_Consulta');
-            $table->String('Antecedentes_Traumatismo');
-            $table->String('Fecha_Traumatismo');
+            $table->boolean('Antecedentes_Traumatismo');
+            $table->integer('Diente_Traumatismo')->nullable(); //por que podria no tener ningun diente con traumatismo
+            $table->String('Fecha_Traumatismo')->nullable();  //podria no haber tenido nunca una fecha de traumatismo
             $table->String('Tratamiento_Ortodoncia');
-            $table->String('Elem_Higiene');
-            $table->String('Anestesia');
-            $table->String('Alerta_Medica');
-          
+            $table->String('Elem_Higiene')->nullable(); //puede no usar nada
+            $table->boolean('Anestesia');
+            $table->boolean('Complicacion_Anestesia')->nullable(); //podria no haber tenido una complicacion de anestesia,
+            //aunque en ese caso se podria dejar como false ese campo
+            $table->String('Alerta_Medica')->nullable();
+
+
             $table->String('paciente_id');
-            $table->integer('alumno_id')->unsigned();
-            $table->integer('docente_id')->unsigned();
+            $table->String('alumno_id');
+            $table->String('docente_id');
 
 
             $table->foreign('paciente_id')->references('rut')->on('Paciente');
             $table->foreign('alumno_id')->references('alumno_id')->on('Alumno');
-            $table->foreign('docente_id')->references('id')->on('Docente')
+            $table->foreign('docente_id')->references('id')->on('Docente');
 
         });
 

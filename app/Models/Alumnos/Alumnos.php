@@ -3,6 +3,7 @@
 namespace clinica\Models\Alumnos;
 
 use Illuminate\Database\Eloquent\Model;
+use clinica\Models\Asignatura\Asignatura;
 
 class Alumnos extends Model
 {
@@ -12,7 +13,7 @@ class Alumnos extends Model
     public    $timestamps = false;
 
     protected $fillable   = [
-        'alumno_id','asignatura_id','Nombre_Alumno','Apellido_Alumno','Telefono_Alumno','id_Clinica','user_id','Email'
+        'alumno_id','asignatura_id','Nombre_Alumno','Apellido_Alumno','Telefono_Alumno','id_Clinica','user_id'
     ];
 
     public function Clinica()
@@ -25,9 +26,14 @@ class Alumnos extends Model
       return $this->belongsto(users::class);
 
     }
-    public function asignatura_1()
+    public function asignatura ()
     {
         return $this->hasmany(Asignatura::class);
+    }
+
+    public function asignatura1()
+    {
+        return $this->belongsTo(Asignatura::class);
     }
 
     public function Paciente (){

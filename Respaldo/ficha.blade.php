@@ -5,23 +5,68 @@
 
 <html lang="es">
 <head>
-  <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <!-- Jquery -->
-
-  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-  <!-- Datepicker Files -->
-  <link rel="stylesheet" href="{{asset('datePicker/css/bootstrap-datepicker3.css')}}">
-  <link rel="stylesheet" href="{{asset('datePicker/css/bootstrap-standalone.css')}}">
-  <script src="{{asset('datePicker/js/bootstrap-datepicker.js')}}"></script>
-  <!-- Languaje -->
-  <script src="{{asset('datePicker/locales/bootstrap-datepicker.es.min.js')}}"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   {!!Html::style('css/micss.css')!!}
+  <meta charset="utf-8" />
+  <title>Fechas</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+  <script type="text/javascript">
+    function SetDate()
+    {
+      var date = new Date();
+      var dia = date.getDia();
+      var mes = date.getMes() + 1;
+      var año = date.getAño();
+      if (mes < 10) mes = "0" + mes;
+      if (dia < 10) dia = "0" + dia;
+      var hoy = dia + "-" + mes + "-" + año;
+      document.getElementById('theDate').value = hoy;
+    }
+
+  </script>
+  <script>
+   $.datepicker.regional['es'] = {
+   closeText: 'Cerrar',
+   prevText: '< Ant',
+   nextText: 'Sig >',
+   currentText: 'Hoy',
+   monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+   monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+   dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+   dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+   dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+   weekHeader: 'Sm',
+   dateFormat: 'dd/mm/yy',
+   firstDay: 1,
+   isRTL: false,
+   showMonthAfterYear: false,
+   yearSuffix: ''
+   };
+   $.datepicker.setDefaults($.datepicker.regional['es']);
+  $(function () {
+  $("#fecha").datepicker();
+  });
+  </script>
+  <body>
+    <style type="text/css">
+      .boton{
+        margin-left: 300px;
+        cursor: pointer;
+        display: inline-block;
+      }
+      .en_linea{
+        display: inline-block;
+      }
+      .cajatexto{
+        width: 580px;
+        height: 100px;
+      }
+    </style>
+  </body>
 </head>
 </html>
 
@@ -143,15 +188,15 @@
                       </div>
                     </div>
                   </div>
-
+                  
                       <div class="panel-heading"><b>
                          2.Anamnesis Odontológica</b>
                        </div>
                       <div class="panel-body">
                         <div class="col-sm-4">
                           <div class="input-group">
-                            <label for="date"><b>Fecha de último control: </b></label>
-                              <input type="text" class="form-control datepicker" id="Fecha_Ultima_Consulta" name="Fecha_Ultima_Consulta">
+                            <label for="date"><b>Fecha de último control: &nbsp</b></label>
+                              <input type="text" class="form-control datepicker" id="fecha" name="Fecha_Nacimiento">
                             </div>
                           </div>
 
@@ -167,7 +212,7 @@
                           <div class="text2 black">
                             <div class="col-sm-4">
                                 {!!form::label('Diente')!!}
-                                {!!form::text('Diente_Traumatismo',null,['Diente'=>'id','class'=>'form-control'])!!}
+                                {!!form::text('Diente',null,['Diente'=>'id','class'=>'form-control'])!!}
                             </div>
                            </div>
                          </div>

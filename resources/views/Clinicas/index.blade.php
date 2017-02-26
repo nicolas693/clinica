@@ -1,7 +1,4 @@
 @extends('layouts.app')
-
-
-
 @section('title','Lista de Clinicas')
 
 @section('content')
@@ -19,7 +16,7 @@
              Clinicas
              <p class="navbar-text navbar-right" style=" margin-top: 1px;">
                <a <button href={{route('Clinica.create')}} type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Nuevo</button></a>
-              <!--  <button type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;">Nuevo</button>-->
+
               </p>
            </div>
           <div class="panel-body">
@@ -65,9 +62,6 @@
 
      </div>
    </div>
-
-   <!--<script>$("#nuevo").click(function(event){document.location.href = "{{route('Clinica.create')}}";});</script>-->
-
 
 
 

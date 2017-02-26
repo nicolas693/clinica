@@ -31,8 +31,8 @@
                   <th>Nombre</th>
                   <th>Apellido</th>
                   <th>Asignatura</th>
-                  <th>Clinica</th>
-                  <th>Accion</th>
+                  <th>Clínica</th>
+                  <th>Acción</th>
                </thead>
                <tbody>
 
@@ -42,7 +42,13 @@
                		<td><?php echo e($al->alumno_id); ?></td>
                		<td><?php echo e($al->Nombre_Alumno); ?></td>
                		<td><?php echo e($al->Apellido_Alumno); ?></td>
-                  <td><?php echo e($al->asignatura_id); ?></td>
+                  <?php if($al->asignatura_id!=NULL): ?>
+                    <?php foreach($asignatura as $asig): ?>
+                      <?php if($al->asignatura_id == $asig->id): ?>
+                        <td><?php echo e($asig->nombre); ?></td>
+                      <?php endif; ?>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
                   <td><?php echo e($al->id_Clinica); ?></td>
 
                   <td>

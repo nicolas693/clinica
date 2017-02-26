@@ -11,9 +11,9 @@ class Docente extends Model
     public $timestamps = false;
 
     protected $fillable = [
-      'id','asignatura_id','Nombre','Email','Telefono','user_id'];
+      'id','asignatura_id','Nombre','Telefono','user_id'];
 
-        public function asignatura_1()
+        public function asignatura ()
         {
           return $this->hasMany(Asignatura::class);
         }

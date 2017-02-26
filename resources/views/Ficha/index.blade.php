@@ -48,7 +48,7 @@
                       {!!form::text('Odontograma_id',$paciente->rut,['id'=>'Odontograma_id','class'=>'form-control hidden'])!!}
 
                       <div class="btn-group">
-                        <button type="submit" class="btn btn-primary">Crear Odontograma</button>
+                        <button type="submit" class="btn btn-success">Crear Odontograma</button>
 
                         <a <button type="button" href={{URL::previous()}} class="btn btn-primary">Volver</button></a>
                       </div>

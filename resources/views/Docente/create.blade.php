@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('title','Inscribir Docente')
 @section('content')
+  @include('partials.messages')
 
 <head>
   {!!Html::style('css/micss.css')!!}
@@ -32,12 +33,12 @@
             </div>
          <div class="col-sm-6">
              {!!form::label('Nombre')!!}
-             {!!form::text('Nombre_Docente',null,['id'=>'Nombre_Alumno','class'=>'form-control'])!!}
+             {!!form::text('Nombre',null,['id'=>'Nombre_Alumno','class'=>'form-control'])!!}
         </div>
 
         <div class="col-sm-6">
              {!!form::label('Teléfono')!!}
-             {!!form::text('Telefono_Docente',null,['id'=>'Telefono_Alumno','class'=>'form-control'])!!}
+             {!!form::text('Telefono',null,['id'=>'Telefono_Alumno','class'=>'form-control'])!!}
         </div>
 
         <div class="col-sm-6">
@@ -48,11 +49,6 @@
         <div class="col-sm-6">
            {!!form::label('Asignatura')!!}
            {!! Form::select('asignatura_id',$asignatura,null,['id'=>'asignatura_id','class'=>'form-control']) !!}
-        </div>
-
-        <div class="col-sm-6">
-           {!!form::label('Email')!!}
-           {!! Form::text('email',null,['id'=>'Email','class'=>'form-control']) !!}
         </div>
 
 

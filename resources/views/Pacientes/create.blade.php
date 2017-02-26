@@ -109,10 +109,6 @@
                   {!!form::text('Telefono_Movil',null,['id'=>'Telefono_Movil','class'=>'form-control'])!!}
              </div>
 
-             <div class="col-sm-6">
-                 {!!form::label('Email')!!}
-                 {!!form::text('email',null,['id'=>'Email','class'=>'form-control'])!!}
-            </div>
 
               <div class="col-sm-6">
                   {!!form::label('Calle')!!}

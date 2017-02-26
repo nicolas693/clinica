@@ -1,5 +1,6 @@
 <?php $__env->startSection('title','Inscribir Docente'); ?>
 <?php $__env->startSection('content'); ?>
+  <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <head>
   <?php echo Html::style('css/micss.css'); ?>
@@ -36,14 +37,14 @@
          <div class="col-sm-6">
              <?php echo form::label('Nombre'); ?>
 
-             <?php echo form::text('Nombre_Docente',null,['id'=>'Nombre_Alumno','class'=>'form-control']); ?>
+             <?php echo form::text('Nombre',null,['id'=>'Nombre_Alumno','class'=>'form-control']); ?>
 
         </div>
 
         <div class="col-sm-6">
              <?php echo form::label('Teléfono'); ?>
 
-             <?php echo form::text('Telefono_Docente',null,['id'=>'Telefono_Alumno','class'=>'form-control']); ?>
+             <?php echo form::text('Telefono',null,['id'=>'Telefono_Alumno','class'=>'form-control']); ?>
 
         </div>
 
@@ -58,13 +59,6 @@
            <?php echo form::label('Asignatura'); ?>
 
            <?php echo Form::select('asignatura_id',$asignatura,null,['id'=>'asignatura_id','class'=>'form-control']); ?>
-
-        </div>
-
-        <div class="col-sm-6">
-           <?php echo form::label('Email'); ?>
-
-           <?php echo Form::text('email',null,['id'=>'Email','class'=>'form-control']); ?>
 
         </div>
 

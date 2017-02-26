@@ -23,7 +23,6 @@
               <div class="panel-body">
                   <button type="button" id='inscribir'  name='inscribir' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 5px 20px;margin-left: 0px">Inscribir Docente</button>
                   <button type="button" id='ver_docente'  name='ver_docente' class="btn  navbar-btn btn-info" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 5px 20px;margin-left: 0px">Ver lista de Docentes</button>
-                  <button type="button" id='ver_asignatura'  name='ver_asignatura' class="btn  navbar-btn btn-info" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 5px 20px;margin-left: 0px">Ver lista de Asignaturas</button>
               </div>
         </div>
   </div>
@@ -39,7 +38,7 @@
   <script>
     $("#ver_docente").click(function(event)
     {
-        document.location.href = "{{ url('Admin/docente') }}";
+        document.location.href = "{{url('Admin/docente') }}";
     });
   </script>
 

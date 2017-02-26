@@ -4,69 +4,24 @@
 
 <html lang="es">
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <!-- Jquery -->
+
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!-- Datepicker Files -->
+  <link rel="stylesheet" href="<?php echo e(asset('datePicker/css/bootstrap-datepicker3.css')); ?>">
+  <link rel="stylesheet" href="<?php echo e(asset('datePicker/css/bootstrap-standalone.css')); ?>">
+  <script src="<?php echo e(asset('datePicker/js/bootstrap-datepicker.js')); ?>"></script>
+  <!-- Languaje -->
+  <script src="<?php echo e(asset('datePicker/locales/bootstrap-datepicker.es.min.js')); ?>"></script>
   <?php echo Html::style('css/micss.css'); ?>
 
-  <meta charset="utf-8" />
-  <title>Fechas</title>
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-  <script type="text/javascript">
-    function SetDate()
-    {
-      var date = new Date();
-      var dia = date.getDia();
-      var mes = date.getMes() + 1;
-      var año = date.getAño();
-      if (mes < 10) mes = "0" + mes;
-      if (dia < 10) dia = "0" + dia;
-      var hoy = dia + "-" + mes + "-" + año;
-      document.getElementById('theDate').value = hoy;
-    }
-
-  </script>
-  <script>
-   $.datepicker.regional['es'] = {
-   closeText: 'Cerrar',
-   prevText: '< Ant',
-   nextText: 'Sig >',
-   currentText: 'Hoy',
-   monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-   monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
-   dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-   dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
-   dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
-   weekHeader: 'Sm',
-   dateFormat: 'dd/mm/yy',
-   firstDay: 1,
-   isRTL: false,
-   showMonthAfterYear: false,
-   yearSuffix: ''
-   };
-   $.datepicker.setDefaults($.datepicker.regional['es']);
-  $(function () {
-  $("#fecha").datepicker();
-  });
-  </script>
-  <body>
-    <style type="text/css">
-      .boton{
-        margin-left: 300px;
-        cursor: pointer;
-        display: inline-block;
-      }
-      .en_linea{
-        display: inline-block;
-      }
-      .cajatexto{
-        width: 580px;
-        height: 100px;
-      }
-    </style>
-  </body>
 </head>
 </html>
 
@@ -100,6 +55,8 @@
                      <?php echo e(Form::hidden('Paterno',$paciente->Paterno)); ?>
 
                      <?php echo e(Form::hidden('Materno',$paciente->Materno)); ?>
+
+                     <?php echo e(Form::hidden('paciente_id',$paciente->rut)); ?>
 
                 </div>
 
@@ -160,12 +117,14 @@
                   <?php echo form::text('Motivo_Consulta',null,['id'=>'Motivo_Consulta','class'=>'form-control']); ?>
 
                 </div>
+
                 <div class="col-sm-12">
                   <?php echo form::label('Expectativas'); ?>
 
                   <?php echo form::text('Expectativas',null,['id'=>'Expectativas','class'=>'form-control']); ?>
 
                 </div>
+
               </div>
                    <div class="panel-heading"><b>
                       1.Anamnesis General</b>
@@ -185,12 +144,14 @@
                         <p class="col-sm-4"> <input type="checkbox" name="chk1" id="c9">Embarazo</p>
                         <p class="col-sm-4"> <input type="checkbox" name="chk1" id="c10">Otra</p>
                        </div>
+
                        <div class="col-sm-12" style="margin-bottom:20px;">
                            <?php echo form::label('Fármacos en uso'); ?>
 
                            <?php echo form::text('Fármacos en uso',null,['id'=>'Farmacos_Uso','class'=>'form-control']); ?>
 
                        </div>
+
                        <div class="col-sm-6">
                            <?php echo form::label('alumno_id : '); ?> <?php echo e($alumno->alumno_id); ?>
 
@@ -213,22 +174,25 @@
                       </div>
                     </div>
                   </div>
+
                       <div class="panel-heading"><b>
                          2.Anamnesis Odontológica</b>
                        </div>
                       <div class="panel-body">
                         <div class="col-sm-4">
                           <div class="input-group">
-                            <label for="date"><b>Fecha de último control: &nbsp</b></label>
-                              <input type="text" class="form-control datepicker" id="fecha" name="Fecha_Nacimiento">
+                            <label for="date"><b>Fecha de último control: </b></label>
+                              <input type="text" class="form-control datepicker" id="Fecha_Ultima_Consulta" name="Fecha_Ultima_Consulta">
                             </div>
                           </div>
+
                         <div class="col-sm-8">
                           <?php echo form::label('Motivo_Ultima_Consulta'); ?>
 
                           <?php echo form::text('Motivo_Ultima_Consulta',null,['id'=>'Motivo_Ultima_Consulta','class'=>'form-control']); ?>
 
                         </div>
+
                         <div class="col-sm-8 radio">
                           <p><b>Antecedentes Traumatismo Dentoalveolar</b></p>
                           <p class="col-sm-8"> <input type="radio" name="radio1" id="r1" value="Nothing">No ha recibido tratamiento de ortodoncia</p>
@@ -237,11 +201,12 @@
                             <div class="col-sm-4">
                                 <?php echo form::label('Diente'); ?>
 
-                                <?php echo form::text('Diente',null,['Diente'=>'id','class'=>'form-control']); ?>
+                                <?php echo form::text('Diente_Traumatismo',null,['Diente'=>'id','class'=>'form-control']); ?>
 
                             </div>
                            </div>
                          </div>
+
                          <div class="col-sm-12 checkbox">
                            <p><b>Elementos de Higiene</b></p>
                            <p class="col-sm-3"> <input type="checkbox" name="chk3" id="c14">Cepillo</p>
@@ -336,7 +301,7 @@
                             <?php echo Form::close(); ?>
 
                         </div>
-            
+
            </div>
 
            <div class="col-sm-12">

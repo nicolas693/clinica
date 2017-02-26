@@ -13,11 +13,11 @@ class CreateDocenteTable extends Migration
     public function up()
     {
       Schema::create('Docente', function (Blueprint $table) {
-       $table->increments('id');
-       $table->string('Nombre');
-       $table->integer('Telefono');
-       $table->String('Email');
+       $table->String('id');
+       $table->String('Nombre');
+       $table->Integer('Telefono');
        $table->timestamps();
+       $table->primary('id');
 
        $table->integer('asignatura_id')->unsigned();
        $table->foreign('asignatura_id')->references('id')->on('asignatura');

@@ -55,7 +55,7 @@
 
 
                       <div class="btn-group">
-                        <button type="submit" class="btn btn-primary">Crear Odontograma</button>
+                        <button type="submit" class="btn btn-success">Crear Odontograma</button>
 
                         <a <button type="button" href=<?php echo e(URL::previous()); ?> class="btn btn-primary">Volver</button></a>
                       </div>

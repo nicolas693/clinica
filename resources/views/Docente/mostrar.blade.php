@@ -34,8 +34,8 @@
                   <th>Nombre</th>
                   <th>Apellido</th>
                   <th>Asignatura</th>
-                  <th>Clinica</th>
-                  <th>Accion</th>
+                  <th>Clínica</th>
+                  <th>Acción</th>
                </thead>
                <tbody>
 
@@ -45,7 +45,13 @@
                		<td>{{$al->alumno_id}}</td>
                		<td>{{$al->Nombre_Alumno}}</td>
                		<td>{{$al->Apellido_Alumno}}</td>
-                  <td>{{$al->asignatura_id}}</td>
+                  @if ($al->asignatura_id!=NULL)
+                    @foreach($asignatura as $asig)
+                      @if($al->asignatura_id == $asig->id)
+                        <td>{{$asig->nombre}}</td>
+                      @endif
+                    @endforeach
+                  @endif
                   <td>{{$al->id_Clinica}}</td>
 
                   <td>

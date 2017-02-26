@@ -89,12 +89,12 @@
 
              <div class="form-group">
               {!!form::label('Nombre : ')!!}
-               {!!$info->Nombre_Docente !!}
+               {!!$info->Nombre !!}
              </div>
 
               <div class="form-group">
               {!!form::label('Teléfono : ')!!}
-               {!!$info->Telefono_Docente !!}
+               {!!$info->Telefono !!}
              </div>
              <a <button href="#" type="button" id= 'Editar' name='Editar' class="btn btn-success" style ="margin-bottom: 20px"  >Editar Datos</button></a>
            </div>

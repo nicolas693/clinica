@@ -45,6 +45,13 @@ class DocentesController extends Controller
      */
     public function store(Request $request)
     {
+      $this->validate($request, [
+       'id' => ['required','cl_rut'],
+       'Nombre' => ['required','min:3','max:20','regex:/^[\pL\s\-]+$/u'],
+       'Telefono' => ['required','min:7','max:9','regex:/[0-9]/'],
+       'user_id' => ['required','max:7','regex:/[0-9]/'],
+     ]);
+
       Docente::create($request->all());
       return redirect('/Admin');
 
@@ -98,6 +105,8 @@ class DocentesController extends Controller
     public function mostrar()
     {
       $alumno=Alumnos::all();
-      return view('Docente/mostrar')->with('alumno',$alumno);
+      $asignatura=Asignatura::all();
+      //$alumno = Alumnos::with('asignatura1')->get();
+      return view('Docente/mostrar')->with('alumno',$alumno)->with('asignatura',$asignatura);
     }
 }
