@@ -102,12 +102,12 @@
              <div class="form-group">
               <?php echo form::label('Nombre : '); ?>
 
-               <?php echo $info->Nombre_Docente; ?>
+               <?php echo $info->Nombre; ?>
 
               <div class="form-group">
               <?php echo form::label('Telefono : '); ?>
 
-               <?php echo $info->Telefono_Docente; ?>
+               <?php echo $info->Telefono; ?>
 
              </div>
              <a <button href="#" type="button" id= 'Editar' name='Editar' class="btn btn-success" style ="margin-bottom: 20px"  >Editar Datos</button></a>

@@ -10,7 +10,7 @@ use clinica\Models\Alumnos\Alumnos;
 use clinica\Models\Paciente\Clinica;
 use clinica\Models\Asignatura\Asignatura;
 use clinica\Models\Paciente\Paciente;
-use clinica\http\Requests\Docente\DocenteCreateRequest;
+use clinica\http\Requests\Alumno\AlumnoCreateRequest;
 
 
 class AlumnosController extends Controller
@@ -48,7 +48,7 @@ class AlumnosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(DocenteCreateRequest $request)
+    public function store(AlumnoCreateRequest $request)
     {
       Alumnos::create($request->all());
       return redirect('/Docente');

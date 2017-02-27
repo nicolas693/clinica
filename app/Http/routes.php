@@ -24,7 +24,8 @@ Route::get('/', function () {
 });
     Route::auth();
     Route::get('/home', 'HomeController@index');
-    Route::resource('User','User\UserController');
+
+    route::resource('User','User\UserController@index',['only' => 'index']);
 
 
 
@@ -35,9 +36,10 @@ Route::get('/', function () {
 });
   Route::group(['middleware' => ['auth','Admin']], function(){
     route::get('/Admin','Admin\AdminController@index');
-    route::get('/Admin/docente', 'Admin\AdminController@docente');
-    route::get('/Docente/create','Docentes\DocentesController@create');
-    route::resource('Docente','Docentes\DocentesController',['only' => 'store']);
+    route::resource('Docente','Docentes\DocentesController',['only' => ['store','create','edit','update']]);
+      route::resource('User','User\UserController',['except' => 'index']);
+
+
 });
 
 

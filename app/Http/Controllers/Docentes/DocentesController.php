@@ -4,7 +4,8 @@ namespace clinica\Http\Controllers\Docentes;
 
 use Illuminate\Http\Request;
 
-use clinica\Http\Requests;
+use clinica\Http\Requests\Docente\DocenteCreateRequest;
+use clinica\Http\Requests\Docente\DocenteUpdateRequest;
 use clinica\Http\Controllers\Controller;
 use clinica\Models\Alumnos\Alumnos;
 use clinica\Models\Docente\Docente;
@@ -43,14 +44,9 @@ class DocentesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DocenteCreateRequest $request)
     {
-      $this->validate($request, [
-       'id' => ['required','cl_rut'],
-       'Nombre' => ['required','min:3','max:20','regex:/^[\pL\s\-]+$/u'],
-       'Telefono' => ['required','min:7','max:9','regex:/[0-9]/'],
-       'user_id' => ['required','max:7','regex:/[0-9]/'],
-     ]);
+
 
       Docente::create($request->all());
       return redirect('/Admin');
@@ -75,8 +71,9 @@ class DocentesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   $docente=Docente::find($id);
+      $asignatura =Asignatura::lists('nombre','id');
+        return view('Docente.edit')->with('docente',$docente)->with('asignatura',$asignatura);
     }
 
     /**
@@ -86,9 +83,12 @@ class DocentesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(DocenteUpdateRequest $request, $id)
     {
-        //
+      $do=Docente::find($id);
+      $input=$request->all();
+      $do->fill($input)->save();
+      return redirect('/Admin');
     }
 
     /**

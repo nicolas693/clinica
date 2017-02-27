@@ -4,7 +4,7 @@ namespace clinica\Http\Requests\Docente;
 
 use clinica\Http\Requests\Request;
 
-class DocenteCreateRequest extends Request
+class DocenteUpdateRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.

@@ -24,46 +24,43 @@
             Inscribir Docente
           </div>
          <div class="panel-body">
-           <?php echo Form::open(['route'=>'Docente.store','method'=>'POST']); ?>
+            <?php echo Form::model($user,['route'=>['User.update',$user->id],'method'=>'PUT']); ?>
 
 
            <div class="col-sm-12">
-              <?php echo form::label('Rut Docente'); ?>
+              <?php echo form::label('Id usuario'); ?>
 
               <?php echo form::text('id',null,['id'=>'id','class'=>'form-control']); ?>
 
 
             </div>
+
          <div class="col-sm-6">
-             <?php echo form::label('Nombre'); ?>
+             <?php echo form::label('Nombre Usuario'); ?>
 
-             <?php echo form::text('Nombre',null,['id'=>'Nombre_Alumno','class'=>'form-control']); ?>
-
-        </div>
-
-        <div class="col-sm-6">
-             <?php echo form::label('Teléfono'); ?>
-
-             <?php echo form::text('Telefono',null,['id'=>'Telefono_Alumno','class'=>'form-control']); ?>
+             <?php echo form::text('name',null,['id'=>'Nombre_Alumno','class'=>'form-control']); ?>
 
         </div>
 
         <div class="col-sm-6">
-           <?php echo form::label('Código Usuario'); ?>
+            <?php echo form::label('Email Usuario'); ?>
 
-           <?php echo form::text('user_id',null,['id'=>'user_id','class'=>'form-control']); ?>
+            <?php echo form::text('email',null,['id'=>'Nombre_Alumno','class'=>'form-control']); ?>
 
-         </div>
+       </div>
 
-        <div class="col-sm-6">
-           <?php echo form::label('Asignatura'); ?>
+       <div class="col-sm-6">
+           <?php echo form::label('Permisos de usuario'); ?>
 
-           <?php echo Form::select('asignatura_id',$asignatura,null,['id'=>'asignatura_id','class'=>'form-control']); ?>
-
-        </div>
+              <?php echo Form::select('idrol',$permisos,null,['id'=>'asignatura_id','class'=>'form-control']); ?>
 
 
-       <?php echo form::submit('Guardar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-12','style'=>'margin-top: 26px; margin-left: 16px; margin-right:400px']); ?>
+      </div>
+
+
+
+
+       <?php echo form::submit('Actualizar',['name'=>'grabar','id'=>'grabar','class'=>'btn btn-success btn-sm m-t-12','style'=>'margin-top: 26px; margin-left: 16px; margin-right:400px']); ?>
 
        <?php echo Form::close(); ?>
 

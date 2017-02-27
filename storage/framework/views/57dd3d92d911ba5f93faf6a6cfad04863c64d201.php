@@ -24,7 +24,7 @@
             Inscribir Docente
           </div>
          <div class="panel-body">
-           <?php echo Form::open(['route'=>'Docente.store','method'=>'POST']); ?>
+            <?php echo Form::model($docente,['route'=>['Docente.update',$docente->id],'method'=>'PUT']); ?>
 
 
            <div class="col-sm-12">
@@ -63,7 +63,7 @@
         </div>
 
 
-       <?php echo form::submit('Guardar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-12','style'=>'margin-top: 26px; margin-left: 16px; margin-right:400px']); ?>
+       <?php echo form::submit('Actualizar',['name'=>'grabar','id'=>'grabar','class'=>'btn btn-success btn-sm m-t-12','style'=>'margin-top: 26px; margin-left: 16px; margin-right:400px']); ?>
 
        <?php echo Form::close(); ?>
 

@@ -8,6 +8,8 @@ use clinica\Http\Requests;
 use clinica\Http\Controllers\Controller;
 use clinica\Models\Docente\Docente;
 use clinica\Models\Asignatura\Asignatura;
+use clinica\Models\Alumnos\Alumnos;
+use clinica\User;
 
 class AdminController extends Controller
 {
@@ -19,7 +21,12 @@ class AdminController extends Controller
     public function index()
     {
 
-        return view('Admin/index');
+        $doce=Docente::all();
+        $user=User::all();
+
+
+
+        return view('Admin/index')->with('doce',$doce)->with('user',$user);
     }
 
     /**
