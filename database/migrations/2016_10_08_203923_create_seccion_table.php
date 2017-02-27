@@ -22,7 +22,7 @@ class CreateSeccionTable extends Migration
             $table->foreign('asignatura_id')->references('id')->on('asignatura');
 
             $table->String('Docente_id');
-            $table->foreign('Docente_id')->references('id')->on('docente');
+            $table->foreign('Docente_id')->references('id')->on('Docente');
 
             $table->String('Alumno_rut');
             $table->foreign('Alumno_rut')->references('alumno_id')->on('Alumno');
