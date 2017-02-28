@@ -24,4 +24,5 @@ class Docente extends Model
           return $this->belongsto(users::class);
 
         }
+        
 }

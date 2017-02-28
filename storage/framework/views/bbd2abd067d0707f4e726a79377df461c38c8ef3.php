@@ -7,7 +7,11 @@
 </head>
   <ol class="breadcrumb fondoC1 ">
 
+<<<<<<< HEAD:storage/framework/views/bbd2abd067d0707f4e726a79377df461c38c8ef3.php
        <li class="active">Editar Alumno</li>
+=======
+       <li class="active">Inscribir Nuevo Alumno</li>
+>>>>>>> c56e046d6c44544b4825ce5a75cad4bfb31d24d1:storage/framework/views/e71c0deca1e0d0983b379a044197aa27ed2224d9.php
        <li class="pull-right"><a href="/Docente" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
      </ol>
 

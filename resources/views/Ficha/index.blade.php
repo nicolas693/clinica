@@ -11,7 +11,7 @@
 <ol class="breadcrumb fondoC1 ">
      <li><a href="{{url('Alumno')}}"> Alumno</a></li>
      <li class="active">Ficha Paciente</li>
-      <li class="pull-right"><a href="/Alumno/mostrar/{{$paciente->clinica_id}}" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
+      <li class="pull-right"><a href="/Alumno/mostrar/{{$paciente->clinica_id}}" class="btn btn-primary btn-xs"> <b>Volver</b> </a></li>
    </ol>
 
 
