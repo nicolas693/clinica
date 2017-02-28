@@ -11,6 +11,7 @@
 <ol class="breadcrumb fondoC1 ">
      <li><a href="{{url('Alumno')}}"> Alumno</a></li>
      <li class="active">Ficha Paciente</li>
+      <li class="pull-right"><a href="/Alumno/mostrar/{{$paciente->clinica_id}}" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
    </ol>
 
 
@@ -71,7 +72,7 @@
                       <div class="btn-group">
                         <button type="submit" class="btn btn-success">Crear Odontograma</button>
 
-                        <a <button type="button" href={{URL::previous()}} class="btn btn-primary">Volver</button></a>
+
                       </div>
 
 
@@ -84,7 +85,7 @@
                      <a <button type="button" href={{route('Tratamiento.index', $id) }} class="btn btn-warning">Ver Plan de Tratamiento</button></a>
                      <a <button type="button" href={{route('Odontograma.index',$id) }} class="btn btn-info">Ver Odontograma</button></a>
                      <a <button href={{route('Ficha.ficha',$id) }} type="button"  class="btn btn-success">Ingresar Ficha</button> </a>
-                     <a <button type="button"  id='volver' class="btn btn-primary">Volver</button> </a>
+
                    </div>
                     @endif
                   </div>

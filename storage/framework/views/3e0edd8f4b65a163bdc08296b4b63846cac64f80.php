@@ -21,6 +21,7 @@
 <ol class="breadcrumb fondoC1 ">
      <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
      <li class="active">Odontograma de <?php echo e($paciente->Nombre); ?> <?php echo e($paciente->Paterno); ?></li>
+      <li class="pull-right"><a href="/Ficha/<?php echo e($paciente->rut); ?>/Odontograma" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
    </ol>
 
 
@@ -177,7 +178,7 @@
   <?php echo Form::close(); ?>
 
   <div class="col-sm-6" style="margin-top:3%; margin-bottom:3%;">
-  <a <button href=<?php echo e(URL::previous()); ?> type="button"  class="btn  btn-warning" style=" margin-bottom:5%; margin-right:50%;"   >Volver</button></a>
+
 
 
 </div>

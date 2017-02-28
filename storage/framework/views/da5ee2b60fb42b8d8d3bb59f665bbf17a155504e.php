@@ -8,8 +8,9 @@
 
 
 <ol class="breadcrumb fondoC1 ">
-     <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
+
      <li class="active">Alta Paciente</li>
+     <li class="pull-right"><a href="/Alumno/mostrar/<?php echo e($pa->clinica_id); ?>" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
    </ol>
 
 
@@ -58,7 +59,7 @@
 
 
 
-                <button type="button" id= 'cancelar' name='cancelar' class="btn btn-primary" >Volver</button>
+
                 <button type="button" id= 'alta' name='alta' class="btn btn-warning" >Dar de Alta</button>
 
 <?php echo Form::close(); ?>

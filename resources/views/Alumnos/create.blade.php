@@ -6,8 +6,9 @@
 {!!Html::style('css/micss.css')!!}
 </head>
   <ol class="breadcrumb fondoC1 ">
-       <li><a href="{{url('Docente')}}"> Docente</a></li>
+
        <li class="active">Inscribir Nuevo Alumno</li>
+       <li class="pull-right"><a href="/Docente" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
      </ol>
 
 

@@ -21,9 +21,9 @@
 
 <ol class="breadcrumb fondoC1 ">
      <li><a href="{{url('Alumno')}}"> Alumno</a></li>
-     <li><a href="{{url('Ficha',$id)}}"> Ficha</a></li>
+     <li class="pull-right"><a href="/Ficha/{{$paciente->rut}}" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
      <li class="active">Odontograma de {{$paciente->Nombre}} {{$paciente->Paterno}} </li>
-   </ol>
+</ol>
 
 
 <div class="row fondoC centro">
@@ -278,7 +278,7 @@
                                         $sinesp = str_replace('_', ' ', $sinesp);
 
                                      ?>
-                                     <b>{{$sinesp}}</b>
+                                     <b> - {{$sinesp}}</b>
                                      {{Form::hidden($key2,0)}}
                                   </div>
                                   <div class="col-sm-6"style="margin-bottom:5px;">
@@ -301,16 +301,8 @@
           </tbody>
         </table>
       </div>
-
-
-
-
-</div>
-
-
-
-
-</div>
+    </div>
+  </div>
 
 
 

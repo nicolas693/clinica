@@ -22,6 +22,7 @@
 <ol class="breadcrumb fondoC1 ">
      <li><a href="{{url('Alumno')}}"> Alumno</a></li>
      <li class="active">Odontograma de {{$paciente->Nombre}} {{$paciente->Paterno}}</li>
+      <li class="pull-right"><a href="/Ficha/{{$paciente->rut}}/Odontograma" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
    </ol>
 
 
@@ -132,7 +133,7 @@
 </div>
   {!! Form::close() !!}
   <div class="col-sm-6" style="margin-top:3%; margin-bottom:3%;">
-  <a <button href={{URL::previous()}} type="button"  class="btn  btn-primary" style=" margin-bottom:5%; margin-right:50%;"   >Volver</button></a>
+
 
 
 </div>

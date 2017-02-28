@@ -6,8 +6,9 @@
 </head>
    <!-- Main component for a primary marketing message or call to action -->
    <ol class="breadcrumb fondoC1 ">
-        <li><a href="{{url('Alumno')}}"> Alumno</a></li>
+
         <li class="active">Pacientes</li>
+        <li class="pull-right"><a href="/Alumno" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
       </ol>
    <!-- Main component for a primary marketing message or call to action -->
 

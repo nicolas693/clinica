@@ -7,9 +7,10 @@
   </head>
 
   <ol class="breadcrumb fondoC1 ">
-       <li><a href="{{url('Alumno')}}"> Alumno</a></li>
-       <li><a href="{{url('Ficha', $id)}}">Ficha</a></li>
+
+
        <li class="active">Plan de Tratamiento</li>
+        <li class="pull-right"><a href="/Ficha/{{$paciente->rut}}" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
   </ol>
 
 
@@ -52,9 +53,7 @@
 
               </table>
 
-              <div >
-                 <a <button href={{route('Ficha.index', $id) }} type="button"  class="btn btn-primary"   >Volver</button></a>
-               </div>
+
 
            </div>
          </div>

@@ -10,6 +10,7 @@
 <ol class="breadcrumb fondoC1 ">
      <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
      <li class="active">Ficha Paciente</li>
+      <li class="pull-right"><a href="/Alumno/mostrar/<?php echo e($paciente->clinica_id); ?>" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
    </ol>
 
 
@@ -84,9 +85,9 @@
 
 
                       <div class="btn-group">
-                        <button type="submit" class="btn btn-primary">Crear Odontograma</button>
+                        <button type="submit" class="btn btn-success">Crear Odontograma</button>
 
-                        <a <button type="button" href=<?php echo e(URL::previous()); ?> class="btn btn-primary">Volver</button></a>
+
                       </div>
 
 
@@ -100,7 +101,7 @@
                      <a <button type="button" href=<?php echo e(route('Tratamiento.index', $id)); ?> class="btn btn-warning">Ver Plan de Tratamiento</button></a>
                      <a <button type="button" href=<?php echo e(route('Odontograma.index',$id)); ?> class="btn btn-info">Ver Odontograma</button></a>
                      <a <button href=<?php echo e(route('Ficha.ficha',$id)); ?> type="button"  class="btn btn-success">Ingresar Ficha</button> </a>
-                     <a <button type="button"  id='volver' class="btn btn-primary">Volver</button> </a>
+
                    </div>
                     <?php endif; ?>
                   </div>

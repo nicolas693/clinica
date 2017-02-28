@@ -6,8 +6,9 @@
 
 </head>
   <ol class="breadcrumb fondoC1 ">
-       <li><a href="<?php echo e(url('Docente')); ?>"> Docente</a></li>
+
        <li class="active">Inscribir Nuevo Alumno</li>
+       <li class="pull-right"><a href="/Docente" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
      </ol>
 
 
@@ -54,6 +55,7 @@
 
         </div>
 
+
         <div class="col-sm-5">
            <?php echo form::label('Asignatura'); ?>
 
@@ -73,8 +75,9 @@
 
            <?php echo form::text('user_id',null,['id'=>'user_id','class'=>'form-control']); ?>
 
-
          </div>
+
+
 
       </div>
           <?php echo form::submit('Inscribir Alumno',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;']); ?>

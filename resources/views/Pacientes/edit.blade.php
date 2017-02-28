@@ -31,8 +31,9 @@
 
 
 <ol class="breadcrumb fondoC1 ">
-     <li><a href="{{url('Alumno')}}"> Alumno</a></li>
+
      <li class="active">Editar Paciente</li>
+     <li class="pull-right"><a href="/Alumno/mostrar/{{$pa->clinica_id}}" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
    </ol>
 
 
@@ -48,8 +49,7 @@
           <div class="panel-heading">
             Editar Datos Paciente
             <p class="navbar-text navbar-right" style=" margin-top: 1px;">
-              <a <button href={{URL::previous()}} type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
-             </p>
+
 
            </div>
           <div class="panel-body">
