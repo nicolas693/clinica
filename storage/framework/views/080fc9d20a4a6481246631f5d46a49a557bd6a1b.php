@@ -36,7 +36,7 @@
          <div class="col-sm-6">
              <?php echo form::label('Nombre'); ?>
 
-             <?php echo form::text('Nombre_Docente',null,['id'=>'Nombre_Alumno','class'=>'form-control']); ?>
+             <?php echo form::text('Nombre',null,['id'=>'Nombre_Alumno','class'=>'form-control']); ?>
 
         </div>
 
@@ -44,7 +44,7 @@
         <div class="col-sm-6">
              <?php echo form::label('Teléfono'); ?>
 
-             <?php echo form::text('Telefono_Docente',null,['id'=>'Telefono_Alumno','class'=>'form-control']); ?>
+             <?php echo form::text('Telefono',null,['id'=>'Telefono_Alumno','class'=>'form-control']); ?>
 
         </div>
 

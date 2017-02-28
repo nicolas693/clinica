@@ -105,7 +105,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $user=User::find($id);
+        $permisos=roluser::lists('Nombre','idrol');
+        return view('User.edit')->with('user',$user)->with('permisos',$permisos);
     }
 
     /**
@@ -117,7 +120,10 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $us=User::find($id);
+      $input=$request->all();
+      $us->fill($input)->save();
+      return redirect('/Admin');
     }
 
     /**
