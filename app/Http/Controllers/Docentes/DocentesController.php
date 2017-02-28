@@ -21,8 +21,8 @@ class DocentesController extends Controller
      */
     public function index()
     {
-        //
-        return view('Docente.index');
+        $alumnos=Alumnos::all();
+        return view('Docente.index')->with('alumnos',$alumnos);
     }
 
     /**
@@ -73,6 +73,7 @@ class DocentesController extends Controller
     public function edit($id)
     {   $docente=Docente::find($id);
       $asignatura =Asignatura::lists('nombre','id');
+
         return view('Docente.edit')->with('docente',$docente)->with('asignatura',$asignatura);
     }
 

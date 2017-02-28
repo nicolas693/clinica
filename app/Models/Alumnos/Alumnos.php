@@ -9,8 +9,9 @@ class Alumnos extends Model
 {
     //
     protected $table      = 'Alumno';
-    protected $primarykey = 'alumno_id';
+    protected $primaryKey = 'alumno_id';
     public    $timestamps = false;
+    public  $incrementing = false;
 
     protected $fillable   = [
         'alumno_id','asignatura_id','Nombre_Alumno','Apellido_Alumno','Telefono_Alumno','id_Clinica','user_id'

@@ -8,21 +8,20 @@
   {!!Html::style('css/micss.css')!!}
 </head>
 <ol class="breadcrumb fondoC1 ">
-     <li><a href="{{url('Admin')}}"> Administrador</a></li>
-     <li class="active">Ingresar Docente</li>
+     <li class="pull-right"><a href="/Admin" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
+     <li class="active">Editar Usuario</li>
    </ol>
 
 
 
 
+
   <div class="row fondoC centro">
-    <div class="page-header  " >
-      <h1>   Docente<small></small></h1>
-    </div>
+
     <div class="col-md-8">
        <div class="panel panel-primary">
          <div class="panel-heading">
-            Inscribir Docente
+            Datos de  {{$user->email}}
           </div>
          <div class="panel-body">
             {!!Form::model($user,['route'=>['User.update',$user->id],'method'=>'PUT'])!!}

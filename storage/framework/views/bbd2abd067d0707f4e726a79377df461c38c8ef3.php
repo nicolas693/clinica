@@ -1,4 +1,4 @@
-<?php $__env->startSection('title','Inscribir Alumno'); ?>
+<?php $__env->startSection('title','Editar Alumno'); ?>
 <?php $__env->startSection('content'); ?>
 <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <head>
@@ -6,24 +6,26 @@
 
 </head>
   <ol class="breadcrumb fondoC1 ">
-       <li><a href="<?php echo e(url('Docente')); ?>"> Docente</a></li>
-       <li class="active">Inscribir Nuevo Alumno</li>
+
+       <li class="active">Editar Alumno</li>
+       <li class="pull-right"><a href="/Docente" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
      </ol>
 
 
   <div class="row fondoC centro">
     <div class="page-header" >
-      <h1>Docente<small></small></h1>
+      <h1>Editar Alumno<small></small></h1>
     </div>
     <div class="col-md-8">
 
        <div class="panel panel-default">
-         <div class="panel-heading">
-            Inscribir Alumno
+         <div class="panel-heading" style="margin-bottom:3%;">
+              <b>Datos de <?php echo e($alumno->Nombre_Alumno); ?> <?php echo e($alumno->Apellido_Alumno); ?></b>
 
          <div class="panel-body">
 
-           <?php echo Form::open(['route'=>'Alumno.store','method'=>'POST']); ?>
+
+           <?php echo Form::model($alumno,['route'=>['Alumno.update',$alumno->alumno_id],'method'=>'PUT']); ?>
 
 
 
@@ -79,7 +81,7 @@
 
 
       </div>
-          <?php echo form::submit('Inscribir Alumno',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;']); ?>
+          <?php echo form::submit('Actualizar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;']); ?>
 
        <?php echo Form::close(); ?>
 

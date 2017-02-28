@@ -9,6 +9,7 @@ class Docente extends Model
     protected $table = 'Docente';
     protected $primaryKey = 'id';
     public $timestamps = false;
+    public $incrementing = false;
 
     protected $fillable = [
       'id','asignatura_id','Nombre','Telefono','user_id'];

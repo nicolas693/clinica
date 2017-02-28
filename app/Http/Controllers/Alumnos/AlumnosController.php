@@ -75,7 +75,10 @@ class AlumnosController extends Controller
      */
     public function edit($id)
     {
-        //
+      $alumno=Alumnos::find($id);
+      $asignatura =Asignatura::lists('nombre','id');
+      $clinica = Clinica::lists('Nombre_Clinica','id_Clinica');
+        return view('Alumnos.edit')->with('clinica',$clinica)->with('asignatura',$asignatura)->with('alumno',$alumno);
     }
 
     /**
@@ -87,7 +90,10 @@ class AlumnosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $al=Alumnos::find($id);
+      $input=$request->all();
+      $al->fill($input)->save();
+      return redirect('/Docente');
     }
 
     /**
@@ -104,6 +110,7 @@ class AlumnosController extends Controller
     public function mostrar($id)
     {
       $paciente=Paciente::all();
+
       return view('Alumnos.mostrar')->with('paciente',$paciente)->with('id',$id);
     }
 }

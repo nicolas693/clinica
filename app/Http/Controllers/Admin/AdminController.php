@@ -24,7 +24,7 @@ class AdminController extends Controller
         $doce=Docente::all();
         $user=User::all();
 
-
+        
 
         return view('Admin/index')->with('doce',$doce)->with('user',$user);
     }

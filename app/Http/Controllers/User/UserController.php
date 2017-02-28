@@ -31,11 +31,10 @@ class UserController extends Controller
 
           foreach ($datos as $dato)
           {
-
+              
             if($dato->user_id == $user->id)
             {
               $info=$dato;
-
             }
           }
 
@@ -59,6 +58,7 @@ class UserController extends Controller
         }
         else{
           $rol=roluser::all();
+
           return view('User.index')->with('user',$user)->with('rol',$rol)->with('info',$info);
         }
 
