@@ -32,9 +32,7 @@ class DocentesController extends Controller
     public function create()
     {
         $asignatura =Asignatura::lists('nombre','id');
-        return view('Docente.create')->with('asignatura',$asignatura);
-
-
+        return view('Docente.create', array('asignatura'=>$asignatura));
     }
 
     /**
@@ -106,7 +104,13 @@ class DocentesController extends Controller
     {
       $alumno=Alumnos::all();
       $asignatura=Asignatura::all();
-      //$alumno = Alumnos::with('asignatura1')->get();
-      return view('Docente/mostrar')->with('alumno',$alumno)->with('asignatura',$asignatura);
+      return view('Docente/mostrar', array('alumno'=>$alumno, 'asignatura'=>$asignatura ) );
     }
+
+    public function evaluar($id){
+      $alumnos=Alumnos::where('alumno_id','=',$id)->first();
+      $asignatura=Asignatura::all();
+      return view('Docente/evaluar', array('alumnos'=>$alumnos, 'asignatura'=>$asignatura ) );
+    }
+
 }

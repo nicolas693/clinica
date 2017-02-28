@@ -41,7 +41,6 @@
                <tbody>
 
                	@foreach($alumno as $al)
-
                	<tr>
                		<td>{{$al->alumno_id}}</td>
                		<td>{{$al->Nombre_Alumno}}</td>
@@ -54,9 +53,8 @@
                     @endforeach
                   @endif
                   <td>{{$al->id_Clinica}}</td>
-
                   <td>
-                    <a <button href="#" type="button" id= 'Evaluar' name='Evaluar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Evaluar</button></a>
+                    <a <button href={{url('/Docente/evaluar',$al->alumno_id)}} type="button" id='Evaluar' name='Evaluar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Evaluar</button></a>
                   </td>
                	</tr>
 
@@ -75,7 +73,6 @@
 
      </div>
    </div>
-
 
 
 

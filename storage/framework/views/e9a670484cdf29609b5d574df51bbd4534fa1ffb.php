@@ -8,8 +8,9 @@
    <!-- Main component for a primary marketing message or call to action -->
 
    <ol class="breadcrumb fondoC1 ">
-        <li><a href="<?php echo e(url('Docente')); ?>"> Docente</a></li>
+
         <li class="active">Evaluar Alumno</li>
+        <li class="pull-right"><a href="/Docente" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
       </ol>
 
    <div class="row fondoC centro">
@@ -50,9 +51,8 @@
                     <?php endforeach; ?>
                   <?php endif; ?>
                   <td><?php echo e($al->id_Clinica); ?></td>
-
                   <td>
-                    <a <button href="#" type="button" id= 'Evaluar' name='Evaluar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Evaluar</button></a>
+                    <a <button href=<?php echo e(url('/Docente/evaluar',$al->alumno_id)); ?> type="button" id='Evaluar' name='Evaluar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Evaluar</button></a>
                   </td>
                	</tr>
 
@@ -71,7 +71,6 @@
 
      </div>
    </div>
-
 
 
 

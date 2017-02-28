@@ -92,8 +92,7 @@
 
              <div class="col-sm-12">
                   {!!form::label('Sexo')!!}
-                  {!! Form::select('Genero',$genero,null,['id'=>'Genero','class'=>'form-control']) !!}
-
+                  {!!Form::select('Genero',null,['id'=>'Genero','class'=>'form-control']) !!}
              </div>
 
 

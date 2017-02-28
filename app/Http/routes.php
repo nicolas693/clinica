@@ -45,6 +45,7 @@ Route::get('/', function () {
   route::group(['middleware' => ['auth','Docente']], function(){
     route::get('/Docente','Docentes\DocentesController@index');
     route::get('Docente/mostrar','Docentes\DocentesController@mostrar');
+    route::get('Docente/evaluar/{id}','Docentes\DocentesController@evaluar');
     route::resource('Alumno','Alumnos\AlumnosController',['only' => ['store','create']]);
 });
 

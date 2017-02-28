@@ -36,7 +36,11 @@
                		<td><?php echo e($doc->id); ?></td>
                		<td><?php echo e($doc->Nombre); ?></td>
                   <td><?php echo e($doc->Telefono); ?></td>
-                  <td><?php echo e($doc->asignatura_id); ?></td>
+                  <?php foreach($asignatura as $asig): ?>
+                    <?php if($doc->asignatura_id == $asig->id): ?>
+                      <td><?php echo e($asig->nombre); ?></td>
+                    <?php endif; ?>
+                  <?php endforeach; ?>
                	</tr>
 
               <?php endforeach; ?>

@@ -34,13 +34,13 @@
 
    <div class="row fondoC centro">
      <div class="page-header">
-       <h1>Paciente Nuevo </h1>
+       <h1>Ingrese datos del paciente </h1>
      </div>
      <div class="col-md-8">
 
-        <div class="panel panel-default">
+        <div class="panel panel-default"  >
           <div class="panel-heading">
-             Nuevo Paciente
+             Formulario nuevo paciente
 
              <p class="navbar-text navbar-right" style=" margin-top: 1px;">
                <a <button href=<?php echo e(URL::previous()); ?> type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-primary" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>

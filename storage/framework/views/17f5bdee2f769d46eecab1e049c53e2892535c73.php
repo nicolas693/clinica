@@ -20,9 +20,9 @@
 
 <ol class="breadcrumb fondoC1 ">
      <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
-     <li><a href="<?php echo e(url('Ficha',$id)); ?>"> Ficha</a></li>
+     <li class="pull-right"><a href="/Ficha/<?php echo e($paciente->rut); ?>" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
      <li class="active">Odontograma de <?php echo e($paciente->Nombre); ?> <?php echo e($paciente->Paterno); ?> </li>
-   </ol>
+</ol>
 
 
 <div class="row fondoC centro">
@@ -278,7 +278,7 @@
                                         $sinesp = str_replace('_', ' ', $sinesp);
 
                                      ?>
-                                     <b><?php echo e($sinesp); ?></b>
+                                     <b> - <?php echo e($sinesp); ?></b>
                                      <?php echo e(Form::hidden($key2,0)); ?>
 
                                   </div>
@@ -304,16 +304,8 @@
           </tbody>
         </table>
       </div>
-
-
-
-
-</div>
-
-
-
-
-</div>
+    </div>
+  </div>
 
 
 

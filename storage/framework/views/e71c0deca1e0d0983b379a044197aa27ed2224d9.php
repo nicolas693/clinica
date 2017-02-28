@@ -6,8 +6,9 @@
 
 </head>
   <ol class="breadcrumb fondoC1 ">
-       <li><a href="<?php echo e(url('Docente')); ?>"> Docente</a></li>
+
        <li class="active">Inscribir Nuevo Alumno</li>
+       <li class="pull-right"><a href="/Docente" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
      </ol>
 
 

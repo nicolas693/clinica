@@ -7,9 +7,10 @@
   </head>
 
   <ol class="breadcrumb fondoC1 ">
-       <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
-       <li><a href="<?php echo e(url('Ficha', $id)); ?>">Ficha</a></li>
+
+
        <li class="active">Plan de Tratamiento</li>
+        <li class="pull-right"><a href="/Ficha/<?php echo e($paciente->rut); ?>" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
   </ol>
 
 
@@ -17,9 +18,9 @@
   <div class="page-header "  >
     <h1>Planificación de Tratamiento<small></small></h1>
   </div>
-    <div class="col-md-8">
+    <div class="col-md-10">
 
-       <div class="panel panel-primary " >
+       <div class="panel panel-primary centrarIT " >
          <div class="panel-heading">
             Tratamiento
             <p class="navbar-text navbar-right" style=" margin-top: 1px;">
@@ -52,9 +53,7 @@
 
               </table>
 
-              <div >
-                 <a <button href=<?php echo e(route('Ficha.index', $id)); ?> type="button"  class="btn btn-primary"   >Volver</button></a>
-               </div>
+
 
            </div>
          </div>

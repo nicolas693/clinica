@@ -36,7 +36,11 @@
                		<td>{{$doc->id}}</td>
                		<td>{{$doc->Nombre}}</td>
                   <td>{{$doc->Telefono}}</td>
-                  <td>{{$doc->asignatura_id}}</td>
+                  @foreach($asignatura as $asig)
+                    @if($doc->asignatura_id == $asig->id)
+                      <td>{{$asig->nombre}}</td>
+                    @endif
+                  @endforeach
                	</tr>
 
               @endforeach

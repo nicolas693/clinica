@@ -90,7 +90,8 @@ class AdminController extends Controller
 
     public function docente(){
       $docente=Docente::all();
+      $asignatura=Asignatura::all();
       //$asignatura=Asignatura::where('asignatura','=',$docente->asignatura_id)->first();
-      return view('Admin.docente')->with('docente',$docente);//->with('asignatura',$asignatura);
+      return view('Admin.docente', array('docente'=>$docente, 'asignatura'=>$asignatura));//->with('asignatura',$asignatura);
     }
 }
