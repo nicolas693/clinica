@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title','Editar Alumno')
 @section('content')
-@include('partials.messages')
+
 <head>
 {!!Html::style('css/micss.css')!!}
 </head>
@@ -12,10 +12,12 @@
      </ol>
 
 
+
   <div class="row fondoC centro">
     <div class="page-header" >
       <h1>Editar Alumno<small></small></h1>
     </div>
+    <div class="col-md-8"> @include('partials.messages')</div>
     <div class="col-md-8">
 
        <div class="panel panel-default">
@@ -29,8 +31,9 @@
 
 
            <div class="col-sm-12">
-              {!!form::label('Rut Alumno')!!}
-              {!!form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control'])!!}
+              {!!form::label('Rut Alumno : ')!!}
+
+              {!!form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control','readonly'])!!}
 
          </div>
          <div class="col-sm-4">

@@ -4,7 +4,7 @@
 
 @section('content')
 
-@include('partials.messages')
+
 
 <head>
 
@@ -43,6 +43,7 @@
      <div class="page-header">
        <h1>Editar datos paciente </h1>
      </div>
+     <div class="col-md-8"> @include('partials.messages')</div>
      <div class="col-md-8">
 
         <div class="panel panel-default">

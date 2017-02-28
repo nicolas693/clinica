@@ -1,29 +1,27 @@
 <?php $__env->startSection('title','Editar Alumno'); ?>
 <?php $__env->startSection('content'); ?>
-<?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
 <head>
 <?php echo Html::style('css/micss.css'); ?>
 
 </head>
   <ol class="breadcrumb fondoC1 ">
 
-<<<<<<< HEAD:storage/framework/views/bbd2abd067d0707f4e726a79377df461c38c8ef3.php
        <li class="active">Editar Alumno</li>
-=======
-       <li class="active">Inscribir Nuevo Alumno</li>
->>>>>>> c56e046d6c44544b4825ce5a75cad4bfb31d24d1:storage/framework/views/e71c0deca1e0d0983b379a044197aa27ed2224d9.php
        <li class="pull-right"><a href="/Docente" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
      </ol>
+
 
 
   <div class="row fondoC centro">
     <div class="page-header" >
       <h1>Editar Alumno<small></small></h1>
     </div>
+    <div class="col-md-8"> <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></div>
     <div class="col-md-8">
 
        <div class="panel panel-default">
-         <div class="panel-heading" style="margin-bottom:3%;">
+         <div class="panel-heading">
               <b>Datos de <?php echo e($alumno->Nombre_Alumno); ?> <?php echo e($alumno->Apellido_Alumno); ?></b>
 
          <div class="panel-body">
@@ -34,9 +32,10 @@
 
 
            <div class="col-sm-12">
-              <?php echo form::label('Rut Alumno'); ?>
+              <?php echo form::label('Rut Alumno : '); ?>
 
-              <?php echo form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control']); ?>
+
+              <?php echo form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control','readonly']); ?>
 
 
          </div>

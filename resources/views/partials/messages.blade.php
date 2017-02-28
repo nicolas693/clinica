@@ -1,5 +1,5 @@
 @if (count($errors)>0)
-	<div class='alert alert-danger' roler='alert'>
+	<div class='alert alert-danger' roler='alert' >
 		<strong>Errores:</strong>
 		<ul>
 			@foreach($errors->all() as $error)

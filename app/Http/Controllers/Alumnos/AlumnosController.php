@@ -11,6 +11,8 @@ use clinica\Models\Paciente\Clinica;
 use clinica\Models\Asignatura\Asignatura;
 use clinica\Models\Paciente\Paciente;
 use clinica\http\Requests\Alumno\AlumnoCreateRequest;
+use clinica\http\Requests\Alumno\AlumnoUpdateRequest;
+
 
 
 class AlumnosController extends Controller
@@ -88,7 +90,7 @@ class AlumnosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AlumnoUpdateRequest $request, $id)
     {
       $al=Alumnos::find($id);
       $input=$request->all();

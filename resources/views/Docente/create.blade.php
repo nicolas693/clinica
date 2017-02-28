@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title','Inscribir Docente')
 @section('content')
-  @include('partials.messages')
+
 
 <head>
   {!!Html::style('css/micss.css')!!}
@@ -19,7 +19,9 @@
     <div class="page-header  " >
       <h1> Ingresar  Docente<small></small></h1>
     </div>
+      <div class="col-md-8"> @include('partials.messages')</div>
     <div class="col-md-8">
+
        <div class="panel panel-primary">
          <div class="panel-heading">
             Formulario Docente
