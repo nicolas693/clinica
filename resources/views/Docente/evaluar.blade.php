@@ -24,7 +24,7 @@
        </div>
 
               <div class="panel-body" >
-                {!!Form::open()!!}
+                {!!Form::open( ['route'=>'Docente.storeAlumno','method'=>'POST'] )!!}
 
                 <div class="col-sm-6">
                   {{Form::label('Asignatura: ')}}
@@ -35,21 +35,28 @@
                   @endforeach
                </div>
 
-               <div class="col-sm-10">
+
+               <div class="col-sm-10" style="margin-top:15px;">
                    {!!form::label('Observaciones')!!}
                    {!!form::text('observaciones',null,['id'=>'Observaciones','class'=>'form-control' ])!!}
               </div>
 
-              <div class="col-sm-6">
+              <div class="col-sm-6" style="margin-top:15px;">
                 {!!form::label('Calificación')!!}
                 {!!form::text('calificacion',null,['id'=>'Calificacion','class'=>'form-control'])!!}
               </div>
 
+              <div class="col-sm-8" style="margin-top:15px;">
+              {!!form::label('Pacientes a Evaluar')!!}
+              {!! Form::select('PacienteEvaluado',$pacientes,null,['id'=>'PacienteEvaluado',
+                  'class'=>'form-control']) !!}
+            </div>
+
+
 
               <div class="col-sm-8">
               {!!form::submit('Guardar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-12','style'=>'margin-top: 26px;'])!!}
-               <!--!!Form::select('pac',$pacientes ,null,['id'=>'PacienteEvaluado','class'=>'form-control']) !!} -->
-               {!!Form::close()!!}
+              {!!Form::close()!!}
              </div>
 
               </div>

@@ -32,9 +32,9 @@ class Alumnos extends Model
         return $this->hasmany(Asignatura::class);
     }
 
-    public function asignatura1()
+    public function paciente1()
     {
-        return $this->belongsTo(Asignatura::class);
+        return $this->belongsTo(Paciente::class);
     }
 
     public function Paciente (){

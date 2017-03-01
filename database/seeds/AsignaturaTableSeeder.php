@@ -20,7 +20,7 @@ class AsignaturaTableSeeder extends Seeder
 
       $asi=new Asignatura([
         'id'=>2,
-        'nombre'=>'Periodontología',
+        'nombre'=>'Periodoncia',
       ]);
       $asi->save();
 

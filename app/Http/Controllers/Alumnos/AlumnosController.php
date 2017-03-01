@@ -50,7 +50,8 @@ class AlumnosController extends Controller
      */
     public function store(AlumnoCreateRequest $request)
     {
-      Alumnos::create($request->all());
+      Alumnos::create($request->only('alumno_id','asignatura_id','Nombre_Alumno','Apellido_Alumno'
+      ,'Telefono_Alumno','id_Clinica','user_id' ));
       return redirect('/Docente');
     }
 

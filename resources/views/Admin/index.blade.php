@@ -38,8 +38,8 @@
                             <thead>
                                <th>Rut</th>
                                <th>Nombre</th>
-                               <th>Telefono</th>
-                               <th>Accion</th>
+                               <th>Teléfono</th>
+                               <th>Acción</th>
                             </thead>
                             <tbody>
 
@@ -58,7 +58,7 @@
                             </tbody>
                           </table>
 
-                          <a <button href="{{route('Docente.create')}}" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Ingresar</button></a>
+                          <a <button href="{{route('Docente.create')}}" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-success" style ="margin-left: 20px"  >Ingresar</button></a>
 
 
 
@@ -79,7 +79,7 @@
                                    <th>Nombre</th>
                                    <th>E-mail</th>
                                    <th>Permisos de : </th>
-                                   <th>Accion</th>
+                                   <th>Acción</th>
                                 </thead>
                                 <tbody>
 

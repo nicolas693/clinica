@@ -10,6 +10,7 @@ use clinica\Http\Controllers\Controller;
 use clinica\Models\Alumnos\Alumnos;
 use clinica\Models\Docente\Docente;
 use clinica\Models\Asignatura\Asignatura;
+use clinica\Models\Paciente\Paciente;
 
 
 class DocentesController extends Controller
@@ -44,11 +45,8 @@ class DocentesController extends Controller
      */
     public function store(DocenteCreateRequest $request)
     {
-
-
       Docente::create($request->all());
       return redirect('/Admin');
-
     }
 
     /**
@@ -70,7 +68,7 @@ class DocentesController extends Controller
      */
     public function edit($id)
     {   $docente=Docente::find($id);
-      $asignatura =Asignatura::lists('nombre','id');
+        $asignatura =Asignatura::lists('nombre','id');
         return view('Docente.edit')->with('docente',$docente)->with('asignatura',$asignatura);
     }
 
@@ -110,7 +108,16 @@ class DocentesController extends Controller
     public function evaluar($id){
       $alumnos=Alumnos::where('alumno_id','=',$id)->first();
       $asignatura=Asignatura::all();
-      return view('Docente/evaluar', array('alumnos'=>$alumnos, 'asignatura'=>$asignatura ) );
+      $pacientes=Paciente::where('alumno_id','=',$id)->get()->pluck('rut', 'Nombre', 'Paterno');;
+
+       return view('Docente/evaluar', array('alumnos'=>$alumnos, 'asignatura'=>$asignatura,
+      'pacientes'=>$pacientes ) );
+    }
+
+
+    public function storeAlumno(Request $request){
+      Alumnos::create($request->only('Calificacion', 'Observaciones', 'PacienteEvaluado') );
+      return redirect('/Docente/mostrar');
     }
 
 }

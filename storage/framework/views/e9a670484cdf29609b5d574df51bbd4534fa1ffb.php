@@ -38,7 +38,6 @@
                <tbody>
 
                	<?php foreach($alumno as $al): ?>
-
                	<tr>
                		<td><?php echo e($al->alumno_id); ?></td>
                		<td><?php echo e($al->Nombre_Alumno); ?></td>

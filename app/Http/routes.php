@@ -48,6 +48,7 @@ Route::get('/', function () {
     route::get('/Docente','Docentes\DocentesController@index');
     route::get('Docente/mostrar','Docentes\DocentesController@mostrar');
     route::get('Docente/evaluar/{id}','Docentes\DocentesController@evaluar');
+    route::get('Docente', ['as'=>'Docente.storeAlumno', 'uses'=>'Docentes\DocentesController@storeAlumno' ]);
     route::resource('Alumno','Alumnos\AlumnosController',['only' => ['store','create']]);
 });
 
@@ -78,8 +79,6 @@ Route::get('/', function () {
 
     route::get('Tratamiento/{id}',['as'=> 'Tratamiento.index', 'uses'=> 'Tratamiento\TratamientoController@index']);
     route::get('Tratamiento/nuevo/{id}', [ 'as'=> 'Tratamiento.nuevo', 'uses'=> 'Tratamiento\TratamientoController@nuevo']);
-    //route::get('Tratamiento/edit/{id}', ['as'=>'Tratamiento.edit', 'uses'=>'Tratamiento\TratamientoController@edit' ]);
-    //route::Store('Tratamiento/nuevo/{id}', 'Tratamiento\TratamientoController@store');
     route::resource('Tratamiento','Tratamiento\TratamientoController',['only' => ['store','edit','show','update']]);
 
 
