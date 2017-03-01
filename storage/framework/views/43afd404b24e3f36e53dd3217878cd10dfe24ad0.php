@@ -1,9 +1,9 @@
-@extends('layouts.app')
-@section('title','Docente')
-@section('content')
+<?php $__env->startSection('title','Docente'); ?>
+<?php $__env->startSection('content'); ?>
 
 <head>
-  {!!Html::style('css/micss.css')!!}
+  <?php echo Html::style('css/micss.css'); ?>
+
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
 
 </head>
@@ -39,23 +39,23 @@
                             </thead>
                             <tbody>
 
-                             @foreach($alumnos as $alu)
+                             <?php foreach($alumnos as $alu): ?>
 
                              <tr>
-                               <td>{{$alu->alumno_id}}</td>
-                               <td>{{$alu->Nombre_Alumno}} {{$alu->Apellido_Alumno}}</td>
-                               <td>{{$alu->Telefono_Alumno}}</td>
+                               <td><?php echo e($alu->alumno_id); ?></td>
+                               <td><?php echo e($alu->Nombre_Alumno); ?> <?php echo e($alu->Apellido_Alumno); ?></td>
+                               <td><?php echo e($alu->Telefono_Alumno); ?></td>
 
 
-                               <td><a <button href="{{route('Alumno.edit',$alu->alumno_id)}}" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>
-                                 <a <button href="{{url('/Docente/evaluar',$alu->alumno_id)}}" type="button" id= 'Evaluar' name='evaluar' class="btn btn-default btn-sm m-t-10 btn-info" style ="margin-left: 20px"  >Evaluar Alumno</button></a>
+                               <td><a <button href="<?php echo e(route('Alumno.edit',$alu->alumno_id)); ?>" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>
+                                 <a <button href="<?php echo e(url('/Docente/evaluar',$alu->alumno_id)); ?>" type="button" id= 'Evaluar' name='evaluar' class="btn btn-default btn-sm m-t-10 btn-info" style ="margin-left: 20px"  >Evaluar Alumno</button></a>
                                </td>
                              </tr>
-                             @endforeach
+                             <?php endforeach; ?>
                             </tbody>
                           </table>
 
-                          <a <button href="{{route('Alumno.create')}}" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-success" style ="margin-left: 0px"  >Ingresar Alumno</button></a>
+                          <a <button href="<?php echo e(route('Alumno.create')); ?>" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-success" style ="margin-left: 0px"  >Ingresar Alumno</button></a>
 
 
 
@@ -87,4 +87,6 @@ $(document).on("click", function(e){
 
 </script>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

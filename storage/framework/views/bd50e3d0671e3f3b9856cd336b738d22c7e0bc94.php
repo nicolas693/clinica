@@ -20,7 +20,7 @@
       <h1>Administrador<small></small></h1>
     </div>
     <div class="col-md-12">
-        <div class="panel panel-primary">
+        <div class="panel panel-primary" style="margin-right:10%;">
           <div class="panel-heading">Menú</div>
               <div class="panel-body">
                   <div class="col-sm-4"><button type="button" id='docente'  name='inscribir' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 5px 20px;margin-left: 0px">Docentes</button></div>
@@ -33,13 +33,13 @@
                       <div class="panel-heading" ><b>Docentes</b></div>
                         <div class="panel-body">
 
-                          <table class="table table-primary" >
+                          <table class="table table-bordered" >
 
                             <thead>
                                <th>Rut</th>
                                <th>Nombre</th>
-                               <th>Telefono</th>
-                               <th>Accion</th>
+                               <th>Teléfono</th>
+                               <th>Acción</th>
                             </thead>
                             <tbody>
 
@@ -79,7 +79,7 @@
                                    <th>Nombre</th>
                                    <th>E-mail</th>
                                    <th>Permisos de : </th>
-                                   <th>Accion</th>
+                                   <th>Acción</th>
                                 </thead>
                                 <tbody>
 

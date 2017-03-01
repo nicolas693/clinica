@@ -15,7 +15,7 @@ class Alumnos extends Model
 
     protected $fillable   = [
         'alumno_id','asignatura_id','Nombre_Alumno','Apellido_Alumno','Telefono_Alumno','id_Clinica',
-        'user_id', 'Calificacion', 'Observaciones', 'PacienteEvaluado',
+        'user_id'
     ];
 
     public function Clinica()

@@ -20,9 +20,9 @@ class CreateAlumnosTable extends Migration
             $table->string('Nombre_Alumno')->length(15);
             $table->string('Apellido_Alumno')->length(15);
             $table->integer('Telefono_Alumno');
-            $table->float('Calificacion');
-            $table->String('Observaciones');
-            $table->String('PacienteEvaluado');
+            //$table->float('Calificacion')->nullable();
+            //$table->String('Observaciones')->nullable();
+            //$table->String('PacienteEvaluado')->nullable();
             $table->primary('alumno_id');
 
             $table->integer('asignatura_id')->unsigned();

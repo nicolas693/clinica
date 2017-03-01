@@ -24,10 +24,7 @@ Route::get('/', function () {
 });
     Route::auth();
     Route::get('/home', 'HomeController@index');
-
     route::resource('User','User\UserController@index',['only' => 'index']);
-
-
 
 
 
@@ -45,8 +42,8 @@ Route::get('/', function () {
 
 
   route::group(['middleware' => ['auth','Docente']], function(){
-    route::get('/Docente','Docentes\DocentesController@index');
-    route::get('Docente/mostrar','Docentes\DocentesController@mostrar');
+    route::get('/Docente', 'Docentes\DocentesController@index' );
+    route::get('Docente/mostrar','Docentes\DocentesController@index');
     route::resource('Alumno','Alumnos\AlumnosController',['only' => ['store','create','edit','update']]);
     route::get('Docente/evaluar/{id}','Docentes\DocentesController@evaluar');
     route::get('Docente', ['as'=>'Docente.storeAlumno', 'uses'=>'Docentes\DocentesController@storeAlumno' ]);
@@ -81,9 +78,5 @@ Route::get('/', function () {
     route::get('Tratamiento/nuevo/{id}', [ 'as'=> 'Tratamiento.nuevo', 'uses'=> 'Tratamiento\TratamientoController@nuevo']);
     route::resource('Tratamiento','Tratamiento\TratamientoController',['only' => ['store','edit','show','update']]);
 
-
-
-    //route::resource('Tratamiento','Tratamiento\TratamientoController', ['only' => ['store','nuevo'] ]);
-    //route::get('Tratamiento/{id}', 'Tratamiento\TratamientoController@index');
 
 });

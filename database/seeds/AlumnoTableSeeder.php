@@ -19,7 +19,10 @@ class AlumnoTableSeeder extends Seeder
           'Apellido_Alumno'=>'Windrunner',
           'Telefono_Alumno'=>'34627890',
           'id_Clinica'=>'1421',
-          'user_id'=>'6',
+          'user_id'=>'6'
+          //'Observaciones'=>'Ninguna',
+          //'Calificacion'=>'2.1',
+          //'PacienteEvaluado'=>'Carlitos Lechuga'
         ]);
         $alum->save();
     }
