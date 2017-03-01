@@ -1,10 +1,10 @@
 <?php
 
-namespace clinica\Http\Requests\Docente;
+namespace clinica\Http\Requests\Alumno;
 
 use clinica\Http\Requests\Request;
 
-class DocenteUpdateRequest extends Request
+class AlumnoUpdateRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,10 @@ class DocenteUpdateRequest extends Request
     public function rules()
     {
         return [
-
-            'id' => ['required','cl_rut'],
-            'Nombre' => ['required','min:3','max:20','regex:/^[\pL\s\-]+$/u'],
-            'Telefono' => ['required','min:7','max:9','regex:/[0-9]/'],
+            'alumno_id' => ['required','cl_rut'],
+            'Nombre_Alumno' => ['required','min:3','max:12','regex:/^[\pL\s\-]+$/u'],
+            'Apellido_Alumno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
+            'Telefono_Alumno' => ['required','min:7','max:9','regex:/[0-9]/'],
             'user_id' => ['required','max:7','regex:/[0-9]/','unique:docente','unique:alumno','exists:users,id'],
         ];
     }
@@ -35,8 +35,8 @@ class DocenteUpdateRequest extends Request
     public function messages()
     {
       return [
-        'id.cl_rut' => 'Formato de Rut no valido',
-        'id.regex' => 'El rut no debe contener espacios',
+        'alumno_id.cl_rut' => 'Formato de Rut no valido',
+        'user_id.required' => 'El campo código usuario es obligatorio'
       ];
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title','Paciente Nuevo')
 @section('content')
-@include('partials.messages')
+
 
 <head>
 
@@ -36,6 +36,7 @@
      <div class="page-header">
        <h1>Ingrese datos del paciente </h1>
      </div>
+     <div class="col-md-8"> @include('partials.messages')</div>
      <div class="col-md-8">
 
         <div class="panel panel-default"  >
@@ -90,9 +91,11 @@
 
 
 
+
+
              <div class="col-sm-12">
-                  {!!form::label('Sexo')!!}
-                  {!!Form::select('Genero',null,['id'=>'Genero','class'=>'form-control']) !!}
+               {!!form::label('Sexo')!!}
+               {!! Form::select('Genero',$genero,null,['id'=>'Genero','class'=>'form-control']) !!}
              </div>
 
 

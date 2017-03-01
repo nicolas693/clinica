@@ -28,7 +28,7 @@ class DocenteCreateRequest extends Request
             'id' => ['required','cl_rut'],
             'Nombre' => ['required','min:3','max:20','regex:/^[\pL\s\-]+$/u'],
             'Telefono' => ['required','min:7','max:9','regex:/[0-9]/'],
-            'user_id' => ['required','max:7','regex:/[0-9]/'],
+            'user_id' => ['required','max:7','regex:/[0-9]/','unique:docente','unique:alumno','exists:users,id'],
         ];
     }
 

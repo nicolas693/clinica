@@ -7,21 +7,24 @@
 
 </head>
 <ol class="breadcrumb fondoC1 ">
-     <li><a href="<?php echo e(url('Admin')); ?>"> Administrador</a></li>
+     <li class="pull-right"><a href="/Admin" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
      <li class="active">Ingresar Docente</li>
    </ol>
 
 
 
 
+
   <div class="row fondoC centro">
     <div class="page-header  " >
-      <h1>   Docente<small></small></h1>
+      <h1> Ingresar  Docente<small></small></h1>
     </div>
+      <div class="col-md-8"> <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></div>
     <div class="col-md-8">
+
        <div class="panel panel-primary">
          <div class="panel-heading">
-            Inscribir Docente
+            Formulario Docente
           </div>
          <div class="panel-body">
            <?php echo Form::open(['route'=>'Docente.store','method'=>'POST']); ?>

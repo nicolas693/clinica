@@ -1,14 +1,14 @@
 @extends('layouts.app')
-@section('title','Inscribir Docente')
+@section('title','Editar Docente')
 @section('content')
-  @include('partials.messages')
+  
 
 <head>
   {!!Html::style('css/micss.css')!!}
 </head>
 <ol class="breadcrumb fondoC1 ">
-     <li><a href="{{url('Admin')}}"> Administrador</a></li>
-     <li class="active">Ingresar Docente</li>
+     <li class="pull-right"><a href="/Admin" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
+     <li class="active">Editar Docente</li>
    </ol>
 
 
@@ -16,12 +16,13 @@
 
   <div class="row fondoC centro">
     <div class="page-header  " >
-      <h1>   Docente<small></small></h1>
+      <h1>   Editar Docente<small></small></h1>
     </div>
+      <div class="col-md-8"> @include('partials.messages')</div>
     <div class="col-md-8">
        <div class="panel panel-primary">
          <div class="panel-heading">
-            Inscribir Docente
+            Datos de {{$docente->Nombre}}
           </div>
          <div class="panel-body">
             {!!Form::model($docente,['route'=>['Docente.update',$docente->id],'method'=>'PUT'])!!}

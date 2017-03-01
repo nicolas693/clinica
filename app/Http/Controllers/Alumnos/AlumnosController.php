@@ -11,6 +11,8 @@ use clinica\Models\Paciente\Clinica;
 use clinica\Models\Asignatura\Asignatura;
 use clinica\Models\Paciente\Paciente;
 use clinica\http\Requests\Alumno\AlumnoCreateRequest;
+use clinica\http\Requests\Alumno\AlumnoUpdateRequest;
+
 
 
 class AlumnosController extends Controller
@@ -76,7 +78,10 @@ class AlumnosController extends Controller
      */
     public function edit($id)
     {
-        //
+      $alumno=Alumnos::find($id);
+      $asignatura =Asignatura::lists('nombre','id');
+      $clinica = Clinica::lists('Nombre_Clinica','id_Clinica');
+        return view('Alumnos.edit')->with('clinica',$clinica)->with('asignatura',$asignatura)->with('alumno',$alumno);
     }
 
     /**
@@ -86,9 +91,12 @@ class AlumnosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AlumnoUpdateRequest $request, $id)
     {
-        //
+      $al=Alumnos::find($id);
+      $input=$request->all();
+      $al->fill($input)->save();
+      return redirect('/Docente');
     }
 
     /**
@@ -105,6 +113,7 @@ class AlumnosController extends Controller
     public function mostrar($id)
     {
       $paciente=Paciente::all();
+
       return view('Alumnos.mostrar')->with('paciente',$paciente)->with('id',$id);
     }
 }

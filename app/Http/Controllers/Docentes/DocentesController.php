@@ -22,8 +22,8 @@ class DocentesController extends Controller
      */
     public function index()
     {
-        //
-        return view('Docente.index');
+        $alumnos=Alumnos::all();
+        return view('Docente.index')->with('alumnos',$alumnos);
     }
 
     /**

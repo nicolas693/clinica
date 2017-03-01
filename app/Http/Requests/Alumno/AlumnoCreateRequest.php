@@ -28,7 +28,7 @@ class AlumnoCreateRequest extends Request
             'Nombre_Alumno' => ['required','min:3','max:12','regex:/^[\pL\s\-]+$/u'],
             'Apellido_Alumno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
             'Telefono_Alumno' => ['required','min:7','max:9','regex:/[0-9]/'],
-            'user_id' => ['required','max:7','regex:/[0-9]/'],
+            'user_id' => ['required','max:7','regex:/[0-9]/','unique:docente','unique:alumno','exists:users,id'],
         ];
     }
 

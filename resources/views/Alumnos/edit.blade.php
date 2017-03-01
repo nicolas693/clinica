@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','Inscribir Alumno')
+@section('title','Editar Alumno')
 @section('content')
 
 <head>
@@ -7,30 +7,33 @@
 </head>
   <ol class="breadcrumb fondoC1 ">
 
-       <li class="active">Inscribir Nuevo Alumno</li>
+       <li class="active">Editar Alumno</li>
        <li class="pull-right"><a href="/Docente" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
      </ol>
 
 
+
   <div class="row fondoC centro">
     <div class="page-header" >
-      <h1>Docente<small></small></h1>
+      <h1>Editar Alumno<small></small></h1>
     </div>
     <div class="col-md-8"> @include('partials.messages')</div>
     <div class="col-md-8">
 
        <div class="panel panel-default">
          <div class="panel-heading">
-            Inscribir Alumno
+              <b>Datos de {{$alumno->Nombre_Alumno}} {{$alumno->Apellido_Alumno}}</b>
 
          <div class="panel-body">
 
-           {!!Form::open(['route'=>'Alumno.store','method'=>'POST'])!!}
+
+           {!!Form::model($alumno,['route'=>['Alumno.update',$alumno->alumno_id],'method'=>'PUT'])!!}
 
 
            <div class="col-sm-12">
-              {!!form::label('Rut Alumno')!!}
-              {!!form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control'])!!}
+              {!!form::label('Rut Alumno : ')!!}
+
+              {!!form::text('alumno_id',null,['id'=>'alumno_id','class'=>'form-control','readonly'])!!}
 
          </div>
          <div class="col-sm-4">
@@ -66,7 +69,7 @@
 
 
       </div>
-          {!!form::submit('Inscribir Alumno',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
+          {!!form::submit('Actualizar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
        {!!Form::close()!!}
     </div>
 

@@ -1,6 +1,6 @@
 <?php $__env->startSection('title','Paciente Nuevo'); ?>
 <?php $__env->startSection('content'); ?>
-<?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
 
 <head>
 
@@ -36,6 +36,7 @@
      <div class="page-header">
        <h1>Ingrese datos del paciente </h1>
      </div>
+     <div class="col-md-8"> <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></div>
      <div class="col-md-8">
 
         <div class="panel panel-default"  >
@@ -99,11 +100,12 @@
 
 
 
+
+
              <div class="col-sm-12">
-                  <?php echo form::label('Sexo'); ?>
+               <?php echo form::label('Sexo'); ?>
 
-                  <?php echo Form::select('Genero',$genero,null,['id'=>'Genero','class'=>'form-control']); ?>
-
+               <?php echo Form::select('Genero',$genero,null,['id'=>'Genero','class'=>'form-control']); ?>
 
              </div>
 
