@@ -14,13 +14,43 @@ class AlumnoTableSeeder extends Seeder
     {
         $alum=new Alumnos([
           'alumno_id'=>'19405168-9',
-          'asignatura_id'=>'2',
+          'asignatura_id'=>'1',
           'Nombre'=>'Sylvanas',
           'Paterno'=>'Windrunner',
           'Materno'=>'Llanos',
           'Telefono'=>'34627890',
           'id_Clinica'=>'1421',
+          'user_id'=>'3'
+          //'Observaciones'=>'Ninguna',
+          //'Calificacion'=>'2.1',
+          //'PacienteEvaluado'=>'Carlitos Lechuga'
+        ]);
+        $alum->save();
+
+        $alum=new Alumnos([
+          'alumno_id'=>'22023125-9',
+          'asignatura_id'=>'2',
+          'Nombre'=>'Silvano',
+          'Paterno'=>'Correa',
+          'Materno'=>'Llanos',
+          'Telefono'=>'34627890',
+          'id_Clinica'=>'2834',
           'user_id'=>'6'
+          //'Observaciones'=>'Ninguna',
+          //'Calificacion'=>'2.1',
+          //'PacienteEvaluado'=>'Carlitos Lechuga'
+        ]);
+        $alum->save();
+
+        $alum=new Alumnos([
+          'alumno_id'=>'24555349-8',
+          'asignatura_id'=>'3',
+          'Nombre'=>'Salomon',
+          'Paterno'=>'Rojas',
+          'Materno'=>'Casas',
+          'Telefono'=>'34627890',
+          'id_Clinica'=>'1237',
+          'user_id'=>'9'
           //'Observaciones'=>'Ninguna',
           //'Calificacion'=>'2.1',
           //'PacienteEvaluado'=>'Carlitos Lechuga'

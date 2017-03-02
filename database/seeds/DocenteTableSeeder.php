@@ -18,8 +18,30 @@ class DocenteTableSeeder extends Seeder
         'Paterno'=>'Casas',
         'Materno'=>'Rojas',
         'Telefono'=>'95816732',
+        'asignatura_id'=>'1',
+        'user_id'=>'2',
+
+      ]);
+      $doc->save();
+      $doc=new Docente([
+        'id'=>'6583627-0',
+        'Nombre'=>'Desarmando',
+        'Paterno'=>'Mesas',
+        'Materno'=>'Rojas',
+        'Telefono'=>'95816732',
         'asignatura_id'=>'2',
         'user_id'=>'5',
+
+      ]);
+      $doc->save();
+      $doc=new Docente([
+        'id'=>'21521685-3',
+        'Nombre'=>'Rosamel',
+        'Paterno'=>'Rosales',
+        'Materno'=>'Rosales',
+        'Telefono'=>'95816732',
+        'asignatura_id'=>'3',
+        'user_id'=>'8',
 
       ]);
       $doc->save();

@@ -85,6 +85,7 @@
 
                                  @foreach($user as $us)
 
+                                 @if($us->idrol!=1)
                                  <tr>
                                    <td>{{$us->id}}</td>
                                    <td>{{$us->name}}</td>
@@ -107,6 +108,7 @@
 
                                    </td>
                                  </tr>
+                                 @endif
                                  @endforeach
                                 </tbody>
                               </table>

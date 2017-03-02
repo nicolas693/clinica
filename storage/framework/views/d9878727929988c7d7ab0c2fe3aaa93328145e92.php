@@ -85,6 +85,7 @@
 
                                  <?php foreach($user as $us): ?>
 
+                                 <?php if($us->idrol!=1): ?>
                                  <tr>
                                    <td><?php echo e($us->id); ?></td>
                                    <td><?php echo e($us->name); ?></td>
@@ -107,6 +108,7 @@
 
                                    </td>
                                  </tr>
+                                 <?php endif; ?>
                                  <?php endforeach; ?>
                                 </tbody>
                               </table>

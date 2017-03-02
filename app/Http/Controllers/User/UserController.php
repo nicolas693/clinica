@@ -31,7 +31,7 @@ class UserController extends Controller
 
           foreach ($datos as $dato)
           {
-              
+
             if($dato->user_id == $user->id)
             {
               $info=$dato;
@@ -108,6 +108,8 @@ class UserController extends Controller
 
         $user=User::find($id);
         $permisos=roluser::lists('Nombre','idrol');
+        unset($permisos[1]);
+        
         return view('User.edit')->with('user',$user)->with('permisos',$permisos);
     }
 
