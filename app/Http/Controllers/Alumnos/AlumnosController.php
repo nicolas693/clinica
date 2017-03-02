@@ -5,13 +5,14 @@ namespace clinica\Http\Controllers\Alumnos;
 use Illuminate\Http\Request;
 
 use clinica\Http\Requests;
+use clinica\Http\Requests\Alumno\AlumnoCreateRequest;
+use clinica\Http\Requests\Alumno\AlumnoUpdateRequest;
 use clinica\Http\Controllers\Controller;
 use clinica\Models\Alumnos\Alumnos;
 use clinica\Models\Paciente\Clinica;
 use clinica\Models\Asignatura\Asignatura;
 use clinica\Models\Paciente\Paciente;
-use clinica\http\Requests\Alumno\AlumnoCreateRequest;
-use clinica\http\Requests\Alumno\AlumnoUpdateRequest;
+
 
 
 
@@ -52,8 +53,7 @@ class AlumnosController extends Controller
      */
     public function store(AlumnoCreateRequest $request)
     {
-      Alumnos::create($request->only('alumno_id','asignatura_id','Nombre_Alumno','Apellido_Alumno'
-      ,'Telefono_Alumno','id_Clinica','user_id' ));
+      Alumnos::create($request->all());
       return redirect('/Docente');
     }
 
@@ -95,6 +95,7 @@ class AlumnosController extends Controller
     {
       $al=Alumnos::find($id);
       $input=$request->all();
+
       $al->fill($input)->save();
       return redirect('/Docente');
     }

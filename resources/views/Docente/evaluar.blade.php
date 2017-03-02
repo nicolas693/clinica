@@ -7,8 +7,9 @@
   </head>
 
   <ol class="breadcrumb fondoC1 ">
-       <li><a href="{{url('Docente/mostrar')}}">Lista de Alumnos</a></li>
+
        <li class="active">Evaluar Alumno</li>
+       <li class="pull-right"><a href="/Docente" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
      </ol>
 
   <div class="row fondoC centro">
@@ -20,7 +21,7 @@
     <div class="col-md-10">
        <div class="panel panel-primary " style=" margin-right:10%;" >
          <div class="panel-heading">
-           Evaluar Alumno {{$alumnos->Nombre_Alumno}} {{$alumnos->Apellido_Alumno}}
+           Evaluar Alumno {{$alumnos->Nombre}} {{$alumnos->Apellido}}
        </div>
 
               <div class="panel-body" >

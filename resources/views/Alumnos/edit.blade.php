@@ -22,7 +22,7 @@
 
        <div class="panel panel-default">
          <div class="panel-heading">
-              <b>Datos de {{$alumno->Nombre_Alumno}} {{$alumno->Apellido_Alumno}}</b>
+              <b>Datos de {{$alumno->Nombre}} {{$alumno->Apellido}}</b>
 
          <div class="panel-body">
 
@@ -38,38 +38,44 @@
          </div>
          <div class="col-sm-4">
              {!!form::label('Nombre')!!}
-             {!!form::text('Nombre_Alumno',null,['id'=>'Nombre_Alumno','class'=>'form-control'])!!}
+             {!!form::text('Nombre',null,['id'=>'Nombre','class'=>'form-control'])!!}
         </div>
-        <div class="col-sm-4">
-             {!!form::label('Apellido ')!!}
-             {!!form::text('Apellido_Alumno',null,['id'=>'Apellido_Alumno','class'=>'form-control'])!!}
-        </div>
+
+       <div class="col-sm-4">
+           {!!form::label('Apellido Paterno')!!}
+           {!!form::text('Paterno',null,['id'=>'Paterno','class'=>'form-control'])!!}
+      </div>
+
+      <div class="col-sm-4">
+          {!!form::label('Apellido Materno')!!}
+          {!!form::text('Materno',null,['id'=>'Materno','class'=>'form-control'])!!}
+     </div>
 
         <div class="col-sm-4">
              {!!form::label('Teléfono')!!}
-             {!!form::text('Telefono_Alumno',null,['id'=>'Telefono_Alumno','class'=>'form-control'])!!}
+             {!!form::text('Telefono',null,['id'=>'Telefono','class'=>'form-control'])!!}
         </div>
 
 
-        <div class="col-sm-5">
+        <div class="col-sm-6">
            {!!form::label('Asignatura')!!}
            {!! Form::select('asignatura_id',$asignatura,null,['id'=>'asignatura_id','class'=>'form-control']) !!}
         </div>
 
-        <div class="col-sm-5">
+        <div class="col-sm-6">
            {!!form::label('Clínica')!!}
            {!! Form::select('id_Clinica',$clinica,null,['id'=>'id_Clinica','class'=>'form-control']) !!}
         </div>
 
-        <div class="col-sm-6">
-           {!!form::label('Código Usuario')!!}
-           {!!form::text('user_id',null,['id'=>'user_id','class'=>'form-control'])!!}
+        <div class="col-sm-12" style="margin-top:30px;">
+           {!!form::label('ID Usuario : ')!!}{{$alumno->user_id}}
+           <a href="#" class="btn btn-primary btn-xs" style="margin-left:50px;"> <b>Modificar ID de usuario</b></a>
          </div>
 
 
 
       </div>
-          {!!form::submit('Actualizar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
+          {!!form::submit('Actualizar',['name'=>'grabar','id'=>'grabar','class'=>'btn btn-success btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 5%;'])!!}
        {!!Form::close()!!}
     </div>
 

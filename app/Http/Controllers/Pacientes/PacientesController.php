@@ -54,6 +54,8 @@ class PacientesController extends Controller
         $date = Carbon::now();
         $date=$date->subDay()->format('d/m/y');
         $paciente = Clinica::lists('Nombre_Clinica','id_Clinica','alumno_id');
+        $ruta=\Route::getCurrentRoute()->getPath();
+        
 
         return view('Pacientes.create')->with('paciente',$paciente)->with('genero',$genero)->with('date',$date)->with('id',$id);
     }
@@ -140,7 +142,7 @@ class PacientesController extends Controller
 
        $genero = ['Hombre','Mujer'];
        $clinica = Clinica::lists('Nombre_Clinica','id_Clinica');
-       
+
        $pa= Paciente::find($id);
        return view('Pacientes.edit', array('pa'=>$pa,'clinica'=>$clinica))->with('genero',$genero);
 

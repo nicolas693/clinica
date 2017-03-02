@@ -7,21 +7,21 @@
 
 </head>
 <ol class="breadcrumb fondoC1 ">
-     <li><a href="<?php echo e(url('Admin')); ?>"> Administrador</a></li>
-     <li class="active">Ingresar Docente</li>
+     <li class="pull-right"><a href="/Admin" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
+     <li class="active">Editar Usuario</li>
    </ol>
 
 
 
 
+
   <div class="row fondoC centro">
-    <div class="page-header  " >
-      <h1>   Docente<small></small></h1>
-    </div>
+
     <div class="col-md-8">
        <div class="panel panel-primary">
          <div class="panel-heading">
-            Inscribir Docente
+            Datos de  <?php echo e($user->email); ?>
+
           </div>
          <div class="panel-body">
             <?php echo Form::model($user,['route'=>['User.update',$user->id],'method'=>'PUT']); ?>
@@ -30,7 +30,7 @@
            <div class="col-sm-12">
               <?php echo form::label('Id usuario'); ?>
 
-              <?php echo form::text('id',null,['id'=>'id','class'=>'form-control']); ?>
+              <?php echo form::text('id',null,['id'=>'id','class'=>'form-control','readonly']); ?>
 
 
             </div>

@@ -1,6 +1,6 @@
 <?php $__env->startSection('title','Editar Docente'); ?>
 <?php $__env->startSection('content'); ?>
-  
+
 
 <head>
   <?php echo Html::style('css/micss.css'); ?>
@@ -36,12 +36,25 @@
 
 
             </div>
-         <div class="col-sm-6">
+         <div class="col-sm-4">
              <?php echo form::label('Nombre'); ?>
 
              <?php echo form::text('Nombre',null,['id'=>'Nombre','class'=>'form-control']); ?>
 
         </div>
+        <div class="col-sm-4">
+            <?php echo form::label('Apellido Paterno'); ?>
+
+            <?php echo form::text('Paterno',null,['id'=>'Paterno','class'=>'form-control']); ?>
+
+       </div>
+
+       <div class="col-sm-4">
+           <?php echo form::label('Apellido Materno'); ?>
+
+           <?php echo form::text('Materno',null,['id'=>'Materno','class'=>'form-control']); ?>
+
+      </div>
 
         <div class="col-sm-6">
              <?php echo form::label('Teléfono'); ?>
@@ -50,12 +63,7 @@
 
         </div>
 
-        <div class="col-sm-6">
-           <?php echo form::label('Código Usuario'); ?>
-
-           <?php echo form::text('user_id',null,['id'=>'user_id','class'=>'form-control']); ?>
-
-         </div>
+      
 
         <div class="col-sm-6">
            <?php echo form::label('Asignatura'); ?>
@@ -63,6 +71,12 @@
            <?php echo Form::select('asignatura_id',$asignatura,null,['id'=>'asignatura_id','class'=>'form-control']); ?>
 
         </div>
+
+        <div class="col-sm-12" style="margin-top:30px;">
+           <?php echo form::label('ID Usuario : '); ?><?php echo e($docente->user_id); ?>
+
+           <a href="#" class="btn btn-primary btn-xs" style="margin-left:50px;"> <b>Modificar ID de usuario</b></a>
+         </div>
 
 
        <?php echo form::submit('Actualizar',['name'=>'grabar','id'=>'grabar','class'=>'btn btn-success btn-sm m-t-12','style'=>'margin-top: 26px; margin-left: 16px; margin-right:400px']); ?>

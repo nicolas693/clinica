@@ -40,8 +40,8 @@
                	<?php foreach($alumno as $al): ?>
                	<tr>
                		<td><?php echo e($al->alumno_id); ?></td>
-               		<td><?php echo e($al->Nombre_Alumno); ?></td>
-               		<td><?php echo e($al->Apellido_Alumno); ?></td>
+               		<td><?php echo e($al->Nombre); ?></td>
+               		<td><?php echo e($al->Apellido); ?></td>
                   <?php if($al->asignatura_id!=NULL): ?>
                     <?php foreach($asignatura as $asig): ?>
                       <?php if($al->asignatura_id == $asig->id): ?>

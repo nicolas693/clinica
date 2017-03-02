@@ -43,22 +43,30 @@
 
                              <tr>
                                <td>{{$alu->alumno_id}}</td>
-                               <td>{{$alu->Nombre_Alumno}} {{$alu->Apellido_Alumno}}</td>
-                               <td>{{$alu->Telefono_Alumno}}</td>
+                               <td>{{$alu->Nombre}} {{$alu->Paterno}} {{$alu->Materno}}</td>
+                               <td>{{$alu->Telefono}}</td>
 
 
-                               <td><a <button href="{{route('Alumno.edit',$alu->alumno_id)}}" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>
-                                 <a <button href="{{url('/Docente/evaluar',$alu->alumno_id)}}" type="button" id= 'Evaluar' name='evaluar' class="btn btn-default btn-sm m-t-10 btn-info" style ="margin-left: 20px"  >Evaluar Alumno</button></a>
+                               <td>
+
+                                 <div class="btn-group">
+                                    <button type="button" class="btn btn-default glyphicon glyphicon-th-list"></button>
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                      <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                      <li><a href="{{route('Alumno.edit',$alu->alumno_id)}}">Editar</a></li>
+                                      <li><a href="{{url('/Docente/evaluar',$alu->alumno_id)}}">Evaluar</a></li>
+
+                                    </ul>
+                                 </div>
                                </td>
                              </tr>
                              @endforeach
                             </tbody>
                           </table>
 
-                          <a <button href="{{route('Alumno.create')}}" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-success" style ="margin-left: 0px"  >Ingresar Alumno</button></a>
-
-
-
+                          <a <button href="{{route('Alumno.create')}}" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-success"   >Inscribir Alumno</button></a>
                         </div>
                       </div>
               </div>

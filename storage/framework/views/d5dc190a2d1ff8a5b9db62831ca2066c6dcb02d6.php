@@ -72,14 +72,14 @@
              <div class="form-group">
               <?php echo form::label('Nombre : '); ?>
 
-               <?php echo $info->Nombre_Alumno; ?> <?php echo $info->Apellido_Alumno; ?>
+               <?php echo $info->Nombre; ?> <?php echo $info->Apellido; ?>
 
              </div>
 
               <div class="form-group">
               <?php echo form::label('Teléfono : '); ?>
 
-               <?php echo $info->Telefono_Alumno; ?>
+               <?php echo $info->Telefono; ?>
 
              </div>
 

@@ -47,8 +47,8 @@
 
                              <tr>
                                <td><?php echo e($alu->alumno_id); ?></td>
-                               <td><?php echo e($alu->Nombre_Alumno); ?> <?php echo e($alu->Apellido_Alumno); ?></td>
-                               <td><?php echo e($alu->Telefono_Alumno); ?></td>
+                               <td><?php echo e($alu->Nombre); ?> <?php echo e($alu->Apellido); ?></td>
+                               <td><?php echo e($alu->Telefono); ?></td>
 
 
                                <td><a <button href="<?php echo e(route('Alumno.edit',$alu->alumno_id)); ?>" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>

@@ -3,6 +3,7 @@
 namespace clinica\Http\Requests\Alumno;
 
 use clinica\Http\Requests\Request;
+use Auth;
 
 class AlumnoUpdateRequest extends Request
 {
@@ -23,12 +24,14 @@ class AlumnoUpdateRequest extends Request
      */
     public function rules()
     {
+        $id=9;
         return [
             'alumno_id' => ['required','cl_rut'],
-            'Nombre_Alumno' => ['required','min:3','max:12','regex:/^[\pL\s\-]+$/u'],
-            'Apellido_Alumno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
-            'Telefono_Alumno' => ['required','min:7','max:9','regex:/[0-9]/'],
-            'user_id' => ['required','max:7','regex:/[0-9]/','unique:docente','unique:alumno','exists:users,id'],
+            'Nombre' => ['required','min:3','max:12','regex:/^[\pL\s\-]+$/u'],
+            'Paterno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
+            'Materno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
+            'Telefono' => ['required','min:7','max:9','regex:/[0-9]/'],
+            //'user_id' => ['required','max:7','regex:/[0-9]/','unique:Docente','unique:Alumno','exists:users,id'],
         ];
     }
 

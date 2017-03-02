@@ -27,7 +27,7 @@
 </head>
 
 <ol class="breadcrumb fondoC1 ">
-     <li><a href="{{url('Alumno')}}"> Alumno</a></li>
+     <li class="pull-right"><a href="/Alumno/mostrar/{{$id}}" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
      <li class="active">Ingresar Paciente</li>
    </ol>
 
@@ -44,7 +44,7 @@
              Formulario nuevo paciente
 
              <p class="navbar-text navbar-right" style=" margin-top: 1px;">
-               <a <button href={{URL::previous()}} type="button" id='nuevo'  name='nuevo' class="btn  navbar-btn btn-primary" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
+
               </p>
 
            </div>
@@ -150,7 +150,7 @@
              <div class="col-sm-5">
                 {!!form::text('clinica_id',$id,['id'=>'clinica_id','class'=>'form-control hidden'])!!}
              </div>
-             {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
+             {!!form::submit('Ingresar Paciente',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
           {!!Form::close()!!}
            </div>
         </div>

@@ -14,7 +14,7 @@ class Alumnos extends Model
     public  $incrementing = false;
 
     protected $fillable   = [
-        'alumno_id','asignatura_id','Nombre_Alumno','Apellido_Alumno','Telefono_Alumno','id_Clinica',
+        'alumno_id','asignatura_id','Nombre','Paterno','Materno','Telefono','id_Clinica',
         'user_id'
     ];
 

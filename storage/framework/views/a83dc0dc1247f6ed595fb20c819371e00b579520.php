@@ -42,14 +42,22 @@
              <?php echo form::text('Nombre',null,['id'=>'Nombre','class'=>'form-control']); ?>
 
         </div>
-        <div class="col-sm-4">
-             <?php echo form::label('Apellido '); ?>
 
-             <?php echo form::text('Apellido',null,['id'=>'Apellido','class'=>'form-control']); ?>
+       <div class="col-sm-4">
+           <?php echo form::label('Apellido Paterno'); ?>
 
-        </div>
+           <?php echo form::text('Paterno',null,['id'=>'Paterno','class'=>'form-control']); ?>
 
-        <div class="col-sm-4">
+      </div>
+
+      <div class="col-sm-4">
+          <?php echo form::label('Apellido Materno'); ?>
+
+          <?php echo form::text('Materno',null,['id'=>'Materno','class'=>'form-control']); ?>
+
+     </div>
+
+        <div class="col-sm-6">
              <?php echo form::label('Teléfono'); ?>
 
              <?php echo form::text('Telefono',null,['id'=>'Telefono','class'=>'form-control']); ?>
@@ -81,7 +89,7 @@
 
 
       </div>
-          <?php echo form::submit('Inscribir Alumno',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;']); ?>
+          <?php echo form::submit('Inscribir',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 80%;']); ?>
 
        <?php echo Form::close(); ?>
 

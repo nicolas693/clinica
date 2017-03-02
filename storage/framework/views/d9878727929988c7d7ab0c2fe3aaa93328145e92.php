@@ -1,16 +1,16 @@
-@extends('layouts.app')
-@section('title','Administrador')
-@section('content')
+<?php $__env->startSection('title','Administrador'); ?>
+<?php $__env->startSection('content'); ?>
 
 <head>
-  {!!Html::style('css/micss.css')!!}
+  <?php echo Html::style('css/micss.css'); ?>
+
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
 
 </head>
 
 
 <ol class="breadcrumb fondoC1 ">
-     <li><a href="{{url('Admin')}}"> Administrador</a></li>
+     <li><a href="<?php echo e(url('Admin')); ?>"> Administrador</a></li>
      <li class="active">Panel Administrador</li>
    </ol>
 
@@ -43,22 +43,22 @@
                             </thead>
                             <tbody>
 
-                             @foreach($doce as $do)
+                             <?php foreach($doce as $do): ?>
 
                              <tr>
-                               <td>{{$do->id}}</td>
-                               <td>{{$do->Nombre}} {{$do->Paterno}} {{$do->Materno}}</td>
-                               <td>{{$do->Telefono}}</td>
+                               <td><?php echo e($do->id); ?></td>
+                               <td><?php echo e($do->Nombre); ?> <?php echo e($do->Paterno); ?> <?php echo e($do->Materno); ?></td>
+                               <td><?php echo e($do->Telefono); ?></td>
 
-                               <td><a <button href="{{route('Docente.edit',$do->id)}}" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>
+                               <td><a <button href="<?php echo e(route('Docente.edit',$do->id)); ?>" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>
 
                                </td>
                              </tr>
-                             @endforeach
+                             <?php endforeach; ?>
                             </tbody>
                           </table>
 
-                          <a <button href="{{route('Docente.create')}}" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-success"   >Inscribir Docente</button></a>
+                          <a <button href="<?php echo e(route('Docente.create')); ?>" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-success"   >Inscribir Docente</button></a>
 
 
 
@@ -83,31 +83,31 @@
                                 </thead>
                                 <tbody>
 
-                                 @foreach($user as $us)
+                                 <?php foreach($user as $us): ?>
 
                                  <tr>
-                                   <td>{{$us->id}}</td>
-                                   <td>{{$us->name}}</td>
-                                    <td>{{$us->email}}</td>
-                                    @if($us->idrol==1)
+                                   <td><?php echo e($us->id); ?></td>
+                                   <td><?php echo e($us->name); ?></td>
+                                    <td><?php echo e($us->email); ?></td>
+                                    <?php if($us->idrol==1): ?>
                                       <td>Administrador</td>
-                                    @endif
-                                    @if($us->idrol==2)
+                                    <?php endif; ?>
+                                    <?php if($us->idrol==2): ?>
                                       <td>Docente</td>
-                                    @endif
-                                    @if($us->idrol==3)
+                                    <?php endif; ?>
+                                    <?php if($us->idrol==3): ?>
                                       <td> Alumno </td>
-                                    @endif
-                                    @if($us->idrol==4)
+                                    <?php endif; ?>
+                                    <?php if($us->idrol==4): ?>
                                       <td> Invitado</td>
-                                    @endif
+                                    <?php endif; ?>
 
 
-                                   <td><a <button href="{{route('User.edit',$us->id)}}" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>
+                                   <td><a <button href="<?php echo e(route('User.edit',$us->id)); ?>" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>
 
                                    </td>
                                  </tr>
-                                 @endforeach
+                                 <?php endforeach; ?>
                                 </tbody>
                               </table>
 
@@ -157,4 +157,6 @@ $(document).on("click", function(e){
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

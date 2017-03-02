@@ -151,12 +151,16 @@
                   {!!form::text('Cobertura_Medica',null,['id'=>'Cobertura_Medica','class'=>'form-control'])!!}
              </div>
 
-             <div class="col-sm-5">
+             <div class="col-sm-6">
                 {!!form::label('Clínica')!!}
                 {!! Form::select('clinica_id',$clinica,null,['id'=>'clinica_id','class'=>'form-control']) !!}
              </div>
 
-              {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
+             <div class="col-sm-12">
+                {!!form::submit('Actualizar Datos',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 80%;'])!!}
+             </div>
+
+
               {!!Form::close()!!}
            </div>
         </div>

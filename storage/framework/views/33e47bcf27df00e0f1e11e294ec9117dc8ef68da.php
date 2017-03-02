@@ -43,22 +43,30 @@
 
                              <tr>
                                <td><?php echo e($alu->alumno_id); ?></td>
-                               <td><?php echo e($alu->Nombre); ?> <?php echo e($alu->Apellido); ?></td>
+                               <td><?php echo e($alu->Nombre); ?> <?php echo e($alu->Paterno); ?> <?php echo e($alu->Materno); ?></td>
                                <td><?php echo e($alu->Telefono); ?></td>
 
 
-                               <td><a <button href="<?php echo e(route('Alumno.edit',$alu->alumno_id)); ?>" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>
-                                 <a <button href="<?php echo e(url('/Docente/evaluar',$alu->alumno_id)); ?>" type="button" id= 'Evaluar' name='evaluar' class="btn btn-default btn-sm m-t-10 btn-info" style ="margin-left: 20px"  >Evaluar Alumno</button></a>
+                               <td>
+
+                                 <div class="btn-group">
+                                    <button type="button" class="btn btn-default glyphicon glyphicon-th-list"></button>
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                      <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                      <li><a href="<?php echo e(route('Alumno.edit',$alu->alumno_id)); ?>">Editar</a></li>
+                                      <li><a href="<?php echo e(url('/Docente/evaluar',$alu->alumno_id)); ?>">Evaluar</a></li>
+
+                                    </ul>
+                                 </div>
                                </td>
                              </tr>
                              <?php endforeach; ?>
                             </tbody>
                           </table>
 
-                          <a <button href="<?php echo e(route('Alumno.create')); ?>" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-success" style ="margin-left: 0px"  >Ingresar Alumno</button></a>
-
-
-
+                          <a <button href="<?php echo e(route('Alumno.create')); ?>" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-success"   >Inscribir Alumno</button></a>
                         </div>
                       </div>
               </div>

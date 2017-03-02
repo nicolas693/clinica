@@ -34,14 +34,24 @@
               {!!form::text('id',null,['id'=>'id','class'=>'form-control'])!!}
 
             </div>
-         <div class="col-sm-6">
+         <div class="col-sm-4">
              {!!form::label('Nombre')!!}
-             {!!form::text('Nombre',null,['id'=>'Nombre_Alumno','class'=>'form-control'])!!}
+             {!!form::text('Nombre',null,['id'=>'Nombre','class'=>'form-control'])!!}
         </div>
+
+       <div class="col-sm-4">
+           {!!form::label('Apellido Paterno')!!}
+           {!!form::text('Paterno',null,['id'=>'Paterno','class'=>'form-control'])!!}
+      </div>
+
+      <div class="col-sm-4">
+          {!!form::label('Apellido Materno')!!}
+          {!!form::text('Materno',null,['id'=>'Materno','class'=>'form-control'])!!}
+     </div>
 
         <div class="col-sm-6">
              {!!form::label('Teléfono')!!}
-             {!!form::text('Telefono',null,['id'=>'Telefono_Alumno','class'=>'form-control'])!!}
+             {!!form::text('Telefono',null,['id'=>'Telefono','class'=>'form-control'])!!}
         </div>
 
         <div class="col-sm-6">

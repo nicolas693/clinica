@@ -12,7 +12,7 @@ class Docente extends Model
     public $incrementing = false;
 
     protected $fillable = [
-      'id','asignatura_id','Nombre','Telefono','user_id'];
+      'id','asignatura_id','Nombre','Paterno','Materno','Telefono','user_id'];
 
         public function asignatura ()
         {
@@ -24,5 +24,5 @@ class Docente extends Model
           return $this->belongsto(users::class);
 
         }
-        
+
 }

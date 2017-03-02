@@ -13,8 +13,10 @@ class DocenteTableSeeder extends Seeder
     public function run()
     {
       $doc=new Docente([
-        'id'=>15178919-6,
-        'Nombre'=>'Armando Casas',
+        'id'=>'15178919-6',
+        'Nombre'=>'Armando',
+        'Paterno'=>'Casas',
+        'Materno'=>'Rojas',
         'Telefono'=>'95816732',
         'asignatura_id'=>'2',
         'user_id'=>'5',

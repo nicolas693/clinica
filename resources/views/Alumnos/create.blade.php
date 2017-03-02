@@ -35,16 +35,22 @@
          </div>
          <div class="col-sm-4">
              {!!form::label('Nombre')!!}
-             {!!form::text('Nombre_Alumno',null,['id'=>'Nombre_Alumno','class'=>'form-control'])!!}
-        </div>
-        <div class="col-sm-4">
-             {!!form::label('Apellido ')!!}
-             {!!form::text('Apellido_Alumno',null,['id'=>'Apellido_Alumno','class'=>'form-control'])!!}
+             {!!form::text('Nombre',null,['id'=>'Nombre','class'=>'form-control'])!!}
         </div>
 
-        <div class="col-sm-4">
+       <div class="col-sm-4">
+           {!!form::label('Apellido Paterno')!!}
+           {!!form::text('Paterno',null,['id'=>'Paterno','class'=>'form-control'])!!}
+      </div>
+
+      <div class="col-sm-4">
+          {!!form::label('Apellido Materno')!!}
+          {!!form::text('Materno',null,['id'=>'Materno','class'=>'form-control'])!!}
+     </div>
+
+        <div class="col-sm-6">
              {!!form::label('Teléfono')!!}
-             {!!form::text('Telefono_Alumno',null,['id'=>'Telefono_Alumno','class'=>'form-control'])!!}
+             {!!form::text('Telefono',null,['id'=>'Telefono','class'=>'form-control'])!!}
         </div>
 
 
@@ -66,7 +72,7 @@
 
 
       </div>
-          {!!form::submit('Inscribir Alumno',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
+          {!!form::submit('Inscribir',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 80%;'])!!}
        {!!Form::close()!!}
     </div>
 

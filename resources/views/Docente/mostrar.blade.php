@@ -40,8 +40,8 @@
                	@foreach($alumno as $al)
                	<tr>
                		<td>{{$al->alumno_id}}</td>
-               		<td>{{$al->Nombre_Alumno}}</td>
-               		<td>{{$al->Apellido_Alumno}}</td>
+               		<td>{{$al->Nombre}}</td>
+               		<td>{{$al->Apellido}}</td>
                   @if ($al->asignatura_id!=NULL)
                     @foreach($asignatura as $asig)
                       @if($al->asignatura_id == $asig->id)

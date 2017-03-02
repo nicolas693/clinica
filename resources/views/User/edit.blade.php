@@ -28,18 +28,18 @@
 
            <div class="col-sm-12">
               {!!form::label('Id usuario')!!}
-              {!!form::text('id',null,['id'=>'id','class'=>'form-control'])!!}
+              {!!form::text('id',null,['id'=>'id','class'=>'form-control','readonly'])!!}
 
             </div>
 
          <div class="col-sm-6">
              {!!form::label('Nombre Usuario')!!}
-             {!!form::text('name',null,['id'=>'Nombre_Alumno','class'=>'form-control'])!!}
+             {!!form::text('name',null,['id'=>'Nombre','class'=>'form-control'])!!}
         </div>
 
         <div class="col-sm-6">
             {!!form::label('Email Usuario')!!}
-            {!!form::text('email',null,['id'=>'Nombre_Alumno','class'=>'form-control'])!!}
+            {!!form::text('email',null,['id'=>'Nombre','class'=>'form-control'])!!}
        </div>
 
        <div class="col-sm-6">

@@ -22,7 +22,7 @@
 
        <div class="panel panel-default">
          <div class="panel-heading">
-              <b>Datos de <?php echo e($alumno->Nombre_Alumno); ?> <?php echo e($alumno->Apellido_Alumno); ?></b>
+              <b>Datos de <?php echo e($alumno->Nombre); ?> <?php echo e($alumno->Apellido); ?></b>
 
          <div class="panel-body">
 
@@ -42,20 +42,20 @@
          <div class="col-sm-4">
              <?php echo form::label('Nombre'); ?>
 
-             <?php echo form::text('Nombre_Alumno',null,['id'=>'Nombre_Alumno','class'=>'form-control']); ?>
+             <?php echo form::text('Nombre',null,['id'=>'Nombre','class'=>'form-control']); ?>
 
         </div>
         <div class="col-sm-4">
              <?php echo form::label('Apellido '); ?>
 
-             <?php echo form::text('Apellido_Alumno',null,['id'=>'Apellido_Alumno','class'=>'form-control']); ?>
+             <?php echo form::text('Apellido',null,['id'=>'Apellido','class'=>'form-control']); ?>
 
         </div>
 
         <div class="col-sm-4">
              <?php echo form::label('Teléfono'); ?>
 
-             <?php echo form::text('Telefono_Alumno',null,['id'=>'Telefono_Alumno','class'=>'form-control']); ?>
+             <?php echo form::text('Telefono',null,['id'=>'Telefono','class'=>'form-control']); ?>
 
         </div>
 

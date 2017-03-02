@@ -38,9 +38,9 @@
                  @foreach ($Alumno as $Alumno)
                    <tr>
                      <td>{{$Alumno->alumno_id}}</td>
-                     <td>{{$Alumno->Nombre_Alumno}}</td>
-                     <td>{{$Alumno->Apellido_Alumno}}}</td>
-                     <td>{{$Alumno->Telefono_Alumno}}</td>
+                     <td>{{$Alumno->Nombre}}</td>
+                     <td>{{$Alumno->Apellido}}}</td>
+                     <td>{{$Alumno->Telefono}}</td>
                      <td><a href="#">[Editar]</a> <a href="#">[Eliminar]</a></td>
                    </tr>
                  @endforeach
