@@ -44,17 +44,17 @@
                  </div>
 
                  <div class="form-group col-sm-6">
-                    {!!form::label('Telefono : ')!!}
+                    {!!form::label('Teléfono : ')!!}
                      {!!$paciente->Telefono_Movil !!}
                  </div>
 
                  <div class="form-group col-sm-6">
-                    {!!form::label('Direccion : ')!!}
+                    {!!form::label('Dirección : ')!!}
                      {!!$paciente->Calle !!} {!!$paciente->Numero_calle !!}
                  </div>
 
                  <div class="form-group col-sm-6">
-                    {!!form::label('Cobertura Medica : ')!!}
+                    {!!form::label('Cobertura Médica : ')!!}
                      {!!$paciente->Cobertura_Medica !!}
                  </div>
 
@@ -70,9 +70,7 @@
                       {!!form::text('Odontograma_id',$paciente->rut,['id'=>'Odontograma_id','class'=>'form-control hidden'])!!}
 
                       <div class="btn-group">
-                        <button type="submit" class="btn btn-success">Crear Odontograma</button>
-
-
+                        <button type="submit" class="btn btn-success" style="margin-left:10px;">Crear Odontograma</button>
                       </div>
 
 

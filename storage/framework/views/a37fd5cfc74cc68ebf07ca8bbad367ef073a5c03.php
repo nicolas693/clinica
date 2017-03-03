@@ -1,5 +1,7 @@
-<?php $__env->startSection('title','Paciente Nuevo'); ?>
+<?php $__env->startSection('title','Editar Paciente'); ?>
+
 <?php $__env->startSection('content'); ?>
+
 
 
 <head>
@@ -26,40 +28,43 @@
 
 </head>
 
+
 <ol class="breadcrumb fondoC1 ">
-     <li class="pull-right"><a href="/Alumno/mostrar/<?php echo e($id); ?>" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
-     <li class="active">Ingresar Paciente</li>
+
+     <li class="active">Editar Paciente</li>
+     <li class="pull-right"><a href="/Alumno/mostrar/<?php echo e($pa->clinica_id); ?>" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
    </ol>
+
+
 
 
    <div class="row fondoC centro">
      <div class="page-header">
-       <h1>Ingrese datos del paciente </h1>
+       <h1>Editar datos paciente </h1>
      </div>
      <div class="col-md-8"> <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></div>
      <div class="col-md-8">
 
-        <div class="panel panel-default"  >
+        <div class="panel panel-default">
           <div class="panel-heading">
-             Formulario nuevo paciente
+            Editar Datos Paciente
+            <p class="navbar-text navbar-right" style=" margin-top: 1px;">
 
-             <p class="navbar-text navbar-right" style=" margin-top: 1px;">
-
-              </p>
 
            </div>
           <div class="panel-body">
 
-               <?php echo Form::open(['route'=>'Paciente.store','method'=>'POST']); ?>
+               <?php echo Form::model($pa,['route'=>['Paciente.update',$pa->rut],'method'=>'PUT']); ?>
 
 
 
                <div class="col-sm-12">
-                  <?php echo form::label('Rut'); ?>
+                   <?php echo form::label('Rut'); ?>
 
-                  <?php echo form::text('rut',null,['id'=>'rut','class'=>'form-control','placeholder'=>'Ej: 12345789-0']); ?>
+                   <?php echo form::text('rut',null,['id'=>'rut','class'=>'form-control']); ?>
 
-             </div>
+              </div>
+
 
               <div class="col-sm-4">
                   <?php echo form::label('Nombre'); ?>
@@ -86,21 +91,17 @@
              <div class="col-sm-6">
                <div class="input-group">
                  <label for="date">Fecha Ingreso</label>
-                   <input type="text" class="form-control datepicker" name="Fecha_Ingreso">
-
+                   <input type="text" value="<?php echo htmlspecialchars($pa->Fecha_Ingreso); ?>" class="form-control datepicker" name="Fecha_Ingreso">
                </div>
              </div>
 
              <div class="col-sm-6">
                <div class="input-group">
                  <label for="date">Fecha Nacimiento</label>
-                   <input type="text" class="form-control datepicker2" name="Fecha_Nacimiento">
+                   <input type="text" value="<?php echo htmlspecialchars($pa->Fecha_Nacimiento); ?>" class="form-control datepicker" name="Fecha_Nacimiento">
+
                </div>
              </div>
-
-
-
-
 
              <div class="col-sm-12">
                <?php echo form::label('Sexo'); ?>
@@ -110,22 +111,26 @@
              </div>
 
 
-
-              <div class="col-sm-6">
+              <div class="col-sm-4">
                   <?php echo form::label('Teléfono Fijo'); ?>
 
                   <?php echo form::text('Telefono_Casa',null,['id'=>'Telefono_Casa','class'=>'form-control']); ?>
 
              </div>
 
-
-              <div class="col-sm-6">
+              <div class="col-sm-4">
                   <?php echo form::label('Teléfono Movil'); ?>
 
                   <?php echo form::text('Telefono_Movil',null,['id'=>'Telefono_Movil','class'=>'form-control']); ?>
 
              </div>
 
+             <div class="col-sm-4">
+                 <?php echo form::label('Email'); ?>
+
+                 <?php echo form::text('email',null,['id'=>'Email','class'=>'form-control']); ?>
+
+            </div>
 
               <div class="col-sm-6">
                   <?php echo form::label('Calle'); ?>
@@ -135,7 +140,7 @@
              </div>
 
              <div class="col-sm-6">
-                  <?php echo form::label('Número Calle'); ?>
+                  <?php echo form::label('Número Casa'); ?>
 
                   <?php echo form::text('Numero_Calle',null,['id'=>'Numero_Calle','class'=>'form-control']); ?>
 
@@ -176,13 +181,20 @@
 
              </div>
 
-             <div class="col-sm-5">
-                <?php echo form::text('clinica_id',$id,['id'=>'clinica_id','class'=>'form-control hidden']); ?>
+             <div class="col-sm-6">
+                <?php echo form::label('Clínica'); ?>
+
+                <?php echo Form::select('clinica_id',$clinica,null,['id'=>'clinica_id','class'=>'form-control']); ?>
 
              </div>
-             <?php echo form::submit('Ingresar Paciente',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;']); ?>
 
-          <?php echo Form::close(); ?>
+             <div class="col-sm-12">
+                <?php echo form::submit('Actualizar Datos',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 80%;']); ?>
+
+             </div>
+
+
+              <?php echo Form::close(); ?>
 
            </div>
         </div>
@@ -193,7 +205,7 @@
 
    <script>
 
-       $('.datepicker2').datepicker({
+       $('.datepicker').datepicker({
            format: "dd/mm/yyyy",
            language: "es",
            startDate: '-100y',
@@ -202,21 +214,6 @@
 
        });
    </script>
-
-   <script>
-
-       $('.datepicker').datepicker({
-           format: "dd/mm/yyyy",
-           language: "es",
-           startDate: '-1w',
-           endDate:   '+1w',
-           autoclose: true
-
-       });
-   </script>
-
-
-
 
 
 

@@ -70,6 +70,10 @@ Route::get('/', function () {
     route::get('Ficha/antigua','Ficha\FichaController@antigua');
     route::get('Ficha/{id}/ficha',['as'=>'Ficha.ficha', 'uses' => 'Ficha\FichaController@ficha' ]);
 
+    route::get('Procedimiento','Ficha\ProcedimientoController@store');
+    route::post('Procedimiento','Ficha\ProcedimientoController@store');
+    route::resource('Procedimiento', 'Ficha\ProcedimientoController');
+
     Route::get('Paciente/alta/{id}', 'Pacientes\PacientesController@alta');
     route::resource('Paciente','Pacientes\PacientesController',['only' => ['store','edit','show','update']]);
 

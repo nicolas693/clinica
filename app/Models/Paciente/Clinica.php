@@ -18,4 +18,8 @@ class Clinica extends Model
     public function Paciente (){
     	return $this->hasmany(Paciente::class);
     }
+
+    public function Alumno() {
+      return $this->hasMany(Alumno::class);
+    }
 }

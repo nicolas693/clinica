@@ -27,7 +27,8 @@
 
 <ol class="breadcrumb fondoC1 ">
      <li><a href="{{url('Alumno')}}"> Alumno</a></li>
-     <li class="active">Pacientes</li>
+     <li><a href="{{url('Ficha',$id)}}"> Ver Ficha</a></li>
+     <li class="active">Ingresar Ficha</li>
    </ol>
 
 
@@ -36,9 +37,9 @@
        <h1>Ficha Clinica Integral Adulto </h1>
      </div>
      <div class="col-md-8">
-        <div class="panel panel-default">
+        <div class="panel panel-primary">
           <div class="panel-heading"><b>
-             Ficha Paciente @ID_Ficha</b>
+             Ficha Paciente </b>
            </div>
           <div class="panel-body">
 
@@ -47,11 +48,13 @@
                 <div class="col-sm-6">
                     {!!form::label('Nombre :')!!}
                      {!!$paciente->Nombre !!} {!!$paciente->Paterno !!} {!!$paciente->Materno !!}
-                     {{Form::hidden('Nombre',$paciente->Nombre)}}
-                     {{Form::hidden('Paterno',$paciente->Paterno)}}
-                     {{Form::hidden('Materno',$paciente->Materno)}}
                      {{Form::hidden('paciente_id',$paciente->rut)}}
                 </div>
+
+              <div class="col-sm-6">
+                {!!form::label('Rut : ')!!}
+                {!!$paciente->rut!!}
+              </div>
 
                 <div class="col-sm-6">
                     {!!form::label('Fecha de nacimiento : ')!!}
@@ -60,13 +63,13 @@
                 </div>
 
                 <div class="col-sm-6">
-                  {!!form::label('Telefono : ')!!}
+                  {!!form::label('Teléfono : ')!!}
                   {!!$paciente->Telefono_Movil !!}
                   {{Form::hidden('Telefono_Movil',$paciente->Telefono_Movil)}}
                 </div>
 
                 <div class="col-sm-6">
-                  {!!form::label('Direccion : ')!!}
+                  {!!form::label('Dirección : ')!!}
                   {!!$paciente->Calle !!} {!!$paciente->Numero_Calle !!}
                   {{Form::hidden('Calle',$paciente->Calle)}}
                   {{Form::hidden('Numero_Calle',$paciente->Numero_Calle)}}
@@ -79,19 +82,17 @@
 
                 </div>
                 <div class="col-sm-4">
-                  {!!form::label('Fecha de Control')!!}
-                  <p style="font-size: 15px"><b><?php echo date("d/m/Y");?></b></p>
-                </div>
-                <div class="col-sm-12">
+                  {!!form::label('Fecha de Control')!!} <p style="font-size: 15px"><b><?php echo date("d/m/Y");?></b></p>
                 </div>
 
-                <div class="col-sm-8">
+
+                <div class="col-sm-10" style="margin-top:10px; margin-left:0px;">
                   {!!form::label('Ocupación')!!}
                   {!!form::text('Ocupacion',null,['id'=>'Ocupacion','class'=>'form-control'])!!}
                 </div>
 
                 <div class="col-sm-12">
-                  {!!form::label('Motivo_Consulta')!!}
+                  {!!form::label('Motivo de Consulta')!!}
                   {!!form::text('Motivo_Consulta',null,['id'=>'Motivo_Consulta','class'=>'form-control'])!!}
                 </div>
 
@@ -121,17 +122,17 @@
                        </div>
 
                        <div class="col-sm-12" style="margin-bottom:20px;">
-                           {!!form::label('Fármacos en uso')!!}
+                           <p><b>Fármacos en uso</b></p>
                            {!!form::text('Fármacos en uso',null,['id'=>'Farmacos_Uso','class'=>'form-control'])!!}
                        </div>
 
                        <div class="col-sm-6">
-                           {!!form::label('alumno_id : ')!!} {{$alumno->alumno_id}}
+                           {!!form::label('Alumno : ')!!} {{$alumno->Nombre}} {{$alumno->Paterno}}
                            {{Form::hidden('alumno_id',$alumno->alumno_id)}}
-
                        </div>
+
                        <div class="col-sm-6">
-                           {!!form::label('Profesor tutor :   ')!!} {{$docente->id}}
+                           {!!form::label('Profesor tutor :   ')!!} {{$docente->Nombre}} {{$docente->Paterno}}
                            {{Form::hidden('docente_id',$docente->id)}}
                        </div>
 
@@ -156,7 +157,7 @@
                           </div>
 
                         <div class="col-sm-8">
-                          {!!form::label('Motivo_Ultima_Consulta')!!}
+                          {!!form::label('Motivo Ultima Consulta')!!}
                           {!!form::text('Motivo_Ultima_Consulta',null,['id'=>'Motivo_Ultima_Consulta','class'=>'form-control'])!!}
                         </div>
 
@@ -166,7 +167,7 @@
                           <p class="col-sm-8"> <input type="radio" name="radio1" id="r2" value="Show">Si ha recibido tratamiento de ortodoncia</p>
                           <div class="text2 black">
                             <div class="col-sm-4">
-                                {!!form::label('Diente')!!}
+                                {!!form::label('Indique en que Diente: ')!!}
                                 {!!form::text('Diente_Traumatismo',null,['Diente'=>'id','class'=>'form-control'])!!}
                             </div>
                            </div>
@@ -190,82 +191,38 @@
                               <p class="col-sm-8"> <input type="radio" name="radio3" id="r5" value="Nothing">No</p>
                               <p class="col-sm-8"> <input type="radio" name="radio3" id="r6" value="Show">Si</p>
                               <div class="text3">
-                                <div class="col-sm-12">
+                                <div class="col-sm-12" style="margin-right:50px;">
                                     {!!form::label('Especifique')!!}
                                     {!!form::text('Detalle',null,['Detalle'=>'id','class'=>'form-control'])!!}
                                 </div>
                                </div>
                              </div>
 
-                        <div class="col-sm-12 form-group">
-                        <p><b>Procedimientos</b></p>
-                         <form action="../php/select-action.php" method="post">
-                              <select name="Procedimientos">
-                                <option>Procedimientos a realizar</option>
-                                <?php
-                                $Procedimientos = array(
-                                  "Apicectomía",
-                                  "Blanqueamiento dental",
-                                  "Empaste",
-                                  "Endodoncia",
-                                  "Exodoncia",
-                                  "Explorador Dental",
-                                  "Gingivectomía",
-                                  "Gingivoplastía",
-                                  "Higiene Bucodental",
-                                  "Implante Dental",
-                                  "Limpieza Dental",
-                                  "Ostectomía",
-                                  "Remineralización dental",
-                                  "Sitio/Estado",
-                                  "Tartrectomía",
-                                  "Técnica de elevación del colgajo",
-                                  "Técnica de elevación del seno maxilar",
-                                  "Técnica de regeneración ósea guiada",
-                                  "Terapia de fluoruro");
-                                foreach ($Procedimientos as $pro)
-                                {
-                                  ?>
-                                  <option value="<?php echo strtolower($pro);?>"><?php echo $pro; ?></option>
-                                  <?php
-                                }
-                                ?>
-                                <div class="boton">
-                                  {!!form::submit('Agregar',['name'=>'Agregar','id'=>'agregar','content'=>'<span>Agregar</span>','class'=>'btn btn-default btn-sm m-t-10'])!!}
-                                  {!!Form::close()!!}
-                                </div>
-                          </form>
-                  <div class="col-sm-12 form-group">
-                    <p><b>Insumos necesarios</b></p>
-                      <form action="../php/select-action.php" method="post">
-                        <select name="Insumos">
-                        <option>Insumos</option>
-                        <?php
-                        $Insumos = array(
-                          "Alginmax",
-                          "Alginkid",
-                          "Alginplus Tropical",
-                          "Servilletas Dentales",
-                          "Eyector de saliva",
-                          "Manga de esterilización",
-                          "Tórula de algodón");
-                        foreach ($Insumos as $in)
-                        {
-                          ?>
-                          <option value="<?php echo strtolower($in);?>"><?php echo $in; ?></option>
-                          <?php
-                        }
-                        ?>
-                        <div class="boton">
-                            {!!form::submit('Agregar',['name'=>'Agregar','id'=>'agregar','content'=>'<span>Agregar</span>','class'=>'btn btn-default btn-sm m-t-10'])!!}
-                            {!!Form::close()!!}
+                        <div class="col-sm-8 form-group">
+                            <p><b>Procedimientos a realizar</b></p>
+                              {!!Form::open(['route'=>'Procedimiento.store','method'=>'POST'] ) !!}
+
+                              {!!Form::select('Procedimiento',$procedimientos,null,
+                                ['id'=>'Nombre', 'class'=>'form-control']) !!}
+
+                              {!!Form::submit('Agregar',['name'=>'agregar','id'=>'agregar','content'=>'<span>Grabar</span>','class'=>'btn btn-success ', 'style'=>'margin-top:10px;']) !!}
+                              {!!Form::close() !!}
                         </div>
 
+                  <div class="col-sm-8 form-group">
+                    <p><b>Insumos necesarios</b></p>
+                      {!!Form::select('Insumos',$insumos,null,
+                        ['id'=>'insumos','class'=>'form-control']) !!}
+                  </div>
+
+           <div class="col-sm-10 form-group">
+             {!!form::label('Indique Alerta Médica')!!}
+             {!!form::text('Alerta_Medica',null,['id'=>'Alerta_Medica','class'=>'form-control'])!!}
            </div>
 
            <div class="col-sm-12">
-             <a <button type="button" href={{route('Ficha.index',$id)}} class="btn btn-warning">Volver</button> </a>
-             {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 200px;'])!!}
+             {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success ','style'=> 'margin-left: 0px;'])!!}
+             <a <button type="button" href={{route('Ficha.index',$id)}} class="btn btn-primary">Volver</button> </a>
              {!!Form::close()!!}
            </div>
 

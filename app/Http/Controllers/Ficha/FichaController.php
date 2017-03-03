@@ -46,9 +46,11 @@ class FichaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(FichaCreateRequest $request)
+    public function store(FichaCreateRequest $request, $id)
     {
-
+      dd($request->All() );
+      Ficha::create($request->All());
+      return redirect('Ficha',$id);
     }
 
     /**
@@ -98,7 +100,6 @@ class FichaController extends Controller
     }
     public function nueva($id)
     {
-        //$paciente=Paciente::find($id);
         $paciente=Paciente::where('rut','=',$id)->first();
         return view('Ficha/nueva')->with('paciente',$paciente)->with('id',$id);
         //return view('Ficha/nueva');->with('paciente',$paciente);
@@ -120,8 +121,40 @@ class FichaController extends Controller
         $fechaP=$fechaP->diffInDays();
         $edad=(int)floor($fechaP/365);
 
+        $procedimientos = array(
+            "Apicectomía"=>"Apicectomía",
+            "Blanqueamiento dental"=>"Blanqueamiento dental",
+            "Empaste"=>"Empaste",
+            "Endodoncia"=>"Endodoncia",
+            "Exodoncia"=>"Exodoncia",
+            "Explorador Dental"=>"Explorador Dental",
+            "Gingivectomía"=>"Gingivectomía",
+            "Gingivoplastía"=>"Gingivoplastía",
+            "Higiene Bucodental"=>"Higiene Bucodental",
+            "Implante Dental"=>"Implante Dental",
+            "Limpieza Dental"=>"Limpieza Dental",
+            "Ostectomía"=>"Ostectomía",
+            "Remineralización dental"=>"Remineralización dental",
+            "Sitio/Estado"=>"Sitio/Estado",
+            "Tartrectomía"=>"Tartrectomía",
+            "Técnica de elevación del colgajo"=>"Técnica de elevación del colgajo",
+            "Técnica de elevación del seno maxilar"=>"Técnica de elevación del seno maxilar",
+            "Técnica de regeneración ósea guiada"=>"Técnica de regeneración ósea guiada",
+            "Terapia de fluoruro"=>"Terapia de fluoruro");
 
-        return view('Ficha.ficha')->with('paciente',$paciente)->with('id',$id)->with('alumno',$alumno)->with('docente',$docente)->with('edad',$edad);
+            $insumos = array(
+              "Alginmax"=>"Alginmax",
+              "Alginkid"=>"Alginkid",
+              "Alginplus Tropical"=>"Alginplus Tropical",
+              "Servilletas Dentales"=>"Servilletas Dentales",
+              "Eyector de saliva"=>"Eyector de saliva",
+              "Manga de esterilización"=>"Manga de esterilización",
+              "Tórula de algodón"=>"Tórula de algodón");
+
+
+        return view('Ficha.ficha', array('paciente'=>$paciente, 'id'=>$id, 'alumno'=>$alumno,
+        'docente'=>$docente, 'edad'=>$edad, 'procedimientos'=>$procedimientos, 'insumos'=>$insumos) );
+        //return view('Ficha.ficha')->with('paciente',$paciente)->with('id',$id)->with('alumno',$alumno)->with('docente',$docente)->with('edad',$edad);
     }
 
     public function Procedimientos($Procedimientos)

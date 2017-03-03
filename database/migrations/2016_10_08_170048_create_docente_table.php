@@ -18,7 +18,6 @@ class CreateDocenteTable extends Migration
        $table->string('Paterno')->length(15);
        $table->string('Materno')->length(15);
        $table->Integer('Telefono');
-       $table->timestamps();
        $table->primary('id');
 
        $table->integer('asignatura_id')->unsigned();
@@ -36,6 +35,8 @@ class CreateDocenteTable extends Migration
      */
     public function down()
     {
-        //
+      DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+      Schema::drop('Docente');
+      DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

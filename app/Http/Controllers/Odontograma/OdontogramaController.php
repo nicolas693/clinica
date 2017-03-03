@@ -32,11 +32,6 @@ class OdontogramaController extends Controller
         $odonto=$odonto['attributes'];
 
 
-
-
-
-
-
         return view('Odontograma.index')->with('id',$id)->with('paciente',$paciente)->with('odonto',$odonto)->with('pr',$pr);
     }
 
@@ -139,7 +134,7 @@ class OdontogramaController extends Controller
           }
         }
         $num=substr($num,5);
-        
+
 
 
 

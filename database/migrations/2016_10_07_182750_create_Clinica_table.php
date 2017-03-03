@@ -18,8 +18,6 @@ class CreateClinicaTable extends Migration
             $table->String('Nombre_Clinica')->length(25);
             $table->String('Direccion_Clinica')->length(30);
             $table->Integer('Telefono_Clinica');
-
-
             });
     }
 
@@ -30,6 +28,8 @@ class CreateClinicaTable extends Migration
      */
     public function down()
     {
-        //
+      DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+      Schema::dropIfExists('Clinica');
+      DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

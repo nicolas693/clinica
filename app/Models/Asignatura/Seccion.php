@@ -11,7 +11,7 @@ class Seccion extends Model
     protected $primaryKey = 'id';
     protected $fillable   = ['id','numero'];
 
-    public function asignatura_1()
+    public function asignatura()
     {
         return $this->belongsTo(Asignatura::class);
     }

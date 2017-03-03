@@ -12,9 +12,9 @@ class Ficha extends Model
 
     public $timestamps = false;
     protected $fillable = [
-        /*'Nombre','Paterno','Materno','Fecha_Nacimiento', 'Telefono' */ 'Edad','Ocupacion',/*Direccion ,'Calle','Numero_Calle' 'Sexo'*/ 'paciente_id','alumno_id','docente_id','Fecha_Ingreso','Motivo_Consulta','Expectativas',/*Anamnesis General*/
-        'Antecedentes_Medicos','Farmacos_Uso',/*Habitos*/
-        'Fuma','Alcohol','Drogas'/*Anamnesis Odontologica*/,'Fecha_Ultima_Consulta','Motivo_Ultima_Consulta','Antecedentes_Traumatismo','Fecha_Traumatismo','Tratamiento_Ortodoncia','Elem_Higiene','Anestesia','Alerta_Medica'
+        'paciente_id','alumno_id','docente_id','Procedimiento_id','Fecha_Ingreso','Motivo_Consulta','Expectativas',
+        'Antecedentes_Medicos','Farmacos_Uso','Fecha_Ultima_Consulta','Motivo_Ultima_Consulta','Antecedentes_Traumatismo',
+        'Fuma','Alcohol','Drogas','Fecha_Traumatismo','Tratamiento_Ortodoncia','Elem_Higiene','Anestesia','Alerta_Medica'
     ];
     //,'id'-->> id del docente.
     /*
@@ -50,4 +50,7 @@ class Ficha extends Model
         return $this->belongsto(Clinica::class);
     }
 
+    public function Procedimiento(){
+      return $this->hasmany(Procedimiento::class);
+    }
 }

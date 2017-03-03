@@ -17,4 +17,8 @@ class Asignatura extends Model
       public function alumno(){
         return $this->belongsTo(Alumnos::class);
       }
+
+      public function Seccion(){
+        return $this->hasMany(Seccion::class);
+      }
 }

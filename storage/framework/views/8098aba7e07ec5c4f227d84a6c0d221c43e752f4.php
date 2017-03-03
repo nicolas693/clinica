@@ -50,21 +50,21 @@
                  </div>
 
                  <div class="form-group col-sm-6">
-                    <?php echo form::label('Telefono : '); ?>
+                    <?php echo form::label('Teléfono : '); ?>
 
                      <?php echo $paciente->Telefono_Movil; ?>
 
                  </div>
 
                  <div class="form-group col-sm-6">
-                    <?php echo form::label('Direccion : '); ?>
+                    <?php echo form::label('Dirección : '); ?>
 
                      <?php echo $paciente->Calle; ?> <?php echo $paciente->Numero_calle; ?>
 
                  </div>
 
                  <div class="form-group col-sm-6">
-                    <?php echo form::label('Cobertura Medica : '); ?>
+                    <?php echo form::label('Cobertura Médica : '); ?>
 
                      <?php echo $paciente->Cobertura_Medica; ?>
 
@@ -85,9 +85,7 @@
 
 
                       <div class="btn-group">
-                        <button type="submit" class="btn btn-success">Crear Odontograma</button>
-
-
+                        <button type="submit" class="btn btn-success" style="margin-left:10px;">Crear Odontograma</button>
                       </div>
 
 

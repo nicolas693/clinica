@@ -12,7 +12,7 @@
 
 
    <div class="row fondoC centro">
-     <div class="page-header" style=" margin-right:20%;"  >
+     <div class="page-header centrar" style=" margin-right:20%;"  >
        <h1>Lista de Clínicas<small></small></h1>
      </div>
      <div class="col-md-10 ">

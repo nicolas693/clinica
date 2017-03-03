@@ -50,14 +50,14 @@ class PacientesController extends Controller
      */
     public function create($id)
     {
-        $genero = ['Hombre','Mujer'];
+        $genero = array( 'Hombre'=>'Hombre', 'Mujer'=>'Mujer');
         $date = Carbon::now();
         $date=$date->subDay()->format('d/m/y');
         $paciente = Clinica::lists('Nombre_Clinica','id_Clinica','alumno_id');
         $ruta=\Route::getCurrentRoute()->getPath();
-        
 
-        return view('Pacientes.create')->with('paciente',$paciente)->with('genero',$genero)->with('date',$date)->with('id',$id);
+        return view('Pacientes.create', array('paciente'=>$paciente, 'genero'=>$genero,
+        'date'=>$date, 'id'=>$id));
     }
 
     /**
@@ -78,13 +78,8 @@ class PacientesController extends Controller
          }
        }
 
-       if($request->Genero==0){
-         $request['Genero']="Hombre";
-       }else{
-         $request['Genero']="Mujer";
-       }
-       $request['rut'] = str_replace(' ', '', $request['rut']);
 
+       $request['rut'] = str_replace(' ', '', $request['rut']);
        $request['alta']=true;
        //$request['rut']=substr($request->rut,0,-2);
 
@@ -123,28 +118,16 @@ class PacientesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    /*
-
-    public function edit(Paciente $pa)
-    {
-       $clinica = Clinica::lists('Nombre_Clinica')->prepend('Seleccioname la Clinica');
-
-        return view('Pacientes.edit',compact('pa'))->with('clinica',$clinica);
-
-
-    }
-
-    */
 
 
     public function edit($id)
     {
 
-       $genero = ['Hombre','Mujer'];
+       $genero = array( 'Hombre'=>'Hombre', 'Mujer'=>'Mujer');
        $clinica = Clinica::lists('Nombre_Clinica','id_Clinica');
 
        $pa= Paciente::find($id);
-       return view('Pacientes.edit', array('pa'=>$pa,'clinica'=>$clinica))->with('genero',$genero);
+       return view('Pacientes.edit', array('pa'=>$pa,'clinica'=>$clinica, 'genero'=>$genero ));
 
     }
 
@@ -167,12 +150,6 @@ class PacientesController extends Controller
         }
       }
       $request['rut'] = str_replace(' ', '', $request['rut']);
-      if($request->Genero==0){
-        $request['Genero']="Hombre";
-      }else{
-        $request['Genero']="Mujer";
-      }
-
 
         $pa= Paciente::find($id);
 
@@ -180,7 +157,6 @@ class PacientesController extends Controller
 
         $pa->fill($input)->save();
         $val=$pa->clinica_id;
-
 
         return redirect('/Alumno/mostrar/'.$val);
     }
@@ -195,9 +171,7 @@ class PacientesController extends Controller
     public function destroy($id)
     {
         $pa= Paciente::find($id);
-
         $pa->delete();
-
         return redirect()->route('Paciente.index');
     }
 

@@ -20,7 +20,9 @@ class CreateFichaTable extends Migration
             $table->String('Expectativas')->nullable();
             $table->String('Antecedentes_Medicos');
             $table->String('Farmacos_Uso');
-            $table->String('Habitos')->nullable();
+            $table->boolean('Fuma');
+            $table->boolean('Drogas');
+            $table->boolean('Alcohol');
             $table->String('Fecha_Ultima_Consulta');
             $table->String('Motivo_Ultima_Consulta');
             $table->boolean('Antecedentes_Traumatismo');
@@ -31,7 +33,7 @@ class CreateFichaTable extends Migration
             $table->boolean('Anestesia');
             $table->boolean('Complicacion_Anestesia')->nullable(); //podria no haber tenido una complicacion de anestesia,
             //aunque en ese caso se podria dejar como false ese campo
-            $table->String('Alerta_Medica')->nullable();
+            $table->String('Alerta_Medica')->nullable(); //Saber que la persona tiene hipertension o tiene problemas con la anestesia
 
 
             $table->String('paciente_id');
