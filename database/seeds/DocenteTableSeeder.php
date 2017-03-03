@@ -30,7 +30,7 @@ class DocenteTableSeeder extends Seeder
         'Materno'=>'Rojas',
         'Telefono'=>'95816732',
         'asignatura_id'=>'2',
-        'user_id'=>'5',
+        'user_id'=>'4',
 
       ]);
       $doc->save();
@@ -41,7 +41,7 @@ class DocenteTableSeeder extends Seeder
         'Materno'=>'Rosales',
         'Telefono'=>'95816732',
         'asignatura_id'=>'3',
-        'user_id'=>'8',
+        'user_id'=>'6',
 
       ]);
       $doc->save();

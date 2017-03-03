@@ -3,7 +3,10 @@
 namespace clinica\Http\Requests\Alumno;
 
 use clinica\Http\Requests\Request;
+use clinica\Models\Alumnos\Alumnos;
+use Illuminate\Support\Facades\Route;
 use Auth;
+
 
 class AlumnoUpdateRequest extends Request
 {
@@ -24,15 +27,33 @@ class AlumnoUpdateRequest extends Request
      */
     public function rules()
     {
-        $id=9;
+      $id=url()->current();
+      $id=substr($id,29);
+      $alumno=Alumnos::where('alumno_id','=',$id)->first();
+      if($alumno->user_id!=null){
         return [
             'alumno_id' => ['required','cl_rut'],
             'Nombre' => ['required','min:3','max:12','regex:/^[\pL\s\-]+$/u'],
             'Paterno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
             'Materno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
             'Telefono' => ['required','min:7','max:9','regex:/[0-9]/'],
-            //'user_id' => ['required','max:7','regex:/[0-9]/','unique:Docente','unique:Alumno','exists:users,id'],
+
         ];
+
+      }
+      else{
+        return [
+            'alumno_id' => ['required','cl_rut'],
+            'Nombre' => ['required','min:3','max:12','regex:/^[\pL\s\-]+$/u'],
+            'Paterno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
+            'Materno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
+            'Telefono' => ['required','min:7','max:9','regex:/[0-9]/'],
+            'user_id' => ['required','max:7','regex:/[0-9]/','unique:Docente','unique:Alumno','exists:users,id'],
+        ];
+      }
+
+
+
     }
 
     public function messages()

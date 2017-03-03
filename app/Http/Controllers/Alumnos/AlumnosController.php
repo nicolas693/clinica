@@ -86,6 +86,21 @@ class AlumnosController extends Controller
         return view('Alumnos.edit')->with('clinica',$clinica)->with('asignatura',$asignatura)->with('alumno',$alumno);
     }
 
+    public function editU($rut,$id)
+    {
+
+        $alumno=Alumnos::find($rut);
+        $input=$alumno->all();
+        $alumno['user_id']=null;
+        $alumno->save();
+        $alumno=Alumnos::find($rut);
+
+        $asignatura =Asignatura::lists('nombre','id');
+        $clinica = Clinica::lists('Nombre_Clinica','id_Clinica');
+          return view('Alumnos.editU')->with('clinica',$clinica)->with('asignatura',$asignatura)->with('alumno',$alumno);
+
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -119,7 +134,7 @@ class AlumnosController extends Controller
       $alumno=Alumnos::where('user_id','=',$user->id)->first();
 
       $paciente=Paciente::where('alumno_id','=',$alumno->alumno_id)->where('clinica_id','=',$id)->get();
-      
+
 
       return view('Alumnos.mostrar')->with('paciente',$paciente)->with('id',$id);
     }

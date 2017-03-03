@@ -67,10 +67,10 @@
            {!! Form::select('id_Clinica',$clinica,null,['id'=>'id_Clinica','class'=>'form-control']) !!}
         </div>
 
-        <div class="col-sm-12" style="margin-top:30px;">
-           {!!form::label('ID Usuario : ')!!}{{$alumno->user_id}}
-           <a href="/Alumno/{{$alumno->alumno_id}}/edit/{{$alumno->user_id}}" class="btn btn-primary btn-xs" style="margin-left:50px;"> <b>Modificar ID de usuario</b></a>
-         </div>
+        <div class="col-sm-4">
+             {!!form::label('ID Usuario')!!}
+             {!!form::text('user_id',null,['id'=>'user_id','class'=>'form-control'])!!}
+        </div>
 
 
 

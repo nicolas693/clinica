@@ -36,6 +36,8 @@ Route::get('/', function () {
     route::resource('Docente','Docentes\DocentesController',['only' => ['store','create','edit','update']]);
       route::resource('User','User\UserController',['except' => 'index']);
 
+      route::get('Docente/{rut}/edit/{id}',['as' => 'Docente.editU', 'uses' => 'Docentes\DocentesController@editU']);
+
 
 });
 
@@ -47,6 +49,11 @@ Route::get('/', function () {
     route::resource('Alumno','Alumnos\AlumnosController',['only' => ['store','create','edit','update']]);
     route::get('Docente/evaluar/{id}','Docentes\DocentesController@evaluar');
     route::get('Docente', ['as'=>'Docente.storeAlumno', 'uses'=>'Docentes\DocentesController@storeAlumno' ]);
+
+    route::get('Alumno/{rut}/edit/{id}',['as' => 'Alumnos.editU', 'uses' => 'Alumnos\AlumnosController@editU']);
+
+
+
 });
 
 

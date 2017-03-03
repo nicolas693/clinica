@@ -82,11 +82,12 @@
 
         </div>
 
-        <div class="col-sm-12" style="margin-top:30px;">
-           <?php echo form::label('ID Usuario : '); ?><?php echo e($alumno->user_id); ?>
+        <div class="col-sm-4">
+             <?php echo form::label('ID Usuario'); ?>
 
-           <a href="/Alumno/<?php echo e($alumno->alumno_id); ?>/edit/<?php echo e($alumno->user_id); ?>" class="btn btn-primary btn-xs" style="margin-left:50px;"> <b>Modificar ID de usuario</b></a>
-         </div>
+             <?php echo form::text('user_id',null,['id'=>'user_id','class'=>'form-control']); ?>
+
+        </div>
 
 
 

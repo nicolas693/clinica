@@ -23,7 +23,7 @@ class CreateDocenteTable extends Migration
        $table->integer('asignatura_id')->unsigned();
        $table->foreign('asignatura_id')->references('id')->on('asignatura');
 
-       $table->integer('user_id')->unsigned();
+       $table->integer('user_id')->unsigned()->nullable();
        $table->foreign('user_id')->references('id')->on('users');
    });
     }

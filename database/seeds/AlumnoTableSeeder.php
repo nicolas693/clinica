@@ -35,7 +35,7 @@ class AlumnoTableSeeder extends Seeder
           'Materno'=>'Llanos',
           'Telefono'=>'34627890',
           'id_Clinica'=>'2834',
-          'user_id'=>'6'
+          'user_id'=>'5'
           //'Observaciones'=>'Ninguna',
           //'Calificacion'=>'2.1',
           //'PacienteEvaluado'=>'Carlitos Lechuga'
@@ -50,7 +50,7 @@ class AlumnoTableSeeder extends Seeder
           'Materno'=>'Casas',
           'Telefono'=>'34627890',
           'id_Clinica'=>'1237',
-          'user_id'=>'9'
+          'user_id'=>'7'
           //'Observaciones'=>'Ninguna',
           //'Calificacion'=>'2.1',
           //'PacienteEvaluado'=>'Carlitos Lechuga'
