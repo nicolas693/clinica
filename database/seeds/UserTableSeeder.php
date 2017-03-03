@@ -41,17 +41,9 @@ class UserTableSeeder extends Seeder
 
 
 
-      $User=new User([
-        'id'=>4,
-        'name'=>'Admin2',
-        'email'=>'Admin2@admin.com',
-        'password'=>Hash::make('admin123'),
-        'idrol'=>1,
-      ]);
-      $User->save();
 
       $User=new User([
-        'id'=>5,
+        'id'=>4,
         'name'=>'Docente2',
         'email'=>'docente2@docente.com',
         'password'=>Hash::make('docente123'),
@@ -60,7 +52,7 @@ class UserTableSeeder extends Seeder
       $User->save();
 
       $User=new User([
-        'id'=>6,
+        'id'=>5,
         'name'=>'Alumno2',
         'email'=>'alumno2@alumno.com',
         'password'=>Hash::make('alumno123'),
@@ -70,17 +62,9 @@ class UserTableSeeder extends Seeder
 
 
 
-      $User=new User([
-        'id'=>7,
-        'name'=>'Admin3',
-        'email'=>'Admin3@admin.com',
-        'password'=>Hash::make('admin123'),
-        'idrol'=>1,
-      ]);
-      $User->save();
 
       $User=new User([
-        'id'=>8,
+        'id'=>6,
         'name'=>'Docente3',
         'email'=>'docente3@docente.com',
         'password'=>Hash::make('docente123'),
@@ -89,7 +73,7 @@ class UserTableSeeder extends Seeder
       $User->save();
 
       $User=new User([
-        'id'=>9,
+        'id'=>7,
         'name'=>'Alumno3',
         'email'=>'alumno3@alumno.com',
         'password'=>Hash::make('alumno123'),

@@ -3,6 +3,9 @@
 namespace clinica\Http\Requests\Docente;
 
 use clinica\Http\Requests\Request;
+use clinica\Models\Docente\Docente;
+use Illuminate\Support\Facades\Route;
+use Auth;
 
 class DocenteUpdateRequest extends Request
 {
@@ -23,6 +26,14 @@ class DocenteUpdateRequest extends Request
      */
     public function rules()
     {
+
+
+      $id=url()->current();
+      $id=substr($id,30);
+      $docente=Docente::where('id','=',$id)->first();
+
+
+      if($docente->user_id!=null){
         return [
 
             'id' => ['required','cl_rut'],
@@ -30,8 +41,22 @@ class DocenteUpdateRequest extends Request
             'Paterno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
             'Materno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
             'Telefono' => ['required','min:7','max:9','regex:/[0-9]/'],
-            //'user_id' => ['required','max:7','regex:/[0-9]/','unique:Docente','unique:Alumno','exists:users,id'],
+
         ];
+      }
+      else{
+        return [
+
+            'id' => ['required','cl_rut'],
+            'Nombre' => ['required','min:3','max:12','regex:/^[\pL\s\-]+$/u'],
+            'Paterno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
+            'Materno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
+            'Telefono' => ['required','min:7','max:9','regex:/[0-9]/'],
+            'user_id' => ['required','max:7','regex:/[0-9]/','unique:Docente','unique:Alumno','exists:users,id'],
+        ];
+      }
+
+
     }
 
     public function messages()

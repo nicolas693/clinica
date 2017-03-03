@@ -72,6 +72,19 @@ class DocentesController extends Controller
         return view('Docente.edit')->with('docente',$docente)->with('asignatura',$asignatura);
     }
 
+    public function editU($rut,$id)
+    {
+
+        $docente=Docente::find($rut);
+        $input=$docente->all();
+        $docente['user_id']=null;
+        $docente->save();
+        $docente=Docente::find($rut);
+      
+        $asignatura =Asignatura::lists('nombre','id');
+        return view('Docente.editU')->with('docente',$docente)->with('asignatura',$asignatura);
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -115,7 +128,8 @@ class DocentesController extends Controller
     }
 
 
-    public function storeAlumno(Request $request){
+    public function storeAlumno(Request $request)
+    {
       Alumnos::create($request->only('Calificacion', 'Observaciones', 'PacienteEvaluado') );
       return redirect('/Docente/mostrar');
     }
