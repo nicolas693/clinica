@@ -76,6 +76,7 @@ Route::get('/', function () {
     route::get('Ficha/{id}/nueva','Ficha\FichaController@nueva');
     route::get('Ficha/antigua','Ficha\FichaController@antigua');
     route::get('Ficha/{id}/ficha',['as'=>'Ficha.ficha', 'uses' => 'Ficha\FichaController@ficha' ]);
+    route::resource('Ficha','Ficha\FichaController',['only'=>['store'] ] );
 
     route::get('Procedimiento','Ficha\ProcedimientoController@store');
     route::post('Procedimiento','Ficha\ProcedimientoController@store');

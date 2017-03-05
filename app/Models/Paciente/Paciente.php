@@ -18,7 +18,7 @@ class Paciente extends Model
     protected $fillable=[
     	'rut','Nombre','Paterno','Materno','Fecha_Ingreso','Genero','Fecha_Nacimiento','Telefono_Casa',
       'Telefono_Movil', 'Calle','Numero_Calle','Pais','Region','Comuna','Nacionalidad','Cobertura_Medica',
-      'clinica_id','alumno_id','alta',
+      'clinica_id','alumno_id','Odontograma_id','Ficha_id','alta',
     ];
     public $timestamps=false;
 

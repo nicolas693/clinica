@@ -42,8 +42,7 @@
              Ficha Paciente </b>
            </div>
           <div class="panel-body">
-
-                {!!Form::open(['route'=>'Paciente.store','method'=>'POST'])!!}
+                {!!Form::open(['route'=>['Ficha.store'],'method'=>'POST'])!!}
 
                 <div class="col-sm-6">
                     {!!form::label('Nombre :')!!}
@@ -57,13 +56,13 @@
               </div>
 
                 <div class="col-sm-6">
-                    {!!form::label('Fecha de nacimiento : ')!!}
+                    {!!form::label('FechaNacimiento','Fecha de nacimiento : ')!!}
                      {!!$paciente->Fecha_Nacimiento !!}
                      {{Form::hidden('Fecha_Nacimiento',$paciente->Fecha_Nacimiento)}}
                 </div>
 
                 <div class="col-sm-6">
-                  {!!form::label('Teléfono : ')!!}
+                  {!!form::label('TelefonoMovil','Teléfono Movil : ')!!}
                   {!!$paciente->Telefono_Movil !!}
                   {{Form::hidden('Telefono_Movil',$paciente->Telefono_Movil)}}
                 </div>
@@ -82,7 +81,7 @@
 
                 </div>
                 <div class="col-sm-4">
-                  {!!form::label('Fecha de Control')!!} <p style="font-size: 15px"><b><?php echo date("d/m/Y");?></b></p>
+                  {!!form::label('FechaControl','Fecha de Control')!!} <p style="font-size: 15px"><b><?php echo date("d/m/Y");?></b></p>
                 </div>
 
 
@@ -92,7 +91,7 @@
                 </div>
 
                 <div class="col-sm-12">
-                  {!!form::label('Motivo de Consulta')!!}
+                  {!!form::label('MotivoConsulta','Motivo de Consulta')!!}
                   {!!form::text('Motivo_Consulta',null,['id'=>'Motivo_Consulta','class'=>'form-control'])!!}
                 </div>
 
@@ -107,18 +106,19 @@
                     </div>
                    <div class="panel-body">
                     <div>
+
                       <div class="col-sm-12 radio">
                         <p><b>Antecedentes Médicos</b></p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="c1">Enf. Cardiovasculares</p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="c2">Enf. Gastrointestinales</p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="c3">Enf. Respiratorias</p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="c4">Enf. Neurológicas</p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="c5">Enf. Infectocontagiosas</p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="c6">Discrasias Sanguíneas</p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="c7">Diabetes</p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="c8">Alergias</p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="c9">Embarazo</p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="c10">Otra</p>
+                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="EnfCardiovasculares" value="true">Enf. Cardiovasculares</p>
+                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="EnfGastrointestinales">Enf. Gastrointestinales</p>
+                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="EnfRespiratorias">Enf. Respiratorias</p>
+                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="EnfNeurologicas">Enf. Neurológicas</p>
+                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="EnfIntectocontagiosas">Enf. Infectocontagiosas</p>
+                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="DiscrasiaSanguinea">Discrasias Sanguíneas</p>
+                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="Diabetes">Diabetes</p>
+                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="Alergias">Alergias</p>
+                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="Embarazo">Embarazo</p>
+                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="OtraEnf">Otra</p>
                        </div>
 
                        <div class="col-sm-12" style="margin-bottom:20px;">
@@ -136,12 +136,13 @@
                            {{Form::hidden('docente_id',$docente->id)}}
                        </div>
 
-                       <div class="col-sm-12 checkbox">
+                       <div class="col-sm-12 checkbox" style="margin-top:10px;">
                          <p><b>Hábitos</b></p>
                          <p class="col-sm-2"> <input type="checkbox" name="chk2" id="c11">Fuma</p>
                          <p class="col-sm-2"> <input type="checkbox" name="chk2" id="c12">Alcohol</p>
                          <p class="col-sm-2"> <input type="checkbox" name="chk2" id="c13">Drogas</p>
                       </div>
+
                     </div>
                   </div>
 
@@ -151,7 +152,7 @@
                       <div class="panel-body">
                         <div class="col-sm-4">
                           <div class="input-group">
-                            <label for="date"><b>Fecha de último control: </b></label>
+                            <label for="date"><b>Fecha de último control </b></label>
                               <input type="text" class="form-control datepicker" id="Fecha_Ultima_Consulta" name="Fecha_Ultima_Consulta">
                             </div>
                           </div>
@@ -161,14 +162,20 @@
                           {!!form::text('Motivo_Ultima_Consulta',null,['id'=>'Motivo_Ultima_Consulta','class'=>'form-control'])!!}
                         </div>
 
-                        <div class="col-sm-8 radio">
-                          <p><b>Antecedentes Traumatismo Dentoalveolar</b></p>
+                        <div class="col-sm-8" style="margin-top:10px;">
+                          {!!Form::label('Traumatismo','Antecedentes de Traumatismo Dentoalveolar')!!}
                           <p class="col-sm-8"> <input type="radio" name="radio1" id="r1" value="Nothing">No ha recibido tratamiento de ortodoncia</p>
                           <p class="col-sm-8"> <input type="radio" name="radio1" id="r2" value="Show">Si ha recibido tratamiento de ortodoncia</p>
-                          <div class="text2 black">
+                          <div class="text2 black" >
+                            <div class="col-sm-4" style="margin-top:60px; margin-left:0px;">
+                            {!!form::label('DienteTrau','Indique en que Diente: ')!!}
+                            {!!form::text('DienteTraumatismo',null,['Diente'=>'id','class'=>'form-control'])!!}
+                            </div>
                             <div class="col-sm-4">
-                                {!!form::label('Indique en que Diente: ')!!}
-                                {!!form::text('Diente_Traumatismo',null,['Diente'=>'id','class'=>'form-control'])!!}
+                              <div class="input-group">
+                                <label for="date"><b>Fecha de traumatismo </b></label>
+                                  <input type="text" class="form-control datepicker2" id="Fecha_Traumatismo" name="Fecha_Traumatismo">
+                                </div>
                             </div>
                            </div>
                          </div>
@@ -181,32 +188,28 @@
                            <p class="col-sm-3"> <input type="checkbox" name="chk3" id="c17">Colutorio</p>
                            <p class="col-sm-3"> <input type="checkbox" name="chk3" id="c18">Otros</p>
                           </div>
+
                           <div class="col-sm-6 radio2">
-                            <p><b>¿Le han aplicado Anestesia Dental?</b></p>
+                            {!!Form::label('Anestesia','¿Le han aplicado Anestesia Dental?')!!}
                             <p class="col-sm-8"> <input type="radio" name="radio2" id="r3" value="Nothing">No</p>
                             <p class="col-sm-8"> <input type="radio" name="radio2" id="r4" value="Show">Si</p>
                             </div>
                             <div class="col-sm-6 radio3">
-                              <p><b>¿Ha tenido complicaciones al respecto?</b></p>
+                              {!!Form::label('Complicaciones','¿Ha tenido complicaciones al respecto?')!!}
                               <p class="col-sm-8"> <input type="radio" name="radio3" id="r5" value="Nothing">No</p>
                               <p class="col-sm-8"> <input type="radio" name="radio3" id="r6" value="Show">Si</p>
                               <div class="text3">
                                 <div class="col-sm-12" style="margin-right:50px;">
-                                    {!!form::label('Especifique')!!}
-                                    {!!form::text('Detalle',null,['Detalle'=>'id','class'=>'form-control'])!!}
+                                    {!!form::label('Especifique','Especifique')!!}
+                                    {!!form::text('Complicacion',null,['id'=>'Complicacion','class'=>'form-control'])!!}
                                 </div>
                                </div>
                              </div>
 
                         <div class="col-sm-8 form-group">
                             <p><b>Procedimientos a realizar</b></p>
-                              {!!Form::open(['route'=>'Procedimiento.store','method'=>'POST'] ) !!}
-
                               {!!Form::select('Procedimiento',$procedimientos,null,
                                 ['id'=>'Nombre', 'class'=>'form-control']) !!}
-
-                              {!!Form::submit('Agregar',['name'=>'agregar','id'=>'agregar','content'=>'<span>Grabar</span>','class'=>'btn btn-success ', 'style'=>'margin-top:10px;']) !!}
-                              {!!Form::close() !!}
                         </div>
 
                   <div class="col-sm-8 form-group">
@@ -221,7 +224,7 @@
            </div>
 
            <div class="col-sm-12">
-             {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success ','style'=> 'margin-left: 0px;'])!!}
+             {!!Form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success ']) !!}
              <a <button type="button" href={{route('Ficha.index',$id)}} class="btn btn-primary">Volver</button> </a>
              {!!Form::close()!!}
            </div>
@@ -285,8 +288,8 @@
             $('.datepicker2').datepicker({
                 format: "dd/mm/yyyy",
                 language: "es",
-                startDate: '-100y',
-                endDate:   '+1d',
+                startDate: '-50y',
+                endDate:   '0',
                 autoclose: true
         });
     </script>

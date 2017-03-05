@@ -87,32 +87,23 @@
                       <div class="btn-group">
                         <button type="submit" class="btn btn-success" style="margin-left:10px;">Crear Odontograma</button>
                       </div>
-
-
                     <?php echo Form::close(); ?>
 
 
-                   <?php endif; ?>
-                   <?php if($paciente->Odontograma_id!=NULL): ?>
-                   <div class="btn-group">
+                  <?php else: ?>
+                    <div class="btn-group">
 
-                     <a <button type="button" href=<?php echo e(route('Tratamiento.index', $id)); ?> class="btn btn-warning">Ver Plan de Tratamiento</button></a>
-                     <a <button type="button" href=<?php echo e(route('Odontograma.index',$id)); ?> class="btn btn-info">Ver Odontograma</button></a>
-                     <a <button href=<?php echo e(route('Ficha.ficha',$id)); ?> type="button"  class="btn btn-success">Ingresar Ficha</button> </a>
+                        <a <button type="button" href=<?php echo e(route('Tratamiento.index', $id)); ?> class="btn btn-warning">Ver Plan de Tratamiento</button></a>
+                        <a <button type="button" href=<?php echo e(route('Odontograma.index',$id)); ?> class="btn btn-info">Ver Odontograma</button></a>
+                        <a <button href=<?php echo e(route('Ficha.ficha',$id)); ?> type="button"  class="btn btn-success">Ingresar Ficha</button> </a>
 
-                   </div>
-                    <?php endif; ?>
+                      </div>
+                 <?php endif; ?>
+
                   </div>
           </div>
         </div>
       </div>
-
-      <script>
-        $("#volver").click(function(event)
-        {
-            document.location.href = "<?php echo e(route('Alumno.mostrar',$paciente->clinica_id)); ?>";
-        });
-        </script>
 
 <?php $__env->stopSection(); ?>
 

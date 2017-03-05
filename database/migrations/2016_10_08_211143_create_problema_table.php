@@ -30,10 +30,6 @@ class CreateProblemaTable extends Migration
           $table->boolean('Problema_13')->default(false);
           $table->boolean('Problema_14')->default(false);
 
-
-
-
-
       });
     }
 

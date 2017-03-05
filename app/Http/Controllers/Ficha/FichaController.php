@@ -10,6 +10,7 @@ use clinica\Models\Paciente\Paciente;
 use clinica\Models\Paciente\Clinica;
 use clinica\Models\Alumnos\Alumnos;
 use clinica\Models\Docente\Docente;
+use clinica\Models\Paciente\Ficha;
 use clinica\User;
 
 use clinica\Http\Requests\Ficha\FichaCreateRequest;
@@ -27,7 +28,7 @@ class FichaController extends Controller
     public function index($id)
     {
         $paciente=Paciente::where('rut','=',$id)->first();
-        return view('Ficha/index')->with('paciente',$paciente)->with('id',$id);
+        return view('Ficha/index', array('paciente'=>$paciente, 'id'=>$id ) );
     }
 
     /**
@@ -46,11 +47,12 @@ class FichaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(FichaCreateRequest $request, $id)
+    public function store(Request $request)
     {
       dd($request->All() );
       Ficha::create($request->All());
-      return redirect('Ficha',$id);
+      $paciente_id=$request->paciente_id;
+      return redirect('Ficha',$paciente_id);
     }
 
     /**
@@ -102,7 +104,6 @@ class FichaController extends Controller
     {
         $paciente=Paciente::where('rut','=',$id)->first();
         return view('Ficha/nueva')->with('paciente',$paciente)->with('id',$id);
-        //return view('Ficha/nueva');->with('paciente',$paciente);
     }
 
 
@@ -154,7 +155,6 @@ class FichaController extends Controller
 
         return view('Ficha.ficha', array('paciente'=>$paciente, 'id'=>$id, 'alumno'=>$alumno,
         'docente'=>$docente, 'edad'=>$edad, 'procedimientos'=>$procedimientos, 'insumos'=>$insumos) );
-        //return view('Ficha.ficha')->with('paciente',$paciente)->with('id',$id)->with('alumno',$alumno)->with('docente',$docente)->with('edad',$edad);
     }
 
     public function Procedimientos($Procedimientos)

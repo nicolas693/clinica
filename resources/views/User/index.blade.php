@@ -30,7 +30,7 @@
             @endforeach
               {!!Form::open()!!}
              <div class="form-group">
-              {!!form::label('Código de Usuario : ')!!}
+              {!!form::label('CodigoUser','Código de Usuario : ')!!}
                {!!$user->id !!}
              </div>
 
@@ -40,7 +40,7 @@
              </div>
 
              <div class="form-group">
-             {!!form::label('Permisos de : ')!!}
+             {!!form::label('Permisos','Permisos de : ')!!}
               {!!$nombre !!}
             </div>
 
