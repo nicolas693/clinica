@@ -85,14 +85,6 @@ $(document).on("click", function(e){
 
     }
 });
-
-
-
-
-
-
-
-
 </script>
 
 @endsection

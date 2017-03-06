@@ -110,7 +110,13 @@ border: 2px solid  #145a32  ;
 
 }
 
+.nobold{
+  font-weight: normal !important;
+}
 
+.letramediana{
+  font-size: 12px !important;
+}
 
 
 .centro{

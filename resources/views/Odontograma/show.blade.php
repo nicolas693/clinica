@@ -38,21 +38,23 @@
            {{Form::hidden('Problema_id',$id2)}}
          </div>
           <div class="col-sm-6">
-
             {{Form::label($probN[1])}}
             {{Form::hidden($probN[1],0)}}
             {{Form::checkbox($probN[1],null,$prob->Lesion_de_caries_ICDAS_3_a_6) }}
           </div>
+
           <div class="col-sm-6">
             {{Form::label($probN[2])}}
             {{Form::hidden($probN[2],0)}}
             {{Form::checkbox($probN[2],null,$prob->Lesion_de_caries_ICDAS_1_y_2) }}
           </div>
+
           <div class="col-sm-6">
             {{Form::label($probN[3])}}
             {{Form::hidden($probN[3],0)}}
             {{Form::checkbox($probN[3],null,$prob->Ausente) }}
           </div>
+          
           <div class="col-sm-6">
             {{Form::label($probN[4])}}
             {{Form::hidden($probN[4],0)}}

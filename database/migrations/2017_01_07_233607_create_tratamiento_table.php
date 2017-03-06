@@ -16,6 +16,7 @@ class CreateTratamientoTable extends Migration
           $table->increments('id_Tratamiento');
           $table->String('Fecha');
           $table->String('AccionR');
+          $table->String('Hora');
           $table->integer('Diente');
           $table->String('nProfe');
           $table->integer('Costo');
@@ -28,7 +29,7 @@ class CreateTratamientoTable extends Migration
          $table->foreign('paciente_id')->references('rut')->on('Paciente');
          $table->foreign('ficha_id')->references('id_Ficha')->on('Ficha');
    });
-   
+
 }
 
     /**
@@ -38,6 +39,6 @@ class CreateTratamientoTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('Tratamiento');
     }
 }

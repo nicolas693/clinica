@@ -37,7 +37,7 @@
                   <td><?php echo e($cli->id_Clinica); ?></td>
                		<td><?php echo e($cli->Nombre_Clinica); ?></td>
 
-                  <td><a <button href=<?php echo e(route('Alumno.mostrar',$cli->id_Clinica)); ?> type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Ver pacientes</button></a>
+                  <td><a <button href=<?php echo e(route('Alumno.mostrar',$cli->id_Clinica)); ?> type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-info" style ="margin-left: 20px"  >Ver pacientes</button></a>
 
                   </td>
                	</tr>

@@ -17,15 +17,17 @@ class CreateDocenteTable extends Migration
        $table->string('Nombre')->length(15);
        $table->string('Paterno')->length(15);
        $table->string('Materno')->length(15);
-       $table->Integer('Telefono');
+       $table->Integer('Telefono')->lenght(10);
        $table->primary('id');
 
        $table->integer('asignatura_id')->unsigned();
-       $table->foreign('asignatura_id')->references('id')->on('asignatura');
-
-       $table->integer('user_id')->unsigned()->nullable();
-       $table->foreign('user_id')->references('id')->on('users');
+       $table->integer('user_id')->nullable()->unsigned();
    });
+
+   Schema::table('Docente', function($table) {
+        $table->foreign('user_id')->references('id')->on('users');
+        $table->foreign('asignatura_id')->references('id')->on('asignatura');
+ });
     }
 
     /**

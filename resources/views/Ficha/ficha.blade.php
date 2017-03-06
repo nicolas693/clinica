@@ -38,9 +38,8 @@
      </div>
      <div class="col-md-8">
         <div class="panel panel-primary">
-          <div class="panel-heading"><b>
-             Ficha Paciente </b>
-           </div>
+          <div class="panel-heading"><b> Ficha Paciente </b></div>
+
           <div class="panel-body">
                 {!!Form::open(['route'=>['Ficha.store'],'method'=>'POST'])!!}
 
@@ -78,8 +77,8 @@
 
                 <div class="col-sm-12">
                   {!!form::label('Edad : ')!!} {{$edad}}
-
                 </div>
+
                 <div class="col-sm-4">
                   {!!form::label('FechaControl','Fecha de Control')!!} <p style="font-size: 15px"><b><?php echo date("d/m/Y");?></b></p>
                 </div>
@@ -105,23 +104,65 @@
                       1.Anamnesis General</b>
                     </div>
                    <div class="panel-body">
-                    <div>
 
-                      <div class="col-sm-12 radio">
-                        <p><b>Antecedentes Médicos</b></p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="EnfCardiovasculares" value="true">Enf. Cardiovasculares</p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="EnfGastrointestinales">Enf. Gastrointestinales</p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="EnfRespiratorias">Enf. Respiratorias</p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="EnfNeurologicas">Enf. Neurológicas</p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="EnfIntectocontagiosas">Enf. Infectocontagiosas</p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="DiscrasiaSanguinea">Discrasias Sanguíneas</p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="Diabetes">Diabetes</p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="Alergias">Alergias</p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="Embarazo">Embarazo</p>
-                        <p class="col-sm-4"> <input type="checkbox" name="chk1" id="OtraEnf">Otra</p>
-                       </div>
+                     <div class="col-sm-12">
+                       {!!Form::label('Antecedentes Médicos') !!}
+                     </div>
 
-                       <div class="col-sm-12" style="margin-bottom:20px;">
+                     <div class="col-sm-12 ">
+                        <div class="col-sm-6">
+                          {!!Form::checkbox('EnfCardiovasculares',1 ,false) !!}
+                          {!!Form::label('EnfCardio','Enf. Cardiovasculares',array('class'=>'nobold')) !!}
+                        </div>
+
+                        <div class="col-sm-6">
+                          {!!Form::checkbox('EnfGastrointestinales',1 ,false)!!}
+                          {!!Form::label('EnfGastro','Enf. Gastrointestinales',array('class'=>'nobold')) !!}
+                        </div>
+
+                        <div class="col-sm-6">
+                          {!!Form::checkbox('EnfRespiratorias', 1 ,false)!!}
+                          {!!Form::label('EnfResp','Enf. Respiratorias',array('class'=>'nobold')) !!}
+                        </div>
+
+                        <div class="col-sm-6">
+                          {!!Form::checkbox('EnfNeurologicas', 1 ,false)!!}
+                          {!!Form::label('EnfNeuro','Enf. Neurológicas',array('class'=>'nobold')) !!}
+                        </div>
+
+                        <div class="col-sm-6">
+                          {!!Form::checkbox('EnfIntectocontagiosas', 1, false )!!}
+                          {!!Form::label('EnfInfec','Enf. Infectocontagiosas',array('class'=>'nobold')) !!}
+                        </div>
+
+                        <div class="col-sm-6">
+                          {!!Form::checkbox('DiscrasiaSanguinea', 1, false )!!}
+                          {!!Form::label('Discrasia','Discrasia Sanguinea',array('class'=>'nobold')) !!}
+                        </div>
+
+                        <div class="col-sm-6">
+                          {!!Form::checkbox('Diabetes', 1, false )!!}
+                          {!!Form::label('diabetes','Diabetes',array('class'=>'nobold')) !!}
+                        </div>
+
+                        <div class="col-sm-6">
+                          {!!Form::checkbox('Alergias', 1, false )!!}
+                          {!!Form::label('alergias','Alergias',array('class'=>'nobold')) !!}
+                        </div>
+
+                        <div class="col-sm-6">
+                          {!!Form::checkbox('Embarazo', 1, false )!!}
+                          {!!Form::label('_embarazo','Embarazo',array('class'=>'nobold')) !!}
+                        </div>
+
+                        <div class="col-sm-6">
+                          {!!Form::checkbox('OtraEnf', 1, false )!!}
+                          {!!Form::label('Otraenf','Otra enfermedad',array('class'=>'nobold')) !!}
+                        </div>
+
+                      </div>
+
+                       <div class="col-sm-12" style="margin-top:10px;">
                            <p><b>Fármacos en uso</b></p>
                            {!!form::text('Fármacos en uso',null,['id'=>'Farmacos_Uso','class'=>'form-control'])!!}
                        </div>
@@ -136,14 +177,29 @@
                            {{Form::hidden('docente_id',$docente->id)}}
                        </div>
 
-                       <div class="col-sm-12 checkbox" style="margin-top:10px;">
-                         <p><b>Hábitos</b></p>
-                         <p class="col-sm-2"> <input type="checkbox" name="chk2" id="c11">Fuma</p>
-                         <p class="col-sm-2"> <input type="checkbox" name="chk2" id="c12">Alcohol</p>
-                         <p class="col-sm-2"> <input type="checkbox" name="chk2" id="c13">Drogas</p>
-                      </div>
+                       <div class="col-sm-12" style="margin-top:10px;">
+                         {!!Form::label('Hábitos') !!}
+                       </div>
 
-                    </div>
+                       <div class="col-sm-12">
+
+                         <div class="col-sm-4">
+                           {!!Form::checkbox('Fuma', 1, false )!!}
+                           {!!Form::label('fumar','Fuma',array('class'=>'nobold')) !!}
+                         </div>
+
+                         <div class="col-sm-4">
+                           {!!Form::checkbox('Alcohol', 1, false )!!}
+                           {!!Form::label('alcohol','Consume alcohol',array('class'=>'nobold')) !!}
+                         </div>
+
+                         <div class="col-sm-4">
+                           {!!Form::checkbox('Drogas', 1, false )!!}
+                           {!!Form::label('drogas_','Consume drogas',array('class'=>'nobold')) !!}
+                         </div>
+
+                       </div>
+
                   </div>
 
                       <div class="panel-heading"><b>
@@ -162,34 +218,75 @@
                           {!!form::text('Motivo_Ultima_Consulta',null,['id'=>'Motivo_Ultima_Consulta','class'=>'form-control'])!!}
                         </div>
 
-                        <div class="col-sm-8" style="margin-top:10px;">
+                        <div class="col-sm-12" style="margin-top:10px;">
                           {!!Form::label('Traumatismo','Antecedentes de Traumatismo Dentoalveolar')!!}
-                          <p class="col-sm-8"> <input type="radio" name="radio1" id="r1" value="Nothing">No ha recibido tratamiento de ortodoncia</p>
-                          <p class="col-sm-8"> <input type="radio" name="radio1" id="r2" value="Show">Si ha recibido tratamiento de ortodoncia</p>
-                          <div class="text2 black" >
-                            <div class="col-sm-4" style="margin-top:60px; margin-left:0px;">
-                            {!!form::label('DienteTrau','Indique en que Diente: ')!!}
-                            {!!form::text('DienteTraumatismo',null,['Diente'=>'id','class'=>'form-control'])!!}
-                            </div>
-                            <div class="col-sm-4">
-                              <div class="input-group">
-                                <label for="date"><b>Fecha de traumatismo </b></label>
-                                  <input type="text" class="form-control datepicker2" id="Fecha_Traumatismo" name="Fecha_Traumatismo">
-                                </div>
-                            </div>
-                           </div>
-                         </div>
+                        </div>
 
-                         <div class="col-sm-12 checkbox">
-                           <p><b>Elementos de Higiene</b></p>
-                           <p class="col-sm-3"> <input type="checkbox" name="chk3" id="c14">Cepillo</p>
-                           <p class="col-sm-3"> <input type="checkbox" name="chk3" id="c15">Seda Dental</p>
-                           <p class="col-sm-3"> <input type="checkbox" name="chk3" id="c16">Dentrífico</p>
-                           <p class="col-sm-3"> <input type="checkbox" name="chk3" id="c17">Colutorio</p>
-                           <p class="col-sm-3"> <input type="checkbox" name="chk3" id="c18">Otros</p>
+                        <div class="col-sm-12 ">
+                          <div class="col-sm-8">
+                          {!!Form::radio('Antecedentes_Traumatismo',0,false,['id'=>'r1']) !!}
+                          {!!Form::label('Tortodoncia','No ha recibido tratamiento de Ortodoncia'
+                            ,array('class'=>'nobold'))!!}
                           </div>
 
-                          <div class="col-sm-6 radio2">
+                          <div class="col-sm-8">
+                          {!!Form::radio('Antecedentes_Traumatismo',1,false ,['id'=>'r2']) !!}
+                          {!!Form::label('Tortodoncia2','Si ha recibido tratamiento de Ortodoncia'
+                            ,array('class'=>'nobold'))!!}
+                          </div>
+
+                          <div class="col-sm-12" id="text_t1">
+                            <div class="col-sm-4">
+                              {!!form::label('DienteTrau','Indique en que Diente')!!}
+                              {!!form::text('DienteTraumatismo',null,['id'=>'DienteTraumatismo','class'=>'form-control'])!!}
+                            </div>
+
+                            <div class="col-sm-4" >
+                              <div class="input-group">
+                                <label for="date" class="nobold" ><b>Fecha de traumatismo </b></label>
+                                <input type="text" class="form-control datepicker2" id="fecha2" name="Fecha_Traumatismo">
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-12">
+                        {!!Form::label('ElemH','Elementos de Hígiene') !!}
+                      </div>
+
+                      <div class="col-sm-12">
+                        <div class="col-sm-3">
+                          {!!Form::checkbox('Cepillo', 1, false )!!}
+                          {!!Form::label('_cepillo','Cepillo',array('class'=>'nobold')) !!}
+                        </div>
+
+                        <div class="col-sm-3">
+                          {!!Form::checkbox('SedaDental', 1, false )!!}
+                          {!!Form::label('_seda','Seda dental',array('class'=>'nobold')) !!}
+                        </div>
+
+                        <div class="col-sm-3">
+                          {!!Form::checkbox('Dentrifico', 1, false )!!}
+                          {!!Form::label('_dentrifico','Dentrífico',array('class'=>'nobold')) !!}
+                        </div>
+                        <div class="col-sm-3">
+                          {!!Form::checkbox('Colutorio', 1, false )!!}
+                          {!!Form::label('_colutorio','Colutorio',array('class'=>'nobold')) !!}
+                        </div>
+                        <div class="col-sm-3">
+                          {!!Form::checkbox('Otros', 1, false,['id'=>'chk21'] )!!}
+                          {!!Form::label('_otros','Otros',array('class'=>'nobold')) !!}
+                        </div>
+                      </div>
+
+                      <div class="col-sm-12">
+                        <div class="col-sm-6" id="text_t2">
+                          {!!Form::label('Especifique')!!}
+                          {!!Form::text('nombre_otros',null,['id'=>'NombreOtros','class'=>'form-control']) !!}
+                        </div>
+                      </div>
+
+                          <div class="col-sm-6 radio2" style="margin-top:10px">
                             {!!Form::label('Anestesia','¿Le han aplicado Anestesia Dental?')!!}
                             <p class="col-sm-8"> <input type="radio" name="radio2" id="r3" value="Nothing">No</p>
                             <p class="col-sm-8"> <input type="radio" name="radio2" id="r4" value="Show">Si</p>
@@ -232,21 +329,24 @@
         </div>
      </div>
    </div>
-  <script>
-            $(document).ready(function () {
-            $(".text1").hide();
-            $(".text2").hide();
-            $("#r1").click(function () {
-                $(".text1").show();
-                  $(".text2").hide();
-            });
-            $("#r2").click(function () {
-                $(".text2").show();
-                  $(".text1").hide();
-            });
 
-        });
+  <script>
+    $("#text_t1").hide();
+    $("#text_t2").hide();
+
+  $(document).on("click", function(e){
+      if($(e.target).is("#r2")){
+        $("#text_t1").show();
+      }
+      if($(e.target).is("#r1")){
+        $("#text_t1").hide();
+      }
+      if($(e.target).is("#chk21")){
+        $("#text_t2").show();
+      }
+  });
   </script>
+
   <script>
             $(document).ready(function () {
             $(".radio3").hide();
@@ -261,6 +361,7 @@
 
         });
   </script>
+
   <script>
             $(document).ready(function () {
             $(".text3").hide();
@@ -275,6 +376,7 @@
 
         });
   </script>
+
   <script>
            $('.datepicker').datepicker({
                format: "dd/mm/yyyy",
@@ -284,6 +386,7 @@
                autoclose: true
        });
    </script>
+
    <script>
             $('.datepicker2').datepicker({
                 format: "dd/mm/yyyy",
@@ -297,3 +400,36 @@
 
 
 @endsection
+
+<!--
+<div class="col-sm-12" style="margin-top:10px;">
+  {!Form::label('Traumatismo','Antecedentes de Traumatismo Dentoalveolar')!!}
+</div>
+
+<div class="col-sm-12 ">
+  <div class="col-sm-8">
+  {!Form::radio('Antecedentes_Traumatismo',0,false,['id'=>'r1']) !!}
+  {!Form::label('Tortodoncia','No ha recibido tratamiento de Ortodoncia')!!}
+  </div>
+
+  <div class="col-sm-8">
+  {!Form::radio('Antecedentes_Traumatismo',1,false ,['id'=>'r2']) !!}
+  {!Form::label('Tortodoncia2','Si ha recibido tratamiento de Ortodoncia')!!}
+  </div>
+
+  <div class="col-sm-12" id="text_t1">
+    <div class="col-sm-6">
+      {!form::label('DienteTrau','Indique en que Diente: ' )!!}
+      {!form::text('DienteTraumatismo',null,['Diente'=>'id','class'=>'form-control'])!!}
+    </div>
+
+    <div class="col-sm-6" >
+      <div class="input-group">
+        <label for="date" ><b>Fecha de traumatismo </b></label>
+        <input type="text" class="form-control datepicker2" id="fecha2" name="Fecha_Traumatismo">
+      </div>
+    </div>
+</div>
+</div>
+
+-->
