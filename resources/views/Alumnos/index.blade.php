@@ -3,6 +3,10 @@
 @section('content')
 <head>
   {!!Html::style('css/micss.css')!!}
+  <link rel="stylesheet"  href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+  <!--<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">-->
+  
+
 </head>
    <!-- Main component for a primary marketing message or call to action -->
    <ol class="breadcrumb fondoC1 ">
@@ -23,7 +27,7 @@
            </div>
           <div class="panel-body" >
 
-             <table class="table table-bordered">
+             <table class="table table-bordered" id="myTable1">
                <thead>
                  <th>id</th>
                   <th>Clinica</th>
@@ -59,7 +63,20 @@
      </div>
    </div>
 
+   <script src="http://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
 
+   <script>
+
+
+
+   $(document).ready(function() {
+       $('#myTable1').DataTable( {
+           "language": {
+               "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+           }
+       } );
+   } );
+   </script>
 
 
 

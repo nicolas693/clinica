@@ -4,7 +4,9 @@
 
 <head>
   {!!Html::style('css/micss.css')!!}
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+
+  <link rel="stylesheet"  href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+
 
 </head>
 
@@ -33,7 +35,7 @@
                       <div class="panel-heading" ><b>Docentes</b></div>
                         <div class="panel-body">
 
-                          <table class="table table-bordered" >
+                          <table class="table table-bordered" id="myTable1" >
 
                             <thead>
                                <th>Rut</th>
@@ -73,7 +75,7 @@
                         <div class="panel panel-default" id="3" style="display:none; margin-top:8%;">
                           <div class="panel-heading" ><b>Usuarios</b></div>
                             <div class="panel-body">
-                              <table class="table table-bordered" >
+                              <table class="table table-bordered" id="myTable2" >
                                 <thead>
                                    <th>id</th>
                                    <th>Nombre</th>
@@ -127,7 +129,7 @@
 
 </div>
 
-
+<script src="http://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
 <script>
 
 $(document).on("click", function(e){
@@ -150,7 +152,21 @@ $(document).on("click", function(e){
     }
 });
 
+$(document).ready(function() {
+    $('#myTable1').DataTable( {
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+        }
+    } );
+} );
 
+$(document).ready(function() {
+    $('#myTable2').DataTable( {
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+        }
+    } );
+} );
 
 </script>
 
