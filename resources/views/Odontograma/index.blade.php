@@ -241,7 +241,7 @@
       </div>
 
       <div class="panel-body " style="overflow:auto; height: 560px; "  >
-        <table class="table table-bordered">
+        <table class="table stripe compact">
 
           <tbody>
             <?php $i=0;$ct=0;?>

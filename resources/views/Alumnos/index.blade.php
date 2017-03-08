@@ -5,7 +5,7 @@
   {!!Html::style('css/micss.css')!!}
   <link rel="stylesheet"  href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
   <!--<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">-->
-  
+
 
 </head>
    <!-- Main component for a primary marketing message or call to action -->
@@ -27,7 +27,7 @@
            </div>
           <div class="panel-body" >
 
-             <table class="table table-bordered" id="myTable1">
+             <table class="table stripe compact" id="myTable1">
                <thead>
                  <th>id</th>
                   <th>Clinica</th>

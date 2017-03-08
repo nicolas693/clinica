@@ -28,9 +28,7 @@ Route::get('/', function () {
 
 
 
-    Route::get('/odo', function () {
-    return view('Odontograma/index');
-});
+
   Route::group(['middleware' => ['auth','Admin']], function(){
     route::get('/Admin','Admin\AdminController@index');
     route::resource('Docente','Docentes\DocentesController',['only' => ['store','create','edit','update']]);
@@ -60,8 +58,10 @@ Route::get('/', function () {
 
   route::group(['middleware' => ['auth','Alumno']], function(){
     route::get('Alumno/mostrar/{id}',['as' => 'Alumno.mostrar', 'uses' => 'Alumnos\AlumnosController@mostrar']);
-    route::get('Alumno/mostrar/{id}/Paciente/create',[
-      'as' => 'Paciente.create', 'uses' => 'Pacientes\PacientesController@create']);
+    route::get('Alumno/mostrar/{id}/Paciente/create',['as' => 'Paciente.create', 'uses' => 'Pacientes\PacientesController@create']);
+    route::get('Paciente/alta/{id}',['as' => 'Paciente.alta', 'uses' => 'Pacientes\PacientesController@alta']);
+
+
     route::get('Alumno','Alumnos\AlumnosController@index');
 
     route::resource('Problema','Odontograma\ProblemaController');
@@ -82,7 +82,7 @@ Route::get('/', function () {
     route::post('Procedimiento','Ficha\ProcedimientoController@store');
     route::resource('Procedimiento', 'Ficha\ProcedimientoController');
 
-    Route::get('Paciente/alta/{id}', 'Pacientes\PacientesController@alta');
+  
     route::resource('Paciente','Pacientes\PacientesController',['only' => ['store','edit','show','update']]);
 
 

@@ -29,7 +29,7 @@
                       <div class="panel-heading" ><b>Alumnos</b></div>
                         <div class="panel-body">
 
-                          <table class="table table-bordered" id="myTable1" >
+                          <table class="table stripe compact" id="myTable1" >
 
                             <thead>
                                <th>Rut</th>

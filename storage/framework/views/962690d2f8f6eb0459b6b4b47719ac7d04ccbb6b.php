@@ -102,7 +102,7 @@
 
 
 
-             <div class="col-sm-12">
+             <div class="col-sm-6">
                <?php echo form::label('Sexo'); ?>
 
                <?php echo Form::select('Genero',$genero,null,['id'=>'Genero','class'=>'form-control']); ?>

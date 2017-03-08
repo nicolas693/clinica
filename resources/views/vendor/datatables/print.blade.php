@@ -13,7 +13,7 @@
         </style>
     </head>
     <body>
-        <table class="table table-bordered table-condensed table-striped">
+        <table class="table stripe compact table-condensed table-striped">
             @php ($flag = true)
             @foreach($data as $row)
                 @if ($row == reset($data) && $flag)
