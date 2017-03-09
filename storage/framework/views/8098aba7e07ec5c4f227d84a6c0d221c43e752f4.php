@@ -92,10 +92,14 @@
 
                   <?php else: ?>
                     <div class="btn-group">
-
-                        <a <button type="button" href=<?php echo e(route('Tratamiento.index', $id)); ?> class="btn btn-warning">Ver Plan de Tratamiento</button></a>
-                        <a <button type="button" href=<?php echo e(route('Odontograma.index',$id)); ?> class="btn btn-info">Ver Odontograma</button></a>
-                        <a <button href=<?php echo e(route('Ficha.ficha',$id)); ?> type="button"  class="btn btn-success">Ingresar Ficha</button> </a>
+                        <?php if($ficha_exists!=NULL): ?>
+                          <a <button type="button" href=<?php echo e(route('Tratamiento.index', $id)); ?> class="btn btn-warning">Ver Plan de Tratamiento</button></a>
+                          <a <button type="button" href=<?php echo e(route('Odontograma.index',$id)); ?> class="btn btn-info">Ver Odontograma</button></a>
+                            <a <button href=<?php echo e(route('Ficha.edit',$id)); ?> type="button"  class="btn btn-success">Editar Ficha</button> </a>
+                        <?php else: ?>
+                          <a <button type="button" href=<?php echo e(route('Odontograma.index',$id)); ?> class="btn btn-info">Ver Odontograma</button></a>
+                          <a <button href=<?php echo e(route('Ficha.ficha',$id)); ?> type="button"  class="btn btn-success">Ingresar Ficha</button> </a>
+                        <?php endif; ?>
 
                       </div>
                  <?php endif; ?>

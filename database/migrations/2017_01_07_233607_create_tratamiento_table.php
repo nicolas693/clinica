@@ -16,9 +16,9 @@ class CreateTratamientoTable extends Migration
           $table->increments('id_Tratamiento');
           $table->String('Fecha');
           $table->String('AccionR');
-          $table->String('Hora');
           $table->integer('Diente');
           $table->String('nProfe');
+          $table->String('Insumos');
           $table->integer('Costo');
           $table->String('paciente_id');
           $table->integer('ficha_id')->unsigned();

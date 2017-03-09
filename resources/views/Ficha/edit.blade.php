@@ -41,12 +41,11 @@
           <div class="panel-heading"><b> Ficha Paciente </b></div>
 
           <div class="panel-body">
-                {!!Form::open(['route'=>['Ficha.store'],'method'=>'POST'])!!}
+                {!!Form::open()!!}
 
                 <div class="col-sm-6">
                     {!!form::label('Nombre :')!!}
                      {!!$paciente->Nombre !!} {!!$paciente->Paterno !!} {!!$paciente->Materno !!}
-                     {{Form::hidden('paciente_id',$paciente->rut)}}
                 </div>
 
               <div class="col-sm-6">
@@ -57,21 +56,16 @@
                 <div class="col-sm-6">
                     {!!form::label('FechaNacimiento','Fecha de nacimiento : ')!!}
                      {!!$paciente->Fecha_Nacimiento !!}
-                     {{Form::hidden('Fecha_Nacimiento',$paciente->Fecha_Nacimiento)}}
                 </div>
 
                 <div class="col-sm-6">
                   {!!form::label('TelefonoMovil','Teléfono Movil : ')!!}
                   {!!$paciente->Telefono_Movil !!}
-                  {{Form::hidden('Telefono_Movil',$paciente->Telefono_Movil)}}
                 </div>
 
                 <div class="col-sm-6">
                   {!!form::label('Dirección : ')!!}
                   {!!$paciente->Calle !!} {!!$paciente->Numero_Calle !!}
-                  {{Form::hidden('Calle',$paciente->Calle)}}
-                  {{Form::hidden('Numero_Calle',$paciente->Numero_Calle)}}
-
                 </div>
 
 
@@ -339,8 +333,8 @@
 
            <div class="col-sm-12" style="margin-top:10px;" >
              <div class="col-sm-2">
-               {!!Form::submit('Grabar',['name'=>'grabar','id'=>'grabar'
-                 ,'content'=>'<span>Grabar</span>','class'=>'btn btn-success ']) !!}
+               {!!Form::submit('Editar datos',['name'=>'grabar','id'=>'grabar'
+                 ,'content'=>'<span>Grabar</span>','class'=>'btn btn-warning ']) !!}
                  {!!Form::close()!!}
              </div>
              <div class="col-sm-2">

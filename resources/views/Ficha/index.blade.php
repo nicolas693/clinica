@@ -76,10 +76,14 @@
 
                   @else
                     <div class="btn-group">
-
-                        <a <button type="button" href={{route('Tratamiento.index', $id) }} class="btn btn-warning">Ver Plan de Tratamiento</button></a>
-                        <a <button type="button" href={{route('Odontograma.index',$id) }} class="btn btn-info">Ver Odontograma</button></a>
-                        <a <button href={{route('Ficha.ficha',$id) }} type="button"  class="btn btn-success">Ingresar Ficha</button> </a>
+                        @if ($ficha_exists!=NULL)
+                          <a <button type="button" href={{route('Tratamiento.index', $id) }} class="btn btn-warning">Ver Plan de Tratamiento</button></a>
+                          <a <button type="button" href={{route('Odontograma.index',$id) }} class="btn btn-info">Ver Odontograma</button></a>
+                            <a <button href={{route('Ficha.edit',$id) }} type="button"  class="btn btn-success">Editar Ficha</button> </a>
+                        @else
+                          <a <button type="button" href={{route('Odontograma.index',$id) }} class="btn btn-info">Ver Odontograma</button></a>
+                          <a <button href={{route('Ficha.ficha',$id) }} type="button"  class="btn btn-success">Ingresar Ficha</button> </a>
+                        @endif
 
                       </div>
                  @endif

@@ -22,7 +22,7 @@ class TratamientoController extends Controller
     {
       $paciente=Paciente::where('rut','=',$id)->first();
       $tratamiento=Tratamiento::All();
-      return view('Tratamiento.index', array('paciente'=>$paciente, 'id'=>$id, 'tratamiento'=>$tratamiento);
+      return view('Tratamiento.index', array('paciente'=>$paciente, 'id'=>$id, 'tratamiento'=>$tratamiento) );
     }
 
     /**
@@ -40,7 +40,16 @@ class TratamientoController extends Controller
 
         $paciente=Paciente::where('rut','=',$id)->first();
         $ficha=Ficha::where('paciente_id','=',$id)->first();
-        return view ('Tratamiento.nuevo')->with('paciente',$paciente)->with('id',$id)->with('ficha',$ficha);
+        $insumos = array(
+          "Alginmax"=>"Alginmax",
+          "Alginkid"=>"Alginkid",
+          "Alginplus Tropical"=>"Alginplus Tropical",
+          "Servilletas Dentales"=>"Servilletas Dentales",
+          "Eyector de saliva"=>"Eyector de saliva",
+          "Manga de esterilización"=>"Manga de esterilización",
+          "Tórula de algodón"=>"Tórula de algodón");
+
+        return view ('Tratamiento.nuevo',array('paciente'=>$paciente, 'id'=>$id, 'ficha'=>$ficha, 'insumos'=>$insumos) );
     }
 
     /**

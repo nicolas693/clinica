@@ -15,8 +15,7 @@ class CreateProcedimientoTable extends Migration
       Schema::create('Procedimiento', function (Blueprint $table) {
           $table->increments('id');
           $table->String('Nombre');
-
-      });
+              });
     }
 
     /**

@@ -73,14 +73,13 @@ Route::get('/', function () {
     route::get('Ficha/{id}/Odontograma/{id2}',['as'=> 'Odontograma.show' , 'uses' => 'Odontograma\OdontogramaController@show']);
     route::get('Ficha/{id}/Odontograma',['as'=> 'Odontograma.index' , 'uses' => 'Odontograma\OdontogramaController@index']);
     route::get('Ficha/{id}',['as'=> 'Ficha.index' , 'uses' => 'Ficha\FichaController@index']);
-    route::get('Ficha/{id}/nueva','Ficha\FichaController@nueva');
-    route::get('Ficha/antigua','Ficha\FichaController@antigua');
+    route::get('Ficha/{id}/editar',['as'=>'Ficha.edit','uses'=>'Ficha\FichaController@edit']);
     route::get('Ficha/{id}/ficha',['as'=>'Ficha.ficha', 'uses' => 'Ficha\FichaController@ficha' ]);
-    route::resource('Ficha','Ficha\FichaController',['only'=>['store'] ] );
+    route::resource('Ficha','Ficha\FichaController',['only'=>'store'] );
 
     route::get('Procedimiento','Ficha\ProcedimientoController@store');
     route::post('Procedimiento','Ficha\ProcedimientoController@store');
-    route::resource('Procedimiento', 'Ficha\ProcedimientoController');
+    route::resource('Procedimiento', 'Ficha\ProcedimientoController', ['only'=>'store']);
 
     Route::get('Paciente/alta/{id}', 'Pacientes\PacientesController@alta');
     route::resource('Paciente','Pacientes\PacientesController',['only' => ['store','edit','show','update']]);
@@ -88,8 +87,8 @@ Route::get('/', function () {
 
     route::get('Tratamiento/{id}',['as'=> 'Tratamiento.index', 'uses'=> 'Tratamiento\TratamientoController@index']);
     route::get('Tratamiento/nuevo/{id}', [ 'as'=> 'Tratamiento.nuevo', 'uses'=> 'Tratamiento\TratamientoController@nuevo']);
-    route::post('Tratamiento/nuevo', 'Tratamiento/TratamientoController@store');
-    //route::resource('Tratamiento','Tratamiento\TratamientoController',['only' => ['store','edit','show','update']]);
+    //route::post('Tratamiento', 'Tratamiento\TratamientoController@store');
+    route::resource('Tratamiento','Tratamiento\TratamientoController',['only' => ['store','edit','show','update']]);
 
 
 });

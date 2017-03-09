@@ -42,7 +42,6 @@ class CreateFichaTable extends Migration
             $table->boolean('Antecedentes_Traumatismo');
             $table->integer('DienteTraumatismo')->nullable(); //por que podria no tener ningun diente con traumatismo
             $table->String('Fecha_Traumatismo')->nullable();  //podria no haber tenido nunca una fecha de traumatismo
-            $table->String('Tratamiento_Ortodoncia');
             //Elementos de Higiene
             $table->boolean('Cepillo')->default(false);
             $table->boolean('SedaDental')->default(false);
@@ -51,6 +50,7 @@ class CreateFichaTable extends Migration
             $table->boolean('Otros')->default(false);
             $table->String('NombreOtros')->nullable();
             $table->boolean('Anestesia');
+            $table->String('Procedimientos');
             $table->boolean('Complicacion_Anestesia')->nullable(); //podria no haber tenido una complicacion de anestesia,
             //aunque en ese caso se podria dejar como false ese campo
             $table->String('Complicacion')->nullable();

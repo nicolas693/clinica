@@ -41,15 +41,13 @@
           <div class="panel-heading"><b> Ficha Paciente </b></div>
 
           <div class="panel-body">
-                <?php echo Form::open(['route'=>['Ficha.store'],'method'=>'POST']); ?>
+                <?php echo Form::open(); ?>
 
 
                 <div class="col-sm-6">
                     <?php echo form::label('Nombre :'); ?>
 
                      <?php echo $paciente->Nombre; ?> <?php echo $paciente->Paterno; ?> <?php echo $paciente->Materno; ?>
-
-                     <?php echo e(Form::hidden('paciente_id',$paciente->rut)); ?>
 
                 </div>
 
@@ -65,8 +63,6 @@
 
                      <?php echo $paciente->Fecha_Nacimiento; ?>
 
-                     <?php echo e(Form::hidden('Fecha_Nacimiento',$paciente->Fecha_Nacimiento)); ?>
-
                 </div>
 
                 <div class="col-sm-6">
@@ -74,19 +70,12 @@
 
                   <?php echo $paciente->Telefono_Movil; ?>
 
-                  <?php echo e(Form::hidden('Telefono_Movil',$paciente->Telefono_Movil)); ?>
-
                 </div>
 
                 <div class="col-sm-6">
                   <?php echo form::label('Dirección : '); ?>
 
                   <?php echo $paciente->Calle; ?> <?php echo $paciente->Numero_Calle; ?>
-
-                  <?php echo e(Form::hidden('Calle',$paciente->Calle)); ?>
-
-                  <?php echo e(Form::hidden('Numero_Calle',$paciente->Numero_Calle)); ?>
-
 
                 </div>
 
@@ -435,8 +424,8 @@
 
            <div class="col-sm-12" style="margin-top:10px;" >
              <div class="col-sm-2">
-               <?php echo Form::submit('Grabar',['name'=>'grabar','id'=>'grabar'
-                 ,'content'=>'<span>Grabar</span>','class'=>'btn btn-success ']); ?>
+               <?php echo Form::submit('Editar datos',['name'=>'grabar','id'=>'grabar'
+                 ,'content'=>'<span>Grabar</span>','class'=>'btn btn-warning ']); ?>
 
                  <?php echo Form::close(); ?>
 

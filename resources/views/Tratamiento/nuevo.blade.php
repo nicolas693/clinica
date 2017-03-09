@@ -70,13 +70,21 @@
               </div>
 
               <div class="col-sm-8">
-                   {!!form::label('Profesor guía')!!}
+                   {!!form::label('profesor_guia','Profesor guía')!!}
                    {!!form::text('nProfe',null,['id'=>'nProfe','class'=>'form-control'])!!}
               </div>
 
               <div class="col-sm-12">
-                   {!!form::label('Acción a Realizar')!!}
+                   {!!form::label('accion_','Acción a Realizar')!!}
                    {!!form::text('AccionR',null,['id'=>'AccionR','class'=>'form-control'])!!}
+              </div>
+
+              <div class="col-sm-12">
+                <div class="col-sm-6">
+                  {!!Form::label('insumos_','Insumos necesarios') !!}
+                    {!!Form::select('Insumos',$insumos,null,
+                      ['id'=>'insumos','class'=>'form-control', 'multiple'=>'multiple']) !!}
+                </div>
               </div>
 
               <div class="col-sm-12">

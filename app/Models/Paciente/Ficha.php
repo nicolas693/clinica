@@ -12,10 +12,16 @@ class Ficha extends Model
 
     public $timestamps = false;
     protected $fillable = [
-        'paciente_id','alumno_id','docente_id','Procedimiento_id','Fecha_Ingreso','Motivo_Consulta','Expectativas',
-        'Antecedentes_Medicos','Farmacos_Uso','Fecha_Ultima_Consulta','Motivo_Ultima_Consulta','Antecedentes_Traumatismo',
-        'Fuma','Alcohol','Drogas','Fecha_Traumatismo','Tratamiento_Ortodoncia','Elem_Higiene','Anestesia','Alerta_Medica'
+        'paciente_id','alumno_id','docente_id','Ocupacion','Fecha_Ingreso','Motivo_Consulta','Expectativas','EnfCardiovasculares',
+        'EnfGastrointestinales','EnfRespiratorias','EnfNeurologicas','EnfIntectocontagiosas','DiscrasiaSanguinea',
+        'Diabetes','Alergia', 'Embarazo', 'OtraEnf', 'NombreOtra',
+        'Farmacos_Uso','Fecha_Ultima_Consulta','Motivo_Ultima_Consulta','Antecedentes_Traumatismo','DienteTraumatismo',
+        'Fecha_Traumatismo','Fuma','Alcohol','Drogas','Cepillo', 'SedaDental', 'Dentrífico',
+        'Colutorio', 'Otros', 'NombreOtros', 'Procedimientos','Anestesia','Complicacion_Anestesia','Complicacion',
+        'Alerta_Medica'
     ];
+
+
     //,'id'-->> id del docente.
     /*
 

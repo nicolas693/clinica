@@ -77,17 +77,27 @@
               </div>
 
               <div class="col-sm-8">
-                   <?php echo form::label('Profesor guía'); ?>
+                   <?php echo form::label('profesor_guia','Profesor guía'); ?>
 
                    <?php echo form::text('nProfe',null,['id'=>'nProfe','class'=>'form-control']); ?>
 
               </div>
 
               <div class="col-sm-12">
-                   <?php echo form::label('Acción a Realizar'); ?>
+                   <?php echo form::label('accion_','Acción a Realizar'); ?>
 
                    <?php echo form::text('AccionR',null,['id'=>'AccionR','class'=>'form-control']); ?>
 
+              </div>
+
+              <div class="col-sm-12">
+                <div class="col-sm-6">
+                  <?php echo Form::label('insumos_','Insumos necesarios'); ?>
+
+                    <?php echo Form::select('Insumos',$insumos,null,
+                      ['id'=>'insumos','class'=>'form-control', 'multiple'=>'multiple']); ?>
+
+                </div>
               </div>
 
               <div class="col-sm-12">
