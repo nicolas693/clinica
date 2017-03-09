@@ -177,7 +177,14 @@ class PacientesController extends Controller
 
     public function alta($id)
     {
-        Paciente::where('rut', $id)->update(array('alta' => 0));
+        $pa=Paciente::find($id);
+        if($pa->alta==false){
+            Paciente::where('rut', $id)->update(array('alta' => 1));
+        }
+          
+        else {
+            Paciente::where('rut', $id)->update(array('alta' => 0));
+        }
         $pa=Paciente::find($id);
         $pa=$pa->clinica_id;
 

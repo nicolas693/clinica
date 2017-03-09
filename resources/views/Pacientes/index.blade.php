@@ -24,7 +24,7 @@
            </div>
           <div class="panel-body " >
 
-             <table class="table table-bordered">
+             <table class="table stripe compact">
                <thead>
                   <th>Rut</th>
                   <th>Nombre</th>

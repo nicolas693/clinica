@@ -30,7 +30,7 @@
               <?php echo Form::open(); ?>
 
              <div class="form-group">
-              <?php echo form::label('Código de Usuario : '); ?>
+              <?php echo form::label('CodigoUser','Código de Usuario : '); ?>
 
                <?php echo $user->id; ?>
 
@@ -44,7 +44,7 @@
              </div>
 
              <div class="form-group">
-             <?php echo form::label('Permisos de : '); ?>
+             <?php echo form::label('Permisos','Permisos de : '); ?>
 
               <?php echo $nombre; ?>
 

@@ -8,6 +8,13 @@
   <link rel="stylesheet"  href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
 
 
+
+
+
+
+
+
+
 </head>
 
 
@@ -35,7 +42,7 @@
                       <div class="panel-heading" ><b>Docentes</b></div>
                         <div class="panel-body">
 
-                          <table class="table table-bordered" id="myTable1" >
+                          <table class="table stripe compact" id="myTable1" >
 
                             <thead>
                                <th>Rut</th>
@@ -75,7 +82,7 @@
                         <div class="panel panel-default" id="3" style="display:none; margin-top:8%;">
                           <div class="panel-heading" ><b>Usuarios</b></div>
                             <div class="panel-body">
-                              <table class="table table-bordered" id="myTable2" >
+                              <table class="table  stripe compact" id="myTable2" >
                                 <thead>
                                    <th>id</th>
                                    <th>Nombre</th>
