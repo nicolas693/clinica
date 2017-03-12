@@ -70,7 +70,7 @@ Route::get('/', function () {
     route::get('Ficha/{id}/Odontograma/{id2}',['as'=> 'Odontograma.show' , 'uses' => 'Odontograma\OdontogramaController@show']);
     route::get('Ficha/{id}/Odontograma',['as'=> 'Odontograma.index' , 'uses' => 'Odontograma\OdontogramaController@index']);
     route::get('Ficha/{id}',['as'=> 'Ficha.index' , 'uses' => 'Ficha\FichaController@index']);
-    route::get('Ficha/{id}/verficha', ['as'=>'Ficha.verficha','uses'=>'Ficha\FichaController@verFicha' ]);
+    route::get('Ficha/{id}/verFicha', ['as'=>'Ficha.verFicha','uses'=>'Ficha\FichaController@verFicha' ]);
     route::get('Ficha/{id}/editar',['as'=>'Ficha.edit','uses'=>'Ficha\FichaController@edit']);
     route::get('Ficha/{id}/ficha',['as'=>'Ficha.ficha', 'uses' => 'Ficha\FichaController@ficha' ]);
     route::resource('Ficha','Ficha\FichaController',['only'=>['store','update','edit'] ] );

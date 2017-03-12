@@ -73,7 +73,7 @@
                         @if ($ficha_exists!=NULL)
                           <a <button type="button" href={{route('Tratamiento.index', $id) }} class="btn btn-warning">Ver Plan de Tratamiento</button></a>
                           <a <button type="button" href={{route('Odontograma.index',$id) }} class="btn btn-info">Ver Odontograma</button></a>
-                          <a <button href={{route('Ficha.verficha',$id) }} type="button"  class="btn btn-primary">Ver Ficha</button> </a>
+                          <a <button href={{route('Ficha.verFicha',$id) }} type="button"  class="btn btn-primary">Ver Ficha</button> </a>
                         @else
                           <a <button type="button" href={{route('Odontograma.index',$id) }} class="btn btn-info">Ver Odontograma</button></a>
                           <a <button href={{route('Ficha.ficha',$id) }} type="button"  class="btn btn-success">Ingresar Ficha</button> </a>

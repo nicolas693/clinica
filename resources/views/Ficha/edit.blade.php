@@ -27,7 +27,7 @@
 
 <ol class="breadcrumb fondoC1 ">
      <li><a href="{{url('Alumno')}}"> Alumno</a></li>
-     <li><a href="{{url('Ficha',$id,'/verficha')}}"> Ver Ficha</a></li>
+     <li><a href="{{url('Ficha',$id,'/verFicha')}}"> Ver Ficha</a></li>
      <li class="active">Editar Ficha</li>
    </ol>
 

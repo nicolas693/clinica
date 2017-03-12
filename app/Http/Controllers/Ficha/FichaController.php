@@ -36,7 +36,7 @@ class FichaController extends Controller
     public function verFicha($id){
       $paciente=Paciente::where('rut','=',$id)->first();
       $ficha_exists =Ficha::where('paciente_id','=',$id)->first();
-      return view('Ficha/verficha', array('paciente'=>$paciente, 'id'=>$id,'ficha_exists'=>$ficha_exists) );
+      return view('Ficha/verFicha', array('paciente'=>$paciente, 'id'=>$id,'ficha_exists'=>$ficha_exists) );
     }
 
     /**
