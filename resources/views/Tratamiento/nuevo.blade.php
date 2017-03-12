@@ -63,17 +63,6 @@
                    {!!form::text('Diente',null,['id'=>'Diente','class'=>'form-control'])!!}
               </div>
 
-              <div class="col-sm-4">
-                   {!!form::label('Costo')!!}
-                   {!!Form::hidden('ficha_id',$ficha->id_Ficha)!!}
-                   {!!form::text('Costo',null,['id'=>'Costo','class'=>'form-control'])!!}
-              </div>
-
-              <div class="col-sm-8">
-                   {!!form::label('profesor_guia','Profesor guía')!!}
-                   {!!form::text('nProfe',null,['id'=>'nProfe','class'=>'form-control'])!!}
-              </div>
-
               <div class="col-sm-12">
                    {!!form::label('accion_','Acción a Realizar')!!}
                    {!!form::text('AccionR',null,['id'=>'AccionR','class'=>'form-control'])!!}

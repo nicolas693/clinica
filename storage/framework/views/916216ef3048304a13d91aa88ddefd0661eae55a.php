@@ -34,7 +34,7 @@
 
    <div class="row fondoC centro">
      <div class="page-header">
-       <h1>Ficha Clinica Integral Adulto </h1>
+       <h1>Ficha Clínica Integral Adulto </h1>
      </div>
      <div class="col-md-8">
         <div class="panel panel-primary">
@@ -184,7 +184,7 @@
                         </div>
 
                         <div class="col-sm-6">
-                          <?php echo Form::checkbox('Alergias', 1, false ); ?>
+                          <?php echo Form::checkbox('Alergia', 1, false ); ?>
 
                           <?php echo Form::label('alergias','Alergias',array('class'=>'nobold')); ?>
 
@@ -337,7 +337,7 @@
                         </div>
 
                         <div class="col-sm-3">
-                          <?php echo Form::checkbox('Dentrifico', 1, false ); ?>
+                          <?php echo Form::checkbox('Dentrífico', 1, false ); ?>
 
                           <?php echo Form::label('_dentrifico','Dentrífico',array('class'=>'nobold')); ?>
 
@@ -411,14 +411,143 @@
                         </div>
                       </div>
 
+                      <div class="col-sm-12 form-group">
+                        <?php echo Form::label('Procedimientos'); ?>
+
+                      </div>
+
                             <div class="col-sm-12 form-group">
-                              <div class="col-sm-6 form-group">
-                                <?php echo Form::model(''); ?>
 
-                                <?php echo Form::label('procedimientos_','Procedimientos a realizar'); ?>
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Apicectomia', 1,false); ?>
 
-                                    <?php echo Form::select('Procedimientos[]',$procedimientos,null,
-                                      ['id'=>'Nombre', 'class'=>'form-control','multiple'=>'multiple']); ?>
+                                <?php echo Form::label('_apicectomia','Apicectomía',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Blanqueamiento_Dental',1 ,false); ?>
+
+                                <?php echo Form::label('_blanqueamiento','Blanqueamiento Dental',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Empaste',1 ,false); ?>
+
+                                <?php echo Form::label('_empaste','Empaste',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Endodoncia', 1 ,false); ?>
+
+                                <?php echo Form::label('_endodoncia','Endodoncia',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Exodoncia', 1 ,false); ?>
+
+                                <?php echo Form::label('_exodoncia','Exodoncia',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Explorador_Dental', 1 ,false); ?>
+
+                                <?php echo Form::label('_explorador','Explorador Dental',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Gingivectomía', 1 ,false); ?>
+
+                                <?php echo Form::label('_gingivectomia','Gingivectomía',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Gingivoplastía', 1 ,false); ?>
+
+                                <?php echo Form::label('_gingivoplastia','Gingivoplastía',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Higiene_Bucodental', 1 ,false); ?>
+
+                                <?php echo Form::label('_higiene','Higiene Bucodental',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Implante_Dental', 1 ,false); ?>
+
+                                <?php echo Form::label('_implante','Implante Dental',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Limpieza_Dental', 1 ,false); ?>
+
+                                <?php echo Form::label('_limpieza','Limpieza Dental',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Ostectomía', 1 ,false); ?>
+
+                                <?php echo Form::label('_ostectomia','Ostectomía',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Remineralización_Dental', 1 ,false); ?>
+
+                                <?php echo Form::label('_remineralizacion','Remineralización Dental',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('SitioEstado', 1 ,false); ?>
+
+                                <?php echo Form::label('_sitioestado','Sitio/Estado',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Tartrectomía', 1 ,false); ?>
+
+                                <?php echo Form::label('_tartrectomia','Tartrectomía',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('TecnicaColgajo', 1 ,false); ?>
+
+                                <?php echo Form::label('_colgajo','Técnica de elevación del colgajo',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('TecnicaSenoMaxilar', 1 ,false); ?>
+
+                                <?php echo Form::label('_senomaxilar','Técnica de elevación del seno maxilar',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('RegeneracionOsea', 1 ,false); ?>
+
+                                <?php echo Form::label('_regeneracionosea','Técnica de regeneración ósea guiada',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('TerapiaFluoruro', 1 ,false); ?>
+
+                                <?php echo Form::label('_fluoruro','Terapia de fluoruro',array('class'=>'nobold')); ?>
 
                               </div>
                             </div>

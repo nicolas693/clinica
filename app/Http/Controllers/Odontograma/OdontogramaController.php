@@ -138,8 +138,8 @@ class OdontogramaController extends Controller
 
 
 
-
-        return view('Odontograma.show')->with('id',$id)->with('id2',$id2)->with('paciente',$paciente)->with('probN',$probN)->with('prob',$prob)->with('num',$num);
+        return view('Odontograma.show', array('id'=>$id, 'id2'=>$id2, 'paciente'=>$paciente, 'probN'=>$probN,
+      'prob'=>$prob, 'num'=>$num) );
     }
 
     /**

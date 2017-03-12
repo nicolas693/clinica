@@ -1,23 +1,19 @@
 @extends('layouts.app')
-
 @section('title','Ficha del Paciente')
 @section('content')
 
-<head>
-    {!!Html::style('css/micss.css')!!}
-</head>
-
+<head>{!!Html::style('css/micss.css')!!}</head>
 
 <ol class="breadcrumb fondoC1 ">
      <li><a href="{{url('Alumno')}}"> Alumno</a></li>
-     <li class="active">Ficha Paciente</li>
+     <li class="active">Menú Ficha</li>
       <li class="pull-right"><a href="/Alumno/mostrar/{{$paciente->clinica_id}}" class="btn btn-primary btn-xs"> <b>Volver</b> </a></li>
    </ol>
 
 
 <div class="row fondoC centro">
-    <div class="page-header" style="margin-right:350px;" >
-      <h1>Antecedentes del Paciente<small></small></h1>
+    <div class="page-header centrar" style="margin-right:350px;" >
+      <h1>Menú Ficha<small></small></h1>
     </div>
     <div class="col-md-10">
 
@@ -30,7 +26,7 @@
                   {!!Form::open()!!}
                   <div class="form-group col-sm-6">
                     {!!form::label('Nombre : ')!!}
-                     {!!$paciente->Nombre !!} {!!$paciente->Paterno !!} {!!$paciente->Materno !!}
+                    {!!$paciente->Nombre !!} {!!$paciente->Paterno !!} {!!$paciente->Materno !!}
                  </div>
 
                  <div class="form-group col-sm-6">
@@ -59,7 +55,6 @@
                  </div>
 
 
-
                  {!!Form::close()!!}
 
 
@@ -68,7 +63,6 @@
 
                   {!!Form::open(['route'=>'Odontograma.store','method'=>'POST'])!!}
                       {!!form::text('Odontograma_id',$paciente->rut,['id'=>'Odontograma_id','class'=>'form-control hidden'])!!}
-
                       <div class="btn-group">
                         <button type="submit" class="btn btn-success" style="margin-left:10px;">Crear Odontograma</button>
                       </div>
@@ -79,7 +73,7 @@
                         @if ($ficha_exists!=NULL)
                           <a <button type="button" href={{route('Tratamiento.index', $id) }} class="btn btn-warning">Ver Plan de Tratamiento</button></a>
                           <a <button type="button" href={{route('Odontograma.index',$id) }} class="btn btn-info">Ver Odontograma</button></a>
-                            <a <button href={{route('Ficha.edit',$id) }} type="button"  class="btn btn-success">Editar Ficha</button> </a>
+                          <a <button href={{route('Ficha.verficha',$id) }} type="button"  class="btn btn-primary">Ver Ficha</button> </a>
                         @else
                           <a <button type="button" href={{route('Odontograma.index',$id) }} class="btn btn-info">Ver Odontograma</button></a>
                           <a <button href={{route('Ficha.ficha',$id) }} type="button"  class="btn btn-success">Ingresar Ficha</button> </a>
@@ -90,7 +84,6 @@
 
                   </div>
           </div>
-        </div>
       </div>
 
 @endsection

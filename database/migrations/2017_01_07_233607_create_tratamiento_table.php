@@ -16,13 +16,17 @@ class CreateTratamientoTable extends Migration
           $table->increments('id_Tratamiento');
           $table->String('Fecha');
           $table->String('AccionR');
-          $table->integer('Diente');
-          $table->String('nProfe');
-          $table->String('Insumos');
-          $table->integer('Costo');
+          $table->String('DienteTratamiento')->nullable();
+          //Insumos
+          $table->boolean('Alginmax')->nullable();
+          $table->boolean('Alginkid')->nullable();
+          $table->boolean('Alginplus_Tropical')->nullable();
+          $table->boolean('Servilletas_Dentales')->nullable();
+          $table->boolean('Eyector_Saliva')->nullable();
+          $table->boolean('Manga_Esterilizacion')->nullable();
+          $table->boolean('Torula_Algodon')->nullable();
           $table->String('paciente_id');
           $table->integer('ficha_id')->unsigned();
-
       });
 
       Schema::table('Tratamiento', function($table) {

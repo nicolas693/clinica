@@ -15,14 +15,9 @@
 
 
    <div class="row fondoC centro">
-
      <div class="col-md-12 " style="margin-top:5%;">
-
         <div class="panel panel-primary  " style=" margin-right:10%;" >
-          <div class="panel-heading">
-            Lista de Pacientes
-        </div>
-
+          <div class="panel-heading">Lista de Pacientes</div>
         <div class="col-sm-6" style="margin-top:3%;margin-bottom:5%;"><a <button href="#" id="pacientes" type="button"  class="btn btn-success" style=" margin-right: 40%;" >Mis Pacientes</button></a>
       </div>
 
@@ -64,7 +59,7 @@
                           <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" role="menu">
-                          <li><a href={{route('Ficha.index',$pa->rut)}}>Antecedentes Clinicos</a></li>
+                          <li><a href={{route('Ficha.index', $pa->rut)}}>Antecedentes Clinicos</a></li>
                           <li><a href={{route('Paciente.edit',$pa->rut)}}>Editar</a></li>
                           <li><a href={{route('Paciente.show',$pa->rut)}}>Dar de Alta</a></li>
                         </ul>
@@ -131,8 +126,6 @@
                              </div>
                          </td>
                        </tr>
-                       @endif
-
 
                      </div>
                </div>

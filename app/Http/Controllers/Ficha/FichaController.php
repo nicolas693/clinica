@@ -11,6 +11,7 @@ use clinica\Models\Paciente\Clinica;
 use clinica\Models\Alumnos\Alumnos;
 use clinica\Models\Docente\Docente;
 use clinica\Models\Paciente\Ficha;
+use clinica\Models\Procedimiento\Procedimiento;
 use clinica\User;
 
 use clinica\Http\Requests\Ficha\FichaCreateRequest;
@@ -32,6 +33,12 @@ class FichaController extends Controller
         return view('Ficha/index', array('paciente'=>$paciente, 'id'=>$id,'ficha_exists'=>$ficha_exists ) );
     }
 
+    public function verFicha($id){
+      $paciente=Paciente::where('rut','=',$id)->first();
+      $ficha_exists =Ficha::where('paciente_id','=',$id)->first();
+      return view('Ficha/verficha', array('paciente'=>$paciente, 'id'=>$id,'ficha_exists'=>$ficha_exists) );
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -50,12 +57,8 @@ class FichaController extends Controller
      */
     public function store(Request $request)
     {
-      $procedimientos = array();
-      $procedimientos= $request->input('Procedimientos');
-      $procedimientos= implode(',',$procedimientos);
       $mytime = date('d/m/Y');
-      $input = $request->except('Procedimientos','Fecha_Ingreso');
-      $input['Procedimientos']= $procedimientos;
+      $input = $request->except('Fecha_Ingreso');
       $input['Fecha_Ingreso']= $mytime;
       Ficha::create($input);
 
@@ -71,8 +74,6 @@ class FichaController extends Controller
      */
     public function show($id)
     {
-      $fi = Ficha::find($id);
-      return view('Ficha.show')->with('ficha',$fi);
     }
 
     /**
@@ -95,29 +96,9 @@ class FichaController extends Controller
       $fechaP=$fechaP->diffInDays();
       $edad=(int)floor($fechaP/365);
 
-      $procedimientos = array(
-          "Apicectomía"=>"Apicectomía",
-          "Blanqueamiento dental"=>"Blanqueamiento dental",
-          "Empaste"=>"Empaste",
-          "Endodoncia"=>"Endodoncia",
-          "Exodoncia"=>"Exodoncia",
-          "Explorador Dental"=>"Explorador Dental",
-          "Gingivectomía"=>"Gingivectomía",
-          "Gingivoplastía"=>"Gingivoplastía",
-          "Higiene Bucodental"=>"Higiene Bucodental",
-          "Implante Dental"=>"Implante Dental",
-          "Limpieza Dental"=>"Limpieza Dental",
-          "Ostectomía"=>"Ostectomía",
-          "Remineralización dental"=>"Remineralización dental",
-          "Sitio/Estado"=>"Sitio/Estado",
-          "Tartrectomía"=>"Tartrectomía",
-          "Técnica de elevación del colgajo"=>"Técnica de elevación del colgajo",
-          "Técnica de elevación del seno maxilar"=>"Técnica de elevación del seno maxilar",
-          "Técnica de regeneración ósea guiada"=>"Técnica de regeneración ósea guiada",
-          "Terapia de fluoruro"=>"Terapia de fluoruro");
-
-          return view('Ficha.edit', array('paciente'=>$paciente, 'id'=>$id, 'alumno'=>$alumno,
-          'docente'=>$docente, 'edad'=>$edad, 'procedimientos'=>$procedimientos) );
+      $ficha=Ficha::where('paciente_id','=',$id)->first();
+      return view('Ficha.edit', array('paciente'=>$paciente, 'id'=>$id, 'alumno'=>$alumno,
+      'docente'=>$docente, 'edad'=>$edad, 'ficha'=>$ficha) );
     }
 
     /**
@@ -129,7 +110,11 @@ class FichaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $input = $request->except('Fecha_Ingreso');
+      $ficha=Ficha::where('paciente_id','=',$id)->first();
+      $ficha->fill($input)->save();
+      $paciente_id=$ficha->paciente_id;
+      return redirect('Ficha/'.$paciente_id);
     }
 
     /**
@@ -142,12 +127,6 @@ class FichaController extends Controller
     {
         //
     }
-    public function nueva($id)
-    {
-        $paciente=Paciente::where('rut','=',$id)->first();
-        return view('Ficha/nueva')->with('paciente',$paciente)->with('id',$id);
-    }
-
 
 
 
@@ -164,54 +143,8 @@ class FichaController extends Controller
         $fechaP=$fechaP->diffInDays();
         $edad=(int)floor($fechaP/365);
 
-        $procedimientos = array(
-            "Apicectomía"=>"Apicectomía",
-            "Blanqueamiento dental"=>"Blanqueamiento dental",
-            "Empaste"=>"Empaste",
-            "Endodoncia"=>"Endodoncia",
-            "Exodoncia"=>"Exodoncia",
-            "Explorador Dental"=>"Explorador Dental",
-            "Gingivectomía"=>"Gingivectomía",
-            "Gingivoplastía"=>"Gingivoplastía",
-            "Higiene Bucodental"=>"Higiene Bucodental",
-            "Implante Dental"=>"Implante Dental",
-            "Limpieza Dental"=>"Limpieza Dental",
-            "Ostectomía"=>"Ostectomía",
-            "Remineralización dental"=>"Remineralización dental",
-            "Sitio/Estado"=>"Sitio/Estado",
-            "Tartrectomía"=>"Tartrectomía",
-            "Técnica de elevación del colgajo"=>"Técnica de elevación del colgajo",
-            "Técnica de elevación del seno maxilar"=>"Técnica de elevación del seno maxilar",
-            "Técnica de regeneración ósea guiada"=>"Técnica de regeneración ósea guiada",
-            "Terapia de fluoruro"=>"Terapia de fluoruro");
-
-
         return view('Ficha.ficha', array('paciente'=>$paciente, 'id'=>$id, 'alumno'=>$alumno,
-        'docente'=>$docente, 'edad'=>$edad, 'procedimientos'=>$procedimientos) );
-    }
-
-    public function Procedimientos($Procedimientos)
-    {
-        $Procedimientos = array(
-            "Apicectomía",
-            "Blanqueamiento dental",
-            "Empaste",
-            "Endodoncia",
-            "Exodoncia",
-            "Explorador Dental",
-            "Gingivectomía",
-            "Gingivoplastía",
-            "Higiene Bucodental",
-            "Implante Dental",
-            "Limpieza Dental",
-            "Ostectomía",
-            "Remineralización dental",
-            "Sitio/Estado",
-            "Tartrectomía",
-            "Técnica de elevación del colgajo",
-            "Técnica de elevación del seno maxilar",
-            "Técnica de regeneración ósea guiada",
-            "Terapia de fluoruro");
+        'docente'=>$docente, 'edad'=>$edad) );
     }
 
 

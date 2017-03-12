@@ -94,12 +94,10 @@ class ProblemaController extends Controller
       }
       else{
 
-
               foreach($input as $key => $mainrow){
                   if($input[$key]=="0"){
                     $input[$key]="1";
                   }
-
               }
               foreach($input as $key => $mainrow){
                     if($key=="grabar"){
@@ -113,8 +111,6 @@ class ProblemaController extends Controller
       $paciente=Paciente::where('Odontograma_id','=',$ii)->first();
       $pro->fill($input)->save();
       return redirect('/Ficha/'.$paciente->rut.'/Odontograma');
-
-
     }
 
     /**

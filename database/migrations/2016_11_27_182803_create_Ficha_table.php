@@ -40,7 +40,7 @@ class CreateFichaTable extends Migration
             $table->String('Fecha_Ultima_Consulta');
             $table->String('Motivo_Ultima_Consulta');
             $table->boolean('Antecedentes_Traumatismo');
-            $table->integer('DienteTraumatismo')->nullable(); //por que podria no tener ningun diente con traumatismo
+            $table->String('DienteTraumatismo')->nullable(); //por que podria no tener ningun diente con traumatismo
             $table->String('Fecha_Traumatismo')->nullable();  //podria no haber tenido nunca una fecha de traumatismo
             //Elementos de Higiene
             $table->boolean('Cepillo')->default(false);
@@ -49,8 +49,29 @@ class CreateFichaTable extends Migration
             $table->boolean('Colutorio')->default(false);
             $table->boolean('Otros')->default(false);
             $table->String('NombreOtros')->nullable();
+
+            //Procedimientos
+            $table->boolean('Apicectomia')->nullable();
+            $table->boolean('Blanqueamiento_Dental')->nullable();
+            $table->boolean('Empaste')->nullable();
+            $table->boolean('Endodoncia')->nullable();
+            $table->boolean('Exodoncia')->nullable();
+            $table->boolean('Explorador_Dental')->nullable();
+            $table->boolean('Gingivectomía')->nullable();
+            $table->boolean('Gingivoplastía')->nullable();
+            $table->boolean('Higiene_Bucodental')->nullable();
+            $table->boolean('Implante_Dental')->nullable();
+            $table->boolean('Limpieza_Dental')->nullable();
+            $table->boolean('Ostectomía')->nullable();
+            $table->boolean('Remineralización_dental')->nullable();
+            $table->boolean('SitioEstado')->nullable();
+            $table->boolean('Tartrectomía')->nullable();
+            $table->boolean('TecnicaColgajo')->nullable();
+            $table->boolean('TecnicaSenoMaxilar')->nullable();
+            $table->boolean('RegeneracionOsea')->nullable();
+            $table->boolean('TerapiaFluoruro')->nullable();
+
             $table->boolean('Anestesia');
-            $table->String('Procedimientos');
             $table->boolean('Complicacion_Anestesia')->nullable(); //podria no haber tenido una complicacion de anestesia,
             //aunque en ese caso se podria dejar como false ese campo
             $table->String('Complicacion')->nullable();

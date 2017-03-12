@@ -43,11 +43,11 @@ class TratamientoController extends Controller
         $insumos = array(
           "Alginmax"=>"Alginmax",
           "Alginkid"=>"Alginkid",
-          "Alginplus Tropical"=>"Alginplus Tropical",
-          "Servilletas Dentales"=>"Servilletas Dentales",
-          "Eyector de saliva"=>"Eyector de saliva",
-          "Manga de esterilización"=>"Manga de esterilización",
-          "Tórula de algodón"=>"Tórula de algodón");
+          "Alginplus_Tropical"=>"Alginplus Tropical",
+          "Servilletas_Dentales"=>"Servilletas Dentales",
+          "Eyector_Saliva"=>"Eyector de saliva",
+          "Manga_Esterilizacion"=>"Manga de esterilización",
+          "Tórula_Algodon"=>"Tórula de algodón");
 
         return view ('Tratamiento.nuevo',array('paciente'=>$paciente, 'id'=>$id, 'ficha'=>$ficha, 'insumos'=>$insumos) );
     }

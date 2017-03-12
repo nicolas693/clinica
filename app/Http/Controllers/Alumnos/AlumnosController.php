@@ -132,9 +132,7 @@ class AlumnosController extends Controller
     {
       $user=Auth::user();
       $alumno=Alumnos::where('user_id','=',$user->id)->first();
-
       $paciente=Paciente::where('alumno_id','=',$alumno->alumno_id)->where('clinica_id','=',$id)->get();
-
 
       return view('Alumnos.mostrar')->with('paciente',$paciente)->with('id',$id);
     }

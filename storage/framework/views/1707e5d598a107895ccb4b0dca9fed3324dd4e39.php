@@ -39,7 +39,6 @@
 
          </div>
           <div class="col-sm-6">
-
             <?php echo e(Form::label($probN[1])); ?>
 
             <?php echo e(Form::hidden($probN[1],0)); ?>
@@ -47,6 +46,7 @@
             <?php echo e(Form::checkbox($probN[1],null,$prob->Lesion_de_caries_ICDAS_3_a_6)); ?>
 
           </div>
+
           <div class="col-sm-6">
             <?php echo e(Form::label($probN[2])); ?>
 
@@ -55,6 +55,7 @@
             <?php echo e(Form::checkbox($probN[2],null,$prob->Lesion_de_caries_ICDAS_1_y_2)); ?>
 
           </div>
+
           <div class="col-sm-6">
             <?php echo e(Form::label($probN[3])); ?>
 
@@ -63,6 +64,7 @@
             <?php echo e(Form::checkbox($probN[3],null,$prob->Ausente)); ?>
 
           </div>
+          
           <div class="col-sm-6">
             <?php echo e(Form::label($probN[4])); ?>
 

@@ -67,22 +67,6 @@
 
               </div>
 
-              <div class="col-sm-4">
-                   <?php echo form::label('Costo'); ?>
-
-                   <?php echo Form::hidden('ficha_id',$ficha->id_Ficha); ?>
-
-                   <?php echo form::text('Costo',null,['id'=>'Costo','class'=>'form-control']); ?>
-
-              </div>
-
-              <div class="col-sm-8">
-                   <?php echo form::label('profesor_guia','Profesor guía'); ?>
-
-                   <?php echo form::text('nProfe',null,['id'=>'nProfe','class'=>'form-control']); ?>
-
-              </div>
-
               <div class="col-sm-12">
                    <?php echo form::label('accion_','Acción a Realizar'); ?>
 

@@ -34,7 +34,7 @@
 
    <div class="row fondoC centro">
      <div class="page-header">
-       <h1>Ficha Clinica Integral Adulto </h1>
+       <h1>Ficha Clínica Integral Adulto </h1>
      </div>
      <div class="col-md-8">
         <div class="panel panel-primary">
@@ -146,7 +146,7 @@
                         </div>
 
                         <div class="col-sm-6">
-                          {!!Form::checkbox('Alergias', 1, false )!!}
+                          {!!Form::checkbox('Alergia', 1, false )!!}
                           {!!Form::label('alergias','Alergias',array('class'=>'nobold')) !!}
                         </div>
 
@@ -266,7 +266,7 @@
                         </div>
 
                         <div class="col-sm-3">
-                          {!!Form::checkbox('Dentrifico', 1, false )!!}
+                          {!!Form::checkbox('Dentrífico', 1, false )!!}
                           {!!Form::label('_dentrifico','Dentrífico',array('class'=>'nobold')) !!}
                         </div>
                         <div class="col-sm-3">
@@ -282,7 +282,7 @@
                       <div class="col-sm-12 form-group">
                         <div class="col-sm-6" id="text_t2">
                           {!!Form::label('Especifique')!!}
-                          {!!Form::text('Nombre_otros',null,['id'=>'NombreOtros','class'=>'form-control']) !!}
+                          {!!Form::text('NombreOtros',null,['id'=>'NombreOtros','class'=>'form-control']) !!}
                         </div>
                       </div>
 
@@ -320,12 +320,105 @@
                         </div>
                       </div>
 
+                      <div class="col-sm-12 form-group">
+                        {!!Form::label('Procedimientos') !!}
+                      </div>
+
                             <div class="col-sm-12 form-group">
-                              <div class="col-sm-6 form-group">
-                                {!!Form::model('') !!}
-                                {!!Form::label('procedimientos_','Procedimientos a realizar') !!}
-                                    {!!Form::select('Procedimientos[]',$procedimientos,null,
-                                      ['id'=>'Nombre', 'class'=>'form-control','multiple'=>'multiple']) !!}
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('Apicectomia', 1,false) !!}
+                                {!!Form::label('_apicectomia','Apicectomía',array('class'=>'nobold')) !!}
+                              </div>
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('Blanqueamiento_Dental',1 ,false)!!}
+                                {!!Form::label('_blanqueamiento','Blanqueamiento Dental',array('class'=>'nobold')) !!}
+                              </div>
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('Empaste',1 ,false)!!}
+                                {!!Form::label('_empaste','Empaste',array('class'=>'nobold')) !!}
+                              </div>
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('Endodoncia', 1 ,false)!!}
+                                {!!Form::label('_endodoncia','Endodoncia',array('class'=>'nobold')) !!}
+                              </div>
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('Exodoncia', 1 ,false)!!}
+                                {!!Form::label('_exodoncia','Exodoncia',array('class'=>'nobold')) !!}
+                              </div>
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('Explorador_Dental', 1 ,false)!!}
+                                {!!Form::label('_explorador','Explorador Dental',array('class'=>'nobold')) !!}
+                              </div>
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('Gingivectomía', 1 ,false)!!}
+                                {!!Form::label('_gingivectomia','Gingivectomía',array('class'=>'nobold')) !!}
+                              </div>
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('Gingivoplastía', 1 ,false)!!}
+                                {!!Form::label('_gingivoplastia','Gingivoplastía',array('class'=>'nobold')) !!}
+                              </div>
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('Higiene_Bucodental', 1 ,false)!!}
+                                {!!Form::label('_higiene','Higiene Bucodental',array('class'=>'nobold')) !!}
+                              </div>
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('Implante_Dental', 1 ,false)!!}
+                                {!!Form::label('_implante','Implante Dental',array('class'=>'nobold')) !!}
+                              </div>
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('Limpieza_Dental', 1 ,false)!!}
+                                {!!Form::label('_limpieza','Limpieza Dental',array('class'=>'nobold')) !!}
+                              </div>
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('Ostectomía', 1 ,false)!!}
+                                {!!Form::label('_ostectomia','Ostectomía',array('class'=>'nobold')) !!}
+                              </div>
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('Remineralización_dental', 1 ,false)!!}
+                                {!!Form::label('_remineralizacion','Remineralización Dental',array('class'=>'nobold')) !!}
+                              </div>
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('SitioEstado', 1 ,false)!!}
+                                {!!Form::label('_sitioestado','Sitio/Estado',array('class'=>'nobold')) !!}
+                              </div>
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('Tartrectomía', 1 ,false)!!}
+                                {!!Form::label('_tartrectomia','Tartrectomía',array('class'=>'nobold')) !!}
+                              </div>
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('TecnicaColgajo', 1 ,false)!!}
+                                {!!Form::label('_colgajo','Técnica de elevación del colgajo',array('class'=>'nobold')) !!}
+                              </div>
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('TecnicaSenoMaxilar', 1 ,false)!!}
+                                {!!Form::label('_senomaxilar','Técnica de elevación del seno maxilar',array('class'=>'nobold')) !!}
+                              </div>
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('RegeneracionOsea', 1 ,false)!!}
+                                {!!Form::label('_regeneracionosea','Técnica de regeneración ósea guiada',array('class'=>'nobold')) !!}
+                              </div>
+
+                              <div class="col-sm-6">
+                                {!!Form::checkbox('TerapiaFluoruro', 1 ,false)!!}
+                                {!!Form::label('_fluoruro','Terapia de fluoruro',array('class'=>'nobold')) !!}
                               </div>
                             </div>
 

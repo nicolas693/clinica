@@ -122,13 +122,10 @@ class PacientesController extends Controller
 
     public function edit($id)
     {
-
        $genero = array( 'Hombre'=>'Hombre', 'Mujer'=>'Mujer');
        $clinica = Clinica::lists('Nombre_Clinica','id_Clinica');
-
        $pa= Paciente::find($id);
        return view('Pacientes.edit', array('pa'=>$pa,'clinica'=>$clinica, 'genero'=>$genero ));
-
     }
 
     /**
@@ -145,16 +142,13 @@ class PacientesController extends Controller
       $alumnos=Alumnos::all();
       foreach ($alumnos as $alu) {
         if($alu->user_id == $id_1){
-
           $request['alumno_id']=$alu->alumno_id;
         }
       }
       $request['rut'] = str_replace(' ', '', $request['rut']);
 
         $pa= Paciente::find($id);
-
         $input=$request->all();
-
         $pa->fill($input)->save();
         $val=$pa->clinica_id;
 
@@ -181,7 +175,7 @@ class PacientesController extends Controller
         if($pa->alta==false){
             Paciente::where('rut', $id)->update(array('alta' => 1));
         }
-          
+
         else {
             Paciente::where('rut', $id)->update(array('alta' => 0));
         }

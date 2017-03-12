@@ -91,7 +91,6 @@
                <div class="input-group">
                  <label for="date">Fecha Nacimiento</label>
                    <input type="text" value="<?php echo htmlspecialchars($pa->Fecha_Nacimiento); ?>" class="form-control datepicker" name="Fecha_Nacimiento">
-
                </div>
              </div>
 
@@ -170,14 +169,12 @@
    </div>
 
    <script>
-
        $('.datepicker').datepicker({
            format: "dd/mm/yyyy",
            language: "es",
            startDate: '-100y',
            endDate:   '0d',
            autoclose: true
-
        });
    </script>
 

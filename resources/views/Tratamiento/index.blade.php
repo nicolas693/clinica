@@ -35,7 +35,6 @@
                  <th>Acción a realizar</th>
                  <th>Pieza Dental</th>
                  <th>Profesor a cargo</th>
-                 <th>Costo</th>
               </thead>
 
 
@@ -46,7 +45,6 @@
                     <td>{{$tra->AccionR}}</td>
                     <td>{{$tra->Diente}}</td>
                     <td>{{$tra->nProfe}}</td>
-                    <td>{{$tra->Costo}}</td>
                   </tr>
                 @endif
               @endforeach
