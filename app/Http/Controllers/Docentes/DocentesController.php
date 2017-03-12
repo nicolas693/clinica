@@ -22,6 +22,7 @@ class DocentesController extends Controller
      */
     public function index()
     {
+    
         $alumnos=Alumnos::all();
         return view('Docente.index')->with('alumnos',$alumnos);
     }
@@ -80,7 +81,7 @@ class DocentesController extends Controller
         $docente['user_id']=null;
         $docente->save();
         $docente=Docente::find($rut);
-      
+
         $asignatura =Asignatura::lists('nombre','id');
         return view('Docente.editU')->with('docente',$docente)->with('asignatura',$asignatura);
     }
@@ -133,5 +134,23 @@ class DocentesController extends Controller
       Alumnos::create($request->only('Calificacion', 'Observaciones', 'PacienteEvaluado') );
       return redirect('/Docente/mostrar');
     }
+
+    public function alta($id)
+    {
+        $do=Docente::find($id);
+        if($do->activo==false){
+            Docente::where('id', $id)->update(array('activo' => 1));
+        }
+
+        else {
+            Docente::where('id', $id)->update(array('activo' => 0));
+        }
+
+
+        return redirect('/Admin');
+    }
+
+
+
 
 }

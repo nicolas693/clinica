@@ -35,6 +35,7 @@ Route::get('/', function () {
       route::resource('User','User\UserController',['except' => 'index']);
 
       route::get('Docente/{rut}/edit/{id}',['as' => 'Docente.editU', 'uses' => 'Docentes\DocentesController@editU']);
+      route::get('Docente/alta/{id}',['as' => 'Docente.alta', 'uses' => 'Docentes\DocentesController@alta']);
 
 
 });
@@ -48,6 +49,8 @@ Route::get('/', function () {
     route::get('Docente/evaluar/{id}','Docentes\DocentesController@evaluar');
     route::get('Docente', ['as'=>'Docente.storeAlumno', 'uses'=>'Docentes\DocentesController@storeAlumno' ]);
     route::get('Alumno/{rut}/edit/{id}',['as' => 'Alumnos.editU', 'uses' => 'Alumnos\AlumnosController@editU']);
+
+    route::get('Alumno/alta/{id}',['as' => 'Alumno.alta', 'uses' => 'Alumnos\AlumnosController@alta']);
 });
 
 

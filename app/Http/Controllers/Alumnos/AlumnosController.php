@@ -136,4 +136,20 @@ class AlumnosController extends Controller
 
       return view('Alumnos.mostrar')->with('paciente',$paciente)->with('id',$id);
     }
+
+
+    public function alta($id)
+    {
+        $al=Alumnos::find($id);
+        if($al->activo==false){
+            Alumnos::where('alumno_id', $id)->update(array('activo' => 1));
+        }
+
+        else {
+            Alumnos::where('alumno_id', $id)->update(array('activo' => 0));
+        }
+
+
+        return redirect('/Docente');
+    }
 }
