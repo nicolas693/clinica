@@ -113,19 +113,6 @@
 
             </div>
 
-                             <div class="btn-group">
-                                <button type="button" class="btn btn-default glyphicon glyphicon-th-list"></button>
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                  <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                  <li><a href={{route('Ficha.index',$pa->rut) }}>Antecedentes Clínicos</a></li>
-                                  <li><a href={{route('Paciente.edit',$pa->rut)}}>Editar</a></li>
-                                  <li><a href={{route('Paciente.show',$pa->rut)}}>Dar de Baja</a></li>
-                                </ul>
-                             </div>
-                         </td>
-                       </tr>
 
                      </div>
                </div>

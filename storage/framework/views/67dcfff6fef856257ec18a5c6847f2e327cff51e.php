@@ -15,14 +15,9 @@
 
 
    <div class="row fondoC centro">
-
      <div class="col-md-12 " style="margin-top:5%;">
-
         <div class="panel panel-primary  " style=" margin-right:10%;" >
-          <div class="panel-heading">
-            Lista de Pacientes
-        </div>
-
+          <div class="panel-heading">Lista de Pacientes</div>
         <div class="col-sm-6" style="margin-top:3%;margin-bottom:5%;"><a <button href="#" id="pacientes" type="button"  class="btn btn-success" style=" margin-right: 40%;" >Mis Pacientes</button></a>
       </div>
 
@@ -32,10 +27,7 @@
 
 
     <div class="panel panel-default" id="1" style="margin-left:2%; margin-right:2%; margin-top:10%;">
-      <div class="panel-heading" ><b>Pacientes</b>
-
-
-    </div>
+      <div class="panel-heading" ><b>Pacientes</b>  </div>
         <div class="panel-body">
 
           <table class="table stripe compact " id="myTable1"  >
@@ -77,13 +69,8 @@
                  </td>
                </tr>
                <?php endif; ?>
-
              <?php endforeach; ?>
           </table>
-
-
-
-
         </div>
           <a href=<?php echo e(route('Paciente.create',$id)); ?> class="btn btn-success btn-sm" style="margin-left:3%;margin-bottom:3%;" > <b>Ingresar nuevo paciente</b> </a>
 
@@ -130,23 +117,12 @@
 
             </div>
 
-          </div>
 
-
-
-
-
-
-
-
-
+                     </div>
                </div>
            </div>
-
-
         </div>
-     </div>
-   </div>
+
 
    <script src="http://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
 
