@@ -69,9 +69,9 @@
                 <ul class="nav navbar-nav" style="margin-left: 8%;">
 
                   <li>
-                    <a  href="<?php echo e(url('/')); ?>">
+                    <a  href="<?php echo e(url('/user/paciente')); ?>">
                     <span class="glyphicon glyphicon-th-list" style="margin-right: 5px; font-size: 15px;"></span>
-                    Ver Mi Ficha
+                    Ver Mis Proximas Consultas
                   </a>
                 </li>
 

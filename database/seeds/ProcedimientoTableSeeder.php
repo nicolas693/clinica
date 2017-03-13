@@ -10,39 +10,20 @@ class ProcedimientoTableSeeder extends Seeder
      *
      * @return void
      */
-     /*
-     $table->boolean('Apicectomia')->nullable();
-     $table->boolean('Blanqueamiento_Dental')->nullable();
-     $table->boolean('Empaste')->nullable();
-     $table->boolean('Endodoncia')->nullable();
-     $table->boolean('Exodoncia')->nullable();
-     $table->boolean('Explorador_Dental')->nullable();
-     $table->boolean('Gingivectomía')->nullable();
-     $table->boolean('Gingivoplastía')->nullable();
-     $table->boolean('Higiene_Bucodental')->nullable();
-     $table->boolean('Implante_Dental')->nullable();
-     $table->boolean('Limpieza_Dental')->nullable();
-     $table->boolean('Ostectomía')->nullable();
-     $table->boolean('Remineralización_dental')->nullable();
-     $table->boolean('SitioEstado')->nullable();
-     $table->boolean('Tartrectomía')->nullable();
-     $table->boolean('TecnicaColgajo')->nullable();
-     $table->boolean('TecnicaSenoMaxilar')->nullable();
-     $table->boolean('RegeneracionOsea')->nullable();
-     $table->boolean('TerapiaFluoruro')->nullable();
 
-     */
     public function run()
     {
       $proc=new Procedimiento([
         'id'=>1,
         'Nombre'=>'Apicectomía',
+        'Costo'=>'15000'
       ]);
       $proc->save();
 
       $proc=new Procedimiento([
         'id'=>2,
         'Nombre'=>'Blanqueamiento Dental',
+        'Costo'=>'3000'
       ]);
       $proc->save();
 
@@ -150,3 +131,29 @@ class ProcedimientoTableSeeder extends Seeder
 
     }
 }
+
+/*
+$pro=new Procedimiento([
+  'id'=>'1',
+  'Apicectomia'=>'15000',
+  'Blanqueamiento_Dental'=>'3000',
+  'Cementación'=>'4000',
+  'Endodoncia'=>'5500',
+  'Exodoncia'=>'30000',
+  'Explorador_Dental'=>'14000',
+  'Gingivectomía'=>'3990',
+  'Gingivoplastía'=>'34500',
+  'Higiene_Bucodental'=>'22333',
+  'Implante_Dental'=>'1234',
+  'Limpieza_Dental'=>'500',
+  'Ostectomía'=>'9000',
+  'Remineralización_dental'=>'10000',
+  'SitioEstado'=>'1000',
+  'Tartrectomía'=>'4000',
+  'Tecnica_Colgajo'=>'6000',
+  'Tecnica_Seno_Maxilar'=>'25000',
+  'Regeneracion_Osea'=>'30000',
+  'Terapia_Fluoruro'=>'45000',
+]);
+$pro->save();
+*/

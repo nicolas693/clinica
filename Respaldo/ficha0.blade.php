@@ -206,7 +206,7 @@
                                 $Procedimientos = array(
                                   "Apicectomía",
                                   "Blanqueamiento dental",
-                                  "Empaste",
+                                  "Cementación",
                                   "Endodoncia",
                                   "Exodoncia",
                                   "Explorador Dental",

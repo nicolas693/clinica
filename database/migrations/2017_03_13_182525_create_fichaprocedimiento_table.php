@@ -13,11 +13,11 @@ class CreateFichaprocedimientoTable extends Migration
     public function up()
     {
         Schema::create('Ficha_Procedimiento', function (Blueprint $table) {
-            $table->increments('id');}
+            $table->increments('id');
             $table->integer('ficha_id')->unsigned();
-            $table->foreign('ficha_id')->references('id_Ficha')->on('Ficha');
+            $table->foreign('ficha_id')->references('id_Ficha')->on('Ficha')->onDelete('cascade');
             $table->integer('procedimiento_id')->unsigned();
-            $table->foreign('procedimiento_id')->references('id')->on('Procedimiento');
+            $table->foreign('procedimiento_id')->references('id')->on('Procedimiento')->onDelete('cascade');
             $table->timestamps();
         });
     }

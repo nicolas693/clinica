@@ -40,6 +40,19 @@ class TratamientoController extends Controller
 
         $paciente=Paciente::where('rut','=',$id)->first();
         $ficha=Ficha::where('paciente_id','=',$id)->first();
+        $proce=\DB::connection()->getSchemaBuilder()->getColumnListing("Procedimiento");
+
+      foreach ($proce as $key => $proc) {
+        if($key!=0){
+
+          $pro[$proc]=str_replace('_',' ',$proc);
+
+        }
+
+      }
+
+
+
         $insumos = array(
           "Alginmax"=>"Alginmax",
           "Alginkid"=>"Alginkid",
@@ -49,7 +62,7 @@ class TratamientoController extends Controller
           "Manga_Esterilizacion"=>"Manga de esterilización",
           "Tórula_Algodon"=>"Tórula de algodón");
 
-        return view ('Tratamiento.nuevo',array('paciente'=>$paciente, 'id'=>$id, 'ficha'=>$ficha, 'insumos'=>$insumos) );
+        return view ('Tratamiento.nuevo',array('paciente'=>$paciente, 'id'=>$id, 'ficha'=>$ficha, 'insumos'=>$insumos,'pro'=>$pro) );
     }
 
     /**

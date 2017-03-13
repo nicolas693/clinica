@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use clinica\roluser;
 use Auth;
+use clinica\Models\Paciente\Ficha;
 
 class AuthController extends Controller
 {
@@ -97,7 +98,7 @@ class AuthController extends Controller
         }
 
         if($user->idrol === 4) {
-            return redirect()->intended('/Home');
+            return redirect()->intended('/user/paciente');
         }
 
     }

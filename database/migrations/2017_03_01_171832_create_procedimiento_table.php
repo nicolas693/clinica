@@ -18,6 +18,7 @@ class CreateProcedimientoTable extends Migration
           $table->String('Nombre');
           $table->integer('Costo')->nullable();
       });
+
     }
 
     /**
@@ -27,6 +28,28 @@ class CreateProcedimientoTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('Procedimiento');
     }
 }
+
+/*
+$table->integer('Apicectomia')->nullable();
+$table->integer('Blanqueamiento_Dental')->nullable();
+$table->integer('Cementación')->nullable();
+$table->integer('Endodoncia')->nullable();
+$table->integer('Exodoncia')->nullable();
+$table->integer('Explorador_Dental')->nullable();
+$table->integer('Gingivectomía')->nullable();
+$table->integer('Gingivoplastía')->nullable();
+$table->integer('Higiene_Bucodental')->nullable();
+$table->integer('Implante_Dental')->nullable();
+$table->integer('Limpieza_Dental')->nullable();
+$table->integer('Ostectomía')->nullable();
+$table->integer('Remineralización_dental')->nullable();
+$table->integer('SitioEstado')->nullable();
+$table->integer('Tartrectomía')->nullable();
+$table->integer('Tecnica_Colgajo')->nullable();
+$table->integer('Tecnica_Seno_Maxilar')->nullable();
+$table->integer('Regeneracion_Osea')->nullable();
+$table->integer('Terapia_Fluoruro')->nullable();
+*/

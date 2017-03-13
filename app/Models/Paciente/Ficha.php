@@ -24,9 +24,9 @@ class Ficha extends Model
         'SedaDental', 'Dentrífico', 'Colutorio', 'Otros', 'NombreOtros',
         'Anestesia','Complicacion_Anestesia','Complicacion', 'Alerta_Medica',
         //Procedimientos
-        'Apicectomia', 'Blanqueamiento_Dental', 'Empaste', 'Endodoncia', 'Exodoncia', 'Explorador_Dental',
+        'Apicectomia', 'Blanqueamiento_Dental', 'Cementación', 'Endodoncia', 'Exodoncia', 'Explorador_Dental',
         'Gingivectomía', 'Gingivoplastía', 'Higiene_Bucodental', 'Implante_Dental', 'Limpieza_Dental', 'Ostectomía',
-        'Remineralización_dental','SitioEstado', 'Tartrectomía', 'TecnicaColgajo', 'TecnicaSenoMaxilar','RegeneracionOsea', 'TerapiaFluoruro'
+        'Remineralización_dental','SitioEstado', 'Tartrectomía', 'Tecnica_Colgajo', 'Tecnica_Seno_Maxilar','Regeneracion_Osea', 'Terapia_Fluoruro'
     ];
 
 

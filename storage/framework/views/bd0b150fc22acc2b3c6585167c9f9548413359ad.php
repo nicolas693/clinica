@@ -43,7 +43,7 @@
                   <tr>
                     <td><?php echo e($tra->Fecha); ?></td>
                     <td><?php echo e($tra->AccionR); ?></td>
-                    <td><?php echo e($tra->Diente); ?></td>
+                    <td><?php echo e($tra->DienteTratamiento); ?></td>
                     <td><?php echo e($tra->nProfe); ?></td>
                   </tr>
                 <?php endif; ?>

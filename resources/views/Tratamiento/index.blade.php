@@ -43,7 +43,7 @@
                   <tr>
                     <td>{{$tra->Fecha}}</td>
                     <td>{{$tra->AccionR}}</td>
-                    <td>{{$tra->Diente}}</td>
+                    <td>{{$tra->DienteTratamiento}}</td>
                     <td>{{$tra->nProfe}}</td>
                   </tr>
                 @endif

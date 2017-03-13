@@ -87,7 +87,7 @@ class PacientesController extends Controller
 
 
        $request['rut'] = str_replace(' ', '', $request['rut']);
-       $request['alta']=true;
+       $request['alta']=false;
        //$request['rut']=substr($request->rut,0,-2);
 
 

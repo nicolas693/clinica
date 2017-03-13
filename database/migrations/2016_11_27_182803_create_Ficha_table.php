@@ -54,7 +54,7 @@ class CreateFichaTable extends Migration
             //Procedimientos
             $table->boolean('Apicectomia')->nullable();
             $table->boolean('Blanqueamiento_Dental')->nullable();
-            $table->boolean('Empaste')->nullable();
+            $table->boolean('Cementación')->nullable();
             $table->boolean('Endodoncia')->nullable();
             $table->boolean('Exodoncia')->nullable();
             $table->boolean('Explorador_Dental')->nullable();
@@ -67,10 +67,10 @@ class CreateFichaTable extends Migration
             $table->boolean('Remineralización_dental')->nullable();
             $table->boolean('SitioEstado')->nullable();
             $table->boolean('Tartrectomía')->nullable();
-            $table->boolean('TecnicaColgajo')->nullable();
-            $table->boolean('TecnicaSenoMaxilar')->nullable();
-            $table->boolean('RegeneracionOsea')->nullable();
-            $table->boolean('TerapiaFluoruro')->nullable();
+            $table->boolean('Tecnica_Colgajo')->nullable();
+            $table->boolean('Tecnica_Seno_Maxilar')->nullable();
+            $table->boolean('Regeneracion_Osea')->nullable();
+            $table->boolean('Terapia_Fluoruro')->nullable();
 
             $table->boolean('Anestesia');
             $table->boolean('Complicacion_Anestesia')->nullable(); //podria no haber tenido una complicacion de anestesia,
@@ -97,6 +97,6 @@ class CreateFichaTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('Ficha');
     }
 }

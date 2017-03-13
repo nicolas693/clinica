@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title','Planificación de Tratamiento')
-@include('partials.messages')
+
 @section('content')
 
 
@@ -30,6 +30,7 @@
        <li><a href="{{url('Ficha', $id)}}">Ficha</a></li>
        <li><a href="{{url('Tratamiento', $id)}}">Ver Plan de Tratamiento</a></li>
        <li class="active">Registro</li>
+       <li class="pull-right"><a href="/Tratamiento/{{$paciente->rut}}" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
      </ol>
 
 
@@ -37,13 +38,14 @@
     <div class="page-header" style="margin-right:250px;">
       <h1>Planificación de Tratamiento </h1>
     </div>
+
     <div class="col-md-8">
+      @include('partials.messages')
        <div class="panel panel-primary">
          <div class="panel-heading"><b>Nueva planificación de Tratamiento</b>
-            <p class="navbar-text navbar-right" style=" margin-top: 1px;">
-              <a <button href={{route('Tratamiento.index', $id)}} type="button" id='volver'  name='volver' class="btn  navbar-btn btn-warning" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
-             </p>
+
           </div>
+
          <div class="panel-body">
 
               {!!Form::open(['route'=>'Tratamiento.store','method'=>'POST'])!!}
@@ -60,7 +62,13 @@
               <div class="col-sm-4">
                    {!!form::label('Diente')!!}
                    {!!Form::hidden('paciente_id',$paciente->rut)!!}
-                   {!!form::text('Diente',null,['id'=>'Diente','class'=>'form-control'])!!}
+                   {!!form::text('DienteTratamiento',null,['id'=>'Diente','class'=>'form-control'])!!}
+              </div>
+
+              <div class="col-sm-4">
+
+                   {!!Form::hidden('ficha_id',$ficha->id_Ficha)!!}
+
               </div>
 
               <div class="col-sm-12">
@@ -72,9 +80,17 @@
                 <div class="col-sm-6">
                   {!!Form::label('insumos_','Insumos necesarios') !!}
                     {!!Form::select('Insumos',$insumos,null,
-                      ['id'=>'insumos','class'=>'form-control', 'multiple'=>'multiple']) !!}
+                      ['id'=>'insumos','class'=>'form-control','size'=>'10', 'multiple'=>'multiple']) !!}
+                </div>
+
+                <div class="col-sm-6">
+                  {!!Form::label('Procedimiento','Procedimiento : ') !!}
+                    {!!Form::select('Procedimiento',$pro,null,
+                      ['id'=>'Procedimiento','class'=>'form-control','size'=>'10']) !!}
                 </div>
               </div>
+
+
 
               <div class="col-sm-12">
                     <div class="btn-group">

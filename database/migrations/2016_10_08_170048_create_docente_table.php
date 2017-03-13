@@ -20,7 +20,7 @@ class CreateDocenteTable extends Migration
        $table->Integer('Telefono')->lenght(10);
        $table->primary('id');
        $table->boolean('activo')->default(true);
-       $table->json('arr');
+
 
        $table->integer('asignatura_id')->nullable()->unsigned();
        $table->integer('user_id')->nullable()->unsigned();
@@ -30,7 +30,7 @@ class CreateDocenteTable extends Migration
         $table->foreign('user_id')->references('id')->on('users');
         $table->foreign('asignatura_id')->references('id')->on('asignatura');
 
-      
+
  });
     }
 

@@ -17,6 +17,7 @@ class CreateTratamientoTable extends Migration
           $table->String('Fecha');
           $table->String('AccionR');
           $table->String('DienteTratamiento')->nullable();
+          $table->String('Procedimiento');
           //Insumos
           $table->boolean('Alginmax')->nullable();
           $table->boolean('Alginkid')->nullable();
