@@ -51,13 +51,20 @@ class PacientesController extends Controller
     public function create($id)
     {
         $genero = array( 'Hombre'=>'Hombre', 'Mujer'=>'Mujer');
+        $regiones = array( 'XV de Arica y Parinacota'=>'XV de Arica y Parinacota', 'I de Tarapacá'=>'I de Tarapacá',
+        'II de Antofagasta'=>'II de Antofagasta', 'III de Atacama'=>'III de Atacama', 'IV de Coquimbo'=>'IV de Coquimbo',
+        'V de Valparaíso'=>'V de Valparaíso', "VI del Libertador General Bernardo O'Higgins"=>"VI del Libertador General Bernardo O'Higgins",
+        'VII del Maule'=>'VII del Maule', 'VIII del Bío Bío'=>'VIII del Bío Bío', 'IX de la Araucanía'=>'IX de la Araucanía',
+        'XIV de los Ríos'=>'XIV de los Ríos' , 'X de los Lagos'=>'X de los Lagos',
+        'XI Aisén del General Carlos Ibáñez del Campo'=>'XI Aisén del General Carlos Ibáñez del Campo',
+        'XII de Magallanes y Antártica Chilena'=>'XII de Magallanes y Antártica Chilena', 'Metropolitana de Santiago'=>'Metropolitana de Santiago' );
         $date = Carbon::now();
         $date=$date->subDay()->format('d/m/y');
         $paciente = Clinica::lists('Nombre_Clinica','id_Clinica','alumno_id');
         $ruta=\Route::getCurrentRoute()->getPath();
 
         return view('Pacientes.create', array('paciente'=>$paciente, 'genero'=>$genero,
-        'date'=>$date, 'id'=>$id));
+        'date'=>$date, 'id'=>$id, 'regiones'=>$regiones));
     }
 
     /**
@@ -92,7 +99,7 @@ class PacientesController extends Controller
         //Odontograma::create($array);
         //$aa=Odontograma::orderBy('Odontograma_id', 'desc')->first();
         //dd($aa->Odontograma_id);
-
+         dd($request->All());
          Paciente::create($request->all());
 
          $id=$request->clinica_id;
@@ -122,10 +129,17 @@ class PacientesController extends Controller
 
     public function edit($id)
     {
+      $regiones = array( 'XV de Arica y Parinacota'=>'XV de Arica y Parinacota', 'I de Tarapacá'=>'I de Tarapacá',
+      'II de Antofagasta'=>'II de Antofagasta', 'III de Atacama'=>'III de Atacama', 'IV de Coquimbo'=>'IV de Coquimbo',
+      'V de Valparaíso'=>'V de Valparaíso', "VI del Libertador General Bernardo O'Higgins"=>"VI del Libertador General Bernardo O'Higgins",
+      'VII del Maule'=>'VII del Maule', 'VIII del Bío Bío'=>'VIII del Bío Bío', 'IX de la Araucanía'=>'IX de la Araucanía',
+      'XIV de los Ríos'=>'XIV de los Ríos' , 'X de los Lagos'=>'X de los Lagos',
+      'XI Aisén del General Carlos Ibáñez del Campo'=>'XI Aisén del General Carlos Ibáñez del Campo',
+      'XII de Magallanes y Antártica Chilena'=>'XII de Magallanes y Antártica Chilena', 'Metropolitana de Santiago'=>'Metropolitana de Santiago' );
        $genero = array( 'Hombre'=>'Hombre', 'Mujer'=>'Mujer');
        $clinica = Clinica::lists('Nombre_Clinica','id_Clinica');
        $pa= Paciente::find($id);
-       return view('Pacientes.edit', array('pa'=>$pa,'clinica'=>$clinica, 'genero'=>$genero ));
+       return view('Pacientes.edit', array('pa'=>$pa,'clinica'=>$clinica, 'genero'=>$genero, 'regiones'=>$regiones ));
     }
 
     /**

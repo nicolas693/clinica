@@ -117,19 +117,6 @@
 
             </div>
 
-                             <div class="btn-group">
-                                <button type="button" class="btn btn-default glyphicon glyphicon-th-list"></button>
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                  <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                  <li><a href=<?php echo e(route('Ficha.index',$pa->rut)); ?>>Antecedentes Clínicos</a></li>
-                                  <li><a href=<?php echo e(route('Paciente.edit',$pa->rut)); ?>>Editar</a></li>
-                                  <li><a href=<?php echo e(route('Paciente.show',$pa->rut)); ?>>Dar de Baja</a></li>
-                                </ul>
-                             </div>
-                         </td>
-                       </tr>
 
                      </div>
                </div>

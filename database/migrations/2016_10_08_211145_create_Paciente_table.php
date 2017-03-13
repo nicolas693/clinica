@@ -21,15 +21,15 @@ class CreatePacienteTable extends Migration
             $table->String('Fecha_Ingreso')->length(10);
             $table->String('Genero')->length(6);
             $table->String('Fecha_Nacimiento')->length(10);
-            $table->Integer('Telefono_Casa');
-            $table->Integer('Telefono_Movil');
+            $table->Integer('Telefono_Casa')->lenght(10);
+            $table->Integer('Telefono_Movil')->lenght(10);
             $table->String('Calle')->length(25);
-            $table->Integer('Numero_Calle');
+            $table->Integer('Numero_Calle')->lenght(4);
             $table->String('Pais')->length(15);
-            $table->String('Region')->length(15);
+            $table->String('Region')->length(45);
             $table->String('Comuna')->length(15);
             $table->String('Nacionalidad')->length(15);
-            $table->String('Cobertura_Medica')->length(15);
+            $table->String('Cobertura_Medica')->length(30);
 
             $table->primary('rut');
             $table->integer('clinica_id')->unsigned();

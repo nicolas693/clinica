@@ -9,8 +9,8 @@ class Ficha extends Model
 
     protected $table = 'Ficha';
     protected $primaryKey = 'id_Ficha';
+    public $timestamps = true;
 
-    public $timestamps = false;
     protected $fillable = [
         'paciente_id','alumno_id','docente_id','Ocupacion','Fecha_Ingreso','Motivo_Consulta',
         'Expectativas',
@@ -60,6 +60,6 @@ class Ficha extends Model
     }
 
     public function Procedimiento(){
-      return $this->hasmany(Procedimiento::class);
+      return $this->hasMany('App\Procedimiento\Procedimiento', 'Ficha_Procedimiento');
     }
 }

@@ -14,6 +14,7 @@ class CreateFichaTable extends Migration
     {
         Schema::create('Ficha', function (Blueprint $table) {
             $table->increments('id_Ficha');
+            $table->timestamps();
             $table->String('Ocupacion');
             $table->String('Fecha_Ingreso');
             $table->String('Motivo_Consulta');
@@ -85,7 +86,6 @@ class CreateFichaTable extends Migration
             $table->foreign('paciente_id')->references('rut')->on('Paciente');
             $table->foreign('alumno_id')->references('alumno_id')->on('Alumno');
             $table->foreign('docente_id')->references('id')->on('Docente');
-
         });
 
     }

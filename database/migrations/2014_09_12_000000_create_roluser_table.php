@@ -16,7 +16,6 @@ class CreateRoluserTable extends Migration
           $table->increments('idrol');
           $table->string('Nombre');
           $table->timestamps();
-
       });
     }
 
