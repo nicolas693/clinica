@@ -36,37 +36,37 @@
      <div class="page-header">
        <h1>Ficha Clínica Integral Adulto </h1>
      </div>
-     <div class="col-md-8">
-        <div class="panel panel-primary">
+     <div class="col-md-10">
+        <div class="panel panel-primary centrarIT">
           <div class="panel-heading"><b> Ficha Paciente </b></div>
 
           <div class="panel-body">
                 {!!Form::open(['route'=>['Ficha.store'],'method'=>'POST'])!!}
 
-                <div class="col-sm-6">
+                <div class="form-group col-sm-6">
                     {!!form::label('Nombre :')!!}
                      {!!$paciente->Nombre !!} {!!$paciente->Paterno !!} {!!$paciente->Materno !!}
                      {{Form::hidden('paciente_id',$paciente->rut)}}
                 </div>
 
-              <div class="col-sm-6">
+              <div class="form-group col-sm-6">
                 {!!form::label('Rut : ')!!}
                 {!!$paciente->rut!!}
               </div>
 
-                <div class="col-sm-6">
+                <div class="form-group col-sm-6">
                     {!!form::label('FechaNacimiento','Fecha de nacimiento : ')!!}
                      {!!$paciente->Fecha_Nacimiento !!}
                      {{Form::hidden('Fecha_Nacimiento',$paciente->Fecha_Nacimiento)}}
                 </div>
 
-                <div class="col-sm-6">
+                <div class="form-group col-sm-6">
                   {!!form::label('TelefonoMovil','Teléfono Movil : ')!!}
                   {!!$paciente->Telefono_Movil !!}
                   {{Form::hidden('Telefono_Movil',$paciente->Telefono_Movil)}}
                 </div>
 
-                <div class="col-sm-6">
+                <div class="form-group col-sm-6">
                   {!!form::label('Dirección : ')!!}
                   {!!$paciente->Calle !!} {!!$paciente->Numero_Calle !!}
                   {{Form::hidden('Calle',$paciente->Calle)}}
@@ -75,26 +75,26 @@
                 </div>
 
 
-                <div class="col-sm-12">
+                <div class="form-group col-sm-12">
                   {!!form::label('Edad : ')!!} {{$edad}}
                 </div>
 
-                <div class="col-sm-4">
-                  {!!form::label('FechaControl','Fecha de Control')!!} <p style="font-size: 15px"><b><?php echo date("d/m/Y");?></b></p>
+                <div class="form-group col-sm-4">
+                  {!!form::label('FechaControl','Fecha de Ingreso: ')!!} {{$fechaA}}
                 </div>
 
 
-                <div class="col-sm-10" style="margin-top:10px; margin-left:0px;">
+                <div class="form-group col-sm-10" >
                   {!!form::label('Ocupación')!!}
                   {!!form::text('Ocupacion',null,['id'=>'Ocupacion','class'=>'form-control'])!!}
                 </div>
 
-                <div class="col-sm-12">
+                <div class="form-group col-sm-12">
                   {!!form::label('MotivoConsulta','Motivo de Consulta')!!}
                   {!!form::text('Motivo_Consulta',null,['id'=>'Motivo_Consulta','class'=>'form-control'])!!}
                 </div>
 
-                <div class="col-sm-12">
+                <div class="form-group col-sm-12">
                   {!!form::label('Expectativas')!!}
                   {!!form::text('Expectativas',null,['id'=>'Expectativas','class'=>'form-control'])!!}
                 </div>
@@ -105,11 +105,11 @@
                     </div>
                    <div class="panel-body">
 
-                     <div class="col-sm-12">
+                     <div class="form-group col-sm-12">
                        {!!Form::label('Antecedentes Médicos') !!}
                      </div>
 
-                     <div class="col-sm-12 ">
+                     <div class="form-group col-sm-12 ">
                         <div class="col-sm-6">
                           {!!Form::checkbox('EnfCardiovasculares',1 ,false) !!}
                           {!!Form::label('EnfCardio','Enf. Cardiovasculares',array('class'=>'nobold')) !!}
@@ -162,26 +162,26 @@
 
                       </div>
 
-                       <div class="col-sm-12" style="margin-top:10px;">
+                       <div class="form-group col-sm-12">
                            {!!Form::label('farmacos','Fármacos en uso') !!}
                            {!!Form::text('Farmacos_Uso',null,['id'=>'Farmacos_Uso','class'=>'form-control'])!!}
                        </div>
 
-                       <div class="col-sm-6">
+                       <div class="form-group col-sm-6">
                            {!!form::label('Alumno : ')!!} {{$alumno->Nombre}} {{$alumno->Paterno}}
                            {{Form::hidden('alumno_id',$alumno->alumno_id)}}
                        </div>
 
-                       <div class="col-sm-6">
+                       <div class="form-group col-sm-6">
                            {!!form::label('Profesor tutor :   ')!!} {{$docente->Nombre}} {{$docente->Paterno}}
                            {{Form::hidden('docente_id',$docente->id)}}
                        </div>
 
-                       <div class="col-sm-12" style="margin-top:10px;">
+                       <div class="form-group col-sm-12">
                          {!!Form::label('Hábitos') !!}
                        </div>
 
-                       <div class="col-sm-12">
+                       <div class="form-group col-sm-12">
 
                          <div class="col-sm-4">
                            {!!Form::checkbox('Fuma', 1, false )!!}
@@ -206,23 +206,23 @@
                          2.Anamnesis Odontológica</b>
                        </div>
                       <div class="panel-body">
-                        <div class="col-sm-4">
+                        <div class="form-group col-sm-4">
                           <div class="input-group">
                             <label for="date"><b>Fecha de último control </b></label>
                               <input type="text" class="form-control datepicker" id="Fecha_Ultima_Consulta" name="Fecha_Ultima_Consulta">
                             </div>
                           </div>
 
-                        <div class="col-sm-8">
+                        <div class="form-group col-sm-8">
                           {!!form::label('Motivo Ultima Consulta')!!}
                           {!!form::text('Motivo_Ultima_Consulta',null,['id'=>'Motivo_Ultima_Consulta','class'=>'form-control'])!!}
                         </div>
 
-                        <div class="col-sm-12" style="margin-top:10px;">
+                        <div class="form-group col-sm-12">
                           {!!Form::label('Traumatismo','Antecedentes de Traumatismo Dentoalveolar')!!}
                         </div>
 
-                        <div class="col-sm-12 ">
+                        <div class="form-group col-sm-12 ">
                           <div class="col-sm-8">
                           {!!Form::radio('Antecedentes_Traumatismo',0,false,['id'=>'r1']) !!}
                           {!!Form::label('Tortodoncia','No ha recibido tratamiento de Ortodoncia'
@@ -235,7 +235,7 @@
                             ,array('class'=>'nobold'))!!}
                           </div>
 
-                          <div class="col-sm-12" id="text_t1">
+                          <div class="form-group col-sm-12" id="text_t1">
                             <div class="col-sm-4">
                               {!!form::label('DienteTrau','Indique en que Diente')!!}
                               {!!form::text('DienteTraumatismo',null,['id'=>'DienteTraumatismo','class'=>'form-control'])!!}
@@ -250,11 +250,11 @@
                         </div>
                       </div>
 
-                      <div class="col-sm-12" style="margin-top:10px;">
+                      <div class="form-group col-sm-12">
                         {!!Form::label('ElemH','Elementos de Hígiene') !!}
                       </div>
 
-                      <div class="col-sm-12">
+                      <div class="form-group col-sm-12">
                         <div class="col-sm-3">
                           {!!Form::checkbox('Cepillo', 1, false )!!}
                           {!!Form::label('_cepillo','Cepillo',array('class'=>'nobold')) !!}
@@ -287,7 +287,7 @@
                       </div>
 
 
-                      <div class="col-sm-12">
+                      <div class="form-group col-sm-12">
                         <div class="col-sm-6">
                           {!!Form::label('Anestesia','¿Le han aplicado Anestesia Dental?')!!}
                           <div class="col-sm-8">
@@ -422,7 +422,7 @@
                               </div>
                             </div>
 
-           <div class="col-sm-12">
+           <div class="form-group col-sm-12">
              <div class="col-sm-10">
                {!!form::label('Indique Alerta Médica')!!}
                {!!form::text('Alerta_Medica',null,['id'=>'Alerta_Medica','class'=>'form-control'])!!}

@@ -40,7 +40,6 @@ class PacienteCreateRequest extends Request
             'Comuna' => ['required','max:25','regex:/^[\pL\s\-]+$/u'],
             'Nacionalidad' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
             'Cobertura_Medica' =>['required','min:6','max:15','regex:/^[\pL\s\-]+$/u'],
-
         ];
     }
 

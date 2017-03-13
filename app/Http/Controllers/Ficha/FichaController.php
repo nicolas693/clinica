@@ -36,7 +36,7 @@ class FichaController extends Controller
     public function verFicha($id){
       $paciente=Paciente::where('rut','=',$id)->first();
       $ficha_exists =Ficha::where('paciente_id','=',$id)->first();
-      return view('Ficha/verficha', array('paciente'=>$paciente, 'id'=>$id,'ficha_exists'=>$ficha_exists) );
+      return view('Ficha/verFicha', array('paciente'=>$paciente, 'id'=>$id,'ficha_exists'=>$ficha_exists) );
     }
 
     /**
@@ -55,7 +55,7 @@ class FichaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FichaCreateRequest $request)
     {
       $mytime = date('d/m/Y');
       $input = $request->except('Fecha_Ingreso');
@@ -108,7 +108,7 @@ class FichaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FichaCreateRequest $request, $id)
     {
       $input = $request->except('Fecha_Ingreso');
       $ficha=Ficha::where('paciente_id','=',$id)->first();
@@ -144,7 +144,7 @@ class FichaController extends Controller
         $edad=(int)floor($fechaP/365);
 
         return view('Ficha.ficha', array('paciente'=>$paciente, 'id'=>$id, 'alumno'=>$alumno,
-        'docente'=>$docente, 'edad'=>$edad) );
+        'docente'=>$docente, 'edad'=>$edad, 'fechaA'=>$fechaA) );
     }
 
 

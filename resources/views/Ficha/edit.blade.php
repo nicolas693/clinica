@@ -27,44 +27,42 @@
 
 <ol class="breadcrumb fondoC1 ">
      <li><a href="{{url('Alumno')}}"> Alumno</a></li>
-     <li><a href="{{url('Ficha',$id,'/verficha')}}"> Ver Ficha</a></li>
+     <li><a href="/Ficha/{{$id}}/verficha"> Ver Ficha</a></li>
+    <!--  <li><a href="{url('Ficha',{$id} )}"> Ver Ficha</a></li> -->
      <li class="active">Editar Ficha</li>
    </ol>
 
 
    <div class="row fondoC centro">
      <div class="page-header"> <h1>Ficha Clínica Integral Adulto </h1> </div>
-     <div class="col-md-8">
-        <div class="panel panel-primary">
+     <div class="col-md-10">
+        <div class="panel panel-primary centrarIT">
           <div class="panel-heading"><b> Ficha Paciente </b></div>
 
           <div class="panel-body">
                 {!!Form::model($ficha,['route'=>['Ficha.update',$id],'method'=>'PUT'])!!}
 
-                <div class="col-sm-6">
+                <div class="form-group col-sm-6">
                     {!!form::label('Nombre :')!!}
                      {!!$paciente->Nombre !!} {!!$paciente->Paterno !!} {!!$paciente->Materno !!}
                      {{Form::hidden('paciente_id',$paciente->rut)}}
                 </div>
 
-              <div class="col-sm-6">
-                {!!form::label('Rut : ')!!}
-                {!!$paciente->rut!!}
+              <div class="form-group col-sm-6">
+                {!!form::label('Rut : ')!!} {!!$paciente->rut!!}
               </div>
 
-                <div class="col-sm-6">
-                    {!!form::label('FechaNacimiento','Fecha de nacimiento : ')!!}
-                     {!!$paciente->Fecha_Nacimiento !!}
+                <div class="form-group col-sm-6">
+                    {!!form::label('FechaNacimiento','Fecha de nacimiento : ')!!} {!!$paciente->Fecha_Nacimiento !!}
                      {{Form::hidden('Fecha_Nacimiento',$paciente->Fecha_Nacimiento)}}
                 </div>
 
-                <div class="col-sm-6">
-                  {!!form::label('TelefonoMovil','Teléfono Movil : ')!!}
-                  {!!$paciente->Telefono_Movil !!}
+                <div class="form-group col-sm-6">
+                  {!!form::label('TelefonoMovil','Teléfono Movil : ')!!} {!!$paciente->Telefono_Movil !!}
                   {{Form::hidden('Telefono_Movil',$paciente->Telefono_Movil)}}
                 </div>
 
-                <div class="col-sm-6">
+                <div class="form-group col-sm-6">
                   {!!form::label('Dirección : ')!!}
                   {!!$paciente->Calle !!} {!!$paciente->Numero_Calle !!}
                   {{Form::hidden('Calle',$paciente->Calle)}}
@@ -73,26 +71,26 @@
                 </div>
 
 
-                <div class="col-sm-12">
+                <div class="form-group col-sm-12">
                   {!!form::label('Edad : ')!!} {{$edad}}
                 </div>
 
-                <div class="col-sm-4">
-                  {!!form::label('FechaControl','Fecha de Control')!!} <p style="font-size: 15px"><b><?php echo date("d/m/Y");?></b></p>
+                <div class="form-group col-sm-4">
+                  {!!form::label('FechaControl','Fecha de ingreso: ')!!} {!!$ficha->Fecha_Ingreso !!}
                 </div>
 
 
-                <div class="col-sm-10" style="margin-top:10px; margin-left:0px;">
+                <div class="form-group col-sm-10">
                   {!!form::label('Ocupación')!!}
                   {!!form::text('Ocupacion',null,['id'=>'Ocupacion','class'=>'form-control'])!!}
                 </div>
 
-                <div class="col-sm-12">
+                <div class="form-group col-sm-12">
                   {!!form::label('MotivoConsulta','Motivo de Consulta')!!}
                   {!!form::text('Motivo_Consulta',null,['id'=>'Motivo_Consulta','class'=>'form-control'])!!}
                 </div>
 
-                <div class="col-sm-12">
+                <div class="form-group col-sm-12">
                   {!!form::label('Expectativas')!!}
                   {!!form::text('Expectativas',null,['id'=>'Expectativas','class'=>'form-control'])!!}
                 </div>
@@ -103,96 +101,109 @@
                     </div>
                    <div class="panel-body">
 
-                     <div class="col-sm-12">
+                     <div class="form-group col-sm-12">
                        {!!Form::label('Antecedentes Médicos') !!}
                      </div>
 
-                     <div class="col-sm-12 ">
+                     <div class="form-group col-sm-12 ">
+
                         <div class="col-sm-6">
-                          {!!Form::checkbox('EnfCardiovasculares',1 , $ficha->EnfCardiovasculares) !!}
+                          {{ Form::hidden('EnfCardiovasculares', 0) }}
+                          {!!Form::checkbox('EnfCardiovasculares',1 ) !!}
                           {!!Form::label('EnfCardio','Enf. Cardiovasculares',array('class'=>'nobold')) !!}
                         </div>
 
                         <div class="col-sm-6">
-                          {!!Form::checkbox('EnfGastrointestinales',1 ,$ficha->EnfGastrointestinales)!!}
+                          {{ Form::hidden('EnfGastrointestinales', 0) }}
+                          {!!Form::checkbox('EnfGastrointestinales',1)!!}
                           {!!Form::label('EnfGastro','Enf. Gastrointestinales',array('class'=>'nobold')) !!}
                         </div>
 
                         <div class="col-sm-6">
-                          {!!Form::checkbox('EnfRespiratorias', 1 ,false)!!}
+                          {{ Form::hidden('EnfRespiratorias', 0) }}
+                          {!!Form::checkbox('EnfRespiratorias', 1)!!}
                           {!!Form::label('EnfResp','Enf. Respiratorias',array('class'=>'nobold')) !!}
                         </div>
 
                         <div class="col-sm-6">
-                          {!!Form::checkbox('EnfNeurologicas', 1 ,false)!!}
+                          {{ Form::hidden('EnfNeurologicas', 0) }}
+                          {!!Form::checkbox('EnfNeurologicas', 1)!!}
                           {!!Form::label('EnfNeuro','Enf. Neurológicas',array('class'=>'nobold')) !!}
                         </div>
 
                         <div class="col-sm-6">
-                          {!!Form::checkbox('EnfIntectocontagiosas', 1, false )!!}
+                          {{ Form::hidden('EnfIntectocontagiosas', 0) }}
+                          {!!Form::checkbox('EnfIntectocontagiosas', 1)!!}
                           {!!Form::label('EnfInfec','Enf. Infectocontagiosas',array('class'=>'nobold')) !!}
                         </div>
 
                         <div class="col-sm-6">
-                          {!!Form::checkbox('DiscrasiaSanguinea', 1, false )!!}
+                          {{ Form::hidden('DiscrasiaSanguinea', 0) }}
+                          {!!Form::checkbox('DiscrasiaSanguinea', 1)!!}
                           {!!Form::label('Discrasia','Discrasia Sanguinea',array('class'=>'nobold')) !!}
                         </div>
 
                         <div class="col-sm-6">
-                          {!!Form::checkbox('Diabetes', 1, false )!!}
+                          {{ Form::hidden('Diabetes', 0) }}
+                          {!!Form::checkbox('Diabetes', 1)!!}
                           {!!Form::label('diabetes','Diabetes',array('class'=>'nobold')) !!}
                         </div>
 
                         <div class="col-sm-6">
-                          {!!Form::checkbox('Alergia', 1, false )!!}
+                          {{ Form::hidden('Alergia', 0) }}
+                          {!!Form::checkbox('Alergia', 1)!!}
                           {!!Form::label('alergias','Alergias',array('class'=>'nobold')) !!}
                         </div>
 
                         <div class="col-sm-6">
-                          {!!Form::checkbox('Embarazo', 1, false )!!}
+                          {{ Form::hidden('Embarazo', 0) }}
+                          {!!Form::checkbox('Embarazo', 1)!!}
                           {!!Form::label('_embarazo','Embarazo',array('class'=>'nobold')) !!}
                         </div>
 
-                        <div class="col-sm-6">
-                          {!!Form::checkbox('OtraEnf', 1, false )!!}
+                        <div class=" col-sm-6">
+                          {{ Form::hidden('OtraEnf', 0) }}
+                          {!!Form::checkbox('OtraEnf', 1)!!}
                           {!!Form::label('Otraenf','Otra enfermedad',array('class'=>'nobold')) !!}
                         </div>
 
                       </div>
 
-                       <div class="col-sm-12" style="margin-top:10px;">
+                       <div class="form-group col-sm-12">
                            {!!Form::label('farmacos','Fármacos en uso') !!}
                            {!!Form::text('Farmacos_Uso',null,['id'=>'Farmacos_Uso','class'=>'form-control'])!!}
                        </div>
 
-                       <div class="col-sm-6">
+                       <div class="form-group col-sm-6">
                            {!!form::label('Alumno : ')!!} {{$alumno->Nombre}} {{$alumno->Paterno}}
                            {{Form::hidden('alumno_id',$alumno->alumno_id)}}
                        </div>
 
-                       <div class="col-sm-6">
+                       <div class="form-group col-sm-6">
                            {!!form::label('Profesor tutor :   ')!!} {{$docente->Nombre}} {{$docente->Paterno}}
                            {{Form::hidden('docente_id',$docente->id)}}
                        </div>
 
-                       <div class="col-sm-12" style="margin-top:10px;">
+                       <div class="form-group col-sm-12">
                          {!!Form::label('Hábitos') !!}
                        </div>
 
-                       <div class="col-sm-12">
-
+                       <div class="form-group col-sm-12">
                          <div class="col-sm-4">
-                           {!!Form::checkbox('Fuma', 1, false )!!}
+                           {{ Form::hidden('Fuma', 0) }}
+                           {!!Form::checkbox('Fuma', 1)!!}
                            {!!Form::label('fumar','Fuma',array('class'=>'nobold')) !!}
                          </div>
 
                          <div class="col-sm-4">
-                           {!!Form::checkbox('Alcohol', 1, false )!!}
+                           {{ Form::hidden('Alcohol', 0) }}
+                           {!!Form::checkbox('Alcohol', 1)!!}
                            {!!Form::label('alcohol','Consume alcohol',array('class'=>'nobold')) !!}
                          </div>
 
                          <div class="col-sm-4">
-                           {!!Form::checkbox('Drogas', 1, false )!!}
+                           {{ Form::hidden('Drogas', 0) }}
+                           {!!Form::checkbox('Drogas', 1)!!}
                            {!!Form::label('drogas_','Consume drogas',array('class'=>'nobold')) !!}
                          </div>
 
@@ -204,42 +215,41 @@
                          2.Anamnesis Odontológica</b>
                        </div>
                       <div class="panel-body">
-                        <div class="col-sm-4">
+                        <div class="form-group col-sm-4">
                           <div class="input-group">
                             <label for="date"><b>Fecha de último control </b></label>
                               <input type="text" class="form-control datepicker" id="Fecha_Ultima_Consulta" name="Fecha_Ultima_Consulta">
                             </div>
                           </div>
 
-                        <div class="col-sm-8">
+                        <div class="form-group col-sm-8">
                           {!!form::label('Motivo Ultima Consulta')!!}
                           {!!form::text('Motivo_Ultima_Consulta',null,['id'=>'Motivo_Ultima_Consulta','class'=>'form-control'])!!}
                         </div>
 
-                        <div class="col-sm-12" style="margin-top:10px;">
+                        <div class="form-group col-sm-12">
                           {!!Form::label('Traumatismo','Antecedentes de Traumatismo Dentoalveolar')!!}
                         </div>
 
-                        <div class="col-sm-12 ">
-                          <div class="col-sm-8">
-                          {!!Form::radio('Antecedentes_Traumatismo',0,false,['id'=>'r1']) !!}
-                          {!!Form::label('Tortodoncia','No ha recibido tratamiento de Ortodoncia'
-                            ,array('class'=>'nobold'))!!}
-                          </div>
+                        <div class="form-group col-sm-12 ">
+                            <div class="col-sm-8">
+                            {!!Form::radio('Antecedentes_Traumatismo',0, 0,['id'=>'r1']) !!}
+                            {!!Form::label('Tortodoncia','No ha recibido tratamiento de Ortodoncia'
+                              ,array('class'=>'nobold'))!!}
+                            </div>
+                            <div class="col-sm-8">
+                            {!!Form::radio('Antecedentes_Traumatismo',1, 1,['id'=>'r2']) !!}
+                            {!!Form::label('Tortodoncia2','Si ha recibido tratamiento de Ortodoncia'
+                              ,array('class'=>'nobold'))!!}
+                            </div>
 
-                          <div class="col-sm-8">
-                          {!!Form::radio('Antecedentes_Traumatismo',1,false ,['id'=>'r2']) !!}
-                          {!!Form::label('Tortodoncia2','Si ha recibido tratamiento de Ortodoncia'
-                            ,array('class'=>'nobold'))!!}
-                          </div>
-
-                          <div class="col-sm-12" id="text_t1">
+                          <div class="form-group col-sm-12" id="text_t1">
                             <div class="col-sm-4">
                               {!!form::label('DienteTrau','Indique en que Diente')!!}
                               {!!form::text('DienteTraumatismo',null,['id'=>'DienteTraumatismo','class'=>'form-control'])!!}
                             </div>
 
-                            <div class="col-sm-4" >
+                            <div class="form-group col-sm-4" >
                               <div class="input-group">
                                 <label for="date" class="nobold" ><b>Fecha de traumatismo </b></label>
                                 <input type="text" class="form-control datepicker2" id="fecha2" name="Fecha_Traumatismo">
@@ -248,31 +258,36 @@
                         </div>
                       </div>
 
-                      <div class="col-sm-12" style="margin-top:10px;">
+                      <div class="form-group col-sm-12">
                         {!!Form::label('ElemH','Elementos de Hígiene') !!}
                       </div>
 
-                      <div class="col-sm-12">
+                      <div class="form-group col-sm-12">
                         <div class="col-sm-3">
-                          {!!Form::checkbox('Cepillo', 1, false )!!}
+                          {{ Form::hidden('Cepillo', 0) }}
+                          {!!Form::checkbox('Cepillo', 1)!!}
                           {!!Form::label('_cepillo','Cepillo',array('class'=>'nobold')) !!}
                         </div>
 
                         <div class="col-sm-3">
-                          {!!Form::checkbox('SedaDental', 1, false )!!}
+                          {{ Form::hidden('SedaDental', 0) }}
+                          {!!Form::checkbox('SedaDental', 1)!!}
                           {!!Form::label('_seda','Seda dental',array('class'=>'nobold')) !!}
                         </div>
 
                         <div class="col-sm-3">
-                          {!!Form::checkbox('Dentrífico', 1, false )!!}
+                          {{ Form::hidden('Dentrífico', 0) }}
+                          {!!Form::checkbox('Dentrífico', 1)!!}
                           {!!Form::label('_dentrifico','Dentrífico',array('class'=>'nobold')) !!}
                         </div>
                         <div class="col-sm-3">
-                          {!!Form::checkbox('Colutorio', 1, false )!!}
+                          {{ Form::hidden('Colutorio', 0) }}
+                          {!!Form::checkbox('Colutorio', 1)!!}
                           {!!Form::label('_colutorio','Colutorio',array('class'=>'nobold')) !!}
                         </div>
                         <div class="col-sm-3">
-                          {!!Form::checkbox('Otros', 1, false,['id'=>'chk21'] )!!}
+                          {{ Form::hidden('Otros', 0) }}
+                          {!!Form::checkbox('Otros', 1, $ficha->Otros,['id'=>'chk21'] )!!}
                           {!!Form::label('_otros','Otros',array('class'=>'nobold')) !!}
                         </div>
                       </div>
@@ -285,7 +300,7 @@
                       </div>
 
 
-                      <div class="col-sm-12">
+                      <div class="form-group col-sm-12">
                         <div class="col-sm-6">
                           {!!Form::label('Anestesia','¿Le han aplicado Anestesia Dental?')!!}
                           <div class="col-sm-8">
@@ -325,102 +340,121 @@
                             <div class="col-sm-12 form-group">
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('Apicectomia', 1,false) !!}
+                                {{ Form::hidden('Apicectomia', 0) }}
+                                {!!Form::checkbox('Apicectomia', 1) !!}
                                 {!!Form::label('_apicectomia','Apicectomía',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('Blanqueamiento_Dental',1 ,false)!!}
+                                {{ Form::hidden('Blanqueamiento_Dental', 0) }}
+                                {!!Form::checkbox('Blanqueamiento_Dental',1)!!}
                                 {!!Form::label('_blanqueamiento','Blanqueamiento Dental',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('Empaste',1 ,false)!!}
+                                {{ Form::hidden('Empaste', 0) }}
+                                {!!Form::checkbox('Empaste',1)!!}
                                 {!!Form::label('_empaste','Empaste',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('Endodoncia', 1 ,false)!!}
+                                {{ Form::hidden('Endodoncia', 0) }}
+                                {!!Form::checkbox('Endodoncia', 1)!!}
                                 {!!Form::label('_endodoncia','Endodoncia',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('Exodoncia', 1 ,false)!!}
+                                {{ Form::hidden('Exodoncia', 0) }}
+                                {!!Form::checkbox('Exodoncia', 1)!!}
                                 {!!Form::label('_exodoncia','Exodoncia',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('Explorador_Dental', 1 ,false)!!}
+                                {{ Form::hidden('Explorador_Dental', 0) }}
+                                {!!Form::checkbox('Explorador_Dental', 1)!!}
                                 {!!Form::label('_explorador','Explorador Dental',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('Gingivectomía', 1 ,false)!!}
+                                {{ Form::hidden('Gingivectomía', 0) }}
+                                {!!Form::checkbox('Gingivectomía', 1)!!}
                                 {!!Form::label('_gingivectomia','Gingivectomía',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('Gingivoplastía', 1 ,false)!!}
+                                {{ Form::hidden('Gingivoplastía', 0) }}
+                                {!!Form::checkbox('Gingivoplastía', 1)!!}
                                 {!!Form::label('_gingivoplastia','Gingivoplastía',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('Higiene_Bucodental', 1 ,false)!!}
+                                {{ Form::hidden('Higiene_Bucodental', 0) }}
+                                {!!Form::checkbox('Higiene_Bucodental', 1)!!}
                                 {!!Form::label('_higiene','Higiene Bucodental',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('Implante_Dental', 1 ,false)!!}
+                                {{ Form::hidden('Implante_Dental', 0) }}
+                                {!!Form::checkbox('Implante_Dental', 1)!!}
                                 {!!Form::label('_implante','Implante Dental',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('Limpieza_Dental', 1 ,false)!!}
+                                {{ Form::hidden('Limpieza_Dental', 0) }}
+                                {!!Form::checkbox('Limpieza_Dental', 1)!!}
                                 {!!Form::label('_limpieza','Limpieza Dental',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('Ostectomía', 1 ,false)!!}
+                                {{ Form::hidden('Ostectomía', 0) }}
+                                {!!Form::checkbox('Ostectomía', 1)!!}
                                 {!!Form::label('_ostectomia','Ostectomía',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('Remineralización_dental', 1 ,false)!!}
+                                {{ Form::hidden('Remineralización_dental', 0) }}
+                                {!!Form::checkbox('Remineralización_dental', 1)!!}
                                 {!!Form::label('_remineralizacion','Remineralización Dental',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('SitioEstado', 1 ,false)!!}
+                                {{ Form::hidden('SitioEstado', 0) }}
+                                {!!Form::checkbox('SitioEstado', 1)!!}
                                 {!!Form::label('_sitioestado','Sitio/Estado',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('Tartrectomía', 1 ,false)!!}
+                                {{ Form::hidden('Tartrectomía', 0) }}
+                                {!!Form::checkbox('Tartrectomía', 1)!!}
                                 {!!Form::label('_tartrectomia','Tartrectomía',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('TecnicaColgajo', 1 ,false)!!}
+                                {{ Form::hidden('TecnicaColgajo', 0) }}
+                                {!!Form::checkbox('TecnicaColgajo', 1)!!}
                                 {!!Form::label('_colgajo','Técnica de elevación del colgajo',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('TecnicaSenoMaxilar', 1 ,false)!!}
+                                {{ Form::hidden('TecnicaSenoMaxilar', 0) }}
+                                {!!Form::checkbox('TecnicaSenoMaxilar', 1)!!}
                                 {!!Form::label('_senomaxilar','Técnica de elevación del seno maxilar',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('RegeneracionOsea', 1 ,false)!!}
+                                {{ Form::hidden('RegeneracionOsea', 0) }}
+                                {!!Form::checkbox('RegeneracionOsea', 1)!!}
                                 {!!Form::label('_regeneracionosea','Técnica de regeneración ósea guiada',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('TerapiaFluoruro', 1 ,false)!!}
+                                {{ Form::hidden('TerapiaFluoruro', 0) }}
+                                {!!Form::checkbox('TerapiaFluoruro', 1)!!}
                                 {!!Form::label('_fluoruro','Terapia de fluoruro',array('class'=>'nobold')) !!}
                               </div>
                             </div>
 
-           <div class="col-sm-12">
+           <div class="form-group col-sm-12">
              <div class="col-sm-10">
                {!!form::label('Indique Alerta Médica')!!}
                {!!form::text('Alerta_Medica',null,['id'=>'Alerta_Medica','class'=>'form-control'])!!}
@@ -435,7 +469,7 @@
                  {!!Form::close()!!}
              </div>
              <div class="col-sm-2">
-               <a <button type="button" href={{route('Ficha.index',$id)}} class="btn btn-primary">Volver</button> </a>
+               <a <button type="button" href={{route('Ficha.verFicha',$id)}} class="btn btn-primary">Volver</button> </a>
              </div>
            </div>
 

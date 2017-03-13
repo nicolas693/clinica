@@ -92,52 +92,52 @@
 
             <div class="form-group col-sm-12">
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 {!!Form::checkbox('cardiovascular',null,$ficha_exists->EnfCardiovasculares, ['disabled'=>'disabled'] )!!}
                 {!!Form::label('enf1','Enfermedades Cardiovasculares',array('class'=>'nobold')) !!}
               </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 {!!Form::checkbox('gastrointestinales',null,$ficha_exists->EnfGastrointestinales, ['disabled'=>'disabled'] )!!}
                 {!!Form::label('enf2','Enfermedades Gastrointestinales',array('class'=>'nobold')) !!}
               </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 {!!Form::checkbox('respiratorias',null,$ficha_exists->EnfRespiratorias, ['disabled'=>'disabled'] )!!}
                 {!!Form::label('enf3','Enfermedades Respiratorias',array('class'=>'nobold')) !!}
               </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 {!!Form::checkbox('neurologicas',null,$ficha_exists->EnfNeurologicas, ['disabled'=>'disabled'] )!!}
                 {!!Form::label('enf4','Enfermedades Neurológicas',array('class'=>'nobold')) !!}
               </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 {!!Form::checkbox('infectocontagiosas',null,$ficha_exists->EnfIntectocontagiosas, ['disabled'=>'disabled'] )!!}
                 {!!Form::label('enf5','Enfermedades Infectocontagiosas',array('class'=>'nobold')) !!}
               </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 {!!Form::checkbox('discrasia',null,$ficha_exists->DiscrasiaSanguinea, ['disabled'=>'disabled'] )!!}
                 {!!Form::label('enf6','Discrasia Sanguinea',array('class'=>'nobold')) !!}
               </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 {!!Form::checkbox('diabtes',null,$ficha_exists->Diabetes, ['disabled'=>'disabled'] )!!}
                 {!!Form::label('enf7','Diabetes',array('class'=>'nobold')) !!}
               </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 {!!Form::checkbox('alergia',null,$ficha_exists->Alergia, ['disabled'=>'disabled'] )!!}
                 {!!Form::label('enf8','Alergias',array('class'=>'nobold')) !!}
               </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 {!!Form::checkbox('embarazo',null,$ficha_exists->Embarazo, ['disabled'=>'disabled'] )!!}
                 {!!Form::label('enf9','Embarazo',array('class'=>'nobold')) !!}
               </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 {!!Form::checkbox('otraenf',null,$ficha_exists->OtraEnf, ['disabled'=>'disabled'] )!!}
                 {!!Form::label('enf10','Otra Enfermedad',array('class'=>'nobold')) !!}
               </div>
