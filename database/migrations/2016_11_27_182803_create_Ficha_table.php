@@ -14,7 +14,6 @@ class CreateFichaTable extends Migration
     {
         Schema::create('Ficha', function (Blueprint $table) {
             $table->increments('id_Ficha');
-            $table->timestamps();
             $table->String('Ocupacion');
             $table->String('Fecha_Ingreso');
             $table->String('Motivo_Consulta');

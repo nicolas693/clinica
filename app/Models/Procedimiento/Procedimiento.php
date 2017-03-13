@@ -8,9 +8,12 @@ class Procedimiento extends Model
 {
   protected $table = 'Procedimiento';
   protected $primaryKey = 'id';
-  public $timestamps = true;
+  public $timestamps = false;
 
-  protected $fillable = [ 'id','Nombre','Costo'];
+  protected $fillable = [
+  'id','Apicectomia','Blanqueamiento_Dental','Cementación','Endodoncia','Exodoncia','Explorador_Dental',
+  'Gingivectomía','Gingivoplastía','Higiene_Bucodental','Implante_Dental','Limpieza_Dental','Ostectomía','Remineralización_dental',
+  'SitioEstado','Tartrectomía','Tecnica_Colgajo','Tecnica_Seno_Maxilar','Regeneracion_Osea','Terapia_Fluoruro'];
 
 
       public function asignatura ()
