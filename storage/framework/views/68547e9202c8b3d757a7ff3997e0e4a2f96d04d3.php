@@ -27,8 +27,7 @@
 
 <ol class="breadcrumb fondoC1 ">
      <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
-     <li><a href="/Ficha/<?php echo e($id); ?>/verficha"> Ver Ficha</a></li>
-    <!--  <li><a href="{url('Ficha',{$id} )}"> Ver Ficha</a></li> -->
+     <li><a href="/Ficha/<?php echo e($id); ?>/verFicha"> Ver Ficha</a></li>
      <li class="active">Editar Ficha</li>
    </ol>
 

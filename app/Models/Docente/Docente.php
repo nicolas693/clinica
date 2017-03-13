@@ -13,6 +13,9 @@ class Docente extends Model
 
     protected $fillable = [
       'id','asignatura_id','Nombre','Paterno','Materno','Telefono','user_id'];
+      protected $casts = [
+          'arr' => 'array'
+      ];
 
         public function asignatura ()
         {

@@ -34,7 +34,7 @@
 
    <div class="row fondoC centro">
      <div class="page-header">
-       <h1>Ficha Clinica Integral Adulto </h1>
+       <h1>Ficha Clínica Integral Adulto </h1>
      </div>
      <div class="col-md-8">
         <div class="panel panel-primary">
@@ -184,7 +184,7 @@
                         </div>
 
                         <div class="col-sm-6">
-                          <?php echo Form::checkbox('Alergias', 1, false ); ?>
+                          <?php echo Form::checkbox('Alergia', 1, false ); ?>
 
                           <?php echo Form::label('alergias','Alergias',array('class'=>'nobold')); ?>
 
@@ -207,8 +207,9 @@
                       </div>
 
                        <div class="col-sm-12" style="margin-top:10px;">
-                           <p><b>Fármacos en uso</b></p>
-                           <?php echo form::text('Fármacos en uso',null,['id'=>'Farmacos_Uso','class'=>'form-control']); ?>
+                           <?php echo Form::label('farmacos','Fármacos en uso'); ?>
+
+                           <?php echo Form::text('Farmacos_Uso',null,['id'=>'Farmacos_Uso','class'=>'form-control']); ?>
 
                        </div>
 
@@ -315,7 +316,7 @@
                         </div>
                       </div>
 
-                      <div class="col-sm-12">
+                      <div class="col-sm-12" style="margin-top:10px;">
                         <?php echo Form::label('ElemH','Elementos de Hígiene'); ?>
 
                       </div>
@@ -336,7 +337,7 @@
                         </div>
 
                         <div class="col-sm-3">
-                          <?php echo Form::checkbox('Dentrifico', 1, false ); ?>
+                          <?php echo Form::checkbox('Dentrífico', 1, false ); ?>
 
                           <?php echo Form::label('_dentrifico','Dentrífico',array('class'=>'nobold')); ?>
 
@@ -355,63 +356,223 @@
                         </div>
                       </div>
 
-                      <div class="col-sm-12">
+                      <div class="col-sm-12 form-group">
                         <div class="col-sm-6" id="text_t2">
                           <?php echo Form::label('Especifique'); ?>
 
-                          <?php echo Form::text('nombre_otros',null,['id'=>'NombreOtros','class'=>'form-control']); ?>
+                          <?php echo Form::text('NombreOtros',null,['id'=>'NombreOtros','class'=>'form-control']); ?>
 
                         </div>
                       </div>
 
-                          <div class="col-sm-6 radio2" style="margin-top:10px">
-                            <?php echo Form::label('Anestesia','¿Le han aplicado Anestesia Dental?'); ?>
 
-                            <p class="col-sm-8"> <input type="radio" name="radio2" id="r3" value="Nothing">No</p>
-                            <p class="col-sm-8"> <input type="radio" name="radio2" id="r4" value="Show">Si</p>
-                            </div>
-                            <div class="col-sm-6 radio3">
-                              <?php echo Form::label('Complicaciones','¿Ha tenido complicaciones al respecto?'); ?>
+                      <div class="col-sm-12">
+                        <div class="col-sm-6">
+                          <?php echo Form::label('Anestesia','¿Le han aplicado Anestesia Dental?'); ?>
 
-                              <p class="col-sm-8"> <input type="radio" name="radio3" id="r5" value="Nothing">No</p>
-                              <p class="col-sm-8"> <input type="radio" name="radio3" id="r6" value="Show">Si</p>
-                              <div class="text3">
-                                <div class="col-sm-12" style="margin-right:50px;">
-                                    <?php echo form::label('Especifique','Especifique'); ?>
+                          <div class="col-sm-8">
+                            <?php echo Form::radio('Anestesia',0,false,['id'=>'r10']); ?>
 
-                                    <?php echo form::text('Complicacion',null,['id'=>'Complicacion','class'=>'form-control']); ?>
+                            <?php echo Form::label('nones','No',array('class'=>'nobold')); ?>
 
-                                </div>
-                               </div>
-                             </div>
+                          </div>
+                          <div class="col-sm-8">
+                            <?php echo Form::radio('Anestesia',1,false, ['id'=>'r11'] ); ?>
 
-                        <div class="col-sm-8 form-group">
-                            <p><b>Procedimientos a realizar</b></p>
-                              <?php echo Form::select('Procedimiento',$procedimientos,null,
-                                ['id'=>'Nombre', 'class'=>'form-control']); ?>
+                            <?php echo Form::label('yep','Si',array('class'=>'nobold')); ?>
 
+                          </div>
                         </div>
 
-                  <div class="col-sm-8 form-group">
-                    <p><b>Insumos necesarios</b></p>
-                      <?php echo Form::select('Insumos',$insumos,null,
-                        ['id'=>'insumos','class'=>'form-control']); ?>
+                        <div class="col-sm-6" id="text_t3">
+                          <?php echo Form::label('Complicaciones','¿Ha tenido complicaciones al respecto?'); ?>
 
-                  </div>
+                          <div class="col-sm-8">
+                            <?php echo Form::radio('Complicacion_Anestesia',0,false,['id'=>'r12']); ?>
 
-           <div class="col-sm-10 form-group">
-             <?php echo form::label('Indique Alerta Médica'); ?>
+                            <?php echo Form::label('nones1','No',array('class'=>'nobold')); ?>
 
-             <?php echo form::text('Alerta_Medica',null,['id'=>'Alerta_Medica','class'=>'form-control']); ?>
+                          </div>
+                          <div class="col-sm-8">
+                            <?php echo Form::radio('Complicacion_Anestesia',1,false,['id'=>'r13']); ?>
 
-           </div>
+                            <?php echo Form::label('yep1','Si',array('class'=>'nobold')); ?>
+
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-12 form-group">
+                        <div class="col-sm-8" id="text_t4">
+                          <?php echo form::label('Especifique2','Especifique'); ?>
+
+                          <?php echo form::text('Complicacion',null,['id'=>'Complicacion','class'=>'form-control']); ?>
+
+                        </div>
+                      </div>
+
+                      <div class="col-sm-12 form-group">
+                        <?php echo Form::label('Procedimientos'); ?>
+
+                      </div>
+
+                            <div class="col-sm-12 form-group">
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Apicectomia', 1,false); ?>
+
+                                <?php echo Form::label('_apicectomia','Apicectomía',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Blanqueamiento_Dental',1 ,false); ?>
+
+                                <?php echo Form::label('_blanqueamiento','Blanqueamiento Dental',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Empaste',1 ,false); ?>
+
+                                <?php echo Form::label('_empaste','Empaste',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Endodoncia', 1 ,false); ?>
+
+                                <?php echo Form::label('_endodoncia','Endodoncia',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Exodoncia', 1 ,false); ?>
+
+                                <?php echo Form::label('_exodoncia','Exodoncia',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Explorador_Dental', 1 ,false); ?>
+
+                                <?php echo Form::label('_explorador','Explorador Dental',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Gingivectomía', 1 ,false); ?>
+
+                                <?php echo Form::label('_gingivectomia','Gingivectomía',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Gingivoplastía', 1 ,false); ?>
+
+                                <?php echo Form::label('_gingivoplastia','Gingivoplastía',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Higiene_Bucodental', 1 ,false); ?>
+
+                                <?php echo Form::label('_higiene','Higiene Bucodental',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Implante_Dental', 1 ,false); ?>
+
+                                <?php echo Form::label('_implante','Implante Dental',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Limpieza_Dental', 1 ,false); ?>
+
+                                <?php echo Form::label('_limpieza','Limpieza Dental',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Ostectomía', 1 ,false); ?>
+
+                                <?php echo Form::label('_ostectomia','Ostectomía',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Remineralización_dental', 1 ,false); ?>
+
+                                <?php echo Form::label('_remineralizacion','Remineralización Dental',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('SitioEstado', 1 ,false); ?>
+
+                                <?php echo Form::label('_sitioestado','Sitio/Estado',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('Tartrectomía', 1 ,false); ?>
+
+                                <?php echo Form::label('_tartrectomia','Tartrectomía',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('TecnicaColgajo', 1 ,false); ?>
+
+                                <?php echo Form::label('_colgajo','Técnica de elevación del colgajo',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('TecnicaSenoMaxilar', 1 ,false); ?>
+
+                                <?php echo Form::label('_senomaxilar','Técnica de elevación del seno maxilar',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('RegeneracionOsea', 1 ,false); ?>
+
+                                <?php echo Form::label('_regeneracionosea','Técnica de regeneración ósea guiada',array('class'=>'nobold')); ?>
+
+                              </div>
+
+                              <div class="col-sm-6">
+                                <?php echo Form::checkbox('TerapiaFluoruro', 1 ,false); ?>
+
+                                <?php echo Form::label('_fluoruro','Terapia de fluoruro',array('class'=>'nobold')); ?>
+
+                              </div>
+                            </div>
 
            <div class="col-sm-12">
-             <?php echo Form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success ']); ?>
+             <div class="col-sm-10">
+               <?php echo form::label('Indique Alerta Médica'); ?>
 
-             <a <button type="button" href=<?php echo e(route('Ficha.index',$id)); ?> class="btn btn-primary">Volver</button> </a>
-             <?php echo Form::close(); ?>
+               <?php echo form::text('Alerta_Medica',null,['id'=>'Alerta_Medica','class'=>'form-control']); ?>
 
+
+             </div>
+           </div>
+
+           <div class="col-sm-12" style="margin-top:10px;" >
+             <div class="col-sm-2">
+               <?php echo Form::submit('Grabar',['name'=>'grabar','id'=>'grabar'
+                 ,'content'=>'<span>Grabar</span>','class'=>'btn btn-success ']); ?>
+
+                 <?php echo Form::close(); ?>
+
+             </div>
+             <div class="col-sm-2">
+               <a <button type="button" href=<?php echo e(route('Ficha.index',$id)); ?> class="btn btn-primary">Volver</button> </a>
+             </div>
            </div>
 
         </div>
@@ -421,6 +582,8 @@
   <script>
     $("#text_t1").hide();
     $("#text_t2").hide();
+    $("#text_t3").hide();
+    $("#text_t4").hide();
 
   $(document).on("click", function(e){
       if($(e.target).is("#r2")){
@@ -431,6 +594,18 @@
       }
       if($(e.target).is("#chk21")){
         $("#text_t2").show();
+      }
+      if($(e.target).is("#r11") ){
+        $("#text_t3").show();
+      }
+      if($(e.target).is("#r10")){
+        $("#text_t3").hide();
+      }
+      if($(e.target).is("#r13") ){
+        $("#text_t4").show();
+      }
+      if($(e.target).is("#r12")){
+        $("#text_t4").show();
       }
   });
   </script>
@@ -484,42 +659,6 @@
                 autoclose: true
         });
     </script>
-
-
-
 <?php $__env->stopSection(); ?>
-
-<!--
-<div class="col-sm-12" style="margin-top:10px;">
-  {!Form::label('Traumatismo','Antecedentes de Traumatismo Dentoalveolar')!!}
-</div>
-
-<div class="col-sm-12 ">
-  <div class="col-sm-8">
-  {!Form::radio('Antecedentes_Traumatismo',0,false,['id'=>'r1']) !!}
-  {!Form::label('Tortodoncia','No ha recibido tratamiento de Ortodoncia')!!}
-  </div>
-
-  <div class="col-sm-8">
-  {!Form::radio('Antecedentes_Traumatismo',1,false ,['id'=>'r2']) !!}
-  {!Form::label('Tortodoncia2','Si ha recibido tratamiento de Ortodoncia')!!}
-  </div>
-
-  <div class="col-sm-12" id="text_t1">
-    <div class="col-sm-6">
-      {!form::label('DienteTrau','Indique en que Diente: ' )!!}
-      {!form::text('DienteTraumatismo',null,['Diente'=>'id','class'=>'form-control'])!!}
-    </div>
-
-    <div class="col-sm-6" >
-      <div class="input-group">
-        <label for="date" ><b>Fecha de traumatismo </b></label>
-        <input type="text" class="form-control datepicker2" id="fecha2" name="Fecha_Traumatismo">
-      </div>
-    </div>
-</div>
-</div>
-
--->
 
 <?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

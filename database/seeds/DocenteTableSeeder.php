@@ -20,6 +20,8 @@ class DocenteTableSeeder extends Seeder
         'Telefono'=>'95816732',
         'asignatura_id'=>'1',
         'user_id'=>'2',
+        'activo'=>'1',
+        'arr' => '[1,2,3,4,5,6]',
 
       ]);
       $doc->save();
@@ -31,6 +33,8 @@ class DocenteTableSeeder extends Seeder
         'Telefono'=>'95816732',
         'asignatura_id'=>'2',
         'user_id'=>'4',
+        'activo'=>'1',
+        'arr' => '[1,2,3,4,5,6]',
 
       ]);
       $doc->save();
@@ -42,6 +46,8 @@ class DocenteTableSeeder extends Seeder
         'Telefono'=>'95816732',
         'asignatura_id'=>'3',
         'user_id'=>'6',
+        'activo'=>'1',
+        'arr' => '[1,2,3,4,5,6]',
 
       ]);
       $doc->save();

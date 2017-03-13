@@ -37,6 +37,7 @@
         }
     </style>
 </head>
+
 <body id="app-layout" class="bg-default" >
     <nav class="navbar navbar-cust  ">
         <div class="container">

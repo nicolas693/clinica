@@ -25,11 +25,12 @@ class CreateAlumnosTable extends Migration
             //$table->String('Observaciones')->nullable();
             //$table->String('PacienteEvaluado')->nullable();
             $table->primary('alumno_id');
+            $table->boolean('activo')->default(true);
 
-            $table->integer('asignatura_id')->unsigned();
+            $table->integer('asignatura_id')->nullable()->unsigned();
             $table->foreign('asignatura_id')->references('id')->on('asignatura');
 
-            $table->integer('id_Clinica')->unsigned();
+            $table->integer('id_Clinica')->nullable()->unsigned();
             $table->foreign('id_Clinica')->references('id_Clinica')->on('Clinica');
 
             $table->integer('user_id')->unsigned()->nullable();

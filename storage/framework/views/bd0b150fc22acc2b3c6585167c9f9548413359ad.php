@@ -29,13 +29,12 @@
           </div>
 
           <div class="panel-body">
-            <table class="table table-bordered">
+            <table class="table stripe compact">
               <thead>
                  <th>Fecha</th>
                  <th>Acción a realizar</th>
                  <th>Pieza Dental</th>
                  <th>Profesor a cargo</th>
-                 <th>Costo</th>
               </thead>
 
 
@@ -46,7 +45,6 @@
                     <td><?php echo e($tra->AccionR); ?></td>
                     <td><?php echo e($tra->Diente); ?></td>
                     <td><?php echo e($tra->nProfe); ?></td>
-                    <td><?php echo e($tra->Costo); ?></td>
                   </tr>
                 <?php endif; ?>
               <?php endforeach; ?>

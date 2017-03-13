@@ -35,6 +35,7 @@ Route::get('/', function () {
       route::resource('User','User\UserController',['except' => 'index']);
 
       route::get('Docente/{rut}/edit/{id}',['as' => 'Docente.editU', 'uses' => 'Docentes\DocentesController@editU']);
+      route::get('Docente/alta/{id}',['as' => 'Docente.alta', 'uses' => 'Docentes\DocentesController@alta']);
 
 
 });
@@ -48,6 +49,8 @@ Route::get('/', function () {
     route::get('Docente/evaluar/{id}','Docentes\DocentesController@evaluar');
     route::get('Docente', ['as'=>'Docente.storeAlumno', 'uses'=>'Docentes\DocentesController@storeAlumno' ]);
     route::get('Alumno/{rut}/edit/{id}',['as' => 'Alumnos.editU', 'uses' => 'Alumnos\AlumnosController@editU']);
+
+    route::get('Alumno/alta/{id}',['as' => 'Alumno.alta', 'uses' => 'Alumnos\AlumnosController@alta']);
 });
 
 
@@ -67,7 +70,7 @@ Route::get('/', function () {
     route::get('Ficha/{id}/Odontograma/{id2}',['as'=> 'Odontograma.show' , 'uses' => 'Odontograma\OdontogramaController@show']);
     route::get('Ficha/{id}/Odontograma',['as'=> 'Odontograma.index' , 'uses' => 'Odontograma\OdontogramaController@index']);
     route::get('Ficha/{id}',['as'=> 'Ficha.index' , 'uses' => 'Ficha\FichaController@index']);
-    route::get('Ficha/{id}/verficha', ['as'=>'Ficha.verFicha','uses'=>'Ficha\FichaController@verFicha' ]);
+    route::get('Ficha/{id}/verFicha', ['as'=>'Ficha.verFicha','uses'=>'Ficha\FichaController@verFicha' ]);
     route::get('Ficha/{id}/editar',['as'=>'Ficha.edit','uses'=>'Ficha\FichaController@edit']);
     route::get('Ficha/{id}/ficha',['as'=>'Ficha.ficha', 'uses' => 'Ficha\FichaController@ficha' ]);
     route::resource('Ficha','Ficha\FichaController',['only'=>['store','update','edit'] ] );
