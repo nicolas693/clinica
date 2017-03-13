@@ -351,9 +351,9 @@
                               </div>
 
                               <div class="col-sm-6">
-                                {{ Form::hidden('Empaste', 0) }}
-                                {!!Form::checkbox('Empaste',1)!!}
-                                {!!Form::label('_empaste','Empaste',array('class'=>'nobold')) !!}
+                                {{ Form::hidden('Cementación', 0) }}
+                                {!!Form::checkbox('Cementación',1)!!}
+                                {!!Form::label('_Cementación','Cementación',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
@@ -429,26 +429,26 @@
                               </div>
 
                               <div class="col-sm-6">
-                                {{ Form::hidden('TecnicaColgajo', 0) }}
-                                {!!Form::checkbox('TecnicaColgajo', 1)!!}
+                                {{ Form::hidden('Tecnica_Colgajo', 0) }}
+                                {!!Form::checkbox('Tecnica_Colgajo', 1)!!}
                                 {!!Form::label('_colgajo','Técnica de elevación del colgajo',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {{ Form::hidden('TecnicaSenoMaxilar', 0) }}
-                                {!!Form::checkbox('TecnicaSenoMaxilar', 1)!!}
+                                {{ Form::hidden('Tecnica_Seno_Maxilar', 0) }}
+                                {!!Form::checkbox('Tecnica_Seno_Maxilar', 1)!!}
                                 {!!Form::label('_senomaxilar','Técnica de elevación del seno maxilar',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {{ Form::hidden('RegeneracionOsea', 0) }}
-                                {!!Form::checkbox('RegeneracionOsea', 1)!!}
-                                {!!Form::label('_regeneracionosea','Técnica de regeneración ósea guiada',array('class'=>'nobold')) !!}
+                                {{ Form::hidden('Regeneracion_Osea', 0) }}
+                                {!!Form::checkbox('Regeneracion_Osea', 1)!!}
+                                {!!Form::label('_Regeneracion_Osea','Técnica de regeneración ósea guiada',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {{ Form::hidden('TerapiaFluoruro', 0) }}
-                                {!!Form::checkbox('TerapiaFluoruro', 1)!!}
+                                {{ Form::hidden('Terapia_Fluoruro', 0) }}
+                                {!!Form::checkbox('Terapia_Fluoruro', 1)!!}
                                 {!!Form::label('_fluoruro','Terapia de fluoruro',array('class'=>'nobold')) !!}
                               </div>
                             </div>

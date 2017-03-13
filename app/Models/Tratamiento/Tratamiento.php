@@ -11,7 +11,7 @@ class Tratamiento extends Model
   public $timestamps=false;
 
   protected $fillable=[
-    'paciente_id','ficha_id','Fecha','DienteTratamiento','AccionR',
+    'paciente_id','ficha_id','Fecha','DienteTratamiento','AccionR','Procedimiento',
     //Insumos
     'Alginmax', 'Alginkid', 'Alginplus_Tropical', 'Servilletas_Dentales',  'Eyector_Saliva', 'Manga_Esterilizacion',
     'Torula_Algodon'];

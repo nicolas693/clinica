@@ -27,24 +27,22 @@
 
 <ol class="breadcrumb fondoC1 ">
      <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
-     <li><a href="<?php echo e(url('Ficha',$id)); ?>"> Ver Ficha</a></li>
-     <li class="active">Ingresar Ficha</li>
+     <li><a href="/Ficha/<?php echo e($id); ?>"> Ver Ficha</a></li>
+     <li class="active">Editar Ficha</li>
    </ol>
 
 
    <div class="row fondoC centro">
-     <div class="page-header">
-       <h1>Ficha Clínica Integral Adulto </h1>
-     </div>
-     <div class="col-md-10">
-        <div class="panel panel-primary centrarIT">
+     <div class="page-header"> <h1>Ficha Clínica Integral Adulto </h1> </div>
+     <div class="col-md-8">
+        <div class="panel panel-primary">
           <div class="panel-heading"><b> Ficha Paciente </b></div>
 
           <div class="panel-body">
-                <?php echo Form::open(['route'=>['Ficha.store'],'method'=>'POST']); ?>
+                <?php echo Form::model($ficha,['route'=>['Ficha.update',$id],'method'=>'PUT']); ?>
 
 
-                <div class="form-group col-sm-6">
+                <div class="col-sm-6">
                     <?php echo form::label('Nombre :'); ?>
 
                      <?php echo $paciente->Nombre; ?> <?php echo $paciente->Paterno; ?> <?php echo $paciente->Materno; ?>
@@ -53,14 +51,14 @@
 
                 </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 <?php echo form::label('Rut : '); ?>
 
                 <?php echo $paciente->rut; ?>
 
               </div>
 
-                <div class="form-group col-sm-6">
+                <div class="col-sm-6">
                     <?php echo form::label('FechaNacimiento','Fecha de nacimiento : '); ?>
 
                      <?php echo $paciente->Fecha_Nacimiento; ?>
@@ -69,7 +67,7 @@
 
                 </div>
 
-                <div class="form-group col-sm-6">
+                <div class="col-sm-6">
                   <?php echo form::label('TelefonoMovil','Teléfono Movil : '); ?>
 
                   <?php echo $paciente->Telefono_Movil; ?>
@@ -78,7 +76,7 @@
 
                 </div>
 
-                <div class="form-group col-sm-6">
+                <div class="col-sm-6">
                   <?php echo form::label('Dirección : '); ?>
 
                   <?php echo $paciente->Calle; ?> <?php echo $paciente->Numero_Calle; ?>
@@ -91,32 +89,31 @@
                 </div>
 
 
-                <div class="form-group col-sm-12">
+                <div class="col-sm-12">
                   <?php echo form::label('Edad : '); ?> <?php echo e($edad); ?>
 
                 </div>
 
-                <div class="form-group col-sm-4">
-                  <?php echo form::label('FechaControl','Fecha de Ingreso: '); ?> <?php echo e($fechaA); ?>
-
+                <div class="col-sm-4">
+                  <?php echo form::label('FechaControl','Fecha de Control'); ?> <p style="font-size: 15px"><b><?php echo date("d/m/Y");?></b></p>
                 </div>
 
 
-                <div class="form-group col-sm-10" >
+                <div class="col-sm-10" style="margin-top:10px; margin-left:0px;">
                   <?php echo form::label('Ocupación'); ?>
 
                   <?php echo form::text('Ocupacion',null,['id'=>'Ocupacion','class'=>'form-control']); ?>
 
                 </div>
 
-                <div class="form-group col-sm-12">
+                <div class="col-sm-12">
                   <?php echo form::label('MotivoConsulta','Motivo de Consulta'); ?>
 
                   <?php echo form::text('Motivo_Consulta',null,['id'=>'Motivo_Consulta','class'=>'form-control']); ?>
 
                 </div>
 
-                <div class="form-group col-sm-12">
+                <div class="col-sm-12">
                   <?php echo form::label('Expectativas'); ?>
 
                   <?php echo form::text('Expectativas',null,['id'=>'Expectativas','class'=>'form-control']); ?>
@@ -129,21 +126,21 @@
                     </div>
                    <div class="panel-body">
 
-                     <div class="form-group col-sm-12">
+                     <div class="col-sm-12">
                        <?php echo Form::label('Antecedentes Médicos'); ?>
 
                      </div>
 
-                     <div class="form-group col-sm-12 ">
+                     <div class="col-sm-12 ">
                         <div class="col-sm-6">
-                          <?php echo Form::checkbox('EnfCardiovasculares',1 ,false); ?>
+                          <?php echo Form::checkbox('EnfCardiovasculares',1 , $ficha->EnfCardiovasculares); ?>
 
                           <?php echo Form::label('EnfCardio','Enf. Cardiovasculares',array('class'=>'nobold')); ?>
 
                         </div>
 
                         <div class="col-sm-6">
-                          <?php echo Form::checkbox('EnfGastrointestinales',1 ,false); ?>
+                          <?php echo Form::checkbox('EnfGastrointestinales',1 ,$ficha->EnfGastrointestinales); ?>
 
                           <?php echo Form::label('EnfGastro','Enf. Gastrointestinales',array('class'=>'nobold')); ?>
 
@@ -207,33 +204,33 @@
 
                       </div>
 
-                       <div class="form-group col-sm-12">
+                       <div class="col-sm-12" style="margin-top:10px;">
                            <?php echo Form::label('farmacos','Fármacos en uso'); ?>
 
                            <?php echo Form::text('Farmacos_Uso',null,['id'=>'Farmacos_Uso','class'=>'form-control']); ?>
 
                        </div>
 
-                       <div class="form-group col-sm-6">
+                       <div class="col-sm-6">
                            <?php echo form::label('Alumno : '); ?> <?php echo e($alumno->Nombre); ?> <?php echo e($alumno->Paterno); ?>
 
                            <?php echo e(Form::hidden('alumno_id',$alumno->alumno_id)); ?>
 
                        </div>
 
-                       <div class="form-group col-sm-6">
+                       <div class="col-sm-6">
                            <?php echo form::label('Profesor tutor :   '); ?> <?php echo e($docente->Nombre); ?> <?php echo e($docente->Paterno); ?>
 
                            <?php echo e(Form::hidden('docente_id',$docente->id)); ?>
 
                        </div>
 
-                       <div class="form-group col-sm-12">
+                       <div class="col-sm-12" style="margin-top:10px;">
                          <?php echo Form::label('Hábitos'); ?>
 
                        </div>
 
-                       <div class="form-group col-sm-12">
+                       <div class="col-sm-12">
 
                          <div class="col-sm-4">
                            <?php echo Form::checkbox('Fuma', 1, false ); ?>
@@ -264,26 +261,26 @@
                          2.Anamnesis Odontológica</b>
                        </div>
                       <div class="panel-body">
-                        <div class="form-group col-sm-4">
+                        <div class="col-sm-4">
                           <div class="input-group">
                             <label for="date"><b>Fecha de último control </b></label>
                               <input type="text" class="form-control datepicker" id="Fecha_Ultima_Consulta" name="Fecha_Ultima_Consulta">
                             </div>
                           </div>
 
-                        <div class="form-group col-sm-8">
+                        <div class="col-sm-8">
                           <?php echo form::label('Motivo Ultima Consulta'); ?>
 
                           <?php echo form::text('Motivo_Ultima_Consulta',null,['id'=>'Motivo_Ultima_Consulta','class'=>'form-control']); ?>
 
                         </div>
 
-                        <div class="form-group col-sm-12">
+                        <div class="col-sm-12" style="margin-top:10px;">
                           <?php echo Form::label('Traumatismo','Antecedentes de Traumatismo Dentoalveolar'); ?>
 
                         </div>
 
-                        <div class="form-group col-sm-12 ">
+                        <div class="col-sm-12 ">
                           <div class="col-sm-8">
                           <?php echo Form::radio('Antecedentes_Traumatismo',0,false,['id'=>'r1']); ?>
 
@@ -300,7 +297,7 @@
 
                           </div>
 
-                          <div class="form-group col-sm-12" id="text_t1">
+                          <div class="col-sm-12" id="text_t1">
                             <div class="col-sm-4">
                               <?php echo form::label('DienteTrau','Indique en que Diente'); ?>
 
@@ -317,12 +314,12 @@
                         </div>
                       </div>
 
-                      <div class="form-group col-sm-12">
+                      <div class="col-sm-12" style="margin-top:10px;">
                         <?php echo Form::label('ElemH','Elementos de Hígiene'); ?>
 
                       </div>
 
-                      <div class="form-group col-sm-12">
+                      <div class="col-sm-12">
                         <div class="col-sm-3">
                           <?php echo Form::checkbox('Cepillo', 1, false ); ?>
 
@@ -367,7 +364,7 @@
                       </div>
 
 
-                      <div class="form-group col-sm-12">
+                      <div class="col-sm-12">
                         <div class="col-sm-6">
                           <?php echo Form::label('Anestesia','¿Le han aplicado Anestesia Dental?'); ?>
 
@@ -553,7 +550,7 @@
                               </div>
                             </div>
 
-           <div class="form-group col-sm-12">
+           <div class="col-sm-12">
              <div class="col-sm-10">
                <?php echo form::label('Indique Alerta Médica'); ?>
 

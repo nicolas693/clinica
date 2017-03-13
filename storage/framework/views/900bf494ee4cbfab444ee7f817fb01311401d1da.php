@@ -1,5 +1,5 @@
 <?php $__env->startSection('title','Planificación de Tratamiento'); ?>
-<?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
 <?php $__env->startSection('content'); ?>
 
 
@@ -30,6 +30,7 @@
        <li><a href="<?php echo e(url('Ficha', $id)); ?>">Ficha</a></li>
        <li><a href="<?php echo e(url('Tratamiento', $id)); ?>">Ver Plan de Tratamiento</a></li>
        <li class="active">Registro</li>
+       <li class="pull-right"><a href="/Tratamiento/<?php echo e($paciente->rut); ?>" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
      </ol>
 
 
@@ -37,13 +38,14 @@
     <div class="page-header" style="margin-right:250px;">
       <h1>Planificación de Tratamiento </h1>
     </div>
+
     <div class="col-md-8">
+      <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
        <div class="panel panel-primary">
          <div class="panel-heading"><b>Nueva planificación de Tratamiento</b>
-            <p class="navbar-text navbar-right" style=" margin-top: 1px;">
-              <a <button href=<?php echo e(route('Tratamiento.index', $id)); ?> type="button" id='volver'  name='volver' class="btn  navbar-btn btn-warning" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"  >Volver</button></a>
-             </p>
+
           </div>
+
          <div class="panel-body">
 
               <?php echo Form::open(['route'=>'Tratamiento.store','method'=>'POST']); ?>
@@ -63,7 +65,14 @@
 
                    <?php echo Form::hidden('paciente_id',$paciente->rut); ?>
 
-                   <?php echo form::text('Diente',null,['id'=>'Diente','class'=>'form-control']); ?>
+                   <?php echo form::text('DienteTratamiento',null,['id'=>'Diente','class'=>'form-control']); ?>
+
+              </div>
+
+              <div class="col-sm-4">
+
+                   <?php echo Form::hidden('ficha_id',$ficha->id_Ficha); ?>
+
 
               </div>
 
@@ -79,10 +88,20 @@
                   <?php echo Form::label('insumos_','Insumos necesarios'); ?>
 
                     <?php echo Form::select('Insumos',$insumos,null,
-                      ['id'=>'insumos','class'=>'form-control', 'multiple'=>'multiple']); ?>
+                      ['id'=>'insumos','class'=>'form-control','size'=>'10', 'multiple'=>'multiple']); ?>
+
+                </div>
+
+                <div class="col-sm-6">
+                  <?php echo Form::label('Procedimiento','Procedimiento : '); ?>
+
+                    <?php echo Form::select('Procedimiento',$pro,null,
+                      ['id'=>'Procedimiento','class'=>'form-control','size'=>'10']); ?>
 
                 </div>
               </div>
+
+
 
               <div class="col-sm-12">
                     <div class="btn-group">

@@ -403,9 +403,9 @@
               </div>
 
               <div class="col-sm-6">
-                <?php echo Form::checkbox('empaste',null , $ficha_exists->Empaste ,['disabled'=>'disabled']); ?>
+                <?php echo Form::checkbox('Cementación',null , $ficha_exists->Cementación ,['disabled'=>'disabled']); ?>
 
-                <?php echo Form::label('_empaste','Empaste',array('class'=>'nobold')); ?>
+                <?php echo Form::label('_Cementación','Cementación',array('class'=>'nobold')); ?>
 
               </div>
 
@@ -494,28 +494,28 @@
               </div>
 
               <div class="col-sm-6">
-                <?php echo Form::checkbox('colgajo',null , $ficha_exists->TecnicaColgajo ,['disabled'=>'disabled']); ?>
+                <?php echo Form::checkbox('colgajo',null , $ficha_exists->Tecnica_Colgajo ,['disabled'=>'disabled']); ?>
 
                 <?php echo Form::label('_colgajo','Técnica de elevación del colgajo',array('class'=>'nobold')); ?>
 
               </div>
 
               <div class="col-sm-6">
-                <?php echo Form::checkbox('senomaxilar',null , $ficha_exists->TecnicaSenoMaxilar ,['disabled'=>'disabled']); ?>
+                <?php echo Form::checkbox('senomaxilar',null , $ficha_exists->Tecnica_Seno_Maxilar ,['disabled'=>'disabled']); ?>
 
                 <?php echo Form::label('_senomaxilar','Técnica de elevación del seno maxilar',array('class'=>'nobold')); ?>
 
               </div>
 
               <div class="col-sm-6">
-                <?php echo Form::checkbox('regeneracionosea',null , $ficha_exists->RegeneracionOsea ,['disabled'=>'disabled']); ?>
+                <?php echo Form::checkbox('Regeneracion_Osea',null , $ficha_exists->Regeneracion_Osea ,['disabled'=>'disabled']); ?>
 
-                <?php echo Form::label('_regeneracionosea','Técnica de regeneración ósea guiada',array('class'=>'nobold')); ?>
+                <?php echo Form::label('_Regeneracion_Osea','Técnica de regeneración ósea guiada',array('class'=>'nobold')); ?>
 
               </div>
 
               <div class="col-sm-6">
-                <?php echo Form::checkbox('terapiafluoruro',null , $ficha_exists->TerapiaFluoruro ,['disabled'=>'disabled']); ?>
+                <?php echo Form::checkbox('Terapia_Fluoruro',null , $ficha_exists->Terapia_Fluoruro ,['disabled'=>'disabled']); ?>
 
                 <?php echo Form::label('_fluoruro','Terapia de fluoruro',array('class'=>'nobold')); ?>
 

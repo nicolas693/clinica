@@ -113,70 +113,70 @@
 
             <div class="form-group col-sm-12">
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 <?php echo Form::checkbox('cardiovascular',null,$ficha_exists->EnfCardiovasculares, ['disabled'=>'disabled'] ); ?>
 
                 <?php echo Form::label('enf1','Enfermedades Cardiovasculares',array('class'=>'nobold')); ?>
 
               </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 <?php echo Form::checkbox('gastrointestinales',null,$ficha_exists->EnfGastrointestinales, ['disabled'=>'disabled'] ); ?>
 
                 <?php echo Form::label('enf2','Enfermedades Gastrointestinales',array('class'=>'nobold')); ?>
 
               </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 <?php echo Form::checkbox('respiratorias',null,$ficha_exists->EnfRespiratorias, ['disabled'=>'disabled'] ); ?>
 
                 <?php echo Form::label('enf3','Enfermedades Respiratorias',array('class'=>'nobold')); ?>
 
               </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 <?php echo Form::checkbox('neurologicas',null,$ficha_exists->EnfNeurologicas, ['disabled'=>'disabled'] ); ?>
 
                 <?php echo Form::label('enf4','Enfermedades Neurológicas',array('class'=>'nobold')); ?>
 
               </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 <?php echo Form::checkbox('infectocontagiosas',null,$ficha_exists->EnfIntectocontagiosas, ['disabled'=>'disabled'] ); ?>
 
                 <?php echo Form::label('enf5','Enfermedades Infectocontagiosas',array('class'=>'nobold')); ?>
 
               </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 <?php echo Form::checkbox('discrasia',null,$ficha_exists->DiscrasiaSanguinea, ['disabled'=>'disabled'] ); ?>
 
                 <?php echo Form::label('enf6','Discrasia Sanguinea',array('class'=>'nobold')); ?>
 
               </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 <?php echo Form::checkbox('diabtes',null,$ficha_exists->Diabetes, ['disabled'=>'disabled'] ); ?>
 
                 <?php echo Form::label('enf7','Diabetes',array('class'=>'nobold')); ?>
 
               </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 <?php echo Form::checkbox('alergia',null,$ficha_exists->Alergia, ['disabled'=>'disabled'] ); ?>
 
                 <?php echo Form::label('enf8','Alergias',array('class'=>'nobold')); ?>
 
               </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 <?php echo Form::checkbox('embarazo',null,$ficha_exists->Embarazo, ['disabled'=>'disabled'] ); ?>
 
                 <?php echo Form::label('enf9','Embarazo',array('class'=>'nobold')); ?>
 
               </div>
 
-              <div class="form-group col-sm-6">
+              <div class="col-sm-6">
                 <?php echo Form::checkbox('otraenf',null,$ficha_exists->OtraEnf, ['disabled'=>'disabled'] ); ?>
 
                 <?php echo Form::label('enf10','Otra Enfermedad',array('class'=>'nobold')); ?>
@@ -403,9 +403,9 @@
               </div>
 
               <div class="col-sm-6">
-                <?php echo Form::checkbox('empaste',null , $ficha_exists->Empaste ,['disabled'=>'disabled']); ?>
+                <?php echo Form::checkbox('Cementación',null , $ficha_exists->Cementación ,['disabled'=>'disabled']); ?>
 
-                <?php echo Form::label('_empaste','Empaste',array('class'=>'nobold')); ?>
+                <?php echo Form::label('_Cementación','Cementación',array('class'=>'nobold')); ?>
 
               </div>
 
@@ -494,28 +494,28 @@
               </div>
 
               <div class="col-sm-6">
-                <?php echo Form::checkbox('colgajo',null , $ficha_exists->TecnicaColgajo ,['disabled'=>'disabled']); ?>
+                <?php echo Form::checkbox('colgajo',null , $ficha_exists->Tecnica_Colgajo ,['disabled'=>'disabled']); ?>
 
                 <?php echo Form::label('_colgajo','Técnica de elevación del colgajo',array('class'=>'nobold')); ?>
 
               </div>
 
               <div class="col-sm-6">
-                <?php echo Form::checkbox('senomaxilar',null , $ficha_exists->TecnicaSenoMaxilar ,['disabled'=>'disabled']); ?>
+                <?php echo Form::checkbox('senomaxilar',null , $ficha_exists->Tecnica_Seno_Maxilar ,['disabled'=>'disabled']); ?>
 
                 <?php echo Form::label('_senomaxilar','Técnica de elevación del seno maxilar',array('class'=>'nobold')); ?>
 
               </div>
 
               <div class="col-sm-6">
-                <?php echo Form::checkbox('regeneracionosea',null , $ficha_exists->RegeneracionOsea ,['disabled'=>'disabled']); ?>
+                <?php echo Form::checkbox('Regeneracion_Osea',null , $ficha_exists->Regeneracion_Osea ,['disabled'=>'disabled']); ?>
 
-                <?php echo Form::label('_regeneracionosea','Técnica de regeneración ósea guiada',array('class'=>'nobold')); ?>
+                <?php echo Form::label('_Regeneracion_Osea','Técnica de regeneración ósea guiada',array('class'=>'nobold')); ?>
 
               </div>
 
               <div class="col-sm-6">
-                <?php echo Form::checkbox('terapiafluoruro',null , $ficha_exists->TerapiaFluoruro ,['disabled'=>'disabled']); ?>
+                <?php echo Form::checkbox('Terapia_Fluoruro',null , $ficha_exists->Terapia_Fluoruro ,['disabled'=>'disabled']); ?>
 
                 <?php echo Form::label('_fluoruro','Terapia de fluoruro',array('class'=>'nobold')); ?>
 

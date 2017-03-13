@@ -465,11 +465,11 @@
                               </div>
 
                               <div class="col-sm-6">
-                                <?php echo e(Form::hidden('Empaste', 0)); ?>
+                                <?php echo e(Form::hidden('Cementación', 0)); ?>
 
-                                <?php echo Form::checkbox('Empaste',1); ?>
+                                <?php echo Form::checkbox('Cementación',1); ?>
 
-                                <?php echo Form::label('_empaste','Empaste',array('class'=>'nobold')); ?>
+                                <?php echo Form::label('_Cementación','Cementación',array('class'=>'nobold')); ?>
 
                               </div>
 
@@ -582,36 +582,36 @@
                               </div>
 
                               <div class="col-sm-6">
-                                <?php echo e(Form::hidden('TecnicaColgajo', 0)); ?>
+                                <?php echo e(Form::hidden('Tecnica_Colgajo', 0)); ?>
 
-                                <?php echo Form::checkbox('TecnicaColgajo', 1); ?>
+                                <?php echo Form::checkbox('Tecnica_Colgajo', 1); ?>
 
                                 <?php echo Form::label('_colgajo','Técnica de elevación del colgajo',array('class'=>'nobold')); ?>
 
                               </div>
 
                               <div class="col-sm-6">
-                                <?php echo e(Form::hidden('TecnicaSenoMaxilar', 0)); ?>
+                                <?php echo e(Form::hidden('Tecnica_Seno_Maxilar', 0)); ?>
 
-                                <?php echo Form::checkbox('TecnicaSenoMaxilar', 1); ?>
+                                <?php echo Form::checkbox('Tecnica_Seno_Maxilar', 1); ?>
 
                                 <?php echo Form::label('_senomaxilar','Técnica de elevación del seno maxilar',array('class'=>'nobold')); ?>
 
                               </div>
 
                               <div class="col-sm-6">
-                                <?php echo e(Form::hidden('RegeneracionOsea', 0)); ?>
+                                <?php echo e(Form::hidden('Regeneracion_Osea', 0)); ?>
 
-                                <?php echo Form::checkbox('RegeneracionOsea', 1); ?>
+                                <?php echo Form::checkbox('Regeneracion_Osea', 1); ?>
 
-                                <?php echo Form::label('_regeneracionosea','Técnica de regeneración ósea guiada',array('class'=>'nobold')); ?>
+                                <?php echo Form::label('_Regeneracion_Osea','Técnica de regeneración ósea guiada',array('class'=>'nobold')); ?>
 
                               </div>
 
                               <div class="col-sm-6">
-                                <?php echo e(Form::hidden('TerapiaFluoruro', 0)); ?>
+                                <?php echo e(Form::hidden('Terapia_Fluoruro', 0)); ?>
 
-                                <?php echo Form::checkbox('TerapiaFluoruro', 1); ?>
+                                <?php echo Form::checkbox('Terapia_Fluoruro', 1); ?>
 
                                 <?php echo Form::label('_fluoruro','Terapia de fluoruro',array('class'=>'nobold')); ?>
 

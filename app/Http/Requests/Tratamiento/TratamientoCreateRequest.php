@@ -24,9 +24,9 @@ class TratamientoCreateRequest extends Request
     public function rules()
     {
         return [
-          'Diente' => ['required','max:2','regex:/[0-9]/'],
-          'Costo' => ['required','min:4','max:7','regex:/[0-9]/'],
-          'nProfe' => ['required','min:4','max:20','regex:/^[\pL\s\-]+$/u'],
+          'DienteTratamiento' => ['required','max:2','regex:/[0-9]/'],
+          //'Costo' => ['required','min:4','max:7','regex:/[0-9]/'],
+          //'nProfe' => ['required','min:4','max:20','regex:/^[\pL\s\-]+$/u'],
           'AccionR' => ['required','min:15','max:200','regex:/^[\pL\s\-]+$/u'],
         ];
     }

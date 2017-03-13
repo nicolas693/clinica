@@ -312,8 +312,8 @@
               </div>
 
               <div class="col-sm-6">
-                {!!Form::checkbox('empaste',null , $ficha_exists->Empaste ,['disabled'=>'disabled'])!!}
-                {!!Form::label('_empaste','Empaste',array('class'=>'nobold')) !!}
+                {!!Form::checkbox('Cementación',null , $ficha_exists->Cementación ,['disabled'=>'disabled'])!!}
+                {!!Form::label('_Cementación','Cementación',array('class'=>'nobold')) !!}
               </div>
 
               <div class="col-sm-6">
@@ -377,22 +377,22 @@
               </div>
 
               <div class="col-sm-6">
-                {!!Form::checkbox('colgajo',null , $ficha_exists->TecnicaColgajo ,['disabled'=>'disabled'])!!}
+                {!!Form::checkbox('colgajo',null , $ficha_exists->Tecnica_Colgajo ,['disabled'=>'disabled'])!!}
                 {!!Form::label('_colgajo','Técnica de elevación del colgajo',array('class'=>'nobold')) !!}
               </div>
 
               <div class="col-sm-6">
-                {!!Form::checkbox('senomaxilar',null , $ficha_exists->TecnicaSenoMaxilar ,['disabled'=>'disabled'])!!}
+                {!!Form::checkbox('senomaxilar',null , $ficha_exists->Tecnica_Seno_Maxilar ,['disabled'=>'disabled'])!!}
                 {!!Form::label('_senomaxilar','Técnica de elevación del seno maxilar',array('class'=>'nobold')) !!}
               </div>
 
               <div class="col-sm-6">
-                {!!Form::checkbox('regeneracionosea',null , $ficha_exists->RegeneracionOsea ,['disabled'=>'disabled'])!!}
-                {!!Form::label('_regeneracionosea','Técnica de regeneración ósea guiada',array('class'=>'nobold')) !!}
+                {!!Form::checkbox('Regeneracion_Osea',null , $ficha_exists->Regeneracion_Osea ,['disabled'=>'disabled'])!!}
+                {!!Form::label('_Regeneracion_Osea','Técnica de regeneración ósea guiada',array('class'=>'nobold')) !!}
               </div>
 
               <div class="col-sm-6">
-                {!!Form::checkbox('terapiafluoruro',null , $ficha_exists->TerapiaFluoruro ,['disabled'=>'disabled'])!!}
+                {!!Form::checkbox('Terapia_Fluoruro',null , $ficha_exists->Terapia_Fluoruro ,['disabled'=>'disabled'])!!}
                 {!!Form::label('_fluoruro','Terapia de fluoruro',array('class'=>'nobold')) !!}
               </div>
             </div>

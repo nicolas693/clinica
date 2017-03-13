@@ -12,9 +12,9 @@ class Procedimiento extends Model
   public $incrementing = false;
 
   protected $fillable = [
-  'id','Procedimiento1','Procedimiento2','Procedimiento3','Procedimiento4','Procedimiento5','Procedimiento6',
-  'Procedimiento7','Procedimiento8','Procedimiento9','Procedimiento10','Procedimiento11','Procedimiento12','Procedimiento13',
-  'Procedimiento14','Procedimiento15','Procedimiento16','Procedimiento17','Procedimiento18','Procedimiento19'];
+  'id','Apicectomia','Blanqueamiento_Dental','Cementación','Endodoncia','Exodoncia','Explorador_Dental',
+  'Gingivectomía','Gingivoplastía','Higiene_Bucodental','Implante_Dental','Limpieza_Dental','Ostectomía','Remineralización_dental',
+  'SitioEstado','Tartrectomía','Tecnica_Colgajo','Tecnica_Seno_Maxilar','Regeneracion_Osea','Terapia_Fluoruro'];
 
       public function asignatura ()
       {

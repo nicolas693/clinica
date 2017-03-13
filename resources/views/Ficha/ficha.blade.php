@@ -337,8 +337,8 @@
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('Empaste',1 ,false)!!}
-                                {!!Form::label('_empaste','Empaste',array('class'=>'nobold')) !!}
+                                {!!Form::checkbox('Cementación',1 ,false)!!}
+                                {!!Form::label('_Cementación','Cementación',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
@@ -402,22 +402,22 @@
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('TecnicaColgajo', 1 ,false)!!}
+                                {!!Form::checkbox('Tecnica_Colgajo', 1 ,false)!!}
                                 {!!Form::label('_colgajo','Técnica de elevación del colgajo',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('TecnicaSenoMaxilar', 1 ,false)!!}
+                                {!!Form::checkbox('Tecnica_Seno_Maxilar', 1 ,false)!!}
                                 {!!Form::label('_senomaxilar','Técnica de elevación del seno maxilar',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('RegeneracionOsea', 1 ,false)!!}
-                                {!!Form::label('_regeneracionosea','Técnica de regeneración ósea guiada',array('class'=>'nobold')) !!}
+                                {!!Form::checkbox('Regeneracion_Osea', 1 ,false)!!}
+                                {!!Form::label('_Regeneracion_Osea','Técnica de regeneración ósea guiada',array('class'=>'nobold')) !!}
                               </div>
 
                               <div class="col-sm-6">
-                                {!!Form::checkbox('TerapiaFluoruro', 1 ,false)!!}
+                                {!!Form::checkbox('Terapia_Fluoruro', 1 ,false)!!}
                                 {!!Form::label('_fluoruro','Terapia de fluoruro',array('class'=>'nobold')) !!}
                               </div>
                             </div>

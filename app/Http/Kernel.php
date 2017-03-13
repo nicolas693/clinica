@@ -64,6 +64,7 @@ class Kernel extends HttpKernel
         'Admin'=> \clinica\Http\Middleware\AdminMiddleware::class,
         'Alumno'=> \clinica\Http\Middleware\AlumnoMiddleware::class,
         'Docente'=> \clinica\Http\Middleware\DocenteMiddleware::class,
+        'Invitado'=> \clinica\Http\Middleware\InvitadoMiddleware::class,
 
     ];
 }

@@ -11,6 +11,8 @@ use clinica\roluser;
 
 use clinica\Models\Docente\Docente;
 use clinica\Models\Alumnos\Alumnos;
+use clinica\Models\Paciente\Ficha;
+use clinica\Models\Tratamiento\Tratamiento;
 use Auth;
 
 class UserController extends Controller
@@ -109,7 +111,7 @@ class UserController extends Controller
         $user=User::find($id);
         $permisos=roluser::lists('Nombre','idrol');
         unset($permisos[1]);
-        
+
         return view('User.edit')->with('user',$user)->with('permisos',$permisos);
     }
 
@@ -120,7 +122,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update2(Request $request, $id)
     {
       $us=User::find($id);
       $input=$request->all();
@@ -138,4 +140,25 @@ class UserController extends Controller
     {
         //
     }
+
+    public function guest()
+    {
+        //$alumno=Alumnos::where('user_id','=',$user->id)->first();
+        $user=Auth::user();
+        $ficha=Ficha::where('paciente_id','=',$user->rut)->first();
+        $trat=Tratamiento::where('paciente_id','=',$user->rut)->get();
+
+        return view('User.guest')->with('ficha',$ficha)->with('trat',$trat);;
+    }
+
+    public function inscribir(Request $request,$id)
+    {
+      $us=User::find($id);
+      $input=$request->all();
+      $us->fill($input)->save();
+      return redirect('/user/paciente');
+
+    }
+
+
 }
