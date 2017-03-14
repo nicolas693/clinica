@@ -13,7 +13,7 @@
                 <div class="panel-heading">Bienvenido <?php echo e(Auth::user()->name); ?></div>
 
                 <div class="panel-body">
-                    Sesión Iniciada!
+                    Registro Exitoso!
                 </div>
             </div>
         </div>

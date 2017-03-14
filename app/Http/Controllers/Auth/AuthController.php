@@ -90,7 +90,7 @@ class AuthController extends Controller
         }
 
         if($user->idrol === 2) {
-            return redirect()->intended('/Docente');
+            return redirect()->intended('/Docente/mostrar');
         }
 
         if($user->idrol === 3) {
