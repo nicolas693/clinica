@@ -38,6 +38,7 @@
                           </div>
                         @endif
                         @if($trat->all()!=null)
+                          <?php $suma=0; ?>
                           <div class="panel panel-default" style="margin-top:5%;margin-bottom:5%; margin-left:4%">
                             <div class="panel-heading" ><b>FECHAS DE CONSULTAS</b>  </div>
                             <div class="panel-body">
@@ -46,6 +47,7 @@
                                    <th>Fecha de Atencion</th>
                                    <th>Procedimiento a Realizar</th>
                                    <th>Detalle</th>
+                                   <th>Costo</th>
                                 </thead>
 
                                 @foreach($trat as $tra)
@@ -56,10 +58,18 @@
                                       <td>{{$p}}</td>
 
                                       <td>{{$tra->AccionR}}</td>
+                                      <td>$ {{$proce[$tra->Procedimiento]}}</td>
+                                      <?php $suma=$suma+$proce[$tra->Procedimiento]; ?>
                                     </tr>
                                 @endforeach
+
+                                <td></td>
+                                <td></td>
+                                <td><b class="pull-right" style="margin-right:10%"> Total: </b></td>
+                                <td><b> $ {{$suma}}</b></td>
                             </table>
                             </div>
+
                           </div>
                         @endif
 

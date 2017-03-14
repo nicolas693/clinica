@@ -70,7 +70,7 @@
                {!!$info->Telefono !!}
              </div>
 
-             <a <button href="#" type="button" id= 'Editar' name='Editar' class="btn btn-success" style ="margin-bottom: 20px"  >Editar Datos</button></a>
+             
            </div>
          </div>
           @endif

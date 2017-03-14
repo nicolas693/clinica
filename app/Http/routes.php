@@ -28,7 +28,6 @@ Route::get('/', function () {
 
 
     Route::group(['middleware' => ['auth','Invitado']], function(){
-
         route::get('user/paciente',['as' => 'User.guest', 'uses' => 'User\UserController@guest']);
         route::put('user/paciente/{id}',['as' => 'User.inscribir', 'uses' => 'User\UserController@inscribir']);
 

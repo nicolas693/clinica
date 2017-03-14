@@ -91,7 +91,7 @@
                               @endif
 
                               @if(Auth::user()->idrol==2)
-                                <li><a href="{{ url('/Docente') }}"><i class=" 	glyphicon glyphicon-th-large"></i></i> Mi Panel</a></li>
+                                <li><a href="{{ url('/Docente/mostrar') }}"><i class=" 	glyphicon glyphicon-th-large"></i></i> Mi Panel</a></li>
                                 <li><a href={{route('User.index')}}><i class="glyphicon glyphicon-user"></i></i> Mi Perfil</a></li>
 
 
