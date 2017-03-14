@@ -44,7 +44,7 @@
                     <td>{{$tra->Fecha}}</td>
                     <td>{{$tra->AccionR}}</td>
                     <td>{{$tra->DienteTratamiento}}</td>
-                    <td>{{$tra->nProfe}}</td>
+                    <td>{{}}</td>
                   </tr>
                 @endif
               @endforeach

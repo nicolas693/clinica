@@ -25,7 +25,7 @@
        </div>
 
               <div class="panel-body" >
-                {!!Form::open( ['route'=>'Docente.storeAlumno','method'=>'POST'] )!!}
+                {!!Form::model( ['route'=>['Docente.evaluarAlumno'],'method'=>'PUT'] )!!}
 
                 <div class="col-sm-6">
                   {{Form::label('Asignatura: ')}}
@@ -39,20 +39,19 @@
 
                <div class="col-sm-10" style="margin-top:15px;">
                    {!!form::label('Observaciones')!!}
-                   {!!form::text('observaciones',null,['id'=>'Observaciones','class'=>'form-control' ])!!}
+                   {!!form::text('Observaciones',null,['id'=>'Observaciones','class'=>'form-control' ])!!}
               </div>
 
               <div class="col-sm-6" style="margin-top:15px;">
                 {!!form::label('Calificación')!!}
-                {!!form::text('calificacion',null,['id'=>'Calificacion','class'=>'form-control'])!!}
+                {!!form::text('Calificacion',null,['id'=>'Calificacion','class'=>'form-control'])!!}
               </div>
 
               <div class="col-sm-8" style="margin-top:15px;">
-              {!!form::label('Pacientes a Evaluar')!!}
+              {!!form::label('pacientesevaluar','Pacientes a evaluar')!!}
               {!! Form::select('PacienteEvaluado',$pacientes,null,['id'=>'PacienteEvaluado',
                   'class'=>'form-control']) !!}
             </div>
-
 
 
               <div class="col-sm-8">

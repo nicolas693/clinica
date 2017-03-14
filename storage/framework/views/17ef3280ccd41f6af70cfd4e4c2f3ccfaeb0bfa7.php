@@ -7,8 +7,9 @@
   </head>
 
   <ol class="breadcrumb fondoC1 ">
-       <li><a href="<?php echo e(url('Docente/mostrar')); ?>">Lista de Alumnos</a></li>
+
        <li class="active">Evaluar Alumno</li>
+       <li class="pull-right"><a href="/Docente" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
      </ol>
 
   <div class="row fondoC centro">
@@ -25,7 +26,7 @@
        </div>
 
               <div class="panel-body" >
-                <?php echo Form::open( ['route'=>'Docente.storeAlumno','method'=>'POST'] ); ?>
+                <?php echo Form::model( ['route'=>['Docente.evaluarAlumno'],'method'=>'PUT'] ); ?>
 
 
                 <div class="col-sm-6">
@@ -43,25 +44,24 @@
                <div class="col-sm-10" style="margin-top:15px;">
                    <?php echo form::label('Observaciones'); ?>
 
-                   <?php echo form::text('observaciones',null,['id'=>'Observaciones','class'=>'form-control' ]); ?>
+                   <?php echo form::text('Observaciones',null,['id'=>'Observaciones','class'=>'form-control' ]); ?>
 
               </div>
 
               <div class="col-sm-6" style="margin-top:15px;">
                 <?php echo form::label('Calificación'); ?>
 
-                <?php echo form::text('calificacion',null,['id'=>'Calificacion','class'=>'form-control']); ?>
+                <?php echo form::text('Calificacion',null,['id'=>'Calificacion','class'=>'form-control']); ?>
 
               </div>
 
               <div class="col-sm-8" style="margin-top:15px;">
-              <?php echo form::label('Pacientes a Evaluar'); ?>
+              <?php echo form::label('pacientesevaluar','Pacientes a evaluar'); ?>
 
               <?php echo Form::select('PacienteEvaluado',$pacientes,null,['id'=>'PacienteEvaluado',
                   'class'=>'form-control']); ?>
 
             </div>
-
 
 
               <div class="col-sm-8">

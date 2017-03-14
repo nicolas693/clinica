@@ -55,7 +55,7 @@ class AlumnosController extends Controller
      */
     public function store(AlumnoCreateRequest $request)
     {
-      Alumnos::create($request->all());
+      Alumnos::create($request->except('Observaciones','PacienteEvaluado','Calificacion'));
       return redirect('/Docente');
     }
 

@@ -28,4 +28,8 @@ class Docente extends Model
 
         }
 
+        public function alumno(){
+          return $this->hasMany(Alumnos::class);
+        }
+
 }

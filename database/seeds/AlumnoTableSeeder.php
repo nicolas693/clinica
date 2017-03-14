@@ -21,9 +21,6 @@ class AlumnoTableSeeder extends Seeder
           'Telefono'=>'34627890',
           'id_Clinica'=>'1421',
           'user_id'=>'3',
-          //'Observaciones'=>'Ninguna',
-          //'Calificacion'=>'2.1',
-          //'PacienteEvaluado'=>'Carlitos Lechuga'
           'activo'=>'1',
         ]);
         $alum->save();
@@ -37,9 +34,6 @@ class AlumnoTableSeeder extends Seeder
           'Telefono'=>'34627890',
           'id_Clinica'=>'2834',
           'user_id'=>'5',
-          //'Observaciones'=>'Ninguna',
-          //'Calificacion'=>'2.1',
-          //'PacienteEvaluado'=>'Carlitos Lechuga'
           'activo'=>'1',
         ]);
         $alum->save();
@@ -53,9 +47,6 @@ class AlumnoTableSeeder extends Seeder
           'Telefono'=>'34627890',
           'id_Clinica'=>'1237',
           'user_id'=>'7',
-          //'Observaciones'=>'Ninguna',
-          //'Calificacion'=>'2.1',
-          //'PacienteEvaluado'=>'Carlitos Lechuga'
           'activo'=>'1',
         ]);
         $alum->save();

@@ -29,7 +29,6 @@ Route::get('/', function () {
 
     Route::group(['middleware' => ['auth','Invitado']], function(){
 
-        route::resource('User','User\UserController@index',['only' => 'index']);
         route::get('user/paciente',['as' => 'User.guest', 'uses' => 'User\UserController@guest']);
         route::put('user/paciente/{id}',['as' => 'User.inscribir', 'uses' => 'User\UserController@inscribir']);
 
@@ -50,13 +49,16 @@ Route::get('/', function () {
 
 
   route::group(['middleware' => ['auth','Docente']], function(){
-    route::get('/Docente', 'Docentes\DocentesController@index' );
-    route::get('Docente/mostrar','Docentes\DocentesController@index');
-    route::resource('Alumno','Alumnos\AlumnosController',['only' => ['store','create','edit','update']]);
-    route::get('Docente/evaluar/{id}','Docentes\DocentesController@evaluar');
-    route::get('Docente', ['as'=>'Docente.storeAlumno', 'uses'=>'Docentes\DocentesController@storeAlumno' ]);
-    route::get('Alumno/{rut}/edit/{id}',['as' => 'Alumnos.editU', 'uses' => 'Alumnos\AlumnosController@editU']);
 
+    //route::resource('Docente','Docentes\DocentesController', ['only'=>['index','evaluarAlumno'] ]);
+
+    route::get('/Docente','Docentes\DocentesController@index');
+    route::get('Docente/mostrar', 'Docentes\DocentesController@index');
+    //route::get('Docente/evaluar/{id}','Docentes\DocentesController@evaluar');
+    //route::put('Docente/evaluar/{id}',['as' => 'Docente.evaluarAlumno', 'uses' => 'Docentes\DocentesController@evaluarAlumno']);
+
+    route::get('Alumno/{rut}/edit/{id}',['as' => 'Alumnos.editU', 'uses' => 'Alumnos\AlumnosController@editU']);
+    route::resource('Alumno','Alumnos\AlumnosController',['only' => ['store','create','edit','update']]);
     route::get('Alumno/alta/{id}',['as' => 'Alumno.alta', 'uses' => 'Alumnos\AlumnosController@alta']);
 });
 
@@ -79,7 +81,7 @@ Route::get('/', function () {
     route::get('Ficha/{id}',['as'=> 'Ficha.index' , 'uses' => 'Ficha\FichaController@index']);
     route::get('Ficha/{id}/verFicha', ['as'=>'Ficha.verFicha','uses'=>'Ficha\FichaController@verFicha' ]);
     route::get('Ficha/{id}/editar',['as'=>'Ficha.edit','uses'=>'Ficha\FichaController@edit']);
-    route::get('Ficha/{id}/ficha',['as'=>'Ficha.ficha', 'uses' => 'Ficha\FichaController@ficha' ]);
+    route::get('Ficha/{id}/create',['as'=>'Ficha.ficha', 'uses' => 'Ficha\FichaController@ficha' ]);
     route::resource('Ficha','Ficha\FichaController',['only'=>['store','update','edit'] ] );
 
     route::get('Procedimiento','Ficha\ProcedimientoController@store');

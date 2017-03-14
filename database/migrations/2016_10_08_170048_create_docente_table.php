@@ -18,9 +18,9 @@ class CreateDocenteTable extends Migration
        $table->string('Paterno')->length(15);
        $table->string('Materno')->length(15);
        $table->Integer('Telefono')->lenght(10);
+
        $table->primary('id');
        $table->boolean('activo')->default(true);
-
 
        $table->integer('asignatura_id')->nullable()->unsigned();
        $table->integer('user_id')->nullable()->unsigned();
@@ -29,7 +29,6 @@ class CreateDocenteTable extends Migration
    Schema::table('Docente', function($table) {
         $table->foreign('user_id')->references('id')->on('users');
         $table->foreign('asignatura_id')->references('id')->on('asignatura');
-
 
  });
     }

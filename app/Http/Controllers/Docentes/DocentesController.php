@@ -12,6 +12,8 @@ use clinica\Models\Docente\Docente;
 use clinica\Models\Asignatura\Asignatura;
 use clinica\Models\Paciente\Paciente;
 
+use Auth;
+use clinica\User;
 
 class DocentesController extends Controller
 {
@@ -22,7 +24,7 @@ class DocentesController extends Controller
      */
     public function index()
     {
-    
+
         $alumnos=Alumnos::all();
         return view('Docente.index')->with('alumnos',$alumnos);
     }
@@ -122,18 +124,17 @@ class DocentesController extends Controller
     public function evaluar($id){
       $alumnos=Alumnos::where('alumno_id','=',$id)->first();
       $asignatura=Asignatura::all();
-      $pacientes=Paciente::where('alumno_id','=',$id)->get()->pluck('rut', 'Nombre', 'Paterno');;
+      $pacientes=Paciente::where('alumno_id','=',$id)->get()->pluck('rut', 'Nombre', 'Paterno');
 
        return view('Docente/evaluar', array('alumnos'=>$alumnos, 'asignatura'=>$asignatura,
-      'pacientes'=>$pacientes ) );
+      'pacientes'=>$pacientes) );
     }
 
-
-    public function storeAlumno(Request $request)
-    {
-      Alumnos::create($request->only('Calificacion', 'Observaciones', 'PacienteEvaluado') );
-      return redirect('/Docente/mostrar');
+    public function evaluarAlumno(Request $request ){
+       $input = $request->All();
+       dd($request->All());
     }
+
 
     public function alta($id)
     {

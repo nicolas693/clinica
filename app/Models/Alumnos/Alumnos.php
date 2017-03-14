@@ -14,13 +14,18 @@ class Alumnos extends Model
     public  $incrementing = false;
 
     protected $fillable   = [
-        'alumno_id','asignatura_id','Nombre','Paterno','Materno','Telefono','id_Clinica',
-        'user_id'
+        'alumno_id','asignatura_id','user_id','docente_id','Nombre','Paterno','Materno','Telefono','id_Clinica',
+        'Observaciones','Calificacion','PacienteEvaluado'
     ];
 
     public function Clinica()
     {
         return $this->belongsto(Clinica::class);
+    }
+
+    public function Docente()
+    {
+       return $this->belongsto(Docente::class);
     }
 
     public function users (){
