@@ -4,7 +4,16 @@
 <head>
   <?php echo Html::style('css/micss.css'); ?>
 
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+
+  <link rel="stylesheet"  href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+
+
+
+
+
+
+
+
 
 </head>
 
@@ -33,13 +42,13 @@
                       <div class="panel-heading" ><b>Docentes</b></div>
                         <div class="panel-body">
 
-                          <table class="table table-bordered" >
+                          <table class="table stripe compact" id="myTable1" >
 
                             <thead>
                                <th>Rut</th>
                                <th>Nombre</th>
-                               <th>Telefono</th>
-                               <th>Accion</th>
+                               <th>Teléfono</th>
+                               <th>Acción</th>
                             </thead>
                             <tbody>
 
@@ -47,7 +56,7 @@
 
                              <tr>
                                <td><?php echo e($do->id); ?></td>
-                               <td><?php echo e($do->Nombre); ?></td>
+                               <td><?php echo e($do->Nombre); ?> <?php echo e($do->Paterno); ?> <?php echo e($do->Materno); ?></td>
                                <td><?php echo e($do->Telefono); ?></td>
 
                                <td><a <button href="<?php echo e(route('Docente.edit',$do->id)); ?>" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>
@@ -58,7 +67,7 @@
                             </tbody>
                           </table>
 
-                          <a <button href="<?php echo e(route('Docente.create')); ?>" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Ingresar</button></a>
+                          <a <button href="<?php echo e(route('Docente.create')); ?>" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-success"   >Inscribir Docente</button></a>
 
 
 
@@ -73,18 +82,19 @@
                         <div class="panel panel-default" id="3" style="display:none; margin-top:8%;">
                           <div class="panel-heading" ><b>Usuarios</b></div>
                             <div class="panel-body">
-                              <table class="table table-bordered" >
+                              <table class="table  stripe compact" id="myTable2" >
                                 <thead>
                                    <th>id</th>
                                    <th>Nombre</th>
                                    <th>E-mail</th>
                                    <th>Permisos de : </th>
-                                   <th>Accion</th>
+                                   <th>Acción</th>
                                 </thead>
                                 <tbody>
 
                                  <?php foreach($user as $us): ?>
 
+                                 <?php if($us->idrol!=1): ?>
                                  <tr>
                                    <td><?php echo e($us->id); ?></td>
                                    <td><?php echo e($us->name); ?></td>
@@ -107,6 +117,7 @@
 
                                    </td>
                                  </tr>
+                                 <?php endif; ?>
                                  <?php endforeach; ?>
                                 </tbody>
                               </table>
@@ -125,7 +136,7 @@
 
 </div>
 
-
+<script src="http://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
 <script>
 
 $(document).on("click", function(e){
@@ -148,7 +159,21 @@ $(document).on("click", function(e){
     }
 });
 
+$(document).ready(function() {
+    $('#myTable1').DataTable( {
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+        }
+    } );
+} );
 
+$(document).ready(function() {
+    $('#myTable2').DataTable( {
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+        }
+    } );
+} );
 
 </script>
 

@@ -27,32 +27,44 @@
                    @endif
                    @if(Auth::user()->rut!=null)
                     @if($ficha==null)
-                      <b>Usted no posee una Ficha</b>
-                    @endif
-                    @if($ficha!=null)
-                      <div class="panel panel-default">
-                        <div class="panel-heading" ><b>FECHAS DE CONSULTAS</b>  </div>
-                        <div class="panel-body">
-                          <table class="table stripe compact "   >
-                            <thead>
-                               <th>Fecha de Atencion</th>
-                               <th>Procedimiento a Realizar</th>
-                               <th>Detalle</th>
-                            </thead>
-                            @foreach($trat as $tra)
-                                <tr>
-                                  @if($tra->Fecha==null)<td>Fecha No Definida</td>@endif
-                                  @if($tra->Fecha!=null)<td>{{$tra->Fecha}}</td>@endif
-                                  <?php $p=str_replace('_',' ',$tra->Procedimiento) ?>
-                                  <td>{{$p}}</td>
-
-                                  <td>{{$tra->AccionR}}</td>
-                                </tr>
-                            @endforeach
-                        </table>
-                        </div>
+                      <div style="margin-top:5%;margin-bottom:5%; margin-left:4%">
+                          <b>Usted no posee Ficha Dental, acérquese a una clínica para Evaluación dental</b>
                       </div>
                     @endif
+                    @if($ficha!=null)
+                        @if($trat->all()==null)
+                          <div style="margin-top:5%;margin-bottom:5%; margin-left:4%">
+                            <b >Usted no posee Consultas agendadas</b>
+                          </div>
+                        @endif
+                        @if($trat->all()!=null)
+                          <div class="panel panel-default" style="margin-top:5%;margin-bottom:5%; margin-left:4%">
+                            <div class="panel-heading" ><b>FECHAS DE CONSULTAS</b>  </div>
+                            <div class="panel-body">
+                              <table class="table stripe compact "   >
+                                <thead>
+                                   <th>Fecha de Atencion</th>
+                                   <th>Procedimiento a Realizar</th>
+                                   <th>Detalle</th>
+                                </thead>
+
+                                @foreach($trat as $tra)
+                                    <tr>
+                                      @if($tra->Fecha==null)<td>Fecha No Definida</td>@endif
+                                      @if($tra->Fecha!=null)<td>{{$tra->Fecha}}</td>@endif
+                                      <?php $p=str_replace('_',' ',$tra->Procedimiento) ?>
+                                      <td>{{$p}}</td>
+
+                                      <td>{{$tra->AccionR}}</td>
+                                    </tr>
+                                @endforeach
+                            </table>
+                            </div>
+                          </div>
+                        @endif
+
+                    @endif
+
                    @endif
                </div>
            </div>

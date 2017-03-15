@@ -12,7 +12,7 @@
                 <div class="panel-heading">Bienvenido {{ Auth::user()->name }}</div>
 
                 <div class="panel-body">
-                    Sesión Iniciada!
+                    Registro Exitoso!
                 </div>
             </div>
         </div>

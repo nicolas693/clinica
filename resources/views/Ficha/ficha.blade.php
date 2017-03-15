@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title','Ficha de Paciente')
 @section('content')
-@include('partials.messages')
+
 
 <html lang="es">
 <head>
@@ -29,6 +29,7 @@
      <li><a href="{{url('Alumno')}}"> Alumno</a></li>
      <li><a href="{{url('Ficha',$id)}}"> Ver Ficha</a></li>
      <li class="active">Ingresar Ficha</li>
+     <li class="pull-right"><a href="/Ficha/{{$paciente->rut}}" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
    </ol>
 
 
@@ -37,7 +38,9 @@
        <h1>Ficha Clínica Integral Adulto </h1>
      </div>
      <div class="col-md-10">
+       <div class="centrarIT">@include('partials.messages')</div>
         <div class="panel panel-primary centrarIT">
+
           <div class="panel-heading"><b> Ficha Paciente </b></div>
 
           <div class="panel-body">
@@ -436,9 +439,7 @@
                  ,'content'=>'<span>Grabar</span>','class'=>'btn btn-success ']) !!}
                  {!!Form::close()!!}
              </div>
-             <div class="col-sm-2">
-               <a <button type="button" href={{route('Ficha.index',$id)}} class="btn btn-primary">Volver</button> </a>
-             </div>
+             
            </div>
 
         </div>
