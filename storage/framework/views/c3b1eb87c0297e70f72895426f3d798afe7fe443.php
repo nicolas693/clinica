@@ -1,7 +1,6 @@
-@extends('layouts.app')
-@section('title','Editar Tratamiento')
-@include('partials.messages')
-@section('content')
+<?php $__env->startSection('title','Editar Tratamiento'); ?>
+<?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->startSection('content'); ?>
 
 
   <head>
@@ -16,12 +15,13 @@
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <!-- Datepicker Files -->
-    <link rel="stylesheet" href="{{asset('datePicker/css/bootstrap-datepicker3.css')}}">
-    <link rel="stylesheet" href="{{asset('datePicker/css/bootstrap-standalone.css')}}">
-    <script src="{{asset('datePicker/js/bootstrap-datepicker.js')}}"></script>
+    <link rel="stylesheet" href="<?php echo e(asset('datePicker/css/bootstrap-datepicker3.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('datePicker/css/bootstrap-standalone.css')); ?>">
+    <script src="<?php echo e(asset('datePicker/js/bootstrap-datepicker.js')); ?>"></script>
     <!-- Languaje -->
-    <script src="{{asset('datePicker/locales/bootstrap-datepicker.es.min.js')}}"></script>
-    {!!Html::style('css/micss.css')!!}
+    <script src="<?php echo e(asset('datePicker/locales/bootstrap-datepicker.es.min.js')); ?>"></script>
+    <?php echo Html::style('css/micss.css'); ?>
+
 
   </head>
 
@@ -29,7 +29,7 @@
 
 
        <li class="active">Plan de Tratamiento</li>
-        <li class="pull-right"><a href="/Ficha/{{$paciente->rut}}" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
+        <li class="pull-right"><a href="/Ficha/<?php echo e($paciente->rut); ?>" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
   </ol>
 
 
@@ -43,7 +43,8 @@
 
           </div>
          <div class="panel-body">
-              {!!Form::model($trat,['route'=>['Tratamiento.update',$trat->id_Tratamiento],'method'=>'PUT'] )!!}
+              <?php echo Form::model($trat,['route'=>['Tratamiento.update',$trat->id_Tratamiento],'method'=>'PUT'] ); ?>
+
 
 
                <div class="col-sm-4">
@@ -54,39 +55,51 @@
               </div>
 
               <div class="col-sm-4">
-                   {!!form::label('Diente')!!}
-                   {!!Form::hidden('paciente_id',$paciente->rut)!!}
-                   {!!form::text('DienteTratamiento',null,['id'=>'Diente','class'=>'form-control'])!!}
+                   <?php echo form::label('Diente'); ?>
+
+                   <?php echo Form::hidden('paciente_id',$paciente->rut); ?>
+
+                   <?php echo form::text('DienteTratamiento',null,['id'=>'Diente','class'=>'form-control']); ?>
+
               </div>
 
               <div class="col-sm-4">
 
-                   {!!Form::hidden('ficha_id',$ficha->id_Ficha)!!}
+                   <?php echo Form::hidden('ficha_id',$ficha->id_Ficha); ?>
+
 
               </div>
 
               <div class="col-sm-12">
-                   {!!form::label('accion_','Acción a Realizar')!!}
-                   {!!form::text('AccionR',null,['id'=>'AccionR','class'=>'form-control'])!!}
+                   <?php echo form::label('accion_','Acción a Realizar'); ?>
+
+                   <?php echo form::text('AccionR',null,['id'=>'AccionR','class'=>'form-control']); ?>
+
               </div>
 
               <div class="col-sm-12">
                 <div class="col-sm-6">
-                  {!!Form::label('insumos_','Insumos necesarios') !!}
-                    {!!Form::select('Insumos',$insumos,null,
-                      ['id'=>'insumos','class'=>'form-control','size'=>'10', 'multiple'=>'multiple']) !!}
+                  <?php echo Form::label('insumos_','Insumos necesarios'); ?>
+
+                    <?php echo Form::select('Insumos',$insumos,null,
+                      ['id'=>'insumos','class'=>'form-control','size'=>'10', 'multiple'=>'multiple']); ?>
+
                 </div>
 
                 <div class="col-sm-6">
-                  {!!Form::label('Procedimiento','Procedimiento : ') !!}
-                    {!!Form::select('Procedimiento',$pro,null,
-                      ['id'=>'Procedimiento','class'=>'form-control','size'=>'10']) !!}
+                  <?php echo Form::label('Procedimiento','Procedimiento : '); ?>
+
+                    <?php echo Form::select('Procedimiento',$pro,null,
+                      ['id'=>'Procedimiento','class'=>'form-control','size'=>'10']); ?>
+
                 </div>
               </div>
 
               <div class="col-sm-12">
-                    {!!form::submit('Guardar',['name'=>'Guardar','id'=>'guardar','content'=>'<span>Guardar</span>','class'=>'btn btn-success btn-sm m-t-10', 'style'=>'margin-top: 26px; margin-left: 0px;'])!!}
-                    {!!Form::close()!!}
+                    <?php echo form::submit('Guardar',['name'=>'Guardar','id'=>'guardar','content'=>'<span>Guardar</span>','class'=>'btn btn-success btn-sm m-t-10', 'style'=>'margin-top: 26px; margin-left: 0px;']); ?>
+
+                    <?php echo Form::close(); ?>
+
               </div>
 
           </div>
@@ -106,4 +119,6 @@
         });
     </script>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

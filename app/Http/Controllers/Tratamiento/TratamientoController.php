@@ -96,11 +96,32 @@ class TratamientoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id,$id2)
     {
-        $trat=Tratamiento::find($id);
+
+        $trat=Tratamiento::find($id2);
         $paciente=Paciente::where('rut','=',$id)->first();
-        return view('Tratamiento.edit', array('trat'=>$trat, 'paciente'=>$paciente, 'id'=>$id) );
+        $ficha=Ficha::where('paciente_id','=',$id)->first();
+        $insumos = array(
+          "Alginmax"=>"Alginmax",
+          "Alginkid"=>"Alginkid",
+          "Alginplus_Tropical"=>"Alginplus Tropical",
+          "Servilletas_Dentales"=>"Servilletas Dentales",
+          "Eyector_Saliva"=>"Eyector de saliva",
+          "Manga_Esterilizacion"=>"Manga de esterilización",
+          "Tórula_Algodon"=>"Tórula de algodón");
+          $proce=\DB::connection()->getSchemaBuilder()->getColumnListing("Procedimiento");
+
+        foreach ($proce as $key => $proc) {
+          if($key!=0){
+
+            $pro[$proc]=str_replace('_',' ',$proc);
+
+          }
+
+        }
+        return view('Tratamiento.edit', array('trat'=>$trat, 'paciente'=>$paciente, 'id'=>$id,'ficha'=>$ficha,'insumos'=>$insumos,'pro'=>$pro) );
+
     }
 
     /**
@@ -112,9 +133,13 @@ class TratamientoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $input = $request->only('Diente','Costo','nProfe','AccionR','Fecha');
-        Tratamiento::create($input);
-        return redirect('Tratamiento/'.$id);
+        //dd($request->all());
+        $tra=Tratamiento::find($id);
+        $input=$request->all();
+        $tra->fill($input)->save();
+      
+
+        return redirect('Tratamiento/'.$request->paciente_id);
     }
 
     /**

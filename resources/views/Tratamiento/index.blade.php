@@ -34,6 +34,7 @@
                  <th>Fecha</th>
                  <th>Acción a realizar</th>
                  <th>Pieza Dental</th>
+                 <th>Accion</th>
               </thead>
 
 
@@ -43,6 +44,7 @@
                     <td>{{$tra->Fecha}}</td>
                     <td>{{$tra->AccionR}}</td>
                     <td>{{$tra->DienteTratamiento}}</td>
+                    <td><a href="/Tratamiento/{{$paciente->rut}}/edit/{{$tra->id_Tratamiento}}" class="btn btn-success btn-sm"  > <b>Editar</b> </a></td>
                   </tr>
                 @endif
               @endforeach

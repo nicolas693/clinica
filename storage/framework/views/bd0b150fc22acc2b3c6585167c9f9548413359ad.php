@@ -34,7 +34,7 @@
                  <th>Fecha</th>
                  <th>Acción a realizar</th>
                  <th>Pieza Dental</th>
-                 <th>Profesor a cargo</th>
+                 <th>Accion</th>
               </thead>
 
 
@@ -44,7 +44,7 @@
                     <td><?php echo e($tra->Fecha); ?></td>
                     <td><?php echo e($tra->AccionR); ?></td>
                     <td><?php echo e($tra->DienteTratamiento); ?></td>
-                    <td><?php echo e($tra->nProfe); ?></td>
+                    <td><a href="/Tratamiento/<?php echo e($paciente->rut); ?>/edit/<?php echo e($tra->id_Tratamiento); ?>" class="btn btn-success btn-sm"  > <b>Editar</b> </a></td>
                   </tr>
                 <?php endif; ?>
               <?php endforeach; ?>

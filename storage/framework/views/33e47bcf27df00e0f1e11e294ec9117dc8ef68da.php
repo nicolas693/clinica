@@ -61,7 +61,7 @@
                                      </button>
                                      <ul class="dropdown-menu" role="menu">
                                        <li><a href="<?php echo e(route('Alumno.edit',$alu->alumno_id)); ?>">Editar</a></li>
-                                       <li><a href="<?php echo e(url('/Docente/evaluar',$alu->alumno_id)); ?>">Evaluar</a></li>
+                                      <!--  <li><a href="{url('/Docente/evaluar',$alu->alumno_id)}}">Evaluar</a></li> -->
                                        <li><a href="<?php echo e(route('Alumno.alta',$alu->alumno_id)); ?>">Dar de baja</a></li>
 
                                      </ul>
