@@ -18,6 +18,7 @@ class DocenteMiddleware
     public function handle($request, Closure $next)
     {
       $do=Docente::where('user_id','=',Auth::user()->id)->first();
+      
       if(Auth::user()->idrol==2 && $do->activo==1){
         return $next($request);
       }

@@ -11,9 +11,10 @@ use clinica\Models\Alumnos\Alumnos;
 use clinica\Models\Docente\Docente;
 use clinica\Models\Asignatura\Asignatura;
 use clinica\Models\Paciente\Paciente;
-
-use Auth;
 use clinica\User;
+use Auth;
+use Illuminate\Support\Facades\Hash;
+
 
 class DocentesController extends Controller
 {
@@ -48,7 +49,29 @@ class DocentesController extends Controller
      */
     public function store(DocenteCreateRequest $request)
     {
-      Docente::create($request->all());
+
+
+
+      //User::where('id', $request->user_id)->update(array('idrol' => 2));
+      $id=User::max('id', 'desc')+1;
+
+      $user['id']=$id;
+      $user['name']=$request->Nombre.' '.$request->Paterno.' '.$request->Materno;
+      $user['email']=$request->email;
+      $rut=$request->id;
+      $rut=substr($rut,0,-2);
+      $input=$request->all();
+      $input['user_id']=$id;
+
+
+
+      $user['password']=Hash::make($rut);
+      $user['idrol']=2;
+      $user['rut']=$request->id;
+
+      User::create($user);
+      Docente::create($input);
+
       return redirect('/Admin');
     }
 
@@ -99,6 +122,8 @@ class DocentesController extends Controller
     {
       $do=Docente::find($id);
       $input=$request->all();
+
+
       $do->fill($input)->save();
       return redirect('/Admin');
     }

@@ -65,7 +65,9 @@
               </div>
 
 
-               <div class="form-group col-sm-4">
+
+
+               <div class="form-group col-sm-6">
                  <div class="input-group">
                    <label for="date">Fecha Ingreso</label>
                      <input type="text" class="form-control datepicker" name="Fecha_Ingreso">
@@ -73,12 +75,17 @@
                  </div>
                </div>
 
-               <div class="form-group col-sm-4">
+               <div class="form-group col-sm-6">
                  <div class="input-group">
                    <label for="date">Fecha Nacimiento</label>
                      <input type="text" class="form-control datepicker2" name="Fecha_Nacimiento">
                  </div>
                </div>
+
+               <div class="col-sm-12">
+                    {!!form::label('Email')!!}
+                    {!!form::text('email',null,['id'=>'email','class'=>'form-control'])!!}
+                </div>
 
 
              <div class="form-group col-sm-6">
@@ -158,7 +165,7 @@
            format: "dd/mm/yyyy",
            language: "es",
            startDate: '-100y',
-           endDate:   '0d',
+           endDate:   '-5y',
            autoclose: true
        });
    </script>
@@ -168,7 +175,7 @@
            format: "dd/mm/yyyy",
            language: "es",
            startDate: '-1w',
-           endDate:   '+1w',
+           endDate:   '0d',
            autoclose: true
        });
    </script>

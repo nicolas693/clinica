@@ -23,6 +23,7 @@ class DocenteCreateRequest extends Request
      */
     public function rules()
     {
+
         return [
 
             'id' => ['required','cl_rut'],
@@ -30,7 +31,7 @@ class DocenteCreateRequest extends Request
             'Paterno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
             'Materno' => ['required','min:4','max:15','regex:/^[\pL\s\-]+$/u'],
             'Telefono' => ['required','min:7','max:9','regex:/[0-9]/'],
-            'user_id' => ['required','max:7','regex:/[0-9]/','unique:Docente','unique:Alumno','exists:users,id'],
+            //'user_id' => ['required','max:7','regex:/[0-9]/','unique:Docente','unique:Alumno','exists:users,id'],
         ];
     }
 

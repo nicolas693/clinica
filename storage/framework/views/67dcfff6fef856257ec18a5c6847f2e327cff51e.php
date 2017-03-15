@@ -107,7 +107,7 @@
 
 
                      <td>
-                         <a <button href=<?php echo e(route('Paciente.alta',$pa->rut)); ?>  type="button"  class="btn btn-success btn-sm" style=" margin-right: 40%;" >Nuevo tratamiento</button></a>
+                         <a <button href=<?php echo e(route('Paciente.alta',$pa->rut)); ?>  type="button"  class="btn btn-success btn-sm" style=" margin-right: 40%;" >Reingresar</button></a>
                      </td>
                    </tr>
                    <?php endif; ?>

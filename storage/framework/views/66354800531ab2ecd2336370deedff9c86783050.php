@@ -72,11 +72,7 @@
 
         </div>
 
-        <div class="col-sm-12" style="margin-top:30px;">
-           <?php echo form::label('ID Usuario : '); ?><?php echo e($docente->user_id); ?>
-
-           <a href="/Docente/<?php echo e($docente->id); ?>/edit/<?php echo e($docente->user_id); ?>" class="btn btn-primary btn-xs" style="margin-left:50px;"> <b>Modificar ID de usuario</b></a>
-         </div>
+        
 
 
        <?php echo form::submit('Actualizar',['name'=>'grabar','id'=>'grabar','class'=>'btn btn-success btn-sm m-t-12','style'=>'margin-top: 26px; margin-left: 16px; margin-right:400px']); ?>

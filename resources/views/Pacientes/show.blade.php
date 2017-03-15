@@ -43,10 +43,7 @@
                {!!$pa->Nombre !!} {!!$pa->Paterno !!} {!!$pa->Materno !!}
              </div>
 
-             <div class="form-group">
-             {!!form::label('Alta : ')!!}
-              {!!$pa->alta !!}
-            </div>
+            
 
 
                 <button type="button" id= 'alta' name='alta' class="btn btn-warning" >Dar de Alta</button>

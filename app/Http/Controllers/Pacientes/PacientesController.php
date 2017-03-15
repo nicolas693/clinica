@@ -14,6 +14,9 @@ use Auth;
 use Carbon\Carbon;
 use clinica\Http\Requests\Paciente\PacienteCreateRequest;
 use clinica\Http\Requests\Paciente\PacienteUpdateRequest;
+use clinica\User;
+
+use Illuminate\Support\Facades\Hash;
 class PacientesController extends Controller
 {
 
@@ -85,6 +88,30 @@ class PacientesController extends Controller
          }
        }
 
+       $idu=User::max('id', 'desc')+1;
+
+       $user['id']=$idu;
+       $user['name']=$request->Nombre.' '.$request->Paterno.' '.$request->Materno;
+       $user['email']=$request->email;
+       $rut=$request->rut;
+
+       $rut=substr($rut,0,-2);
+       $rut=str_replace('.','',$rut);
+
+       $input=$request->all();
+       $input['user_id']=$idu;
+
+
+
+       $user['password']=Hash::make($rut);
+       $user['idrol']=4;
+
+       $user['rut']=$request->alumno_id;
+
+
+
+       User::create($user);
+
 
        $request['rut'] = str_replace(' ', '', $request['rut']);
        $request['alta']=false;
@@ -99,8 +126,9 @@ class PacientesController extends Controller
         //Odontograma::create($array);
         //$aa=Odontograma::orderBy('Odontograma_id', 'desc')->first();
         //dd($aa->Odontograma_id);
-         dd($request->All());
-         Paciente::create($request->all());
+        $input=$request->all();
+        $input['rut']=str_replace('.','',$request->rut);
+         Paciente::create($input);
 
          $id=$request->clinica_id;
          return redirect('/Alumno/mostrar/'.$id);

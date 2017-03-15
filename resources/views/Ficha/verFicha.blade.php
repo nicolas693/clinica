@@ -9,6 +9,7 @@
      <li><a href="{{url('Alumno')}}"> Alumno</a></li>
      <li><a href="{{url('Ficha',$id)}}">Menú Ficha </a></li>
      <li class="active">Ficha Paciente</li>
+     <li class="pull-right"><a href="/Ficha/{{$paciente->rut}}" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
 </ol>
 
 <div class="row fondoC centro">
@@ -56,7 +57,7 @@
                 {!!Form::close() !!}
 
                 <div class="btn-group">
-                  <a <button type="button" href={{route('Ficha.index',$id) }} class="btn btn-primary">Volver</button></a>
+                  
                   <a <button href={{route('Ficha.edit',$id) }} type="button"  class="btn btn-success">Editar Ficha</button> </a>
                 </div>
           </div>

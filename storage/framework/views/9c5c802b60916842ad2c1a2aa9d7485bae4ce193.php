@@ -17,10 +17,10 @@
     <div class="page-header" >
       <h1>Editar Alumno<small></small></h1>
     </div>
-    <div class="col-md-8"> <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></div>
-    <div class="col-md-8">
+    <div class="col-md-10"> <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></div>
+    <div class="col-md-10">
 
-       <div class="panel panel-default">
+       <div class="panel panel-primary centrarIT">
          <div class="panel-heading">
               <b>Datos de <?php echo e($alumno->Nombre); ?> <?php echo e($alumno->Apellido); ?></b>
 

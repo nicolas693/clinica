@@ -65,10 +65,7 @@
           {!! Form::select('id_Clinica',$clinica,null,['id'=>'id_Clinica','class'=>'form-control']) !!}
        </div>
 
-       <div class="form-group col-sm-12">
-          {!!form::label('ID Usuario : ')!!}{{$alumno->user_id}}
-          <a href="/Alumno/{{$alumno->alumno_id}}/edit/{{$alumno->user_id}}" class="btn btn-primary btn-xs" style="margin-left:50px;"> <b>Modificar ID de usuario</b></a>
-        </div>
+       
 
         <div class="form-group col-sm-12">
         {!!form::submit('Actualizar', ['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success'])!!}

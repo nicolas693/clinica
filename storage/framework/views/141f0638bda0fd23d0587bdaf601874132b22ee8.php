@@ -1,6 +1,6 @@
 <?php $__env->startSection('title','Ficha de Paciente'); ?>
 <?php $__env->startSection('content'); ?>
-<?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
 
 <html lang="es">
 <head>
@@ -29,6 +29,7 @@
      <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
      <li><a href="<?php echo e(url('Ficha',$id)); ?>"> Ver Ficha</a></li>
      <li class="active">Ingresar Ficha</li>
+     <li class="pull-right"><a href="/Ficha/<?php echo e($paciente->rut); ?>" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
    </ol>
 
 
@@ -37,7 +38,9 @@
        <h1>Ficha Clínica Integral Adulto </h1>
      </div>
      <div class="col-md-10">
+       <div class="centrarIT"><?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></div>
         <div class="panel panel-primary centrarIT">
+
           <div class="panel-heading"><b> Ficha Paciente </b></div>
 
           <div class="panel-body">
@@ -571,9 +574,7 @@
                  <?php echo Form::close(); ?>
 
              </div>
-             <div class="col-sm-2">
-               <a <button type="button" href=<?php echo e(route('Ficha.index',$id)); ?> class="btn btn-primary">Volver</button> </a>
-             </div>
+             
            </div>
 
         </div>

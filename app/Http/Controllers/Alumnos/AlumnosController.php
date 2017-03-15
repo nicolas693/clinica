@@ -12,7 +12,9 @@ use clinica\Models\Alumnos\Alumnos;
 use clinica\Models\Paciente\Clinica;
 use clinica\Models\Asignatura\Asignatura;
 use clinica\Models\Paciente\Paciente;
+use clinica\User;
 use Auth;
+use Illuminate\Support\Facades\Hash;
 
 
 
@@ -55,7 +57,29 @@ class AlumnosController extends Controller
      */
     public function store(AlumnoCreateRequest $request)
     {
-      Alumnos::create($request->except('Observaciones','PacienteEvaluado','Calificacion'));
+      $id=User::max('id', 'desc')+1;
+
+      $user['id']=$id;
+      $user['name']=$request->Nombre.' '.$request->Paterno.' '.$request->Materno;
+      $user['email']=$request->email;
+      $rut=$request->alumno_id;
+      $rut=substr($rut,0,-2);
+      $input=$request->all();
+      $input['user_id']=$id;
+
+
+
+      $user['password']=Hash::make($rut);
+      $user['idrol']=3;
+
+      $user['rut']=$request->alumno_id;
+
+      User::create($user);
+
+
+
+      Alumnos::create($input);
+
       return redirect('/Docente');
     }
 

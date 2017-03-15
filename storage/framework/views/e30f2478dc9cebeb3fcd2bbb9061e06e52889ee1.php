@@ -65,12 +65,15 @@
 
         </div>
 
-        <div class="col-sm-6">
-           <?php echo form::label('Código Usuario'); ?>
 
-           <?php echo form::text('user_id',null,['id'=>'user_id','class'=>'form-control']); ?>
 
-         </div>
+       <div class="col-sm-6">
+            <?php echo form::label('Email'); ?>
+
+            <?php echo form::text('email',null,['id'=>'email','class'=>'form-control']); ?>
+
+        </div>
+
 
         <div class="col-sm-6">
            <?php echo form::label('Asignatura'); ?>

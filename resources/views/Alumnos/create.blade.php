@@ -58,9 +58,9 @@
           {!! Form::select('id_Clinica',$clinica,null,['id'=>'id_Clinica','class'=>'form-control']) !!}
        </div>
 
-        <div class="form-group col-sm-6">
-          {!!form::label('Código Usuario')!!}
-          {!!form::text('user_id',null,['id'=>'user_id','class'=>'form-control'])!!}
+       <div class="col-sm-6">
+            {!!form::label('Email')!!}
+            {!!form::text('email',null,['id'=>'email','class'=>'form-control'])!!}
         </div>
 
         <div class="form-group col-sm-12">

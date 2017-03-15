@@ -7,6 +7,7 @@
      <li><a href="<?php echo e(url('Alumno')); ?>"> Alumno</a></li>
      <li><a href="<?php echo e(url('Ficha',$id)); ?>">Menú Ficha </a></li>
      <li class="active">Ficha Paciente</li>
+     <li class="pull-right"><a href="/Ficha/<?php echo e($paciente->rut); ?>" class="btn btn-primary btn-xs"> <b>Volver</b></a></li>
 </ol>
 
 <div class="row fondoC centro">
@@ -63,11 +64,12 @@
 
                 </div>
 
+
                 <?php echo Form::close(); ?>
 
 
                 <div class="btn-group">
-                  <a <button type="button" href=<?php echo e(route('Ficha.index',$id)); ?> class="btn btn-primary">Volver</button></a>
+                  
                   <a <button href=<?php echo e(route('Ficha.edit',$id)); ?> type="button"  class="btn btn-success">Editar Ficha</button> </a>
                 </div>
           </div>

@@ -58,10 +58,7 @@
            {!! Form::select('asignatura_id',$asignatura,null,['id'=>'asignatura_id','class'=>'form-control']) !!}
         </div>
 
-        <div class="col-sm-12" style="margin-top:30px;">
-           {!!form::label('ID Usuario : ')!!}{{$docente->user_id}}
-           <a href="/Docente/{{$docente->id}}/edit/{{$docente->user_id}}" class="btn btn-primary btn-xs" style="margin-left:50px;"> <b>Modificar ID de usuario</b></a>
-         </div>
+        
 
 
        {!!form::submit('Actualizar',['name'=>'grabar','id'=>'grabar','class'=>'btn btn-success btn-sm m-t-12','style'=>'margin-top: 26px; margin-left: 16px; margin-right:400px'])!!}

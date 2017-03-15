@@ -234,7 +234,7 @@
 
     </div>
 
-    <div class="panel panel-default fondoCSF" style="overflow:hidden; height: 600px; width:70%;margin-left:10%; "   >
+    <div class="panel panel-primary fondoCSF" style="overflow:hidden; height: 600px; width:70%;margin-left:10%; "   >
 
       <div class="panel-heading">
         Piezas con problemas
@@ -260,7 +260,7 @@
                         @endforeach
                        @if($aux!=0)
                        <td>
-                         <div class="panel panel-default " >
+                         <div class="panel panel-primary " >
                            <div class="panel-heading">
                              <?php
                                  $nomp=$key;

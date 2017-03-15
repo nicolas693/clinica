@@ -61,7 +61,7 @@
               </div>
 
               <div class="col-sm-4">
-                   <?php echo form::label('Diente'); ?>
+                   <?php echo form::label('Pieza Dental'); ?>
 
                    <?php echo Form::hidden('paciente_id',$paciente->rut); ?>
 
@@ -122,8 +122,8 @@
         $('.datepicker').datepicker({
             format: "dd/mm/yyyy",
             language: "es",
-            startDate: '-2y',
-            endDate:   '0d',
+            startDate: '0d',
+            endDate:   '+6m',
             autoclose: true
 
         });
