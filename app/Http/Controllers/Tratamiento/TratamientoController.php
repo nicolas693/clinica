@@ -21,10 +21,6 @@ class TratamientoController extends Controller
     public function index($id)
     {
       $paciente=Paciente::where('rut','=',$id)->first();
-      $id_alumno=$paciente->alumno_id;
-      $alumno=Alumno::where('alumno_id','='$id_alumno);
-      $id_asignatura= $alumno->asignatura_id;
-
       $tratamiento=Tratamiento::All();
       return view('Tratamiento.index', array('paciente'=>$paciente, 'id'=>$id, 'tratamiento'=>$tratamiento) );
     }

@@ -48,7 +48,7 @@
 
                   <?php echo form::text('rut',null,['id'=>'rut','class'=>'form-control','placeholder'=>'Ej: 12345789-0']); ?>
 
-             </div>
+                </div>
 
              <div class="form-group col-sm-12"> </div>
 

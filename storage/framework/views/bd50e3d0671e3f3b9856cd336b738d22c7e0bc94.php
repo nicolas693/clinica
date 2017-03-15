@@ -4,7 +4,17 @@
 <head>
   <?php echo Html::style('css/micss.css'); ?>
 
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+
+  <link rel="stylesheet"  href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+
+
+
+
+
+
+
+
+
 
 </head>
 
@@ -24,16 +34,17 @@
           <div class="panel-heading">Menú</div>
               <div class="panel-body">
                   <div class="col-sm-4"><button type="button" id='docente'  name='inscribir' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 5px 20px;margin-left: 0px">Docentes</button></div>
+                  <div class="col-sm-4"><button type="button" id='docente2'  name='inscribir' class="btn  navbar-btn btn-success" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 5px 20px;margin-left: 0px">Docentes de baja</button></div>
 
 
                     <div class="col-sm-4"><button type="button" id='usuario'  name='ver_docente' class="btn  navbar-btn btn-info" style="margin-bottom: 1px; margin-top: 10px;margin-right: 8px;padding: 5px 20px;margin-left: 0px">Usuarios</button></div>
 
 
-                    <div class="panel panel-default" id="1" style="display:none; margin-top:8%;">
+                    <div class="panel panel-default" id="1" style="margin-top:8%;">
                       <div class="panel-heading" ><b>Docentes</b></div>
                         <div class="panel-body">
 
-                          <table class="table table-bordered" >
+                          <table class="table stripe compact" id="myTable1" >
 
                             <thead>
                                <th>Rut</th>
@@ -45,35 +56,72 @@
 
                              <?php foreach($doce as $do): ?>
 
-                             <tr>
-                               <td><?php echo e($do->id); ?></td>
-                               <td><?php echo e($do->Nombre); ?></td>
-                               <td><?php echo e($do->Telefono); ?></td>
+                              <?php if($do->activo==true): ?>
+                              <tr>
+                                <td><?php echo e($do->id); ?></td>
+                                <td><?php echo e($do->Nombre); ?> <?php echo e($do->Paterno); ?> <?php echo e($do->Materno); ?></td>
+                                <td><?php echo e($do->Telefono); ?></td>
 
-                               <td><a <button href="<?php echo e(route('Docente.edit',$do->id)); ?>" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>
+                                <td><a <button href="<?php echo e(route('Docente.edit',$do->id)); ?>" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-warning" style ="margin-left: 20px"  >Editar</button></a>
+                                  <a <button href="<?php echo e(route('Docente.alta',$do->id)); ?>" type="button" id= 'Eliminar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-danger" style ="margin-left: 20px" >Eliminar</button></a>
 
-                               </td>
-                             </tr>
+                                </td>
+                              </tr>
+
+                              <?php endif; ?>
                              <?php endforeach; ?>
                             </tbody>
                           </table>
 
-                          <a <button href="<?php echo e(route('Docente.create')); ?>" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-success" style ="margin-left: 20px"  >Ingresar</button></a>
+                          <a <button href="<?php echo e(route('Docente.create')); ?>" type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-success"   >Inscribir Docente</button></a>
 
 
 
                         </div>
                       </div>
 
+                      <div class="panel panel-default" id="2" style="display:none; margin-top:8%;">
+                        <div class="panel-heading" ><b>Docentes dados de baja</b></div>
+                          <div class="panel-body">
+
+                            <table class="table stripe compact" id="myTable2" >
+
+                              <thead>
+                                 <th>Rut</th>
+                                 <th>Nombre</th>
+                                 <th>Teléfono</th>
+                                 <th>Acción</th>
+                              </thead>
+                              <tbody>
+
+                               <?php foreach($doce as $do): ?>
+
+                                <?php if($do->activo==false): ?>
+                                <tr>
+                                  <td><?php echo e($do->id); ?></td>
+                                  <td><?php echo e($do->Nombre); ?> <?php echo e($do->Paterno); ?> <?php echo e($do->Materno); ?></td>
+                                  <td><?php echo e($do->Telefono); ?></td>
 
 
+                                    <td><a <button href="<?php echo e(route('Docente.alta',$do->id)); ?>" type="button" id= 'quitar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-danger" >Quitar la baja</button></a>
 
+                                  </td>
+                                </tr>
+
+                                <?php endif; ?>
+                               <?php endforeach; ?>
+                              </tbody>
+                            </table>
+
+
+                          </div>
+                        </div>
 
 
                         <div class="panel panel-default" id="3" style="display:none; margin-top:8%;">
                           <div class="panel-heading" ><b>Usuarios</b></div>
                             <div class="panel-body">
-                              <table class="table table-bordered" >
+                              <table class="table  stripe compact" id="myTable3" >
                                 <thead>
                                    <th>id</th>
                                    <th>Nombre</th>
@@ -85,6 +133,7 @@
 
                                  <?php foreach($user as $us): ?>
 
+                                 <?php if($us->idrol!=1): ?>
                                  <tr>
                                    <td><?php echo e($us->id); ?></td>
                                    <td><?php echo e($us->name); ?></td>
@@ -107,6 +156,7 @@
 
                                    </td>
                                  </tr>
+                                 <?php endif; ?>
                                  <?php endforeach; ?>
                                 </tbody>
                               </table>
@@ -126,12 +176,22 @@
 </div>
 
 
+<script src="http://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+
 <script>
 
 $(document).on("click", function(e){
     if($(e.target).is("#docente")){
       $("#1").show();
+      $("#2").hide();
+      $("#3").hide();
+    }
+});
 
+$(document).on("click", function(e){
+    if($(e.target).is("#docente2")){
+      $("#2").show();
+      $("#1").hide();
       $("#3").hide();
     }
 });
@@ -139,16 +199,43 @@ $(document).on("click", function(e){
 
 
 
+
 $(document).on("click", function(e){
     if($(e.target).is("#usuario")){
       $("#3").show();
-
+      $("#2").hide();
       $("#1").hide();
 
     }
 });
 
 
+
+</script>
+<script>
+$(document).ready(function() {
+    $('#myTable1').DataTable( {
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+        }
+    } );
+} );
+
+$(document).ready(function() {
+    $('#myTable2').DataTable( {
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+        }
+    } );
+} );
+
+$(document).ready(function() {
+    $('#myTable3').DataTable( {
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+        }
+    } );
+} );
 
 </script>
 

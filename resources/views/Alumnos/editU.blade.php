@@ -17,10 +17,10 @@
     <div class="page-header" >
       <h1>Editar Alumno<small></small></h1>
     </div>
-    <div class="col-md-8"> @include('partials.messages')</div>
-    <div class="col-md-8">
+    <div class="col-md-10"> @include('partials.messages')</div>
+    <div class="col-md-10">
 
-       <div class="panel panel-default">
+       <div class="panel panel-primary centrarIT">
          <div class="panel-heading">
               <b>Datos de {{$alumno->Nombre}} {{$alumno->Apellido}}</b>
 

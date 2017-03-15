@@ -97,7 +97,7 @@
                               <?php endif; ?>
 
                               <?php if(Auth::user()->idrol==2): ?>
-                                <li><a href="<?php echo e(url('/Docente')); ?>"><i class=" 	glyphicon glyphicon-th-large"></i></i> Mi Panel</a></li>
+                                <li><a href="<?php echo e(url('/Docente/mostrar')); ?>"><i class=" 	glyphicon glyphicon-th-large"></i></i> Mi Panel</a></li>
                                 <li><a href=<?php echo e(route('User.index')); ?>><i class="glyphicon glyphicon-user"></i></i> Mi Perfil</a></li>
 
 

@@ -285,7 +285,7 @@
                         <div class="form-group col-sm-4">
                           <div class="input-group">
                             <label for="date"><b>Fecha de último control </b></label>
-                              <input type="text" class="form-control datepicker" id="Fecha_Ultima_Consulta" name="Fecha_Ultima_Consulta">
+                              <input type="text" value="<?php echo htmlspecialchars($ficha->Fecha_Ultima_Consulta); ?>" class="form-control datepicker" id="Fecha_Ultima_Consulta" name="Fecha_Ultima_Consulta">
                             </div>
                           </div>
 
@@ -328,7 +328,7 @@
                             <div class="form-group col-sm-4" >
                               <div class="input-group">
                                 <label for="date" class="nobold" ><b>Fecha de traumatismo </b></label>
-                                <input type="text" class="form-control datepicker2" id="fecha2" name="Fecha_Traumatismo">
+                                <input type="text" value="<?php echo htmlspecialchars($ficha->Fecha_Traumatismo); ?>" class="form-control datepicker2" id="fecha2" name="Fecha_Traumatismo">
                               </div>
                             </div>
                         </div>

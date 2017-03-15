@@ -1,5 +1,4 @@
 <?php $__env->startSection('title','Editar Paciente'); ?>
-
 <?php $__env->startSection('content'); ?>
 
 
@@ -43,156 +42,147 @@
        <h1>Editar datos paciente </h1>
      </div>
      <div class="col-md-8"> <?php echo $__env->make('partials.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></div>
-     <div class="col-md-8">
+     <div class="col-md-10">
 
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            Editar Datos Paciente
-            <p class="navbar-text navbar-right" style=" margin-top: 1px;">
+        <div class="panel panel-primary centrarIT">
+          <div class="panel-heading">Editar Datos Paciente<p class="navbar-text navbar-right" style=" margin-top: 1px;"> </div>
 
-
-           </div>
           <div class="panel-body">
 
                <?php echo Form::model($pa,['route'=>['Paciente.update',$pa->rut],'method'=>'PUT']); ?>
 
 
+               <div class="form-group col-sm-4">
+                  <?php echo form::label('Rut'); ?>
 
-               <div class="col-sm-12">
-                   <?php echo form::label('Rut'); ?>
+                  <?php echo form::text('rut',null,['id'=>'rut','class'=>'form-control','placeholder'=>'Ej: 12345789-0']); ?>
 
-                   <?php echo form::text('rut',null,['id'=>'rut','class'=>'form-control']); ?>
+                </div>
+
+             <div class="form-group col-sm-12"> </div>
+
+               <div class="form-group col-sm-4">
+                   <?php echo form::label('Nombre'); ?>
+
+                   <?php echo form::text('Nombre',null,['id'=>'Nombre','class'=>'form-control']); ?>
+
+              </div>
+
+              <div class="form-group col-sm-4">
+                   <?php echo form::label('Apellido Paterno'); ?>
+
+                   <?php echo form::text('Paterno',null,['id'=>'Paterno','class'=>'form-control']); ?>
+
+              </div>
+
+              <div class="form-group col-sm-4">
+                   <?php echo form::label('Apellido Materno'); ?>
+
+                   <?php echo form::text('Materno',null,['id'=>'Materno','class'=>'form-control']); ?>
 
               </div>
 
 
-              <div class="col-sm-4">
-                  <?php echo form::label('Nombre'); ?>
-
-                  <?php echo form::text('Nombre',null,['id'=>'Nombre','class'=>'form-control']); ?>
-
-             </div>
-
-             <div class="col-sm-4">
-                  <?php echo form::label('Apellido Paterno'); ?>
-
-                  <?php echo form::text('Paterno',null,['id'=>'Paterno','class'=>'form-control']); ?>
-
-             </div>
-
-             <div class="col-sm-4">
-                  <?php echo form::label('Apellido Materno'); ?>
-
-                  <?php echo form::text('Materno',null,['id'=>'Materno','class'=>'form-control']); ?>
-
-             </div>
-
-
-             <div class="col-sm-6">
+             <div class="form-group col-sm-4">
                <div class="input-group">
                  <label for="date">Fecha Ingreso</label>
                    <input type="text" value="<?php echo htmlspecialchars($pa->Fecha_Ingreso); ?>" class="form-control datepicker" name="Fecha_Ingreso">
                </div>
              </div>
 
-             <div class="col-sm-6">
+             <div class="form-group col-sm-4">
                <div class="input-group">
                  <label for="date">Fecha Nacimiento</label>
                    <input type="text" value="<?php echo htmlspecialchars($pa->Fecha_Nacimiento); ?>" class="form-control datepicker" name="Fecha_Nacimiento">
                </div>
              </div>
 
-             <div class="col-sm-12">
+             <div class="form-group col-sm-6">
                <?php echo form::label('Sexo'); ?>
 
                <?php echo Form::select('Genero',$genero,null,['id'=>'Genero','class'=>'form-control']); ?>
 
              </div>
 
+             <div class="form-group col-sm-12"> </div>
 
-              <div class="col-sm-4">
-                  <?php echo form::label('Teléfono Fijo'); ?>
+              <div class="form-group col-sm-6">
+                  <?php echo form::label('telfijo','Teléfono fijo'); ?>
 
-                  <?php echo form::text('Telefono_Casa',null,['id'=>'Telefono_Casa','class'=>'form-control']); ?>
-
-             </div>
-
-              <div class="col-sm-4">
-                  <?php echo form::label('Teléfono Movil'); ?>
-
-                  <?php echo form::text('Telefono_Movil',null,['id'=>'Telefono_Movil','class'=>'form-control']); ?>
+                  <?php echo form::text('Telefono_Casa',null,['id'=>'Telefono_Casa','class'=>'form-control', 'placeholder'=>'Ej: 21234567' ]); ?>
 
              </div>
 
-             <div class="col-sm-4">
-                 <?php echo form::label('Email'); ?>
 
-                 <?php echo form::text('email',null,['id'=>'Email','class'=>'form-control']); ?>
+              <div class="form-group col-sm-6">
+                  <?php echo form::label('telmovil','Teléfono movil'); ?>
 
-            </div>
+                  <?php echo form::text('Telefono_Movil',null,['id'=>'Telefono_Movil','class'=>'form-control', 'placeholder'=>'Ej: 12345678']); ?>
 
-              <div class="col-sm-6">
+             </div>
+
+
+              <div class="form-group form-group col-sm-6">
                   <?php echo form::label('Calle'); ?>
 
-                  <?php echo form::text('Calle',null,['id'=>'Calle','class'=>'form-control']); ?>
+                  <?php echo form::text('Calle',null,['id'=>'Calle','class'=>'form-control','placeholder'=>'Ej: Pasaje Flores del Campo 8']); ?>
 
              </div>
 
-             <div class="col-sm-6">
-                  <?php echo form::label('Número Casa'); ?>
+             <div class="form-group col-sm-6">
+                  <?php echo form::label('numerocalle','Número de Calle'); ?>
 
-                  <?php echo form::text('Numero_Calle',null,['id'=>'Numero_Calle','class'=>'form-control']); ?>
+                  <?php echo form::text('Numero_Calle',null,['id'=>'Numero_Calle','class'=>'form-control','placeholder'=>'Ej: 1234, max:4 números']); ?>
 
              </div>
 
-             <div class="col-sm-4">
+             <div class="form-group col-sm-6">
                   <?php echo form::label('Pais'); ?>
 
                   <?php echo form::text('Pais',null,['id'=>'Pais','class'=>'form-control']); ?>
 
              </div>
 
-              <div class="col-sm-4">
-                  <?php echo form::label('Región'); ?>
+              <div class="form-group col-sm-6">
+                  <?php echo Form::label('region','Región'); ?>
 
-                  <?php echo form::text('Region',null,['id'=>'Region','class'=>'form-control']); ?>
+                  <?php echo Form::select('Region',$regiones,null,['class'=>'form-control']); ?>
 
              </div>
 
-             <div class="col-sm-4">
+             <div class="form-group col-sm-4">
                   <?php echo form::label('Comuna'); ?>
 
                   <?php echo form::text('Comuna',null,['id'=>'Comuna','class'=>'form-control']); ?>
 
              </div>
 
-             <div class="col-sm-12">
+             <div class="form-group col-sm-12">
                   <?php echo form::label('Nacionalidad'); ?>
 
                   <?php echo form::text('Nacionalidad',null,['id'=>'Nacionalidad','class'=>'form-control']); ?>
 
              </div>
 
-              <div class="col-sm-12">
+              <div class="form-group col-sm-12">
                   <?php echo form::label('Cobertura Médica'); ?>
 
                   <?php echo form::text('Cobertura_Medica',null,['id'=>'Cobertura_Medica','class'=>'form-control']); ?>
 
              </div>
 
-             <div class="col-sm-6">
-                <?php echo form::label('Clínica'); ?>
+             <div class="form-group col-sm-5">
+                <?php echo Form::label('Clínicas'); ?>
 
-                <?php echo Form::select('clinica_id',$clinica,null,['id'=>'clinica_id','class'=>'form-control']); ?>
+                <?php echo Form::select('clinica_id', $clinica, null, ['class'=>'form-control']); ?>
 
              </div>
+
 
              <div class="col-sm-12">
                 <?php echo form::submit('Actualizar Datos',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-success btn-sm m-t-10','style'=>'margin-top: 26px; margin-left: 80%;']); ?>
 
              </div>
-
-
               <?php echo Form::close(); ?>
 
            </div>

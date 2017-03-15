@@ -143,7 +143,8 @@
              </div>
 
              <div class="form-group col-sm-5">
-                {!!form::text('clinica_id',$id,['id'=>'clinica_id','class'=>'form-control hidden'])!!}
+                {!!Form::label('Clínicas') !!}
+                {!!Form::select('clinica_id', $clinica, null, ['class'=>'form-control']) !!}
              </div>
 
 

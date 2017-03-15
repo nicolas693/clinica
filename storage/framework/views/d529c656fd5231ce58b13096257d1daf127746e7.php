@@ -34,7 +34,6 @@
                  <th>Fecha</th>
                  <th>Acción a realizar</th>
                  <th>Pieza Dental</th>
-                 <th>Profesor a cargo</th>
               </thead>
 
 
@@ -44,7 +43,6 @@
                     <td><?php echo e($tra->Fecha); ?></td>
                     <td><?php echo e($tra->AccionR); ?></td>
                     <td><?php echo e($tra->DienteTratamiento); ?></td>
-                    <td><?php echo e($tra->nProfe); ?></td>
                   </tr>
                 <?php endif; ?>
               <?php endforeach; ?>
