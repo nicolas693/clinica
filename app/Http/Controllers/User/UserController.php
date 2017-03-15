@@ -13,6 +13,7 @@ use clinica\Models\Docente\Docente;
 use clinica\Models\Alumnos\Alumnos;
 use clinica\Models\Paciente\Ficha;
 use clinica\Models\Tratamiento\Tratamiento;
+use clinica\Models\Procedimiento\Procedimiento;
 use Auth;
 
 class UserController extends Controller
@@ -147,8 +148,10 @@ class UserController extends Controller
         $user=Auth::user();
         $ficha=Ficha::where('paciente_id','=',$user->rut)->first();
         $trat=Tratamiento::where('paciente_id','=',$user->rut)->get();
+        $proce=Procedimiento::where('id','=','1')->first();
 
-        return view('User.guest')->with('ficha',$ficha)->with('trat',$trat);;
+
+        return view('User.guest')->with('ficha',$ficha)->with('trat',$trat)->with('proce',$proce);
     }
 
     public function inscribir(Request $request,$id)
