@@ -32,9 +32,9 @@ class UserTableSeeder extends Seeder
 
       $User=new User([
         'id'=>3,
-        'name'=>'Alumno',
-        'email'=>'alumno@alumno.com',
-        'password'=>Hash::make('alumno123'),
+        'name'=>'Nicolas Acevedo',
+        'email'=>'nicolas.693_@outlook.cl',
+        'password'=>Hash::make('nicolas'),
         'idrol'=>3,
       ]);
       $User->save();

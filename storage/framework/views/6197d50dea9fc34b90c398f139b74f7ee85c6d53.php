@@ -25,7 +25,7 @@
 </ol>
 
 
-<div class="row fondoC centro">
+<div class="row fondoCOdo centro">
     <div class="col-sm-12 "  >
       <h1>Odontograma<small></small></h1>
 

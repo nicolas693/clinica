@@ -30,6 +30,22 @@ border: 2px solid  #145a32  ;
  margin-left: 10%;
  margin-right: 10%;
  margin-top: 1%;
+ background-color: rgb(0, 0, 0);
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(255, 255, 255, 0.9);
+
+ margin-bottom: 5%;
+
+}
+
+.fondoCOdo{
+
+background-color: #FFFFFF;
+border: 2px solid  #145a32  ;
+  border-radius: 8px;
+ margin-left: 10%;
+ margin-right: 10%;
+ margin-top: 1%;
 
  margin-bottom: 5%;
 

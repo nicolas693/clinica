@@ -84,7 +84,7 @@
                     <?php if(Auth::guest()): ?>
 
                         <li><a href="<?php echo e(url('/login')); ?>"><i class="glyphicon glyphicon-log-in" style="margin-right: 5px;"></i>Iniciar sesión</a></li>
-                        <li><a href="<?php echo e(url('/register')); ?>"><i class="glyphicon glyphicon-credit-card" style="margin-right: 5px;"></i>Registrar</a></li>
+                        <!--<li><a href="<?php echo e(url('/register')); ?>"><i class="glyphicon glyphicon-credit-card" style="margin-right: 5px;"></i>Registrar</a></li>-->
 
 
                     <?php else: ?>
@@ -123,7 +123,7 @@
 
 </body>
 
-  <body style="background-color:  #3498db ; "   >
+  <body style="background-image:url(/images/fondo.jpg);"   >
       <!--  <div class=" fondoC centro text" >-->
           <?php echo $__env->yieldContent('content'); ?>
       <!--  </div>  /container -->

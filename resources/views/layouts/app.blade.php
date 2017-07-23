@@ -78,7 +78,7 @@
                     @if (Auth::guest())
 
                         <li><a href="{{ url('/login') }}"><i class="glyphicon glyphicon-log-in" style="margin-right: 5px;"></i>Iniciar sesión</a></li>
-                        <li><a href="{{ url('/register') }}"><i class="glyphicon glyphicon-credit-card" style="margin-right: 5px;"></i>Registrar</a></li>
+                        <!--<li><a href="{{ url('/register') }}"><i class="glyphicon glyphicon-credit-card" style="margin-right: 5px;"></i>Registrar</a></li>-->
 
 
                     @else
@@ -117,7 +117,7 @@
 
 </body>
 
-  <body style="background-color:  #3498db ; "   >
+  <body style="background-image:url(/images/fondo.jpg);"   >
       <!--  <div class=" fondoC centro text" >-->
           @yield('content')
       <!--  </div>  /container -->
