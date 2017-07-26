@@ -171,12 +171,12 @@
                        </div>
 
                        <div class="form-group col-sm-6">
-                           {!!form::label('Alumno : ')!!} {{$alumno->Nombre}} {{$alumno->Paterno}}
+                           {!!form::label('Odontologo : ')!!} {{$alumno->Nombre}} {{$alumno->Paterno}}
                            {{Form::hidden('alumno_id',$alumno->alumno_id)}}
                        </div>
 
                        <div class="form-group col-sm-6">
-                           {!!form::label('Profesor tutor :   ')!!} {{$docente->Nombre}} {{$docente->Paterno}}
+
                            {{Form::hidden('docente_id',$docente->id)}}
                        </div>
 
@@ -439,7 +439,7 @@
                  ,'content'=>'<span>Grabar</span>','class'=>'btn btn-success ']) !!}
                  {!!Form::close()!!}
              </div>
-             
+
            </div>
 
         </div>

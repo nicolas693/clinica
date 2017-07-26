@@ -218,14 +218,13 @@
                        </div>
 
                        <div class="form-group col-sm-6">
-                           <?php echo form::label('Alumno : '); ?> <?php echo e($alumno->Nombre); ?> <?php echo e($alumno->Paterno); ?>
+                           <?php echo form::label('Odontologo : '); ?> <?php echo e($alumno->Nombre); ?> <?php echo e($alumno->Paterno); ?>
 
                            <?php echo e(Form::hidden('alumno_id',$alumno->alumno_id)); ?>
 
                        </div>
 
                        <div class="form-group col-sm-6">
-                           <?php echo form::label('Profesor tutor :   '); ?> <?php echo e($docente->Nombre); ?> <?php echo e($docente->Paterno); ?>
 
                            <?php echo e(Form::hidden('docente_id',$docente->id)); ?>
 
@@ -574,7 +573,7 @@
                  <?php echo Form::close(); ?>
 
              </div>
-             
+
            </div>
 
         </div>

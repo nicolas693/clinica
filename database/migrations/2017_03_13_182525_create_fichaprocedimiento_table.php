@@ -29,6 +29,6 @@ class CreateFichaprocedimientoTable extends Migration
      */
     public function down()
     {
-        Schema::drop('FichaProcedimiento');
+        Schema::drop('Ficha_Procedimiento');
     }
 }
