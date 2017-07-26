@@ -1,8 +1,8 @@
-@extends('layouts.app')
-@section('title','Lista de Pacientes')
-@section('content')
+<?php $__env->startSection('title','Lista de Pacientes'); ?>
+<?php $__env->startSection('content'); ?>
 <head>
-  {!!Html::style('css/micss.css')!!}
+  <?php echo Html::style('css/micss.css'); ?>
+
   <link rel="stylesheet"  href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
   <!--<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">-->
 
@@ -10,7 +10,7 @@
 </head>
    <!-- Main component for a primary marketing message or call to action -->
    <ol class="breadcrumb fondoC1 ">
-        <li><a href="{{url('Alumno')}}"> Odontólogo</a></li>
+        <li><a href="<?php echo e(url('Alumno')); ?>"> Odontólogo</a></li>
         <li class="active">Panel Odontólogo</li>
       </ol>
 
@@ -35,18 +35,18 @@
                </thead>
                <tbody>
 
-               	@foreach($clinica as $cli)
+               	<?php foreach($clinica as $cli): ?>
 
                	<tr>
-                  <td>{{$cli->id_Clinica}}</td>
-               		<td>{{$cli->Nombre_Clinica}}</td>
+                  <td><?php echo e($cli->id_Clinica); ?></td>
+               		<td><?php echo e($cli->Nombre_Clinica); ?></td>
 
-                  <td><a <button href={{ route('Alumno.mostrar',$cli->id_Clinica) }} type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-info" style ="margin-left: 20px"  >Ver pacientes</button></a>
+                  <td><a <button href=<?php echo e(route('Alumno.mostrar',$cli->id_Clinica)); ?> type="button" id= 'Editar' name='cancelar' class="btn btn-default btn-sm m-t-10 btn-info" style ="margin-left: 20px"  >Ver pacientes</button></a>
 
                   </td>
                	</tr>
 
-               	@endforeach
+               	<?php endforeach; ?>
 
                </tbody>
 
@@ -81,4 +81,6 @@
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

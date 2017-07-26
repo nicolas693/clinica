@@ -5,7 +5,7 @@
 <head>{!!Html::style('css/micss.css')!!}</head>
 
 <ol class="breadcrumb fondoC1 ">
-     <li><a href="{{url('Alumno')}}"> Alumno</a></li>
+     <li><a href="{{url('Alumno')}}"> Odontólogo</a></li>
      <li class="active">Menú Ficha</li>
       <li class="pull-right"><a href="/Alumno/mostrar/{{$paciente->clinica_id}}" class="btn btn-primary btn-xs"> <b>Volver</b> </a></li>
    </ol>
